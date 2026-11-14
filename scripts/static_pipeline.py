@@ -35,7 +35,28 @@ WRB = ["Acrisols", "Albeluvisols", "Alisols", "Andosols", "Arenosols", "Calcisol
        "Regosols", "Solonchaks", "Solonetz", "Stagnosols", "Umbrisols", "Vertisols"]
 
 
+CACHE = Path(os.environ.get("STATIC_CACHE", "/tmp/static_pipeline_cache"))
+
+
 def read_bbox(path, factor=1, resampling=Resampling.nearest):
+    """Window read with retries; remote reads are cached as .npz (SoilGrids tiles sometimes truncate)."""
+    import pickle, time
+    key = CACHE / (str(path).replace("/", "_").replace(":", "") + f"_{factor}.pkl")
+    if key.exists():
+        return pickle.loads(key.read_bytes())
+    for attempt in range(6):
+        try:
+            res = _read_bbox(path, factor, resampling)
+            CACHE.mkdir(parents=True, exist_ok=True)
+            key.write_bytes(pickle.dumps(res))
+            return res
+        except rasterio.errors.RasterioIOError as e:
+            print("retry", path, attempt, str(e)[:80], flush=True)
+            time.sleep(10 * (attempt + 1))
+    raise RuntimeError(f"failed reading {path}")
+
+
+def _read_bbox(path, factor=1, resampling=Resampling.nearest):
     with rasterio.open(path) as src:
         win = hc.window_for_bbox(src)
         shape = (max(1, int(win.height // factor)), max(1, int(win.width // factor)))

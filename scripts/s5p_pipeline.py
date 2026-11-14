@@ -15,7 +15,7 @@ Usage: python scripts/s5p_pipeline.py [N_ORBITS]
 """
 import sys
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
 from pathlib import Path
 
 import numpy as np
@@ -32,6 +32,7 @@ import hazards_common as hc
 
 N_ORBITS = int(sys.argv[1]) if len(sys.argv) > 1 else 4
 RES = 0.05
+N_PROC = 3
 X0, Y1 = 24.0, 12.35
 NX, NY = int((36.1 - X0) / RES), int((Y1 - 3.4) / RES)
 GT = from_origin(X0, Y1, RES, RES)
@@ -90,6 +91,10 @@ def read_orbit(item, cfg):
     return None
 
 
+def _fetch(pm):
+    return month_grid(*pm)[2]
+
+
 def month_grid(product, month):
     cf = CACHE / f"{product}_{month}.npz"
     if cf.exists():
@@ -126,9 +131,10 @@ def main():
     rows, log = [], []
     dates = {p: [] for p in PRODUCTS}
     tasks = [(p, m) for m in hc.months("2018-04-01") for p in PRODUCTS]
-    with ThreadPoolExecutor(4) as ex:  # fetch (product, month) grids concurrently; cached as npz
-        for (p, m), r in zip(tasks, ex.map(lambda pm: month_grid(*pm), tasks)):
-            print(f"fetched {m} {p} orbits={r[2]} valid_px={int(r[1].sum())}", flush=True)
+    # fetch (product, month) grids in parallel processes (h5py/fsspec reading is GIL-bound); cached as npz
+    with ProcessPoolExecutor(N_PROC) as ex:
+        for (p, m), norb in zip(tasks, ex.map(_fetch, tasks)):
+            print(f"fetched {m} {p} orbits={norb}", flush=True)
     for m in hc.months("2018-04-01"):
         for p, cfg in PRODUCTS.items():
             t0 = time.time()

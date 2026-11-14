@@ -198,7 +198,10 @@ def finalize(rows, canvas):
             "month (Terra+Aqua). Captures open water and shallow inundation; some residual false positives from "
             "dark wet vegetation early in the wet season (Jun-Aug). Cloud gaps filled from previous month (max 2 months); county-months with <20% known "
             "area dropped. Detects open water; under-detects flooded/floating vegetation (Sudd) and is reduced by "
-            "persistent wet-season cloud. Validate against UNOSAT flood extents.")
+            "persistent wet-season cloud. Validation vs 30 UNOSAT VIIRS water-extent tables (HDX, 2022-10..2025-04, "
+            "scripts/water_validate_unosat.py): state-level r = 0.76; MODIS totals ~0.5x UNOSAT (close in Jun-Sep, "
+            "2-5x lower in the dry season when UNOSAT counts vegetated swamp water). Treat as a conservative, "
+            "relative flood signal.")
     hc.write_meta("water", [
         dict(id="surface_water_km2", label="Surface water extent", units="km2",
              aggregation="water share of known pixels x county area", higher_is="worse", index_ok=True,

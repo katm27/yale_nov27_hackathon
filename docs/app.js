@@ -275,9 +275,12 @@
     const dates = r.dates || [];
     if (!dates.length) return null;
     const ym = state.months[i];
-    // Exact month, else the latest date not after this month, else the first available.
+    if (dates.includes(ym)) return ym;
+    // Annual/sparse rasters: prefer one from the same year, else the latest earlier one, else the first.
+    const sameYear = dates.find((d) => d.slice(0, 4) === ym.slice(0, 4));
+    if (sameYear) return sameYear;
     let best = null;
-    for (const d of dates) { if (d <= ym || d.length === 4 && d <= ym.slice(0, 4)) best = d; }
+    for (const d of dates) if (d.slice(0, 7) <= ym) best = d;
     return best || dates[0];
   }
   function updateRasters() {

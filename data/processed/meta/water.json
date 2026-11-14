@@ -1,0 +1,50 @@
+[
+ {
+  "id": "surface_water_km2",
+  "label": "Surface water extent",
+  "units": "km2",
+  "aggregation": "water share of known pixels x county area",
+  "higher_is": "worse",
+  "index_ok": true,
+  "raster": "surface_water",
+  "notes": "Water = MNDWI (B4 green vs B7 SWIR 2.1um) > 0.1 in >=50% of cloud-free 8-day composites in the month (Terra+Aqua). Captures open water and shallow inundation; some residual false positives from dark wet vegetation early in the wet season (Jun-Aug). Cloud gaps filled from previous month (max 2 months); county-months with <20% known area dropped. Detects open water; under-detects flooded/floating vegetation (Sudd) and is reduced by persistent wet-season cloud. Validation vs 30 UNOSAT VIIRS water-extent tables (HDX, 2022-10..2025-04, scripts/water_validate_unosat.py): state-level r = 0.76; MODIS totals ~0.5x UNOSAT (close in Jun-Sep, 2-5x lower in the dry season when UNOSAT counts vegetated swamp water). Treat as a conservative, relative flood signal.",
+  "category": "environment",
+  "group": "Water & flooding",
+  "source": "MODIS MOD09A1 + MYD09A1 v061 8-day surface reflectance via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/modis-09A1-061",
+  "native_resolution": "500 m",
+  "temporal": "monthly"
+ },
+ {
+  "id": "surface_water_pct",
+  "label": "Surface water (% of county)",
+  "units": "% of county area",
+  "aggregation": "water pixels / known (observed or gap-filled) pixels x 100",
+  "higher_is": "worse",
+  "index_ok": true,
+  "raster": "surface_water",
+  "notes": "Water = MNDWI (B4 green vs B7 SWIR 2.1um) > 0.1 in >=50% of cloud-free 8-day composites in the month (Terra+Aqua). Captures open water and shallow inundation; some residual false positives from dark wet vegetation early in the wet season (Jun-Aug). Cloud gaps filled from previous month (max 2 months); county-months with <20% known area dropped. Detects open water; under-detects flooded/floating vegetation (Sudd) and is reduced by persistent wet-season cloud. Validation vs 30 UNOSAT VIIRS water-extent tables (HDX, 2022-10..2025-04, scripts/water_validate_unosat.py): state-level r = 0.76; MODIS totals ~0.5x UNOSAT (close in Jun-Sep, 2-5x lower in the dry season when UNOSAT counts vegetated swamp water). Treat as a conservative, relative flood signal.",
+  "category": "environment",
+  "group": "Water & flooding",
+  "source": "MODIS MOD09A1 + MYD09A1 v061 8-day surface reflectance via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/modis-09A1-061",
+  "native_resolution": "500 m",
+  "temporal": "monthly"
+ },
+ {
+  "id": "surface_water_obs_pct",
+  "label": "Cloud-free observation coverage (water layer)",
+  "units": "% of county area",
+  "aggregation": "share of county pixels with >=1 clear 8-day observation",
+  "higher_is": "neutral",
+  "index_ok": false,
+  "raster": null,
+  "notes": "Data-quality flag for surface_water_*; low in wet season (Jun-Oct).",
+  "category": "environment",
+  "group": "Water & flooding",
+  "source": "MODIS MOD09A1 + MYD09A1 v061 8-day surface reflectance via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/modis-09A1-061",
+  "native_resolution": "500 m",
+  "temporal": "monthly"
+ }
+]
