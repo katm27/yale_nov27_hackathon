@@ -4,3 +4,4 @@ __pycache__/
 data/raw/**/_cache/
 .ipynb_checkpoints/
 data/raw/osm/*/
+data/raw/oil/goit_map_*.geojson

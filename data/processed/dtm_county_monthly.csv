@@ -1,6 +1,6 @@
 county_id,date,variable,value
-SS0001,2020-01-01,dtm_et_events,0
-SS0001,2020-02-01,dtm_et_events,0
+SS0001,2020-01-01,dtm_et_events,5
+SS0001,2020-02-01,dtm_et_events,1
 SS0001,2020-03-01,dtm_et_events,0
 SS0001,2020-04-01,dtm_et_events,0
 SS0001,2020-05-01,dtm_et_events,0
@@ -82,7 +82,7 @@ SS0101,2020-08-01,dtm_et_events,7
 SS0101,2020-09-01,dtm_et_events,2
 SS0101,2020-10-01,dtm_et_events,0
 SS0101,2020-11-01,dtm_et_events,0
-SS0101,2020-12-01,dtm_et_events,2
+SS0101,2020-12-01,dtm_et_events,1
 SS0101,2021-01-01,dtm_et_events,1
 SS0101,2021-02-01,dtm_et_events,3
 SS0101,2021-03-01,dtm_et_events,0
@@ -1448,8 +1448,8 @@ SS0306,2020-06-01,dtm_et_events,0
 SS0306,2020-07-01,dtm_et_events,0
 SS0306,2020-08-01,dtm_et_events,0
 SS0306,2020-09-01,dtm_et_events,0
-SS0306,2020-10-01,dtm_et_events,1
-SS0306,2020-11-01,dtm_et_events,2
+SS0306,2020-10-01,dtm_et_events,0
+SS0306,2020-11-01,dtm_et_events,1
 SS0306,2020-12-01,dtm_et_events,0
 SS0306,2021-01-01,dtm_et_events,1
 SS0306,2021-02-01,dtm_et_events,0
@@ -1942,7 +1942,7 @@ SS0401,2025-08-01,dtm_et_events,0
 SS0401,2025-09-01,dtm_et_events,6
 SS0401,2025-10-01,dtm_et_events,0
 SS0401,2025-11-01,dtm_et_events,0
-SS0401,2025-12-01,dtm_et_events,1
+SS0401,2025-12-01,dtm_et_events,0
 SS0402,2020-01-01,dtm_et_events,0
 SS0402,2020-02-01,dtm_et_events,0
 SS0402,2020-03-01,dtm_et_events,0
@@ -3174,7 +3174,7 @@ SS0606,2020-04-01,dtm_et_events,0
 SS0606,2020-05-01,dtm_et_events,7
 SS0606,2020-06-01,dtm_et_events,0
 SS0606,2020-07-01,dtm_et_events,0
-SS0606,2020-08-01,dtm_et_events,4
+SS0606,2020-08-01,dtm_et_events,2
 SS0606,2020-09-01,dtm_et_events,2
 SS0606,2020-10-01,dtm_et_events,0
 SS0606,2020-11-01,dtm_et_events,0
@@ -4163,7 +4163,7 @@ SS0710,2024-09-01,dtm_et_events,0
 SS0710,2024-10-01,dtm_et_events,0
 SS0710,2024-11-01,dtm_et_events,0
 SS0710,2024-12-01,dtm_et_events,0
-SS0710,2025-01-01,dtm_et_events,1
+SS0710,2025-01-01,dtm_et_events,0
 SS0710,2025-02-01,dtm_et_events,0
 SS0710,2025-03-01,dtm_et_events,0
 SS0710,2025-04-01,dtm_et_events,2
@@ -4234,7 +4234,7 @@ SS0711,2024-08-01,dtm_et_events,7
 SS0711,2024-09-01,dtm_et_events,0
 SS0711,2024-10-01,dtm_et_events,0
 SS0711,2024-11-01,dtm_et_events,0
-SS0711,2024-12-01,dtm_et_events,10
+SS0711,2024-12-01,dtm_et_events,7
 SS0711,2025-01-01,dtm_et_events,2
 SS0711,2025-02-01,dtm_et_events,2
 SS0711,2025-03-01,dtm_et_events,6
@@ -4546,7 +4546,7 @@ SS0804,2020-08-01,dtm_et_events,1
 SS0804,2020-09-01,dtm_et_events,7
 SS0804,2020-10-01,dtm_et_events,0
 SS0804,2020-11-01,dtm_et_events,0
-SS0804,2020-12-01,dtm_et_events,8
+SS0804,2020-12-01,dtm_et_events,0
 SS0804,2021-01-01,dtm_et_events,8
 SS0804,2021-02-01,dtm_et_events,11
 SS0804,2021-03-01,dtm_et_events,2
@@ -4690,7 +4690,7 @@ SS0806,2020-08-01,dtm_et_events,0
 SS0806,2020-09-01,dtm_et_events,0
 SS0806,2020-10-01,dtm_et_events,0
 SS0806,2020-11-01,dtm_et_events,0
-SS0806,2020-12-01,dtm_et_events,2
+SS0806,2020-12-01,dtm_et_events,1
 SS0806,2021-01-01,dtm_et_events,0
 SS0806,2021-02-01,dtm_et_events,0
 SS0806,2021-03-01,dtm_et_events,0
@@ -5687,8 +5687,8 @@ SS1010,2025-09-01,dtm_et_events,0
 SS1010,2025-10-01,dtm_et_events,0
 SS1010,2025-11-01,dtm_et_events,0
 SS1010,2025-12-01,dtm_et_events,0
-SS0001,2020-01-01,dtm_et_new_idps,0
-SS0001,2020-02-01,dtm_et_new_idps,0
+SS0001,2020-01-01,dtm_et_new_idps,4130
+SS0001,2020-02-01,dtm_et_new_idps,535
 SS0001,2020-03-01,dtm_et_new_idps,0
 SS0001,2020-04-01,dtm_et_new_idps,0
 SS0001,2020-05-01,dtm_et_new_idps,0
@@ -5770,7 +5770,7 @@ SS0101,2020-08-01,dtm_et_new_idps,52123
 SS0101,2020-09-01,dtm_et_new_idps,26068
 SS0101,2020-10-01,dtm_et_new_idps,0
 SS0101,2020-11-01,dtm_et_new_idps,0
-SS0101,2020-12-01,dtm_et_new_idps,23110
+SS0101,2020-12-01,dtm_et_new_idps,11555
 SS0101,2021-01-01,dtm_et_new_idps,2090
 SS0101,2021-02-01,dtm_et_new_idps,0
 SS0101,2021-03-01,dtm_et_new_idps,0
@@ -7136,8 +7136,8 @@ SS0306,2020-06-01,dtm_et_new_idps,0
 SS0306,2020-07-01,dtm_et_new_idps,0
 SS0306,2020-08-01,dtm_et_new_idps,0
 SS0306,2020-09-01,dtm_et_new_idps,0
-SS0306,2020-10-01,dtm_et_new_idps,32286
-SS0306,2020-11-01,dtm_et_new_idps,50000
+SS0306,2020-10-01,dtm_et_new_idps,0
+SS0306,2020-11-01,dtm_et_new_idps,25000
 SS0306,2020-12-01,dtm_et_new_idps,0
 SS0306,2021-01-01,dtm_et_new_idps,38457
 SS0306,2021-02-01,dtm_et_new_idps,0
@@ -7630,7 +7630,7 @@ SS0401,2025-08-01,dtm_et_new_idps,0
 SS0401,2025-09-01,dtm_et_new_idps,6450
 SS0401,2025-10-01,dtm_et_new_idps,0
 SS0401,2025-11-01,dtm_et_new_idps,0
-SS0401,2025-12-01,dtm_et_new_idps,3874
+SS0401,2025-12-01,dtm_et_new_idps,0
 SS0402,2020-01-01,dtm_et_new_idps,0
 SS0402,2020-02-01,dtm_et_new_idps,0
 SS0402,2020-03-01,dtm_et_new_idps,0
@@ -8862,7 +8862,7 @@ SS0606,2020-04-01,dtm_et_new_idps,0
 SS0606,2020-05-01,dtm_et_new_idps,4522
 SS0606,2020-06-01,dtm_et_new_idps,0
 SS0606,2020-07-01,dtm_et_new_idps,0
-SS0606,2020-08-01,dtm_et_new_idps,3428
+SS0606,2020-08-01,dtm_et_new_idps,413
 SS0606,2020-09-01,dtm_et_new_idps,3015
 SS0606,2020-10-01,dtm_et_new_idps,0
 SS0606,2020-11-01,dtm_et_new_idps,0
@@ -10234,7 +10234,7 @@ SS0804,2020-08-01,dtm_et_new_idps,694
 SS0804,2020-09-01,dtm_et_new_idps,16480
 SS0804,2020-10-01,dtm_et_new_idps,0
 SS0804,2020-11-01,dtm_et_new_idps,0
-SS0804,2020-12-01,dtm_et_new_idps,19757
+SS0804,2020-12-01,dtm_et_new_idps,0
 SS0804,2021-01-01,dtm_et_new_idps,48650
 SS0804,2021-02-01,dtm_et_new_idps,13145
 SS0804,2021-03-01,dtm_et_new_idps,4600
@@ -10378,7 +10378,7 @@ SS0806,2020-08-01,dtm_et_new_idps,0
 SS0806,2020-09-01,dtm_et_new_idps,0
 SS0806,2020-10-01,dtm_et_new_idps,0
 SS0806,2020-11-01,dtm_et_new_idps,0
-SS0806,2020-12-01,dtm_et_new_idps,2848
+SS0806,2020-12-01,dtm_et_new_idps,1424
 SS0806,2021-01-01,dtm_et_new_idps,0
 SS0806,2021-02-01,dtm_et_new_idps,0
 SS0806,2021-03-01,dtm_et_new_idps,0
@@ -11375,8 +11375,8 @@ SS1010,2025-09-01,dtm_et_new_idps,0
 SS1010,2025-10-01,dtm_et_new_idps,0
 SS1010,2025-11-01,dtm_et_new_idps,0
 SS1010,2025-12-01,dtm_et_new_idps,0
-SS0001,2020-01-01,dtm_et_new_idps_conflict,0
-SS0001,2020-02-01,dtm_et_new_idps_conflict,0
+SS0001,2020-01-01,dtm_et_new_idps_conflict,4130
+SS0001,2020-02-01,dtm_et_new_idps_conflict,535
 SS0001,2020-03-01,dtm_et_new_idps_conflict,0
 SS0001,2020-04-01,dtm_et_new_idps_conflict,0
 SS0001,2020-05-01,dtm_et_new_idps_conflict,0
@@ -11458,7 +11458,7 @@ SS0101,2020-08-01,dtm_et_new_idps_conflict,34764
 SS0101,2020-09-01,dtm_et_new_idps_conflict,0
 SS0101,2020-10-01,dtm_et_new_idps_conflict,0
 SS0101,2020-11-01,dtm_et_new_idps_conflict,0
-SS0101,2020-12-01,dtm_et_new_idps_conflict,23110
+SS0101,2020-12-01,dtm_et_new_idps_conflict,11555
 SS0101,2021-01-01,dtm_et_new_idps_conflict,2090
 SS0101,2021-02-01,dtm_et_new_idps_conflict,0
 SS0101,2021-03-01,dtm_et_new_idps_conflict,0
@@ -13318,7 +13318,7 @@ SS0401,2025-08-01,dtm_et_new_idps_conflict,0
 SS0401,2025-09-01,dtm_et_new_idps_conflict,0
 SS0401,2025-10-01,dtm_et_new_idps_conflict,0
 SS0401,2025-11-01,dtm_et_new_idps_conflict,0
-SS0401,2025-12-01,dtm_et_new_idps_conflict,3874
+SS0401,2025-12-01,dtm_et_new_idps_conflict,0
 SS0402,2020-01-01,dtm_et_new_idps_conflict,0
 SS0402,2020-02-01,dtm_et_new_idps_conflict,0
 SS0402,2020-03-01,dtm_et_new_idps_conflict,0
@@ -14550,7 +14550,7 @@ SS0606,2020-04-01,dtm_et_new_idps_conflict,0
 SS0606,2020-05-01,dtm_et_new_idps_conflict,4298
 SS0606,2020-06-01,dtm_et_new_idps_conflict,0
 SS0606,2020-07-01,dtm_et_new_idps_conflict,0
-SS0606,2020-08-01,dtm_et_new_idps_conflict,3015
+SS0606,2020-08-01,dtm_et_new_idps_conflict,0
 SS0606,2020-09-01,dtm_et_new_idps_conflict,0
 SS0606,2020-10-01,dtm_et_new_idps_conflict,0
 SS0606,2020-11-01,dtm_et_new_idps_conflict,0
@@ -15922,7 +15922,7 @@ SS0804,2020-08-01,dtm_et_new_idps_conflict,0
 SS0804,2020-09-01,dtm_et_new_idps_conflict,1510
 SS0804,2020-10-01,dtm_et_new_idps_conflict,0
 SS0804,2020-11-01,dtm_et_new_idps_conflict,0
-SS0804,2020-12-01,dtm_et_new_idps_conflict,19757
+SS0804,2020-12-01,dtm_et_new_idps_conflict,0
 SS0804,2021-01-01,dtm_et_new_idps_conflict,48650
 SS0804,2021-02-01,dtm_et_new_idps_conflict,13145
 SS0804,2021-03-01,dtm_et_new_idps_conflict,4600
@@ -18512,8 +18512,8 @@ SS0306,2020-06-01,dtm_et_new_idps_disaster,0
 SS0306,2020-07-01,dtm_et_new_idps_disaster,0
 SS0306,2020-08-01,dtm_et_new_idps_disaster,0
 SS0306,2020-09-01,dtm_et_new_idps_disaster,0
-SS0306,2020-10-01,dtm_et_new_idps_disaster,32286
-SS0306,2020-11-01,dtm_et_new_idps_disaster,50000
+SS0306,2020-10-01,dtm_et_new_idps_disaster,0
+SS0306,2020-11-01,dtm_et_new_idps_disaster,25000
 SS0306,2020-12-01,dtm_et_new_idps_disaster,0
 SS0306,2021-01-01,dtm_et_new_idps_disaster,38457
 SS0306,2021-02-01,dtm_et_new_idps_disaster,0
@@ -21754,7 +21754,7 @@ SS0806,2020-08-01,dtm_et_new_idps_disaster,0
 SS0806,2020-09-01,dtm_et_new_idps_disaster,0
 SS0806,2020-10-01,dtm_et_new_idps_disaster,0
 SS0806,2020-11-01,dtm_et_new_idps_disaster,0
-SS0806,2020-12-01,dtm_et_new_idps_disaster,2848
+SS0806,2020-12-01,dtm_et_new_idps_disaster,1424
 SS0806,2021-01-01,dtm_et_new_idps_disaster,0
 SS0806,2021-02-01,dtm_et_new_idps_disaster,0
 SS0806,2021-03-01,dtm_et_new_idps_disaster,0
@@ -26915,7 +26915,7 @@ SS0710,2024-09-01,dtm_et_returnees,0
 SS0710,2024-10-01,dtm_et_returnees,0
 SS0710,2024-11-01,dtm_et_returnees,0
 SS0710,2024-12-01,dtm_et_returnees,0
-SS0710,2025-01-01,dtm_et_returnees,567
+SS0710,2025-01-01,dtm_et_returnees,0
 SS0710,2025-02-01,dtm_et_returnees,0
 SS0710,2025-03-01,dtm_et_returnees,0
 SS0710,2025-04-01,dtm_et_returnees,0
@@ -26986,7 +26986,7 @@ SS0711,2024-08-01,dtm_et_returnees,0
 SS0711,2024-09-01,dtm_et_returnees,0
 SS0711,2024-10-01,dtm_et_returnees,0
 SS0711,2024-11-01,dtm_et_returnees,0
-SS0711,2024-12-01,dtm_et_returnees,9830
+SS0711,2024-12-01,dtm_et_returnees,6179
 SS0711,2025-01-01,dtm_et_returnees,5854
 SS0711,2025-02-01,dtm_et_returnees,0
 SS0711,2025-03-01,dtm_et_returnees,0
