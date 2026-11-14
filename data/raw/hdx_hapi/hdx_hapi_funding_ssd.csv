@@ -1,0 +1,38 @@
+location_code,has_hrp,in_gho,appeal_code,appeal_name,appeal_type,requirements_usd,funding_usd,funding_pct,reference_period_start,reference_period_end
+SSD,True,True,Not specified,Not specified,None,None,51616,None,2031-01-01,2031-12-31
+SSD,True,True,Not specified,Not specified,None,None,219901,None,2030-01-01,2030-12-31
+SSD,True,True,Not specified,Not specified,None,None,13035897,None,2029-01-01,2029-12-31
+SSD,True,True,Not specified,Not specified,None,None,54641968,None,2028-01-01,2028-12-31
+SSD,True,True,Not specified,Not specified,None,None,105188602,None,2027-01-01,2027-12-31
+SSD,True,True,HSSD26,South Sudan Humanitarian Needs and Response Plan 2026,Humanitarian needs and response plan,1463046056,585033852,40,2026-01-01,2026-12-31
+SSD,True,True,Not specified,Not specified,None,None,38895558,None,2026-01-01,2026-12-31
+SSD,True,True,HSSD25,South Sudan Humanitarian Needs and Response Plan 2025,Humanitarian needs and response plan,1694778653,787264388,46,2025-01-01,2025-12-31
+SSD,True,True,Not specified,Not specified,None,None,129520538,None,2025-01-01,2025-12-31
+SSD,True,True,HSSD24,South Sudan Humanitarian Needs and Response Plan 2024,Humanitarian needs and response plan,1788817122,1289311491,72,2024-01-01,2024-12-31
+SSD,True,True,Not specified,Not specified,None,None,126518623,None,2024-01-01,2024-12-31
+SSD,True,True,HSSD23,South Sudan Humanitarian Response Plan 2023,Humanitarian response plan,2055885216,1155730137,56,2023-01-01,2023-12-31
+SSD,True,True,Not specified,Not specified,None,None,155495254,None,2023-01-01,2023-12-31
+SSD,True,True,HSSD22,South Sudan Humanitarian Response Plan 2022,Humanitarian response plan,1699588587,1284151686,76,2022-01-01,2022-12-31
+SSD,True,True,Not specified,Not specified,None,None,148259922,None,2022-01-01,2022-12-31
+SSD,True,True,HSSD21,South Sudan Humanitarian Response Plan 2021,Humanitarian response plan,1677772788,1219709541,73,2021-01-01,2021-12-31
+SSD,True,True,Not specified,Not specified,None,None,266016377,None,2021-01-01,2021-12-31
+SSD,True,True,HSSD20,South Sudan Humanitarian Response Plan 2020,Humanitarian response plan,1899937964,1235876749,65,2020-01-01,2020-12-31
+SSD,True,True,Not specified,Not specified,None,None,269470641,None,2020-01-01,2020-12-31
+SSD,True,True,HSSD19,South Sudan Humanitarian Response Plan 2019,Humanitarian response plan,1507421344,1138599353,76,2019-01-01,2019-12-31
+SSD,True,True,Not specified,Not specified,None,None,215251827,None,2019-01-01,2019-12-31
+SSD,True,True,HSSD18,South Sudan Humanitarian Response Plan 2018,Humanitarian response plan,1717890485,1207468629,70,2018-01-01,2018-12-31
+SSD,True,True,Not specified,Not specified,None,None,230549444,None,2018-01-01,2018-12-31
+SSD,True,True,HSSD17,South Sudan Humanitarian Response Plan 2017,Humanitarian response plan,1639694893,1167694337,71,2017-01-01,2017-12-31
+SSD,True,True,Not specified,Not specified,None,None,309860980,None,2017-01-01,2017-12-31
+SSD,True,True,HSSD16,South Sudan Humanitarian Response Plan 2016,Humanitarian response plan,1291081324,1162668495,90,2016-01-01,2016-12-31
+SSD,True,True,Not specified,Not specified,None,None,199708046,None,2016-01-01,2016-12-31
+SSD,True,True,HSSD15,South Sudan Strategic Response Plan 2015,Strategic response plan,1635521095,1064853227,65,2015-01-01,2015-12-31
+SSD,True,True,Not specified,Not specified,None,None,304308457,None,2015-01-01,2015-12-31
+SSD,True,True,SSSD14,South Sudan Crisis Response Plan 2014,Strategic response plan,1801753424,1594424513,88,2014-01-01,2014-12-31
+SSD,True,True,Not specified,Not specified,None,None,435496828,None,2014-01-01,2014-12-31
+SSD,True,True,CSSD13,Republic of South Sudan 2013,Consolidated appeals process,1072037430,771920359,72,2013-01-01,2013-12-31
+SSD,True,True,Not specified,Not specified,None,None,149268813,None,2013-01-01,2013-12-31
+SSD,True,True,CSSD12,Republic of South Sudan 2012,Consolidated appeals process,1176892213,787572734,67,2012-01-01,2012-12-31
+SSD,True,True,Not specified,Not specified,None,None,78722890,None,2012-01-01,2012-12-31
+SSD,True,True,CSSD11,Republic of South Sudan 2011,Consolidated appeals process,619673235,379211301,61,2011-07-01,2011-12-31
+SSD,True,True,Not specified,Not specified,None,None,96710823,None,2011-01-01,2011-12-31

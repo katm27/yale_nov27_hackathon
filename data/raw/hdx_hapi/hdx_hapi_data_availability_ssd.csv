@@ -1,0 +1,564 @@
+category,subcategory,location_code,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,hapi_updated_date
+food-security-nutrition-poverty,food-security,SSD,SS01,Central Equatoria,SS0101,Juba,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS01,Central Equatoria,SS0102,Kajo-keji,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS01,Central Equatoria,SS0103,Lainya,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS01,Central Equatoria,SS0104,Morobo,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS01,Central Equatoria,SS0105,Terekeka,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS01,Central Equatoria,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS01,Central Equatoria,SS0106,Yei,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0201,Budi,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0202,Ikotos,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0203,Kapoeta East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0204,Kapoeta North,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0205,Kapoeta South,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0206,Lafon,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0207,Magwi,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,SS0208,Torit,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS02,Eastern Equatoria,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0301,Akobo,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0302,Ayod,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0303,Bor South,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0304,Canal/Pigi,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0305,Duk,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0306,Fangak,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0307,Nyirol,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0308,Pibor,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0309,Pochalla,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0310,Twic East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS03,Jonglei,SS0311,Uror,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0401,Awerial,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0402,Cueibet,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0403,Rumbek Centre,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0404,Rumbek East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0405,Rumbek North,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0406,Wulu,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0407,Yirol East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS04,Lakes,SS0408,Yirol West,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS05,Northern Bahr el Ghazal,SS0501,Aweil Centre,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS05,Northern Bahr el Ghazal,SS0502,Aweil East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS05,Northern Bahr el Ghazal,SS0503,Aweil North,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS05,Northern Bahr el Ghazal,SS0504,Aweil South,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS05,Northern Bahr el Ghazal,SS0505,Aweil West,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS05,Northern Bahr el Ghazal,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,,,,,0,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0601,Abiemnhom,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0602,Guit,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0603,Koch,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0604,Leer,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0605,Mayendit,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0606,Mayom,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0607,Panyijiar,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0608,Pariang,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,SS0609,Rubkona,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS06,Unity,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0701,Baliet,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0702,Fashoda,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0703,Longochuk,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0704,Luakpiny/Nasir,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0705,Maban,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0706,Maiwut,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0707,Malakal,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0708,Manyo,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0709,Melut,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0710,Panyikang,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0711,Renk,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,,,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS07,Upper Nile,SS0712,Ulang,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,SS0801,Gogrial East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,SS0802,Gogrial West,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,SS0803,Tonj East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,SS0804,Tonj North,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,SS0805,Tonj South,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,SS0806,Twic,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS08,Warrap,,,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS09,Western Bahr el Ghazal,SS0901,Jur River,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS09,Western Bahr el Ghazal,SS0902,Raja,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS09,Western Bahr el Ghazal,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS09,Western Bahr el Ghazal,SS0903,Wau,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1001,Ezo,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1002,Ibba,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1003,Maridi,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1004,Mundri East,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1005,Mundri West,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1006,Mvolo,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1007,Nagero,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1008,Nzara,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1009,Tambura,2,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,,,1,2026-11-13
+food-security-nutrition-poverty,food-security,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13
+coordination-context,conflict-events,SSD,SS01,Central Equatoria,SS0101,Juba,2,2026-11-13
+coordination-context,conflict-events,SSD,SS01,Central Equatoria,SS0102,Kajo-keji,2,2026-11-13
+coordination-context,conflict-events,SSD,SS01,Central Equatoria,SS0103,Lainya,2,2026-11-13
+coordination-context,conflict-events,SSD,SS01,Central Equatoria,SS0104,Morobo,2,2026-11-13
+coordination-context,conflict-events,SSD,SS01,Central Equatoria,SS0105,Terekeka,2,2026-11-13
+coordination-context,conflict-events,SSD,SS01,Central Equatoria,SS0106,Yei,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0201,Budi,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0202,Ikotos,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0203,Kapoeta East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0204,Kapoeta North,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0205,Kapoeta South,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0206,Lafon,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0207,Magwi,2,2026-11-13
+coordination-context,conflict-events,SSD,SS02,Eastern Equatoria,SS0208,Torit,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0301,Akobo,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0302,Ayod,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0303,Bor South,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0304,Canal/Pigi,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0305,Duk,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0306,Fangak,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0307,Nyirol,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0308,Pibor,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0309,Pochalla,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0310,Twic East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS03,Jonglei,SS0311,Uror,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0401,Awerial,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0402,Cueibet,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0403,Rumbek Centre,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0404,Rumbek East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0405,Rumbek North,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0406,Wulu,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0407,Yirol East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS04,Lakes,SS0408,Yirol West,2,2026-11-13
+coordination-context,conflict-events,SSD,SS05,Northern Bahr el Ghazal,SS0501,Aweil Centre,2,2026-11-13
+coordination-context,conflict-events,SSD,SS05,Northern Bahr el Ghazal,SS0502,Aweil East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS05,Northern Bahr el Ghazal,SS0503,Aweil North,2,2026-11-13
+coordination-context,conflict-events,SSD,SS05,Northern Bahr el Ghazal,SS0504,Aweil South,2,2026-11-13
+coordination-context,conflict-events,SSD,SS05,Northern Bahr el Ghazal,SS0505,Aweil West,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0601,Abiemnhom,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0602,Guit,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0603,Koch,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0604,Leer,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0605,Mayendit,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0606,Mayom,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0607,Panyijiar,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0608,Pariang,2,2026-11-13
+coordination-context,conflict-events,SSD,SS06,Unity,SS0609,Rubkona,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0701,Baliet,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0702,Fashoda,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0703,Longochuk,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0704,Luakpiny/Nasir,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0705,Maban,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0706,Maiwut,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0707,Malakal,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0708,Manyo,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0709,Melut,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0710,Panyikang,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0711,Renk,2,2026-11-13
+coordination-context,conflict-events,SSD,SS07,Upper Nile,SS0712,Ulang,2,2026-11-13
+coordination-context,conflict-events,SSD,SS08,Warrap,SS0801,Gogrial East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS08,Warrap,SS0802,Gogrial West,2,2026-11-13
+coordination-context,conflict-events,SSD,SS08,Warrap,SS0803,Tonj East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS08,Warrap,SS0804,Tonj North,2,2026-11-13
+coordination-context,conflict-events,SSD,SS08,Warrap,SS0805,Tonj South,2,2026-11-13
+coordination-context,conflict-events,SSD,SS08,Warrap,SS0806,Twic,2,2026-11-13
+coordination-context,conflict-events,SSD,SS09,Western Bahr el Ghazal,SS0901,Jur River,2,2026-11-13
+coordination-context,conflict-events,SSD,SS09,Western Bahr el Ghazal,SS0902,Raja,2,2026-11-13
+coordination-context,conflict-events,SSD,SS09,Western Bahr el Ghazal,SS0903,Wau,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1001,Ezo,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1002,Ibba,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1003,Maridi,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1004,Mundri East,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1005,Mundri West,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1006,Mvolo,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1007,Nagero,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1008,Nzara,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1009,Tambura,2,2026-11-13
+coordination-context,conflict-events,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13
+climate,hazards-rainfall,SSD,SS01,Central Equatoria,SS0101,Juba,2,2026-11-13
+climate,hazards-rainfall,SSD,SS01,Central Equatoria,SS0102,Kajo-keji,2,2026-11-13
+climate,hazards-rainfall,SSD,SS01,Central Equatoria,SS0103,Lainya,2,2026-11-13
+climate,hazards-rainfall,SSD,SS01,Central Equatoria,SS0104,Morobo,2,2026-11-13
+climate,hazards-rainfall,SSD,SS01,Central Equatoria,SS0105,Terekeka,2,2026-11-13
+climate,hazards-rainfall,SSD,SS01,Central Equatoria,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS01,Central Equatoria,SS0106,Yei,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0201,Budi,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0202,Ikotos,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0203,Kapoeta East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0204,Kapoeta North,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0205,Kapoeta South,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0206,Lafon,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0207,Magwi,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,SS0208,Torit,2,2026-11-13
+climate,hazards-rainfall,SSD,SS02,Eastern Equatoria,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0301,Akobo,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0302,Ayod,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0303,Bor South,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0304,Canal/Pigi,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0305,Duk,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0306,Fangak,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0307,Nyirol,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0308,Pibor,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0309,Pochalla,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0310,Twic East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS03,Jonglei,SS0311,Uror,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0401,Awerial,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0402,Cueibet,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0403,Rumbek Centre,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0404,Rumbek East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0405,Rumbek North,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0406,Wulu,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0407,Yirol East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS04,Lakes,SS0408,Yirol West,2,2026-11-13
+climate,hazards-rainfall,SSD,SS05,Northern Bahr el Ghazal,SS0501,Aweil Centre,2,2026-11-13
+climate,hazards-rainfall,SSD,SS05,Northern Bahr el Ghazal,SS0502,Aweil East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS05,Northern Bahr el Ghazal,SS0503,Aweil North,2,2026-11-13
+climate,hazards-rainfall,SSD,SS05,Northern Bahr el Ghazal,SS0504,Aweil South,2,2026-11-13
+climate,hazards-rainfall,SSD,SS05,Northern Bahr el Ghazal,SS0505,Aweil West,2,2026-11-13
+climate,hazards-rainfall,SSD,SS05,Northern Bahr el Ghazal,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0601,Abiemnhom,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0602,Guit,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0603,Koch,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0604,Leer,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0605,Mayendit,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0606,Mayom,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0607,Panyijiar,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0608,Pariang,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,SS0609,Rubkona,2,2026-11-13
+climate,hazards-rainfall,SSD,SS06,Unity,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0701,Baliet,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0702,Fashoda,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0703,Longochuk,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0704,Luakpiny/Nasir,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0705,Maban,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0706,Maiwut,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0707,Malakal,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0708,Manyo,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0709,Melut,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0710,Panyikang,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0711,Renk,2,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS07,Upper Nile,SS0712,Ulang,2,2026-11-13
+climate,hazards-rainfall,SSD,SS08,Warrap,SS0801,Gogrial East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS08,Warrap,SS0802,Gogrial West,2,2026-11-13
+climate,hazards-rainfall,SSD,SS08,Warrap,SS0803,Tonj East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS08,Warrap,SS0804,Tonj North,2,2026-11-13
+climate,hazards-rainfall,SSD,SS08,Warrap,SS0805,Tonj South,2,2026-11-13
+climate,hazards-rainfall,SSD,SS08,Warrap,SS0806,Twic,2,2026-11-13
+climate,hazards-rainfall,SSD,SS08,Warrap,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS09,Western Bahr el Ghazal,SS0901,Jur River,2,2026-11-13
+climate,hazards-rainfall,SSD,SS09,Western Bahr el Ghazal,SS0902,Raja,2,2026-11-13
+climate,hazards-rainfall,SSD,SS09,Western Bahr el Ghazal,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS09,Western Bahr el Ghazal,SS0903,Wau,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1001,Ezo,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1002,Ibba,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1003,Maridi,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1004,Mundri East,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1005,Mundri West,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1006,Mvolo,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1007,Nagero,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1008,Nzara,2,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,,,1,2026-11-13
+climate,hazards-rainfall,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1002,Ibba,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1006,Mvolo,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1007,Nagero,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1008,Nzara,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1009,Tambura,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1004,Mundri East,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1005,Mundri West,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1003,Maridi,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13
+coordination-context,operational-presence,SSD,SS10,Western Equatoria,SS1001,Ezo,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS01,Central Equatoria,SS0101,Juba,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS01,Central Equatoria,SS0102,Kajo-keji,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS01,Central Equatoria,SS0103,Lainya,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS01,Central Equatoria,SS0104,Morobo,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS01,Central Equatoria,SS0105,Terekeka,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS01,Central Equatoria,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS01,Central Equatoria,SS0106,Yei,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0201,Budi,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0202,Ikotos,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0203,Kapoeta East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0204,Kapoeta North,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0205,Kapoeta South,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0206,Lafon,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0207,Magwi,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,SS0208,Torit,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS02,Eastern Equatoria,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0301,Akobo,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0302,Ayod,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0303,Bor South,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0304,Canal/Pigi,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0305,Duk,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0306,Fangak,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0307,Nyirol,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0308,Pibor,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0309,Pochalla,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0310,Twic East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS03,Jonglei,SS0311,Uror,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0401,Awerial,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0402,Cueibet,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0403,Rumbek Centre,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0404,Rumbek East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0405,Rumbek North,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0406,Wulu,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0407,Yirol East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS04,Lakes,SS0408,Yirol West,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS05,Northern Bahr el Ghazal,SS0501,Aweil Centre,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS05,Northern Bahr el Ghazal,SS0502,Aweil East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS05,Northern Bahr el Ghazal,SS0503,Aweil North,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS05,Northern Bahr el Ghazal,SS0504,Aweil South,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS05,Northern Bahr el Ghazal,SS0505,Aweil West,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS05,Northern Bahr el Ghazal,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,,,,,0,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0601,Abiemnhom,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0602,Guit,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0603,Koch,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0604,Leer,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0605,Mayendit,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0606,Mayom,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0607,Panyijiar,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0608,Pariang,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,SS0609,Rubkona,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS06,Unity,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0701,Baliet,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0702,Fashoda,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0703,Longochuk,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0704,Luakpiny/Nasir,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0705,Maban,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0706,Maiwut,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0707,Malakal,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0708,Manyo,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0709,Melut,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0710,Panyikang,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0711,Renk,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS07,Upper Nile,SS0712,Ulang,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS08,Warrap,SS0801,Gogrial East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS08,Warrap,SS0802,Gogrial West,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS08,Warrap,SS0803,Tonj East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS08,Warrap,SS0804,Tonj North,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS08,Warrap,SS0805,Tonj South,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS08,Warrap,SS0806,Twic,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS08,Warrap,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS09,Western Bahr el Ghazal,SS0901,Jur River,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS09,Western Bahr el Ghazal,SS0902,Raja,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS09,Western Bahr el Ghazal,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS09,Western Bahr el Ghazal,SS0903,Wau,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1001,Ezo,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1002,Ibba,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1003,Maridi,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1004,Mundri East,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1005,Mundri West,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1006,Mvolo,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1007,Nagero,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1008,Nzara,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1009,Tambura,2,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,,,1,2026-11-13
+geography-infrastructure,baseline-population,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13
+affected-people,returnees,SSD,,,,,0,2026-11-13
+affected-people,idps,SSD,SS01,Central Equatoria,SS0101,Juba,2,2026-11-13
+affected-people,idps,SSD,SS01,Central Equatoria,SS0102,Kajo-keji,2,2026-11-13
+affected-people,idps,SSD,SS01,Central Equatoria,SS0103,Lainya,2,2026-11-13
+affected-people,idps,SSD,SS01,Central Equatoria,SS0104,Morobo,2,2026-11-13
+affected-people,idps,SSD,SS01,Central Equatoria,SS0105,Terekeka,2,2026-11-13
+affected-people,idps,SSD,SS01,Central Equatoria,,,1,2026-11-13
+affected-people,idps,SSD,SS01,Central Equatoria,SS0106,Yei,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0201,Budi,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0202,Ikotos,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0203,Kapoeta East,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0204,Kapoeta North,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0205,Kapoeta South,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0206,Lafon,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0207,Magwi,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,SS0208,Torit,2,2026-11-13
+affected-people,idps,SSD,SS02,Eastern Equatoria,,,1,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0301,Akobo,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0302,Ayod,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0303,Bor South,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0304,Canal/Pigi,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0305,Duk,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0306,Fangak,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0307,Nyirol,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0308,Pibor,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0309,Pochalla,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0310,Twic East,2,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,,,1,2026-11-13
+affected-people,idps,SSD,SS03,Jonglei,SS0311,Uror,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0401,Awerial,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0402,Cueibet,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0403,Rumbek Centre,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0404,Rumbek East,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0405,Rumbek North,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,,,1,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0406,Wulu,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0407,Yirol East,2,2026-11-13
+affected-people,idps,SSD,SS04,Lakes,SS0408,Yirol West,2,2026-11-13
+affected-people,idps,SSD,SS05,Northern Bahr el Ghazal,SS0501,Aweil Centre,2,2026-11-13
+affected-people,idps,SSD,SS05,Northern Bahr el Ghazal,SS0502,Aweil East,2,2026-11-13
+affected-people,idps,SSD,SS05,Northern Bahr el Ghazal,SS0503,Aweil North,2,2026-11-13
+affected-people,idps,SSD,SS05,Northern Bahr el Ghazal,SS0504,Aweil South,2,2026-11-13
+affected-people,idps,SSD,SS05,Northern Bahr el Ghazal,SS0505,Aweil West,2,2026-11-13
+affected-people,idps,SSD,SS05,Northern Bahr el Ghazal,,,1,2026-11-13
+affected-people,idps,SSD,,,,,0,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0601,Abiemnhom,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0602,Guit,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0603,Koch,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0604,Leer,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0605,Mayendit,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0606,Mayom,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0607,Panyijiar,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0608,Pariang,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,SS0609,Rubkona,2,2026-11-13
+affected-people,idps,SSD,SS06,Unity,,,1,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0701,Baliet,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0702,Fashoda,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0703,Longochuk,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0704,Luakpiny/Nasir,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0705,Maban,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0706,Maiwut,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0707,Malakal,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0708,Manyo,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0709,Melut,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0710,Panyikang,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0711,Renk,2,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,,,1,2026-11-13
+affected-people,idps,SSD,SS07,Upper Nile,SS0712,Ulang,2,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,SS0801,Gogrial East,2,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,SS0802,Gogrial West,2,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,SS0803,Tonj East,2,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,SS0804,Tonj North,2,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,SS0805,Tonj South,2,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,SS0806,Twic,2,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,,,1,2026-11-13
+affected-people,idps,SSD,SS08,Warrap,,,2,2026-11-13
+affected-people,idps,SSD,SS09,Western Bahr el Ghazal,SS0901,Jur River,2,2026-11-13
+affected-people,idps,SSD,SS09,Western Bahr el Ghazal,SS0902,Raja,2,2026-11-13
+affected-people,idps,SSD,SS09,Western Bahr el Ghazal,,,1,2026-11-13
+affected-people,idps,SSD,SS09,Western Bahr el Ghazal,SS0903,Wau,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1001,Ezo,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1002,Ibba,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1003,Maridi,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1004,Mundri East,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1005,Mundri West,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1006,Mvolo,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1007,Nagero,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1008,Nzara,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1009,Tambura,2,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,,,1,2026-11-13
+affected-people,idps,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13
+affected-people,refugees-persons-of-concern,SSD,,,,,0,2026-11-13
+coordination-context,national-risk,SSD,,,,,0,2026-11-13
+coordination-context,funding,SSD,,,,,0,2026-11-13
+affected-people,humanitarian-needs,SSD,SS01,Central Equatoria,SS0101,Juba,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS01,Central Equatoria,SS0102,Kajo-keji,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS01,Central Equatoria,SS0103,Lainya,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS01,Central Equatoria,SS0104,Morobo,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS01,Central Equatoria,SS0105,Terekeka,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS01,Central Equatoria,SS0106,Yei,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0201,Budi,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0202,Ikotos,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0203,Kapoeta East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0204,Kapoeta North,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0205,Kapoeta South,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0206,Lafon,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0207,Magwi,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS02,Eastern Equatoria,SS0208,Torit,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0301,Akobo,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0302,Ayod,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0303,Bor South,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0304,Canal/Pigi,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0305,Duk,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0306,Fangak,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0307,Nyirol,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0308,Pibor,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0309,Pochalla,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0310,Twic East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS03,Jonglei,SS0311,Uror,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0401,Awerial,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0402,Cueibet,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0403,Rumbek Centre,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0404,Rumbek East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0405,Rumbek North,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0406,Wulu,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0407,Yirol East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS04,Lakes,SS0408,Yirol West,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS05,Northern Bahr el Ghazal,SS0501,Aweil Centre,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS05,Northern Bahr el Ghazal,SS0502,Aweil East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS05,Northern Bahr el Ghazal,SS0503,Aweil North,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS05,Northern Bahr el Ghazal,SS0504,Aweil South,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS05,Northern Bahr el Ghazal,SS0505,Aweil West,2,2026-11-13
+affected-people,humanitarian-needs,SSD,,,,,0,2026-11-13
+affected-people,humanitarian-needs,SSD,,,,,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0601,Abiemnhom,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0602,Guit,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0603,Koch,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0604,Leer,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0605,Mayendit,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0606,Mayom,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0607,Panyijiar,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0608,Pariang,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS06,Unity,SS0609,Rubkona,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0701,Baliet,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0702,Fashoda,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0703,Longochuk,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0704,Luakpiny/Nasir,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0705,Maban,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0706,Maiwut,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0707,Malakal,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0708,Manyo,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0709,Melut,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0710,Panyikang,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0711,Renk,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS07,Upper Nile,SS0712,Ulang,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS08,Warrap,SS0801,Gogrial East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS08,Warrap,SS0802,Gogrial West,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS08,Warrap,SS0803,Tonj East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS08,Warrap,SS0804,Tonj North,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS08,Warrap,SS0805,Tonj South,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS08,Warrap,SS0806,Twic,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS09,Western Bahr el Ghazal,SS0901,Jur River,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS09,Western Bahr el Ghazal,SS0902,Raja,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS09,Western Bahr el Ghazal,SS0903,Wau,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1001,Ezo,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1002,Ibba,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1003,Maridi,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1004,Mundri East,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1005,Mundri West,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1006,Mvolo,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1007,Nagero,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1008,Nzara,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1009,Tambura,2,2026-11-13
+affected-people,humanitarian-needs,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS01,Central Equatoria,SS0101,Juba,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS02,Eastern Equatoria,SS0201,Budi,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS02,Eastern Equatoria,SS0205,Kapoeta South,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS02,Eastern Equatoria,SS0208,Torit,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS03,Jonglei,SS0301,Akobo,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS03,Jonglei,SS0303,Bor South,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS03,Jonglei,SS0305,Duk,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS03,Jonglei,SS0306,Fangak,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS03,Jonglei,SS0308,Pibor,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS03,Jonglei,SS0310,Twic East,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS03,Jonglei,SS0311,Uror,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS04,Lakes,SS0401,Awerial,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS04,Lakes,SS0403,Rumbek Centre,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS05,Northern Bahr el Ghazal,SS0501,Aweil Centre,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS05,Northern Bahr el Ghazal,SS0502,Aweil East,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS05,Northern Bahr el Ghazal,SS0503,Aweil North,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS05,Northern Bahr el Ghazal,SS0504,Aweil South,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS05,Northern Bahr el Ghazal,SS0505,Aweil West,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS06,Unity,SS0601,Abiemnhom,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS06,Unity,SS0604,Leer,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS06,Unity,SS0606,Mayom,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS06,Unity,SS0608,Pariang,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS06,Unity,SS0609,Rubkona,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS07,Upper Nile,SS0702,Fashoda,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS07,Upper Nile,SS0705,Maban,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS07,Upper Nile,SS0707,Malakal,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS07,Upper Nile,SS0709,Melut,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS07,Upper Nile,SS0711,Renk,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS08,Warrap,SS0802,Gogrial West,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS08,Warrap,SS0804,Tonj North,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS08,Warrap,SS0805,Tonj South,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS08,Warrap,SS0806,Twic,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS09,Western Bahr el Ghazal,SS0903,Wau,2,2026-11-13
+food-security-nutrition-poverty,food-prices-market-monitor,SSD,SS10,Western Equatoria,SS1010,Yambio,2,2026-11-13

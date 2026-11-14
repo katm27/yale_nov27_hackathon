@@ -1,0 +1,62 @@
+[
+ {
+  "category": "human",
+  "group": "Health access",
+  "source": "WHO / MoH Master Facility List, April 2025 (HDX)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
+  "native_resolution": "point",
+  "temporal": "static",
+  "index_ok": false,
+  "aggregation": "count of listed facilities by county code",
+  "id": "health_facilities",
+  "label": "Health facilities (all levels)",
+  "units": "facilities",
+  "higher_is": "better",
+  "notes": "Snapshot list (2025) - static; includes hospitals, PHCCs, PHCUs. Functionality status not in list."
+ },
+ {
+  "category": "human",
+  "group": "Health access",
+  "source": "WHO / MoH Master Facility List, April 2025 (HDX)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
+  "native_resolution": "point",
+  "temporal": "static",
+  "index_ok": false,
+  "aggregation": "count of listed facilities by county code",
+  "id": "hospitals",
+  "label": "Hospitals",
+  "units": "facilities",
+  "higher_is": "better",
+  "notes": "Facilities with 'hospital' in name. Static snapshot (2025)."
+ },
+ {
+  "category": "human",
+  "group": "Health access",
+  "source": "WHO / MoH Master Facility List, April 2025 (HDX)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
+  "native_resolution": "point",
+  "temporal": "static",
+  "index_ok": false,
+  "aggregation": "count of listed facilities by county code",
+  "id": "health_facilities_per100k",
+  "label": "Health facilities per 100k people",
+  "units": "per 100k",
+  "higher_is": "better",
+  "notes": "Denominator WorldPop 2025 county population."
+ },
+ {
+  "category": "human",
+  "group": "Health access",
+  "source": "WHO / MoH Master Facility List, April 2025 (HDX)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
+  "native_resolution": "point",
+  "temporal": "static",
+  "index_ok": false,
+  "aggregation": "count of listed facilities by county code",
+  "id": "hospitals_per100k",
+  "label": "Hospitals per 100k people",
+  "units": "per 100k",
+  "higher_is": "better",
+  "notes": "Denominator WorldPop 2025 county population."
+ }
+]

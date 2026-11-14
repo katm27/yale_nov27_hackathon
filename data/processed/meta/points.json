@@ -1,0 +1,10 @@
+[
+ {
+  "key": "health",
+  "label": "Health facilities (hospital / PHCC / PHCU)",
+  "category": "human",
+  "source": "WHO / MoH Master Facility List, April 2025 (HDX)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
+  "notes": "Point per facility with type; functionality not reported. Some listed facilities lack coordinates (counted in county totals only)."
+ }
+]

@@ -1,0 +1,134 @@
+location_code,has_hrp,in_gho,provider_admin1_name,provider_admin2_name,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,org_acronym,org_name,org_type_description,sector_code,sector_name,reference_period_start,reference_period_end
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,AFSS,Andre Foods South Sudan,National NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,CSD,Community Skills Development,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,HISP,"Health Information Systems Program, South Sudan",National NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,MEDAIR,MEDAIR,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,SLI-SS,Save Lives Initiative South Sudan,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ezo,SS10,Western Equatoria,SS1001,Ezo,2,WVSS,World Vision South Sudan,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,ACTED,Agency for Technical Cooperation and Development,International NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,AMREF,Amref Health Africa,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,CAFOD and Trocaire,CAFOD and Trocaire in Partnership,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,IOM,International Organization for Migration,United Nations,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,NSDO,Nile Sustainable Development Organization,National NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,RDAA,Rural Development Action Aid,National NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,RDAA,Rural Development Action Aid,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,SLI-SS,Save Lives Initiative South Sudan,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,TRISS,The Rescue Initiative South Sudan,National NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Ibba,SS10,Western Equatoria,SS1002,Ibba,2,YEDA,Youth Empowerment and Development Aid,National NGO,SHL,Emergency Shelter and NFI,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,ACTED,Agency for Technical Cooperation and Development,International NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,AMREF,Amref Health Africa,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,FSDA,Foundation for Sustainable Development in Africa,National NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,IMA,Interchurch Medical Assistance World Health,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,IOM,International Organization for Migration,United Nations,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,NP,Nonviolent Peaceforce,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,SLI-SS,Save Lives Initiative South Sudan,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,STO,Star Trust Organization,National NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,UNDP,United Nation Development Programme,United Nations,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,WFP,World Food Programme,United Nations,LOG,Logistics,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Maridi,SS10,Western Equatoria,SS1003,Maridi,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,AFSS,Andre Foods South Sudan,National NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,EOWD,Eve Organization for Women Development,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,NSDO,Nile Sustainable Development Organization,National NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,SPEDP,Support for Peace and Education Development Programme,National NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,TRISS,The Rescue Initiative South Sudan,National NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri East,SS10,Western Equatoria,SS1004,Mundri East,2,YEDA,Youth Empowerment and Development Aid,National NGO,SHL,Emergency Shelter and NFI,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,AFSS,Andre Foods South Sudan,National NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,EOWD,Eve Organization for Women Development,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,NRC,Norwegian Refugee Council,International NGO,SHL,Emergency Shelter and NFI,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,NSDO,Nile Sustainable Development Organization,National NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,SEM,Sudan Evangelical Mission,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,SSRC,South Sudan Red Cross,National NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,TRISS,The Rescue Initiative South Sudan,National NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mundri West,SS10,Western Equatoria,SS1005,Mundri West,2,YEDA,Youth Empowerment and Development Aid,National NGO,SHL,Emergency Shelter and NFI,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mvolo,SS10,Western Equatoria,SS1006,Mvolo,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mvolo,SS10,Western Equatoria,SS1006,Mvolo,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mvolo,SS10,Western Equatoria,SS1006,Mvolo,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Mvolo,SS10,Western Equatoria,SS1006,Mvolo,2,SEM,Sudan Evangelical Mission,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nagero,SS10,Western Equatoria,SS1007,Nagero,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nagero,SS10,Western Equatoria,SS1007,Nagero,2,HISP,"Health Information Systems Program, South Sudan",National NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nagero,SS10,Western Equatoria,SS1007,Nagero,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nagero,SS10,Western Equatoria,SS1007,Nagero,2,RDAA,Rural Development Action Aid,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nagero,SS10,Western Equatoria,SS1007,Nagero,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nagero,SS10,Western Equatoria,SS1007,Nagero,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nagero,SS10,Western Equatoria,SS1007,Nagero,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,ACTED,Agency for Technical Cooperation and Development,International NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,AMREF,Amref Health Africa,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,CAFOD and Trocaire,CAFOD and Trocaire in Partnership,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,FS-SS,FARM STEW South Sudan,International NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,HISP,"Health Information Systems Program, South Sudan",National NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,IMA,Interchurch Medical Assistance World Health,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,IOM,International Organization for Migration,United Nations,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,JRS,Jesuit Refugee Service,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,SSRC,South Sudan Red Cross,National NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,WART,Women Agency for Resilience and Transformation,National NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Nzara,SS10,Western Equatoria,SS1008,Nzara,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,AFSS,Andre Foods South Sudan,National NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,CARD,Community Aid For Relief And Development,National NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,NRC,Norwegian Refugee Council,International NGO,SHL,Emergency Shelter and NFI,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,SLG,SafeLane Global,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,SLI-SS,Save Lives Initiative South Sudan,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,WFP,World Food Programme,United Nations,LOG,Logistics,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Tambura,SS10,Western Equatoria,SS1009,Tambura,2,WVSS,World Vision South Sudan,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,ACTED,Agency for Technical Cooperation and Development,International NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,AMREF,Amref Health Africa,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,CMMB,Catholic Medical Missons Board,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,CMMB,Catholic Medical Missons Board,International NGO,NUT,Nutrition,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,CSD,Community Skills Development,National NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,CSD,Community Skills Development,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,EOWD,Eve Organization for Women Development,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,FS-SS,FARM STEW South Sudan,International NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,IMA,Interchurch Medical Assistance World Health,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,IOM,International Organization for Migration,United Nations,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,JRS,Jesuit Refugee Service,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,LMI-SS,LM International,International NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,LMI-SS,LM International,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,LMI-SS,LM International,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,Light for the World,Light for the World,International NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,Light for the World,Light for the World,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,Light for the World,Light for the World,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,Light for the World,Light for the World,International NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,REACH Initiative,REACH Initiative,International NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,REDO,Road to Economic Development Organization,National NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,SLI-SS,Save Lives Initiative South Sudan,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,SSRC,South Sudan Red Cross,National NGO,WSH,Water Sanitation Hygiene,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,STO,Star Trust Organization,National NGO,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,UNICEF,United Nations Children's Fund,United Nations,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,WAOSS,Women's Aid Organization South Sudan,National NGO,PRO,Protection,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,WFP,World Food Programme,United Nations,LOG,Logistics,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,WTI,Windle Trust International,International NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,WVI,World Vision International,International NGO,EDU,Education,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,WVI,World Vision International,International NGO,HEA,Health,2026-01-01,2026-08-31
+SSD,True,True,Western Equatoria,Yambio,SS10,Western Equatoria,SS1010,Yambio,2,WVSS,World Vision South Sudan,International NGO,HEA,Health,2026-01-01,2026-08-31

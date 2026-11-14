@@ -1,0 +1,18 @@
+[
+  {
+    "id": "modis_et_mm",
+    "label": "Evapotranspiration, annual (MODIS)",
+    "category": "environment",
+    "group": "Water",
+    "units": "mm/year",
+    "source": "MODIS MOD16A3GF v061 (gap-filled annual) via Microsoft Planetary Computer",
+    "source_url": "https://planetarycomputer.microsoft.com/dataset/modis-16A3GF-061",
+    "native_resolution": "500 m (aggregated to ~1 km grid)",
+    "temporal": "annual",
+    "aggregation": "mean of valid cells in county",
+    "higher_is": "neutral",
+    "index_ok": true,
+    "notes": "Planetary Computer only hosts the annual MOD16A3GF (no 8-day MOD16A2), so ET is annual (date = YYYY-07-01). Open water, urban and barren pixels are fill in MOD16 and excluded (e.g. permanent Sudd open water).",
+    "raster": "modis_et"
+  }
+]

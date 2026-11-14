@@ -1,0 +1,84 @@
+Year,Country of Origin Code,Country of Asylum Code,Country of Origin Name,Country of Asylum Name,Procedure Type,Procedure Name,Application Type Code,Application Type,Application Data Type,Application Data,Application Average Persons Per Case,Number of Applications
+2011,BDI,SSD,Burundi,South Sudan,U,UNHCR,N,New,P,Persons,0,5
+2011,COD,SSD,Democratic Republic of the Congo,South Sudan,U,UNHCR,N,New,P,Persons,0,5
+2011,ETH,SSD,Ethiopia,South Sudan,U,UNHCR,N,New,P,Persons,0,206
+2011,SOM,SSD,Somalia,South Sudan,U,UNHCR,N,New,P,Persons,0,5
+2011,SDN,SSD,Sudan,South Sudan,U,UNHCR,N,New,P,Persons,0,11
+2012,CAF,SSD,Central African Republic,South Sudan,U,UNHCR,N,New,P,Persons,0,5
+2012,COD,SSD,Democratic Republic of the Congo,South Sudan,U,UNHCR,N,New,P,Persons,0,9
+2012,ERI,SSD,Eritrea,South Sudan,U,UNHCR,N,New,P,Persons,0,9
+2012,ETH,SSD,Ethiopia,South Sudan,U,UNHCR,N,New,P,Persons,0,10
+2013,CAF,SSD,Central African Republic,South Sudan,U,UNHCR,N,New,C,Cases,0,5
+2013,COG,SSD,Congo,South Sudan,U,UNHCR,N,New,C,Cases,0,8
+2013,COD,SSD,Democratic Republic of the Congo,South Sudan,U,UNHCR,N,New,C,Cases,0,5
+2013,ERI,SSD,Eritrea,South Sudan,U,UNHCR,N,New,C,Cases,0,5
+2013,ETH,SSD,Ethiopia,South Sudan,U,UNHCR,N,New,C,Cases,0,6
+2013,RWA,SSD,Rwanda,South Sudan,U,UNHCR,N,New,C,Cases,0,5
+2014,ERI,SSD,Eritrea,South Sudan,U,UNHCR,N,New,C,Cases,0,16
+2014,ETH,SSD,Ethiopia,South Sudan,U,UNHCR,N,New,C,Cases,0,70
+2014,SOM,SSD,Somalia,South Sudan,U,UNHCR,N,New,C,Cases,0,18
+2014,SDN,SSD,Sudan,South Sudan,U,UNHCR,N,New,C,Cases,0,15
+2015,BDI,SSD,Burundi,South Sudan,U,UNHCR,N,New,C,Cases,0,382
+2015,ERI,SSD,Eritrea,South Sudan,U,UNHCR,N,New,C,Cases,0,161
+2015,ETH,SSD,Ethiopia,South Sudan,U,UNHCR,N,New,C,Cases,0,103
+2015,SOM,SSD,Somalia,South Sudan,U,UNHCR,N,New,C,Cases,0,136
+2015,SDN,SSD,Sudan,South Sudan,U,UNHCR,N,New,C,Cases,0,9
+2016,BDI,SSD,Burundi,South Sudan,U,UNHCR,N,New,P,Persons,0,115
+2016,ERI,SSD,Eritrea,South Sudan,U,UNHCR,N,New,P,Persons,0,730
+2016,ETH,SSD,Ethiopia,South Sudan,U,UNHCR,N,New,P,Persons,0,157
+2016,SOM,SSD,Somalia,South Sudan,U,UNHCR,N,New,P,Persons,0,37
+2016,SDN,SSD,Sudan,South Sudan,U,UNHCR,N,New,P,Persons,0,16
+2017,BDI,SSD,Burundi,South Sudan,U,UNHCR,N,New,P,Persons,0,11
+2017,ERI,SSD,Eritrea,South Sudan,U,UNHCR,N,New,P,Persons,0,878
+2017,ETH,SSD,Ethiopia,South Sudan,U,UNHCR,N,New,P,Persons,0,121
+2017,SOM,SSD,Somalia,South Sudan,U,UNHCR,N,New,P,Persons,0,5
+2017,SDN,SSD,Sudan,South Sudan,U,UNHCR,N,New,P,Persons,0,5
+2018,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,18
+2018,COD,SSD,Democratic Republic of the Congo,South Sudan,G,Government,N,New,P,Persons,0,6
+2018,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,596
+2018,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,81
+2019,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,617
+2019,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,689
+2019,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,74
+2019,SDN,SSD,Sudan,South Sudan,G,Government,N,New,P,Persons,0,5
+2020,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,60
+2020,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,193
+2020,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,17
+2021,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,130
+2021,COD,SSD,Democratic Republic of the Congo,South Sudan,G,Government,N,New,P,Persons,0,12
+2021,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,239
+2021,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,450
+2021,SDN,SSD,Sudan,South Sudan,G,Government,N,New,P,Persons,0,5
+2022,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,124
+2022,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,341
+2022,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,172
+2023,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,801
+2023,COD,SSD,Democratic Republic of the Congo,South Sudan,G,Government,N,New,P,Persons,0,41
+2023,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,2491
+2023,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,1090
+2023,LBR,SSD,Liberia,South Sudan,G,Government,N,New,P,Persons,0,11
+2023,SOM,SSD,Somalia,South Sudan,G,Government,N,New,P,Persons,0,14
+2023,UGA,SSD,Uganda,South Sudan,G,Government,N,New,P,Persons,0,260
+2024,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,252
+2024,CAF,SSD,Central African Republic,South Sudan,G,Government,N,New,P,Persons,0,6
+2024,TCD,SSD,Chad,South Sudan,G,Government,N,New,P,Persons,0,5
+2024,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,608
+2024,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,544
+2024,KEN,SSD,Kenya,South Sudan,G,Government,N,New,P,Persons,0,5
+2024,NER,SSD,Niger,South Sudan,G,Government,N,New,P,Persons,0,5
+2024,PAK,SSD,Pakistan,South Sudan,G,Government,N,New,P,Persons,0,5
+2024,RWA,SSD,Rwanda,South Sudan,G,Government,N,New,P,Persons,0,57
+2024,SOM,SSD,Somalia,South Sudan,G,Government,N,New,P,Persons,0,12
+2024,SDN,SSD,Sudan,South Sudan,G,Government,N,New,P,Persons,0,27
+2024,UGA,SSD,Uganda,South Sudan,G,Government,N,New,P,Persons,0,361
+2025,BDI,SSD,Burundi,South Sudan,G,Government,N,New,P,Persons,0,287
+2025,COD,SSD,Democratic Republic of the Congo,South Sudan,G,Government,N,New,P,Persons,0,128
+2025,ERI,SSD,Eritrea,South Sudan,G,Government,N,New,P,Persons,0,2397
+2025,ETH,SSD,Ethiopia,South Sudan,G,Government,N,New,P,Persons,0,509
+2025,LBR,SSD,Liberia,South Sudan,G,Government,N,New,P,Persons,0,6
+2025,NER,SSD,Niger,South Sudan,G,Government,N,New,P,Persons,0,6
+2025,RWA,SSD,Rwanda,South Sudan,G,Government,N,New,P,Persons,0,33
+2025,SOM,SSD,Somalia,South Sudan,G,Government,N,New,P,Persons,0,124
+2025,SDN,SSD,Sudan,South Sudan,G,Government,N,New,P,Persons,0,5
+2025,UGA,SSD,Uganda,South Sudan,G,Government,N,New,P,Persons,0,459
+2025,YEM,SSD,Yemen,South Sudan,G,Government,N,New,P,Persons,0,5

@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 data/raw/**/_cache/
 .ipynb_checkpoints/
+data/raw/osm/*/

@@ -1,0 +1,18 @@
+[
+ {
+  "id": "pop_total",
+  "label": "Population (WorldPop)",
+  "category": "human",
+  "group": "Population",
+  "units": "people",
+  "source": "WorldPop Global2 R2025A constrained 1 km (UN-adjusted), 2015-2030 series",
+  "source_url": "https://hub.worldpop.org/project/categories?id=3",
+  "native_resolution": "1 km",
+  "temporal": "annual",
+  "aggregation": "sum of pixels within county",
+  "higher_is": "neutral",
+  "index_ok": true,
+  "raster": "population",
+  "notes": "Modelled estimates; 2018-2025 from the R2025A 2015-2030 projection product. Denominator for per-capita rates. Abyei summed from the Sudan (SDN) grid since the SSD grid excludes it. Does not capture conflict displacement dynamics well."
+ }
+]
