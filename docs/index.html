@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>South Sudan Trend Explorer</title>
+<meta name="description" content="County-level climate, environment and conflict trends in South Sudan, 2018–2025, indexed to 2018.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar" aria-label="Layers">
+    <header class="brand">
+      <h1>South Sudan Trend Explorer</h1>
+      <p class="sub">Climate, environment &amp; conflict by county · 2018–2025 · indexed to 2018 = 1.0</p>
+    </header>
+
+    <section class="panel">
+      <label class="field-label" for="mode">Show values as</label>
+      <select id="mode">
+        <option value="index_month">Index vs same month/season in 2018 (removes seasonality)</option>
+        <option value="index_annual">Index vs 2018 annual average (2018 = 1.0)</option>
+        <option value="raw">Raw values (original units)</option>
+      </select>
+      <label class="field-label" for="agg">Time step</label>
+      <select id="agg">
+        <option value="month">Monthly</option>
+        <option value="season">Seasonal (dry Dec–Mar · early rains Apr–Jun · main rains Jul–Sep · late Oct–Nov)</option>
+        <option value="year">Annual</option>
+      </select>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>County variables</h2>
+        <input id="filter" type="search" placeholder="Filter…" aria-label="Filter variables">
+      </div>
+      <p class="hint">Tick variables to compare them in the county panel. The <span class="dot"></span> button picks which one colours the map.</p>
+      <div id="var-list"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Fine-resolution rasters</h2>
+      <p class="hint">Native-resolution satellite grids for the selected month (raw units).</p>
+      <div id="raster-list"></div>
+      <label class="field-label" for="raster-opacity">Raster opacity</label>
+      <input id="raster-opacity" type="range" min="0" max="1" step="0.05" value="0.8">
+    </section>
+
+    <section class="panel">
+      <h2>Places &amp; infrastructure</h2>
+      <div id="point-list"></div>
+    </section>
+
+    <section class="panel small">
+      <a href="https://github.com/katm27/yale_nov27_hackathon" target="_blank" rel="noopener">Data &amp; methods on GitHub</a>
+    </section>
+  </aside>
+
+  <main id="main">
+    <div id="map" role="application" aria-label="Map of South Sudan counties"></div>
+
+    <div id="timebar">
+      <button id="play" aria-label="Play">▶</button>
+      <input id="time" type="range" min="0" max="95" value="0" aria-label="Month">
+      <output id="time-label">Jan 2018</output>
+    </div>
+
+    <div id="legend" class="card" hidden></div>
+
+    <section id="detail" class="card" hidden>
+      <button id="detail-close" aria-label="Close">×</button>
+      <h2 id="detail-title"></h2>
+      <p id="detail-sub" class="sub"></p>
+      <div id="detail-charts"></div>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
