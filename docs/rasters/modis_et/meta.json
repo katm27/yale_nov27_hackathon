@@ -12,8 +12,8 @@
       36.00099
     ]
   ],
-  "vmin": 200.0,
-  "vmax": 1400.0,
+  "vmin": 100.0,
+  "vmax": 1500.0,
   "colormap": "blues",
   "colors": [
     "#dfebf7",
@@ -43,8 +43,8 @@
   ],
   "source": "MODIS MOD16A3GF v061 (annual, gap-filled) via Microsoft Planetary Computer",
   "crs": "EPSG:3857",
-  "width": 1000,
-  "height": 751,
+  "width": 900,
+  "height": 676,
   "temporal": "annual",
   "notes": "Annual product: one image per year, file named YYYY-07.png."
 }

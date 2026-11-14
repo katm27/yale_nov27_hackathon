@@ -33,7 +33,7 @@ ET_CMAP = LinearSegmentedColormap.from_list("et", colormaps["Blues"](np.linspace
 
 LAYERS = [
     dict(key="modis_ndvi", var="modis_ndvi", label="NDVI (MODIS, monthly max)", units="NDVI",
-         vmin=0.1, vmax=0.85, cmap=NDVI_CMAP, cmap_name="brown-yellow-green",
+         vmin=0.1, vmax=0.9, cmap=NDVI_CMAP, cmap_name="brown-yellow-green",
          native="500 m MODIS, rendered from ~1 km (0.01°) grid",
          source="MODIS MOD13A1/MYD13A1 v061 via Microsoft Planetary Computer"),
     dict(key="modis_lst_day", var="modis_lst_day_c", label="Daytime land surface temperature (MODIS)",
@@ -41,7 +41,7 @@ LAYERS = [
          native="1 km MODIS (0.01° grid)",
          source="MODIS MOD11A2 v061 (Terra) via Microsoft Planetary Computer"),
     dict(key="modis_et", var="modis_et_mm", label="Annual evapotranspiration (MODIS)", units="mm/year",
-         vmin=200.0, vmax=1400.0, cmap=ET_CMAP, cmap_name="blues", temporal="annual",
+         vmin=100.0, vmax=1500.0, cmap=ET_CMAP, cmap_name="blues", temporal="annual",
          native="500 m MODIS, rendered from ~1 km (0.01°) grid",
          source="MODIS MOD16A3GF v061 (annual, gap-filled) via Microsoft Planetary Computer"),
 ]
@@ -49,7 +49,8 @@ LAYERS = [
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--width", type=int, default=1000)
+    ap.add_argument("--width", type=int, default=900)
+    ap.add_argument("--levels", type=int, default=48, help="number of colour steps")
     a = ap.parse_args()
 
     g = gpd.read_file(ROOT / "data" / "counties.geojson")
@@ -87,7 +88,9 @@ def main():
                       dst_transform=dtf, dst_crs="EPSG:3857", dst_nodata=np.nan,
                       resampling=Resampling.average)
             t = np.clip((dst - L["vmin"]) / (L["vmax"] - L["vmin"]), 0, 1)
-            idx = np.where(np.isfinite(dst), 1 + np.round(t * 253), 255).astype("uint8")
+            # quantise to a.levels discrete steps (keeps PNGs small), mapped onto the 254-entry ramp
+            q = np.minimum(np.floor(t * a.levels), a.levels - 1) / (a.levels - 1)
+            idx = np.where(np.isfinite(dst), 1 + np.round(q * 253), 255).astype("uint8")
             idx[~inside] = 0
             im = Image.fromarray(idx, mode="P")
             im.putpalette(pal.ravel().tolist())

@@ -13,7 +13,7 @@
     ]
   ],
   "vmin": 0.1,
-  "vmax": 0.85,
+  "vmax": 0.9,
   "colormap": "brown-yellow-green",
   "colors": [
     "#7f4a10",
@@ -60,10 +60,12 @@
     "2020-02",
     "2020-03",
     "2020-04",
-    "2020-05"
+    "2020-05",
+    "2020-06",
+    "2020-07"
   ],
   "source": "MODIS MOD13A1/MYD13A1 v061 via Microsoft Planetary Computer",
   "crs": "EPSG:3857",
-  "width": 1000,
-  "height": 751
+  "width": 900,
+  "height": 676
 }

@@ -198,7 +198,8 @@ class Overlay:
         self.dw, self.dh = int(np.ceil((x1 - x0) / scale)), int(np.ceil((y1 - y0) / scale))
         self.dst_t = Affine(scale, 0, x0, 0, -scale, y1)
         self.shape = (h, w)
-        self.outside = geometry_mask([c3857.union_all()], out_shape=(self.dh, self.dw), transform=self.dst_t)
+        self.outside = geometry_mask([c3857.union_all().buffer(1500)]  # buffer closes slivers between county polygons
+                                     , out_shape=(self.dh, self.dw), transform=self.dst_t)
         tr = Transformer.from_crs(3857, 4326, always_xy=True)
         lon0, lat0 = tr.transform(x0, y1 - scale * self.dh)
         lon1, lat1 = tr.transform(x0 + scale * self.dw, y1)
