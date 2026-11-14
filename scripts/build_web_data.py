@@ -169,6 +169,15 @@ def main() -> None:
         m.setdefault("higher_is", "neutral")
         m.setdefault("category", "other")
         m.setdefault("group", "Other")
+        # Sparse counts (e.g. conflict events, displacement): most baseline-year county-months are zero, so a
+        # ratio is undefined almost everywhere. Show the change from the baseline-year monthly average instead.
+        base_vals = arr[:, years == base_year]
+        base_vals = base_vals[np.isfinite(base_vals)]
+        if (temporal == "monthly" and base_vals.size and (finite >= 0).all()
+                and (base_vals == 0).mean() > 0.4 and not m.get("force_ratio")):
+            m["index_ok"] = False
+            m["baseline_mode"] = "annual"
+            m["sparse_count"] = True
         if m["min"] is not None and m["min"] < 0:
             m["index_ok"] = False  # ratio index is meaningless for values that cross zero
         variables.append(m)

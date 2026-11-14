@@ -522,7 +522,9 @@
    "p02": 0,
    "p98": 1.0,
    "min": 0,
-   "max": 1.0
+   "max": 1.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "tc_extreme_heat",
@@ -548,7 +550,9 @@
    "p02": 0,
    "p98": 1.0,
    "min": 0,
-   "max": 1.0
+   "max": 1.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "tc_extreme_wet",
@@ -574,7 +578,9 @@
    "p02": 0,
    "p98": 1.0,
    "min": 0,
-   "max": 1.0
+   "max": 1.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "tc_extreme_count",
@@ -600,7 +606,9 @@
    "p02": 0,
    "p98": 2.0,
    "min": 0,
-   "max": 2.0
+   "max": 2.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fire_count",
@@ -2247,7 +2255,7 @@
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "acled_civ_events",
    "label": "Civilian targeting events (ACLED)",
    "units": "events/month",
@@ -2268,12 +2276,14 @@
    "p02": 0,
    "p98": 6.0,
    "min": 0,
-   "max": 21.0
+   "max": 21.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "acled_civ_fatalities",
    "label": "Civilian targeting fatalities (ACLED)",
    "units": "deaths/month",
@@ -2294,12 +2304,14 @@
    "p02": 0,
    "p98": 12.0,
    "min": 0,
-   "max": 270.0
+   "max": 270.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "acled_demonstrations",
    "label": "Demonstrations (ACLED)",
    "units": "events/month",
@@ -2320,12 +2332,14 @@
    "p02": 0,
    "p98": 1.0,
    "min": 0,
-   "max": 6.0
+   "max": 6.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "acled_pv_events",
    "label": "Political violence events (ACLED)",
    "units": "events/month",
@@ -2346,12 +2360,14 @@
    "p02": 0,
    "p98": 9.0,
    "min": 0,
-   "max": 29.0
+   "max": 29.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "acled_pv_fatalities",
    "label": "Political violence fatalities (ACLED)",
    "units": "deaths/month",
@@ -2372,12 +2388,14 @@
    "p02": 0,
    "p98": 29.34,
    "min": 0,
-   "max": 301.0
+   "max": 301.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_civilian_deaths",
    "label": "UCDP civilian deaths",
    "units": "deaths/month",
@@ -2398,12 +2416,14 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 50.0
+   "max": 50.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_deaths_best",
    "label": "UCDP conflict deaths (best est.)",
    "units": "deaths/month",
@@ -2424,12 +2444,14 @@
    "p02": 0,
    "p98": 6.34,
    "min": 0,
-   "max": 335.0
+   "max": 335.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_events",
    "label": "UCDP conflict events",
    "units": "events/month",
@@ -2450,12 +2472,14 @@
    "p02": 0,
    "p98": 1.0,
    "min": 0,
-   "max": 9.0
+   "max": 9.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_non_state_deaths",
    "label": "UCDP non-state deaths",
    "units": "deaths/month",
@@ -2476,12 +2500,14 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 0
+   "max": 0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_non_state_events",
    "label": "UCDP non-state events",
    "units": "events/month",
@@ -2502,12 +2528,14 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 0
+   "max": 0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_one_sided_deaths",
    "label": "UCDP one-sided (vs civilians) deaths",
    "units": "deaths/month",
@@ -2528,12 +2556,14 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 0
+   "max": 0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_one_sided_events",
    "label": "UCDP one-sided (vs civilians) events",
    "units": "events/month",
@@ -2554,12 +2584,14 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 0
+   "max": 0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_state_based_deaths",
    "label": "UCDP state-based deaths",
    "units": "deaths/month",
@@ -2580,12 +2612,14 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 0
+   "max": 0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
    "temporal": "monthly",
-   "index_ok": true,
+   "index_ok": false,
    "id": "ucdp_state_based_events",
    "label": "UCDP state-based events",
    "units": "events/month",
@@ -2606,7 +2640,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 0
+   "max": 0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
@@ -2698,7 +2734,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2711,7 +2747,9 @@
    "p02": 0,
    "p98": 10.0,
    "min": 0,
-   "max": 58.0
+   "max": 58.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_events_food_need_assessed",
@@ -2725,7 +2763,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2738,7 +2776,9 @@
    "p02": 0,
    "p98": 10.0,
    "min": 0,
-   "max": 58.0
+   "max": 58.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_events_food_need_severe",
@@ -2752,7 +2792,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2765,7 +2805,9 @@
    "p02": 0,
    "p98": 6.0,
    "min": 0,
-   "max": 58.0
+   "max": 58.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_arrived_from_ethiopia",
@@ -2779,7 +2821,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2792,7 +2834,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 15030.0
+   "max": 15030.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_arrived_from_sudan",
@@ -2806,7 +2850,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2819,7 +2863,9 @@
    "p02": 0,
    "p98": 1388.0,
    "min": 0,
-   "max": 41560.0
+   "max": 41560.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_drought_fire_other_disaster",
@@ -2833,7 +2879,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2846,7 +2892,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 3750.0
+   "max": 3750.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_flooding",
@@ -2860,7 +2908,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2873,7 +2921,9 @@
    "p02": 0,
    "p98": 4058.0,
    "min": 0,
-   "max": 86720.0
+   "max": 86720.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_hardship_food_living",
@@ -2887,7 +2937,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2900,7 +2950,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 17640.0
+   "max": 17640.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_idps",
@@ -2914,7 +2966,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2927,7 +2979,9 @@
    "p02": 0,
    "p98": 9177.0,
    "min": 0,
-   "max": 86720.0
+   "max": 86720.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_local_communal_conflict",
@@ -2941,7 +2995,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2954,7 +3008,9 @@
    "p02": 0,
    "p98": 2778.0,
    "min": 0,
-   "max": 48650.0
+   "max": 48650.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_national_conflict",
@@ -2968,7 +3024,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -2981,7 +3037,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 52840.0
+   "max": 52840.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_other",
@@ -2995,7 +3053,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -3008,7 +3066,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 4109.0
+   "max": 4109.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_return_relocation",
@@ -3022,7 +3082,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "neutral",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -3035,7 +3095,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 22270.0
+   "max": 22270.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_returnees",
@@ -3049,7 +3111,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "neutral",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -3062,7 +3124,9 @@
    "p02": 0,
    "p98": 2076.0,
    "min": 0,
-   "max": 41560.0
+   "max": 41560.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_sudan_conflict",
@@ -3076,7 +3140,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -3089,7 +3153,9 @@
    "p02": 0,
    "p98": 1337.0,
    "min": 0,
-   "max": 38280.0
+   "max": 38280.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "et_ind_total",
@@ -3103,7 +3169,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "baseline_year_override": 2020,
    "meta_file": "unified.json",
@@ -3116,7 +3182,9 @@
    "p02": 0,
    "p98": 10670.0,
    "min": 0,
-   "max": 86720.0
+   "max": 86720.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_active_monitoring_points",
@@ -3182,7 +3250,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3194,7 +3262,9 @@
    "p02": 0,
    "p98": 229.5,
    "min": 0,
-   "max": 10480.0
+   "max": 10480.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_arrived_from_other_county_disaster",
@@ -3208,7 +3278,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3220,7 +3290,9 @@
    "p02": 0,
    "p98": 22.0,
    "min": 0,
-   "max": 2858.0
+   "max": 2858.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_arrived_from_other_county_food",
@@ -3234,7 +3306,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3246,7 +3318,9 @@
    "p02": 0,
    "p98": 19.0,
    "min": 0,
-   "max": 436.0
+   "max": 436.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_arrived_from_other_county_total",
@@ -3260,7 +3334,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3272,7 +3346,9 @@
    "p02": 0,
    "p98": 299.9,
    "min": 0,
-   "max": 10500.0
+   "max": 10500.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_conflict_share_all_movements",
@@ -3312,7 +3388,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3324,7 +3400,9 @@
    "p02": 0,
    "p98": 41.0,
    "min": 0,
-   "max": 16760.0
+   "max": 16760.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_departed_to_other_county_disaster",
@@ -3338,7 +3416,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3350,7 +3428,9 @@
    "p02": 0,
    "p98": 41.7,
    "min": 0,
-   "max": 1191.0
+   "max": 1191.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_departed_to_other_county_food",
@@ -3364,7 +3444,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3376,7 +3456,9 @@
    "p02": 0,
    "p98": 16.0,
    "min": 0,
-   "max": 428.0
+   "max": 428.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_departed_to_other_county_total",
@@ -3390,7 +3472,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3402,7 +3484,9 @@
    "p02": 0,
    "p98": 164.2,
    "min": 0,
-   "max": 16770.0
+   "max": 16770.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_internal_forced_conflict",
@@ -3520,7 +3604,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "neutral",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3532,7 +3616,9 @@
    "p02": 0,
    "p98": 2.0,
    "min": 0,
-   "max": 4.0
+   "max": 4.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_within_county_conflict",
@@ -3546,7 +3632,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3558,7 +3644,9 @@
    "p02": 0,
    "p98": 11.0,
    "min": 0,
-   "max": 2727.0
+   "max": 2727.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_within_county_disaster",
@@ -3572,7 +3660,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3584,7 +3672,9 @@
    "p02": 0,
    "p98": 3.0,
    "min": 0,
-   "max": 2464.0
+   "max": 2464.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_within_county_food",
@@ -3598,7 +3688,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3610,7 +3700,9 @@
    "p02": 0,
    "p98": 0,
    "min": 0,
-   "max": 2025.0
+   "max": 2025.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "id": "fmr_within_county_total",
@@ -3624,7 +3716,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "worse",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2020-01..2025-08; 1106 missing rows. Blank Nov 2023\u2013Dec 2024 (no public FMR data); counts depend on monitoring-point locations (mostly Renk from 2023).",
    "meta_file": "unified.json",
    "baseline_year": 2020,
@@ -3636,7 +3728,9 @@
    "p02": 0,
    "p98": 44.7,
    "min": 0,
-   "max": 2780.0
+   "max": 2780.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
@@ -4092,7 +4186,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "better",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2019-12..2026-09; 0 missing rows.",
    "meta_file": "unified.json",
    "baseline_year": 2019,
@@ -4104,7 +4198,9 @@
    "p02": 0,
    "p98": 2.0,
    "min": 0,
-   "max": 3.0
+   "max": 3.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",
@@ -4432,7 +4528,7 @@
    "temporal": "monthly",
    "aggregation": "as supplied in team unified dataset",
    "higher_is": "better",
-   "index_ok": true,
+   "index_ok": false,
    "notes": "Team unified dataset (built 14 Nov 2026). Data 2023-12..2026-09; 0 missing rows.",
    "meta_file": "unified.json",
    "baseline_year": 2023,
@@ -4444,7 +4540,9 @@
    "p02": 0,
    "p98": 1.0,
    "min": 0,
-   "max": 1.0
+   "max": 1.0,
+   "baseline_mode": "annual",
+   "sparse_count": true
   },
   {
    "category": "human",

@@ -15,6 +15,12 @@ LEAFLET_CSS = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.
 css = urllib.request.urlopen(LEAFLET_CSS).read().decode()
 with open(os.path.join(out, "style.css")) as fh:
     own = fh.read()
+# Leaflet's CSS references images (layer-control icon etc.); inline them as data URIs.
+import re
+for img in set(re.findall(r"url\((images/[^)]+)\)", css)):
+    data = urllib.request.urlopen("https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/" + img).read()
+    mime = "image/svg+xml" if img.endswith(".svg") else "image/png"
+    css = css.replace("url(%s)" % img, "url(data:%s;base64,%s)" % (mime, base64.b64encode(data).decode()))
 open(os.path.join(out, "style.css"), "w").write(css + "\n" + own)
 html = open(os.path.join(out, "index.html")).read()
 html = html.replace('<link rel="stylesheet" href="%s">\n' % LEAFLET_CSS, "")

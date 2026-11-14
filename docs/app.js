@@ -77,7 +77,7 @@
     if (state.mode === "raw" || v.temporal === "static") return raw;
     const by = v.baseline_year || 2018;
     let base;
-    if (state.mode === "index_month") base = mean(baselineWindowIdx(i, by).map((j) => arr[j]));
+    if (state.mode === "index_month" && v.baseline_mode !== "annual") base = mean(baselineWindowIdx(i, by).map((j) => arr[j]));
     else base = mean(state.months.map((_, j) => j).filter((j) => yearOf(j) === by).map((j) => arr[j]));
     if (base == null) return null;
     if (v.index_ok === false) return raw - base;
@@ -194,7 +194,8 @@
       const dir = v.higher_is === "neutral" ? "Purple = higher, orange = lower than baseline"
         : `Blue = better, red = worse than baseline (higher is ${v.higher_is})`;
       html += `<div class="note">${dir}${sc.kind === "diff" ? ` · change in ${v.units || "units"} (ratio not meaningful)` : ""}</div>`;
-      if (state.mode === "index_month") html += `<div class="note">Compared with the same ${state.agg === "month" ? "month" : state.agg === "season" ? "season" : "year"} in ${v.baseline_year}.</div>`;
+      if (v.sparse_count) html += `<div class="note">Sparse count: shown as change from the ${v.baseline_year} monthly average (most ${v.baseline_year} months were zero, so a ratio is undefined).</div>`;
+      else if (state.mode === "index_month") html += `<div class="note">Compared with the same ${state.agg === "month" ? "month" : state.agg === "season" ? "season" : "year"} in ${v.baseline_year}.</div>`;
     }
     if (v.baseline_year && v.baseline_year !== 2018 && isIndexMode()) html += `<div class="note">⚠ Source starts in ${v.baseline_year}; baseline = ${v.baseline_year}.</div>`;
     if (v.temporal && v.temporal !== "monthly") html += `<div class="note">Time step of source: ${v.temporal}${v.carry_forward_months ? ` (latest value carried forward up to ${v.carry_forward_months} months)` : ""}.</div>`;
