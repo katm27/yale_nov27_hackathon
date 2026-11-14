@@ -1,0 +1,50 @@
+[
+ {
+  "id": "s5p_aerosol_index",
+  "label": "UV aerosol index (dust/smoke)",
+  "units": "unitless",
+  "aggregation": "mean of pixels with qa_value>0.8",
+  "higher_is": "worse",
+  "index_ok": false,
+  "raster": "s5p_aerosol_index",
+  "notes": "Positive = absorbing aerosol (Saharan dust, biomass-burning smoke); can be negative. Monthly value = mean of all quality-filtered pixels in county from 4 (2018-04..2018-12: 6) evenly spaced sampled orbits (not all ~45 overpasses) - noisy, cloud-affected in wet season. Starts 2018-04/07 (S5P operational data begins mid-2018), so the 2018 baseline is partial.",
+  "category": "environment",
+  "group": "Air quality",
+  "source": "Copernicus Sentinel-5P TROPOMI L2 (OFFL/RPRO) via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/sentinel-5p-l2-netcdf",
+  "native_resolution": "5.5 x 3.5 km (7 x 3.5 km before Aug 2019)",
+  "temporal": "monthly"
+ },
+ {
+  "id": "s5p_no2",
+  "label": "Tropospheric NO2",
+  "units": "umol/m2",
+  "aggregation": "mean of pixels with qa_value>0.75",
+  "higher_is": "worse",
+  "index_ok": false,
+  "raster": "s5p_no2",
+  "notes": "Near detection limit away from towns/fires (county means can be <=0, so index_ok false); dry-season peaks from biomass burning. Monthly value = mean of all quality-filtered pixels in county from 4 (2018-04..2018-12: 6) evenly spaced sampled orbits (not all ~45 overpasses) - noisy, cloud-affected in wet season. Starts 2018-04/07 (S5P operational data begins mid-2018), so the 2018 baseline is partial.",
+  "category": "environment",
+  "group": "Air quality",
+  "source": "Copernicus Sentinel-5P TROPOMI L2 (OFFL/RPRO) via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/sentinel-5p-l2-netcdf",
+  "native_resolution": "5.5 x 3.5 km (7 x 3.5 km before Aug 2019)",
+  "temporal": "monthly"
+ },
+ {
+  "id": "s5p_co",
+  "label": "Carbon monoxide total column",
+  "units": "mmol/m2",
+  "aggregation": "mean of pixels with qa_value>0.5",
+  "higher_is": "worse",
+  "index_ok": true,
+  "raster": "s5p_co",
+  "notes": "Dominated by biomass burning in the dry season. Monthly value = mean of all quality-filtered pixels in county from 4 (2018-04..2018-12: 6) evenly spaced sampled orbits (not all ~45 overpasses) - noisy, cloud-affected in wet season. Starts 2018-04/07 (S5P operational data begins mid-2018), so the 2018 baseline is partial.",
+  "category": "environment",
+  "group": "Air quality",
+  "source": "Copernicus Sentinel-5P TROPOMI L2 (OFFL/RPRO) via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/sentinel-5p-l2-netcdf",
+  "native_resolution": "5.5 x 3.5 km (7 x 3.5 km before Aug 2019)",
+  "temporal": "monthly"
+ }
+]

@@ -119,8 +119,17 @@ def month_grid(product, month):
 
 
 RSCALE = {"s5p_aerosol_index": (-2.0, 2.0, "RdYlBu_r", "unitless (UV aerosol index)"),
-          "s5p_no2": (0.0, 40.0, "magma_r", "umol/m2 tropospheric NO2"),
-          "s5p_co": (25.0, 45.0, "YlOrBr", "mmol/m2 total CO")}
+          "s5p_no2": (0.0, 60.0, "magma_r", "umol/m2 tropospheric NO2"),
+          "s5p_co": (25.0, 55.0, "YlOrBr", "mmol/m2 total CO")}
+
+
+def fill_gaps(grid):
+    """Fill empty 0.05 deg cells (orbit sampling gaps) with the mean of their 3x3 neighbours (display only)."""
+    v = np.nan_to_num(grid); c = (~np.isnan(grid)).astype("float32")
+    vp = np.pad(v, 1); cp = np.pad(c, 1)
+    S = sum(vp[i:i + grid.shape[0], j:j + grid.shape[1]] for i in range(3) for j in range(3))
+    C = sum(cp[i:i + grid.shape[0], j:j + grid.shape[1]] for i in range(3) for j in range(3))
+    return np.where(np.isnan(grid) & (C > 0), S / np.maximum(C, 1), grid).astype("float32")
 
 
 def main():
@@ -140,7 +149,7 @@ def main():
             t0 = time.time()
             s, n, norb = month_grid(p, m)
             log.append((m, p, norb))
-            if norb == 0:
+            if norb < 2:  # e.g. 2018-04 (data start 30 Apr 2018): too few orbits for a monthly value
                 continue
             cs = np.bincount(lab, weights=s, minlength=len(ids) + 1)
             cn = np.bincount(lab, weights=n, minlength=len(ids) + 1)
@@ -149,7 +158,7 @@ def main():
                     rows.append((cid, m + "-01", cfg["vid"], round(cs[i] / cn[i], 4)))
             grid = np.where(n > 0, s / np.maximum(n, 1), np.nan).reshape(NY, NX).astype("float32")
             vmin, vmax, cmap, _ = RSCALE[cfg["vid"]]
-            img = canvas.add(canvas.new(), grid, GT, "EPSG:4326", Resampling.bilinear)
+            img = canvas.add(canvas.new(), fill_gaps(grid), GT, "EPSG:4326", Resampling.bilinear)
             canvas.save_png(img, hc.RASTERS / cfg["vid"] / f"{m}.png", vmin, vmax, cmap, nodata_rgba=(150, 150, 150, 90))
             dates[p].append(m)
             print(f"s5p {m} {p} orbits={norb} valid_px={int(n.sum())} {time.time()-t0:.0f}s", flush=True)
@@ -175,8 +184,8 @@ def main():
              aggregation="mean of pixels with qa_value>0.8", higher_is="worse", index_ok=False, raster="s5p_aerosol_index",
              notes="Positive = absorbing aerosol (Saharan dust, biomass-burning smoke); can be negative. " + samp, **common),
         dict(id="s5p_no2", label="Tropospheric NO2", units="umol/m2", aggregation="mean of pixels with qa_value>0.75",
-             higher_is="worse", index_ok=True, raster="s5p_no2",
-             notes="Near detection limit away from towns/fires; dry-season peaks from biomass burning. " + samp, **common),
+             higher_is="worse", index_ok=False, raster="s5p_no2",
+             notes="Near detection limit away from towns/fires (county means can be <=0, so index_ok false); dry-season peaks from biomass burning. " + samp, **common),
         dict(id="s5p_co", label="Carbon monoxide total column", units="mmol/m2", aggregation="mean of pixels with qa_value>0.5",
              higher_is="worse", index_ok=True, raster="s5p_co",
              notes="Dominated by biomass burning in the dry season. " + samp, **common),

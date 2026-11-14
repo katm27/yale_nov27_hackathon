@@ -116,6 +116,7 @@ def main():
     }
     for k, p in layers.items():
         a, tr, crs = read_bbox(p)
+        a = a.astype("float32")
         a = np.ma.masked_where(np.ma.getmaskarray(a) | (a.filled(-1) < 0), a)
         vals[k], _ = zonal_mean(a, tr, crs)
         print(k, "done", flush=True)
