@@ -201,7 +201,7 @@
     html += `<div class="note"><span class="nodata"></span> no data · Source: ${v.source || "–"}${v.native_resolution ? ` · ${v.native_resolution}` : ""}</div>`;
     const rs = [...state.rasterOn].map((k) => state.rasters.find((r) => r.key === k)).filter(Boolean);
     for (const r of rs) {
-      const cm = r.legend_colors || null;
+      const cm = r.colors || r.legend_colors || null;
       html += `<div class="title" style="margin-top:8px">Raster: ${r.label}</div>`;
       if (cm) html += `<div class="bar" style="background:linear-gradient(90deg,${cm.join(",")})"></div>`;
       html += `<div class="ticks"><span>${fmt(r.vmin)}</span><span>${r.units || ""} · ${r.colormap || ""}</span><span>${fmt(r.vmax)}</span></div>`;

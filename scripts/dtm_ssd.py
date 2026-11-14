@@ -157,7 +157,7 @@ def event_tracking(g):
     files = sorted(set(files))
     by_norm = {norm_name(n): p for n, p in zip(g.name, g.district_id)}
     by_norm.update({"kajokeji": "SS0102", "panyijar": "SS0607", "nasir": "SS0704", "pigi": "SS0304",
-                    "abyei": "SS0001", "longechuk": "SS0703", "mayendit": "SS0605"})
+                    "abyei": "SS0001", "abyeiarea": "SS0001", "longechuk": "SS0703", "mayendit": "SS0605"})
     frames = []
     for f in files:
         e = read_et(f)
@@ -165,6 +165,10 @@ def event_tracking(g):
             miss = e.county_id.isna() | ~e.county_id.isin(set(g.district_id))
             e.loc[miss, "county_id"] = e.loc[miss, "name"].map(lambda n: by_norm.get(norm_name(n)))
         e["file"] = f.name
+        # each annual file also carries a few late-reported events from the previous year that may duplicate
+        # the previous file (event ids differ between file formats) -> keep only rows dated in the file's year
+        fy = int(re.search(r"(20\d\d)", f.name.replace("20210208", "")).group(1))
+        e = e[e.date.dt.year == fy]
         frames.append(e)
     e = pd.concat(frames)
     e = e[e.ind > 0]
