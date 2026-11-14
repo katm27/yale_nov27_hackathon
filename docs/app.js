@@ -136,17 +136,33 @@
   L.control.layers(base, null, { position: "topright" }).addTo(map);
   map.createPane("rasters").style.zIndex = 350;
   map.createPane("counties").style.zIndex = 400;
+  map.createPane("flows").style.zIndex = 450;
   map.createPane("points").style.zIndex = 600;
   let countyLayer;
+
+  // ---------- trends (Mann-Kendall / Sen's slope, computed by scripts/trend_stats.py) ----------
+  const T_P = 0, T_Q = 1, T_SEN = 2, T_PCT = 3, T_TAU = 4, T_N = 5, T_SIG = 6, T_TEST = 7, T_TXT = 8;
+  const trendOf = (vid, cid) => (state.trends && state.trends[vid] && state.trends[vid][cid]) || null;
+  function trendHtml(v, cid, compact) {
+    const tr = trendOf(v.id, cid);
+    if (!tr) return v.temporal === "static" ? `<div class="trend muted">Static layer: no trend test.</div>` : `<div class="trend muted">No trend test (too few observations).</div>`;
+    const sigTxt = tr[T_SIG] ? `<span class="sig-badge">◆ Significant trend</span>` : `<span class="nosig-badge">No significant trend</span>`;
+    const slope = tr[T_SEN] == null ? "n/a" : `${tr[T_SEN] >= 0 ? "+" : ""}${fmt(tr[T_SEN])} ${v.units || ""}/yr`;
+    const pct = tr[T_PCT] == null ? "" : ` (${tr[T_PCT] >= 0 ? "+" : ""}${fmt(tr[T_PCT], 2)}%/yr)`;
+    const stats = `Sen's slope ${slope}${pct} · ${tr[T_TEST] === "S" ? "seasonal " : ""}Mann-Kendall p = ${fmt(tr[T_P], 2)}, FDR q = ${fmt(tr[T_Q], 2)}, n = ${tr[T_N]}`;
+    return `<div class="trend">${sigTxt}<div class="trend-txt">${tr[T_TXT]}</div>${compact ? "" : `<div class="trend-stats">${stats}</div>`}</div>`;
+  }
 
   function styleCounty(f) {
     const v = state.varById[state.colorBy];
     const selected = state.selected === f.properties.district_id;
-    const baseStyle = { color: selected ? "#0b0b0b" : "#898781", weight: selected ? 2.5 : 0.7, pane: "counties" };
+    const baseStyle = { color: selected ? "#0b0b0b" : "#898781", weight: selected ? 2.5 : 0.7, pane: "counties", dashArray: null };
     if (!v) return { ...baseStyle, fillOpacity: 0 };
     const x = valueAt(v, f.properties.district_id, state.t);
     const col = scaleFor(v).color(x);
     const rasterVisible = state.rasterOn.size > 0;
+    const tr = trendOf(v.id, f.properties.district_id);
+    if (tr && tr[T_SIG] && !selected) { baseStyle.color = "#ffffff"; baseStyle.weight = 2.6; }
     if (col == null) return { ...baseStyle, fillColor: "#898781", fillOpacity: rasterVisible ? 0 : 0.08, dashArray: "2 3" };
     return { ...baseStyle, fillColor: col, fillOpacity: rasterVisible ? 0.35 : 0.78 };
   }
@@ -156,7 +172,7 @@
     let line = "";
     if (v) {
       const x = valueAt(v, p.district_id, state.t);
-      line = `<br>${v.label}: <b>${describeValue(v, x)}</b>`;
+      line = `<br>${v.label}: <b>${describeValue(v, x)}</b>${trendHtml(v, p.district_id, true)}`;
     }
     return `<b>${p.name}</b> · ${p.admin1}${line}`;
   }
@@ -170,7 +186,11 @@
   function refreshCounties() {
     if (!countyLayer) return;
     countyLayer.setStyle(styleCounty);
-    countyLayer.eachLayer((l) => l.setTooltipContent(tooltipHtml(l.feature.properties)));
+    countyLayer.eachLayer((l) => {
+      l.setTooltipContent(tooltipHtml(l.feature.properties));
+      const tr = trendOf(state.colorBy, l.feature.properties.district_id);
+      if ((tr && tr[T_SIG]) || state.selected === l.feature.properties.district_id) l.bringToFront();  // keep outlines visible
+    });
   }
 
   // ---------- legend ----------
@@ -199,6 +219,10 @@
     }
     if (v.baseline_year && v.baseline_year !== 2018 && isIndexMode()) html += `<div class="note">⚠ Source starts in ${v.baseline_year}; baseline = ${v.baseline_year}.</div>`;
     if (v.temporal && v.temporal !== "monthly") html += `<div class="note">Time step of source: ${v.temporal}${v.carry_forward_months ? ` (latest value carried forward up to ${v.carry_forward_months} months)` : ""}.</div>`;
+    if (state.trends && state.trends[v.id]) {
+      const nSig = Object.values(state.trends[v.id]).filter((t) => t[T_SIG]).length;
+      html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall p &lt; 0.05): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
+    }
     html += `<div class="note"><span class="nodata"></span> no data · Source: ${v.source || "–"}${v.native_resolution ? ` · ${v.native_resolution}` : ""}</div>`;
     const rs = [...state.rasterOn].map((k) => state.rasters.find((r) => r.key === k)).filter(Boolean);
     for (const r of rs) {
@@ -386,7 +410,7 @@
       const block = document.createElement("div");
       block.className = "chart-block";
       block.innerHTML = `<h3>${v.label}${v.units && state.mode === "raw" ? ` (${v.units})` : ""}</h3>
-        <div class="now">${windowLabel(state.t)}: <b>${describeValue(v, vals[cur])}</b></div><canvas></canvas>`;
+        <div class="now">${windowLabel(state.t)}: <b>${describeValue(v, vals[cur])}</b></div>${trendHtml(v, state.selected, false)}<canvas></canvas>`;
       box.appendChild(block);
       const ref = state.mode === "raw" || v.temporal === "static" ? null : usesDiff(v) ? 0 : 1;
       const ratio = ref === 1;
@@ -426,12 +450,111 @@
     el.hidden = false;
   }
 
+
+  // ---------- migration flows (origin -> destination arrows) ----------
+  const REASON_STYLE = {
+    conflict: ["#e34948", "Conflict"], disaster: ["#2a78d6", "Flood / disaster"], food: ["#eda100", "Food / hardship"],
+    sudan_conflict: ["#6250d6", "Sudan war (cross-border)"], return_relocation: ["#1baf7a", "Return / relocation"],
+    other: ["#898781", "Other / unspecified"], unknown: ["#898781", "Unspecified"],
+  };
+  const SOURCE_SHORT = { et: "Event Tracking", fmr: "Flow Monitoring" };
+  state.flowOn = true; state.flowSources = null; state.flowReasons = null; state.flowLayer = null;
+  const flowRenderer = L.svg({ pane: "flows", padding: 0.5 });
+  let flowDefsReady = false;
+  function ensureArrowDefs() {
+    if (flowDefsReady || !flowRenderer._container) return;
+    const ns = "http://www.w3.org/2000/svg";
+    const defs = document.createElementNS(ns, "defs");
+    state.flows.reasons.forEach((r, i) => {
+      const m = document.createElementNS(ns, "marker");
+      m.setAttribute("id", `ah-${i}`); m.setAttribute("viewBox", "0 0 10 10"); m.setAttribute("refX", "7"); m.setAttribute("refY", "5");
+      m.setAttribute("markerWidth", "3.2"); m.setAttribute("markerHeight", "3.2"); m.setAttribute("orient", "auto-start-reverse");
+      m.setAttribute("markerUnits", "strokeWidth");
+      const path = document.createElementNS(ns, "path");
+      path.setAttribute("d", "M0,0 L10,5 L0,10 z"); path.setAttribute("fill", (REASON_STYLE[r] || REASON_STYLE.other)[0]);
+      m.appendChild(path); defs.appendChild(m);
+    });
+    flowRenderer._container.insertBefore(defs, flowRenderer._container.firstChild);
+    flowDefsReady = true;
+  }
+  function bezier(a, b, bendFrac) {
+    // quadratic curve in lon/lat space, bent to the right of travel so A->B and B->A don't overlap
+    const [y1, x1] = a, [y2, x2] = b, dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
+    const bend = Math.min(1.2, len * bendFrac);
+    const qx = (x1 + x2) / 2 + (bend * dy) / len, qy = (y1 + y2) / 2 - (bend * dx) / len;
+    const pts = [];
+    for (let k = 0; k <= 20; k++) { const t = k / 20, u = 1 - t; pts.push([u * u * y1 + 2 * u * t * qy + t * t * y2, u * u * x1 + 2 * u * t * qx + t * t * x2]); }
+    return pts;
+  }
+  function flowWindowMonths() { return windowIdx(state.t).map((j) => state.months[j]); }
+  function flowStatus() {
+    const F = state.flows; if (!F) return "";
+    const ms = flowWindowMonths();
+    return F.sources.filter((src) => !state.flowSources || state.flowSources.has(src.key)).map((src) => {
+      const have = ms.filter((m) => src.months.includes(m)).length;
+      const name = SOURCE_SHORT[src.key] || src.key;
+      if (have === ms.length) return `<span class="ok">✓ ${name}</span>`;
+      if (have > 0) return `<span class="part">◐ ${name}: ${have}/${ms.length} months</span>`;
+      const note = src.key === "fmr" ? (ms[0] >= "2023-11" && ms[0] <= "2024-12" ? " (IOM published no county data Nov 2023–Dec 2024)" : ms[0] < "2020-01" ? " (series starts Jan 2020)" : "") :
+                   src.key === "et" && ms[0] < "2020-01" ? " (series starts 2020)" : "";
+      return `<span class="none">✕ ${name}: no county flow data${note}</span>`;
+    }).join(" · ");
+  }
+  function drawFlows() {
+    if (state.flowLayer) { map.removeLayer(state.flowLayer); state.flowLayer = null; }
+    const F = state.flows;
+    const st = $("#flow-status"); if (st) st.innerHTML = F ? flowStatus() : "";
+    if (!F || !state.flowOn) return;
+    const ms = flowWindowMonths();
+    const agg = new Map();
+    for (const m of ms) for (const [si, a, b, r, n] of F.months[m] || []) {
+      const src = F.sources[si];
+      if (state.flowSources && !state.flowSources.has(src.key)) continue;
+      if (state.flowReasons && !state.flowReasons.has(F.reasons[r])) continue;
+      const k = `${si}|${a}|${b}|${r}`; agg.set(k, (agg.get(k) || 0) + n);
+    }
+    const list = [...agg.entries()].map(([k, n]) => { const [si, a, b, r] = k.split("|").map(Number); return { si, a, b, r, n }; })
+      .sort((x, y) => y.n - x.n).slice(0, 250);
+    state.flowLayer = L.layerGroup().addTo(map);
+    ensureArrowDefs();
+    for (const f of list) {
+      const src = F.sources[f.si], A = F.nodes[f.a], B = F.nodes[f.b], reason = F.reasons[f.r];
+      const [color, rlabel] = REASON_STYLE[reason] || REASON_STYLE.other;
+      const w = Math.max(1.3, Math.min(14, 11 * Math.sqrt(f.n / (src.max || 1))));
+      const line = L.polyline(bezier(A, B, 0.12 + 0.03 * f.r), {
+        renderer: flowRenderer, pane: "flows", color, weight: w, opacity: 0.82, lineCap: "round",
+        dashArray: src.key === "fmr" ? "6 5" : null,
+      }).bindTooltip(`<b>${A[2]} → ${B[2]}</b><br>${rlabel} · <b>${f.n.toLocaleString()}</b> people<br><span style="color:var(--muted)">${src.label} · ${windowLabel(state.t)}</span>`, { sticky: true });
+      line.addTo(state.flowLayer);
+      if (line._path) line._path.setAttribute("marker-end", `url(#ah-${f.r})`);
+    }
+  }
+  function renderFlowControls() {
+    const F = state.flows, el = $("#flow-controls"); if (!F || !el) return;
+    state.flowSources = new Set(F.sources.map((x) => x.key));
+    const used = new Set(); Object.values(F.months).forEach((rows) => rows.forEach((r) => used.add(F.reasons[r[3]])));
+    state.flowReasons = new Set(used);
+    let h = `<div class="var-row"><input type="checkbox" id="flow-on" checked><label for="flow-on"><b>Show migration arrows</b> <span class="meta">(width ∝ √people)</span></label></div>`;
+    h += `<div class="group-title">Source</div>`;
+    F.sources.forEach((x) => { h += `<div class="var-row"><input type="checkbox" class="flow-src" value="${x.key}" id="fs-${x.key}" checked>
+      <svg width="22" height="8" aria-hidden="true"><line x1="1" y1="4" x2="21" y2="4" stroke="var(--ink-2)" stroke-width="3" ${x.key === "fmr" ? 'stroke-dasharray="5 4"' : ""}/></svg>
+      <label for="fs-${x.key}">${SOURCE_SHORT[x.key] || x.key} <span class="meta">· ${x.months.length} months · ${x.label}</span></label></div>`; });
+    h += `<div class="group-title">Reason</div>`;
+    F.reasons.filter((r) => used.has(r)).forEach((r) => { const [c, lab] = REASON_STYLE[r] || REASON_STYLE.other;
+      h += `<div class="var-row"><input type="checkbox" class="flow-reason" value="${r}" id="fr-${r}" checked><span class="swatch" style="background:${c}"></span><label for="fr-${r}">${lab}</label></div>`; });
+    h += `<p class="hint" id="flow-status"></p>`;
+    el.innerHTML = h;
+    $("#flow-on").onchange = (e) => { state.flowOn = e.target.checked; drawFlows(); };
+    el.querySelectorAll(".flow-src").forEach((cb) => (cb.onchange = () => { cb.checked ? state.flowSources.add(cb.value) : state.flowSources.delete(cb.value); drawFlows(); }));
+    el.querySelectorAll(".flow-reason").forEach((cb) => (cb.onchange = () => { cb.checked ? state.flowReasons.add(cb.value) : state.flowReasons.delete(cb.value); drawFlows(); }));
+  }
+
   // ---------- time ----------
   function setTime(i) {
     state.t = i;
     $("#time").value = i;
     $("#time-label").textContent = windowLabel(i);
-    refreshCounties(); updateRasters(); refreshPoints();
+    refreshCounties(); updateRasters(); refreshPoints(); drawFlows();
     if (state.selected) renderDetail();
   }
   function togglePlay() {
@@ -456,6 +579,8 @@
     state.vars.forEach((v) => (state.varById[v.id] = v));
     state.rasters = layers.rasters || [];
     state.points = layers.points || [];
+    fetchJSON("data/trends.json").then((t) => { state.trends = t; refreshCounties(); renderLegend(); }).catch(() => {});
+    fetchJSON("data/flows.json").then((f) => { state.flows = f; renderFlowControls(); drawFlows(); }).catch((e) => console.warn("no flows", e));
     $("#time").max = state.months.length - 1;
 
     countyLayer = L.geoJSON(counties, {

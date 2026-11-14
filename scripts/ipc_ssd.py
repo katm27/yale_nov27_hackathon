@@ -186,3 +186,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from trend_stats import write_trends
+    write_trends("ipc")  # Mann-Kendall + Sen's slope (scripts/trend_stats.py)

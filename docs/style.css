@@ -79,3 +79,15 @@ a { color: var(--accent); }
   #detail { left: 16px; right: 16px; width: auto; top: auto; bottom: 80px; max-height: 55%; }
   #legend { max-width: 60%; }
 }
+
+/* trend statistics */
+.trend { margin-top: 4px; font-size: 12px; line-height: 1.35; max-width: 320px; white-space: normal; }
+.trend.muted, .trend-stats { color: var(--muted); }
+.trend-txt { color: var(--ink); }
+.sig-badge { display: inline-block; font-weight: 600; font-size: 11px; padding: 1px 6px; border-radius: 4px; background: #0b0b0b; color: #fff; outline: 2px solid #fff; margin: 2px 0; }
+.nosig-badge { display: inline-block; font-size: 11px; color: var(--ink-2); margin: 2px 0; }
+.sig-swatch { display: inline-block; width: 14px; height: 10px; border: 2.5px solid #fff; outline: 1px solid var(--muted); background: var(--line); vertical-align: -1px; }
+.leaflet-tooltip .trend { min-width: 240px; }
+/* flows */
+#flow-status .ok { color: #0ca30c; } #flow-status .part { color: #c98500; } #flow-status .none { color: #d03b3b; }
+#flow-status { margin-top: 6px; }

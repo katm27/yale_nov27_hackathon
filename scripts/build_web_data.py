@@ -90,6 +90,78 @@ def load_values(county_ids: list[str]) -> pd.DataFrame:
     return df.dropna(subset=["period"])
 
 
+# --------------------------------------------------------------------------- trends (Mann-Kendall / Sen)
+def build_trends(variables: list[dict], county_ids: list[str]) -> None:
+    """Merge data/processed/trends/*_trends.csv (written by scripts/trend_stats.py) into docs/data/trends.json.
+
+    Per variable and county: [p, q_fdr, sen_slope_per_year, sen_slope_pct_per_year, tau, n, significant, test, sentence]
+    National series (county_id "SS") are applied to every county.
+    """
+    frames = [pd.read_csv(f, dtype={"county_id": str}) for f in sorted(glob.glob(os.path.join(ROOT, "data", "processed", "trends", "*_trends.csv")))]
+    if not frames:
+        return
+    t = pd.concat(frames, ignore_index=True)
+    nat = t[t["county_id"].isin(NATIONAL_IDS)]
+    if len(nat):
+        t = pd.concat([t[~t["county_id"].isin(NATIONAL_IDS)]] + [nat.assign(county_id=c) for c in county_ids], ignore_index=True)
+    shown = {v["id"] for v in variables}
+    t = t[t["variable"].isin(shown) & t["test"].notna()]
+    out = {}
+    for var, g in t.groupby("variable"):
+        out[var] = {r.county_id: [sig(r.p, 3), sig(r.q_fdr, 3), sig(r.sen_slope_per_year), sig(r.sen_slope_pct_per_year, 3),
+                                  sig(r.tau, 3), int(r.n), int(bool(r.significant)),
+                                  "S" if str(r.test).startswith("seasonal") else "M", r.interpretation]
+                    for r in g.drop_duplicates("county_id", keep="last").itertuples()}
+    with open(os.path.join(OUT, "trends.json"), "w") as fh:
+        json.dump(out, fh, separators=(",", ":"))
+    n_sig = int(t["significant"].sum())
+    print(f"trends: {len(t)} county-variables for {len(out)} variables, {n_sig} significant (p<0.05)")
+
+
+# --------------------------------------------------------------------------- migration flows
+REASONS = ["conflict", "disaster", "food", "sudan_conflict", "return_relocation", "other", "unknown"]
+FOREIGN_NODES = {  # approximate entry corridors used as arrow origins for cross-border arrivals
+    "SDN": ("Sudan", 12.9, 32.9), "ETH": ("Ethiopia", 8.2, 34.9), "UGA": ("Uganda", 3.0, 32.0),
+    "KEN": ("Kenya", 4.0, 35.3), "CAF": ("Central African Rep.", 5.2, 25.0), "COD": ("DR Congo", 3.6, 29.6),
+}
+
+
+def build_flows(counties) -> None:
+    """Combine origin->destination flow tables into docs/data/flows.json for the arrow layer."""
+    fdir = os.path.join(ROOT, "data", "processed", "flows")
+    src_files = {
+        "et": ("IOM DTM Event Tracking (people displaced/returning, by origin county)", os.path.join(fdir, "et_flows.csv")),
+        "fmr": ("IOM DTM Flow Monitoring (internal forced travel observed at monitoring points)", os.path.join(fdir, "fmr_flows_county_to_county.csv")),
+    }
+    for f in sorted(glob.glob(os.path.join(fdir, "*_flows.csv"))):
+        key = os.path.basename(f)[:-10]
+        if key not in src_files:
+            src_files[key] = (key.replace("_", " "), f)
+    nodes = {r.district_id: [round(r.lat, 3), round(r.lon, 3), r.name] for r in counties.itertuples()}
+    nodes.update({k: [v[1], v[2], v[0]] for k, v in FOREIGN_NODES.items()})
+    node_ids = list(nodes)
+    nidx = {k: i for i, k in enumerate(node_ids)}
+    sources, months = [], {}
+    for key, (label, path) in src_files.items():
+        if not os.path.exists(path):
+            continue
+        d = pd.read_csv(path, dtype=str)
+        d["individuals"] = pd.to_numeric(d["individuals"], errors="coerce")
+        d = d[(d["from_pcode"] != d["to_pcode"]) & d["from_pcode"].isin(nidx) & d["to_pcode"].isin(nidx) & (d["individuals"] > 0)]
+        d = d[(d["month"] >= MONTH_STR[0]) & (d["month"] <= MONTH_STR[-1])]
+        d["reason"] = d["reason"].where(d["reason"].isin(REASONS), "other")
+        g = d.groupby(["month", "from_pcode", "to_pcode", "reason"])["individuals"].sum().reset_index()
+        si = len(sources)
+        sources.append({"key": key, "label": label, "months": sorted(g["month"].unique().tolist()),
+                        "max": float(g["individuals"].max()) if len(g) else 1})
+        for r in g.itertuples():
+            months.setdefault(r.month, []).append([si, nidx[r.from_pcode], nidx[r.to_pcode], REASONS.index(r.reason), int(round(r.individuals))])
+    with open(os.path.join(OUT, "flows.json"), "w") as fh:
+        json.dump({"nodes": [nodes[k] + [k] for k in node_ids], "reasons": REASONS, "sources": sources, "months": months},
+                  fh, separators=(",", ":"))
+    print("flows:", ", ".join(f"{s['key']} {len(s['months'])} months" for s in sources))
+
+
 def main() -> None:
     os.makedirs(os.path.join(OUT, "series"), exist_ok=True)
     counties = gpd.read_file(os.path.join(ROOT, "data", "counties.geojson"))
@@ -218,6 +290,8 @@ def main() -> None:
             rasters.append(r)
         except Exception as e:  # noqa: BLE001
             print("! bad raster meta", f, e)
+    build_trends(variables, county_ids)
+    build_flows(counties)
     with open(os.path.join(OUT, "layers.json"), "w") as fh:
         json.dump({"points": points, "rasters": rasters}, fh, indent=1)
 

@@ -91,3 +91,9 @@ pl.append({"key": "fmr_monitoring", "label": "IOM Flow Monitoring points", "cate
            "notes": "Where FMR counts travellers; FMR numbers depend on these locations"})
 json.dump(pl, open(pm, "w"), indent=1)
 print(len(out), "rows,", out["variable"].nunique(), "variables,", len(meta), "meta,", len(feats), "monitoring points")
+
+if __name__ == "__main__":
+    import sys as _sys, os as _os
+    _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
+    from trend_stats import write_trends
+    write_trends("unified")  # Mann-Kendall + Sen's slope (scripts/trend_stats.py)
