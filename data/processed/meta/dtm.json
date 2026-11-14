@@ -42,7 +42,8 @@
   "native_resolution": "county (event location)",
   "group": "Displacement",
   "aggregation": "sum of individuals over Event Tracking records, by month of event start",
-  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war."
+  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war. Hidden in app: superseded by the harmonised et_* series in the team unified dataset (identical totals).",
+  "hidden": true
  },
  {
   "category": "human",
@@ -57,7 +58,8 @@
   "native_resolution": "county (event location)",
   "group": "Displacement",
   "aggregation": "sum of individuals over Event Tracking records, by month of event start",
-  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war."
+  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war. Hidden in app: superseded by the harmonised et_* series in the team unified dataset (identical totals).",
+  "hidden": true
  },
  {
   "category": "human",
@@ -72,7 +74,8 @@
   "native_resolution": "county (event location)",
   "group": "Displacement",
   "aggregation": "sum of individuals over Event Tracking records, by month of event start",
-  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war."
+  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war. Hidden in app: superseded by the harmonised et_* series in the team unified dataset (identical totals).",
+  "hidden": true
  },
  {
   "category": "human",
@@ -87,7 +90,8 @@
   "native_resolution": "county (event location)",
   "group": "Displacement",
   "aggregation": "sum of individuals over Event Tracking records, by month of event start",
-  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war."
+  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war. Hidden in app: superseded by the harmonised et_* series in the team unified dataset (identical totals).",
+  "hidden": true
  },
  {
   "category": "human",
@@ -102,6 +106,7 @@
   "native_resolution": "county (event location)",
   "group": "Displacement",
   "aggregation": "count of distinct Event Tracking records",
-  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war."
+  "notes": "Flash-displacement monitoring of sudden events; not exhaustive -- zeros (Jan 2020+) mean no event tracked. No 2018-2019 data published. 2024-25 includes arrivals fleeing Sudan war. Hidden in app: superseded by the harmonised et_* series in the team unified dataset (identical totals).",
+  "hidden": true
  }
 ]

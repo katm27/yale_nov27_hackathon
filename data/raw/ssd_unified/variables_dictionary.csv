@@ -1,0 +1,56 @@
+variable,spatial_level,unit,source,period_type,first_month_with_data,last_month_with_data,rows,rows_missing
+et_events,county,events,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_events_food_need_assessed,county,events,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_events_food_need_severe,county,events,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_arrived_from_ethiopia,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_arrived_from_sudan,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_drought_fire_other_disaster,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_flooding,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_hardship_food_living,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_idps,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_local_communal_conflict,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_national_conflict,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_other,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_return_relocation,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_returnees,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_sudan_conflict,county,people,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+et_ind_total,county,people-movements,IOM DTM South Sudan Event Tracking (harmonised 2020-2026 files),month,2019-12,2026-09,6478,0
+fmr_active_monitoring_points,national,monitoring points,IOM DTM South Sudan Flow Monitoring Registry,month,2020-01,2025-08,105,51
+fmr_all_movements_observed,national,people observed (all directions),IOM DTM South Sudan Flow Monitoring Registry,month,2022-11,2025-08,105,78
+fmr_arrived_from_other_county_conflict,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_arrived_from_other_county_disaster,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_arrived_from_other_county_food,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_arrived_from_other_county_total,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_conflict_share_all_movements,national,share,IOM DTM South Sudan Flow Monitoring Registry,month,2022-11,2025-08,105,78
+fmr_departed_to_other_county_conflict,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_departed_to_other_county_disaster,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_departed_to_other_county_food,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_departed_to_other_county_total,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_internal_forced_conflict,national,people observed,IOM DTM South Sudan Flow Monitoring Registry,month,2020-01,2025-08,105,51
+fmr_internal_forced_disaster,national,people observed,IOM DTM South Sudan Flow Monitoring Registry,month,2020-01,2025-08,105,51
+fmr_internal_forced_food,national,people observed,IOM DTM South Sudan Flow Monitoring Registry,month,2020-01,2025-08,105,51
+fmr_internal_forced_total,national,people observed,IOM DTM South Sudan Flow Monitoring Registry,month,2020-01,2025-08,105,51
+fmr_monitoring_points_in_county,county,monitoring points,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_within_county_conflict,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_within_county_disaster,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_within_county_food,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fmr_within_county_total,county,people observed,"IOM DTM South Sudan Flow Monitoring Registry (internal, forced, non-return; supplied extract + HDX Nov22-Oct23 workbook)",month,2020-01,2025-08,5372,1106
+fts_hum_funding_month_usd,national,USD (by funding decision month),"OCHA FTS flows (incoming, paid/committed, South Sudan only, de-duplicated)",month,2018-01,2026-09,105,0
+fts_hum_funding_year_usd,national,"USD (calendar year, repeated each month)",OCHA Financial Tracking Service API,calendar_year,2018-01,2026-09,105,0
+fts_us_gov_funding_month_usd,national,USD (by funding decision month),"OCHA FTS flows (incoming, paid/committed, South Sudan only, de-duplicated)",month,2018-01,2026-09,105,0
+fts_us_gov_funding_year_usd,national,"USD (calendar year, repeated each month)",OCHA Financial Tracking Service API,calendar_year,2018-01,2026-09,105,0
+fts_us_share_year,national,share,OCHA Financial Tracking Service API,calendar_year,2018-01,2026-09,105,0
+hrp_coverage_year,national,share,OCHA Financial Tracking Service API,calendar_year,2018-01,2026-09,105,0
+hrp_funding_year_usd,national,USD (calendar year),OCHA Financial Tracking Service API,calendar_year,2018-01,2026-09,105,0
+hrp_requirement_year_usd,national,USD (calendar year),OCHA Financial Tracking Service API,calendar_year,2018-01,2026-09,105,0
+logcluster_hubs_in_county,county,hubs,Logistics Cluster South Sudan CONOPS maps (user hackathon zip),month,2019-12,2026-09,6478,0
+population_estimate,county,people,OCHA COD-PS South Sudan 2022 v2,annual,,,158,1
+state_dept_disbursed_month_usd,national,USD (transaction month),ForeignAssistance.gov complete transaction file (South Sudan),month,2018-01,2026-06,105,3
+unmiss_budget_fy_usd,national,"USD (UN fiscal year Jul-Jun, value repeated each month)","UN peacekeeping budgets/expenditure (HDX dpo-pkbudget, dpo-pkexp; A/RES/79/309; A/80/621)",un_fiscal_year,2018-01,2026-09,105,0
+unmiss_deployment_sites_in_county,county,sites,"UN Geospatial map 4456 (UNMISS deployment), Rev. 58-65 (user hackathon zip); news reports for closures",month,2023-12,2026-09,2686,0
+unmiss_expenditure_fy_usd,national,"USD (UN fiscal year Jul-Jun, value repeated each month)","UN peacekeeping budgets/expenditure (HDX dpo-pkbudget, dpo-pkexp; A/RES/79/309; A/80/621)",un_fiscal_year,2018-01,2025-06,105,15
+unmiss_uniformed_personnel,national,personnel,UN DPO uniformed personnel by mission (HDX dpo-uchistorical),month,2018-01,2026-07,105,2
+us_aid_disbursed_month_usd,national,USD (transaction month),ForeignAssistance.gov complete transaction file (South Sudan),month,2018-01,2026-06,105,3
+us_aid_obligated_month_usd,national,USD (transaction month),ForeignAssistance.gov complete transaction file (South Sudan),month,2018-01,2026-06,105,3
+usaid_disbursed_month_usd,national,USD (transaction month),ForeignAssistance.gov complete transaction file (South Sudan),month,2018-01,2026-06,105,3
+usaid_obligated_month_usd,national,USD (transaction month),ForeignAssistance.gov complete transaction file (South Sudan),month,2018-01,2026-06,105,3

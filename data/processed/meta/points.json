@@ -62,5 +62,13 @@
   "source": "WFP VAM market monitoring (HDX)",
   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
   "notes": "Markets with retail price monitoring; first_price/last_price = months with data 2018-2025."
+ },
+ {
+  "key": "fmr_monitoring",
+  "label": "IOM Flow Monitoring points",
+  "category": "human",
+  "source": "IOM DTM South Sudan Flow Monitoring Registry (team unified dataset)",
+  "source_url": "data/raw/ssd_unified/README.md",
+  "notes": "Where FMR counts travellers; FMR numbers depend on these locations"
  }
 ]

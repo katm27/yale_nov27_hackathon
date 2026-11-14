@@ -113,6 +113,8 @@ def main() -> None:
 
     variables = []
     for var, g in df.groupby("variable"):
+        if meta.get(var, {}).get("hidden"):
+            continue  # superseded by another source; kept in data/processed for provenance
         m = dict(meta.get(var, {"id": var, "label": var, "category": "other"}))
         m["id"] = var
         if var not in meta:
@@ -143,6 +145,8 @@ def main() -> None:
         if temporal != "static" and np.isnan(arr[:, years == 2018]).all():
             have = [y for y in range(2018, 2026) if not np.isnan(arr[:, years == y]).all()]
             base_year = have[0] if have else 2018
+        if m.get("baseline_year_override"):
+            base_year = int(m["baseline_year_override"])
 
         series = {cid: [sig(v) for v in row] for cid, row in zip(county_ids, arr)}
         with open(os.path.join(OUT, "series", f"{var}.json"), "w") as fh:

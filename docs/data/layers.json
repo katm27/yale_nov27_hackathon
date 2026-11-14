@@ -19,6 +19,15 @@
    "file": "data/points_crisis_sites.geojson"
   },
   {
+   "key": "points_fmr_monitoring",
+   "label": "IOM Flow Monitoring points",
+   "category": "human",
+   "source": "IOM DTM South Sudan Flow Monitoring Registry (team unified dataset)",
+   "source_url": "data/raw/ssd_unified/README.md",
+   "notes": "Where FMR counts travellers; FMR numbers depend on these locations",
+   "file": "data/points_fmr_monitoring.geojson"
+  },
+  {
    "key": "points_health",
    "label": "Health facilities (hospital / PHCC / PHCU)",
    "category": "human",
