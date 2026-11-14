@@ -1,0 +1,80 @@
+county_id,dominant_group,dominant_share,groups,area_share_covered
+SS0001,,,,
+SS0101,Bari,0.909,Bari,0.909
+SS0102,Bari,0.992,Bari,0.992
+SS0103,Bari,0.807,Bari; Azande,0.876
+SS0104,Bari,0.646,Bari,0.646
+SS0105,Bari,0.811,Bari; Mundari; Murle; Dinka,1.708
+SS0106,Bari,0.314,Bari,0.314
+SS0201,Didinga,0.898,Didinga,0.898
+SS0202,Didinga,0.097,Didinga,0.097
+SS0203,Toposa,0.623,Toposa,0.623
+SS0204,Toposa,0.764,Toposa; Didinga,0.793
+SS0205,Didinga,0.539,Didinga; Toposa,1.0
+SS0206,Murle,0.348,Murle; Bari; Dinka; Toposa,0.9
+SS0207,Bari,0.109,Bari,0.109
+SS0208,Bari,0.037,Bari,0.037
+SS0301,Nuer,0.812,Nuer; Murle,0.931
+SS0302,Nuer,0.995,Nuer,0.995
+SS0303,Dinka,0.757,Dinka; Murle; Bari,1.192
+SS0304,Dinka,0.868,Dinka; Nuer,1.0
+SS0305,Nuer,0.749,Nuer; Dinka,1.0
+SS0306,Nuer,0.783,Nuer; Dinka,0.999
+SS0307,Nuer,0.709,Nuer; Dinka,1.0
+SS0308,Murle,0.683,Murle; Dinka,0.833
+SS0309,Anyuak,0.449,Anyuak; Murle,0.646
+SS0310,Dinka,0.876,Dinka; Nuer,1.0
+SS0311,Nuer,0.741,Nuer; Dinka; Murle,1.025
+SS0401,Dinka,0.532,Dinka; Bari,0.998
+SS0402,Dinka,0.966,Dinka,0.966
+SS0403,Dinka,0.808,Dinka,0.808
+SS0404,Dinka,0.528,Dinka,0.528
+SS0405,Dinka,0.991,Dinka,0.991
+SS0406,Azande,0.794,Azande,0.794
+SS0407,Dinka,0.74,Dinka; Nuer,1.0
+SS0408,Nuer,0.49,Nuer; Dinka,0.845
+SS0501,Dinka,0.031,Dinka,0.031
+SS0502,Dinka,0.919,Dinka,0.919
+SS0503,Dinka,0.063,Dinka,0.063
+SS0504,Dinka,0.822,Dinka,0.822
+SS0505,,,,
+SS0601,Dinka,0.808,Dinka,0.808
+SS0602,Dinka,0.52,Dinka; Nuer,1.0
+SS0603,Nuer,0.769,Nuer; Dinka,1.0
+SS0604,Nuer,1.0,Nuer,1.0
+SS0605,Nuer,0.917,Nuer; Dinka,1.0
+SS0606,Dinka,1.0,Dinka,1.0
+SS0607,Nuer,0.55,Nuer; Dinka,1.0
+SS0608,Dinka,0.689,Dinka,0.689
+SS0609,Dinka,0.997,Dinka,0.997
+SS0701,Dinka,0.511,Dinka; Nuer; Shilluk,0.823
+SS0702,Shilluk,0.932,Shilluk,0.932
+SS0703,Nuer,0.277,Nuer,0.277
+SS0704,Nuer,0.995,Nuer,0.995
+SS0705,,,,
+SS0706,Nuer,0.239,Nuer,0.239
+SS0707,Shilluk,0.8,Shilluk; Dinka,0.942
+SS0708,Dinka,0.353,Dinka; Shilluk,0.635
+SS0709,Dinka,0.708,Dinka; Shilluk,0.853
+SS0710,Dinka,0.489,Dinka; Shilluk,0.931
+SS0711,Dinka,0.509,Dinka,0.509
+SS0712,Nuer,0.984,Nuer,0.984
+SS0801,Dinka,1.0,Dinka,1.0
+SS0802,Dinka,0.979,Dinka,0.979
+SS0803,Dinka,0.949,Dinka,0.949
+SS0804,Dinka,0.843,Dinka,0.843
+SS0805,Dinka,0.091,Dinka,0.091
+SS0806,Dinka,0.929,Dinka,0.929
+SS0901,Dinka,0.06,Dinka,0.06
+SS0902,,,,
+SS0903,,,,
+SS1001,Azande,0.789,Azande,0.789
+SS1002,Azande,0.905,Azande,0.905
+SS1003,Azande,0.065,Azande,0.065
+SS1004,Bari,0.414,Bari,0.414
+SS1005,Bari,0.039,Bari; Azande,0.076
+SS1006,Azande,0.021,Azande,0.021
+SS1007,,,,
+SS1008,Azande,0.862,Azande,0.862
+SS1009,Azande,0.419,Azande,0.419
+SS1010,Azande,0.958,Azande,0.958

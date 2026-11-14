@@ -1,0 +1,62 @@
+[
+ {
+  "category": "human",
+  "group": "Public health",
+  "source": "WHO/UNICEF administrative immunization data, 2018 (HDX)",
+  "source_url": "https://data.humdata.org/dataset/world-sub-national-immunization-coverage",
+  "native_resolution": "county",
+  "temporal": "annual",
+  "index_ok": false,
+  "higher_is": "better",
+  "aggregation": "doses administered / target population x 100 (county)",
+  "id": "vacc_penta3_cov",
+  "label": "Penta3 / DTP3 coverage (admin, 2018)",
+  "units": "%",
+  "notes": "HepB3 dose of pentavalent (DTP-HepB-Hib) used as DTP3 proxy. ONLY 2018 available at county level (single year). Administrative coverage: unreliable denominators, values >100% common (cross-county/border service use); near-0 values often indicate non-reporting. No open county-level infant/under-5 mortality for South Sudan (no DHS/MICS since 2010; IHME rasters need login)."
+ },
+ {
+  "category": "human",
+  "group": "Public health",
+  "source": "WHO/UNICEF administrative immunization data, 2018 (HDX)",
+  "source_url": "https://data.humdata.org/dataset/world-sub-national-immunization-coverage",
+  "native_resolution": "county",
+  "temporal": "annual",
+  "index_ok": false,
+  "higher_is": "better",
+  "aggregation": "doses administered / target population x 100 (county)",
+  "id": "vacc_mcv1_cov",
+  "label": "Measles (MCV1) coverage (admin, 2018)",
+  "units": "%",
+  "notes": "ONLY 2018 available at county level (single year). Administrative coverage: unreliable denominators, values >100% common (cross-county/border service use); near-0 values often indicate non-reporting. No open county-level infant/under-5 mortality for South Sudan (no DHS/MICS since 2010; IHME rasters need login)."
+ },
+ {
+  "category": "human",
+  "group": "Public health",
+  "source": "UN IGME via UNICEF SDMX",
+  "source_url": "https://childmortality.org/",
+  "native_resolution": "national",
+  "temporal": "annual",
+  "index_ok": false,
+  "higher_is": "worse",
+  "aggregation": "national estimate (county_id SS, file public_health_national.csv)",
+  "id": "u5mr_national",
+  "label": "Under-5 mortality (national)",
+  "units": "deaths per 1,000 live births",
+  "notes": "NATIONAL ONLY; modelled with very wide uncertainty bounds (no survey since 2010)."
+ },
+ {
+  "category": "human",
+  "group": "Public health",
+  "source": "UN IGME via UNICEF SDMX",
+  "source_url": "https://childmortality.org/",
+  "native_resolution": "national",
+  "temporal": "annual",
+  "index_ok": false,
+  "higher_is": "worse",
+  "aggregation": "national estimate (county_id SS, file public_health_national.csv)",
+  "id": "imr_national",
+  "label": "Infant mortality (national)",
+  "units": "deaths per 1,000 live births",
+  "notes": "NATIONAL ONLY; modelled with very wide uncertainty bounds."
+ }
+]

@@ -1,2 +1,0 @@
-location_code,has_hrp,in_gho,risk_class,global_rank,overall_risk,hazard_exposure_risk,vulnerability_risk,coping_capacity_risk,meta_missing_indicators_pct,meta_avg_recentness_years,reference_period_start,reference_period_end
-SSD,True,True,5,1,8.5,7.3,9.1,9.3,0.1568627450980392,0.58,2025-01-01,2025-12-31

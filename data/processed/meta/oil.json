@@ -1,0 +1,47 @@
+[
+ {
+  "category": "human",
+  "group": "Oil economy",
+  "temporal": "static",
+  "higher_is": "neutral",
+  "index_ok": false,
+  "native_resolution": "point / line",
+  "id": "oil_fields_count",
+  "label": "Oil fields (GEM)",
+  "units": "fields",
+  "source": "Global Energy Monitor GOGET, Mar 2026 (CC-BY 4.0)",
+  "source_url": "https://globalenergymonitor.org/projects/global-oil-gas-extraction-tracker/",
+  "aggregation": "count of GEM extraction-area points in county",
+  "notes": "Only 5 SSD fields in GEM (Unity, Toma South, Qamari, Tharjath, Palogue): coarse. Block-level fields (Munga, Mala, Adar Yale, Moleeta etc.) are not separately listed. Heglig/Panthou is on the Sudan side."
+ },
+ {
+  "category": "human",
+  "group": "Oil economy",
+  "temporal": "static",
+  "higher_is": "neutral",
+  "index_ok": false,
+  "native_resolution": "point / line",
+  "id": "oil_wells_osm",
+  "label": "Mapped oil wells (OSM)",
+  "units": "wells",
+  "source": "OpenStreetMap (HOT/HDX)",
+  "source_url": "https://data.humdata.org/dataset/hotosm_ssd_points_of_interest",
+  "aggregation": "count of man_made=petroleum_well/oil_well",
+  "notes": "Volunteer mapping - only Rubkona/Guit mapped; absence != no wells."
+ },
+ {
+  "category": "human",
+  "group": "Oil economy",
+  "temporal": "static",
+  "higher_is": "neutral",
+  "index_ok": false,
+  "native_resolution": "point / line",
+  "id": "oil_pipeline_km",
+  "label": "Mapped pipelines (km)",
+  "units": "km",
+  "source": "GEM GOIT (operating) + OpenStreetMap via Overture Maps 2026-10-21.0",
+  "source_url": "https://overturemaps.org/",
+  "aggregation": "length of man_made=pipeline lines within county",
+  "notes": "Operating GEM trunk lines (Greater Nile) + OSM pipelines (Petrodar, flowlines) merged; overlaps may be double counted where geometries differ. Proposed lines excluded."
+ }
+]

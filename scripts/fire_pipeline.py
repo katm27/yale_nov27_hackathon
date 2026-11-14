@@ -165,8 +165,20 @@ def burned():
 
 
 def combine():
-    parts = [p for p in [PART_DIR / "part_active.csv", PART_DIR / "part_burned.csv"] if p.exists()]
-    df = pd.concat([pd.read_csv(p) for p in parts]).sort_values(["variable", "county_id", "date"])
+    parts = []
+    if (PART_DIR / "part_active.csv").exists():
+        a = pd.read_csv(PART_DIR / "part_active.csv")
+        # normalise to a full month of Terra+Aqua daily coverage; drop months with < 50 % coverage
+        cov = pd.read_csv(PART_DIR / "active_fire_sensor_days.csv", index_col=0)["sensor_days"]
+        m = a.date.str[:7]
+        expected = 2 * pd.to_datetime(a.date).dt.days_in_month
+        frac = m.map(cov) / expected
+        a["value"] = (a.value / frac.clip(upper=1)).round(1)
+        a = a[frac >= 0.5]
+        parts.append(a)
+    if (PART_DIR / "part_burned.csv").exists():
+        parts.append(pd.read_csv(PART_DIR / "part_burned.csv"))
+    df = pd.concat(parts).sort_values(["variable", "county_id", "date"])
     df.to_csv(OUT, index=False)
     common = dict(category="environment", group="Fire", temporal="monthly", index_ok=False)
     hc.write_meta("fire", [
@@ -176,14 +188,18 @@ def combine():
              native_resolution="1 km", aggregation="count of daily 1 km fire pixels (FireMask 7-9, all confidence "
              "levels) inside county, summed over Terra and Aqua and all days of the month",
              higher_is="worse", raster=None,
-             notes="Comparable to FIRMS MODIS counts (FIRMS API not reachable from build env). Strongly seasonal "
+             notes="Months with incomplete Terra/Aqua daily coverage on Planetary Computer are scaled to a full "
+                   "month (count x expected/available sensor-days; e.g. 2022-12 had 38/62); months with <50% "
+                   "coverage are dropped (2025-07..2025-11 missing from the PC catalogue). "
+                   "Comparable to FIRMS MODIS counts (FIRMS API not reachable from build env). Strongly seasonal "
                    "(dry season Nov-Mar). index_ok false because many county-months are 0.", **common),
         dict(id="burned_area_km2", label="Burned area", units="km2",
              source="MODIS MCD64A1 v061 burned area via Microsoft Planetary Computer",
              source_url="https://planetarycomputer.microsoft.com/dataset/modis-64A1-061",
              native_resolution="500 m", aggregation="sum of burned 500 m pixels (Burn_Date>0) x pixel area "
              "(sinusoidal equal-area, 0.2147 km2)", higher_is="worse", raster="burned_area",
-             notes="Monthly burned area; zero in most wet-season months.", **common),
+             notes="Monthly burned area; zero in most wet-season months. Months absent from the Planetary Computer "
+                   "catalogue (no rows, no PNG): 2023-09, 2024-07, 2025-05, 2025-08, 2025-09, 2025-10.", **common),
         dict(id="burned_area_pct", label="Burned area (% of county)", units="% of county area",
              source="MODIS MCD64A1 v061 burned area via Microsoft Planetary Computer",
              source_url="https://planetarycomputer.microsoft.com/dataset/modis-64A1-061",

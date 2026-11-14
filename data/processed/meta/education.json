@@ -1,0 +1,62 @@
+[
+ {
+  "category": "human",
+  "group": "Education",
+  "source": "SSSAMS 2015 schools & enrolment (HDX, CC0)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
+  "native_resolution": "school",
+  "temporal": "static",
+  "index_ok": false,
+  "id": "schools_count",
+  "label": "Schools (open, 2015)",
+  "units": "schools",
+  "higher_is": "better",
+  "aggregation": "count of open schools (all levels) by county",
+  "notes": "2015 school census (SSSAMS) - latest open school-level data; treated as static baseline. "
+ },
+ {
+  "category": "human",
+  "group": "Education",
+  "source": "SSSAMS 2015 schools & enrolment (HDX, CC0)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
+  "native_resolution": "school",
+  "temporal": "static",
+  "index_ok": false,
+  "id": "schools_per100k",
+  "label": "Schools per 100k people",
+  "units": "per 100k",
+  "higher_is": "better",
+  "aggregation": "schools_count / WorldPop 2018 population",
+  "notes": "2015 school census (SSSAMS) - latest open school-level data; treated as static baseline. "
+ },
+ {
+  "category": "human",
+  "group": "Education",
+  "source": "SSSAMS 2015 schools & enrolment (HDX, CC0)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
+  "native_resolution": "school",
+  "temporal": "static",
+  "index_ok": false,
+  "id": "edu_enrolment",
+  "label": "School enrolment (2015)",
+  "units": "pupils",
+  "higher_is": "better",
+  "aggregation": "sum of reported enrolment (female+male) over reporting schools",
+  "notes": "2015 school census (SSSAMS) - latest open school-level data; treated as static baseline. Only schools that reported enrolment (~3,300 of ~4,900)."
+ },
+ {
+  "category": "human",
+  "group": "Education",
+  "source": "SSSAMS 2015 schools & enrolment (HDX, CC0)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
+  "native_resolution": "school",
+  "temporal": "static",
+  "index_ok": false,
+  "id": "edu_girls_share",
+  "label": "Girls' share of enrolment (2015)",
+  "units": "fraction 0-1",
+  "higher_is": "better",
+  "aggregation": "female / total enrolment over reporting schools",
+  "notes": "2015 school census (SSSAMS) - latest open school-level data; treated as static baseline. National 2015 average ~0.38."
+ }
+]

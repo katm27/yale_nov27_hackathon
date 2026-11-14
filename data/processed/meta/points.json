@@ -16,19 +16,51 @@
   "notes": "One point per location per year (field `year`), with type (HQ / team site), estimated troops and contributing countries/units. 2026 locations from Jan 2026 map (Aweil, Tambura, Yei, Torit closed)."
  },
  {
-  "key": "crisis_sites",
-  "label": "PoC sites, IDP & refugee camps, humanitarian hubs",
-  "category": "human",
-  "source": "Curated: OSM (HOT/HDX) coordinates; UNMISS/UNHCR/IOM public site lists; WFP Logistics Cluster CONOPS (Jun 2026)",
-  "source_url": "https://data.humdata.org/dataset/hotosm_ssd_points_of_interest",
-  "notes": "Static layer with `status` describing active period. `coord_quality` flags approximate positions. Not exhaustive: IOM DTM lists hundreds of smaller displacement sites (handled in the DTM layer)."
- },
- {
   "key": "ucdp_events",
   "label": "UCDP GED conflict events (2018-2025)",
   "category": "human",
   "source": "UCDP Georeferenced Event Dataset v26.1",
   "source_url": "https://ucdp.uu.se/downloads/",
   "notes": "Organized-violence events with >=1 death. type: state_based / non_state / one_sided; deaths = best estimate; where_prec 1=exact .. 3=county, >=4 coarse (admin-1/country). oil_related = keyword match on oil fields/pipelines (1 inside SSD; 5 cross-border oil events e.g. Heglig added with inside_ssd=false)."
+ },
+ {
+  "key": "oil",
+  "label": "Oil fields and wells",
+  "category": "human",
+  "source": "Global Energy Monitor GOGET (CC-BY 4.0) + OpenStreetMap wells (ODbL)",
+  "source_url": "https://globalenergymonitor.org/projects/global-oil-gas-extraction-tracker/",
+  "notes": "type = 'oil field (extraction area)' (GEM, with operator/production) or 'oil well' (OSM). Static."
+ },
+ {
+  "key": "pipelines",
+  "label": "Oil pipelines (lines)",
+  "category": "human",
+  "source": "GEM GOIT (CC-BY 4.0) + OpenStreetMap via Overture (ODbL)",
+  "source_url": "https://globalenergymonitor.org/projects/global-oil-infrastructure-tracker/",
+  "notes": "Line layer docs/data/lines_pipelines.geojson; includes proposed GEM routes (status field)."
+ },
+ {
+  "key": "markets",
+  "label": "WFP monitored markets",
+  "category": "human",
+  "source": "WFP VAM market monitoring (HDX)",
+  "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
+  "notes": "Markets with retail price monitoring; first_price/last_price = months with data 2018-2025."
+ },
+ {
+  "key": "schools",
+  "label": "Schools",
+  "category": "human",
+  "source": "SSSAMS 2015 (HDX, CC0) + OpenStreetMap education facilities (HOT/HDX, ODbL)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
+  "notes": "SSSAMS points carry type and 2015 enrolment by sex (year=2015); OSM points year=2026. The two sources overlap (duplicates possible)."
+ },
+ {
+  "key": "crisis_sites",
+  "label": "PoC sites, IDP & refugee camps, humanitarian hubs",
+  "category": "human",
+  "source": "Curated: OSM (HOT/HDX) coordinates; UNMISS/UNHCR/IOM public site lists; WFP Logistics Cluster CONOPS (Jun 2026)",
+  "source_url": "https://data.humdata.org/dataset/hotosm_ssd_points_of_interest",
+  "notes": "Static layer with `status` describing active period. `coord_quality` flags approximate positions. Not exhaustive: IOM DTM lists hundreds of smaller displacement sites (handled in the DTM layer)."
  }
 ]

@@ -1,0 +1,17 @@
+[
+ {
+  "category": "human",
+  "temporal": "annual",
+  "index_ok": true,
+  "id": "unhcr_refugees",
+  "label": "Refugees & asylum-seekers hosted (UNHCR)",
+  "units": "persons",
+  "group": "Displacement",
+  "higher_is": "neutral",
+  "source": "UNHCR Refugee Data Finder via HDX (end-year stock, REF+ASY)",
+  "source_url": "https://data.humdata.org/dataset/unhcr-population-data-for-ssd",
+  "native_resolution": "camp/settlement location",
+  "aggregation": "sum of camp/settlement stocks in county",
+  "notes": "End-of-year stock placed at July. Only counties hosting camps/settlements have values (Maban, Pariang, Juba, Yei, Ezo, Yambio, Tambura, Renk ...); refugees reported only at state level or 'dispersed' are not allocated. Renk/Wedwil/Boro Medina jump in 2023-25 = Sudan war arrivals."
+ }
+]

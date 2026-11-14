@@ -1,0 +1,47 @@
+[
+ {
+  "category": "human",
+  "group": "Ethnic geography",
+  "source": "GeoEPR 2021 + EPR 2021 (ETH Zurich ICR)",
+  "source_url": "https://icr.ethz.ch/data/epr/geoepr/",
+  "native_resolution": "polygon (group settlement area)",
+  "temporal": "static",
+  "index_ok": false,
+  "higher_is": "neutral",
+  "id": "ethnic_groups_count",
+  "label": "Ethnic groups present (GeoEPR)",
+  "units": "groups",
+  "aggregation": "number of GeoEPR groups covering >2% of county area",
+  "notes": "GeoEPR covers only the 10 politically relevant groups (Dinka, Nuer, Azande, Bari, Murle, Toposa, Shilluk, Mundari, Didinga, Anyuak); many smaller groups (e.g. Fertit groups in W. Bahr el Ghazal, Acholi, Madi, Lotuko) are absent, so some counties show 0 groups. Period 2011-2021, treated as static. Polygons may overlap."
+ },
+ {
+  "category": "human",
+  "group": "Ethnic geography",
+  "source": "GeoEPR 2021 + EPR 2021 (ETH Zurich ICR)",
+  "source_url": "https://icr.ethz.ch/data/epr/geoepr/",
+  "native_resolution": "polygon (group settlement area)",
+  "temporal": "static",
+  "index_ok": false,
+  "higher_is": "neutral",
+  "id": "ethnic_dominant_share",
+  "label": "Dominant group area share",
+  "units": "fraction 0-1",
+  "aggregation": "largest single-group share of county area",
+  "notes": "GeoEPR covers only the 10 politically relevant groups (Dinka, Nuer, Azande, Bari, Murle, Toposa, Shilluk, Mundari, Didinga, Anyuak); many smaller groups (e.g. Fertit groups in W. Bahr el Ghazal, Acholi, Madi, Lotuko) are absent, so some counties show 0 groups. Period 2011-2021, treated as static. Polygons may overlap. Dominant group names in data/processed/ethnic_county_lookup.csv."
+ },
+ {
+  "category": "human",
+  "group": "Ethnic geography",
+  "source": "GeoEPR 2021 + EPR 2021 (ETH Zurich ICR)",
+  "source_url": "https://icr.ethz.ch/data/epr/geoepr/",
+  "native_resolution": "polygon (group settlement area)",
+  "temporal": "static",
+  "index_ok": false,
+  "higher_is": "neutral",
+  "id": "ethnic_excluded_share",
+  "label": "Area of politically excluded groups",
+  "units": "fraction 0-1",
+  "aggregation": "county area share settled by groups EPR codes as POWERLESS or DISCRIMINATED (2011-2021)",
+  "notes": "GeoEPR covers only the 10 politically relevant groups (Dinka, Nuer, Azande, Bari, Murle, Toposa, Shilluk, Mundari, Didinga, Anyuak); many smaller groups (e.g. Fertit groups in W. Bahr el Ghazal, Acholi, Madi, Lotuko) are absent, so some counties show 0 groups. Period 2011-2021, treated as static. Polygons may overlap. EPR status: Dinka senior partner, Nuer junior partner, Murle discriminated, others powerless."
+ }
+]

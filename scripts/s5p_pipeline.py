@@ -30,7 +30,7 @@ from rasterio.warp import Resampling
 sys.path.insert(0, str(Path(__file__).parent))
 import hazards_common as hc
 
-N_ORBITS = int(sys.argv[1]) if len(sys.argv) > 1 else 6
+N_ORBITS = int(sys.argv[1]) if len(sys.argv) > 1 else 4
 RES = 0.05
 X0, Y1 = 24.0, 12.35
 NX, NY = int((36.1 - X0) / RES), int((Y1 - 3.4) / RES)
@@ -125,6 +125,10 @@ def main():
     canvas = hc.Canvas()
     rows, log = [], []
     dates = {p: [] for p in PRODUCTS}
+    tasks = [(p, m) for m in hc.months("2018-04-01") for p in PRODUCTS]
+    with ThreadPoolExecutor(4) as ex:  # fetch (product, month) grids concurrently; cached as npz
+        for (p, m), r in zip(tasks, ex.map(lambda pm: month_grid(*pm), tasks)):
+            print(f"fetched {m} {p} orbits={r[2]} valid_px={int(r[1].sum())}", flush=True)
     for m in hc.months("2018-04-01"):
         for p, cfg in PRODUCTS.items():
             t0 = time.time()
@@ -152,11 +156,12 @@ def main():
         hc.write_raster_meta(cfg["vid"], f"Sentinel-5P {cfg['vid'][4:]} (monthly, sampled orbits)", units, canvas,
                              vmin, vmax, cmap, "~5.5x3.5 km (TROPOMI), gridded 0.05 deg", dates[p],
                              "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
-                             notes=f"Mean of up to {N_ORBITS} sampled orbits per month; grey = no valid retrieval.")
+                             notes=f"Mean of {N_ORBITS}-6 sampled orbits per month; grey = no valid retrieval.")
     common = dict(category="environment", group="Air quality", source="Copernicus Sentinel-5P TROPOMI L2 (OFFL/RPRO) "
                   "via Microsoft Planetary Computer", source_url="https://planetarycomputer.microsoft.com/dataset/sentinel-5p-l2-netcdf",
                   native_resolution="5.5 x 3.5 km (7 x 3.5 km before Aug 2019)", temporal="monthly")
-    samp = (f"Monthly value = mean of all quality-filtered pixels in county from {N_ORBITS} evenly spaced sampled orbits "
+    samp = (f"Monthly value = mean of all quality-filtered pixels in county from {N_ORBITS} (2018-04..2018-12: 6) evenly "
+            "spaced sampled orbits "
             "(not all ~45 overpasses) - noisy, cloud-affected in wet season. Starts 2018-04/07 (S5P operational "
             "data begins mid-2018), so the 2018 baseline is partial.")
     hc.write_meta("s5p", [

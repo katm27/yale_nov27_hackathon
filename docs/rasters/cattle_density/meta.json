@@ -1,0 +1,24 @@
+{
+ "key": "cattle_density",
+ "bounds": [
+  [
+   2.9844707268822823,
+   23.499999999999996
+  ],
+  [
+   12.833333333333345,
+   36.4681379717168
+  ]
+ ],
+ "vmin": 1,
+ "vmax": 200,
+ "colormap": "ylorbr",
+ "scale": "log10",
+ "label": "Cattle density (GLW4, 2015)",
+ "units": "head / km\u00b2",
+ "native_resolution": "~9 km (5 arc-min)",
+ "dates": [
+  "2015"
+ ],
+ "source": "FAO Gridded Livestock of the World v4 (2015), dasymetric"
+}

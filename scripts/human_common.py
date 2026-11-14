@@ -27,7 +27,7 @@ START, END = "2018-01-01", "2025-12-01"
 MONTHS = pd.date_range(START, END, freq="MS")
 
 # DTM / some OCHA products code the Abyei Administrative Area as SS1101; our boundary file uses SS0001
-PCODE_ALIASES = {"SS1101": "SS0001", "SS11": "SS00"}
+PCODE_ALIASES = {"SS1101": "SS0001", "SS11": "SS00", "SS0807": "SS0001"}  # SS0807 = Abyei in HNO 2023
 
 
 def load_counties():

@@ -27,7 +27,7 @@ from human_common import (RAW, DOCS_DATA, MONTHS, download, load_counties, final
 SRC = "ucdp"
 URL = "https://ucdp.uu.se/downloads/ged/ged261-csv.zip"
 RAWD = RAW / "ucdp"
-CACHE = Path(os.environ.get("UCDP_CACHE", tempfile.gettempdir())) / "ged261-csv.zip"
+CACHE = Path(os.environ.get("UCDP_CACHE", RAW / "ucdp" / "_cache")) / "ged261-csv.zip"  # _cache is gitignored
 TYPES = {1: "state_based", 2: "non_state", 3: "one_sided"}
 OIL = re.compile(r"(?i)\boil\b|oil ?-?fields?|oilfield|pipeline|petroleum|\bpetrol\b|heglig|paloi?ch|palouch|"
                  r"thar ?jath|tharjieth|adar ?yel|toma south|\bmala oil|\bmunga\b|petrodar|\bgpoc\b|"

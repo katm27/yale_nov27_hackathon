@@ -1,0 +1,62 @@
+[
+ {
+  "category": "human",
+  "temporal": "annual",
+  "index_ok": true,
+  "id": "hno_pin",
+  "label": "People in need (HNO, intersectoral)",
+  "units": "persons",
+  "aggregation": "county intersectoral PiN for the HNO year",
+  "notes": "HNO years 2019, 2021-2025 (none for 2018/2020); value placed at July of the plan year. Methodology changed between years (2019 = max of cluster PiN incl. refugees; 2023 summed over population groups) - compare levels across years with caution.",
+  "source": "OCHA South Sudan Humanitarian Needs Overview (HDX; HAPI for 2024-25)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-humanitarian-needs",
+  "native_resolution": "county",
+  "group": "Humanitarian needs",
+  "higher_is": "worse"
+ },
+ {
+  "category": "human",
+  "temporal": "annual",
+  "index_ok": false,
+  "id": "hno_severity",
+  "label": "Humanitarian severity (HNO intersectoral, 1-5)",
+  "units": "severity 1-5",
+  "aggregation": "intersectoral severity phase",
+  "notes": "Available for HNO 2022, 2023, 2024 only.",
+  "source": "OCHA South Sudan Humanitarian Needs Overview (HDX; HAPI for 2024-25)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-humanitarian-needs",
+  "native_resolution": "county",
+  "group": "Humanitarian needs",
+  "higher_is": "worse"
+ },
+ {
+  "category": "human",
+  "temporal": "monthly",
+  "index_ok": true,
+  "id": "ops_orgs",
+  "label": "Humanitarian organisations present (3W)",
+  "units": "organisations",
+  "notes": "Monthly 3W, Jan 2019 - Dec 2025 (Dec 2020 missing; no 2018). 0 = no partner reported in county that month. Reporting coverage grew over time - partly a reporting artefact.",
+  "source": "OCHA South Sudan 3W operational presence (HDX)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-operational-presence",
+  "native_resolution": "county",
+  "group": "Humanitarian response",
+  "higher_is": "better",
+  "aggregation": "distinct reporting organisations with activities in county-month"
+ },
+ {
+  "category": "human",
+  "temporal": "monthly",
+  "index_ok": true,
+  "id": "ops_orgs_national_ngo",
+  "label": "National NGOs present (3W)",
+  "units": "organisations",
+  "notes": "Subset of ops_orgs with organisation type National NGO.",
+  "source": "OCHA South Sudan 3W operational presence (HDX)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-operational-presence",
+  "native_resolution": "county",
+  "group": "Humanitarian response",
+  "higher_is": "better",
+  "aggregation": "distinct reporting organisations with activities in county-month"
+ }
+]

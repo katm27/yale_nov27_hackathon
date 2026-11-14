@@ -6,7 +6,10 @@ Method (per 500 m pixel, per month):
   * cloud mask from sur_refl_state_500m: cloud state clear (00 or 11), no cloud shadow,
     no internal cloud flag, cirrus none/small; reflectances must be valid
   * MNDWI = (B4 green - B7 SWIR2) / (B4 + B7)   (B7 2.1 um used because Aqua B6 is defective)
-  * monthly value = median MNDWI of clear observations; water = median > THRESH
+  * per observation water = MNDWI > 0.1 (threshold chosen by visual checks: MNDWI>0 flags lush
+    green wet-season vegetation, MNDWI>0.1 isolates open water + shallow/inundated areas; the
+    Zou-style MNDWI>NDVI rule catches only ~1% of it and misses the known 2019/2021 floods)
+  * monthly water = water in >= 50% of the month's clear observations
   * pixels with no clear observation inherit the previous month's water state (max 2 months),
     remaining gaps are left unknown and excluded from the percentage.
 County outputs:
@@ -31,12 +34,11 @@ from rasterio.warp import Resampling
 sys.path.insert(0, str(Path(__file__).parent))
 import hazards_common as hc
 
-THRESH = 0.0
+THRESH = 0.1
 MAX_CARRY = 2
 OUT = hc.PROC / "water_county_monthly.csv"
 PART = hc.REPO / "data" / "raw" / "water"
-BANDS = ["sur_refl_b01", "sur_refl_b02", "sur_refl_b04", "sur_refl_b07", "sur_refl_state_500m"]
-NDVI_MAX = 0.2
+BANDS = ["sur_refl_b04", "sur_refl_b07", "sur_refl_state_500m"]
 
 
 def read(href):
@@ -83,17 +85,13 @@ def month_composite(items):
             rs = [data[(t, it.id, b)] for b in BANDS]
             if any(r is None for r in rs):
                 continue
-            red, nir, g, s, st = (r[0] for r in rs)
+            g, s, st = (r[0] for r in rs)
             tr, crs = rs[0][1], rs[0][2]
-            ok = clear_mask(st)
-            for b in (red, nir, g, s):
-                ok &= (b > -100) & (b <= 16000)
-            ok &= g > 0
-            red, nir, g = (np.maximum(b.astype("float32"), 1.0) for b in (red, nir, g))
+            ok = clear_mask(st) & (g > 0) & (g <= 16000) & (s > -100) & (s <= 16000)
+            g = g.astype("float32")
             s = np.maximum(s.astype("float32"), 1.0)
             mndwi = (g - s) / (g + s)
-            ndvi = (nir - red) / (nir + red)
-            wobs = ((mndwi > ndvi) & (ndvi < NDVI_MAX) & (mndwi > THRESH)).astype("float32")
+            wobs = (mndwi > THRESH).astype("float32")
             wobs[~ok] = np.nan
             stack.append(wobs)
         if not stack:
@@ -165,8 +163,8 @@ def run(month_list):
             pct = 100 * water_n[i] / known_n[i]
             rows.append((cid, m + "-01", "surface_water_pct", round(pct, 4)))
             rows.append((cid, m + "-01", "surface_water_km2", round(pct / 100 * tot_n[i] * pix_km2, 3)))
-        print(f"water {m} items={len(items)} SS water km2={water_n.sum()*pix_km2:.0f} "
-              f"known={100*known_n.sum()/tot_n.sum():.0f}% obs={100*obs_n.sum()/tot_n.sum():.0f}% {time.time()-t0:.0f}s",
+        print(f"water {m} items={len(items)} SS water km2={water_n[1:].sum()*pix_km2:.0f} "
+              f"known={100*known_n[1:].sum()/tot_n[1:].sum():.0f}% obs={100*obs_n[1:].sum()/tot_n[1:].sum():.0f}% {time.time()-t0:.0f}s",
               flush=True)
         if len(month_list) > 3:
             pd.DataFrame(rows, columns=["county_id", "date", "variable", "value"]).to_csv(part_csv, index=False)
@@ -189,15 +187,16 @@ def finalize(rows, canvas):
     hc.write_raster_meta("surface_water", "Surface water (monthly, MODIS)", "fraction of pixel classified water",
                          canvas, 0.0, 1.0, "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
                          "500 m (MOD09A1/MYD09A1), displayed at ~1.3 km", dates,
-                         "MODIS MOD09A1/MYD09A1 v061 via Microsoft Planetary Computer; MNDWI(B4,B7)>0, monthly median",
+                         "MODIS MOD09A1/MYD09A1 v061 via Microsoft Planetary Computer; MNDWI(B4,B7)>0.1 in >=50% of clear obs",
                          notes="Transparent = dry land; grey = no clear observation within 2 months (cloud). "
-                               "Open water only; flooded/floating vegetation in the Sudd is largely missed.")
+                               "Open water + shallow inundation; dense flooded vegetation (papyrus) is under-detected.")
     src = "MODIS MOD09A1 + MYD09A1 v061 8-day surface reflectance via Microsoft Planetary Computer"
     url = "https://planetarycomputer.microsoft.com/dataset/modis-09A1-061"
     common = dict(category="environment", group="Water & flooding", source=src, source_url=url,
                   native_resolution="500 m", temporal="monthly")
-    note = ("Water = monthly median MNDWI (B4 green vs B7 SWIR 2.1um) > 0 over cloud-free 8-day composites "
-            "(Terra+Aqua). Cloud gaps filled from previous month (max 2 months); county-months with <20% known "
+    note = ("Water = MNDWI (B4 green vs B7 SWIR 2.1um) > 0.1 in >=50% of cloud-free 8-day composites in the "
+            "month (Terra+Aqua). Captures open water and shallow inundation; some residual false positives from "
+            "dark wet vegetation early in the wet season (Jun-Aug). Cloud gaps filled from previous month (max 2 months); county-months with <20% known "
             "area dropped. Detects open water; under-detects flooded/floating vegetation (Sudd) and is reduced by "
             "persistent wet-season cloud. Validate against UNOSAT flood extents.")
     hc.write_meta("water", [

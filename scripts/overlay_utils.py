@@ -89,7 +89,7 @@ def colorize(norm, name):
 
 
 def write_overlay(arr, transform, crs, key, date, vmin, vmax, cmap_name, meta_extra,
-                  log=False, nodata_mask=None, max_px=1000):
+                  log=False, nodata_mask=None, max_px=1000, min_px=700):
     """Reproject arr to EPSG:3857, colorize with fixed scale, clip to country, save PNG + meta."""
     c = counties().to_crs(3857)
     h, w = arr.shape
@@ -98,8 +98,10 @@ def write_overlay(arr, transform, crs, key, date, vmin, vmax, cmap_name, meta_ex
     right = left + transform.a * w
     bottom = top + transform.e * h
     dst_t, dw, dh = calculate_default_transform(crs, "EPSG:3857", w, h, left, bottom, right, top)
-    scale = max(dw, dh) / max_px
-    if scale > 1:
+    # target long side between min_px (crisp country mask for coarse grids) and max_px
+    target = min(max(max(dw, dh), min_px), max_px)
+    scale = max(dw, dh) / target
+    if scale != 1:
         dw, dh = int(round(dw / scale)), int(round(dh / scale))
         dst_t, dw, dh = calculate_default_transform(crs, "EPSG:3857", w, h, left, bottom, right, top,
                                                     dst_width=dw, dst_height=dh)
@@ -108,7 +110,7 @@ def write_overlay(arr, transform, crs, key, date, vmin, vmax, cmap_name, meta_ex
         src = np.where(nodata_mask, np.nan, src)
     dst = np.full((dh, dw), np.nan, dtype="float32")
     reproject(src, dst, src_transform=transform, src_crs=crs, dst_transform=dst_t, dst_crs="EPSG:3857",
-              resampling=Resampling.average, src_nodata=np.nan, dst_nodata=np.nan)
+              resampling=Resampling.average if scale > 1 else Resampling.nearest, src_nodata=np.nan, dst_nodata=np.nan)
     outside = geometry_mask(c.geometry, out_shape=dst.shape, transform=dst_t, invert=False)
     if log:
         norm = (np.log10(np.clip(dst, vmin, None)) - np.log10(vmin)) / (np.log10(vmax) - np.log10(vmin))

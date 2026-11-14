@@ -31,7 +31,7 @@ def fetch():
             open(p, "wb").write(r.content)
     with open(os.path.join(RAW, "SOURCE.md"), "w") as f:
         f.write("WorldPop Global2 R2025A constrained 1km population (UN-adjusted), 2018-2025.\n"
-                "URL pattern: " + URL + "\nLicense: CC-BY 4.0\n")
+                "URL pattern: " + URL + "\nSudan grid (for Abyei): " + URL_SDN + "\nLicense: CC-BY 4.0\n")
 
 
 def main():
