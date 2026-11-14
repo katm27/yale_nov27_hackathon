@@ -1,0 +1,80 @@
+acled_admin1,acled_admin2,acled_admin2_pcode,county_id,county_name,match_method
+Abyei,Abyei,SD19001,SS0001,Abyei,manual: ACLED codes Abyei Area under Sudan (SD19001)
+Central Equatoria,Juba,SS0101,SS0101,Juba,pcode+name
+Central Equatoria,Kajo Keji,SS0102,SS0102,Kajo-keji,pcode+name variant
+Central Equatoria,Lainya,SS0103,SS0103,Lainya,pcode+name
+Central Equatoria,Morobo,SS0104,SS0104,Morobo,pcode+name
+Central Equatoria,Terekeka,SS0105,SS0105,Terekeka,pcode+name
+Central Equatoria,Yei,SS0106,SS0106,Yei,pcode+name
+Eastern Equatoria,Budi,SS0201,SS0201,Budi,pcode+name
+Eastern Equatoria,Ikotos,SS0202,SS0202,Ikotos,pcode+name
+Eastern Equatoria,Kapoeta East,SS0203,SS0203,Kapoeta East,pcode+name
+Eastern Equatoria,Kapoeta North,SS0204,SS0204,Kapoeta North,pcode+name
+Eastern Equatoria,Kapoeta South,SS0205,SS0205,Kapoeta South,pcode+name
+Eastern Equatoria,Lafon,SS0206,SS0206,Lafon,pcode+name
+Eastern Equatoria,Magwi,SS0207,SS0207,Magwi,pcode+name
+Eastern Equatoria,Torit,SS0208,SS0208,Torit,pcode+name
+Jonglei,Akobo,SS0301,SS0301,Akobo,pcode+name
+Jonglei,Ayod,SS0302,SS0302,Ayod,pcode+name
+Jonglei,Bor South,SS0303,SS0303,Bor South,pcode+name
+Jonglei,Canal/Pigi,SS0304,SS0304,Canal/Pigi,pcode+name
+Jonglei,Duk,SS0305,SS0305,Duk,pcode+name
+Jonglei,Fangak,SS0306,SS0306,Fangak,pcode+name
+Jonglei,Nyirol,SS0307,SS0307,Nyirol,pcode+name
+Jonglei,Pibor,SS0308,SS0308,Pibor,pcode+name
+Jonglei,Pochalla,SS0309,SS0309,Pochalla,pcode+name
+Jonglei,Twic East,SS0310,SS0310,Twic East,pcode+name
+Jonglei,Uror,SS0311,SS0311,Uror,pcode+name
+Lakes,Awerial,SS0401,SS0401,Awerial,pcode+name
+Lakes,Cueibet,SS0402,SS0402,Cueibet,pcode+name
+Lakes,Rumbek Centre,SS0403,SS0403,Rumbek Centre,pcode+name
+Lakes,Rumbek East,SS0404,SS0404,Rumbek East,pcode+name
+Lakes,Rumbek North,SS0405,SS0405,Rumbek North,pcode+name
+Lakes,Wulu,SS0406,SS0406,Wulu,pcode+name
+Lakes,Yirol East,SS0407,SS0407,Yirol East,pcode+name
+Lakes,Yirol West,SS0408,SS0408,Yirol West,pcode+name
+Northern Bahr el Ghazal,Aweil Centre,SS0501,SS0501,Aweil Centre,pcode+name
+Northern Bahr el Ghazal,Aweil East,SS0502,SS0502,Aweil East,pcode+name
+Northern Bahr el Ghazal,Aweil North,SS0503,SS0503,Aweil North,pcode+name
+Northern Bahr el Ghazal,Aweil South,SS0504,SS0504,Aweil South,pcode+name
+Northern Bahr el Ghazal,Aweil West,SS0505,SS0505,Aweil West,pcode+name
+Unity,Abiemnhom,SS0601,SS0601,Abiemnhom,pcode+name
+Unity,Guit,SS0602,SS0602,Guit,pcode+name
+Unity,Koch,SS0603,SS0603,Koch,pcode+name
+Unity,Leer,SS0604,SS0604,Leer,pcode+name
+Unity,Mayendit,SS0605,SS0605,Mayendit,pcode+name
+Unity,Mayom,SS0606,SS0606,Mayom,pcode+name
+Unity,Panyijiar,SS0607,SS0607,Panyijiar,pcode+name
+Unity,Panriang,SS0608,SS0608,Pariang,pcode+name variant
+Unity,Rubkona,SS0609,SS0609,Rubkona,pcode+name
+Upper Nile,Baliet,SS0701,SS0701,Baliet,pcode+name
+Upper Nile,Fashoda,SS0702,SS0702,Fashoda,pcode+name
+Upper Nile,Longchuk,SS0703,SS0703,Longochuk,pcode+name variant
+Upper Nile,Luakpiny/Nasir,SS0704,SS0704,Luakpiny/Nasir,pcode+name
+Upper Nile,Maban,SS0705,SS0705,Maban,pcode+name
+Upper Nile,Maiwut,SS0706,SS0706,Maiwut,pcode+name
+Upper Nile,Malakal,SS0707,SS0707,Malakal,pcode+name
+Upper Nile,Manyo,SS0708,SS0708,Manyo,pcode+name
+Upper Nile,Melut,SS0709,SS0709,Melut,pcode+name
+Upper Nile,Panyikang,SS0710,SS0710,Panyikang,pcode+name
+Upper Nile,Renk,SS0711,SS0711,Renk,pcode+name
+Upper Nile,Ulang,SS0712,SS0712,Ulang,pcode+name
+Warrap,Gogrial East,SS0801,SS0801,Gogrial East,pcode+name
+Warrap,Gogrial West,SS0802,SS0802,Gogrial West,pcode+name
+Warrap,Tonj East,SS0803,SS0803,Tonj East,pcode+name
+Warrap,Tonj North,SS0804,SS0804,Tonj North,pcode+name
+Warrap,Tonj South,SS0805,SS0805,Tonj South,pcode+name
+Warrap,Twic,SS0806,SS0806,Twic,pcode+name
+Western Bahr el Ghazal,Jur River,SS0901,SS0901,Jur River,pcode+name
+Western Bahr el Ghazal,Raja,SS0902,SS0902,Raja,pcode+name
+Western Bahr el Ghazal,Wau,SS0903,SS0903,Wau,pcode+name
+Western Equatoria,Ezo,SS1001,SS1001,Ezo,pcode+name
+Western Equatoria,Ibba,SS1002,SS1002,Ibba,pcode+name
+Western Equatoria,Maridi,SS1003,SS1003,Maridi,pcode+name
+Western Equatoria,Mundri East,SS1004,SS1004,Mundri East,pcode+name
+Western Equatoria,Mundri West,SS1005,SS1005,Mundri West,pcode+name
+Western Equatoria,Mvolo,SS1006,SS1006,Mvolo,pcode+name
+Western Equatoria,Nagero,SS1007,SS1007,Nagero,pcode+name
+Western Equatoria,Anzara,SS1008,SS1008,Nzara,pcode+name variant
+Western Equatoria,Tambura,SS1009,SS1009,Tambura,pcode+name
+Western Equatoria,Yambio,SS1010,SS1010,Yambio,pcode+name

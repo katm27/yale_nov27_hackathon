@@ -1,0 +1,32 @@
+[
+ {
+  "category": "human",
+  "group": "Peacekeeping",
+  "source": "Geo-PKO v2.3 (2018-2024); UN map 4456 Rev.62 (2025)",
+  "source_url": "https://www.pcr.uu.se/data/geo-pko/",
+  "native_resolution": "deployment location (town)",
+  "temporal": "annual",
+  "higher_is": "neutral",
+  "index_ok": false,
+  "id": "unmiss_presence",
+  "label": "UNMISS deployment present",
+  "units": "0/1",
+  "aggregation": "1 if any UNMISS deployment location in county during year",
+  "notes": "Base/team-site level, not patrol coverage. 2025 from Jan 2025 deployment map."
+ },
+ {
+  "category": "human",
+  "group": "Peacekeeping",
+  "source": "Geo-PKO v2.3 (2018-2024); UN map 4456 Rev.62 (2025)",
+  "source_url": "https://www.pcr.uu.se/data/geo-pko/",
+  "native_resolution": "deployment location (town)",
+  "temporal": "annual",
+  "higher_is": "neutral",
+  "index_ok": false,
+  "id": "unmiss_troops",
+  "label": "UNMISS troops deployed (est.)",
+  "units": "troops",
+  "aggregation": "sum of Geo-PKO troop estimates at county locations, mean over the year's map timepoints",
+  "notes": "Geo-PKO estimates troop numbers from unit sizes on UN maps (approximate). 2025 = Oct 2024 values for locations still shown on the Jan 2025 map. UNPOL/FPU police strength not fully included."
+ }
+]

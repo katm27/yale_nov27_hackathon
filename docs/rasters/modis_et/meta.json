@@ -1,0 +1,50 @@
+{
+  "key": "modis_et",
+  "label": "Annual evapotranspiration (MODIS)",
+  "units": "mm/year",
+  "bounds": [
+    [
+      3.43784,
+      24.10216
+    ],
+    [
+      12.28635,
+      36.00099
+    ]
+  ],
+  "vmin": 200.0,
+  "vmax": 1400.0,
+  "colormap": "blues",
+  "colors": [
+    "#dfebf7",
+    "#cee0f1",
+    "#b9d5ea",
+    "#9dc9e0",
+    "#78b5d8",
+    "#58a1ce",
+    "#3d8dc3",
+    "#2575b7",
+    "#135fa7",
+    "#08488f",
+    "#08326e",
+    "#08306b"
+  ],
+  "nodata_color": "#bebebe (semi-transparent: cloud-masked / water / no retrieval)",
+  "native_resolution": "500 m MODIS, rendered from ~1 km (0.01°) grid",
+  "dates": [
+    "2018-07",
+    "2019-07",
+    "2020-07",
+    "2021-07",
+    "2022-07",
+    "2023-07",
+    "2024-07",
+    "2025-07"
+  ],
+  "source": "MODIS MOD16A3GF v061 (annual, gap-filled) via Microsoft Planetary Computer",
+  "crs": "EPSG:3857",
+  "width": 1000,
+  "height": 751,
+  "temporal": "annual",
+  "notes": "Annual product: one image per year, file named YYYY-07.png."
+}

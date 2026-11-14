@@ -168,6 +168,14 @@ def run_product(name, workers, client, ids, lab):
     items = list(client.search(collections=[spec["collection"]], bbox=BBOX,
                                datetime=f"{START}/{END}").items())
     items = [i for i in items if i.id[:3] in spec["platforms"]]
+    # de-duplicate reprocessed granules: keep the latest production stamp per platform/date/tile
+    best = {}
+    for it in items:
+        plat, adate, tile, _, prod = it.id.split(".")[:5]
+        k = (plat, adate, tile)
+        if k not in best or prod > best[k].id.split(".")[4]:
+            best[k] = it
+    items = list(best.values())
     groups = {}
     for it in items:
         key = period_key(it, spec["half"])
