@@ -14,5 +14,21 @@
   "source": "Geo-PKO v2.3 (2018-2024) + UN Geospatial map 4456 Rev.62/67 (Jan 2025, Jan 2026)",
   "source_url": "https://www.pcr.uu.se/data/geo-pko/",
   "notes": "One point per location per year (field `year`), with type (HQ / team site), estimated troops and contributing countries/units. 2026 locations from Jan 2026 map (Aweil, Tambura, Yei, Torit closed)."
+ },
+ {
+  "key": "crisis_sites",
+  "label": "PoC sites, IDP & refugee camps, humanitarian hubs",
+  "category": "human",
+  "source": "Curated: OSM (HOT/HDX) coordinates; UNMISS/UNHCR/IOM public site lists; WFP Logistics Cluster CONOPS (Jun 2026)",
+  "source_url": "https://data.humdata.org/dataset/hotosm_ssd_points_of_interest",
+  "notes": "Static layer with `status` describing active period. `coord_quality` flags approximate positions. Not exhaustive: IOM DTM lists hundreds of smaller displacement sites (handled in the DTM layer)."
+ },
+ {
+  "key": "ucdp_events",
+  "label": "UCDP GED conflict events (2018-2025)",
+  "category": "human",
+  "source": "UCDP Georeferenced Event Dataset v26.1",
+  "source_url": "https://ucdp.uu.se/downloads/",
+  "notes": "Organized-violence events with >=1 death. type: state_based / non_state / one_sided; deaths = best estimate; where_prec 1=exact .. 3=county, >=4 coarse (admin-1/country). oil_related = keyword match on oil fields/pipelines (1 inside SSD; 5 cross-border oil events e.g. Heglig added with inside_ssd=false)."
  }
 ]

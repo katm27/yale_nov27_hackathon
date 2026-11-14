@@ -12,7 +12,7 @@
   "aggregation": "area-weighted mean of 1/24° cells (cell coverage fraction x cos lat)",
   "higher_is": "better",
   "index_ok": true,
-  "notes": "Coverage 2018-01..2025-12.",
+  "notes": "About 40% lower than IMERG (precip_mm) on average for 2018-2025; use for spatial detail, not absolute totals. Coverage 2018-01..2025-12.",
   "raster": "tc_ppt"
  },
  {
@@ -138,7 +138,7 @@
   "aggregation": "area-weighted mean of 1/24° cells (cell coverage fraction x cos lat)",
   "higher_is": "better",
   "index_ok": false,
-  "notes": "Negative = drought. Not ratio-indexable. Coverage 2018-01..2025-12.",
+  "notes": "Negative = drought. Not ratio-indexable. TerraClimate PDSI is strongly negative across South Sudan in 2018-2025 (country mean ~ -6.6) because its ERA5-driven precipitation is well below its 1991-2020 climatology; treat as relative, and cross-check with IMERG-based spei3. Coverage 2018-01..2025-12.",
   "raster": "tc_pdsi"
  },
  {
@@ -192,7 +192,7 @@
   "group": "Extreme weather",
   "units": "flag 0/1",
   "higher_is": "worse",
-  "notes": "Precipitation above the 90th percentile. County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not.",
+  "notes": "Precipitation above the 90th percentile. County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not. 2018-2025 is drier and hotter than 1991-2020 in TerraClimate, so dry/heat flags fire ~30% of months and wet ~4%.",
   "category": "environment",
   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS; percentiles computed by team",
   "source_url": "https://www.climatologylab.org/terraclimate.html",
@@ -207,7 +207,7 @@
   "group": "Extreme weather",
   "units": "flag 0/1",
   "higher_is": "worse",
-  "notes": "Precipitation below the 10th percentile; never flagged in months whose 10th pct is 0 (normal dry season). County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not.",
+  "notes": "Precipitation below the 10th percentile; never flagged in months whose 10th pct is 0 (normal dry season). County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not. 2018-2025 is drier and hotter than 1991-2020 in TerraClimate, so dry/heat flags fire ~30% of months and wet ~4%.",
   "category": "environment",
   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS; percentiles computed by team",
   "source_url": "https://www.climatologylab.org/terraclimate.html",
@@ -222,7 +222,7 @@
   "group": "Extreme weather",
   "units": "flag 0/1",
   "higher_is": "worse",
-  "notes": "Mean daily max temperature above the 90th percentile. County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not.",
+  "notes": "Mean daily max temperature above the 90th percentile. County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not. 2018-2025 is drier and hotter than 1991-2020 in TerraClimate, so dry/heat flags fire ~30% of months and wet ~4%.",
   "category": "environment",
   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS; percentiles computed by team",
   "source_url": "https://www.climatologylab.org/terraclimate.html",
@@ -237,7 +237,7 @@
   "group": "Extreme weather",
   "units": "count 0..3",
   "higher_is": "worse",
-  "notes": "Sum of tc_extreme_wet, tc_extreme_dry, tc_extreme_heat. County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not.",
+  "notes": "Sum of tc_extreme_wet, tc_extreme_dry, tc_extreme_heat. County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not. 2018-2025 is drier and hotter than 1991-2020 in TerraClimate, so dry/heat flags fire ~30% of months and wet ~4%.",
   "category": "environment",
   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS; percentiles computed by team",
   "source_url": "https://www.climatologylab.org/terraclimate.html",

@@ -61,7 +61,8 @@ RES = "1/24° (~4 km)"
 
 # id, file var, nc var, label, group, units, higher_is, index_ok, notes
 VARS = [
-    ("ppt", "ppt", "ppt", "Precipitation (TerraClimate)", "Precipitation", "mm/month", "better", True, ""),
+    ("ppt", "ppt", "ppt", "Precipitation (TerraClimate)", "Precipitation", "mm/month", "better", True,
+     "About 40% lower than IMERG (precip_mm) on average for 2018-2025; use for spatial detail, not absolute totals."),
     ("tmax", "tmax", "tmax", "Max temperature (TerraClimate)", "Temperature", "°C", "worse", False,
      "Monthly mean of daily maximum temperature."),
     ("tmin", "tmin", "tmin", "Min temperature (TerraClimate)", "Temperature", "°C", "worse", False,
@@ -76,7 +77,9 @@ VARS = [
      True, "Plant-extractable soil water at end of month."),
     ("ws", "ws", "ws", "Wind speed (10 m)", "Wind", "m/s", "neutral", True, ""),
     ("pdsi", "PDSI", "PDSI", "Palmer Drought Severity Index", "Drought", "index (-4 dry .. +4 wet)", "better",
-     False, "Negative = drought. Not ratio-indexable."),
+     False, "Negative = drought. Not ratio-indexable. TerraClimate PDSI is strongly negative across South Sudan "
+     "in 2018-2025 (country mean ~ -6.6) because its ERA5-driven precipitation is well below its 1991-2020 "
+     "climatology; treat as relative, and cross-check with IMERG-based spei3."),
     ("vpd", "vpd", "vpd", "Vapour pressure deficit", "Atmosphere", "kPa", "worse", True,
      "Atmospheric dryness; high VPD stresses crops."),
     ("srad", "srad", "srad", "Downward shortwave radiation", "Atmosphere", "W/m²", "neutral", True, ""),
@@ -308,7 +311,8 @@ def main():
             m["raster"] = f"tc_{var}"
         meta.append(m)
     xnote = ("County-mean value compared with the same county's 1991-2020 TerraClimate climatology for the "
-             "same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not.")
+             "same calendar month (empirical percentile over 30 years). 1 = extreme, 0 = not. 2018-2025 is drier and "
+             "hotter than 1991-2020 in TerraClimate, so dry/heat flags fire ~30% of months and wet ~4%.")
     meta += [
         dict(id="tc_extreme_wet", label="Extreme wet month (flag)", group="Extreme weather",
              units="flag 0/1", higher_is="worse", notes="Precipitation above the 90th percentile. " + xnote),

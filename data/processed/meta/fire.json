@@ -1,0 +1,50 @@
+[
+ {
+  "id": "fire_count",
+  "label": "Active fire detections",
+  "units": "fire pixel-detections per month",
+  "source": "MODIS MOD14A1/MYD14A1 v061 (Terra+Aqua daily 1 km FireMask) via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/modis-14A1-061",
+  "native_resolution": "1 km",
+  "aggregation": "count of daily 1 km fire pixels (FireMask 7-9, all confidence levels) inside county, summed over Terra and Aqua and all days of the month",
+  "higher_is": "worse",
+  "raster": null,
+  "notes": "Comparable to FIRMS MODIS counts (FIRMS API not reachable from build env). Strongly seasonal (dry season Nov-Mar). index_ok false because many county-months are 0.",
+  "category": "environment",
+  "group": "Fire",
+  "temporal": "monthly",
+  "index_ok": false
+ },
+ {
+  "id": "burned_area_km2",
+  "label": "Burned area",
+  "units": "km2",
+  "source": "MODIS MCD64A1 v061 burned area via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/modis-64A1-061",
+  "native_resolution": "500 m",
+  "aggregation": "sum of burned 500 m pixels (Burn_Date>0) x pixel area (sinusoidal equal-area, 0.2147 km2)",
+  "higher_is": "worse",
+  "raster": "burned_area",
+  "notes": "Monthly burned area; zero in most wet-season months.",
+  "category": "environment",
+  "group": "Fire",
+  "temporal": "monthly",
+  "index_ok": false
+ },
+ {
+  "id": "burned_area_pct",
+  "label": "Burned area (% of county)",
+  "units": "% of county area",
+  "source": "MODIS MCD64A1 v061 burned area via Microsoft Planetary Computer",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/modis-64A1-061",
+  "native_resolution": "500 m",
+  "aggregation": "burned pixels / all pixels in county x 100",
+  "higher_is": "worse",
+  "raster": "burned_area",
+  "notes": "",
+  "category": "environment",
+  "group": "Fire",
+  "temporal": "monthly",
+  "index_ok": false
+ }
+]

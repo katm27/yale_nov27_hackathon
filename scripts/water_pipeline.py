@@ -35,7 +35,8 @@ THRESH = 0.0
 MAX_CARRY = 2
 OUT = hc.PROC / "water_county_monthly.csv"
 PART = hc.REPO / "data" / "raw" / "water"
-BANDS = ["sur_refl_b04", "sur_refl_b07", "sur_refl_state_500m"]
+BANDS = ["sur_refl_b01", "sur_refl_b02", "sur_refl_b04", "sur_refl_b07", "sur_refl_state_500m"]
+NDVI_MAX = 0.2
 
 
 def read(href):
@@ -65,7 +66,7 @@ def clear_mask(state):
 
 
 def month_composite(items):
-    """returns {tile: (median_mndwi float32 with nan, n_clear, transform, crs)}"""
+    """returns {tile: (water frequency among clear obs, n_clear, transform, crs)}"""
     by_tile = {}
     for it in items:
         by_tile.setdefault(tile_of(it.id), []).append(it)
@@ -82,13 +83,19 @@ def month_composite(items):
             rs = [data[(t, it.id, b)] for b in BANDS]
             if any(r is None for r in rs):
                 continue
-            g, s, st = (r[0] for r in rs)
+            red, nir, g, s, st = (r[0] for r in rs)
             tr, crs = rs[0][1], rs[0][2]
-            ok = clear_mask(st) & (g > 0) & (s > -100) & (g <= 16000) & (s <= 16000)
-            g = g.astype("float32"); s = np.maximum(s.astype("float32"), 1.0)
-            m = (g - s) / (g + s)
-            m[~ok] = np.nan
-            stack.append(m)
+            ok = clear_mask(st)
+            for b in (red, nir, g, s):
+                ok &= (b > -100) & (b <= 16000)
+            ok &= g > 0
+            red, nir, g = (np.maximum(b.astype("float32"), 1.0) for b in (red, nir, g))
+            s = np.maximum(s.astype("float32"), 1.0)
+            mndwi = (g - s) / (g + s)
+            ndvi = (nir - red) / (nir + red)
+            wobs = ((mndwi > ndvi) & (ndvi < NDVI_MAX) & (mndwi > THRESH)).astype("float32")
+            wobs[~ok] = np.nan
+            stack.append(wobs)
         if not stack:
             continue
         stack = np.stack(stack)
@@ -97,7 +104,7 @@ def month_composite(items):
             import warnings
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                med = np.nanmedian(stack, axis=0)
+                med = np.nanmean(stack, axis=0)  # share of clear obs classified water
         out[t] = (med, n, tr, crs)
     return out
 
@@ -124,7 +131,7 @@ def run(month_list):
         obs_n = np.zeros(len(ids) + 1); tot_n = np.zeros(len(ids) + 1)
         img = canvas.new()
         for t, (med, n, tr, crs) in comp.items():
-            w = np.where(n > 0, (med > THRESH).astype("int8"), -1).astype("int8")
+            w = np.where(n > 0, (med >= 0.5).astype("int8"), -1).astype("int8")
             if t in state and state[t][0].shape == w.shape:
                 pw, age = state[t]
                 fill = (w == -1) & (pw >= 0) & (age < MAX_CARRY)
