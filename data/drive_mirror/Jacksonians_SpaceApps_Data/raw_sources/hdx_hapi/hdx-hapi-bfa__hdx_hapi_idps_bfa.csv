@@ -1,0 +1,16 @@
+location_code,has_hrp,in_gho,provider_admin1_name,provider_admin2_name,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,operation,assessment_type,population,reporting_round,reference_period_start,reference_period_end
+BFA,True,True,,,,,,,0,Burkina Faso Crisis,BA,10293,2,2019-08-30,2019-08-30
+BFA,True,True,,,,,,,0,Burkina Faso Crisis,SA,1600,1,2018-10-30,2018-10-30
+BFA,True,True,,,,,,,0,Burkina Faso Crisis,SA,10293,2,2019-08-30,2019-08-30
+BFA,True,True,Est,,,,,,1,Burkina Faso Crisis,BA,10293,2,2019-08-30,2019-08-30
+BFA,True,True,Est,,,,,,1,Burkina Faso Crisis,SA,10293,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Gnagna,,,,,2,Burkina Faso Crisis,BA,172,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Gnagna,,,,,2,Burkina Faso Crisis,SA,172,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Gourma,,,,,2,Burkina Faso Crisis,BA,4649,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Gourma,,,,,2,Burkina Faso Crisis,SA,4649,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Komandjari,,,,,2,Burkina Faso Crisis,BA,3894,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Komandjari,,,,,2,Burkina Faso Crisis,SA,3894,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Kompienga,,,,,2,Burkina Faso Crisis,BA,1578,2,2019-08-30,2019-08-30
+BFA,True,True,Est,Kompienga,,,,,2,Burkina Faso Crisis,SA,1578,2,2019-08-30,2019-08-30
+BFA,True,True,Sahel,,,,,,1,Burkina Faso Crisis,SA,1600,1,2018-10-30,2018-10-30
+BFA,True,True,Sahel,Oudalan,,,,,2,Burkina Faso Crisis,SA,1600,1,2018-10-30,2018-10-30

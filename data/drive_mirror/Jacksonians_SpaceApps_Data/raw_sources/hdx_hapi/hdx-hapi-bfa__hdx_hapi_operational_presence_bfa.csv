@@ -1,0 +1,513 @@
+location_code,has_hrp,in_gho,provider_admin1_name,provider_admin2_name,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,org_acronym,org_name,org_type_description,sector_code,sector_name,reference_period_start,reference_period_end
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,CRBF,CRBF,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,CRBF,CRBF,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,CRBF,CRBF,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,TIN TUA,TIN TUA,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,UNHCR,UN Refugee Agency,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sissili,BF50,Nando,BF5003,Sissili,2,MMI,MMI,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,OCADES,OCADES,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,OXFAM,OXFAM,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,CB,CB,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,CDC,CDC,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,CRBF,CRBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,EDUCO,EDUCO,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,Plan,Plan,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,Plan,Plan,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,WVI,World Vision International,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Balé,BF62,Bankui,BF6201,Bale,2,WaterAid,WaterAid,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Banwa,BF62,Bankui,BF6202,Banwa,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Banwa,BF62,Bankui,BF6202,Banwa,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Banwa,BF62,Bankui,BF6202,Banwa,2,IRC,International Rescue Committee,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Banwa,BF62,Bankui,BF6202,Banwa,2,SOS JD,SOS JD,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Banwa,BF62,Bankui,BF6202,Banwa,2,SOS Sahel,SOS Sahel,National NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Banwa,BF62,Bankui,BF6202,Banwa,2,TdH-L,TdH-L,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Banwa,BF62,Bankui,BF6202,Banwa,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,ASMADE,ASMADE,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,C4HOPE,C4HOPE,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,CB,CB,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,CDC,CDC,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,CRBF,CRBF,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,CRS,Catholic Relief Services,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,EDUCO,EDUCO,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,HELP,HELP,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,IEDA Relief,IEDA Relief,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,IRC,International Rescue Committee,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,MSF France,MSF France,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,OCADES,OCADES,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,OCADES,OCADES,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,SOS JD,SOS JD,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,SOS JD,SOS JD,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,SOS Sahel,SOS Sahel,National NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,SOS Sahel,SOS Sahel,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,TEARFUND,TEARFUND,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,TdH-L,TdH-L,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,WVI,World Vision International,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Bankui,Mouhoun,BF62,Bankui,BF6203,Mouhoun,2,WaterAid,WaterAid,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Bougouriba,BF57,Djoro,BF5701,Bougouriba,2,CRBF,CRBF,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Bougouriba,BF57,Djoro,BF5701,Bougouriba,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Ioba,BF57,Djoro,BF5702,Ioba,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Noumbiel,BF57,Djoro,BF5703,Noumbiel,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Noumbiel,BF57,Djoro,BF5703,Noumbiel,2,Plan,Plan,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Noumbiel,BF57,Djoro,BF5703,Noumbiel,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Poni,BF57,Djoro,BF5704,Poni,2,ACF,Action against Hunger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Poni,BF57,Djoro,BF5704,Poni,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Poni,BF57,Djoro,BF5704,Poni,2,Plan,Plan,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Djôrô,Poni,BF57,Djoro,BF5704,Poni,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,ACF,Action against Hunger,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,ACF,Action against Hunger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,ACF,Action against Hunger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,AFOD,AFOD,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,AFPOD,AFPOD,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,Be To Yinga,Be To Yinga,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,CRS,Catholic Relief Services,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,IEDA Relief,IEDA Relief,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,IPBF,IPBF,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,IRC,International Rescue Committee,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,IRC,International Rescue Committee,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,IRC,International Rescue Committee,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,Jhpiego,Jhpiego,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,NRC,Norwegian Refugee Council,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,OCADES,OCADES,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,TIN TUA,TIN TUA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,TODIYABA,TODIYABA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,Todima,Todima,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,UNICEF,United Nations Children's Fund,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,UNICEF,United Nations Children's Fund,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Gourma,BF63,Goulmou,BF6301,Gourma,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Kompienga,BF63,Goulmou,BF6302,Kompienga,2,CICR,CICR,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Kompienga,BF63,Goulmou,BF6302,Kompienga,2,EdM,EdM,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Kompienga,BF63,Goulmou,BF6302,Kompienga,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Kompienga,BF63,Goulmou,BF6302,Kompienga,2,TIN TUA,TIN TUA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Goulmou,Kompienga,BF63,Goulmou,BF6302,Kompienga,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Guiriko,Houet,BF53,Guiriko,BF5301,Houet,2,ACF,Action against Hunger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Guiriko,Houet,BF53,Guiriko,BF5301,Houet,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Guiriko,Houet,BF53,Guiriko,BF5301,Houet,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Guiriko,Kénédougou,BF53,Guiriko,BF5302,Kenedougou,2,EdM Suisse,EdM Suisse,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Kadiogo,Kadiogo,BF13,Kadiogo,BF1300,Kadiogo,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Kadiogo,Kadiogo,BF13,Kadiogo,BF1300,Kadiogo,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Kadiogo,Kadiogo,BF13,Kadiogo,BF1300,Kadiogo,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Kadiogo,Kadiogo,BF13,Kadiogo,BF1300,Kadiogo,2,MMI,MMI,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Kadiogo,Kadiogo,BF13,Kadiogo,BF1300,Kadiogo,2,MSF France,MSF France,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Kadiogo,Kadiogo,BF13,Kadiogo,BF1300,Kadiogo,2,ONIDS,ONIDS,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Kadiogo,Kadiogo,BF13,Kadiogo,BF1300,Kadiogo,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,ACF,Action against Hunger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,ATAD,ATAD,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,CRBF,CRBF,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,EDUCO,EDUCO,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,NRC,Norwegian Refugee Council,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,Progettomondo,Progettomondo,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,SHA,SHA,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,TdH-Suisse,TdH-Suisse,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,UNICEF,United Nations Children's Fund,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,UNICEF,United Nations Children's Fund,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Bam,BF49,Koulse,BF4901,Bam,2,WHH,Welthungerhilfe,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,AWK,AWK,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,CICR,CICR,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,CRBF,CRBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,NRC,Norwegian Refugee Council,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,NRC,Norwegian Refugee Council,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,OXFAM,OXFAM,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,OXFAM,OXFAM,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,Plan,Plan,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,Plan,Plan,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,TdH-Suisse,TdH-Suisse,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,UNICEF,United Nations Children's Fund,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Namentenga,BF49,Koulse,BF4902,Namentenga,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,ACRA,ACRA,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,ACTED,Agency for Technical Cooperation and Development,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,ATAD,ATAD,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,AVAD,AVAD,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,AWK,AWK,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,CRBF,CRBF,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,CRBF,CRBF,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,CRBF,CRBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,DRC,Danish Refugee Council,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,EDUCO,EDUCO,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,HELP,HELP,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,MSF Suisse,MSF Suisse,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,MWANGAZA ACTION,MWANGAZA ACTION,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,OXFAM,OXFAM,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,OXFAM,OXFAM,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,Plan,Plan,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,Plan,Plan,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,SERACOM,SERACOM,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,SERACOM,SERACOM,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,SHA,SHA,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,SOLIDEV,SOLIDEV,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,SOSVE,SOSVE,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,Solidar Suisse,Solidar Suisse,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,TDHI,TDHI,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,TdH-Suisse,TdH-Suisse,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,UNHCR,UN Refugee Agency,United Nations,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,UNICEF,United Nations Children's Fund,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,UNICEF,United Nations Children's Fund,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Koulsé,Sandbondtenga,BF49,Koulse,BF4903,Sandbondtenga,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,CRUS,CRUS,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,ChildFund,ChildFund,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,DRC,Danish Refugee Council,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,ESEPV-Sahel,ESEPV-Sahel,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,HELP,HELP,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,NRC,Norwegian Refugee Council,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,NRC,Norwegian Refugee Council,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,OXFAM,OXFAM,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,TIN TUA,TIN TUA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,TIN TUA,TIN TUA,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,UNHCR,UN Refugee Agency,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,UNIJED AFRIQUE,UNIJED AFRIQUE,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Oudalan,BF64,Liptako,BF6401,Oudalan,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,ACD NAANGUE,ACD NAANGUE,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,ACD NAANGUE,ACD NAANGUE,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,ACF,Action against Hunger,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,AIRD,AIRD,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,APFES,APFES,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,CDC,CDC,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,CRBF,CRBF,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,ESEPV-Sahel,ESEPV-Sahel,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,HELP,HELP,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,IRC,International Rescue Committee,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,MdM-Espagne,MdM-Espagne,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,MdM-Espagne,MdM-Espagne,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,NRC,Norwegian Refugee Council,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,NRC,Norwegian Refugee Council,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,OCADES,OCADES,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,OXFAM,OXFAM,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,OXFAM,OXFAM,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,Plan,Plan,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,SERACOM,SERACOM,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,SERACOM,SERACOM,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,TIN TUA,TIN TUA,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,TODIYABA,TODIYABA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,UNHCR,UN Refugee Agency,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,UNIJED AFRIQUE,UNIJED AFRIQUE,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Séno,BF64,Liptako,BF6402,Seno,2,WFP,World Food Programme,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,YAGHA,BF64,Liptako,BF6403,Yagha,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,A2N,A2N,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,A2N,A2N,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,ACD NAANGUE,ACD NAANGUE,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,ACD NAANGUE,ACD NAANGUE,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,HELP,HELP,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,NRC,Norwegian Refugee Council,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,OXFAM,OXFAM,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,SERACOM,SERACOM,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,UNIJED AFRIQUE,UNIJED AFRIQUE,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Liptako,Yagha,BF64,Liptako,BF6403,Yagha,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,ACF,Action against Hunger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,CRBF,CRBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,HELP,HELP,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,Jhpiego,Jhpiego,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,OCADES,OCADES,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,ONIDS,ONIDS,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,TIN TUA,TIN TUA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,TIN TUA,TIN TUA,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Boulgou,BF48,Nakambe,BF4801,Boulgou,2,TIN TUA,TIN TUA,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,ACF,Action against Hunger,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,ACF,Action against Hunger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,ACF,Action against Hunger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,ACF,Action against Hunger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,CRBF,CRBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,Jhpiego,Jhpiego,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,TIN TUA,TIN TUA,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,UNICEF,United Nations Children's Fund,United Nations,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Koulpélogo,BF48,Nakambe,BF4802,Koulpelogo,2,WHH,Welthungerhilfe,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,CONCERN,CONCERN,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,CONCERN,CONCERN,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,CRBF,CRBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,OCADES,OCADES,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,OCADES,OCADES,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,ONIDS,ONIDS,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,Plan,Plan,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,SOLIDEV,SOLIDEV,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,TIN TUA,TIN TUA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,TIN TUA,TIN TUA,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,TIN TUA,TIN TUA,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,UNICEF,United Nations Children's Fund,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,WHH,Welthungerhilfe,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nakambé,Kourittenga,BF48,Nakambe,BF4803,Kourittenga,2,WHH,Welthungerhilfe,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,ASMADE,ASMADE,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,CB,CB,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,CDC,CDC,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,MMI,MMI,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,OSEH,OSEH,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,Qatar Charity,Qatar Charity,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Boulkiemdé,BF50,Nando,BF5001,Boulkiemde,2,UNICEF,United Nations Children's Fund,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sanguié,BF50,Nando,BF5002,Sanguie,2,ASMADE,ASMADE,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sanguié,BF50,Nando,BF5002,Sanguie,2,CB,CB,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sanguié,BF50,Nando,BF5002,Sanguie,2,CDC,CDC,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sanguié,BF50,Nando,BF5002,Sanguie,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sanguié,BF50,Nando,BF5002,Sanguie,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sanguié,BF50,Nando,BF5002,Sanguie,2,Qatar Charity,Qatar Charity,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sissili,BF50,Nando,BF5003,Sissili,2,CB,CB,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sissili,BF50,Nando,BF5003,Sissili,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sissili,BF50,Nando,BF5003,Sissili,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sissili,BF50,Nando,BF5003,Sissili,2,HELP,HELP,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Sissili,BF50,Nando,BF5003,Sissili,2,Qatar Charity,Qatar Charity,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nando,Ziro,BF50,Nando,BF5004,Ziro,2,CB,CB,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Nando,Ziro,BF50,Nando,BF5004,Ziro,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Nando,Ziro,BF50,Nando,BF5004,Ziro,2,MMI,MMI,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nando,Ziro,BF50,Nando,BF5004,Ziro,2,Plan,Plan,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nando,Ziro,BF50,Nando,BF5004,Ziro,2,Plan,Plan,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nando,Ziro,BF50,Nando,BF5004,Ziro,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nando,Ziro,BF50,Nando,BF5004,Ziro,2,Qatar Charity,Qatar Charity,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Bazèga,BF51,Nazinon,BF5101,Bazega,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Bazèga,BF51,Nazinon,BF5101,Bazega,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Bazèga,BF51,Nazinon,BF5101,Bazega,2,CRBF,CRBF,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Bazèga,BF51,Nazinon,BF5101,Bazega,2,GRAD-A,GRAD-A,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Bazèga,BF51,Nazinon,BF5101,Bazega,2,Plan,Plan,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Bazèga,BF51,Nazinon,BF5101,Bazega,2,Plan,Plan,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Bazèga,BF51,Nazinon,BF5101,Bazega,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Nahouri,BF51,Nazinon,BF5102,Nahouri,2,APAS,APAS,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Nahouri,BF51,Nazinon,BF5102,Nahouri,2,HELP,HELP,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Nahouri,BF51,Nazinon,BF5102,Nahouri,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Zoundwéogo,BF51,Nazinon,BF5103,Zoundweogo,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Zoundwéogo,BF51,Nazinon,BF5103,Zoundweogo,2,Plan,Plan,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Nazinon,Zoundwéogo,BF51,Nazinon,BF5103,Zoundweogo,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Oubri,Bassitenga,BF55,Oubri,BF5503,Bassitenga,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Oubri,Ganzourgou,BF55,Oubri,BF5501,Ganzourgou,2,OCADES,OCADES,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Oubri,Ganzourgou,BF55,Oubri,BF5501,Ganzourgou,2,TIN TUA,TIN TUA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Oubri,Ganzourgou,BF55,Oubri,BF5501,Ganzourgou,2,UNICEF,United Nations Children's Fund,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Oubri,Kourwéogo,BF55,Oubri,BF5502,Kourweogo,2,Qatar Charity,Qatar Charity,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Oubri,Kourwéogo,BF55,Oubri,BF5502,Kourweogo,2,UNICEF,United Nations Children's Fund,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,ACF,Action against Hunger,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,ACF,Action against Hunger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,ACF,Action against Hunger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,ACF,Action against Hunger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,EdM,EdM,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,NRC,Norwegian Refugee Council,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,NRC,Norwegian Refugee Council,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,OCADES,OCADES,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,PUI,Première Urgence Internationale,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,PUI,Première Urgence Internationale,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,PUI,Première Urgence Internationale,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,TIN TUA,TIN TUA,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,TIN TUA,TIN TUA,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,TODIYABA,TODIYABA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Gnagna,BF58,Sirba,BF5801,Gnagna,2,UNICEF,United Nations Children's Fund,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,CICR,CICR,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,EdM,EdM,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,PUI,Première Urgence Internationale,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,TIN TUA,TIN TUA,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sirba,Komandjari,BF58,Sirba,BF5802,Komandjari,2,UNICEF,United Nations Children's Fund,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,AIRD,AIRD,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,CICR,CICR,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,ChildFund,ChildFund,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,IRC,International Rescue Committee,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,IRC,International Rescue Committee,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,MdM-Espagne,MdM-Espagne,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,MdM-Espagne,MdM-Espagne,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,PUI,Première Urgence Internationale,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,PUI,Première Urgence Internationale,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,SERACOM,SERACOM,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,SI,Solidarities International,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,SOLIDEV,SOLIDEV,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,TIN TUA,TIN TUA,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,UNHCR,UN Refugee Agency,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Soum,Djelgodji,BF59,Soum,BF5901,Djelgodji,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Soum,Karo-Peli,BF59,Soum,BF5902,Karo-Peli,2,SERACOM,SERACOM,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Soum,Karo-Peli,BF59,Soum,BF5902,Karo-Peli,2,SI,Solidarities International,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Soum,Karo-Peli,BF59,Soum,BF5902,Karo-Peli,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Soum,Karo-Peli,BF59,Soum,BF5902,Karo-Peli,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,AMMIE,AMMIE,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,CRBF,CRBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,DRC,Danish Refugee Council,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,DRC,Danish Refugee Council,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,DRC,Danish Refugee Council,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,HELP,HELP,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,IRC,International Rescue Committee,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,MSF France,MSF France,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,NCA,NCA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,NCA,NCA,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,SOS JD,SOS JD,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,TEARFUND,TEARFUND,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,TdH-L,TdH-L,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,TdH-L,TdH-L,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Koosin,BF61,Sourou,BF6101,Kossin,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,C4HOPE,C4HOPE,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,CB,CB,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,CDC,CDC,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,CRS,Catholic Relief Services,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,CRS,Catholic Relief Services,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,IRC,International Rescue Committee,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Nayala,BF61,Sourou,BF6102,Nayala,2,TdH-L,TdH-L,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,DRC,Danish Refugee Council,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,HELP,HELP,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,OCADES,OCADES,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,TEARFUND,TEARFUND,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,TdH-L,TdH-L,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,TdH-L,TdH-L,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Sourou,Sourou,BF61,Sourou,BF6103,Sourou,2,WVI,World Vision International,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Tannounyan,Comoé,BF47,Tannounyan,BF4701,Comoe,2,CIBF,CIBF,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Tannounyan,Comoé,BF47,Tannounyan,BF4701,Comoe,2,EdM,EdM,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Tannounyan,Comoé,BF47,Tannounyan,BF4701,Comoe,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Tannounyan,Léraba,BF47,Tannounyan,BF4702,Leraba,2,CRBF,CRBF,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,EdM,EdM,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,PUI,Première Urgence Internationale,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,PUI,Première Urgence Internationale,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,TIN TUA,TIN TUA,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,UNICEF,United Nations Children's Fund,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Dyamongou,BF60,Tapoa,BF6001,Dyamongou,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,ACF,Action against Hunger,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,ACF,Action against Hunger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,CICR,CICR,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,PUI,Première Urgence Internationale,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,TIN TUA,TIN TUA,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,TIN TUA,TIN TUA,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,TIN TUA,TIN TUA,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,UNICEF,United Nations Children's Fund,United Nations,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Tapoa,Gobnangou,BF60,Tapoa,BF6002,Gobnangou,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,AMMIE,AMMIE,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,HELP,HELP,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,IRC,International Rescue Committee,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,IRC,International Rescue Committee,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,IRC,International Rescue Committee,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,OCADES,OCADES,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,OMS,OMS,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,Plan,Plan,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,TdH-L,TdH-L,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Loroum,BF54,Yaadga,BF5401,Loroum,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Passoré,BF54,Yaadga,BF5402,Passore,2,GRAD-A,GRAD-A,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Passoré,BF54,Yaadga,BF5402,Passore,2,Qatar Charity,Qatar Charity,None,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Passoré,BF54,Yaadga,BF5402,Passore,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,ACTED,Agency for Technical Cooperation and Development,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,AJBF,AJBF,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,ALIMA,The Alliance for International Medical Action,International NGO,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,ALIMA-KEOOGO-SOS MEDECINS BF,ALIMA-KEOOGO-SOS MEDECINS BF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,AMMIE,AMMIE,None,HEA,Health,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,AMMIE,AMMIE,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,CRBF,CRBF,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,CRBF,CRBF,None,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,IEDA Relief,IEDA Relief,None,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,MAG,MAG,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,OCADES,OCADES,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,Plan,Plan,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,SCI,Save the Children International,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,UNICEF,United Nations Children's Fund,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Yatenga,BF54,Yaadga,BF5403,Yatenga,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Zondoma,BF54,Yaadga,BF5404,Zondoma,2,AJBF,AJBF,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Zondoma,BF54,Yaadga,BF5404,Zondoma,2,CICR,CICR,None,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Zondoma,BF54,Yaadga,BF5404,Zondoma,2,EDUCO,EDUCO,None,EDU,Education,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Zondoma,BF54,Yaadga,BF5404,Zondoma,2,EDUCO,EDUCO,None,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Zondoma,BF54,Yaadga,BF5404,Zondoma,2,HI,Handicap International - Humanity & Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Zondoma,BF54,Yaadga,BF5404,Zondoma,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+BFA,True,True,Yaadga,Zondoma,BF54,Yaadga,BF5404,Zondoma,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30

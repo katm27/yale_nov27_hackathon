@@ -1,0 +1,527 @@
+category,subcategory,location_code,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,hapi_updated_date
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,NE001001,Aderbissinat,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,NE001002,Arlit,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,NE001003,Bilma,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,NE001004,Iferouane,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,NE001005,Ingall,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,NE001006,Tchirozerine,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE001,Agadez,,,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE002,Diffa,NE002001,Bosso,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE002,Diffa,NE002005,N'Gourti,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE002,Diffa,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003001,Boboye,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003002,Dioundiou,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003003,Dogondoutchi,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003004,Dosso,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003005,Falmey,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003007,Loga,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,NE003008,Tibiri,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE003,Dosso,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004001,Aguié,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004002,Bermo,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004004,Gazaoua,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004008,Mayahi,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004009,Tessaoua,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE004,Maradi,NE004007,Ville de Maradi,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE008,Niamey,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE008,Niamey,,,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE008,Niamey,NE008001,Ville de Niamey,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005001,Abalak,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005002,Bagaroua,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005004,Bouza,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005005,Illéla,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005006,Keita,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005008,Malbaza,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005010,Tassara,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005012,Tillia,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE005,Tahoua,NE005013,Ville de Tahoua,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006003,Balleyara,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006004,Banibangou,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006005,Bankilaré,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006010,Say,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE006,Tillabéri,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,,,,,0,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007001,Belbedji,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007002,Damagaram Takaya,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007003,Dungass,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007004,Gouré,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007005,Kantché,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007006,Magaria,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007008,Takeita,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007009,Tanout,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007010,Tesker,2,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,,,1,2026-11-12
+food-security-nutrition-poverty,food-security,NER,NE007,Zinder,NE007011,Ville de Zinder,2,2026-11-12
+coordination-context,conflict-events,NER,NE001,Agadez,NE001001,Aderbissinat,2,2026-11-12
+coordination-context,conflict-events,NER,NE001,Agadez,NE001002,Arlit,2,2026-11-12
+coordination-context,conflict-events,NER,NE001,Agadez,NE001003,Bilma,2,2026-11-12
+coordination-context,conflict-events,NER,NE001,Agadez,NE001004,Iferouane,2,2026-11-12
+coordination-context,conflict-events,NER,NE001,Agadez,NE001005,Ingall,2,2026-11-12
+coordination-context,conflict-events,NER,NE001,Agadez,NE001006,Tchirozerine,2,2026-11-12
+coordination-context,conflict-events,NER,NE002,Diffa,NE002001,Bosso,2,2026-11-12
+coordination-context,conflict-events,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+coordination-context,conflict-events,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+coordination-context,conflict-events,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+coordination-context,conflict-events,NER,NE002,Diffa,NE002005,N'Gourti,2,2026-11-12
+coordination-context,conflict-events,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003001,Boboye,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003002,Dioundiou,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003003,Dogondoutchi,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003004,Dosso,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003005,Falmey,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003007,Loga,2,2026-11-12
+coordination-context,conflict-events,NER,NE003,Dosso,NE003008,Tibiri,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004001,Aguié,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004002,Bermo,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004004,Gazaoua,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004008,Mayahi,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004009,Tessaoua,2,2026-11-12
+coordination-context,conflict-events,NER,NE004,Maradi,NE004007,Ville de Maradi,2,2026-11-12
+coordination-context,conflict-events,NER,NE008,Niamey,NE008001,Ville de Niamey,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005001,Abalak,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005002,Bagaroua,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005004,Bouza,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005005,Illéla,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005006,Keita,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005008,Malbaza,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005010,Tassara,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005012,Tillia,2,2026-11-12
+coordination-context,conflict-events,NER,NE005,Tahoua,NE005013,Ville de Tahoua,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006003,Balleyara,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006004,Banibangou,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006005,Bankilaré,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006010,Say,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+coordination-context,conflict-events,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007001,Belbedji,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007002,Damagaram Takaya,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007003,Dungass,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007004,Gouré,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007005,Kantché,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007006,Magaria,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007008,Takeita,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007009,Tanout,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007010,Tesker,2,2026-11-12
+coordination-context,conflict-events,NER,NE007,Zinder,NE007011,Ville de Zinder,2,2026-11-12
+climate,hazards-rainfall,NER,NE001,Agadez,NE001001,Aderbissinat,2,2026-11-12
+climate,hazards-rainfall,NER,NE001,Agadez,NE001002,Arlit,2,2026-11-12
+climate,hazards-rainfall,NER,NE001,Agadez,NE001003,Bilma,2,2026-11-12
+climate,hazards-rainfall,NER,NE001,Agadez,NE001004,Iferouane,2,2026-11-12
+climate,hazards-rainfall,NER,NE001,Agadez,NE001005,Ingall,2,2026-11-12
+climate,hazards-rainfall,NER,NE001,Agadez,NE001006,Tchirozerine,2,2026-11-12
+climate,hazards-rainfall,NER,NE001,Agadez,,,1,2026-11-12
+climate,hazards-rainfall,NER,NE002,Diffa,NE002001,Bosso,2,2026-11-12
+climate,hazards-rainfall,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+climate,hazards-rainfall,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+climate,hazards-rainfall,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+climate,hazards-rainfall,NER,NE002,Diffa,NE002005,N'Gourti,2,2026-11-12
+climate,hazards-rainfall,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+climate,hazards-rainfall,NER,NE002,Diffa,,,1,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003001,Boboye,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003002,Dioundiou,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003003,Dogondoutchi,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003004,Dosso,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003005,Falmey,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003007,Loga,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,NE003008,Tibiri,2,2026-11-12
+climate,hazards-rainfall,NER,NE003,Dosso,,,1,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004001,Aguié,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004002,Bermo,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004004,Gazaoua,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004008,Mayahi,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,NE004009,Tessaoua,2,2026-11-12
+climate,hazards-rainfall,NER,NE004,Maradi,,,1,2026-11-12
+climate,hazards-rainfall,NER,NE008,Niamey,,,1,2026-11-12
+climate,hazards-rainfall,NER,NE008,Niamey,NE008001,Ville de Niamey,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005001,Abalak,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005002,Bagaroua,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005004,Bouza,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005005,Illéla,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005006,Keita,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005008,Malbaza,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005010,Tassara,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,NE005012,Tillia,2,2026-11-12
+climate,hazards-rainfall,NER,NE005,Tahoua,,,1,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006003,Balleyara,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006004,Banibangou,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006010,Say,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+climate,hazards-rainfall,NER,NE006,Tillabéri,,,1,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007001,Belbedji,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007002,Damagaram Takaya,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007003,Dungass,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007004,Gouré,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007005,Kantché,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007006,Magaria,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007008,Takeita,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007009,Tanout,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,NE007010,Tesker,2,2026-11-12
+climate,hazards-rainfall,NER,NE007,Zinder,,,1,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006010,Say,2,2026-11-12
+coordination-context,operational-presence,NER,NE002,Diffa,NE002001,Bosso,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005006,Keita,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003004,Dosso,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005013,Ville de Tahoua,2,2026-11-12
+coordination-context,operational-presence,NER,NE008,Niamey,NE008001,Ville de Niamey,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004004,Gazaoua,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007004,Gouré,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,,,1,2026-11-12
+coordination-context,operational-presence,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006003,Balleyara,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+coordination-context,operational-presence,NER,NE001,Agadez,NE001006,Tchirozerine,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004008,Mayahi,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007011,Ville de Zinder,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007001,Belbedji,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007009,Tanout,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004009,Tessaoua,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+coordination-context,operational-presence,NER,NE001,Agadez,NE001005,Ingall,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005005,Illéla,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005010,Tassara,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005008,Malbaza,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007005,Kantché,2,2026-11-12
+coordination-context,operational-presence,NER,NE001,Agadez,NE001003,Bilma,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006004,Banibangou,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003008,Tibiri,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004007,Ville de Maradi,2,2026-11-12
+coordination-context,operational-presence,NER,NE001,Agadez,NE001004,Iferouane,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005002,Bagaroua,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007003,Dungass,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+coordination-context,operational-presence,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005004,Bouza,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004001,Aguié,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007002,Damagaram Takaya,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004002,Bermo,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003002,Dioundiou,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007008,Takeita,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003001,Boboye,2,2026-11-12
+coordination-context,operational-presence,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,,,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003003,Dogondoutchi,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005001,Abalak,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003007,Loga,2,2026-11-12
+coordination-context,operational-presence,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+coordination-context,operational-presence,NER,NE007,Zinder,NE007006,Magaria,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006005,Bankilaré,2,2026-11-12
+coordination-context,operational-presence,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+coordination-context,operational-presence,NER,NE001,Agadez,NE001002,Arlit,2,2026-11-12
+coordination-context,operational-presence,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+coordination-context,operational-presence,NER,NE003,Dosso,NE003005,Falmey,2,2026-11-12
+coordination-context,operational-presence,NER,NE005,Tahoua,NE005012,Tillia,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE001,Agadez,NE001001,Aderbissinat,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE001,Agadez,NE001002,Arlit,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE001,Agadez,NE001003,Bilma,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE001,Agadez,NE001004,Iferouane,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE001,Agadez,NE001005,Ingall,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE001,Agadez,NE001006,Tchirozerine,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE001,Agadez,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,NE002,Diffa,NE002001,Bosso,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE002,Diffa,NE002005,N'Gourti,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE002,Diffa,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003001,Boboye,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003002,Dioundiou,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003003,Dogondoutchi,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003004,Dosso,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003005,Falmey,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003007,Loga,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,NE003008,Tibiri,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE003,Dosso,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004001,Aguié,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004002,Bermo,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004004,Gazaoua,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004008,Mayahi,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004009,Tessaoua,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,NE004,Maradi,NE004007,Ville de Maradi,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE008,Niamey,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,NE008,Niamey,NE008001,Ville de Niamey,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005001,Abalak,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005002,Bagaroua,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005004,Bouza,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005005,Illéla,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005006,Keita,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005008,Malbaza,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005010,Tassara,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005012,Tillia,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,NE005,Tahoua,NE005013,Ville de Tahoua,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006003,Balleyara,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006004,Banibangou,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006005,Bankilaré,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006010,Say,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE006,Tillabéri,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,,,,,0,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007001,Belbedji,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007002,Damagaram Takaya,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007003,Dungass,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007004,Gouré,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007005,Kantché,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007006,Magaria,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007008,Takeita,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007009,Tanout,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007010,Tesker,2,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,,,1,2026-11-12
+geography-infrastructure,baseline-population,NER,NE007,Zinder,NE007011,Ville de Zinder,2,2026-11-12
+affected-people,returnees,NER,,,,,0,2026-11-12
+affected-people,idps,NER,NE002,Diffa,NE002001,Bosso,2,2026-11-12
+affected-people,idps,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+affected-people,idps,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+affected-people,idps,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+affected-people,idps,NER,NE002,Diffa,NE002005,N'Gourti,2,2026-11-12
+affected-people,idps,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+affected-people,idps,NER,NE002,Diffa,,,1,2026-11-12
+affected-people,idps,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+affected-people,idps,NER,NE003,Dosso,,,1,2026-11-12
+affected-people,idps,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+affected-people,idps,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+affected-people,idps,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+affected-people,idps,NER,NE004,Maradi,,,1,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005002,Bagaroua,2,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005010,Tassara,2,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005012,Tillia,2,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,,,1,2026-11-12
+affected-people,idps,NER,NE005,Tahoua,NE005013,Ville de Tahoua,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006003,Balleyara,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006004,Banibangou,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006005,Bankilaré,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006010,Say,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+affected-people,idps,NER,NE006,Tillabéri,,,1,2026-11-12
+affected-people,idps,NER,,,,,0,2026-11-12
+affected-people,idps,NER,NE007,Zinder,NE007002,Damagaram Takaya,2,2026-11-12
+affected-people,idps,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+affected-people,idps,NER,NE007,Zinder,,,1,2026-11-12
+affected-people,refugees-persons-of-concern,NER,,,,,0,2026-11-12
+coordination-context,national-risk,NER,,,,,0,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE006,Tillabéri,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE001,Agadez,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE008,Niamey,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE003,Dosso,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE004,Maradi,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE002,Diffa,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE005,Tahoua,,,1,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,,,,,0,2026-11-12
+food-security-nutrition-poverty,poverty-rate,NER,NE007,Zinder,,,1,2026-11-12
+coordination-context,funding,NER,,,,,0,2026-11-12
+affected-people,humanitarian-needs,NER,NE001,Agadez,NE001001,Aderbissinat,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE001,Agadez,NE001002,Arlit,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE001,Agadez,NE001003,Bilma,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE001,Agadez,NE001004,Iferouane,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE001,Agadez,NE001005,Ingall,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE001,Agadez,NE001006,Tchirozerine,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE002,Diffa,NE002001,Bosso,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE002,Diffa,NE002005,N'Gourti,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003001,Boboye,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003002,Dioundiou,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003003,Dogondoutchi,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003004,Dosso,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003005,Falmey,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003007,Loga,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE003,Dosso,NE003008,Tibiri,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004001,Aguié,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004002,Bermo,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004004,Gazaoua,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004008,Mayahi,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004009,Tessaoua,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE004,Maradi,NE004007,Ville de Maradi,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE008,Niamey,NE008001,Ville de Niamey,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005001,Abalak,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005002,Bagaroua,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005004,Bouza,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005005,Illéla,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005006,Keita,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005008,Malbaza,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005010,Tassara,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005012,Tillia,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE005,Tahoua,NE005013,Ville de Tahoua,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006003,Balleyara,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006004,Banibangou,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006005,Bankilaré,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006010,Say,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+affected-people,humanitarian-needs,NER,,,,,0,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007001,Belbedji,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007002,Damagaram Takaya,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007003,Dungass,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007004,Gouré,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007005,Kantché,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007006,Magaria,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007008,Takeita,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007009,Tanout,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007010,Tesker,2,2026-11-12
+affected-people,humanitarian-needs,NER,NE007,Zinder,NE007011,Ville de Zinder,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE001,Agadez,NE001001,Aderbissinat,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE001,Agadez,NE001002,Arlit,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE001,Agadez,NE001005,Ingall,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE001,Agadez,NE001006,Tchirozerine,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE002,Diffa,NE002002,Diffa,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE002,Diffa,NE002003,Goudoumaria,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE002,Diffa,NE002004,Maïné Soroa,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE002,Diffa,NE002006,N'Guigmi,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE003,Dosso,NE003001,Boboye,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE003,Dosso,NE003003,Dogondoutchi,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE003,Dosso,NE003004,Dosso,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE003,Dosso,NE003006,Gaya,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE003,Dosso,NE003007,Loga,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE004,Maradi,NE004001,Aguié,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE004,Maradi,NE004003,Dakoro,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE004,Maradi,NE004005,Guidan Roumdji,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE004,Maradi,NE004006,Madarounfa,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE004,Maradi,NE004008,Mayahi,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE004,Maradi,NE004009,Tessaoua,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE008,Niamey,NE008001,Ville de Niamey,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005001,Abalak,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005003,Birni N'Konni,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005004,Bouza,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005005,Illéla,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005006,Keita,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005007,Madaoua,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005008,Malbaza,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005009,Tahoua,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE005,Tahoua,NE005011,Tchintabaraden,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006001,Abala,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006002,Ayerou,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006005,Bankilaré,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006006,Filingué,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006007,Gothèye,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006008,Kollo,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006009,Ouallam,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006012,Tillabéri,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006013,Torodi,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,NE006011,Téra,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE006,Tillabéri,,,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE007,Zinder,NE007003,Dungass,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE007,Zinder,NE007004,Gouré,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE007,Zinder,NE007005,Kantché,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE007,Zinder,NE007006,Magaria,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE007,Zinder,NE007007,Mirriah,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE007,Zinder,NE007008,Takeita,2,2026-11-12
+food-security-nutrition-poverty,food-prices-market-monitor,NER,NE007,Zinder,NE007009,Tanout,2,2026-11-12

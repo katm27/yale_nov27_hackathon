@@ -1,0 +1,23 @@
+id,operation,admin0Name,admin0Pcode,admin1Name,admin1Pcode,admin2Name,admin2Pcode,adminLevel,numPresentIdpInd,reportingDate,yearReportingDate,monthReportingDate,roundNumber,displacementReason,numberMales,numberFemales,idpOriginAdmin1Name,idpOriginAdmin1Pcode,assessmentType,operationStatus
+,Burkina Faso Crisis,Burkina Faso,BFA,,,,,0,1600,2018-10-30T00:00:00,2018,10,1,Conflict,764,836,Not available,Not available,SA,Inactive
+,Burkina Faso Crisis,Burkina Faso,BFA,,,,,0,10293,2019-08-30T00:00:00,2019,8,2,Conflict,4426,5867,Not available,Not available,SA,Inactive
+,Burkina Faso Crisis,Burkina Faso,BFA,,,,,0,288,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Centre-Nord,BF49,BA,Inactive
+,Burkina Faso Crisis,Burkina Faso,BFA,,,,,0,9793,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Est,BF52,BA,Inactive
+,Burkina Faso Crisis,Burkina Faso,BFA,,,,,0,212,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Sahel,BF56,BA,Inactive
+37185,Burkina Faso Crisis,Burkina Faso,BFA,Sahel,BF56,,,1,1600,2018-10-30T00:00:00,2018,10,1,Conflict,764,836,Not available,Not available,SA,Inactive
+74493,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,,,1,10293,2019-08-30T00:00:00,2019,8,2,Conflict,4426,5867,Not available,Not available,SA,Inactive
+30167,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,,,1,288,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Centre-Nord,BF49,BA,Inactive
+30168,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,,,1,9793,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Est,BF52,BA,Inactive
+30169,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,,,1,212,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Sahel,BF56,BA,Inactive
+157226,Burkina Faso Crisis,Burkina Faso,BFA,Sahel,BF56,Oudalan,BF5601,2,1600,2018-10-30T00:00:00,2018,10,1,Conflict,764,836,Not available,Not available,SA,Inactive
+9615,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Kompienga,BF5204,2,80,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Sahel,BF56,BA,Inactive
+21789,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Komandjari,BF5203,2,3894,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Est,BF52,BA,Inactive
+29130,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Gnagna,BF5201,2,40,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Centre-Nord,BF49,BA,Inactive
+88055,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Gnagna,BF5201,2,132,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Sahel,BF56,BA,Inactive
+117439,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Gourma,BF5202,2,4649,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Est,BF52,BA,Inactive
+137121,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Kompienga,BF5204,2,248,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Centre-Nord,BF49,BA,Inactive
+147577,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Kompienga,BF5204,2,1250,2019-08-30T00:00:00,2019,8,2,Insecurity,,,Est,BF52,BA,Inactive
+157222,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Gnagna,BF5201,2,172,2019-08-30T00:00:00,2019,8,2,Conflict,74,98,Not available,Not available,SA,Inactive
+157223,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Gourma,BF5202,2,4649,2019-08-30T00:00:00,2019,8,2,Conflict,1998,2651,Not available,Not available,SA,Inactive
+157224,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Komandjari,BF5203,2,3894,2019-08-30T00:00:00,2019,8,2,Conflict,1675,2219,Not available,Not available,SA,Inactive
+157225,Burkina Faso Crisis,Burkina Faso,BFA,Est,BF52,Kompienga,BF5204,2,1578,2019-08-30T00:00:00,2019,8,2,Conflict,679,899,Not available,Not available,SA,Inactive

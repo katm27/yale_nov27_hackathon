@@ -1,0 +1,845 @@
+location_code,has_hrp,in_gho,provider_admin1_name,provider_admin2_name,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,org_acronym,org_name,org_type_description,sector_code,sector_name,reference_period_start,reference_period_end
+NER,True,True,Agadez,Arlit,NE001,Agadez,NE001002,Arlit,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Agadez,Bilma,NE001,Agadez,NE001003,Bilma,2,ADESA,Action pour le Developpement du Sahel,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Agadez,Bilma,NE001,Agadez,NE001003,Bilma,2,AIRD,African Initatives for Relief and Development,International NGO,LOG,Logistics,2026-06-01,2026-06-30
+NER,True,True,Agadez,Bilma,NE001,Agadez,NE001003,Bilma,2,AL WIFAQ,AL WIFAQ,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Agadez,Bilma,NE001,Agadez,NE001003,Bilma,2,MSF-E,Doctors Without Borders Spain,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Agadez,Iferouane,NE001,Agadez,NE001004,Iferouane,2,HED-TAMAT,Homme Environnement Développement Tamat,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Agadez,Ingall,NE001,Agadez,NE001005,Ingall,2,COLIA,Cooperazione Internazionale,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Agadez,Ingall,NE001,Agadez,NE001005,Ingall,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Agadez,Ingall,NE001,Agadez,NE001005,Ingall,2,COLIA,Cooperazione Internazionale,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Agadez,Ingall,NE001,Agadez,NE001005,Ingall,2,GADR-RA,Groupe d'Appui au Développement Rural Recherche Action,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Agadez,Ingall,NE001,Agadez,NE001005,Ingall,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Agadez,Ingall,NE001,Agadez,NE001005,Ingall,2,MSF-E,Doctors Without Borders Spain,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Agadez,Ingall,NE001,Agadez,NE001005,Ingall,2,MSF-E,Doctors Without Borders Spain,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Agadez,Tchirozerine,NE001,Agadez,NE001006,Tchirozerine,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Agadez,Tchirozerine,NE001,Agadez,NE001006,Tchirozerine,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Agadez,Tchirozerine,NE001,Agadez,NE001006,Tchirozerine,2,MDM-BE,Médecins du Monde - Belgique,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Agadez,Tchirozerine,NE001,Agadez,NE001006,Tchirozerine,2,MSF-E,Doctors Without Borders Spain,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Agadez,Tchirozerine,NE001,Agadez,NE001006,Tchirozerine,2,PA,Point d'appui,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Agadez,Tchirozerine,NE001,Agadez,NE001006,Tchirozerine,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Agadez,Tchirozerine,NE001,Agadez,NE001006,Tchirozerine,2,RET,Relief and resilience through Education in Transition,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Bosso,NE002,Diffa,NE002001,Bosso,2,MSF-E,Doctors Without Borders Spain,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Diffa,Bosso,NE002,Diffa,NE002001,Bosso,2,OXFAM,Oxfam Intenational Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Bosso,NE002,Diffa,NE002001,Bosso,2,OXFAM,Oxfam Intenational Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Bosso,NE002,Diffa,NE002001,Bosso,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Bosso,NE002,Diffa,NE002001,Bosso,2,WVI,World Vision International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,ACPP,Assemblée de Coopération pour la Paix,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,ADD FASSALI,Appui au Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,ADESA,Action pour le Developpement du Sahel,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,AGIR PLUS,ONG Agir Plus,National NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,AGIR PLUS,ONG Agir Plus,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,ARRA AFA ALKHAIRIYYA,ARRA AFA ALKHAIRIYYA,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,CCSJ-Niger,Cadre de Concertation des Structures de la Jeunesse (CCSJ-Niger),National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,CI.Be,Caritas International Belgique,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,COLIA,Cooperazione Internazionale,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,COLIA,Cooperazione Internazionale,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,DEDI,Développement Equité Durabilité et Innovation,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,DIKO,ONG DIKO,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,HI,Humanité et Inclusion,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,HI,Humanité et Inclusion,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,IOM,International Organization for Migration,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,IOM,International Organization for Migration,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,JAAD,Jeunesse Africaine et Action de Développement,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,MSF-E,Doctors Without Borders Spain,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,OXFAM,Oxfam Intenational Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,OXFAM,Oxfam Intenational Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,PIN,Plan International Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,PPD,Promotion du Pastoralisme et Decentralisation,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,SCI,Save the Children International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,SCI,Save the Children International,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,UNHCR,UN Refugee Agency,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,UNOCHA,Bureau des Natinos Unies pour la Coordination des Affaires Humanitaires,United Nations,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Diffa,Diffa,NE002,Diffa,NE002002,Diffa,2,YARA LNC,Yara Les Nouveaux Constructeurs Suisse,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Goudoumaria,NE002,Diffa,NE002003,Goudoumaria,2,ADD FASSALI,Appui au Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Goudoumaria,NE002,Diffa,NE002003,Goudoumaria,2,CI.Be,Caritas International Belgique,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Goudoumaria,NE002,Diffa,NE002003,Goudoumaria,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Goudoumaria,NE002,Diffa,NE002003,Goudoumaria,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Diffa,Goudoumaria,NE002,Diffa,NE002003,Goudoumaria,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Goudoumaria,NE002,Diffa,NE002003,Goudoumaria,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,ABCD,ABCD,International NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,ADD FASSALI,Appui au Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,AGIR PLUS,ONG Agir Plus,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,CI.Be,Caritas International Belgique,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,COLIA,Cooperazione Internazionale,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,COLIA,Cooperazione Internazionale,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,SCI,Save the Children International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Diffa,Maïné Soroa,NE002,Diffa,NE002004,Maïné Soroa,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,N'Guigmi,NE002,Diffa,NE002006,N'Guigmi,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Diffa,N'Guigmi,NE002,Diffa,NE002006,N'Guigmi,2,COLIA,Cooperazione Internazionale,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Diffa,N'Guigmi,NE002,Diffa,NE002006,N'Guigmi,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Diffa,N'Guigmi,NE002,Diffa,NE002006,N'Guigmi,2,EDHN,Ensemble pour un Développement Harmonieux du Niger,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Diffa,N'Guigmi,NE002,Diffa,NE002006,N'Guigmi,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Diffa,N'Guigmi,NE002,Diffa,NE002006,N'Guigmi,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Diffa,N'Guigmi,NE002,Diffa,NE002006,N'Guigmi,2,MSF-E,Doctors Without Borders Spain,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,AREN,Association pour la Redynamisation de l'Elevage au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,SwissAid,SwissAid,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,WVI,World Vision International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Dosso,Boboye,NE003,Dosso,NE003001,Boboye,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Dioundiou,NE003,Dosso,NE003002,Dioundiou,2,AREN,Association pour la Redynamisation de l'Elevage au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dioundiou,NE003,Dosso,NE003002,Dioundiou,2,ORER,Organisation pour la Redynamisation de l' Économie Rurales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dioundiou,NE003,Dosso,NE003002,Dioundiou,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,AREN,Association pour la Redynamisation de l'Elevage au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,CWW,Concern World Wide,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,EDHN,Ensemble pour un Développement Harmonieux du Niger,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,FS,Fondation Sarraounia,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dogondoutchi,NE003,Dosso,NE003003,Dogondoutchi,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dosso,NE003,Dosso,NE003004,Dosso,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dosso,NE003,Dosso,NE003004,Dosso,2,CRN,Croix-Rouge Nigérienne,Red Cross / Red Crescent,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Dosso,NE003,Dosso,NE003004,Dosso,2,ESPOIR-NIGER,Ensemble Secourons les Populations Opprimées pour l'Inclusion et la Résilience au Niger (ESPOIR-NIGER),National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Dosso,NE003,Dosso,NE003004,Dosso,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dosso,NE003,Dosso,NE003004,Dosso,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Dosso,NE003,Dosso,NE003004,Dosso,2,PIN,Plan International Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Dosso,NE003,Dosso,NE003004,Dosso,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Dosso,Falmey,NE003,Dosso,NE003005,Falmey,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Dosso,Falmey,NE003,Dosso,NE003005,Falmey,2,AREN,Association pour la Redynamisation de l'Elevage au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Falmey,NE003,Dosso,NE003005,Falmey,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Dosso,Falmey,NE003,Dosso,NE003005,Falmey,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Falmey,NE003,Dosso,NE003005,Falmey,2,SEVIVE,SOURCE D'EAU VIVE,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Dosso,Falmey,NE003,Dosso,NE003005,Falmey,2,WVI,World Vision International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Dosso,Falmey,NE003,Dosso,NE003005,Falmey,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,ADESA,Action pour le Developpement du Sahel,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,APFR,Action Pour la Femme Rurale,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,AREN,Association pour la Redynamisation de l'Elevage au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,ESPOIR-NIGER,Ensemble Secourons les Populations Opprimées pour l'Inclusion et la Résilience au Niger (ESPOIR-NIGER),National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,UNHCR,UN Refugee Agency,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Dosso,Gaya,NE003,Dosso,NE003006,Gaya,2,UNHCR,UN Refugee Agency,United Nations,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Dosso,Loga,NE003,Dosso,NE003007,Loga,2,AREN,Association pour la Redynamisation de l'Elevage au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Loga,NE003,Dosso,NE003007,Loga,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Tibiri,NE003,Dosso,NE003008,Tibiri,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Dosso,Tibiri,NE003,Dosso,NE003008,Tibiri,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Dosso,Tibiri,NE003,Dosso,NE003008,Tibiri,2,AREN,Association pour la Redynamisation de l'Elevage au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Dosso,Tibiri,NE003,Dosso,NE003008,Tibiri,2,CRN,Croix-Rouge Nigérienne,Red Cross / Red Crescent,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Dosso,Tibiri,NE003,Dosso,NE003008,Tibiri,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Dosso,Tibiri,NE003,Dosso,NE003008,Tibiri,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,SCI,Save the Children International,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,SCI,Save the Children International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,SCI,Save the Children International,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Aguié,NE004,Maradi,NE004001,Aguié,2,SCI,Save the Children International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Bermo,NE004,Maradi,NE004002,Bermo,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Bermo,NE004,Maradi,NE004002,Bermo,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Bermo,NE004,Maradi,NE004002,Bermo,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,Action Dev,Action Dev,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,CI.Be,Caritas International Belgique,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,CI.Be,Caritas International Belgique,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,GADER,Action pour le Développement et l'Assistance Humanitaire,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,MCI,Mercy Corps International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,NOUROUL HOUDA,NOUROUL HOUDA,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,NOUROUL HOUDA,NOUROUL HOUDA,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,WVI,World Vision International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Dakoro,NE004,Maradi,NE004003,Dakoro,2,WVI,World Vision International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Gazaoua,NE004,Maradi,NE004004,Gazaoua,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Gazaoua,NE004,Maradi,NE004004,Gazaoua,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Gazaoua,NE004,Maradi,NE004004,Gazaoua,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Gazaoua,NE004,Maradi,NE004004,Gazaoua,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Gazaoua,NE004,Maradi,NE004004,Gazaoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Gazaoua,NE004,Maradi,NE004004,Gazaoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Gazaoua,NE004,Maradi,NE004004,Gazaoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,AEI,Agir pour une Éducation Inclusive,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,AEI,Agir pour une Éducation Inclusive,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ARRA AFA ALKHAIRIYYA,ARRA AFA ALKHAIRIYYA,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,COLIA,Cooperazione Internazionale,International NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,COLIA,Cooperazione Internazionale,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,COLIA,Cooperazione Internazionale,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,COLIA,Cooperazione Internazionale,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,COLIA,Cooperazione Internazionale,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,DEDI,Développement Equité Durabilité et Innovation,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,EBC,EL bourak charity,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,EBC,EL bourak charity,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,IOM,International Organization for Migration,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,MCI,Mercy Corps International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,MSF-WaCA,Médecins Sans Frontière West Africa and Central Africa,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,MSF-WaCA,Médecins Sans Frontière West Africa and Central Africa,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,OXFAM,Oxfam Intenational Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,PIN,Plan International Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,PIN,Plan International Niger,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,RET,Relief and resilience through Education in Transition,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,RET,Relief and resilience through Education in Transition,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,UNHCR,UN Refugee Agency,United Nations,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,UNHCR,UN Refugee Agency,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,UNHCR,UN Refugee Agency,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,UNHCR,UN Refugee Agency,United Nations,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,UNHCR,UN Refugee Agency,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,UNHCR,UN Refugee Agency,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,WVI,World Vision International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,WVI,World Vision International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,WVI,World Vision International,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Guidan Roumdji,NE004,Maradi,NE004005,Guidan Roumdji,2,WaterAid,WaterAid,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,COLIA,Cooperazione Internazionale,International NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,COLIA,Cooperazione Internazionale,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,COLIA,Cooperazione Internazionale,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,IOM,International Organization for Migration,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,WFP,World Food Programme,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,UNHCR,UN Refugee Agency,United Nations,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Madarounfa,NE004,Maradi,NE004006,Madarounfa,2,WaterAid,WaterAid,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,ACF Spain,Action against Hunger - Spain,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,IOM,International Organization for Migration,United Nations,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,KAWTAL,KAWTAL,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,PIN,Plan International Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Mayahi,NE004,Maradi,NE004008,Mayahi,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,DIKO,ONG DIKO,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,HI,Humanité et Inclusion,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Tessaoua,NE004,Maradi,NE004009,Tessaoua,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,AGIR PLUS,ONG Agir Plus,National NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,AHDD/OIM,Actions Humanitaires et Développement Durable/Organisation des Nations Unies pour les migrants,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,CODECO,Contribution au Development Communautaire,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,COLIA,Cooperazione Internazionale,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,COLIA,Cooperazione Internazionale,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,EBC,EL bourak charity,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,EBC,EL bourak charity,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,IAMA-LA RUCHE,Initiative pour l'Assistance aux Malades et Accompagnants,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,IOM,International Organization for Migration,United Nations,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,IOM,International Organization for Migration,United Nations,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,RC2D,Resilience Communautaire et Developpement Durable,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Maradi,Ville de Maradi,NE004,Maradi,NE004007,Ville de Maradi,2,TARBIYA CHARITY,TARBIYA CHARITY,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,ACDD Forge Arts,ONG FOrge Arts,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,AEI,Agir pour une Éducation Inclusive,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,AEJTN,Association des enfants et jeunes Travailleurs du Niger,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,CCN,CONACCE CHAPLAINS NIGER,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,Caritas-CH,Caritas Suisse,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,DIKO,ONG DIKO,National NGO,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,DIKO,ONG DIKO,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,DIKO,ONG DIKO,National NGO,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,DIKO,ONG DIKO,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,DIKO,ONG DIKO,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,DIKO,ONG DIKO,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,EDHN,Ensemble pour un Développement Harmonieux du Niger,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,FAD,"ONG Femmes, Actions et Développement",National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,GADR-RA,Groupe d'Appui au Développement Rural Recherche Action,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,GRYK,Gidan Raya Yaran Karkara,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,IRNE,Islamic Relief  Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,JVE NIGER,Jeunes Volontaires pour l'Environnement,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,MDM-BE,Médecins du Monde - Belgique,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,MDM-BE,Médecins du Monde - Belgique,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,ONG EVE,Espoir D'Une Vie Enfants Pour Tous,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,ONG GRYK,ONG GUIDAN RAYA YARAN KARKARA,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,RC2D,Resilience Communautaire et Developpement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,SCI,Save the Children International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,SOLTHIS,Solidarité Thérapeutique et Initiatives pour la Santé,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,SP,Samaritan's Purse,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,SUN Business Network,SUN Secteur Privé,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Niamey,Ville de Niamey,NE008,Niamey,NE008001,Ville de Niamey,2,UNOCHA,Bureau des Natinos Unies pour la Coordination des Affaires Humanitaires,United Nations,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Tahoua,,NE005,Tahoua,,,1,ADN,Agence de Developpement Nourriterre,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,,NE005,Tahoua,,,1,IOM,International Organization for Migration,United Nations,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,ACRPE,Association : Conscientisation et Réflexion pour la Promotion de L’Elevage,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,ASB,Arbeit-Samarit-Bund,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,CDD,Comité pour un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,SP,Samaritan's Purse,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,SP,Samaritan's Purse,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,SP,Samaritan's Purse,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,SYCOD,Sycod,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,SwissContact,SwissContact,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,UNICEF,United Nations Children's Fund,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,VSF-B,Vétérinaires Sans Frontières Belgique,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,VSF-B,Vétérinaires Sans Frontières Belgique,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Abalak,NE005,Tahoua,NE005001,Abalak,2,WFP,World Food Programme,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,AAD,Aide Action pour le Développement,National NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,AAD,Aide Action pour le Développement,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,CDD,Comité pour un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,COLIA,Cooperazione Internazionale,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,CWW,Concern World Wide,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,MCI,Mercy Corps International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,MDM-BE,Médecins du Monde - Belgique,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,UNICEF,United Nations Children's Fund,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,UNICEF,United Nations Children's Fund,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,VP,Vision Plus,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,WFP,World Food Programme,United Nations,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bagaroua,NE005,Tahoua,NE005002,Bagaroua,2,WFP,World Food Programme,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Birni N'Konni,NE005,Tahoua,NE005003,Birni N'Konni,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Birni N'Konni,NE005,Tahoua,NE005003,Birni N'Konni,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Birni N'Konni,NE005,Tahoua,NE005003,Birni N'Konni,2,CWW,Concern World Wide,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Birni N'Konni,NE005,Tahoua,NE005003,Birni N'Konni,2,CWW,Concern World Wide,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Birni N'Konni,NE005,Tahoua,NE005003,Birni N'Konni,2,PIN,Plan International Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Birni N'Konni,NE005,Tahoua,NE005003,Birni N'Konni,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,ACF Spain,Action against Hunger - Spain,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,ACF Spain,Action against Hunger - Spain,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,ACF Spain,Action against Hunger - Spain,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,ADESC,ADESC,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,MCI,Mercy Corps International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,SP,Samaritan's Purse,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,SP,Samaritan's Purse,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Bouza,NE005,Tahoua,NE005004,Bouza,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,ALFALAH,Association Nationale ALFALAH,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,PA,Point d'appui,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,WVI,World Vision International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Illéla,NE005,Tahoua,NE005005,Illéla,2,WaterAid,WaterAid,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,ADN,Agence de Developpement Nourriterre,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,ASB,Arbeit-Samarit-Bund,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,VSF-B,Vétérinaires Sans Frontières Belgique,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Keita,NE005,Tahoua,NE005006,Keita,2,WFP,World Food Programme,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,AAD,Aide Action pour le Développement,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,ASB,Arbeit-Samarit-Bund,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,ASB,Arbeit-Samarit-Bund,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,CDD,Comité pour un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,INTERSOS,INTERSOS - Humanitarian Aid Organization,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,MCI,Mercy Corps International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,MCI,Mercy Corps International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,MSF-WaCA,Médecins Sans Frontière West Africa and Central Africa,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,MSF-WaCA,Médecins Sans Frontière West Africa and Central Africa,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,PIN,Plan International Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,VP,Vision Plus,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,WFP,World Food Programme,United Nations,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua,NE005,Tahoua,NE005007,Madaoua,2,WFP,World Food Programme,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua et Bagaroua,NE005,Tahoua,,,2,ACF Spain,Action against Hunger - Spain,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua et Bagaroua,NE005,Tahoua,,,2,ACF Spain,Action against Hunger - Spain,International NGO,SHL,Emergency Shelter and NFI,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Madaoua et Bagaroua,NE005,Tahoua,,,2,ACF Spain,Action against Hunger - Spain,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Malbaza,NE005,Tahoua,NE005008,Malbaza,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Malbaza,NE005,Tahoua,NE005008,Malbaza,2,UNICEF,United Nations Children's Fund,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Malbaza,NE005,Tahoua,NE005008,Malbaza,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Malbaza,NE005,Tahoua,NE005008,Malbaza,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ADN,Agence de Developpement Nourriterre,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,AIRD,African Initatives for Relief and Development,International NGO,LOG,Logistics,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ASB,Arbeit-Samarit-Bund,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,ASB,Arbeit-Samarit-Bund,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,CWW,Concern World Wide,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,CWW,Concern World Wide,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,IOM,International Organization for Migration,United Nations,ERY,Early Recovery,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,IOM,International Organization for Migration,United Nations,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,PIN,Plan International Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,PIN,Plan International Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,VP,Vision Plus,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,VP,Vision Plus,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WFP,World Food Programme,United Nations,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WFP,World Food Programme,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WVI,World Vision International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WVI,World Vision International,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WVI,World Vision International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tahoua,NE005,Tahoua,NE005009,Tahoua,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,CDD,Comité pour un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,OXFAM,Oxfam Intenational Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,OXFAM,Oxfam Intenational Niger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,VP,Vision Plus,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tassara,NE005,Tahoua,NE005010,Tassara,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ACF Spain,Action against Hunger - Spain,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ADESA,Action pour le Developpement du Sahel,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ASB,Arbeit-Samarit-Bund,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,ASB,Arbeit-Samarit-Bund,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,CADEV Niger,Caritas Développement Niger,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,CDD,Comité pour un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,VP,Vision Plus,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaraden,NE005,Tahoua,NE005011,Tchintabaraden,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tchintabaradene,NE005,Tahoua,NE005011,Tchintabaraden,2,ASB,Arbeit-Samarit-Bund,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ACF Spain,Action against Hunger - Spain,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ADESP,Actions pour le Développement Economique et Social des Populations,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ASB,Arbeit-Samarit-Bund,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,ASB,Arbeit-Samarit-Bund,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,AeA,Ayuda en Action,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,AeA,Ayuda en Action,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,CDD,Comité pour un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,Educo,Fundación Educación y Cooperación,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,KARKARA,Association Nigérienne pour la Dynamisation des Initiatives Locales,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,OXFAM,Oxfam Intenational Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,UNICEF,United Nations Children's Fund,United Nations,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,VP,Vision Plus,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Tillia,NE005,Tahoua,NE005012,Tillia,2,WFP,World Food Programme,United Nations,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Ville de Tahoua,NE005,Tahoua,NE005013,Ville de Tahoua,2,APDD Riskou,Action pour le progrès et le développement durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Ville de Tahoua,NE005,Tahoua,NE005013,Ville de Tahoua,2,CDD,Comité pour un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Ville de Tahoua,NE005,Tahoua,NE005013,Ville de Tahoua,2,CWW,Concern World Wide,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Ville de Tahoua,NE005,Tahoua,NE005013,Ville de Tahoua,2,UNICEF,United Nations Children's Fund,United Nations,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Ville de Tahoua,NE005,Tahoua,NE005013,Ville de Tahoua,2,UNOCHA,Bureau des Natinos Unies pour la Coordination des Affaires Humanitaires,United Nations,CCM,Camp Coordination / Management,2026-06-01,2026-06-30
+NER,True,True,Tahoua,Ville de Tahoua,NE005,Tahoua,NE005013,Ville de Tahoua,2,VP,Vision Plus,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tahoua,Ville de Tahoua,NE005,Tahoua,NE005013,Ville de Tahoua,2,VP,Vision Plus,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,IRC,International Rescue Committee,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Abala,NE006,Tillabéri,NE006001,Abala,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,ADCB,Appui au Développement des Communautés à la Base-Zamantekewa,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,APFR,Action Pour la Femme Rurale,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,APFR,Action Pour la Femme Rurale,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,CRS,Catholic Relief Services,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,CRS,Catholic Relief Services,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,DEDI,Développement Equité Durabilité et Innovation,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,EDHN,Ensemble pour un Développement Harmonieux du Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,EDHN,Ensemble pour un Développement Harmonieux du Niger,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,EDHN,Ensemble pour un Développement Harmonieux du Niger,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,EDHN,Ensemble pour un Développement Harmonieux du Niger,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,Educo,Fundación Educación y Cooperación,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,GOAL,Goal Niger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,ICRD,Initiatives Communautaires pour la Résilience et le Développement,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,JAAD,Jeunesse Africaine et Action de Développement,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,OXFAM,Oxfam Intenational Niger,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,SCI,Save the Children International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,SCI,Save the Children International,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,SCI,Save the Children International,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ayerou,NE006,Tillabéri,NE006002,Ayerou,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,CWW,Concern World Wide,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,HI,Humanité et Inclusion,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,SCI,Save the Children International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Balleyara,NE006,Tillabéri,NE006003,Balleyara,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Banibangou,NE006,Tillabéri,NE006004,Banibangou,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Banibangou,NE006,Tillabéri,NE006004,Banibangou,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Banibangou,NE006,Tillabéri,NE006004,Banibangou,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Banibangou,NE006,Tillabéri,NE006004,Banibangou,2,MSF-E,Doctors Without Borders Spain,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Banibangou,NE006,Tillabéri,NE006004,Banibangou,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,A TCHI GABA,Action pour la Santé/Nutrition l'Eau pour tous et un Cadre de Vie Décent,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,DIKO,ONG DIKO,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,Educo,Fundación Educación y Cooperación,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,Educo,Fundación Educación y Cooperación,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,HELP,Help – Hilfe Zur Selbsthilfe,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Bankilaré,NE006,Tillabéri,NE006005,Bankilaré,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,GRET,GRET Niger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,IRC,International Rescue Committee,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,IRC,International Rescue Committee,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,RC2D,Resilience Communautaire et Developpement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,VP,Vision Plus,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Filingué,NE006,Tillabéri,NE006006,Filingué,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,DIKO,ONG DIKO,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,ESCAVI,"Education, Santé et Amélioration du Cadre de Vie",National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,FDC,FDC,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,HELP,Help – Hilfe Zur Selbsthilfe,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,HI,Humanité et Inclusion,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,SCI,Save the Children International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,SI,Solidarities International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Gothèye,NE006,Tillabéri,NE006007,Gothèye,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Kollo,NE006,Tillabéri,NE006008,Kollo,2,Ami des Jeunes,ONG AMI DES JEUNES,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Kollo,NE006,Tillabéri,NE006008,Kollo,2,CWW,Concern World Wide,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Kollo,NE006,Tillabéri,NE006008,Kollo,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Kollo,NE006,Tillabéri,NE006008,Kollo,2,RC2D,Resilience Communautaire et Developpement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Kollo,NE006,Tillabéri,NE006008,Kollo,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Kollo,NE006,Tillabéri,NE006008,Kollo,2,SCI,Save the Children International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Kollo,NE006,Tillabéri,NE006008,Kollo,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,ADD FASSALI,Appui au Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,ADKOUL,"Développement, Progrès, Emergence",National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,ANTD,Association nigerienne pour le traitement de la délinquance et la prévention du crime,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,CRS,Catholic Relief Services,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,CWW,Concern World Wide,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,DEMI-E,ONG Développement pour un Mieux Être,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,DIKO,ONG DIKO,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,DIKO,ONG DIKO,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,Educo,Fundación Educación y Cooperación,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,Educo,Fundación Educación y Cooperación,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,Educo,Fundación Educación y Cooperación,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,GOAL,Goal Niger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,HI,Humanité et Inclusion,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,HI,Humanité et Inclusion,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,HI,Humanité et Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,ICAHD,Initiatives de Coopération et d'Appui aux Actions Humanitaires et de Développement,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,IRC,International Rescue Committee,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,OXFAM,Oxfam Intenational Niger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,PIN,Plan International Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,PIN,Plan International Niger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,WHH,Welthungerhilfe,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,WVI,World Vision International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Ouallam,NE006,Tillabéri,NE006009,Ouallam,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,DIKO,ONG DIKO,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,DIKO,ONG DIKO,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,DIKO,ONG DIKO,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,DIKO,ONG DIKO,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,FAO,Food and Agriculture Organization,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,HELP,Help – Hilfe Zur Selbsthilfe,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,HI,Humanité et Inclusion,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,PADD KH,PADD KH,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,PECDI,Protection De L'Enfance En Circonstance Dificile,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Say,NE006,Tillabéri,NE006010,Say,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,Al-WAFA,ONG Al-WAFA,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,CIAUD,Comité International pour l'Aide d'Urgence et le Développement,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,CRS,Catholic Relief Services,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,CWW,Concern World Wide,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,DEDI,Développement Equité Durabilité et Innovation,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,DEDI,Développement Equité Durabilité et Innovation,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,DRC,Danish Refugee Council,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,DRC,Danish Refugee Council,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,HI,Humanité et Inclusion,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,HI,Humanité et Inclusion,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,HI,Humanité et Inclusion,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,PIN,Plan International Niger,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,PIN,Plan International Niger,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,PIN,Plan International Niger,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,SCI,Save the Children International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,WHH,Welthungerhilfe,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Tillabéri,NE006,Tillabéri,NE006012,Tillabéri,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,ACPP,Assemblée de Coopération pour la Paix,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,ADD FASSALI,Appui au Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,CWW,Concern World Wide,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,DIKO,ONG DIKO,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,DIKO,ONG DIKO,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,DIKO,ONG DIKO,National NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,DIKO,ONG DIKO,National NGO,PRO-GBV,Gender Based Violence,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,HELP,Help – Hilfe Zur Selbsthilfe,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,HI,Humanité et Inclusion,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,MSF-CH,Doctors Without Borders Switzerland,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,PIN,Plan International Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,PIN,Plan International Niger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,PIN,Plan International Niger,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,PUI,Première Urgence Internationale,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,SCI,Save the Children International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,SCI,Save the Children International,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,VSF-B,Vétérinaires Sans Frontières Belgique,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,VSF-B,Vétérinaires Sans Frontières Belgique,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Torodi,NE006,Tillabéri,NE006013,Torodi,2,WVI,World Vision International,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,ANTD,Association nigerienne pour le traitement de la délinquance et la prévention du crime,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,APIS,Actions et Programmes d'Impact au Niger,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,CADEV Niger,Caritas Développement Niger,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,COLIA,Cooperazione Internazionale,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,CWW,Concern World Wide,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,CWW,Concern World Wide,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,DIKO,ONG DIKO,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,DIKO,ONG DIKO,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,DRC,Danish Refugee Council,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,EAM PROGRES,Ensemble pour un Avenir Meilleur,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,Educo,Fundación Educación y Cooperación,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,GADR-RA,Groupe d'Appui au Développement Rural Recherche Action,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,GADR-RA,Groupe d'Appui au Développement Rural Recherche Action,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,HELP,Help – Hilfe Zur Selbsthilfe,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,HELP,Help – Hilfe Zur Selbsthilfe,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,ICAHD,Initiatives de Coopération et d'Appui aux Actions Humanitaires et de Développement,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,LM,Läkarmissionen,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,MSF-E,Doctors Without Borders Spain,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,NRC,Conseil Norvégien pour les Réfugiés,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,ONG EVE,Espoir D'Une Vie Enfants Pour Tous,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,PIN,Plan International Niger,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Takeita,NE007,Zinder,NE007008,Takeita,2,ONG SADEN,ONG SADEN,National NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,RET,Relief and resilience through Education in Transition,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,SCI,Save the Children International,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,WHO,World Health Organization,United Nations,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Tillabéri,Téra,NE006,Tillabéri,NE006011,Téra,2,WVI,World Vision International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Zinder,Belbedji,NE007,Zinder,NE007001,Belbedji,2,SPR/DNPGCA,Secrétariat permanent régional du dispositif de prévention et gestion des crises alimentaires,Government,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Belbedji,NE007,Zinder,NE007001,Belbedji,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Damagaram Takaya,NE007,Zinder,NE007002,Damagaram Takaya,2,ADD FASSALI,Appui au Développement Durable,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Zinder,Damagaram Takaya,NE007,Zinder,NE007002,Damagaram Takaya,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Damagaram Takaya,NE007,Zinder,NE007002,Damagaram Takaya,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Dungass,NE007,Zinder,NE007003,Dungass,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Gouré,NE007,Zinder,NE007004,Gouré,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Zinder,Gouré,NE007,Zinder,NE007004,Gouré,2,ANDD GARKUA,Association Nigérienne Pour Un Développement Durable,National NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Zinder,Gouré,NE007,Zinder,NE007004,Gouré,2,ARRA AFA ALKHAIRIYYA,ARRA AFA ALKHAIRIYYA,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Zinder,Gouré,NE007,Zinder,NE007004,Gouré,2,GOAL,Goal Niger,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Gouré,NE007,Zinder,NE007004,Gouré,2,SCF,SAHARA Conservation Fund,International NGO,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Zinder,Gouré,NE007,Zinder,NE007004,Gouré,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,ADD FASSALI,Appui au Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,ADD FASSALI,Appui au Développement Durable,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,ADD FASSALI,Appui au Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,CRS,Catholic Relief Services,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,DEMI-E,ONG Développement pour un Mieux Être,National NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,PM,PROGETTOMONDO,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,SPR/DNPGCA,Secrétariat permanent régional du dispositif de prévention et gestion des crises alimentaires,Government,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Kantché,NE007,Zinder,NE007005,Kantché,2,UNHCR,UN Refugee Agency,United Nations,PRO,Protection,2026-06-01,2026-06-30
+NER,True,True,Zinder,Magaria,NE007,Zinder,NE007006,Magaria,2,ADD FASSALI,Appui au Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Magaria,NE007,Zinder,NE007006,Magaria,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Magaria,NE007,Zinder,NE007006,Magaria,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Magaria,NE007,Zinder,NE007006,Magaria,2,PIN,Plan International Niger,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Magaria,NE007,Zinder,NE007006,Magaria,2,SCI,Save the Children International,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Magaria,NE007,Zinder,NE007006,Magaria,2,SCI,Save the Children International,International NGO,PRO-CPN,Child Protection,2026-06-01,2026-06-30
+NER,True,True,Zinder,Magaria,NE007,Zinder,NE007006,Magaria,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,ADD FASSALI,Appui au Développement Durable,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,ALIMA/BEFEN,Alliance Internationnal Medical Action et Bien Etre de la Femme et de l'Enfant au Niger,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,CARE,Cooperative for Assistance and Relief Everywhere,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,CBM,CBM Christoffel-Blindenmission Christian Blind Mission e.V,International NGO,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,CI.Be,Caritas International Belgique,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,DEDI,Développement Equité Durabilité et Innovation,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,GOAL,Goal Niger,International NGO,NUT,Nutrition,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,IOM,International Organization for Migration,United Nations,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,IOM,International Organization for Migration,United Nations,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,Teach For Niger,Teach For Niger,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,WVI,World Vision International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Zinder,Mirriah,NE007,Zinder,NE007007,Mirriah,2,WVI,World Vision International,International NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Takeita,NE007,Zinder,NE007008,Takeita,2,ADD FASSALI,Appui au Développement Durable,National NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Zinder,Takeita,NE007,Zinder,NE007008,Takeita,2,AEAI/AE,Aide et Action International / Action Education,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Tanout,NE007,Zinder,NE007009,Tanout,2,ADD FASSALI,Appui au Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Tanout,NE007,Zinder,NE007009,Tanout,2,WFP,World Food Programme,United Nations,FSC,Food Security,2026-06-01,2026-06-30
+NER,True,True,Zinder,Tanout,NE007,Zinder,NE007009,Tanout,2,YARA LNC,Yara Les Nouveaux Constructeurs Suisse,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Ville de Zinder,NE007,Zinder,NE007011,Ville de Zinder,2,ADD FASSALI,Appui au Développement Durable,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Ville de Zinder,NE007,Zinder,NE007011,Ville de Zinder,2,ADD FASSALI,Appui au Développement Durable,National NGO,Multi,Multi-sector (unspecified),2026-06-01,2026-06-30
+NER,True,True,Zinder,Ville de Zinder,NE007,Zinder,NE007011,Ville de Zinder,2,ADES,Action pour le Développement Economique et Social.,International NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Ville de Zinder,NE007,Zinder,NE007011,Ville de Zinder,2,DEDI,Développement Equité Durabilité et Innovation,International NGO,WSH,Water Sanitation Hygiene,2026-06-01,2026-06-30
+NER,True,True,Zinder,Ville de Zinder,NE007,Zinder,NE007011,Ville de Zinder,2,GRYK,Gidan Raya Yaran Karkara,National NGO,EDU,Education,2026-06-01,2026-06-30
+NER,True,True,Zinder,Ville de Zinder,NE007,Zinder,NE007011,Ville de Zinder,2,SCI,Save the Children International,International NGO,HEA,Health,2026-06-01,2026-06-30
+NER,True,True,Zinder,Ville de Zinder,NE007,Zinder,NE007011,Ville de Zinder,2,YARA LNC,Yara Les Nouveaux Constructeurs Suisse,International NGO,EDU,Education,2026-06-01,2026-06-30

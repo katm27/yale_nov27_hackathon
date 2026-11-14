@@ -1,0 +1,238 @@
+district_id,variable,n,sen_slope_per_decade,p_value,lag1,p_fdr,name,admin1
+SS0001,spei3,25,0.427,0.16822,0.22251,0.33224,Abyei,Abyei Region
+SS0001,spei3_h,25,0.42348,0.10707,0.16851,0.24879,Abyei,Abyei Region
+SS0001,jas_precip_mm,25,-11.39938,0.44088,-0.02647,0.65716,Abyei,Abyei Region
+SS0101,spei3,25,0.3109,0.38751,-0.00243,0.52782,Juba,Central Equatoria
+SS0101,spei3_h,25,0.11793,0.79725,-0.16152,0.87476,Juba,Central Equatoria
+SS0101,jas_precip_mm,25,-21.21475,0.07984,-0.09285,0.21749,Juba,Central Equatoria
+SS0102,spei3,25,-0.13328,0.62381,-0.17472,0.70402,Kajo-keji,Central Equatoria
+SS0102,spei3_h,25,-0.12229,0.59115,-0.19724,0.68678,Kajo-keji,Central Equatoria
+SS0102,jas_precip_mm,25,-25.74516,0.46906,-0.13765,0.68622,Kajo-keji,Central Equatoria
+SS0103,spei3,25,-0.01869,0.94414,0.11696,0.96867,Lainya,Central Equatoria
+SS0103,spei3_h,25,-0.0299,0.94414,0.07768,0.98141,Lainya,Central Equatoria
+SS0103,jas_precip_mm,25,-21.5735,0.31525,0.14793,0.54141,Lainya,Central Equatoria
+SS0104,spei3,25,-0.16343,0.62381,-0.07366,0.70402,Morobo,Central Equatoria
+SS0104,spei3_h,25,-0.1099,0.76142,-0.06867,0.84722,Morobo,Central Equatoria
+SS0104,jas_precip_mm,25,-28.36808,0.31525,0.14722,0.54141,Morobo,Central Equatoria
+SS0105,spei3,25,0.51395,0.15426,0.01655,0.32936,Terekeka,Central Equatoria
+SS0105,spei3_h,25,0.33894,0.21579,-0.16875,0.37882,Terekeka,Central Equatoria
+SS0105,jas_precip_mm,25,-17.80212,0.15426,-0.05799,0.32069,Terekeka,Central Equatoria
+SS0106,spei3,25,-0.02733,0.90704,0.1307,0.94284,Yei,Central Equatoria
+SS0106,spei3_h,25,0.02684,0.98137,0.0881,0.99395,Yei,Central Equatoria
+SS0106,jas_precip_mm,25,-16.38694,0.27234,0.10211,0.52476,Yei,Central Equatoria
+SS0201,spei3,25,0.37861,0.33829,-0.02013,0.47723,Budi,Eastern Equatoria
+SS0201,spei3_h,25,0.32937,0.33829,-0.0802,0.46077,Budi,Eastern Equatoria
+SS0201,jas_precip_mm,25,11.68863,0.5593,-0.16202,0.71266,Budi,Eastern Equatoria
+SS0202,spei3,25,0.50334,0.19896,-0.1483,0.34928,Ikotos,Eastern Equatoria
+SS0202,spei3_h,25,0.42267,0.18311,-0.20551,0.33642,Ikotos,Eastern Equatoria
+SS0202,jas_precip_mm,25,10.35837,0.52831,-0.36187,0.7074,Ikotos,Eastern Equatoria
+SS0203,spei3,25,0.01734,0.98137,0.12262,0.98137,Kapoeta East,Eastern Equatoria
+SS0203,spei3_h,25,0.00186,1.0,0.01616,1.0,Kapoeta East,Eastern Equatoria
+SS0203,jas_precip_mm,25,-4.47631,0.79725,0.00074,0.86278,Kapoeta East,Eastern Equatoria
+SS0204,spei3,25,0.08159,0.7261,0.06665,0.79669,Kapoeta North,Eastern Equatoria
+SS0204,spei3_h,25,0.04826,0.90704,-0.04883,0.95541,Kapoeta North,Eastern Equatoria
+SS0204,jas_precip_mm,25,-7.41071,0.65723,-0.01474,0.78668,Kapoeta North,Eastern Equatoria
+SS0205,spei3,25,0.27875,0.41369,0.11792,0.55392,Kapoeta South,Eastern Equatoria
+SS0205,spei3_h,25,0.26434,0.5593,0.06588,0.65948,Kapoeta South,Eastern Equatoria
+SS0205,jas_precip_mm,25,22.90241,0.31525,0.06428,0.54141,Kapoeta South,Eastern Equatoria
+SS0206,spei3,25,0.44806,0.16822,-0.16662,0.33224,Lafon,Eastern Equatoria
+SS0206,spei3_h,25,0.29219,0.36238,-0.26059,0.48522,Lafon,Eastern Equatoria
+SS0206,jas_precip_mm,25,-6.03448,0.5593,-0.18335,0.71266,Lafon,Eastern Equatoria
+SS0207,spei3,25,0.42711,0.16822,0.01009,0.33224,Magwi,Eastern Equatoria
+SS0207,spei3_h,25,0.41362,0.14119,-0.09623,0.29353,Magwi,Eastern Equatoria
+SS0207,jas_precip_mm,25,1.25111,0.98137,-0.11384,0.98137,Magwi,Eastern Equatoria
+SS0208,spei3,25,0.46036,0.04713,-0.13226,0.13296,Torit,Eastern Equatoria
+SS0208,spei3_h,25,0.51387,0.07212,-0.23729,0.17806,Torit,Eastern Equatoria
+SS0208,jas_precip_mm,25,17.42356,0.11139,-0.42626,0.26667,Torit,Eastern Equatoria
+SS0301,spei3,25,0.41373,0.19896,0.06073,0.34928,Akobo,Jonglei
+SS0301,spei3_h,25,0.35435,0.18311,-0.03462,0.33642,Akobo,Jonglei
+SS0301,jas_precip_mm,25,-2.06065,0.94414,-0.1425,0.96867,Akobo,Jonglei
+SS0302,spei3,25,0.6495,0.00831,0.24055,0.04104,Ayod,Jonglei
+SS0302,spei3_h,25,0.12471,0.01833,0.12669,0.06034,Ayod,Jonglei
+SS0302,jas_precip_mm,25,39.96878,0.07984,0.02573,0.21749,Ayod,Jonglei
+SS0303,spei3,25,0.47516,0.18311,0.0146,0.34928,Bor South,Jonglei
+SS0303,spei3_h,25,0.42068,0.23361,-0.08307,0.38449,Bor South,Jonglei
+SS0303,jas_precip_mm,25,9.16378,0.79725,-0.10047,0.86278,Bor South,Jonglei
+SS0304,spei3,25,0.78121,0.00407,0.26723,0.03216,Canal/Pigi,Jonglei
+SS0304,spei3_h,25,0.69567,0.00407,0.20898,0.02473,Canal/Pigi,Jonglei
+SS0304,jas_precip_mm,25,33.51905,0.08821,0.12667,0.2248,Canal/Pigi,Jonglei
+SS0305,spei3,25,0.79332,0.00162,0.31029,0.02502,Duk,Jonglei
+SS0305,spei3_h,25,0.78517,0.00071,0.28005,0.00799,Duk,Jonglei
+SS0305,jas_precip_mm,25,53.17574,0.00724,0.1459,0.05196,Duk,Jonglei
+SS0306,spei3,25,0.97635,0.0005,0.32202,0.01321,Fangak,Jonglei
+SS0306,spei3_h,25,0.11962,0.0002,0.3337,0.00793,Fangak,Jonglei
+SS0306,jas_precip_mm,25,90.79853,0.0019,0.24767,0.02994,Fangak,Jonglei
+SS0307,spei3,25,0.70158,0.02349,0.13911,0.07422,Nyirol,Jonglei
+SS0307,spei3_h,25,0.60407,0.03356,0.09591,0.09469,Nyirol,Jonglei
+SS0307,jas_precip_mm,25,30.59327,0.15426,-0.03505,0.32069,Nyirol,Jonglei
+SS0308,spei3,25,0.45944,0.19896,0.11318,0.34928,Pibor,Jonglei
+SS0308,spei3_h,25,0.40344,0.14119,0.05671,0.29353,Pibor,Jonglei
+SS0308,jas_precip_mm,25,7.61023,0.44088,0.02676,0.65716,Pibor,Jonglei
+SS0309,spei3,25,0.6777,0.0142,0.27093,0.0534,Pochalla,Jonglei
+SS0309,spei3_h,25,0.63336,0.03765,0.22623,0.10258,Pochalla,Jonglei
+SS0309,jas_precip_mm,25,19.3018,0.21579,0.0914,0.4371,Pochalla,Jonglei
+SS0310,spei3,25,0.29891,0.00302,0.36478,0.02648,Twic East,Jonglei
+SS0310,spei3_h,25,0.72358,0.00407,0.34775,0.02473,Twic East,Jonglei
+SS0310,jas_precip_mm,25,43.04992,0.02077,0.28505,0.11596,Twic East,Jonglei
+SS0311,spei3,25,0.49685,0.07984,0.1329,0.19113,Uror,Jonglei
+SS0311,spei3_h,25,0.34268,0.11763,0.02984,0.26552,Uror,Jonglei
+SS0311,jas_precip_mm,25,11.06586,0.44088,-0.01797,0.65716,Uror,Jonglei
+SS0401,spei3,25,0.11013,0.05257,0.11062,0.1432,Awerial,Lakes
+SS0401,spei3_h,25,0.06847,0.05257,0.05408,0.13843,Awerial,Lakes
+SS0401,jas_precip_mm,25,-1.43341,0.90704,0.01408,0.94284,Awerial,Lakes
+SS0402,spei3,25,-0.03207,0.44088,-0.12035,0.56176,Cueibet,Lakes
+SS0402,spei3_h,25,-0.03885,0.15426,-0.33694,0.31247,Cueibet,Lakes
+SS0402,jas_precip_mm,25,-58.25688,0.00302,-0.08946,0.03958,Cueibet,Lakes
+SS0403,spei3,25,0.04313,0.76142,0.06888,0.81287,Rumbek Centre,Lakes
+SS0403,spei3_h,25,-0.00115,0.98137,-0.20089,0.99395,Rumbek Centre,Lakes
+SS0403,jas_precip_mm,25,-24.41655,0.02651,-0.29495,0.11633,Rumbek Centre,Lakes
+SS0404,spei3,25,0.36004,0.19896,0.25009,0.34928,Rumbek East,Lakes
+SS0404,spei3_h,25,0.03065,0.25246,0.1652,0.39107,Rumbek East,Lakes
+SS0404,jas_precip_mm,25,-15.75213,0.31525,-0.02377,0.54141,Rumbek East,Lakes
+SS0405,spei3,25,-0.02311,0.62381,0.04175,0.70402,Rumbek North,Lakes
+SS0405,spei3_h,25,-0.03353,0.31525,-0.12861,0.46077,Rumbek North,Lakes
+SS0405,jas_precip_mm,25,-46.93875,0.00471,0.2929,0.04138,Rumbek North,Lakes
+SS0406,spei3,25,0.00856,0.76142,0.28347,0.81287,Wulu,Lakes
+SS0406,spei3_h,25,-0.01427,0.83352,0.2162,0.88983,Wulu,Lakes
+SS0406,jas_precip_mm,25,-29.31204,0.07984,0.10338,0.21749,Wulu,Lakes
+SS0407,spei3,25,0.68212,0.01833,0.27457,0.06296,Yirol East,Lakes
+SS0407,spei3_h,25,0.10853,0.01091,0.20855,0.03916,Yirol East,Lakes
+SS0407,jas_precip_mm,25,28.50518,0.08821,-0.10955,0.2248,Yirol East,Lakes
+SS0408,spei3,25,0.5527,0.05852,0.29943,0.14914,Yirol West,Lakes
+SS0408,spei3_h,25,0.47996,0.07212,0.24023,0.17806,Yirol West,Lakes
+SS0408,jas_precip_mm,25,-0.7875,0.98137,0.00223,0.98137,Yirol West,Lakes
+SS0501,spei3,25,0.02403,0.98137,-0.35867,0.98137,Aweil Centre,Northern Bahr el Ghazal
+SS0501,spei3_h,25,-0.00637,0.66372,-0.4568,0.74906,Aweil Centre,Northern Bahr el Ghazal
+SS0501,jas_precip_mm,25,-40.10419,0.06503,-0.32042,0.21406,Aweil Centre,Northern Bahr el Ghazal
+SS0502,spei3,25,0.39944,0.29327,-0.03736,0.44555,Aweil East,Northern Bahr el Ghazal
+SS0502,spei3_h,25,0.35892,0.25246,-0.14049,0.39107,Aweil East,Northern Bahr el Ghazal
+SS0502,jas_precip_mm,25,-9.08145,0.7261,-0.36974,0.81945,Aweil East,Northern Bahr el Ghazal
+SS0503,spei3,25,0.34967,0.14119,-0.0422,0.31869,Aweil North,Northern Bahr el Ghazal
+SS0503,spei3_h,25,0.05358,0.18311,-0.12507,0.33642,Aweil North,Northern Bahr el Ghazal
+SS0503,jas_precip_mm,25,-4.88903,0.83352,-0.36686,0.88983,Aweil North,Northern Bahr el Ghazal
+SS0504,spei3,25,0.05633,0.25246,-0.0963,0.40703,Aweil South,Northern Bahr el Ghazal
+SS0504,spei3_h,25,0.33319,0.38751,-0.15397,0.49377,Aweil South,Northern Bahr el Ghazal
+SS0504,jas_precip_mm,25,-5.59924,0.87014,-0.21645,0.91654,Aweil South,Northern Bahr el Ghazal
+SS0505,spei3,25,0.28849,0.31525,-0.14819,0.45282,Aweil West,Northern Bahr el Ghazal
+SS0505,spei3_h,25,0.0352,0.46906,-0.26307,0.579,Aweil West,Northern Bahr el Ghazal
+SS0505,jas_precip_mm,25,-13.3051,0.38751,-0.30748,0.61227,Aweil West,Northern Bahr el Ghazal
+SS0601,spei3,25,0.05967,0.15426,0.28217,0.32936,Abiemnhom,Unity
+SS0601,spei3_h,25,0.04488,0.23361,0.19867,0.38449,Abiemnhom,Unity
+SS0601,jas_precip_mm,25,-10.03702,0.49822,0.07772,0.7074,Abiemnhom,Unity
+SS0602,spei3,25,0.98282,3e-05,0.39115,0.0023,Guit,Unity
+SS0602,spei3_h,25,0.97904,3e-05,0.43525,0.0023,Guit,Unity
+SS0602,jas_precip_mm,25,96.01164,8e-05,0.4086,0.00625,Guit,Unity
+SS0603,spei3,25,0.13172,0.00302,0.45284,0.02648,Koch,Unity
+SS0603,spei3_h,25,0.83917,0.00042,0.47427,0.00793,Koch,Unity
+SS0603,jas_precip_mm,25,61.26838,0.00162,0.35139,0.02994,Koch,Unity
+SS0604,spei3,25,0.07799,0.01091,0.18408,0.04787,Leer,Unity
+SS0604,spei3_h,25,0.59164,0.00831,0.15164,0.03456,Leer,Unity
+SS0604,jas_precip_mm,25,51.76451,0.06503,-0.04746,0.21406,Leer,Unity
+SS0605,spei3,25,0.82161,0.00222,0.3158,0.02502,Mayendit,Unity
+SS0605,spei3_h,25,0.77342,0.0019,0.31538,0.01497,Mayendit,Unity
+SS0605,jas_precip_mm,25,76.18742,0.02985,0.20308,0.12413,Mayendit,Unity
+SS0606,spei3,25,0.09491,0.0142,0.38055,0.0534,Mayom,Unity
+SS0606,spei3_h,25,0.05992,0.00831,0.32862,0.03456,Mayom,Unity
+SS0606,jas_precip_mm,25,35.79559,0.14119,0.1523,0.30984,Mayom,Unity
+SS0607,spei3,25,0.07649,0.00628,0.39711,0.04104,Panyijiar,Unity
+SS0607,spei3_h,25,0.06168,0.00259,0.33114,0.01859,Panyijiar,Unity
+SS0607,jas_precip_mm,25,39.29441,0.01615,0.0414,0.10631,Panyijiar,Unity
+SS0608,spei3,25,0.07152,0.05852,0.12113,0.14914,Pariang,Unity
+SS0608,spei3_h,25,0.55914,0.02651,-0.00372,0.08054,Pariang,Unity
+SS0608,jas_precip_mm,25,7.83701,0.62381,-0.18203,0.77002,Pariang,Unity
+SS0609,spei3,25,0.80683,0.00035,0.59362,0.01321,Rubkona,Unity
+SS0609,spei3_h,25,0.74801,0.0005,0.61021,0.00793,Rubkona,Unity
+SS0609,jas_precip_mm,25,59.87852,0.07757,0.60298,0.21749,Rubkona,Unity
+SS0701,spei3,25,0.7387,0.00471,0.1799,0.03386,Baliet,Upper Nile
+SS0701,spei3_h,25,0.71419,0.00117,0.19641,0.01154,Baliet,Upper Nile
+SS0701,jas_precip_mm,25,31.81556,0.04217,0.03848,0.16655,Baliet,Upper Nile
+SS0702,spei3,25,0.60329,0.02651,0.00319,0.07755,Fashoda,Upper Nile
+SS0702,spei3_h,25,0.65827,0.01091,-0.03167,0.03916,Fashoda,Upper Nile
+SS0702,jas_precip_mm,25,19.27685,0.25246,-0.05514,0.49861,Fashoda,Upper Nile
+SS0703,spei3,25,0.64134,0.02077,0.15645,0.06837,Longochuk,Upper Nile
+SS0703,spei3_h,25,0.67221,0.02985,0.12494,0.08735,Longochuk,Upper Nile
+SS0703,jas_precip_mm,25,32.55965,0.06503,-0.00124,0.21406,Longochuk,Upper Nile
+SS0704,spei3,25,0.67799,0.01091,0.25451,0.04787,Luakpiny/Nasir,Upper Nile
+SS0704,spei3_h,25,0.7847,0.00471,0.26501,0.0266,Luakpiny/Nasir,Upper Nile
+SS0704,jas_precip_mm,25,40.85623,0.05852,0.1153,0.21406,Luakpiny/Nasir,Upper Nile
+SS0705,spei3,25,0.7037,0.01246,0.14061,0.05179,Maban,Upper Nile
+SS0705,spei3_h,25,0.723,0.00831,0.13744,0.03456,Maban,Upper Nile
+SS0705,jas_precip_mm,25,13.00475,0.31525,-0.07243,0.54141,Maban,Upper Nile
+SS0706,spei3,25,0.638,0.02651,0.1009,0.07755,Maiwut,Upper Nile
+SS0706,spei3_h,25,0.69177,0.01833,0.11218,0.06034,Maiwut,Upper Nile
+SS0706,jas_precip_mm,25,37.87361,0.10707,0.05612,0.26433,Maiwut,Upper Nile
+SS0707,spei3,25,0.71226,0.00831,0.28131,0.04104,Malakal,Upper Nile
+SS0707,spei3_h,25,0.64766,0.00138,0.23859,0.01208,Malakal,Upper Nile
+SS0707,jas_precip_mm,25,30.26117,0.02651,0.08883,0.11633,Malakal,Upper Nile
+SS0708,spei3,25,0.80091,0.00724,0.2511,0.04104,Manyo,Upper Nile
+SS0708,spei3_h,25,0.76197,0.00628,0.25155,0.03103,Manyo,Upper Nile
+SS0708,jas_precip_mm,25,10.11005,0.52831,-0.01072,0.7074,Manyo,Upper Nile
+SS0709,spei3,25,0.61703,0.00831,0.22014,0.04104,Melut,Upper Nile
+SS0709,spei3_h,25,0.71816,0.00545,0.25223,0.0287,Melut,Upper Nile
+SS0709,jas_precip_mm,25,12.3093,0.38751,0.14466,0.61227,Melut,Upper Nile
+SS0710,spei3,25,0.80649,0.00222,0.20146,0.02502,Panyikang,Upper Nile
+SS0710,spei3_h,25,0.68325,0.0005,0.10948,0.00793,Panyikang,Upper Nile
+SS0710,jas_precip_mm,25,25.05172,0.07984,-0.13341,0.21749,Panyikang,Upper Nile
+SS0711,spei3,25,0.69943,0.0019,0.27623,0.02502,Renk,Upper Nile
+SS0711,spei3_h,25,0.82002,0.00071,0.28871,0.00799,Renk,Upper Nile
+SS0711,jas_precip_mm,25,12.87156,0.36238,-0.0697,0.59641,Renk,Upper Nile
+SS0712,spei3,25,0.63941,0.01833,0.19171,0.06296,Ulang,Upper Nile
+SS0712,spei3_h,25,0.68491,0.00953,0.15053,0.03765,Ulang,Upper Nile
+SS0712,jas_precip_mm,25,26.15902,0.129,-0.01049,0.29973,Ulang,Upper Nile
+SS0801,spei3,25,0.02456,0.52831,-0.11113,0.6421,Gogrial East,Warrap
+SS0801,spei3_h,25,0.0111,0.83352,-0.23481,0.88983,Gogrial East,Warrap
+SS0801,jas_precip_mm,25,-32.85994,0.14119,-0.28434,0.30984,Gogrial East,Warrap
+SS0802,spei3,25,0.03954,0.36238,-0.08446,0.50224,Gogrial West,Warrap
+SS0802,spei3_h,25,0.15386,0.33829,-0.20542,0.46077,Gogrial West,Warrap
+SS0802,jas_precip_mm,25,-22.76757,0.36238,-0.31412,0.59641,Gogrial West,Warrap
+SS0803,spei3,25,-0.10036,0.79725,-0.20824,0.83977,Tonj East,Warrap
+SS0803,spei3_h,25,-0.04893,0.49822,-0.49469,0.60553,Tonj East,Warrap
+SS0803,jas_precip_mm,25,-50.19285,0.00724,-0.01684,0.05196,Tonj East,Warrap
+SS0804,spei3,25,0.01987,0.31525,-0.04264,0.45282,Tonj North,Warrap
+SS0804,spei3_h,25,0.20634,0.38751,-0.18589,0.49377,Tonj North,Warrap
+SS0804,jas_precip_mm,25,-13.90158,0.52831,-0.39335,0.7074,Tonj North,Warrap
+SS0805,spei3,25,-0.03659,0.31525,-0.01872,0.45282,Tonj South,Warrap
+SS0805,spei3_h,25,-0.05472,0.16822,-0.16384,0.33224,Tonj South,Warrap
+SS0805,jas_precip_mm,25,-64.07751,0.00162,0.09026,0.02994,Tonj South,Warrap
+SS0806,spei3,25,0.35389,0.23361,0.18345,0.38449,Twic,Warrap
+SS0806,spei3_h,25,0.33276,0.23361,0.09849,0.38449,Twic,Warrap
+SS0806,jas_precip_mm,25,-9.92841,0.62381,-0.09046,0.77002,Twic,Warrap
+SS0901,spei3,25,-0.25974,0.27234,-0.14769,0.42186,Jur River,Western Bahr el Ghazal
+SS0901,spei3_h,25,-0.04883,0.21579,-0.31312,0.37882,Jur River,Western Bahr el Ghazal
+SS0901,jas_precip_mm,25,-59.99638,0.00407,-0.05038,0.04019,Jur River,Western Bahr el Ghazal
+SS0902,spei3,25,-0.25633,0.44088,-0.29621,0.56176,Raja,Western Bahr el Ghazal
+SS0902,spei3_h,25,-0.25104,0.44088,-0.37513,0.55285,Raja,Western Bahr el Ghazal
+SS0902,jas_precip_mm,25,-38.63868,0.02349,-0.04535,0.11596,Raja,Western Bahr el Ghazal
+SS0903,spei3,25,-0.58214,0.07984,0.00107,0.19113,Wau,Western Bahr el Ghazal
+SS0903,spei3_h,25,-0.68017,0.02651,0.01137,0.08054,Wau,Western Bahr el Ghazal
+SS0903,jas_precip_mm,25,-79.65022,0.00071,0.32254,0.02797,Wau,Western Bahr el Ghazal
+SS1001,spei3,25,-0.19643,0.62381,0.23854,0.70402,Ezo,Western Equatoria
+SS1001,spei3_h,25,-0.19161,0.52831,0.23581,0.63237,Ezo,Western Equatoria
+SS1001,jas_precip_mm,25,-26.67542,0.02349,0.27624,0.11596,Ezo,Western Equatoria
+SS1002,spei3,25,0.25507,0.46906,-0.23351,0.58819,Ibba,Western Equatoria
+SS1002,spei3_h,25,0.28321,0.31525,-0.26906,0.46077,Ibba,Western Equatoria
+SS1002,jas_precip_mm,25,9.55067,0.69134,-0.39139,0.80318,Ibba,Western Equatoria
+SS1003,spei3,25,0.14367,0.69134,-0.05637,0.76924,Maridi,Western Equatoria
+SS1003,spei3_h,25,0.20342,0.65723,-0.07198,0.74906,Maridi,Western Equatoria
+SS1003,jas_precip_mm,25,-7.06333,0.52831,-0.10139,0.7074,Maridi,Western Equatoria
+SS1004,spei3,25,0.34315,0.129,0.07411,0.29973,Mundri East,Western Equatoria
+SS1004,spei3_h,25,0.33783,0.14119,-0.00436,0.29353,Mundri East,Western Equatoria
+SS1004,jas_precip_mm,25,-4.74115,0.65723,0.01328,0.78668,Mundri East,Western Equatoria
+SS1005,spei3,25,0.34596,0.21579,0.09936,0.3627,Mundri West,Western Equatoria
+SS1005,spei3_h,25,0.29414,0.29327,0.06976,0.44555,Mundri West,Western Equatoria
+SS1005,jas_precip_mm,25,-3.67995,0.76142,0.05114,0.84722,Mundri West,Western Equatoria
+SS1006,spei3,25,0.30514,0.27234,0.20109,0.42186,Mvolo,Western Equatoria
+SS1006,spei3_h,25,0.25979,0.33829,0.16127,0.46077,Mvolo,Western Equatoria
+SS1006,jas_precip_mm,25,-9.90655,0.7261,0.185,0.81945,Mvolo,Western Equatoria
+SS1007,spei3,25,-0.26229,0.44088,0.11374,0.56176,Nagero,Western Equatoria
+SS1007,spei3_h,25,-0.27906,0.33829,0.09728,0.46077,Nagero,Western Equatoria
+SS1007,jas_precip_mm,25,-50.09299,0.02077,0.26315,0.11596,Nagero,Western Equatoria
+SS1008,spei3,25,0.17312,0.52831,0.16727,0.6421,Nzara,Western Equatoria
+SS1008,spei3_h,25,0.22481,0.38751,0.17749,0.49377,Nzara,Western Equatoria
+SS1008,jas_precip_mm,25,3.6799,0.69134,0.10634,0.80318,Nzara,Western Equatoria
+SS1009,spei3,25,-0.3674,0.21579,-0.0365,0.3627,Tambura,Western Equatoria
+SS1009,spei3_h,25,-0.40778,0.09728,-0.08189,0.23287,Tambura,Western Equatoria
+SS1009,jas_precip_mm,25,-55.36056,0.00351,0.03243,0.03958,Tambura,Western Equatoria
+SS1010,spei3,25,0.24142,0.62381,-0.08127,0.70402,Yambio,Western Equatoria
+SS1010,spei3_h,25,0.36402,0.25246,-0.09826,0.39107,Yambio,Western Equatoria
+SS1010,jas_precip_mm,25,11.77285,0.5593,-0.27467,0.71266,Yambio,Western Equatoria

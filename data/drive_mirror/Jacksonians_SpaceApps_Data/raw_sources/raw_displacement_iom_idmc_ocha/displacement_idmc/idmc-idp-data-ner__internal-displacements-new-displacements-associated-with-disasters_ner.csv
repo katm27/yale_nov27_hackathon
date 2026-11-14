@@ -1,0 +1,25 @@
+iso3,country_name,year,start_date,start_date_accuracy,end_date,end_date_accuracy,event_name,hazard_category,hazard_category_name,hazard_sub_category,hazard_sub_category_name,hazard_type,hazard_type_name,hazard_sub_type,hazard_subtype_name,new_displacement,new_displacement_rounded,total_displacement,total_displacement_rounded,event_codes
+NER,Niger,2008,2008-07-01,Month,2008-07-01,Month,Niger: Flood - 01/07/2008,2,Weather related,3,Hydrological,10,Flood,13,,4300,4300,,,
+NER,Niger,2009,2009-01-01,Month,,,Niger: Flood - 01/01/2009,2,Weather related,3,Hydrological,10,Flood,13,,5560,5600,,,
+NER,Niger,2010,2010-01-01,Month,,,Niger: Flood - 01/01/2010,2,Weather related,3,Hydrological,10,Flood,13,,6615,6600,,,
+NER,Niger,2010,2010-01-01,Month,,,Niger: Flood - 01/01/2010,2,Weather related,3,Hydrological,10,Flood,13,,198740,199000,,,
+NER,Niger,2011,2011-01-01,Month,,,Niger: Flood - 01/01/2011,2,Weather related,3,Hydrological,10,Flood,13,,28175,28000,,,
+NER,Niger,2012,2012-01-01,Month,,,Niger: Flood - 01/01/2012,2,Weather related,3,Hydrological,10,Flood,13,,10000,10000,,,
+NER,Niger,2012,2012-01-01,Month,,,Niger: Flood - 01/01/2012,2,Weather related,3,Hydrological,10,Flood,13,,530000,530000,,,
+NER,Niger,2013,2013-04-24,Day,2013-04-01,Month,Niger rainy season floods,2,Weather related,3,Hydrological,10,Flood,13,,200961,201000,,,
+NER,Niger,2014,2014-07-01,Day,2014-10-15,Day,Niger rainy season,2,Weather related,3,Hydrological,10,Flood,13,,47484,47000,,,
+NER,Niger,2015,2015-08-20,Day,2015-09-22,Day,Summer floods across niger,2,Weather related,3,Hydrological,10,Flood,13,,38321,38000,,,
+NER,Niger,2016,2016-07-01,Week,2016-08-12,Day,Summer floods,2,Weather related,3,Hydrological,10,Flood,13,,46000,46000,,,FL-2016-000091-NER
+NER,Niger,2017,2017-06-13,Day,2017-06-14,Day,Niamey and Tillabéri Flash Flood ,2,Weather related,3,Hydrological,10,Flood,13,,2252,2300,,,FL-2017-000078-NER
+NER,Niger,2017,2017-06-13,Day,2017-09-30,Day,Niger: Flood - rainy season - September 2017,2,Weather related,3,Hydrological,10,Flood,13,,185000,185000,,,FL-2017-000078-NER
+NER,Niger,2017,2017-08-26,Day,2017-08-31,Day,Niger: Niamey floods - 31/08/2017,2,Weather related,3,Hydrological,10,Flood,13,,1248,1200,,,
+NER,Niger,2018,2018-07-01,Day,2019-01-18,Day,Niger: Floods - 7 states - July,2,Weather related,3,Hydrological,10,Flood,13,,40387,40000,,,
+NER,Niger,2019,2019-06-01,Day,2019-11-15,Week,Niger: Floods - Countrywide - 01/06/2019 ,2,Weather related,3,Hydrological,10,Flood,13,,120935,121000,120935,121000,
+NER,Niger,2020,2020-06-01,Day,2020-09-19,Day,Niger: Floods [2020 rainy season]- countrywide (7 regions) - 01/06/2020,2,Weather related,3,Hydrological,10,Flood,13,,266783,267000,266783,267000,FL-2020-000190-NER
+NER,Niger,2020,2020-11-01,Week,2020-11-17,Week,Niger: Floods - Diffa (Komadougou yobé) - 01/11/2020,2,Weather related,3,Hydrological,10,Flood,13,,9123,9100,,,
+NER,Niger,2021,2021-06-01,Week,2021-10-31,Week,Niger: Rainy season - 2021 ,2,Weather related,3,Hydrological,10,Flood,13,,124847,125000,40241,40000,
+NER,Niger,2022,2022-06-01,Month,2022-08-31,Month,Niger: Rainy season - Countrywide - 2022,2,Weather related,3,Hydrological,10,Flood,13,,247574,248000,,,FL-2022-000316-NER
+NER,Niger,2023,2023-01-01,Month,2023-03-31,Month,Niger: Flood - (Tillaberi) - 01/01/2023,2,Weather related,3,Hydrological,10,Flood,13,,4410,4400,,,
+NER,Niger,2023,2023-05-01,Week,2023-11-06,Day,Niger: Flood - Countrywide - 01/05/2023,2,Weather related,3,Hydrological,10,Flood,13,,90576,91000,,,FL-2023-000160-NER
+NER,Niger,2024,2024-05-01,Month,2024-10-31,Month,Niger: Flood - Countrywide  - 01/05/2024,2,Weather related,3,Hydrological,10,Flood,13,,1172018,1172000,464577,465000,MDRNE030
+NER,Niger,2025,2025-05-01,Month,2025-10-31,Month,Niger: Flood - Countrywide  - 2025,2,Weather related,3,Hydrological,10,Flood,13,,1894,1900,,,

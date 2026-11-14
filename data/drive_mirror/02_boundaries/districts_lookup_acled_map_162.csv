@@ -1,0 +1,163 @@
+district_id,name,admin1,country,lat,lon
+MLI.1.1_1,Bamako,Bamako,Mali,12.6111,-7.9791
+MLI.2.1_1,Ansongo,Gao,Mali,15.6636,0.667
+MLI.2.2_1,Bourem,Gao,Mali,17.7432,-0.3934
+MLI.2.3_1,Gao,Gao,Mali,16.6596,0.4098
+MLI.2.4_1,Ménaka,Gao,Mali,16.6874,2.7783
+MLI.3.1_1,Bafoulabé,Kayes,Mali,13.7115,-10.5693
+MLI.3.2_1,Diéma,Kayes,Mali,14.5883,-9.1761
+MLI.3.3_1,Kayes,Kayes,Mali,14.5275,-11.4722
+MLI.3.4_1,Kéniéba,Kayes,Mali,12.7055,-11.014
+MLI.3.5_1,Kita,Kayes,Mali,13.2285,-9.4342
+MLI.3.6_1,Nioro,Kayes,Mali,15.0622,-9.5962
+MLI.3.7_1,Yélimané,Kayes,Mali,15.0881,-10.5589
+MLI.4.1_1,Abeïbara,Kidal,Mali,19.6187,2.1852
+MLI.4.2_1,Kidal,Kidal,Mali,18.3813,1.3062
+MLI.4.3_1,Tessalit,Kidal,Mali,20.0062,0.0599
+MLI.4.4_1,Tin-Essako,Kidal,Mali,18.5327,3.0932
+MLI.5.1_1,Banamba,Koulikoro,Mali,13.8693,-7.2995
+MLI.5.2_1,Dioïla,Koulikoro,Mali,12.3673,-6.7735
+MLI.5.3_1,Kangaba,Koulikoro,Mali,11.9409,-8.5909
+MLI.5.4_1,Kati,Koulikoro,Mali,12.5222,-8.1295
+MLI.5.5_1,Kolokani,Koulikoro,Mali,13.7807,-8.16
+MLI.5.6_1,Koulikoro,Koulikoro,Mali,13.1641,-7.3629
+MLI.5.7_1,Nara,Koulikoro,Mali,14.942,-7.5271
+MLI.6.1_1,Bandiagara,Mopti,Mali,14.4923,-3.6162
+MLI.6.2_1,Bankass,Mopti,Mali,13.6554,-3.6122
+MLI.6.3_1,Djenné,Mopti,Mali,13.9677,-4.5697
+MLI.6.4_1,Douentza,Mopti,Mali,15.1217,-2.3945
+MLI.6.5_1,Koro,Mopti,Mali,14.2991,-2.8136
+MLI.6.6_1,Mopti,Mopti,Mali,14.7549,-4.1089
+MLI.6.7_1,Ténenkou,Mopti,Mali,14.6818,-4.9603
+MLI.6.8_1,Youwarou,Mopti,Mali,15.4154,-4.4908
+MLI.7.1_1,Barouéli,Ségou,Mali,13.0537,-6.6223
+MLI.7.2_1,Bla,Ségou,Mali,12.9424,-5.7724
+MLI.7.3_1,Macina,Ségou,Mali,13.9906,-5.3729
+MLI.7.4_1,Niono,Ségou,Mali,14.8743,-5.8932
+MLI.7.5_1,San,Ségou,Mali,13.1708,-4.9426
+MLI.7.6_1,Ségou,Ségou,Mali,13.6868,-6.1857
+MLI.7.7_1,Tominian,Ségou,Mali,13.2862,-4.3849
+MLI.8.1_1,Bougouni,Sikasso,Mali,11.333,-7.3626
+MLI.8.2_1,Kadiolo,Sikasso,Mali,10.6373,-5.8573
+MLI.8.3_1,Kolondiéba,Sikasso,Mali,10.9198,-6.7478
+MLI.8.4_1,Koutiala,Sikasso,Mali,12.3879,-5.5599
+MLI.8.5_1,Sikasso,Sikasso,Mali,11.5033,-5.9134
+MLI.8.6_1,Yanfolila,Sikasso,Mali,10.9631,-8.0966
+MLI.8.7_1,Yorosso,Sikasso,Mali,12.3405,-4.7791
+MLI.9.1_1,Diré,Timbuktu,Mali,16.2541,-3.3251
+MLI.9.2_1,Goundam,Timbuktu,Mali,18.5781,-4.9869
+MLI.9.3_1,Gourma-Rharous,Timbuktu,Mali,16.0937,-1.7096
+MLI.9.4_1,Niafunké,Timbuktu,Mali,15.8635,-4.0226
+MLI.9.5_1,Tombouctou,Timbuktu,Mali,21.1496,-3.295
+BFA.1.1_1,Balé,BoucleduMouhoun,Burkina Faso,11.722,-3.0732
+BFA.1.2_1,Banwa,BoucleduMouhoun,Burkina Faso,12.2538,-4.1712
+BFA.1.3_1,Kossi,BoucleduMouhoun,Burkina Faso,12.9238,-3.8809
+BFA.1.4_1,Mouhoun,BoucleduMouhoun,Burkina Faso,12.2006,-3.4171
+BFA.1.5_1,Nayala,BoucleduMouhoun,Burkina Faso,12.6964,-3.0243
+BFA.1.6_1,Sourou,BoucleduMouhoun,Burkina Faso,13.2492,-3.016
+BFA.2.1_1,Comoé,Cascades,Burkina Faso,10.2977,-4.4301
+BFA.2.2_1,Léraba,Cascades,Burkina Faso,10.6172,-5.2668
+BFA.7.1_1,Kadiogo,Centre,Burkina Faso,12.3225,-1.5023
+BFA.3.1_1,Boulgou,Centre-Est,Burkina Faso,11.5116,-0.4495
+BFA.3.2_1,Koulpélogo,Centre-Est,Burkina Faso,11.416,0.202
+BFA.3.3_1,Kouritenga,Centre-Est,Burkina Faso,12.193,-0.3157
+BFA.4.1_1,Bam,Centre-Nord,Burkina Faso,13.47,-1.5862
+BFA.4.2_1,Namentenga,Centre-Nord,Burkina Faso,13.1797,-0.5086
+BFA.4.3_1,Sanmatenga,Centre-Nord,Burkina Faso,13.2414,-1.0304
+BFA.5.1_1,Boulkiemdé,Centre-Ouest,Burkina Faso,12.3156,-2.1458
+BFA.5.2_1,Sanguié,Centre-Ouest,Burkina Faso,12.2118,-2.6139
+BFA.5.3_1,Sissili,Centre-Ouest,Burkina Faso,11.312,-2.2302
+BFA.5.4_1,Ziro,Centre-Ouest,Burkina Faso,11.6345,-1.8889
+BFA.6.1_1,Bazèga,Centre-Sud,Burkina Faso,11.9605,-1.4525
+BFA.6.2_1,Nahouri,Centre-Sud,Burkina Faso,11.2058,-1.2083
+BFA.6.3_1,Zoundwéogo,Centre-Sud,Burkina Faso,11.5715,-0.9791
+BFA.8.1_1,Gnagna,Est,Burkina Faso,12.9434,0.0195
+BFA.8.2_1,Gourma,Est,Burkina Faso,12.1428,0.6289
+BFA.8.3_1,Komandjoari,Est,Burkina Faso,12.7482,0.7305
+BFA.8.4_1,Kompienga,Est,Burkina Faso,11.4333,0.8861
+BFA.8.5_1,Tapoa,Est,Burkina Faso,12.0693,1.7404
+BFA.9.1_1,Houet,Haut-Bassins,Burkina Faso,11.2911,-4.2554
+BFA.9.2_1,Kénédougou,Haut-Bassins,Burkina Faso,11.4234,-4.9787
+BFA.9.3_1,Tuy,Haut-Bassins,Burkina Faso,11.4394,-3.5187
+BFA.10.1_1,Loroum,Nord,Burkina Faso,13.9378,-2.1703
+BFA.10.2_1,Passoré,Nord,Burkina Faso,12.9005,-2.1692
+BFA.10.3_1,Yatenga,Nord,Burkina Faso,13.6027,-2.3846
+BFA.10.4_1,Zondoma,Nord,Burkina Faso,13.1952,-2.3758
+BFA.11.1_1,Ganzourgou,Plateau-Central,Burkina Faso,12.2524,-0.7738
+BFA.11.2_1,Kourwéogo,Plateau-Central,Burkina Faso,12.6256,-1.8127
+BFA.11.3_1,Oubritenga,Plateau-Central,Burkina Faso,12.6393,-1.3071
+BFA.12.1_1,Oudalan,Sahel,Burkina Faso,14.6527,-0.3322
+BFA.12.2_1,Séno,Sahel,Burkina Faso,13.9477,-0.0322
+BFA.12.3_1,Soum,Sahel,Burkina Faso,14.2364,-1.2884
+BFA.12.4_1,Yagha,Sahel,Burkina Faso,13.404,0.6016
+BFA.13.1_1,Bougouriba,Sud-Ouest,Burkina Faso,10.8989,-3.3821
+BFA.13.2_1,Ioba,Sud-Ouest,Burkina Faso,11.0735,-2.9691
+BFA.13.3_1,Noumbiel,Sud-Ouest,Burkina Faso,9.8733,-2.9557
+BFA.13.4_1,Poni,Sud-Ouest,Burkina Faso,10.3026,-3.3577
+NE005001,Abalak,Tahoua,Niger,15.5101,6.2683
+NE005012,Tillia,Tahoua,Niger,15.8998,4.5584
+NE004008,Mayahi,Maradi,Niger,14.1175,7.6251
+NE006013,Torodi,Tillabéri,Niger,13.163,1.5019
+NE006004,Banibangou,Tillabéri,Niger,15.106,2.4717
+NE004004,Gazaoua,Maradi,Niger,13.4213,7.9444
+NE007007,Mirriah,Zinder,Niger,13.5973,9.0786
+NE004009,Tessaoua,Maradi,Niger,13.8636,8.1947
+NE007006,Magaria,Zinder,Niger,13.157,8.9649
+NE004006,Madarounfa,Maradi,Niger,13.2693,7.1595
+NE005005,Illéla,Tahoua,Niger,14.3109,5.2455
+NE006003,Balleyara,Tillabéri,Niger,13.7284,2.875
+NE005003,Birni N'Konni,Tahoua,Niger,13.9143,4.9494
+NE002003,Goudoumaria,Diffa,Niger,13.746,11.2473
+NE004002,Bermo,Maradi,Niger,15.0822,6.9508
+NE003002,Dioundiou,Dosso,Niger,12.6291,3.5952
+NE006008,Kollo,Tillabéri,Niger,13.4484,2.2758
+NE003005,Falmey,Dosso,Niger,12.5994,2.8108
+NE006007,Gothèye,Tillabéri,Niger,13.7966,1.2565
+NE005004,Bouza,Tahoua,Niger,14.438,6.0999
+NE003004,Dosso,Dosso,Niger,12.9292,3.313
+NE005010,Tassara,Tahoua,Niger,17.2397,4.9262
+NE004003,Dakoro,Maradi,Niger,14.3672,7.009
+NE007010,Tesker,Zinder,Niger,15.7088,10.9833
+NE002002,Diffa,Diffa,Niger,13.524,12.5707
+NE005009,Tahoua,Tahoua,Niger,14.9465,4.8983
+NE007001,Belbedji,Zinder,Niger,15.0999,7.86
+NE006005,Bankilaré,Tillabéri,Niger,14.5036,0.661
+NE001005,Ingall,Agadez,Niger,17.7232,6.0808
+NE004005,Guidan Roumdji,Maradi,Niger,13.642,6.8477
+NE001004,Iferouane,Agadez,Niger,20.0702,9.622
+NE005007,Madaoua,Tahoua,Niger,14.0041,6.1159
+NE003006,Gaya,Dosso,Niger,12.0913,3.4709
+NE003003,Dogondoutchi,Dosso,Niger,13.9539,4.1229
+NE003008,Tibiri,Dosso,Niger,13.0786,3.8986
+NE005008,Malbaza,Tahoua,Niger,14.0408,5.5594
+NE007005,Kantché,Zinder,Niger,13.4125,8.5276
+NE001006,Tchirozerine,Agadez,Niger,17.5074,8.8769
+NE005002,Bagaroua,Tahoua,Niger,14.3531,4.6235
+NE006011,Téra,Tillabéri,Niger,14.3246,0.695
+NE001003,Bilma,Agadez,Niger,20.3762,13.1491
+NE006006,Filingué,Tillabéri,Niger,14.2492,3.1971
+NE001002,Arlit,Agadez,Niger,19.1945,7.1358
+NE005011,Tchintabaraden,Tahoua,Niger,15.9546,5.6857
+NE005006,Keita,Tahoua,Niger,14.7651,5.8477
+NE007003,Dungass,Zinder,Niger,13.1149,9.4842
+NE007004,Gouré,Zinder,Niger,14.0286,10.1885
+NE008001,Ville de Niamey,Niamey,Niger,13.5283,2.106
+NE006012,Tillabéri,Tillabéri,Niger,14.362,1.4636
+NE002004,Maïné Soroa,Diffa,Niger,13.7209,11.9446
+NE002006,N'Guigmi,Diffa,Niger,14.1565,12.8139
+NE002005,N'Gourti,Diffa,Niger,16.4336,13.524
+NE007002,Damagaram Takaya,Zinder,Niger,14.0942,9.4817
+NE002001,Bosso,Diffa,Niger,13.737,13.2837
+NE006001,Abala,Tillabéri,Niger,14.9855,3.6359
+NE007011,Ville de Zinder,Zinder,Niger,13.755,8.9883
+NE007009,Tanout,Zinder,Niger,15.0534,8.91
+NE004001,Aguié,Maradi,Niger,13.5213,7.6344
+NE007008,Takeita,Zinder,Niger,13.9158,8.7255
+NE001001,Aderbissinat,Agadez,Niger,16.512,8.9212
+NE006009,Ouallam,Tillabéri,Niger,14.5031,2.1262
+NE005013,Ville de Tahoua,Tahoua,Niger,14.8858,5.2364
+NE004007,Ville de Maradi,Maradi,Niger,13.4869,7.1288
+NE003001,Boboye,Dosso,Niger,13.1248,2.8193
+NE003007,Loga,Dosso,Niger,13.6111,3.4425
+NE006002,Ayerou,Tillabéri,Niger,14.939,1.1726
+NE006010,Say,Tillabéri,Niger,12.6608,2.2509

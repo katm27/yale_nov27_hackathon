@@ -1,0 +1,589 @@
+location_code,has_hrp,in_gho,provider_admin1_name,provider_admin2_name,admin1_code,admin1_name,admin2_code,admin2_name,admin_level,sector_code,sector_name,category,population_status,population,reference_period_start,reference_period_end
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,INN,4400000,2026-01-01,2026-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,TGT,3100000,2026-01-01,2026-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,all,24100000,2026-01-01,2026-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,INN,5915136,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,REA,1800000,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,TGT,3672506,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,all,23449865,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Female,INN,1352342,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Female,TGT,843611,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Female,all,5390116,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Male,INN,1095674,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Male,TGT,686894,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Male,all,4596080,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Female,INN,1639871,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Female,TGT,1012811,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Female,all,6121493,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Male,INN,1638344,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Male,TGT,1011629,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Male,all,6248287,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Female,INN,98058,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Female,TGT,61155,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Female,all,584511,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Male,INN,90847,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Male,TGT,56407,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Male,all,509378,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Handicap,INN,887270,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Handicap,TGT,550876,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Handicap,all,3517480,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Host Communities,INN,3340789,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Host Communities,TGT,2195025,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Host Communities,all,20503612,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,IDP,INN,2533496,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,IDP,TGT,1436631,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,IDP,all,2905403,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Refugees,INN,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Refugees,TGT,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Refugees,all,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,total,INN,5915136,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,total,TGT,3672506,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,total,all,23449865,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,,INN,1348415,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,,TGT,513110,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Female,INN,296435,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Female,TGT,112776,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Male,INN,262953,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Male,TGT,101591,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Female,INN,363211,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Female,TGT,137546,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Male,INN,368431,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Male,TGT,139270,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Female,INN,29145,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Female,TGT,11078,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Male,INN,28240,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Male,TGT,10850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Handicap,INN,8680,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Handicap,TGT,3249,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,IDP,INN,1348415,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,IDP,TGT,513110,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,total,INN,1348415,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,total,TGT,513110,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,,INN,1992887,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,,TGT,829045,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Children - Female,INN,976515,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Children - Female,TGT,406232,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Children - Male,INN,1016372,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Children - Male,TGT,422813,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Handicap,INN,199289,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Handicap,TGT,82904,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Host Communities,INN,1583582,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,Host Communities,TGT,549175,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,IDP,INN,409305,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,IDP,TGT,279870,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,total,INN,1992887,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,EDU,Education,total,TGT,829045,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,,INN,2800731,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,,TGT,2147547,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Female,INN,635766,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Female,TGT,487493,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Male,INN,504132,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Male,TGT,386558,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Female,INN,784205,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Female,TGT,601313,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Male,INN,784205,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Male,TGT,601313,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Female,INN,47612,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Female,TGT,36508,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Male,INN,44812,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Male,TGT,34361,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Handicap,INN,420110,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Handicap,TGT,322132,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Host Communities,INN,2503814,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,Host Communities,TGT,1875777,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,IDP,INN,296917,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,IDP,TGT,271770,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,total,INN,2800731,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,FSC,Food Security,total,TGT,2147547,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,,INN,2031499,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,,TGT,1341425,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Female,INN,454065,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Female,TGT,293263,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Male,INN,389241,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Male,TGT,260281,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Children - Female,INN,543016,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Children - Female,TGT,362534,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Children - Male,INN,543016,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Children - Male,TGT,362534,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Female,INN,48637,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Female,TGT,28867,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Male,INN,43523,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Male,TGT,28034,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Handicap,INN,15430,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Handicap,TGT,8488,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Host Communities,INN,700224,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,Host Communities,TGT,224255,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,IDP,INN,1331275,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,IDP,TGT,1117170,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,total,INN,2031499,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,HEA,Health,total,TGT,1341425,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),,INN,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),,TGT,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Female,INN,9917,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Female,TGT,9917,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Male,INN,6130,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Male,TGT,6130,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Female,INN,12248,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Female,TGT,12248,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Male,INN,11729,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Male,TGT,11729,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Female,INN,427,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Female,TGT,427,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Male,INN,399,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Male,TGT,399,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Handicap,INN,657,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Handicap,TGT,657,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Refugees,INN,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Refugees,TGT,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),total,INN,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),total,TGT,40850,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,,INN,1314600,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,,TGT,633652,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Adult - Female,INN,568181,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Adult - Female,TGT,202481,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Female,INN,388138,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Female,TGT,224209,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Male,INN,358281,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Male,TGT,206962,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Handicap,INN,13146,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Handicap,TGT,6337,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Host Communities,INN,933457,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,Host Communities,TGT,408039,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,IDP,INN,381143,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,IDP,TGT,225614,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,total,INN,1314600,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,NUT,Nutrition,total,TGT,633652,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,,INN,3756956,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,,TGT,1323607,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Female,INN,826343,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Female,TGT,289148,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Male,INN,713046,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Male,TGT,258228,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Female,INN,1015934,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Female,TGT,357254,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Male,INN,1039008,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Male,TGT,363308,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Female,INN,83503,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Female,TGT,28067,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Male,INN,79130,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Male,TGT,27598,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Handicap,INN,26243,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Handicap,TGT,8431,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Host Communities,INN,1695390,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,Host Communities,TGT,182931,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,IDP,INN,2061566,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,IDP,TGT,1140676,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,total,INN,3756956,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO,Protection,total,TGT,1323607,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,,INN,1842924,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,,TGT,755730,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Female,INN,958321,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Female,TGT,392980,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Male,INN,884604,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Male,TGT,362750,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Elderly - Female,INN,12084,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Elderly - Female,TGT,4788,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Handicap,INN,12084,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Handicap,TGT,4788,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Host Communities,INN,879610,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Host Communities,TGT,258069,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,IDP,INN,963314,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,IDP,TGT,497661,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,total,INN,1842924,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,total,TGT,755730,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,,INN,1322131,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,,TGT,471126,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Female,INN,512048,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Female,TGT,242102,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Male,INN,68899,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Male,TGT,24744,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Female,INN,610331,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Female,TGT,165279,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Male,INN,68976,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Male,TGT,15444,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Elderly - Female,INN,55528,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Elderly - Female,TGT,12787,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Elderly - Male,INN,6349,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Elderly - Male,TGT,1347,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Handicap,INN,198320,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Handicap,TGT,70669,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Host Communities,INN,651561,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Host Communities,TGT,102084,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,IDP,INN,670571,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,IDP,TGT,369042,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,total,INN,1322131,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,total,TGT,471126,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",,INN,1573606,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",,TGT,484995,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Female,INN,346114,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Female,TGT,107202,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Male,INN,307799,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Male,TGT,95154,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Children - Female,INN,423056,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Children - Female,TGT,129922,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Children - Male,INN,428845,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Children - Male,TGT,131509,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Female,INN,34515,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Female,TGT,10889,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Male,INN,33278,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Male,TGT,10319,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Handicap,INN,10280,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Handicap,TGT,3138,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Host Communities,INN,449954,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Host Communities,TGT,59047,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",IDP,INN,1123652,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",IDP,TGT,425948,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",total,INN,1573606,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",total,TGT,484995,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,,INN,1909220,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,,TGT,208101,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Female,INN,420636,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Female,TGT,45835,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Male,INN,371344,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Male,TGT,40142,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Female,INN,514617,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Female,TGT,56444,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Male,INN,518929,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Male,TGT,56465,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Elderly - Female,INN,42893,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Elderly - Female,TGT,4798,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Elderly - Male,INN,40801,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Elderly - Male,TGT,4417,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Handicap,INN,12708,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Handicap,TGT,1467,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Host Communities,INN,1032301,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Host Communities,TGT,105870,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,IDP,INN,876919,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,IDP,TGT,102231,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,total,INN,1909220,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,total,TGT,208101,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,,INN,2490889,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,,TGT,611326,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Female,INN,546048,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Female,TGT,134591,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Male,INN,471196,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Male,TGT,117382,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Female,INN,677774,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Female,TGT,165907,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Male,INN,689198,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Male,TGT,167561,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Female,INN,54508,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Female,TGT,13123,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Male,INN,52165,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Male,TGT,12762,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Handicap,INN,16550,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Handicap,TGT,3808,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Host Communities,INN,491161,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Host Communities,TGT,19921,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,IDP,INN,1999728,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,IDP,TGT,591405,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,total,INN,2490889,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,total,TGT,611326,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,,INN,2830634,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,,TGT,1701651,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Female,INN,605889,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Female,TGT,361556,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Male,INN,468362,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Male,TGT,278708,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Female,INN,822846,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Female,TGT,499267,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Male,INN,833102,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Male,TGT,504295,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Female,INN,51351,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Female,TGT,29156,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Male,INN,49084,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Male,TGT,28669,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Handicap,INN,19556,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Handicap,TGT,11021,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Host Communities,INN,1170101,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Host Communities,TGT,582848,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,IDP,INN,1660533,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,IDP,TGT,1118803,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,total,INN,2830634,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,total,TGT,1701651,2025-01-01,2025-12-08
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Female,TGT,509093,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Male,INN,1033846,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Male,TGT,509093,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Female,INN,60695,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Female,TGT,29541,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Male,INN,57091,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Elderly - Male,TGT,27900,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Handicap,INN,73718,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Handicap,TGT,36106,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,INN,6293939,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,REA,1600000,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,TGT,3848843,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,,all,23268117,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Female,INN,1448243,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Female,TGT,885456,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Female,all,5538282,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Male,INN,1184420,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Male,TGT,723257,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Adult - Male,all,4729699,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Female,INN,1730047,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Female,TGT,1058631,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Female,all,6109479,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Male,INN,1728423,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Male,TGT,1057468,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Children - Male,all,6109032,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Female,INN,105635,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Female,TGT,64603,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Female,all,411708,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Male,INN,97172,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Male,TGT,59427,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Elderly - Male,all,369917,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Handicap,INN,3490217,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Handicap,TGT,3490217,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Host Communities,INN,3901476,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Host Communities,TGT,2372602,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Host Communities,all,20858016,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,IDP,INN,2355214,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,IDP,TGT,1438992,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,IDP,all,2372852,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Refugees,INN,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Refugees,TGT,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,Refugees,all,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,total,INN,6293939,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,total,TGT,3848843,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Intersectoral,Intersectoral,total,all,23268117,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,,INN,1135435,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,,TGT,495049,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Female,INN,240712,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Female,TGT,104950,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Male,INN,174857,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Adult - Male,TGT,76237,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Female,INN,342901,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Female,TGT,149505,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Male,INN,342901,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Children - Male,TGT,149505,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Female,INN,17032,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Female,TGT,7426,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Male,INN,17032,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Elderly - Male,TGT,7426,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Handicap,INN,170315,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,Handicap,TGT,74257,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,IDP,INN,1135435,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,IDP,TGT,495049,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,total,INN,1135435,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,CCM,Camp Coordination / Management,total,TGT,495049,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,,INN,2196833,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,,TGT,937124,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Children - Female,INN,1076448,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Children - Female,TGT,459191,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Children - Male,INN,1120385,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Children - Male,TGT,477933,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Handicap,INN,329525,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Handicap,TGT,140569,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Host Communities,INN,1763695,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,Host Communities,TGT,601985,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,IDP,INN,433138,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,IDP,TGT,335139,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,total,INN,2196833,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,EDU,Education,total,TGT,937124,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,,INN,3770298,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,,TGT,2807085,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Female,INN,882815,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Female,TGT,651757,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Male,INN,739692,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Adult - Male,TGT,540202,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Female,INN,1012678,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Female,TGT,762293,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Male,INN,1011810,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Children - Male,TGT,761704,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Female,INN,64741,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Female,TGT,47660,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Male,INN,58562,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Elderly - Male,TGT,43468,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Handicap,INN,565545,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Handicap,TGT,565545,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Host Communities,INN,2873967,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,Host Communities,TGT,1949713,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,IDP,INN,896331,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,IDP,TGT,857372,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,total,INN,3770298,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,FSC,Food Security,total,TGT,2807085,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,,INN,3503438,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,,TGT,1610842,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Female,INN,789763,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Female,TGT,354925,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Male,INN,628732,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Adult - Male,TGT,273534,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Children - Female,INN,986676,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Children - Female,TGT,466103,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Children - Male,INN,986676,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Children - Male,TGT,466103,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Female,INN,57417,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Female,TGT,25552,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Male,INN,54173,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Elderly - Male,TGT,24626,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Handicap,INN,525516,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Handicap,TGT,241626,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Host Communities,INN,1621869,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,Host Communities,TGT,462980,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,IDP,INN,1881569,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,IDP,TGT,1147862,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,total,INN,3503438,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,HEA,Health,total,TGT,1610842,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),,INN,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),,TGT,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Female,INN,8740,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Female,TGT,8740,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Male,INN,5199,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Adult - Male,TGT,5199,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Female,INN,11516,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Female,TGT,11516,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Male,INN,11068,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Children - Male,TGT,11068,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Female,INN,387,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Female,TGT,387,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Male,INN,339,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Elderly - Male,TGT,339,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Handicap,INN,745,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Handicap,TGT,745,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Refugees,INN,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),Refugees,TGT,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),total,INN,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,Multi,Multi-sector (unspecified),total,TGT,37249,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,,INN,1502883,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,,TGT,743523,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Adult - Female,INN,491403,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Adult - Female,TGT,74625,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Female,INN,508020,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Female,TGT,37843,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Male,INN,503460,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Children - Male,TGT,37843,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Handicap,INN,225432,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Handicap,TGT,111528,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Host Communities,INN,1258746,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,Host Communities,TGT,593212,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,IDP,INN,244136,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,IDP,TGT,150311,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,total,INN,1502883,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,NUT,Nutrition,total,TGT,743523,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,,INN,3743494,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,,TGT,1376885,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Female,INN,847983,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Female,TGT,297163,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Male,INN,680043,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Adult - Male,TGT,222066,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Female,INN,1048546,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Female,TGT,407881,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Male,INN,1047981,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Children - Male,TGT,407826,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Female,INN,61482,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Female,TGT,21169,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Male,INN,57459,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Elderly - Male,TGT,20780,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Handicap,INN,561524,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Handicap,TGT,206533,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Host Communities,INN,1870826,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,Host Communities,TGT,181134,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,IDP,INN,1872668,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,IDP,TGT,1195751,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,total,INN,3743494,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO,Protection,total,TGT,1376885,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,,INN,1992362,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,,TGT,761697,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Female,INN,1036028,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Female,TGT,396083,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Male,INN,956334,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Children - Male,TGT,365615,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Handicap,INN,39847,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Handicap,TGT,15234,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Host Communities,INN,961321,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,Host Communities,TGT,261133,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,IDP,INN,1031041,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,IDP,TGT,500564,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,total,INN,1992362,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-CPN,Child Protection,total,TGT,761697,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,,INN,1331530,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,,TGT,532758,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Female,INN,649007,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Female,TGT,324270,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Male,INN,90757,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Adult - Male,TGT,35880,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Female,INN,485704,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Female,TGT,137648,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Male,INN,106062,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Children - Male,TGT,34960,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Handicap,INN,199730,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Handicap,TGT,79914,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Host Communities,INN,674832,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,Host Communities,TGT,173755,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,IDP,INN,656698,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,IDP,TGT,359003,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,total,INN,1331530,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-GBV,Gender Based Violence,total,TGT,532758,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",,INN,1908622,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",,TGT,538668,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Female,INN,419159,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Female,TGT,284145,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Male,INN,321605,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Adult - Male,TGT,214447,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Children - Female,INN,554488,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Children - Male,INN,554337,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Female,INN,30054,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Female,TGT,20291,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Male,INN,28979,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Elderly - Male,TGT,19786,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Handicap,INN,286293,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Handicap,TGT,80800,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Host Communities,INN,500071,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",Host Communities,TGT,113635,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",IDP,INN,1408550,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",IDP,TGT,425033,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",total,INN,1908622,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-HLP,"Housing, Land and Property",total,TGT,538668,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,,INN,1677417,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,,TGT,195733,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Female,INN,369031,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Female,TGT,43061,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Male,INN,369031,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Adult - Male,TGT,43061,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Female,INN,469676,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Female,TGT,54805,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Male,INN,469676,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Children - Male,TGT,54805,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Handicap,INN,251612,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Handicap,TGT,29360,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Host Communities,INN,1116099,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,Host Communities,TGT,107327,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,IDP,INN,561317,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,IDP,TGT,88406,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,total,INN,1677415,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,PRO-MIN,Mine Action,total,TGT,195734,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,,INN,2828098,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,,TGT,606177,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Female,INN,599557,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Female,TGT,128510,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Male,INN,435527,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Adult - Male,TGT,93351,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Female,INN,854086,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Female,TGT,183065,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Male,INN,854086,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Children - Male,TGT,183065,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Female,INN,42421,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Female,TGT,9093,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Male,INN,42421,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Elderly - Male,TGT,9093,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Handicap,INN,424215,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Handicap,TGT,90927,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Host Communities,INN,721248,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,Host Communities,TGT,153116,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,IDP,INN,2106850,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,IDP,TGT,453061,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,total,INN,2828098,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,SHL,Emergency Shelter and NFI,total,TGT,606177,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,,INN,3685906,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,,TGT,1805303,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Female,INN,833677,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Female,TGT,406523,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Male,INN,666752,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Adult - Male,TGT,323152,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Children - Female,INN,1033846,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Host Communities,INN,1802226,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,Host Communities,TGT,820642,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,IDP,INN,1883681,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,IDP,TGT,984661,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,total,INN,3685906,2024-01-01,2024-12-31
+BFA,True,True,,,,,,,0,WSH,Water Sanitation Hygiene,total,TGT,1805303,2024-01-01,2024-12-31

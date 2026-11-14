@@ -1,0 +1,22 @@
+iso3,country_name,year,start_date,start_date_accuracy,end_date,end_date_accuracy,event_name,hazard_category,hazard_category_name,hazard_sub_category,hazard_sub_category_name,hazard_type,hazard_type_name,hazard_sub_type,hazard_subtype_name,new_displacement,new_displacement_rounded,total_displacement,total_displacement_rounded,event_codes
+BFA,Burkina Faso,2008,2008-08-01,Month,2008-09-01,Month,Burkina Faso: Flood - 01/08/2008,2,Weather related,3,Hydrological,10,Flood,13,,28000,28000,,,
+BFA,Burkina Faso,2009,2009-01-01,Month,,,Burkina Faso: Flood - 01/01/2009,2,Weather related,3,Hydrological,10,Flood,13,,150000,150000,,,
+BFA,Burkina Faso,2010,2010-01-01,Month,,,Burkina Faso: Flood - 01/01/2010,2,Weather related,3,Hydrological,10,Flood,13,,20000,20000,,,
+BFA,Burkina Faso,2013,2013-08-01,Day,2013-08-01,Month,Sahel flood,2,Weather related,3,Hydrological,10,Flood,13,,1763,1800,,,
+BFA,Burkina Faso,2015,2015-07-01,Day,2015-08-18,Day,North-east and central regions floods,2,Weather related,3,Hydrological,10,Flood,13,,3699,3700,,,
+BFA,Burkina Faso,2016,2016-04-09,Week,2016-08-17,Week,Rainy season floods,2,Weather related,3,Hydrological,10,Flood,13,,16379,16000,16379,16000,FL-2016-000080-BFA
+BFA,Burkina Faso,2017,2017-05-01,Week,2017-05-30,Week,"Burkina Faso: Floods - Southwest, East Regions - 01/05/2017",2,Weather related,3,Hydrological,10,Flood,13,,4476,4500,4476,4500,FL-2017-000054-BFA
+BFA,Burkina Faso,2017,2017-07-09,Week,2017-07-31,Week,"Burkina Faso: Flood - Soum, Yagha, Namentenga - 09/07/2017",2,Weather related,3,Hydrological,10,Flood,13,,912,910,,,
+BFA,Burkina Faso,2017,2017-07-22,Day,2017-07-22,Day,Burkina Faso: Flood - Oudalan - 22/04/2017,2,Weather related,3,Hydrological,10,Flood,13,,850,850,249,250,
+BFA,Burkina Faso,2018,2018-06-23,Day,2018-06-23,Day,Burkina Faso: Storm - Sanmatenga - 23/06/2018,2,Weather related,4,Meteorological,14,Storm,21,,385,380,,,
+BFA,Burkina Faso,2018,2018-07-24,Day,2018-07-25,Day,Flood: Burkina Faso - Yatenga - 24/07/2018,2,Weather related,3,Hydrological,10,Flood,13,,558,560,,,
+BFA,Burkina Faso,2018,2018-08-13,Day,2018-08-27,Day,Burkina Faso: Flood - 6 provinces - 13/08/2018,2,Weather related,3,Hydrological,10,Flood,13,,550,550,,,
+BFA,Burkina Faso,2018,2018-08-28,Day,2018-08-29,Day,Burkina Faso: Flood - Bam - 28/08/2018,2,Weather related,3,Hydrological,10,Flood,13,,2950,3000,,,
+BFA,Burkina Faso,2018,2018-09-24,Day,2018-09-25,Day,Burkina Faso: Flood - Yatenga - 24/09/2018,2,Weather related,3,Hydrological,10,Flood,13,,669,670,,,
+BFA,Burkina Faso,2020,2020-04-01,Week,2020-09-10,Week,Burkina Faso: Floods [rainy season] - countrywide - 01/04/2020,2,Weather related,3,Hydrological,10,Flood,13,,19747,20000,19747,20000,FL-2020-000200-BFA
+BFA,Burkina Faso,2022,2022-10-02,Week,2022-10-02,Week,Burkina Faso: Floods - Boucle du Mouhoun - 02/10/2022,2,Weather related,3,Hydrological,10,Flood,13,,2421,2400,,,
+BFA,Burkina Faso,2023,2023-08-26,Day,2023-08-26,Day,Burkina Faso: Flood - Sahel (484230826_OUDGOR) - 26/08/2023,2,Weather related,3,Hydrological,10,Flood,13,,18547,19000,,,484230826_OUDGOR
+BFA,Burkina Faso,2023,2023-09-02,Day,2023-09-02,Day,Burkina Faso: Flood - Est (485230902)_GNABOG-1- 02/09/2023,2,Weather related,3,Hydrological,10,Flood,13,,5592,5600,,,485230902_GNABOG-1
+BFA,Burkina Faso,2024,2024-05-29,Day,2024-05-29,Day,Burkina Faso: Flood - Centre nord (Namentaga/Boulsa) - 29/05/2024,2,Weather related,3,Hydrological,10,Flood,13,,2824,2800,2824,2800,MDRBF019
+BFA,Burkina Faso,2024,2024-10-08,Day,2024-10-13,Day,"Burkina Faso: Flood - Boucle du Mouhoun, Hauts-Bassins, Cascades, Nord - 08/10/2024",2,Weather related,3,Hydrological,10,Flood,13,,1184,1200,,,
+BFA,Burkina Faso,2025,2025-10-14,Week,2025-10-14,Week,Burkina Faso: Flood - Yatenga (Ouahigouya) - 14/10/2026,2,Weather related,3,Hydrological,10,Flood,13,,211,210,211,210,

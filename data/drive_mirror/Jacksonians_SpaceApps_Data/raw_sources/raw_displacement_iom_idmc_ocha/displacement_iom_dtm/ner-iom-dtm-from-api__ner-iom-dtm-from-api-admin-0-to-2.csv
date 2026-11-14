@@ -1,0 +1,424 @@
+id,operation,admin0Name,admin0Pcode,admin1Name,admin1Pcode,admin2Name,admin2Pcode,adminLevel,numPresentIdpInd,reportingDate,yearReportingDate,monthReportingDate,roundNumber,displacementReason,numberMales,numberFemales,idpOriginAdmin1Name,idpOriginAdmin1Pcode,assessmentType,operationStatus
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,97405,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,644,2019-12-31T00:00:00,2019,12,1,Conflict,,,Not available,Not available,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,6516,2019-12-31T00:00:00,2019,12,1,Natural disaster,,,Tahoua,NER005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,20967,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Maradi,NER004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,113294,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Diffa,NER002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,41904,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tahoua,NER005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,122283,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,538,2022-05-31T00:00:00,2022,5,4,Conflict,,,Diffa,NER002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,6841,2022-05-31T00:00:00,2022,5,4,Natural disaster,,,Diffa,NER002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,158868,2022-09-30T00:00:00,2022,9,5,Insecurity,76246,82622,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,49446,2022-09-30T00:00:00,2022,9,5,Insecurity,23738,25708,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,149069,2022-09-30T00:00:00,2022,9,5,Insecurity,71551,77518,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,6024,2022-09-30T00:00:00,2022,9,5,Natural disaster,2892,3132,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,22494,2022-09-30T00:00:00,2022,9,5,Insecurity,10797,11697,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,10888,2022-09-30T00:00:00,2022,9,5,Natural disaster,5226,5662,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,13678,2023-04-30T00:00:00,2023,4,6,Natural disaster,7108,6570,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,48,2023-04-30T00:00:00,2023,4,6,Other,24,24,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,1000,2023-04-30T00:00:00,2023,4,6,Natural disaster,467,533,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,198,2023-04-30T00:00:00,2023,4,6,Other,95,103,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,1518,2023-04-30T00:00:00,2023,4,6,Natural disaster,751,767,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,3359,2023-04-30T00:00:00,2023,4,6,Natural disaster,1752,1607,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,448,2023-04-30T00:00:00,2023,4,6,Conflict,218,230,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,600,2023-04-30T00:00:00,2023,4,6,Conflict,298,302,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,37695,2023-04-30T00:00:00,2023,4,6,Insecurity,17699,19996,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,23,2023-04-30T00:00:00,2023,4,6,Conflict,10,13,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,720,2023-04-30T00:00:00,2023,4,6,Other,398,322,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,16885,2023-04-30T00:00:00,2023,4,6,Insecurity,7958,8927,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,110283,2023-04-30T00:00:00,2023,4,6,Insecurity,54601,55682,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,1768,2023-04-30T00:00:00,2023,4,6,Conflict,788,980,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,164860,2023-04-30T00:00:00,2023,4,6,Insecurity,79839,85021,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,525,2023-12-31T00:00:00,2023,12,7,Natural disaster,252,273,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,47452,2023-12-31T00:00:00,2023,12,7,Insecurity,25186,22266,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,13372,2023-12-31T00:00:00,2023,12,7,Natural disaster,7944,5428,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,18886,2023-12-31T00:00:00,2023,12,7,Insecurity,9672,9214,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,132786,2023-12-31T00:00:00,2023,12,7,Insecurity,67133,65653,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,7003,2023-12-31T00:00:00,2023,12,7,Natural disaster,4090,2913,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,157564,2023-12-31T00:00:00,2023,12,7,Insecurity,81554,76010,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,1280,2023-12-31T00:00:00,2023,12,7,Political reasons,853,427,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,18538,2024-07-31T00:00:00,2024,7,8,Insecurity,8889,9649,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,1200,2024-07-31T00:00:00,2024,7,8,Conflict,578,622,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,209340,2024-07-31T00:00:00,2024,7,8,Insecurity,107016,102324,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,49999,2024-07-31T00:00:00,2024,7,8,Insecurity,24925,25074,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,142704,2024-07-31T00:00:00,2024,7,8,Insecurity,71280,71424,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,2148,2024-07-31T00:00:00,2024,7,8,Natural disaster,887,1261,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,3059,2024-07-31T00:00:00,2024,7,8,Natural disaster,1542,1517,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,3003,2024-12-31T00:00:00,2024,12,9,Natural disaster,1705,1298,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,17291,2024-12-31T00:00:00,2024,12,9,Insecurity,8831,8460,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,140,2024-12-31T00:00:00,2024,12,9,Conflict,72,68,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,4615,2024-12-31T00:00:00,2024,12,9,Natural disaster,2338,2277,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,5204,2024-12-31T00:00:00,2024,12,9,Natural disaster,2828,2376,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,924,2024-12-31T00:00:00,2024,12,9,Conflict,495,429,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,48971,2024-12-31T00:00:00,2024,12,9,Insecurity,27203,21768,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,169046,2024-12-31T00:00:00,2024,12,9,Insecurity,91483,77563,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,2220,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,91,2025-09-30T00:00:00,2025,9,10,Other reason,,,Not available,Not available,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,25193,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,376139,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,58004,2026-04-30T00:00:00,2026,4,11,Insecurity,29594,28410,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,11428,2026-04-30T00:00:00,2026,4,11,Natural disaster,5828,5600,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,50,2026-04-30T00:00:00,2026,4,11,Cconflict,26,24,Dosso,NE003,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,1230,2026-04-30T00:00:00,2026,4,11,Natural disaster,627,603,Tahoua,NE005,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,177374,2026-04-30T00:00:00,2026,4,11,Insecurity,90457,86917,Diffa,NE002,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,5896,2026-04-30T00:00:00,2026,4,11,Natural disaster,3010,2886,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,28,2026-04-30T00:00:00,2026,4,11,Natural disaster,14,14,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,10190,2026-04-30T00:00:00,2026,4,11,Insecurity,5197,4993,Dosso,NE003,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,195652,2026-04-30T00:00:00,2026,4,11,Insecurity,99785,95867,Tillabéri,NE006,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,3527,2026-04-30T00:00:00,2026,4,11,Natural disaster,1799,1728,Zinder,NE007,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,27787,2026-04-30T00:00:00,2026,4,11,Insecurity,14176,13611,Maradi,NE004,BA,Active
+,Displacement in Tahoua and Tillaberi,Niger,NER,,,,,0,136,2026-04-30T00:00:00,2026,4,11,Cconflict,69,67,Diffa,NE002,BA,Active
+58452,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,18637,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+58453,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,6516,2019-12-31T00:00:00,2019,12,1,Natural disaster,,,Tahoua,NER005,BA,Active
+58471,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,,,1,644,2019-12-31T00:00:00,2019,12,1,Conflict,,,Not available,Not available,BA,Active
+58472,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,,,1,78768,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+58473,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,,,1,122283,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+58431,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,,,1,20498,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Maradi,NER004,BA,Active
+58454,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,469,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Maradi,NER004,BA,Active
+58455,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,41904,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tahoua,NER005,BA,Active
+58409,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,,,1,538,2022-05-31T00:00:00,2022,5,4,Conflict,,,Diffa,NER002,BA,Active
+58410,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,,,1,113294,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Diffa,NER002,BA,Active
+58411,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,,,1,6841,2022-05-31T00:00:00,2022,5,4,Natural disaster,,,Diffa,NER002,BA,Active
+58417,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,22494,2022-09-30T00:00:00,2022,9,5,Insecurity,10797,11697,Maradi,NE004,BA,Active
+58393,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,158868,2022-09-30T00:00:00,2022,9,5,Insecurity,76246,82622,Diffa,NE002,BA,Active
+58394,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,6024,2022-09-30T00:00:00,2022,9,5,Natural disaster,2892,3132,Diffa,NE002,BA,Active
+58460,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,149069,2022-09-30T00:00:00,2022,9,5,Insecurity,71551,77518,Tillabéri,NE006,BA,Active
+58461,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,10888,2022-09-30T00:00:00,2022,9,5,Natural disaster,5226,5662,Tillabéri,NE006,BA,Active
+58434,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,49446,2022-09-30T00:00:00,2022,9,5,Insecurity,23738,25708,Tahoua,NE005,BA,Active
+58435,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,600,2023-04-30T00:00:00,2023,4,6,Conflict,298,302,Tahoua,NE005,BA,Active
+58436,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,162,2023-04-30T00:00:00,2023,4,6,Insecurity,80,82,Maradi,NE004,BA,Active
+58437,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,37510,2023-04-30T00:00:00,2023,4,6,Insecurity,17601,19909,Tahoua,NE005,BA,Active
+58438,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,1518,2023-04-30T00:00:00,2023,4,6,Natural disaster,751,767,Tahoua,NE005,BA,Active
+58439,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,720,2023-04-30T00:00:00,2023,4,6,Other,398,322,Tahoua,NE005,BA,Active
+58462,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,1768,2023-04-30T00:00:00,2023,4,6,Conflict,788,980,Tillabéri,NE006,BA,Active
+58463,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,110283,2023-04-30T00:00:00,2023,4,6,Insecurity,54601,55682,Tillabéri,NE006,BA,Active
+58464,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,13678,2023-04-30T00:00:00,2023,4,6,Natural disaster,7108,6570,Tillabéri,NE006,BA,Active
+58395,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,448,2023-04-30T00:00:00,2023,4,6,Conflict,218,230,Diffa,NE002,BA,Active
+58396,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,164860,2023-04-30T00:00:00,2023,4,6,Insecurity,79839,85021,Diffa,NE002,BA,Active
+58397,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,3359,2023-04-30T00:00:00,2023,4,6,Natural disaster,1752,1607,Diffa,NE002,BA,Active
+58398,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,48,2023-04-30T00:00:00,2023,4,6,Other,24,24,Diffa,NE002,BA,Active
+58418,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,23,2023-04-30T00:00:00,2023,4,6,Conflict,10,13,Maradi,NE004,BA,Active
+58419,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,16723,2023-04-30T00:00:00,2023,4,6,Insecurity,7878,8845,Maradi,NE004,BA,Active
+58420,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,185,2023-04-30T00:00:00,2023,4,6,Insecurity,98,87,Tahoua,NE005,BA,Active
+58421,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,1000,2023-04-30T00:00:00,2023,4,6,Natural disaster,467,533,Maradi,NE004,BA,Active
+58422,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,198,2023-04-30T00:00:00,2023,4,6,Other,95,103,Maradi,NE004,BA,Active
+58423,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,18697,2023-12-31T00:00:00,2023,12,7,Insecurity,9592,9105,Maradi,NE004,BA,Active
+58399,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,157564,2023-12-31T00:00:00,2023,12,7,Insecurity,81554,76010,Diffa,NE002,BA,Active
+58400,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,13372,2023-12-31T00:00:00,2023,12,7,Natural disaster,7944,5428,Diffa,NE002,BA,Active
+58465,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,132786,2023-12-31T00:00:00,2023,12,7,Insecurity,67133,65653,Tillabéri,NE006,BA,Active
+58466,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,7003,2023-12-31T00:00:00,2023,12,7,Natural disaster,4090,2913,Tillabéri,NE006,BA,Active
+58440,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,189,2023-12-31T00:00:00,2023,12,7,Insecurity,80,109,Maradi,NE004,BA,Active
+58441,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,47452,2023-12-31T00:00:00,2023,12,7,Insecurity,25186,22266,Tahoua,NE005,BA,Active
+58442,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,525,2023-12-31T00:00:00,2023,12,7,Natural disaster,252,273,Tahoua,NE005,BA,Active
+58443,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,1280,2023-12-31T00:00:00,2023,12,7,Political reasons,853,427,Tahoua,NE005,BA,Active
+58444,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,310,2024-07-31T00:00:00,2024,7,8,Insecurity,172,138,Maradi,NE004,BA,Active
+58445,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,49999,2024-07-31T00:00:00,2024,7,8,Insecurity,24925,25074,Tahoua,NE005,BA,Active
+58467,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,142704,2024-07-31T00:00:00,2024,7,8,Insecurity,71280,71424,Tillabéri,NE006,BA,Active
+58468,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,3059,2024-07-31T00:00:00,2024,7,8,Natural disaster,1542,1517,Tillabéri,NE006,BA,Active
+58401,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,1200,2024-07-31T00:00:00,2024,7,8,Conflict,578,622,Diffa,NE002,BA,Active
+58402,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,209340,2024-07-31T00:00:00,2024,7,8,Insecurity,107016,102324,Diffa,NE002,BA,Active
+58403,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,2148,2024-07-31T00:00:00,2024,7,8,Natural disaster,887,1261,Diffa,NE002,BA,Active
+58424,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,18228,2024-07-31T00:00:00,2024,7,8,Insecurity,8717,9511,Maradi,NE004,BA,Active
+58425,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,140,2024-12-31T00:00:00,2024,12,9,Conflict,72,68,Maradi,NE004,BA,Active
+58426,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,42,2024-12-31T00:00:00,2024,12,9,Insecurity,25,17,Diffa,NE002,BA,Active
+58427,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,17291,2024-12-31T00:00:00,2024,12,9,Insecurity,8831,8460,Maradi,NE004,BA,Active
+58428,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,4615,2024-12-31T00:00:00,2024,12,9,Natural disaster,2338,2277,Maradi,NE004,BA,Active
+58404,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,169004,2024-12-31T00:00:00,2024,12,9,Insecurity,91458,77546,Diffa,NE002,BA,Active
+58405,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,5204,2024-12-31T00:00:00,2024,12,9,Natural disaster,2828,2376,Diffa,NE002,BA,Active
+58446,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,924,2024-12-31T00:00:00,2024,12,9,Conflict,495,429,Tahoua,NE005,BA,Active
+58447,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,48971,2024-12-31T00:00:00,2024,12,9,Insecurity,27203,21768,Tahoua,NE005,BA,Active
+58448,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,3003,2024-12-31T00:00:00,2024,12,9,Natural disaster,1705,1298,Tahoua,NE005,BA,Active
+58456,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,1450,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+58457,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,43388,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+58458,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,2747,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+58459,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,,,1,91,2025-09-30T00:00:00,2025,9,10,Other reason,,,Not available,Not available,BA,Active
+58412,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,,,1,770,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+58413,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,,,1,152743,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+58414,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,,,1,14084,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+58432,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,,,1,20786,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+58433,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,,,1,3900,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+58474,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,,,1,159222,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+58475,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,,,1,4462,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+58476,Displacement in Tahoua and Tillaberi,Niger,NER,Zinder,NE007,,,1,3527,2026-04-30T00:00:00,2026,4,11,Natural disaster,1799,1728,Zinder,NE007,BA,Active
+58415,Displacement in Tahoua and Tillaberi,Niger,NER,Dosso,NE003,,,1,50,2026-04-30T00:00:00,2026,4,11,Cconflict,26,24,Dosso,NE003,BA,Active
+58416,Displacement in Tahoua and Tillaberi,Niger,NER,Dosso,NE003,,,1,10190,2026-04-30T00:00:00,2026,4,11,Insecurity,5197,4993,Dosso,NE003,BA,Active
+58429,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,27346,2026-04-30T00:00:00,2026,4,11,Insecurity,13951,13395,Maradi,NE004,BA,Active
+58430,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,,,1,28,2026-04-30T00:00:00,2026,4,11,Natural disaster,14,14,Maradi,NE004,BA,Active
+58406,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,136,2026-04-30T00:00:00,2026,4,11,Cconflict,69,67,Diffa,NE002,BA,Active
+58407,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,177374,2026-04-30T00:00:00,2026,4,11,Insecurity,90457,86917,Diffa,NE002,BA,Active
+58408,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,,,1,11428,2026-04-30T00:00:00,2026,4,11,Natural disaster,5828,5600,Diffa,NE002,BA,Active
+58469,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,195652,2026-04-30T00:00:00,2026,4,11,Insecurity,99785,95867,Tillabéri,NE006,BA,Active
+58470,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,,,1,5896,2026-04-30T00:00:00,2026,4,11,Natural disaster,3010,2886,Tillabéri,NE006,BA,Active
+58449,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,441,2026-04-30T00:00:00,2026,4,11,Insecurity,225,216,Maradi,NE004,BA,Active
+58450,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,58004,2026-04-30T00:00:00,2026,4,11,Insecurity,29594,28410,Tahoua,NE005,BA,Active
+58451,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,,,1,1230,2026-04-30T00:00:00,2026,4,11,Natural disaster,627,603,Tahoua,NE005,BA,Active
+2668,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Torodi,NER006013,2,1477,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+4222,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Téra,NER006011,2,115,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+36398,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tillia,NER005012,2,18637,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+40497,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tassara,NER005010,2,6516,2019-12-31T00:00:00,2019,12,1,Natural disaster,,,Tahoua,NER005,BA,Active
+48180,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Banibangou,NER006004,2,6846,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+69086,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Ayerou,NER006002,2,37401,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+104379,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Ouallam,NER006009,2,3231,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+116958,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Abala,NER006001,2,26472,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+130804,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Téra,NER006011,2,644,2019-12-31T00:00:00,2019,12,1,Conflict,,,Not available,Not available,BA,Active
+148465,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Tillabéri,NER006012,2,3226,2019-12-31T00:00:00,2019,12,1,Conflict,,,Tillabéri,NER006,BA,Active
+151456,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Diffa,NER002002,2,53780,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Diffa,NER002,BA,Active
+151503,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Madaoua,NER005007,2,469,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Maradi,NER004,BA,Active
+130278,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Balleyara,NER006003,2,4556,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+130579,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Ayerou,NER006002,2,13486,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+126462,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Torodi,NER006013,2,10609,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+126943,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Ouallam,NER006009,2,20095,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+120636,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,Guidan Roumdji,NER004005,2,9751,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Maradi,NER004,BA,Active
+116344,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Madaoua,NER005007,2,2554,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tahoua,NER005,BA,Active
+113587,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Bankilaré,NER006005,2,1270,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+107366,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Téra,NER006011,2,9856,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+110344,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Maïné Soroa,NER002004,2,7557,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Diffa,NER002,BA,Active
+94587,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Tillabéri,NER006012,2,31554,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+99202,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,Madarounfa,NER004006,2,10747,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Maradi,NER004,BA,Active
+72645,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,N'Guigmi,NER002006,2,36557,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Diffa,NER002,BA,Active
+65557,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Bosso,NER002001,2,15400,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Diffa,NER002,BA,Active
+62837,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Banibangou,NER006004,2,11172,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+47130,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tassara,NER005010,2,13270,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tahoua,NER005,BA,Active
+37760,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Abala,NER006001,2,18453,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+32944,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Diffa,NER002002,2,538,2022-05-31T00:00:00,2022,5,4,Conflict,,,Diffa,NER002,BA,Active
+537,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tillia,NER005012,2,22395,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tahoua,NER005,BA,Active
+7418,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Gothèye,NER006007,2,1232,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tillabéri,NER006,BA,Active
+16267,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Bagaroua,NER005002,2,3685,2022-05-31T00:00:00,2022,5,4,Insecurity,,,Tahoua,NER005,BA,Active
+22544,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Diffa,NER002002,2,6841,2022-05-31T00:00:00,2022,5,4,Natural disaster,,,Diffa,NER002,BA,Active
+15371,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,72915,2022-09-30T00:00:00,2022,9,5,Insecurity,34994,37921,Diffa,NE002,BA,Active
+5149,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Guigmi,NE002006,2,58723,2022-09-30T00:00:00,2022,9,5,Insecurity,28189,30534,Diffa,NE002,BA,Active
+40161,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Tillabéri,NE006012,2,18889,2022-09-30T00:00:00,2022,9,5,Insecurity,9066,9823,Tillabéri,NE006,BA,Active
+48933,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,11401,2022-09-30T00:00:00,2022,9,5,Insecurity,5473,5928,Maradi,NE004,BA,Active
+55593,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,1118,2022-09-30T00:00:00,2022,9,5,Insecurity,536,582,Tillabéri,NE006,BA,Active
+65049,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,12467,2022-09-30T00:00:00,2022,9,5,Insecurity,5985,6482,Tahoua,NE005,BA,Active
+67075,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ayerou,NE006002,2,19716,2022-09-30T00:00:00,2022,9,5,Insecurity,9465,10251,Tillabéri,NE006,BA,Active
+69603,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ouallam,NE006009,2,14190,2022-09-30T00:00:00,2022,9,5,Insecurity,6811,7379,Tillabéri,NE006,BA,Active
+95126,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Gourti,NE002005,2,672,2022-09-30T00:00:00,2022,9,5,Insecurity,322,350,Diffa,NE002,BA,Active
+93600,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Balleyara,NE006003,2,5628,2022-09-30T00:00:00,2022,9,5,Insecurity,2701,2927,Tillabéri,NE006,BA,Active
+77868,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,13335,2022-09-30T00:00:00,2022,9,5,Insecurity,6399,6936,Diffa,NE002,BA,Active
+86674,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Torodi,NE006013,2,27657,2022-09-30T00:00:00,2022,9,5,Insecurity,13275,14382,Tillabéri,NE006,BA,Active
+107772,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,11093,2022-09-30T00:00:00,2022,9,5,Insecurity,5324,5769,Maradi,NE004,BA,Active
+94387,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,484,2022-09-30T00:00:00,2022,9,5,Insecurity,231,253,Diffa,NE002,BA,Active
+98882,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Bankilaré,NE006005,2,1893,2022-09-30T00:00:00,2022,9,5,Insecurity,909,984,Tillabéri,NE006,BA,Active
+113733,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Banibangou,NE006004,2,27125,2022-09-30T00:00:00,2022,9,5,Insecurity,13019,14106,Tillabéri,NE006,BA,Active
+113088,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Téra,NE006011,2,15680,2022-09-30T00:00:00,2022,9,5,Insecurity,7526,8154,Tillabéri,NE006,BA,Active
+115885,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,33914,2022-09-30T00:00:00,2022,9,5,Insecurity,16282,17632,Tahoua,NE005,BA,Active
+119130,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,3065,2022-09-30T00:00:00,2022,9,5,Insecurity,1471,1594,Tahoua,NE005,BA,Active
+124574,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,10888,2022-09-30T00:00:00,2022,9,5,Natural disaster,5226,5662,Tillabéri,NE006,BA,Active
+126764,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,12739,2022-09-30T00:00:00,2022,9,5,Insecurity,6111,6628,Diffa,NE002,BA,Active
+133324,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Gothèye,NE006007,2,3460,2022-09-30T00:00:00,2022,9,5,Insecurity,1661,1799,Tillabéri,NE006,BA,Active
+137673,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Abala,NE006001,2,13713,2022-09-30T00:00:00,2022,9,5,Insecurity,6582,7131,Tillabéri,NE006,BA,Active
+139631,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,6024,2022-09-30T00:00:00,2022,9,5,Natural disaster,2892,3132,Diffa,NE002,BA,Active
+141165,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Gothèye,NE006007,2,6509,2023-04-30T00:00:00,2023,4,6,Insecurity,3188,3321,Tillabéri,NE006,BA,Active
+148467,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,604,2023-04-30T00:00:00,2023,4,6,Natural disaster,309,295,Diffa,NE002,BA,Active
+145494,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,162,2023-04-30T00:00:00,2023,4,6,Insecurity,80,82,Maradi,NE004,BA,Active
+147534,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Guigmi,NE002006,2,128,2023-04-30T00:00:00,2023,4,6,Conflict,62,66,Diffa,NE002,BA,Active
+150953,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,2755,2023-04-30T00:00:00,2023,4,6,Natural disaster,1443,1312,Diffa,NE002,BA,Active
+137949,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Tillabéri,NE006012,2,25991,2023-04-30T00:00:00,2023,4,6,Insecurity,13639,12352,Tillabéri,NE006,BA,Active
+139433,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,1676,2023-04-30T00:00:00,2023,4,6,Insecurity,711,965,Diffa,NE002,BA,Active
+135427,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Téra,NE006011,2,15373,2023-04-30T00:00:00,2023,4,6,Insecurity,7972,7401,Tillabéri,NE006,BA,Active
+119992,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ayerou,NE006002,2,7789,2023-04-30T00:00:00,2023,4,6,Insecurity,3736,4053,Tillabéri,NE006,BA,Active
+124106,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,8344,2023-04-30T00:00:00,2023,4,6,Insecurity,3867,4477,Tahoua,NE005,BA,Active
+112400,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,7358,2023-04-30T00:00:00,2023,4,6,Insecurity,3461,3897,Diffa,NE002,BA,Active
+110493,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,408,2023-04-30T00:00:00,2023,4,6,Natural disaster,176,232,Tahoua,NE005,BA,Active
+109575,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,185,2023-04-30T00:00:00,2023,4,6,Insecurity,98,87,Tahoua,NE005,BA,Active
+86684,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,432,2023-04-30T00:00:00,2023,4,6,Natural disaster,203,229,Maradi,NE004,BA,Active
+78699,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,600,2023-04-30T00:00:00,2023,4,6,Conflict,298,302,Tahoua,NE005,BA,Active
+81968,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Gourti,NE002005,2,320,2023-04-30T00:00:00,2023,4,6,Insecurity,172,148,Diffa,NE002,BA,Active
+82314,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,95643,2023-04-30T00:00:00,2023,4,6,Insecurity,46047,49596,Diffa,NE002,BA,Active
+73934,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,7488,2023-04-30T00:00:00,2023,4,6,Insecurity,3838,3650,Tahoua,NE005,BA,Active
+75541,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,18652,2023-04-30T00:00:00,2023,4,6,Insecurity,9182,9470,Diffa,NE002,BA,Active
+89421,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,96,2023-04-30T00:00:00,2023,4,6,Conflict,45,51,Diffa,NE002,BA,Active
+68565,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,23,2023-04-30T00:00:00,2023,4,6,Conflict,10,13,Maradi,NE004,BA,Active
+63976,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,128,2023-04-30T00:00:00,2023,4,6,Conflict,62,66,Diffa,NE002,BA,Active
+65816,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,1110,2023-04-30T00:00:00,2023,4,6,Natural disaster,575,535,Tahoua,NE005,BA,Active
+61674,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Banibangou,NE006004,2,1768,2023-04-30T00:00:00,2023,4,6,Conflict,788,980,Tillabéri,NE006,BA,Active
+61716,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Balleyara,NE006003,2,4070,2023-04-30T00:00:00,2023,4,6,Insecurity,1909,2161,Tillabéri,NE006,BA,Active
+62721,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,1938,2023-04-30T00:00:00,2023,4,6,Insecurity,818,1120,Tahoua,NE005,BA,Active
+51600,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,10178,2023-04-30T00:00:00,2023,4,6,Natural disaster,5230,4948,Tillabéri,NE006,BA,Active
+47240,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Guigmi,NE002006,2,41211,2023-04-30T00:00:00,2023,4,6,Insecurity,20266,20945,Diffa,NE002,BA,Active
+44134,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,8874,2023-04-30T00:00:00,2023,4,6,Insecurity,4173,4701,Maradi,NE004,BA,Active
+40785,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Birni N'Konni,NE005003,2,360,2023-04-30T00:00:00,2023,4,6,Insecurity,170,190,Tahoua,NE005,BA,Active
+33413,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,1596,2023-04-30T00:00:00,2023,4,6,Insecurity,859,737,Tillabéri,NE006,BA,Active
+7921,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,48,2023-04-30T00:00:00,2023,4,6,Other,24,24,Diffa,NE002,BA,Active
+888,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,96,2023-04-30T00:00:00,2023,4,6,Conflict,49,47,Diffa,NE002,BA,Active
+11468,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,198,2023-04-30T00:00:00,2023,4,6,Other,95,103,Maradi,NE004,BA,Active
+10642,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Abala,NE006001,2,4132,2023-04-30T00:00:00,2023,4,6,Insecurity,2057,2075,Tillabéri,NE006,BA,Active
+531,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Tillabéri,NE006012,2,3500,2023-04-30T00:00:00,2023,4,6,Natural disaster,1878,1622,Tillabéri,NE006,BA,Active
+19740,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ouallam,NE006009,2,9241,2023-04-30T00:00:00,2023,4,6,Insecurity,5083,4158,Tillabéri,NE006,BA,Active
+20063,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Banibangou,NE006004,2,10200,2023-04-30T00:00:00,2023,4,6,Insecurity,4360,5840,Tillabéri,NE006,BA,Active
+22965,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,8658,2023-04-30T00:00:00,2023,4,6,Insecurity,4073,4585,Tahoua,NE005,BA,Active
+23106,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,720,2023-04-30T00:00:00,2023,4,6,Other,398,322,Tahoua,NE005,BA,Active
+24234,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,7849,2023-04-30T00:00:00,2023,4,6,Insecurity,3705,4144,Maradi,NE004,BA,Active
+24758,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Torodi,NE006013,2,25382,2023-04-30T00:00:00,2023,4,6,Insecurity,11798,13584,Tillabéri,NE006,BA,Active
+26642,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,10722,2023-04-30T00:00:00,2023,4,6,Insecurity,4835,5887,Tahoua,NE005,BA,Active
+32572,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,568,2023-04-30T00:00:00,2023,4,6,Natural disaster,264,304,Maradi,NE004,BA,Active
+32420,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,13276,2023-12-31T00:00:00,2023,12,7,Natural disaster,7908,5368,Diffa,NE002,BA,Active
+30674,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,2023,2023-12-31T00:00:00,2023,12,7,Insecurity,1100,923,Tillabéri,NE006,BA,Active
+27157,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ayerou,NE006002,2,14455,2023-12-31T00:00:00,2023,12,7,Insecurity,7086,7369,Tillabéri,NE006,BA,Active
+25731,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Tillabéri,NE006012,2,20333,2023-12-31T00:00:00,2023,12,7,Insecurity,10280,10053,Tillabéri,NE006,BA,Active
+25770,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,3270,2023-12-31T00:00:00,2023,12,7,Insecurity,1906,1364,Tahoua,NE005,BA,Active
+27943,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,10730,2023-12-31T00:00:00,2023,12,7,Insecurity,5616,5114,Tahoua,NE005,BA,Active
+23754,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,12908,2023-12-31T00:00:00,2023,12,7,Insecurity,6496,6412,Diffa,NE002,BA,Active
+19856,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,189,2023-12-31T00:00:00,2023,12,7,Insecurity,80,109,Maradi,NE004,BA,Active
+6494,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,10192,2023-12-31T00:00:00,2023,12,7,Insecurity,5242,4950,Maradi,NE004,BA,Active
+7215,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Gothèye,NE006007,2,7708,2023-12-31T00:00:00,2023,12,7,Insecurity,3690,4018,Tillabéri,NE006,BA,Active
+33206,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,8700,2023-12-31T00:00:00,2023,12,7,Insecurity,4574,4126,Tahoua,NE005,BA,Active
+58143,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Guigmi,NE002006,2,41156,2023-12-31T00:00:00,2023,12,7,Insecurity,21464,19692,Diffa,NE002,BA,Active
+56378,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,7003,2023-12-31T00:00:00,2023,12,7,Natural disaster,4090,2913,Tillabéri,NE006,BA,Active
+55000,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Téra,NE006011,2,23948,2023-12-31T00:00:00,2023,12,7,Insecurity,11528,12420,Tillabéri,NE006,BA,Active
+66079,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,1280,2023-12-31T00:00:00,2023,12,7,Political reasons,853,427,Tahoua,NE005,BA,Active
+69664,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,96,2023-12-31T00:00:00,2023,12,7,Natural disaster,36,60,Diffa,NE002,BA,Active
+92440,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,85380,2023-12-31T00:00:00,2023,12,7,Insecurity,43917,41463,Diffa,NE002,BA,Active
+72153,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Abala,NE006001,2,12278,2023-12-31T00:00:00,2023,12,7,Insecurity,6263,6015,Tillabéri,NE006,BA,Active
+83511,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Balleyara,NE006003,2,1036,2023-12-31T00:00:00,2023,12,7,Insecurity,513,523,Tillabéri,NE006,BA,Active
+84419,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Banibangou,NE006004,2,9103,2023-12-31T00:00:00,2023,12,7,Insecurity,4480,4623,Tillabéri,NE006,BA,Active
+107497,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,844,2023-12-31T00:00:00,2023,12,7,Insecurity,395,449,Diffa,NE002,BA,Active
+106659,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,15026,2023-12-31T00:00:00,2023,12,7,Insecurity,7771,7255,Tahoua,NE005,BA,Active
+119252,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ouallam,NE006009,2,3640,2023-12-31T00:00:00,2023,12,7,Insecurity,2014,1626,Tillabéri,NE006,BA,Active
+132556,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,8505,2023-12-31T00:00:00,2023,12,7,Insecurity,4350,4155,Maradi,NE004,BA,Active
+138327,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,9726,2023-12-31T00:00:00,2023,12,7,Insecurity,5319,4407,Tahoua,NE005,BA,Active
+137877,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,17276,2023-12-31T00:00:00,2023,12,7,Insecurity,9282,7994,Diffa,NE002,BA,Active
+136482,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,525,2023-12-31T00:00:00,2023,12,7,Natural disaster,252,273,Tahoua,NE005,BA,Active
+143188,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Torodi,NE006013,2,38262,2023-12-31T00:00:00,2023,12,7,Insecurity,20179,18083,Tillabéri,NE006,BA,Active
+141476,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Tillabéri,NE006012,2,34195,2024-07-31T00:00:00,2024,7,8,Insecurity,17704,16491,Tillabéri,NE006,BA,Active
+150197,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,1200,2024-07-31T00:00:00,2024,7,8,Conflict,578,622,Diffa,NE002,BA,Active
+148667,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Guigmi,NE002006,2,21508,2024-07-31T00:00:00,2024,7,8,Insecurity,11506,10002,Diffa,NE002,BA,Active
+139140,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Say,NE006010,2,1260,2024-07-31T00:00:00,2024,7,8,Insecurity,685,575,Tillabéri,NE006,BA,Active
+134173,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,210,2024-07-31T00:00:00,2024,7,8,Insecurity,102,108,Maradi,NE004,BA,Active
+122393,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,12740,2024-07-31T00:00:00,2024,7,8,Insecurity,6007,6733,Tahoua,NE005,BA,Active
+126849,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Filingué,NE006006,2,3472,2024-07-31T00:00:00,2024,7,8,Insecurity,1760,1712,Tillabéri,NE006,BA,Active
+130601,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Gothèye,NE006007,2,28196,2024-07-31T00:00:00,2024,7,8,Insecurity,14043,14153,Tillabéri,NE006,BA,Active
+113383,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Téra,NE006011,2,15449,2024-07-31T00:00:00,2024,7,8,Insecurity,7322,8127,Tillabéri,NE006,BA,Active
+103158,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,3059,2024-07-31T00:00:00,2024,7,8,Natural disaster,1542,1517,Tillabéri,NE006,BA,Active
+109034,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tahoua,NE005009,2,2100,2024-07-31T00:00:00,2024,7,8,Insecurity,1086,1014,Tahoua,NE005,BA,Active
+84501,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,9443,2024-07-31T00:00:00,2024,7,8,Insecurity,4425,5018,Maradi,NE004,BA,Active
+92886,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Bankilaré,NE006005,2,7875,2024-07-31T00:00:00,2024,7,8,Insecurity,3718,4157,Tillabéri,NE006,BA,Active
+95318,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,2933,2024-07-31T00:00:00,2024,7,8,Insecurity,1443,1490,Tahoua,NE005,BA,Active
+70664,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Abala,NE006001,2,8201,2024-07-31T00:00:00,2024,7,8,Insecurity,4163,4038,Tillabéri,NE006,BA,Active
+53903,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,100,2024-07-31T00:00:00,2024,7,8,Insecurity,70,30,Maradi,NE004,BA,Active
+61507,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,1692,2024-07-31T00:00:00,2024,7,8,Insecurity,675,1017,Diffa,NE002,BA,Active
+43386,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,87416,2024-07-31T00:00:00,2024,7,8,Insecurity,42645,44771,Diffa,NE002,BA,Active
+46580,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Balleyara,NE006003,2,2024,2024-07-31T00:00:00,2024,7,8,Insecurity,1008,1016,Tillabéri,NE006,BA,Active
+50683,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,8852,2024-07-31T00:00:00,2024,7,8,Insecurity,4359,4493,Diffa,NE002,BA,Active
+8003,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ouallam,NE006009,2,1050,2024-07-31T00:00:00,2024,7,8,Insecurity,565,485,Tillabéri,NE006,BA,Active
+8050,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,4457,2024-07-31T00:00:00,2024,7,8,Insecurity,2222,2235,Tahoua,NE005,BA,Active
+8213,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,2140,2024-07-31T00:00:00,2024,7,8,Natural disaster,883,1257,Diffa,NE002,BA,Active
+627,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,8785,2024-07-31T00:00:00,2024,7,8,Insecurity,4292,4493,Maradi,NE004,BA,Active
+11251,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Banibangou,NE006004,2,15831,2024-07-31T00:00:00,2024,7,8,Insecurity,8545,7286,Tillabéri,NE006,BA,Active
+10961,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,3906,2024-07-31T00:00:00,2024,7,8,Insecurity,2063,1843,Tahoua,NE005,BA,Active
+11646,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,21952,2024-07-31T00:00:00,2024,7,8,Insecurity,11035,10917,Tahoua,NE005,BA,Active
+17941,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Torodi,NE006013,2,18074,2024-07-31T00:00:00,2024,7,8,Insecurity,8297,9777,Tillabéri,NE006,BA,Active
+18247,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Ville de Tahoua,NE005013,2,1911,2024-07-31T00:00:00,2024,7,8,Insecurity,1069,842,Tahoua,NE005,BA,Active
+20255,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,8,2024-07-31T00:00:00,2024,7,8,Natural disaster,4,4,Diffa,NE002,BA,Active
+23086,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,89872,2024-07-31T00:00:00,2024,7,8,Insecurity,47831,42041,Diffa,NE002,BA,Active
+31035,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ayerou,NE006002,2,4354,2024-07-31T00:00:00,2024,7,8,Insecurity,2144,2210,Tillabéri,NE006,BA,Active
+32716,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,2723,2024-07-31T00:00:00,2024,7,8,Insecurity,1326,1397,Tillabéri,NE006,BA,Active
+31436,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,42,2024-12-31T00:00:00,2024,12,9,Insecurity,25,17,Diffa,NE002,BA,Active
+25126,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,4810,2024-12-31T00:00:00,2024,12,9,Insecurity,2927,1883,Tahoua,NE005,BA,Active
+21244,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,30646,2024-12-31T00:00:00,2024,12,9,Insecurity,16643,14003,Tahoua,NE005,BA,Active
+22629,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,1134,2024-12-31T00:00:00,2024,12,9,Insecurity,626,508,Tahoua,NE005,BA,Active
+18925,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tahoua,NE005009,2,3500,2024-12-31T00:00:00,2024,12,9,Insecurity,1880,1620,Tahoua,NE005,BA,Active
+12801,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,700,2024-12-31T00:00:00,2024,12,9,Natural disaster,426,274,Tahoua,NE005,BA,Active
+6103,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,64,2024-12-31T00:00:00,2024,12,9,Natural disaster,29,35,Diffa,NE002,BA,Active
+51070,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,287,2024-12-31T00:00:00,2024,12,9,Natural disaster,167,120,Tahoua,NE005,BA,Active
+51162,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Ville de Tahoua,NE005013,2,105,2024-12-31T00:00:00,2024,12,9,Natural disaster,54,51,Tahoua,NE005,BA,Active
+45215,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,8700,2024-12-31T00:00:00,2024,12,9,Insecurity,4496,4204,Maradi,NE004,BA,Active
+48290,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Ville de Tahoua,NE005013,2,455,2024-12-31T00:00:00,2024,12,9,Insecurity,262,193,Tahoua,NE005,BA,Active
+50126,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,882,2024-12-31T00:00:00,2024,12,9,Insecurity,496,386,Tahoua,NE005,BA,Active
+56179,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,8591,2024-12-31T00:00:00,2024,12,9,Insecurity,4335,4256,Maradi,NE004,BA,Active
+66721,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,210,2024-12-31T00:00:00,2024,12,9,Conflict,118,92,Tahoua,NE005,BA,Active
+66968,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,7544,2024-12-31T00:00:00,2024,12,9,Insecurity,4369,3175,Tahoua,NE005,BA,Active
+100174,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,714,2024-12-31T00:00:00,2024,12,9,Conflict,377,337,Tahoua,NE005,BA,Active
+101170,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,175,2024-12-31T00:00:00,2024,12,9,Natural disaster,92,83,Maradi,NE004,BA,Active
+88494,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,70,2024-12-31T00:00:00,2024,12,9,Conflict,35,35,Maradi,NE004,BA,Active
+91427,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,511,2024-12-31T00:00:00,2024,12,9,Natural disaster,278,233,Tahoua,NE005,BA,Active
+75068,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,1512,2024-12-31T00:00:00,2024,12,9,Insecurity,797,715,Diffa,NE002,BA,Active
+112130,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,111776,2024-12-31T00:00:00,2024,12,9,Insecurity,60995,50781,Diffa,NE002,BA,Active
+107658,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,210,2024-12-31T00:00:00,2024,12,9,Natural disaster,106,104,Maradi,NE004,BA,Active
+108052,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,10196,2024-12-31T00:00:00,2024,12,9,Insecurity,4957,5239,Diffa,NE002,BA,Active
+103265,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,25600,2024-12-31T00:00:00,2024,12,9,Insecurity,14055,11545,Diffa,NE002,BA,Active
+106008,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,70,2024-12-31T00:00:00,2024,12,9,Conflict,37,33,Maradi,NE004,BA,Active
+116274,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Guigmi,NE002006,2,19920,2024-12-31T00:00:00,2024,12,9,Insecurity,10654,9266,Diffa,NE002,BA,Active
+115550,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,4940,2024-12-31T00:00:00,2024,12,9,Natural disaster,2683,2257,Diffa,NE002,BA,Active
+131262,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,200,2024-12-31T00:00:00,2024,12,9,Natural disaster,116,84,Diffa,NE002,BA,Active
+132105,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Dakoro,NE004003,2,4230,2024-12-31T00:00:00,2024,12,9,Natural disaster,2140,2090,Maradi,NE004,BA,Active
+125909,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,1400,2024-12-31T00:00:00,2024,12,9,Natural disaster,780,620,Tahoua,NE005,BA,Active
+132430,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Madaoua,NER005007,2,490,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+132759,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Ouallam,NER006009,2,8092,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+136305,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tassara,NER005010,2,1010,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+122900,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Say,NER006010,2,7101,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+125062,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tchintabaraden,NER005011,2,610,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+142520,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Torodi,NER006013,2,1324,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+151576,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Goudoumaria,NER002003,2,56,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+115272,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Bagaroua,NER005002,2,350,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+83047,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,N'Guigmi,NER002006,2,19720,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+81652,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Téra,NER006011,2,19831,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+87514,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Maïné Soroa,NER002004,2,4578,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+85867,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tahoua,NER005009,2,4900,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+90483,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Madaoua,NER005007,2,2710,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+90775,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Tillabéri,NER006012,2,15176,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+66249,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,Madarounfa,NER004006,2,11250,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+72076,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Diffa,NER002002,2,14028,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+68599,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,Guidan Roumdji,NER004005,2,9536,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+72804,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Banibangou,NER006004,2,7578,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+57239,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Diffa,NER002002,2,350,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+54812,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NER004,Dakoro,NER004003,2,3900,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+55146,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Diffa,NER002002,2,69610,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+63156,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Madaoua,NER005007,2,742,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+46351,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Bosso,NER002001,2,57400,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+51830,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Abala,NER006001,2,4356,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+49761,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tillia,NER005012,2,16114,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+38310,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Filingué,NER006006,2,1810,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+40842,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Ayerou,NER006002,2,18291,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+34786,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Kollo,NER006008,2,2800,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+37510,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Kollo,NER006008,2,3138,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+2641,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tchintabaraden,NER005011,2,995,2025-09-30T00:00:00,2025,9,10,Natural disaster,,,Not available,Not available,BA,Active
+12570,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Gothèye,NER006007,2,20697,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+17188,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Madaoua,NER005007,2,91,2025-09-30T00:00:00,2025,9,10,Other reason,,,Not available,Not available,BA,Active
+10172,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tchintabaraden,NER005011,2,5014,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+10245,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Torodi,NER006013,2,52452,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+24277,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,Goudoumaria,NER002003,2,1435,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+31018,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NER006,Balleyara,NER006003,2,1038,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+30567,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Tassara,NER005010,2,4500,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+28135,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NER005,Bagaroua,NER005002,2,10150,2025-09-30T00:00:00,2025,9,10,Insecurity,,,Not available,Not available,BA,Active
+27756,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NER002,N'Guigmi,NER002006,2,420,2025-09-30T00:00:00,2025,9,10,Conflict,,,Not available,Not available,BA,Active
+26356,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Bosso,NE002001,2,47634,2026-04-30T00:00:00,2026,4,11,Insecurity,24291,23343,Diffa,NE002,BA,Active
+29489,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Banibangou,NE006004,2,3817,2026-04-30T00:00:00,2026,4,11,Insecurity,1947,1870,Tillabéri,NE006,BA,Active
+30461,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tahoua,NE005009,2,8918,2026-04-30T00:00:00,2026,4,11,Insecurity,4550,4368,Tahoua,NE005,BA,Active
+19758,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,11360,2026-04-30T00:00:00,2026,4,11,Natural disaster,5793,5567,Diffa,NE002,BA,Active
+10868,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,864,2026-04-30T00:00:00,2026,4,11,Insecurity,441,423,Diffa,NE002,BA,Active
+11027,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,6871,2026-04-30T00:00:00,2026,4,11,Insecurity,3503,3368,Diffa,NE002,BA,Active
+12817,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Diffa,NE002002,2,97682,2026-04-30T00:00:00,2026,4,11,Insecurity,49815,47867,Diffa,NE002,BA,Active
+4593,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Madarounfa,NE004006,2,14985,2026-04-30T00:00:00,2026,4,11,Insecurity,7646,7339,Maradi,NE004,BA,Active
+3402,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,136,2026-04-30T00:00:00,2026,4,11,Cconflict,69,67,Diffa,NE002,BA,Active
+8968,Displacement in Tahoua and Tillaberi,Niger,NER,Dosso,NE003,Gaya,NE003006,2,50,2026-04-30T00:00:00,2026,4,11,Cconflict,26,24,Dosso,NE003,BA,Active
+36874,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ayerou,NE006002,2,3352,2026-04-30T00:00:00,2026,4,11,Insecurity,1710,1642,Tillabéri,NE006,BA,Active
+34227,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Ouallam,NE006009,2,8218,2026-04-30T00:00:00,2026,4,11,Insecurity,4191,4027,Tillabéri,NE006,BA,Active
+41799,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Say,NE006010,2,6367,2026-04-30T00:00:00,2026,4,11,Insecurity,3248,3119,Tillabéri,NE006,BA,Active
+42533,Displacement in Tahoua and Tillaberi,Niger,NER,Dosso,NE003,Gaya,NE003006,2,10190,2026-04-30T00:00:00,2026,4,11,Insecurity,5197,4993,Dosso,NE003,BA,Active
+38632,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,441,2026-04-30T00:00:00,2026,4,11,Insecurity,225,216,Maradi,NE004,BA,Active
+51414,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,28,2026-04-30T00:00:00,2026,4,11,Natural disaster,14,14,Maradi,NE004,BA,Active
+45586,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tillia,NE005012,2,10173,2026-04-30T00:00:00,2026,4,11,Insecurity,5190,4983,Tahoua,NE005,BA,Active
+63685,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,230,2026-04-30T00:00:00,2026,4,11,Natural disaster,118,112,Tahoua,NE005,BA,Active
+59722,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,13889,2026-04-30T00:00:00,2026,4,11,Insecurity,7086,6803,Tahoua,NE005,BA,Active
+94083,Displacement in Tahoua and Tillaberi,Niger,NER,Zinder,NE007,Mirriah,NE007007,2,1813,2026-04-30T00:00:00,2026,4,11,Natural disaster,925,888,Zinder,NE007,BA,Active
+101656,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Bankilaré,NE006005,2,700,2026-04-30T00:00:00,2026,4,11,Insecurity,357,343,Tillabéri,NE006,BA,Active
+94967,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Gothèye,NE006007,2,21061,2026-04-30T00:00:00,2026,4,11,Insecurity,10741,10320,Tillabéri,NE006,BA,Active
+85992,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Torodi,NE006013,2,45081,2026-04-30T00:00:00,2026,4,11,Insecurity,22991,22090,Tillabéri,NE006,BA,Active
+84999,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Madaoua,NE005007,2,10860,2026-04-30T00:00:00,2026,4,11,Insecurity,5543,5317,Tahoua,NE005,BA,Active
+114312,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Téra,NE006011,2,82926,2026-04-30T00:00:00,2026,4,11,Insecurity,42293,40633,Tillabéri,NE006,BA,Active
+114336,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Bagaroua,NE005002,2,9240,2026-04-30T00:00:00,2026,4,11,Insecurity,4713,4527,Tahoua,NE005,BA,Active
+118341,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,N'Guigmi,NE002006,2,24323,2026-04-30T00:00:00,2026,4,11,Insecurity,12407,11916,Diffa,NE002,BA,Active
+118499,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Tillabéri,NE006012,2,11420,2026-04-30T00:00:00,2026,4,11,Insecurity,5826,5594,Tillabéri,NE006,BA,Active
+104118,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tchintabaraden,NE005011,2,1000,2026-04-30T00:00:00,2026,4,11,Natural disaster,509,491,Tahoua,NE005,BA,Active
+98996,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Maïné Soroa,NE002004,2,51,2026-04-30T00:00:00,2026,4,11,Natural disaster,26,25,Diffa,NE002,BA,Active
+141703,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Abala,NE006001,2,5967,2026-04-30T00:00:00,2026,4,11,Insecurity,3042,2925,Tillabéri,NE006,BA,Active
+140014,Displacement in Tahoua and Tillaberi,Niger,NER,Tahoua,NE005,Tassara,NE005010,2,4924,2026-04-30T00:00:00,2026,4,11,Insecurity,2512,2412,Tahoua,NE005,BA,Active
+140372,Displacement in Tahoua and Tillaberi,Niger,NER,Zinder,NE007,Damagaram Takaya,NE007002,2,1714,2026-04-30T00:00:00,2026,4,11,Natural disaster,874,840,Zinder,NE007,BA,Active
+140436,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Balleyara,NE006003,2,1371,2026-04-30T00:00:00,2026,4,11,Insecurity,700,671,Tillabéri,NE006,BA,Active
+149605,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,2816,2026-04-30T00:00:00,2026,4,11,Insecurity,1436,1380,Tillabéri,NE006,BA,Active
+120866,Displacement in Tahoua and Tillaberi,Niger,NER,Maradi,NE004,Guidan Roumdji,NE004005,2,12361,2026-04-30T00:00:00,2026,4,11,Insecurity,6305,6056,Maradi,NE004,BA,Active
+131096,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Kollo,NE006008,2,5896,2026-04-30T00:00:00,2026,4,11,Natural disaster,3010,2886,Tillabéri,NE006,BA,Active
+129485,Displacement in Tahoua and Tillaberi,Niger,NER,Tillabéri,NE006,Filingué,NE006006,2,2556,2026-04-30T00:00:00,2026,4,11,Insecurity,1303,1253,Tillabéri,NE006,BA,Active
+137669,Displacement in Tahoua and Tillaberi,Niger,NER,Diffa,NE002,Goudoumaria,NE002003,2,17,2026-04-30T00:00:00,2026,4,11,Natural disaster,9,8,Diffa,NE002,BA,Active

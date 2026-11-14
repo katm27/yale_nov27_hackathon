@@ -1,0 +1,2 @@
+location_code,has_hrp,in_gho,risk_class,global_rank,overall_risk,hazard_exposure_risk,vulnerability_risk,coping_capacity_risk,meta_missing_indicators_pct,meta_avg_recentness_years,reference_period_start,reference_period_end
+MLI,True,True,5,13,7.1,7.9,6.6,7.0,0.0196078431372549,0.26,2025-01-01,2025-12-31
