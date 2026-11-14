@@ -242,7 +242,8 @@
 
   async function ensureSeries(id) {
     if (!state.series[id]) {
-      state.series[id] = await fetchJSON(`data/series/${id}.json`);
+      if (state.bundle) { const all = await state.bundle; Object.assign(state.series, all); }
+      else state.series[id] = await fetchJSON(`data/series/${id}.json`);
       const v = state.varById[id];
       if (usesDiff(v)) computeDiffSpan(v);
     }
@@ -289,7 +290,17 @@
       const r = state.rasters.find((x) => x.key === key);
       const d = rasterDateFor(r, state.t);
       if (!d) continue;
-      const url = `rasters/${key}/${d}.png`;
+      let url = `rasters/${key}/${d}.png`;
+      if (r.packed) {
+        const y = d.slice(0, 4);
+        r._maps = r._maps || {}; r._pending = r._pending || {};
+        if (!r._maps[y]) {
+          if (!r._pending[y]) r._pending[y] = fetchJSON(`rasters/${key}/${y}.json`).then((m) => { r._maps[y] = m; updateRasters(); });
+          continue;
+        }
+        url = r._maps[y][d];
+        if (!url) continue;
+      }
       const b = r.bounds;
       if (state.rasterLayers[key]) { state.rasterLayers[key].setUrl(url); state.rasterLayers[key].setOpacity(op); }
       else state.rasterLayers[key] = L.imageOverlay(url, b, { pane: "rasters", opacity: op, interactive: false }).addTo(map);
@@ -334,12 +345,12 @@
     entry.layer = L.geoJSON(gj, {
       pane: "points",
       filter: (f) => !isEvent || featureInWindow(f),
-      style: () => ({ color: p._color, weight: 2, fillOpacity: 0.15 }),
+      style: (f) => (f.geometry && /Point/.test(f.geometry.type) ? {} : { color: p._color, weight: 2, fillOpacity: 0.15 }),
       pointToLayer: (f, ll) => {
         const pr = f.properties || {};
         const sizeVal = +(pr.deaths_best ?? pr.deaths ?? pr.fatalities ?? 0);
         const r = isEvent ? Math.min(14, 4 + Math.sqrt(sizeVal)) : 5;
-        return L.circleMarker(ll, { radius: r, color: getComputedStyle(document.body).getPropertyValue("--surface") || "#fff", weight: 1.5, fillColor: p._color, fillOpacity: 0.9 });
+        return L.circleMarker(ll, { radius: r, color: getComputedStyle(document.documentElement).getPropertyValue("--surface").trim() || "#fff", weight: 1.5, fillColor: p._color, fillOpacity: 0.9 });
       },
       onEachFeature: (f, l) => {
         const pr = f.properties || {};
@@ -439,6 +450,7 @@
       fetchJSON("data/variables.json"), fetchJSON("data/counties.geojson"), fetchJSON("data/layers.json").catch(() => ({ points: [], rasters: [] })),
     ]);
     state.months = vj.months;
+    if (vj.bundle) state.bundle = fetchJSON(vj.bundle);
     state.vars = vj.variables;
     state.vars.forEach((v) => (state.varById[v.id] = v));
     state.rasters = layers.rasters || [];
