@@ -132,7 +132,12 @@ def build_flows(counties) -> None:
     src_files = {
         "et": ("IOM DTM Event Tracking (people displaced/returning, by origin county)", os.path.join(fdir, "et_flows.csv")),
         "fmr": ("IOM DTM Flow Monitoring (internal forced travel observed at monitoring points)", os.path.join(fdir, "fmr_flows_county_to_county.csv")),
+        "dtm_mt_idp_od": ("IOM DTM Mobility Tracking: IDP stock by county of origin (survey round, carried to next round)", os.path.join(fdir, "dtm_mt_idp_od_flows.csv")),
+        "dtm_mt_returnee_od": ("IOM DTM Mobility Tracking: returnee stock by county returned from (survey round, carried to next round)", os.path.join(fdir, "dtm_mt_returnee_od_flows.csv")),
+        "dtm_renk_intentions": ("IOM DTM Renk transit-centre intention survey (intended destination, sample)", os.path.join(fdir, "dtm_renk_intentions_flows.csv")),
     }
+    # Stock-type sources (survey rounds) are carried forward until the next round (max 24 months), flagged in the app.
+    CARRY = {"dtm_mt_idp_od": 24, "dtm_mt_returnee_od": 24}
     for f in sorted(glob.glob(os.path.join(fdir, "*_flows.csv"))):
         key = os.path.basename(f)[:-10]
         if key not in src_files:
@@ -149,10 +154,24 @@ def build_flows(counties) -> None:
         d["individuals"] = pd.to_numeric(d["individuals"], errors="coerce")
         d = d[(d["from_pcode"] != d["to_pcode"]) & d["from_pcode"].isin(nidx) & d["to_pcode"].isin(nidx) & (d["individuals"] > 0)]
         d = d[(d["month"] >= MONTH_STR[0]) & (d["month"] <= MONTH_STR[-1])]
+        d["reason"] = d["reason"].replace({"return": "return_relocation", "returnee": "return_relocation"})
         d["reason"] = d["reason"].where(d["reason"].isin(REASONS), "other")
+        observed = sorted(d["month"].unique().tolist())
+        if key in CARRY and observed:
+            # copy each round to the following months until the next round (or CARRY months)
+            grid = [m for m in MONTH_STR if m >= observed[0]]
+            src_of = {}
+            for m in grid:
+                latest = max(o for o in observed if o <= m)
+                ago = (int(m[:4]) - int(latest[:4])) * 12 + int(m[5:]) - int(latest[5:])
+                if ago <= CARRY[key]:
+                    src_of[m] = latest
+            parts = [d[d["month"] == r].assign(month=m) for m, r in src_of.items()]
+            d = pd.concat(parts, ignore_index=True) if parts else d
         g = d.groupby(["month", "from_pcode", "to_pcode", "reason"])["individuals"].sum().reset_index()
         si = len(sources)
-        sources.append({"key": key, "label": label, "months": sorted(g["month"].unique().tolist()),
+        sources.append({"key": key, "label": label, "months": sorted(g["month"].unique().tolist()), "observed": observed,
+                        "kind": "stock" if key in CARRY else ("survey" if "intention" in key else "flow"),
                         "max": float(g["individuals"].max()) if len(g) else 1})
         for r in g.itertuples():
             months.setdefault(r.month, []).append([si, nidx[r.from_pcode], nidx[r.to_pcode], REASONS.index(r.reason), int(round(r.individuals))])

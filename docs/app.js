@@ -457,7 +457,12 @@
     sudan_conflict: ["#6250d6", "Sudan war (cross-border)"], return_relocation: ["#1baf7a", "Return / relocation"],
     other: ["#898781", "Other / unspecified"], unknown: ["#898781", "Unspecified"],
   };
-  const SOURCE_SHORT = { et: "Event Tracking", fmr: "Flow Monitoring" };
+  const SOURCE_SHORT = { et: "Event Tracking", fmr: "Flow Monitoring", dtm_mt_idp_od: "IDP stock by origin (Mobility Tracking)",
+    dtm_mt_returnee_od: "Returnee stock by origin (Mobility Tracking)", dtm_renk_intentions: "Renk onward intentions (survey)" };
+  // line style per source: dash pattern, opacity, max arrows drawn
+  const SOURCE_STYLE = { et: [null, 0.85, 160], fmr: ["6 5", 0.85, 120], dtm_mt_idp_od: ["1 5", 0.6, 90],
+    dtm_mt_returnee_od: ["1 5", 0.6, 90], dtm_renk_intentions: ["10 4 2 4", 0.8, 40] };
+  const srcStyle = (k) => SOURCE_STYLE[k] || ["2 3", 0.7, 60];
   state.flowOn = true; state.flowSources = null; state.flowReasons = null; state.flowLayer = null;
   const flowRenderer = L.svg({ pane: "flows", padding: 0.5 });
   let flowDefsReady = false;
@@ -493,6 +498,10 @@
     return F.sources.filter((src) => !state.flowSources || state.flowSources.has(src.key)).map((src) => {
       const have = ms.filter((m) => src.months.includes(m)).length;
       const name = SOURCE_SHORT[src.key] || src.key;
+      if (have === ms.length && src.kind === "stock") {
+        const obs = (src.observed || []).filter((o) => o <= ms[ms.length - 1]).pop();
+        return `<span class="ok">✓ ${name} (survey round ${obs}${ms.includes(obs) ? "" : ", carried forward"})</span>`;
+      }
       if (have === ms.length) return `<span class="ok">✓ ${name}</span>`;
       if (have > 0) return `<span class="part">◐ ${name}: ${have}/${ms.length} months</span>`;
       const note = src.key === "fmr" ? (ms[0] >= "2023-11" && ms[0] <= "2024-12" ? " (IOM published no county data Nov 2023–Dec 2024)" : ms[0] < "2020-01" ? " (series starts Jan 2020)" : "") :
@@ -513,8 +522,10 @@
       if (state.flowReasons && !state.flowReasons.has(F.reasons[r])) continue;
       const k = `${si}|${a}|${b}|${r}`; agg.set(k, (agg.get(k) || 0) + n);
     }
-    const list = [...agg.entries()].map(([k, n]) => { const [si, a, b, r] = k.split("|").map(Number); return { si, a, b, r, n }; })
-      .sort((x, y) => y.n - x.n).slice(0, 250);
+    const all = [...agg.entries()].map(([k, n]) => { const [si, a, b, r] = k.split("|").map(Number); return { si, a, b, r, n }; });
+    const list = [];
+    F.sources.forEach((src, si) => list.push(...all.filter((f) => f.si === si).sort((x, y) => y.n - x.n).slice(0, srcStyle(src.key)[2])));
+    list.sort((x, y) => y.n / (F.sources[y.si].max || 1) - x.n / (F.sources[x.si].max || 1));  // biggest drawn first, small on top
     state.flowLayer = L.layerGroup().addTo(map);
     ensureArrowDefs();
     for (const f of list) {
@@ -522,9 +533,9 @@
       const [color, rlabel] = REASON_STYLE[reason] || REASON_STYLE.other;
       const w = Math.max(1.3, Math.min(14, 11 * Math.sqrt(f.n / (src.max || 1))));
       const line = L.polyline(bezier(A, B, 0.12 + 0.03 * f.r), {
-        renderer: flowRenderer, pane: "flows", color, weight: w, opacity: 0.82, lineCap: "round",
-        dashArray: src.key === "fmr" ? "6 5" : null,
-      }).bindTooltip(`<b>${A[2]} → ${B[2]}</b><br>${rlabel} · <b>${f.n.toLocaleString()}</b> people<br><span style="color:var(--muted)">${src.label} · ${windowLabel(state.t)}</span>`, { sticky: true });
+        renderer: flowRenderer, pane: "flows", color, weight: w, opacity: srcStyle(src.key)[1], lineCap: "round",
+        dashArray: srcStyle(src.key)[0],
+      }).bindTooltip(`<b>${A[2]} → ${B[2]}</b><br>${rlabel} · <b>${f.n.toLocaleString()}</b> people<br><span style="color:var(--muted)">${src.label} · ${windowLabel(state.t)}${src.kind === "stock" ? " · people living away from origin at the latest survey round (stock, not monthly movement)" : ""}</span>`, { sticky: true });
       line.addTo(state.flowLayer);
       if (line._path) line._path.setAttribute("marker-end", `url(#ah-${f.r})`);
     }
@@ -537,8 +548,8 @@
     let h = `<div class="var-row"><input type="checkbox" id="flow-on" checked><label for="flow-on"><b>Show migration arrows</b> <span class="meta">(width ∝ √people)</span></label></div>`;
     h += `<div class="group-title">Source</div>`;
     F.sources.forEach((x) => { h += `<div class="var-row"><input type="checkbox" class="flow-src" value="${x.key}" id="fs-${x.key}" checked>
-      <svg width="22" height="8" aria-hidden="true"><line x1="1" y1="4" x2="21" y2="4" stroke="var(--ink-2)" stroke-width="3" ${x.key === "fmr" ? 'stroke-dasharray="5 4"' : ""}/></svg>
-      <label for="fs-${x.key}">${SOURCE_SHORT[x.key] || x.key} <span class="meta">· ${x.months.length} months · ${x.label}</span></label></div>`; });
+      <svg width="22" height="8" aria-hidden="true"><line x1="1" y1="4" x2="21" y2="4" stroke="var(--ink-2)" stroke-width="3" stroke-linecap="round" ${srcStyle(x.key)[0] ? `stroke-dasharray="${srcStyle(x.key)[0]}"` : ""}/></svg>
+      <label for="fs-${x.key}">${SOURCE_SHORT[x.key] || x.key} <span class="meta">· ${x.kind === "stock" ? `${(x.observed || []).length} survey rounds` : `${x.months.length} months`} · ${x.label}</span></label></div>`; });
     h += `<div class="group-title">Reason</div>`;
     F.reasons.filter((r) => used.has(r)).forEach((r) => { const [c, lab] = REASON_STYLE[r] || REASON_STYLE.other;
       h += `<div class="var-row"><input type="checkbox" class="flow-reason" value="${r}" id="fr-${r}" checked><span class="swatch" style="background:${c}"></span><label for="fr-${r}">${lab}</label></div>`; });
