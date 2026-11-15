@@ -1,0 +1,11 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+sudd_clear_pct,national,-230,0.151,16,-0.00710678,-0.00625
+sudd_clear_pct,sudd,-230,0.151,16,-0.00710678,-0.00625
+sudd_climfill_pct,national,-14,0.964,16,0,0
+sudd_climfill_pct,sudd,-14,0.964,16,0,0
+sudd_inundation_km2,national,2352,0.002,16,52.876,67.3557
+sudd_inundation_km2,sudd,2352,0.002,16,52.876,67.3557
+sudd_inundation_pct,national,2352,0.002,16,52.8761,1.22967
+sudd_inundation_pct,sudd,2352,0.002,16,52.8761,1.22967
+sudd_openwater_km2,national,2321,0.001,16,80.0955,2.9265
+sudd_openwater_km2,sudd,2321,0.001,16,80.0955,2.9265

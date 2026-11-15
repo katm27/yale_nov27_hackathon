@@ -690,6 +690,7 @@
     { label: "Surface water / flood extent, all seasons (MODIS)", ids: ["surface_water_km2"], how: "sum", units: "km²", color: "#1baf7a" },
     { label: "Flooded area, Sentinel-1 radar (reliable Jul–Nov; sees flooded vegetation)", ids: ["flood_s1_flood_km2"], how: "sum", units: "km²", color: "#1baf7a" },
     { label: "People in flooded areas (Sentinel-1 × WorldPop)", ids: ["flood_population_exposed"], how: "sum", units: "people", color: "#1baf7a" },
+    { label: "Sudd inundation incl. flooded vegetation (MODIS water index, gap-filled)", ids: ["sudd_inundation_km2"], how: "subset", counties: SUDD, sum: true, units: "km²", color: "#01665e" },
     { label: "Water storage anomaly, Sudd counties (GRACE/GRACE-FO; vs 2002–2020)", ids: ["grace_tws_cm"], how: "subset", counties: SUDD, units: "cm water", color: "#01665e" },
     { label: "Groundwater storage anomaly, Sudd counties (G3P from GRACE; to Sep 2023)", ids: ["g3p_gwsa_cm"], how: "subset", counties: SUDD, units: "cm water", color: "#01665e" },
     { label: "Drought index (national mean; ensemble if available)", ids: ["drought_ensemble_mean", "spei3"], how: "mean", units: "index", color: "#eb6834" },
@@ -717,7 +718,7 @@
     for (let i = 0; i < n; i++) {
       let tot = 0, k = 0;
       for (const c of rows) { const x = s[c][i]; if (x != null && isFinite(x)) { tot += x; k++; } }
-      if (k) out[i] = (spec.how === "mean" || spec.how === "subset" ? tot / k : tot) * (spec.scale || 1);
+      if (k) out[i] = (spec.how === "mean" || (spec.how === "subset" && !spec.sum) ? tot / k : tot) * (spec.scale || 1);
     }
     return out;
   }

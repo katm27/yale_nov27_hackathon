@@ -247,3 +247,17 @@ while the S1 flood class does not.
 - **Caveats:**
   - UCDP's 25-deaths/year dyad threshold means cattle raiding is under-counted.
   - The actors' home county is unknown.
+
+
+## Addendum (15 Nov 2026): Sudd MODIS water / inundation index
+
+`scripts/sudd_water_index.py` applies the team's Inner Niger Delta method to the Sudd (16 counties, 103,478 km²):
+Terra MOD09A1 8-day 500 m; open water = MNDWI > 0; inundation incl. flooded vegetation = open water or EVI − LSWI ≤ 0.05
+(Xiao et al. 2006 / Sakamoto et al. 2007); cloudy pixels carried from the last clear view ≤ 24 days, else climatology
+(83 % observed, 16 % carried, 1 % climatology; Jul–Aug only ~61–66 % observed).
+Annual peak (Sep–Dec) ≈ 6.9k km² (2018) → 21–26k km² (2019–2022, 2024), 16k (2023); dry-season low rose from ~0.8k (2018–20)
+to 6–8k km² (2022–25): water no longer drains. Validation: UNOSAT median ratio 0.99 (r 0.61; county r 0.81); Sentinel-1 r 0.82;
+national MODIS layer r 0.84; ~0.65–0.85 of published 30–40k km² peaks (smaller AOI; dense papyrus missed).
+**Recommendation:** primary Sudd-wide flood-extent series for 2018–2025 (consistent all-season record); Sentinel-1 for
+Jul–Nov detail; UNOSAT for validation. Planetary Computer lacks MODIS for 4 Jul–24 Nov 2025 → 2025 peak is Dec-only.
+Details: `docs/VALIDATION_sudd_water.md`.
