@@ -546,6 +546,8 @@
         const pr = f.properties || {};
         const sizeVal = +(pr.deaths_best ?? pr.deaths ?? pr.fatalities ?? 0);
         const r = isEvent ? Math.min(14, 4 + Math.sqrt(sizeVal)) : 5;
+        const closed = /non[- ]?functional|closed|halted|disrupted|unconfirmed|shut|not operating|destroyed|looted/i.test(String(pr.status || ""));
+        if (closed) return L.circleMarker(ll, { pane: "points", radius: r, color: p._color, weight: 2, fillColor: "#ffffff", fillOpacity: 0.9 });
         return L.circleMarker(ll, { pane: "points", radius: r, color: getComputedStyle(document.documentElement).getPropertyValue("--surface").trim() || "#fff", weight: 1.5, fillColor: p._color, fillOpacity: 0.9 });
       },
       onEachFeature: (f, l) => {
@@ -933,7 +935,20 @@
     }
     updateNational();
   }
+  // ---------- dated context events (national timeline strip) ----------
+  function renderEvents() {
+    const el = $("#events-strip"); if (!el || !state.events) return;
+    const n = state.months.length;
+    const evs = state.events.filter((e) => e.date && e.date.slice(0, 7) >= state.months[0] && e.date.slice(0, 7) <= state.months[n - 1]);
+    const cur = state.months[state.t];
+    const now = evs.filter((e) => e.date.slice(0, 7) === cur);
+    el.innerHTML = `<div class="ev-track">${evs.map((e, k) => { const i = state.months.indexOf(e.date.slice(0, 7));
+      return `<button class="ev ${e.date.slice(0, 7) === cur ? "on" : ""}" style="left:${(100 * i) / (n - 1)}%" title="${e.date.slice(0, 10)} — ${(e.title || "").replace(/"/g, "&quot;")}" data-i="${i}"></button>`; }).join("")}</div>
+      <div class="ev-now">${now.length ? now.map((e) => `<b>${e.date.slice(0, 10)}</b> ${e.title}${e.source_url ? ` <a href="${e.source_url}" target="_blank" rel="noopener">source</a>` : ""}`).join(" · ") : `<span class="hint">Key events: ${evs.length} dated events 2018–2025 — click a marker</span>`}</div>`;
+    el.querySelectorAll(".ev").forEach((b) => (b.onclick = () => setTime(+b.dataset.i)));
+  }
   function updateNational() {
+    renderEvents();
     for (const c of state.natCharts) {
       const x = c.data.datasets[0].data[state.t];
       c._tile.querySelector(".nt-v").textContent = `${monthLabel(state.t)}: ${x == null ? "–" : fmt(x)} ${c._spec.units}`;
@@ -975,6 +990,7 @@
     state.points = layers.points || [];
     fetchJSON("data/trends.json").then((t) => { state.trends = t; state.vars.forEach((v) => (v._trendSpan = null)); refreshCounties(); renderLegend(); }).catch(() => {});
     fetchJSON("data/profiles.json").then((pj) => { state.profiles = pj; }).catch(() => {});
+    fetchJSON("data/context_events.json").then((ce) => { state.events = (ce.events || ce || []).filter((e) => e.date).sort((a, b) => (a.date < b.date ? -1 : 1)); renderEvents(); }).catch(() => {});
     fetchJSON("data/topic_picks.json").then((tp) => { state.topicPicks = tp; renderTopics(); }).catch(() => {});
     SPARKS.forEach((sp) => { const v = sparkVar(sp); if (v) ensureSeries(v.id).catch(() => {}); if (sp.band && state.varById[sp.band]) ensureSeries(sp.band).catch(() => {}); });
     fetchJSON("data/flows.json").then((f) => { state.flows = f; renderFlowControls(); drawFlows(); }).catch((e) => console.warn("no flows", e));

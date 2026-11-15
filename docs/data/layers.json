@@ -2,7 +2,7 @@
  "points": [
   {
    "key": "lines_pipelines",
-   "label": "Oil pipelines",
+   "label": "Oil pipelines (flow status)",
    "category": "human",
    "source": "GEM GOIT (CC-BY 4.0) + OpenStreetMap via Overture (ODbL)",
    "source_url": "https://globalenergymonitor.org/projects/global-oil-infrastructure-tracker/",
@@ -18,7 +18,7 @@
     "disrupted (Heglig hub seized)",
     "proposed route (not built)"
    ],
-   "plain": "Routes of oil pipelines carrying South Sudan's crude north through Sudan, including some proposed routes. Pipeline breaks in Sudan have halted exports in the past.",
+   "plain": "Mapped oil pipelines coloured by the documented status of the oil block they serve; proposed routes are shown but were never built.",
    "topic": "Context (static)",
    "file": "data/lines_pipelines.geojson"
   },
@@ -78,23 +78,24 @@
    "details": "13 one-stop centres + Bentiu safe house; valid_from = first evidence of operation (year-only evidence -> end of that year); documented through Q1 2023 (UNFPA newsletter: 13 OSCs), presumed operating afterwards, a period that includes the 2025 funding cuts. No dated point data exist for women and girls' friendly spaces or protection desks.",
    "label": "GBV one-stop centres",
    "notes": "Centres offering medical, psychosocial, legal and police help to survivors of sexual and gender-based violence, shown from the first evidence they were operating; no site was confirmed individually after early 2023.",
-   "plain": true,
+   "plain": "Centres offering medical, psychosocial, legal and police help to survivors of sexual and gender-based violence, shown from the first evidence they were operating; no site was confirmed individually after early 2023.",
    "status_values": [
     "operating (documented)",
     "presumed operating (last confirmed early 2023)"
    ],
+   "topic": "Gender & protection",
    "file": "data/points_gbv_one_stop_centres.geojson"
   },
   {
    "key": "points_health",
-   "label": "Health facilities",
+   "label": "Health facilities (registry status over time)",
    "category": "human",
    "source": "MoH health facility lists 2016 and 2023, IOM DTM village assessment 2019-20, WHO Master Facility List Mar 2024 (HDX); team compilation (Nov 2026)",
    "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
    "notes": "Hospitals and clinics with their registry status in each period, built by comparing the 2016, 2019-20, 2023 and 2024 facility lists and adding documented closures; being listed does not prove a facility was working.",
    "temporal": "periods",
    "details": "Status periods from MoH Apr 2016 list, IOM DTM village assessment Aug 2019-Mar 2020 (7 counties), MoH 2023 master list and WHO MFL Mar 2024, matched by name and distance; 'new since 2016' facilities start at the first list that has them (opened between Apr 2016 and that list); facilities dropped by 2023 are 'unconfirmed' to Dec 2023; Ulang (closed 14 Apr 2025) and Old Fangak (bombed 3 May 2025) documented. 461 matched facilities lack coordinates and are not mapped. About 11.5% of 'new since 2016' sit within 300 m of a 2016 facility (likely renamed). Aggregate 2022 and 2025 aid-cut closures are timeline events. Superseded the WHO-MFL snapshot layer (all its points are included).",
-   "plain": "Hospitals, health centres and health units from the 2025 national facility list. The list does not say whether a facility is currently working.",
+   "plain": "Hospitals and clinics with their registry status in each period, built by comparing the 2016, 2019-20, 2023 and 2024 facility lists and adding documented closures; being listed does not prove a facility was working.",
    "status_values": [
     "registered",
     "registered (new since 2016)",
@@ -149,7 +150,7 @@
   },
   {
    "key": "points_oil",
-   "label": "Oil fields and wells",
+   "label": "Oil fields and wells (production status)",
    "category": "human",
    "source": "Global Energy Monitor GOGET (CC-BY 4.0), OpenStreetMap wells (ODbL); block status dates from Reuters, VOA, Radio Tamazuj, Sudan Tribune, Argus, AFP",
    "source_url": "https://globalenergymonitor.org/projects/global-oil-gas-extraction-tracker/",
@@ -164,7 +165,7 @@
     "operating (resumed)",
     "disrupted (Heglig hub seized)"
    ],
-   "plain": "Oil fields with their production status over time (shutdowns and restarts) and oil wells mapped by volunteers. Well mapping is incomplete.",
+   "plain": "Oil fields and mapped wells coloured by the documented production status of their oil block, including the 2018-19 restarts, the 2024 export halt and the December 2025 Heglig disruption.",
    "topic": "Context (static)",
    "file": "data/points_oil.geojson"
   },
@@ -177,12 +178,13 @@
    "details": "Spills on the Unity-Heglig export pipeline ~24 Aug 2019 (~2 million L) and ~28 Oct 2019 (~4 million L), GPS from Sign of Hope; after repair shown as spill site (removal not documented). Reports: flooded Block 2 wells (PAX 2023: 159 wells ~41% submerged; New Lines/Placemark 2026: 50+ of ~400 Unity wells underwater) placed at the Unity field; Kenyatta University river samples near Bentiu/Rotriak (lead up to 18 ug/L, hydrocarbons >5x limits; sampling dates unpublished) placed at Rotriak. Feb 2024 Petrodar spill is in Sudan -> timeline only.",
    "label": "Oil spills and pollution reports",
    "notes": "Two documented 2019 oil pipeline spills north of Bentiu and two located reports of contaminated water and flooded wells in the Unity oil fields.",
-   "plain": true,
+   "plain": "Two documented 2019 oil pipeline spills north of Bentiu and two located reports of contaminated water and flooded wells in the Unity oil fields.",
    "status_values": [
     "oil spill (active)",
     "spill site (oil removal not documented)",
     "contamination reported"
    ],
+   "topic": "Water & floods",
    "file": "data/points_oil_pollution.geojson"
   },
   {
@@ -194,23 +196,24 @@
    "details": "Share of Sentinel-1 VV pixels below -15 dB in a 100-500 m ring around each of 102 OSM wells, monthly median; flagged when >= 25%. Undercounts flooded vegetation; near-zero 2021 likely an artefact (also Sentinel-1B loss Dec 2021). OSM maps ~100 of ~400 Unity wells.",
    "label": "Flood water around oil wells (radar)",
    "notes": "Mapped oil wells where satellite radar saw open flood water around the well in each period; this shows flooding, not contamination, and misses water under vegetation.",
-   "plain": true,
+   "plain": "Mapped oil wells where satellite radar saw open flood water around the well in each period; this shows flooding, not contamination, and misses water under vegetation.",
    "status_values": [
     "flood water around well (radar)",
     "no open water detected (radar)"
    ],
+   "topic": "Water & floods",
    "file": "data/points_oil_wells_flooding.geojson"
   },
   {
    "key": "points_schools",
-   "label": "Schools",
+   "label": "Schools (status over time)",
    "category": "human",
    "source": "SSSAMS 2015 list and 2019 enrolment export (HDX, CC0), IOM DTM village assessment 2019-20, OpenStreetMap (ODbL); team compilation (Nov 2026)",
    "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
    "notes": "Schools with their status from the 2015 and 2019 school lists, the 2019-20 village assessment and the 2020-21 COVID-19 closure; after May 2021 statuses are carried forward because no school-level data exists.",
    "temporal": "periods",
    "details": "SSSAMS 2015 list (coordinates) + SSSAMS 29 Oct 2019 enrolment export (joined on school code) + IOM DTM Aug 2019-Mar 2020 (392 DTM-only points, a few may duplicate SSSAMS); national COVID-19 closure 2020-03..2021-04; base status carried forward from 2021-05 (flagged 'presumed'). 2015 managed/enrolment-by-sex kept from the old layer. OpenStreetMap schools > 300 m from any SSSAMS/DTM school kept as undated. Heatwave closures (Mar 2024, Feb-Mar 2025) and flood closures are timeline events, not per-school periods.",
-   "plain": "Schools from the 2015 school census and from OpenStreetMap. The two sources overlap, so some schools may appear twice.",
+   "plain": "Schools with their status from the 2015 and 2019 school lists, the 2019-20 village assessment and the 2020-21 COVID-19 closure; after May 2021 statuses are carried forward because no school-level data exists.",
    "status_values": [
     "operating (2019 enrolment)",
     "operating (IOM DTM 2019-20)",
@@ -237,12 +240,13 @@
    "details": "Eight ~11x11 km sites; water pixels only, up to 3 clearest scenes per month. Status = NDTI (red-green)/(red+green) anomaly vs the site's median for that calendar month: > +0.04 more turbid, < -0.04 clearer (|anomaly| > 0.04 is about the top 20% of site-months). NDCI chlorophyll proxy included. 2018-19 Sentinel-2 L2A may be offset from 2020-25 HLS. Thar Jath wetland has only 15 months.",
    "label": "River and wetland water colour (satellite)",
    "notes": "Monthly satellite readings of muddiness at eight river and wetland sites compared with the usual level for that month; this tracks sediment and algae, not oil or chemical pollution.",
-   "plain": true,
+   "plain": "Monthly satellite readings of muddiness at eight river and wetland sites compared with the usual level for that month; this tracks sediment and algae, not oil or chemical pollution.",
    "status_values": [
     "more turbid than usual",
     "near usual for the month",
     "clearer than usual"
    ],
+   "topic": "Water & floods",
    "file": "data/points_surface_water_quality.geojson"
   },
   {
@@ -298,9 +302,9 @@
    "source": "GeoEPR 2021 / EPR 2021 / ACD2EPR 2021 (ETH Zurich ICR)",
    "source_url": "https://icr.ethz.ch/data/epr/geoepr/",
    "details": "GeoEPR-2021 polygons clipped to South Sudan; EPR power status for 2011-2021; ACD2EPR links to rebel organisations. 2022-2025 features carry the same geometry/status, flagged as carried forward.",
-   "label": "Ethnic group areas",
+   "label": "Ethnic group areas (GeoEPR)",
    "notes": "Settlement areas and political power status of ten major ethnic groups as coded up to 2021; areas shown after 2021 are carried forward, not re-coded.",
-   "plain": "Approximate settlement areas of South Sudan's politically relevant ethnic groups (such as Dinka, Nuer, Shilluk, Murle, Azande). Areas can overlap and smaller groups are missing.",
+   "plain": "Settlement areas and political power status of ten major ethnic groups as coded up to 2021; areas shown after 2021 are carried forward, not re-coded.",
    "status_values": [
     "senior partner",
     "junior partner",
