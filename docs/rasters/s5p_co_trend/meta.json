@@ -40,7 +40,7 @@
  "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
  "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
  "trend_of": "s5p_co",
- "basis": "annual mean (Jan-Dec) of the monthly values (sampled orbits; S5P starts mid-2018) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "basis": "annual mean (Jan-Dec) of the monthly values (sampled orbits; S5P starts mid-2018). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,

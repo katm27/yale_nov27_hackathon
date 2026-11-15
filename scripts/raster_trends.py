@@ -409,7 +409,7 @@ LAYERS = [
                 "flooded vegetation (the product's own annual-peak window; Jun-Sep is mostly cloud over the Sudd). "
                 "2025 is omitted: Planetary Computer has no MODIS reflectance for 4 Jul - 24 Nov 2025.")),
     dict(key="viirs_fire", run=monthly(load_viirs, ALL, "sum"), cmap="div_puor",
-         units="detections per 0.05° cell per year",
+         units="detections per 0.05° cell per year", unit_out="detections per 0.05° cell per year, per yr",
          basis="annual total (Jan-Dec) of nominal/high-confidence VIIRS S-NPP vegetation-fire detections per 0.05° cell"),
     dict(key="tc_ppt", run=monthly(TC("ppt"), WET), cmap="div_brbg", basis=WET_MEAN),
     dict(key="tc_aet", run=monthly(TC("aet"), WET), cmap="div_brbg", basis=WET_MEAN),

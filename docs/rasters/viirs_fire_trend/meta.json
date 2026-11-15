@@ -1,7 +1,7 @@
 {
  "key": "viirs_fire_trend",
  "label": "VIIRS active fires (S-NPP, per 0.05° cell) — trend 2018→year (Sen's slope)",
- "units": "detections per 0.05° cell per year/yr",
+ "units": "detections per 0.05° cell per year, per yr",
  "bounds": [
   [
    3.412126287818573,
@@ -49,5 +49,5 @@
   "2024": 7,
   "2025": 8
  },
- "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05° cell per year/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05° cell per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
 }
