@@ -79,8 +79,11 @@
     if (mode === "trend") return trendValue(v, c);
     const s = state.series[v.id]; if (!s || !s[c]) return null;
     const arr = s[c];
-    const raw = mean(windowIdx(i).map((j) => arr[j]));
+    const wvals = windowIdx(i).map((j) => arr[j]);
+    const raw = mean(wvals);
     if (raw == null) return null;
+    // counts (people, events, deaths…) are totals over a season/year in raw mode
+    if (mode === "raw" && v.aggregate === "sum" && state.agg !== "month") return wvals.reduce((a, x) => a + (x != null && isFinite(x) ? x : 0), 0);
     if (mode === "raw" || v.temporal === "static") return raw;
     const by = v.baseline_year || 2018;
     let base;
@@ -289,7 +292,7 @@
     if (v.temporal && v.temporal !== "monthly") html += `<div class="note">Time step of source: ${v.temporal}${v.carry_forward_months ? ` (latest value carried forward up to ${v.carry_forward_months} months)` : ""}.</div>`;
     if (state.trends && state.trends[v.id]) {
       const nSig = Object.values(state.trends[v.id]).filter((t) => t[T_SIG]).length;
-      html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall p &lt; 0.05): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
+      html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall, false-discovery-rate q &lt; 0.05 across counties): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
     }
     html += `<div class="note"><span class="nodata"></span> no data · Source: ${v.source || "–"}${v.native_resolution ? ` · ${v.native_resolution}` : ""}</div>`;
     const rs = [...state.rasterOn].map((k) => state.rasters.find((r) => r.key === k)).filter(Boolean);
@@ -612,6 +615,8 @@
     const agg = new Map(), used = new Set();
     if (state.flowOn) for (const m of ms) {
       const pick = sourceForMonth(m); if (pick < 0) continue;
+      // survey stocks are not additive over months: in season/year views use only the last month of the window
+      if (F.sources[pick].kind === "stock" && m !== ms.filter((x) => sourceForMonth(x) === pick).slice(-1)[0]) continue;
       used.add(pick);
       for (const [si, a, b, r, n] of F.months[m] || []) {
         if (si !== pick) continue;

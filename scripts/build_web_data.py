@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import glob
 import json
+import re
 import math
 import os
 
@@ -302,6 +303,9 @@ def main() -> None:
             "min": sig(float(finite.min())),
             "max": sig(float(finite.max())),
         })
+        u = str(m.get("units", "")).lower()
+        if temporal == "monthly" and re.search(r"\b(events?|people|persons|individuals|deaths|fatalities|incidents|count|movements|travellers|detections|fires)\b", u) and "per" not in u and "%" not in u:
+            m["aggregate"] = "sum"
         m.setdefault("index_ok", True)
         m.setdefault("higher_is", "neutral")
         m.setdefault("category", "other")

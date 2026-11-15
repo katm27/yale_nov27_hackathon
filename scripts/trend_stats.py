@@ -193,7 +193,8 @@ def interpret(row: dict, meta: dict) -> str:
         return "Too few observations for a trend test."
     units = meta.get("units") or ""
     pct = row.get("sen_slope_pct_per_year")
-    pct_txt = f" ({pct:+.1f}% of the {meta.get('baseline_year', 'baseline')} level per year)" if pct is not None and np.isfinite(pct) else ""
+    ratio_ok = meta.get("index_ok", True) is not False and not str(meta.get("units", "")).strip().startswith(("°", "deg"))
+    pct_txt = f" ({pct:+.1f}% of the {meta.get('baseline_year', 'baseline')} level per year)" if ratio_ok and pct is not None and np.isfinite(pct) else ""
     fmt = lambda v: f"{v:+.3g}"
     ptxt = ("p < 0.001" if p < 0.001 else f"p = {p:.3f}") + (f", FDR q = {q:.3f}" if q is not None and np.isfinite(q) else "")
     sig = q is not None and np.isfinite(q) and q < ALPHA      # significance = FDR-adjusted across the 79 counties
