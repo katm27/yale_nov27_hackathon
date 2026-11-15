@@ -53,7 +53,7 @@ GRID = 0.05
 SRC_URL = "https://firms.modaps.eosdis.nasa.gov/api/area/"
 
 
-def _get(url, timeout=180):
+def _get(url, timeout=60):
     req = urllib.request.Request(url, headers={"User-Agent": "ssd-hackathon-pipeline"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read().decode()
@@ -67,7 +67,7 @@ def get(url, tries=8):
             return _get(url)
         except Exception as e:  # noqa: BLE001 (flaky connection resets via proxy)
             err = str(e).replace(key, "<MAP_KEY>")
-            time.sleep(min(60, 4 * (i + 1)))
+            time.sleep(min(15, 1 + i))
     raise RuntimeError(f"failed after {tries}: {err}")
 
 
@@ -92,7 +92,7 @@ def fetch_chunk(src, d, days, cache):
     if f.exists() and f.stat().st_size > 0:
         return 0
     try:
-        txt = get(f"{API}/api/area/csv/{key}/{src}/{BBOX}/{days}/{d}", tries=3 if days > 1 else 10)
+        txt = get(f"{API}/api/area/csv/{key}/{src}/{BBOX}/{days}/{d}", tries=10 if days > 1 else 20)
         if not txt.startswith("latitude"):
             raise RuntimeError(txt[:200])
     except Exception as e:  # noqa: BLE001
@@ -104,27 +104,40 @@ def fetch_chunk(src, d, days, cache):
     return 1
 
 
-def download(cache, chunk=4):
+def download(cache, chunk=1, threads=int(os.environ.get("FIRMS_THREADS", 12))):
+    """Single-day requests: uncached multi-day queries take >10 s server-side and get cut by the network."""
     if not os.environ.get("FIRMS_MAP_KEY"):
         sys.exit("FIRMS_MAP_KEY not set")
     cache.mkdir(parents=True, exist_ok=True)
-    n = 0
+    covered = set()
+    for f in cache.glob("*.csv.gz"):
+        src_, d0, k = f.name[:-7].rsplit("_", 2)
+        for i in range(int(k)):
+            covered.add((src_, dt.date.fromisoformat(d0) + dt.timedelta(days=i)))
+    jobs = []
     for src, (a, b) in SENSORS.items():
         d = dt.date.fromisoformat(a)
         end = dt.date.fromisoformat(b)
         while d <= end:
             days = min(chunk, (end - d).days + 1)
-            # skip if this window is already fully covered by single-day files
-            if not all((cache / f"{src}_{d + dt.timedelta(days=i)}_1.csv.gz").exists() for i in range(days)):
-                n += fetch_chunk(src, d, days, cache)
-                if n and n % 50 == 0:
-                    print(f"  {src} {d} requests {n}; transactions used {pace()}", flush=True)
+            if not all((src, d + dt.timedelta(days=i)) in covered for i in range(days)):
+                jobs.append((src, d, days))
             d += dt.timedelta(days=days)
+    n = 0
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+    with ThreadPoolExecutor(threads) as ex:
+        futs = [ex.submit(fetch_chunk, s_, d_, k_, cache) for s_, d_, k_ in jobs]
+        for i, f in enumerate(as_completed(futs), 1):
+            n += f.result()
+            if i % 50 == 0:
+                print(f"  {i}/{len(jobs)} chunks; transactions used {pace()}", flush=True)
     print("download complete; new requests:", n, flush=True)
 
 
 def load(cache, src):
     fs = sorted(cache.glob(f"{src}_*.csv.gz"))
+    if not fs:
+        return None, {}
     cols = ["latitude", "longitude", "acq_date", "acq_time", "satellite", "confidence", "frp", "bright_ti4",
             "daynight", "type"]
     df = pd.concat([pd.read_csv(f, usecols=lambda c: c in cols) for f in fs], ignore_index=True)
@@ -174,7 +187,7 @@ def rasters(df):
         grid = np.zeros((ny, nx), dtype="float32")
         sub = df[df.month == m]
         np.add.at(grid, (sub.iy.values, sub.ix.values), 1)
-        lg = np.where(grid > 0, np.log10(grid), -1.0)  # -1 => transparent
+        lg = np.where(grid > 0, np.log10(np.maximum(grid, 1)), -1.0)  # -1 => transparent
         img = canvas.new()
         canvas.add(img, lg, tr, "EPSG:4326", Resampling.max)
         img[img < 0] = -1.0
@@ -235,6 +248,9 @@ def main():
     frames, stats, pts = [], {}, {}
     for src, (s, e) in SENSORS.items():
         df, st = load(cache, src)
+        if df is None:
+            print("no data for", src)
+            continue
         stats[src] = st
         pts[src] = df
         months = [x + "-01" for x in hc.months(s, e)]
@@ -258,7 +274,8 @@ def main():
     n20 = out[out.variable == "viirs_noaa20_fire_count"].set_index(["county_id", "date"]).value
     jj = pd.concat([sn, n20], axis=1, join="inner")
     jj.columns = ["snpp", "noaa20"]
-    sens = dict(r=round(jj.snpp.corr(jj.noaa20), 3), ratio_noaa20_to_snpp=round(jj.noaa20.sum() / jj.snpp.sum(), 2))
+    sens = dict(r=round(jj.snpp.corr(jj.noaa20), 3) if len(jj) else None,
+                ratio_noaa20_to_snpp=round(jj.noaa20.sum() / jj.snpp.sum(), 2) if len(jj) else None)
     print("NOAA-20 vs S-NPP (2020-2025):", sens, flush=True)
 
     cmp_txt = (f"Versus MODIS fire_count (fire_pipeline.py, same months): pooled county-month Pearson r = "

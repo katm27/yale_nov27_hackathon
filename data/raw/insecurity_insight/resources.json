@@ -1,0 +1,22 @@
+{
+ "ii_aid_worker_incidents": {
+  "name": "1997-2026 SSD Aid Worker KIKA Incident Data.xlsx",
+  "url": "https://data.humdata.org/dataset/e1861491-f2c3-4eb2-b7a1-0391520b5b50/resource/ddb54d88-d7b4-49ee-b1c0-3fa2c131c0b5/download/1997-2026-ssd-aid-worker-kika-incident-data.xlsx",
+  "modified": "2026-11-09T08:06:46.806474"
+ },
+ "ii_health_attacks": {
+  "name": "2016-2026 SSD Attacks on Health Care Incident Data.xlsx",
+  "url": "https://data.humdata.org/dataset/e1861491-f2c3-4eb2-b7a1-0391520b5b50/resource/51766fff-423f-45d1-a16e-67d345477d6b/download/2016-2026-ssd-attacks-on-health-care-incident-data.xlsx",
+  "modified": "2026-11-03T09:47:24.386794"
+ },
+ "ii_education_attacks": {
+  "name": "2017-2025 SSD Education in Danger Incident Data.xlsx",
+  "url": "https://data.humdata.org/dataset/e1861491-f2c3-4eb2-b7a1-0391520b5b50/resource/614957b7-8fb3-48a9-8fcb-16ce971b766d/download/2017-2025-ssd-education-in-danger-incident-data.xlsx",
+  "modified": "2026-03-16T07:39:37.578524"
+ },
+ "ii_sexual_violence_incidents": {
+  "name": "2020-2026 SSD Conflict-Related Sexual Violence (CRSV) Incident Data.xlsx",
+  "url": "https://data.humdata.org/dataset/e1861491-f2c3-4eb2-b7a1-0391520b5b50/resource/31ccde02-76fa-401b-983e-11414d146af1/download/2020-2026-ssd-conflict-related-sexual-violence-crsv-incident-data.xlsx",
+  "modified": "2026-11-09T08:06:46.808173"
+ }
+}

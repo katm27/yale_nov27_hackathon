@@ -1,0 +1,62 @@
+[
+ {
+  "id": "ii_aid_worker_incidents",
+  "label": "Aid worker incidents (killed/injured/kidnapped/arrested) (national)",
+  "category": "human",
+  "group": "Insecurity Insight",
+  "units": "incidents per month",
+  "source": "Insecurity Insight (SiND) via HDX, CC BY-SA 4.0 - 1997-2026 SSD Aid Worker KIKA Incident Data.xlsx",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities",
+  "native_resolution": "national (coordinates censored by source; state in points layer)",
+  "temporal": "monthly",
+  "aggregation": "count of incidents per month, national (county_id SS) - broadcast to all counties",
+  "higher_is": "worse",
+  "index_ok": false,
+  "notes": "NATIONAL ONLY: Insecurity Insight publishes South Sudan incidents with censored coordinates (Admin 1 only), so no county breakdown is possible. Coverage 2018-01..2025-12 (464 incidents; 10 without a usable state). Based on open-source/media and partner reports: counts reflect reporting intensity as much as incidence. State-level counts: data/processed/insecurity_insight/ii_state_monthly.csv; incidents are in the points layer 'insecurity_insight' at state centroids."
+ },
+ {
+  "id": "ii_health_attacks",
+  "label": "Attacks on health care (national)",
+  "category": "human",
+  "group": "Insecurity Insight",
+  "units": "incidents per month",
+  "source": "Insecurity Insight (SiND) via HDX, CC BY-SA 4.0 - 2016-2026 SSD Attacks on Health Care Incident Data.xlsx",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities",
+  "native_resolution": "national (coordinates censored by source; state in points layer)",
+  "temporal": "monthly",
+  "aggregation": "count of incidents per month, national (county_id SS) - broadcast to all counties",
+  "higher_is": "worse",
+  "index_ok": false,
+  "notes": "NATIONAL ONLY: Insecurity Insight publishes South Sudan incidents with censored coordinates (Admin 1 only), so no county breakdown is possible. Coverage 2018-01..2025-12 (143 incidents; 6 without a usable state). Based on open-source/media and partner reports: counts reflect reporting intensity as much as incidence. State-level counts: data/processed/insecurity_insight/ii_state_monthly.csv; incidents are in the points layer 'insecurity_insight' at state centroids."
+ },
+ {
+  "id": "ii_education_attacks",
+  "label": "Attacks on education (national)",
+  "category": "human",
+  "group": "Insecurity Insight",
+  "units": "incidents per month",
+  "source": "Insecurity Insight (SiND) via HDX, CC BY-SA 4.0 - 2017-2025 SSD Education in Danger Incident Data.xlsx",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities",
+  "native_resolution": "national (coordinates censored by source; state in points layer)",
+  "temporal": "monthly",
+  "aggregation": "count of incidents per month, national (county_id SS) - broadcast to all counties",
+  "higher_is": "worse",
+  "index_ok": false,
+  "notes": "NATIONAL ONLY: Insecurity Insight publishes South Sudan incidents with censored coordinates (Admin 1 only), so no county breakdown is possible. Coverage 2018-01..2025-12 (47 incidents; 1 without a usable state). Based on open-source/media and partner reports: counts reflect reporting intensity as much as incidence. State-level counts: data/processed/insecurity_insight/ii_state_monthly.csv; incidents are in the points layer 'insecurity_insight' at state centroids."
+ },
+ {
+  "id": "ii_sexual_violence_incidents",
+  "label": "Conflict-related sexual violence incidents (national)",
+  "category": "human",
+  "group": "Insecurity Insight",
+  "units": "incidents per month",
+  "source": "Insecurity Insight (SiND) via HDX, CC BY-SA 4.0 - 2020-2026 SSD Conflict-Related Sexual Violence (CRSV) Incident Data.xlsx",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities",
+  "native_resolution": "national (coordinates censored by source; state in points layer)",
+  "temporal": "monthly",
+  "aggregation": "count of incidents per month, national (county_id SS) - broadcast to all counties",
+  "higher_is": "worse",
+  "index_ok": false,
+  "notes": "NATIONAL ONLY: Insecurity Insight publishes South Sudan incidents with censored coordinates (Admin 1 only), so no county breakdown is possible. Coverage 2020-01..2025-12 (90 incidents; 1 without a usable state). Based on open-source/media and partner reports: counts reflect reporting intensity as much as incidence. State-level counts: data/processed/insecurity_insight/ii_state_monthly.csv; incidents are in the points layer 'insecurity_insight' at state centroids."
+ }
+]

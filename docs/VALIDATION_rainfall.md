@@ -53,10 +53,9 @@ every pair. The anomaly correlations (each county's own calendar-month mean remo
 | Mayendit | 0.817 | -30.1 |
 | Budi | 0.826 | 17.2 |
 
-## Take-aways
-- Use **CHIRPS** for rainfall levels and anomalies at county scale (finest grid, station-blended, longest record);
-  IMERG and CHIRPS agree closely on anomalies, so IMERG-based indicators (e.g. SPEI) remain consistent.
-- **TerraClimate tc_ppt** is systematically drier (see % bias) and has weaker anomaly agreement; use it for its
-  water-balance variables (soil, deficit, AET) rather than as a rainfall source.
-- Differences are largest in the Sudd/flood-plain and north-eastern counties where satellite IR retrievals and
-  ERA5 fill dominate.
+## Take-aways (computed)
+- **Levels:** CHIRPS and IMERG agree on the seasonal cycle and totals (median county bias CHIRPS vs IMERG -4.5%, median county r 0.919). TerraClimate is far drier (CHIRPS is +58.5%, IMERG +64.6% relative to TerraClimate), so treat tc_ppt as a relative index, not absolute mm.
+- **Anomalies:** agreement on unusual months is only moderate (pooled anomaly r: chirps-imerg 0.328, chirps-terraclimate 0.522, imerg-terraclimate 0.18). The best-agreeing pair is chirps-terraclimate; CHIRPS and TerraClimate both lean on station/ERA5 inputs, while IMERG is satellite-driven with monthly GPCC gauge calibration.
+- **Trends diverge:** linear trend in the county-mean annual total 2018-2025 is CHIRPS -25.5 mm/yr per year, IMERG +5.4, TerraClimate -20.0. A rainfall trend that shows up in only one source should not be reported as real; check all three before interpreting chirps_precip_mm / precip_mm / tc_ppt trend arrows.
+- **Where they disagree most (CHIRPS vs IMERG):** Rubkona (r 0.697, CHIRPS -48.3% vs IMERG); Guit (r 0.754, CHIRPS -42.7% vs IMERG); Ikotos (r 0.806, CHIRPS +14.3% vs IMERG); Mayendit (r 0.817, CHIRPS -30.1% vs IMERG); Budi (r 0.826, CHIRPS +17.2% vs IMERG). Negative biases are typically Sudd wetland / flood-plain counties (open water and flooding confuse satellite retrievals); positive ones are highland counties where station-blended CHIRPS adds orographic rain.
+- **Recommendation:** use CHIRPS for spatial detail (0.05°) and county rainfall levels; keep IMERG-based SPEI as the drought index; quote rainfall anomalies with the cross-source spread in mind.

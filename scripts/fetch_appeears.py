@@ -306,9 +306,10 @@ def proc_et(api, name, tid, files, tmpdir):
         L = min(8, (yend - d0).days + 1)
         p = download(api, tid, f, tmpdir / f["file_name"])
         a, tf, nod = read_tif(p)
+        raw = np.issubdtype(a.dtype, np.integer)
         a = a.astype("float32")
         # raw int16 (scale 0.1, kg/m2/8day); 32761-32767 = fill / non-vegetated classes
-        if np.nanmax(np.where(a < 32000, a, np.nan)) > 400:  # still raw counts
+        if raw:
             a = np.where((a >= 0) & (a < 32700), a * 0.1, np.nan)
         else:  # already scaled
             a = np.where((a >= 0) & (a < 3270), a, np.nan)
@@ -349,8 +350,9 @@ def proc_ndvi13a3(api, name, tid, files, tmpdir):
         ok = (rel == 0) | (rel == 1)
         for k in ("ndvi", "evi"):
             a, tf, _ = read_tif(paths[k])
+            raw = np.issubdtype(a.dtype, np.integer)
             a = a.astype("float32")
-            if np.nanmax(np.abs(a[ok])) > 2:  # raw
+            if raw:
                 a = a * 1e-4
             a = np.where(ok & (a >= -0.2) & (a <= 1.0), a, np.nan)
             g = to_grid(a, tf)

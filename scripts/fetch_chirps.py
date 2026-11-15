@@ -154,6 +154,32 @@ def validation(chirps_long):
     worst = rows.sort_values("r_chirps_imerg").head(5)[["name", "r_chirps_imerg", "pct_bias_chirps_vs_imerg"]]
     med = rows[[c for c in rows.columns if c.startswith(("r_", "pct_bias"))]].median().round(3)
 
+    # Sen-free simple OLS slope of the county-mean annual total, mm/yr per year
+    yrs = ann.index.astype(int).values
+    slope = {k: round(float(np.polyfit(yrs, ann[k].values, 1)[0]), 1) for k in ("chirps", "imerg", "terraclimate")}
+    best_anom = max(pooled_anom, key=pooled_anom.get)
+    worst_names = ", ".join(worst.name.astype(str))
+    takeaways = "\n".join([
+        f"- **Levels:** CHIRPS and IMERG agree on the seasonal cycle and totals (median county bias CHIRPS vs IMERG "
+        f"{med['pct_bias_chirps_vs_imerg']}%, median county r {med['r_chirps_imerg']}). TerraClimate is far drier "
+        f"(CHIRPS is +{med['pct_bias_chirps_vs_terraclimate']}%, IMERG +{med['pct_bias_imerg_vs_terraclimate']}% "
+        f"relative to TerraClimate), so treat tc_ppt as a relative index, not absolute mm.",
+        f"- **Anomalies:** agreement on unusual months is only moderate (pooled anomaly r: "
+        + ", ".join(f"{k} {v}" for k, v in pooled_anom.items()) + f"). The best-agreeing pair is {best_anom}; "
+        "CHIRPS and TerraClimate both lean on station/ERA5 inputs, while IMERG is satellite-driven with monthly "
+        "GPCC gauge calibration.",
+        f"- **Trends diverge:** linear trend in the county-mean annual total 2018-2025 is CHIRPS {slope['chirps']:+} "
+        f"mm/yr per year, IMERG {slope['imerg']:+}, TerraClimate {slope['terraclimate']:+}. A rainfall trend that "
+        "shows up in only one source should not be reported as real; check all three before interpreting "
+        "chirps_precip_mm / precip_mm / tc_ppt trend arrows.",
+        f"- **Where they disagree most (CHIRPS vs IMERG):** "
+        + "; ".join(f"{r.name} (r {r.r_chirps_imerg}, CHIRPS {r.pct_bias_chirps_vs_imerg:+}% vs IMERG)"
+                    for r in worst.itertuples())
+        + ". Negative biases are typically Sudd wetland / flood-plain counties (open water and flooding confuse "
+        "satellite retrievals); positive ones are highland counties where station-blended CHIRPS adds orographic rain.",
+        "- **Recommendation:** use CHIRPS for spatial detail (0.05°) and county rainfall levels; keep IMERG-based SPEI "
+        "as the drought index; quote rainfall anomalies with the cross-source spread in mind."])
+
     def md_table(df):
         cols = [str(c) for c in df.columns]
         out = ["| " + " | ".join(cols) + " |", "|" + "---|" * len(cols)]
@@ -197,13 +223,8 @@ every pair. The anomaly correlations (each county's own calendar-month mean remo
 
 {md_table(worst)}
 
-## Take-aways
-- Use **CHIRPS** for rainfall levels and anomalies at county scale (finest grid, station-blended, longest record);
-  IMERG and CHIRPS agree closely on anomalies, so IMERG-based indicators (e.g. SPEI) remain consistent.
-- **TerraClimate tc_ppt** is systematically drier (see % bias) and has weaker anomaly agreement; use it for its
-  water-balance variables (soil, deficit, AET) rather than as a rainfall source.
-- Differences are largest in the Sudd/flood-plain and north-eastern counties where satellite IR retrievals and
-  ERA5 fill dominate.
+## Take-aways (computed)
+{takeaways}
 """
     DOC.write_text(txt)
     print(txt[:3000], flush=True)

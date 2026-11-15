@@ -70,5 +70,13 @@
   "source": "IOM DTM South Sudan Flow Monitoring Registry (team unified dataset)",
   "source_url": "data/raw/ssd_unified/README.md",
   "notes": "Where FMR counts travellers; FMR numbers depend on these locations"
+ },
+ {
+  "key": "insecurity_insight",
+  "label": "Insecurity Insight incidents (aid workers, health, education, CRSV)",
+  "category": "human",
+  "source": "Insecurity Insight (Security in Numbers Database) via HDX, CC BY-SA 4.0",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities",
+  "notes": "One point per incident 2018-2025 with `date`, `type`, `victims`. LOW GEOLOCATION PRECISION: the source censors coordinates, so points sit at the centroid of the reported state / administrative area (`geo_precision`), stacked on top of each other - do not read them as incident locations. Records with no state ('No Information') or outside South Sudan are dropped from the layer."
  }
 ]
