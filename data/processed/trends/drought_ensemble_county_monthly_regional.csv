@@ -1,0 +1,15 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+dr_pdsi_tc_z,national,-8078,0.105,79,-8.23423,-0.122925
+dr_pdsi_tc_z,sudd,-1480,0.188,16,-7.15316,-0.109006
+dr_spei3_tc,national,-4539,0.061,79,0,0
+dr_spei3_tc,sudd,-863,0.099,16,0,0
+dr_spi3_chirps,national,-5773,0.006,79,-37.2722,-0.113737
+dr_spi3_chirps,sudd,-958,0.046,16,-24.1684,-0.0834314
+drought_ensemble_agree,national,1971,0.098,79,0,0
+drought_ensemble_agree,sudd,106,0.769,16,0,0
+drought_ensemble_mean,national,-7258,0.02,79,-22.6116,-0.1166
+drought_ensemble_mean,sudd,-1048,0.09,16,-12.8596,-0.0819375
+drought_ensemble_range,national,2893,0.125,79,1.72265,0.0491217
+drought_ensemble_range,sudd,1532,0.032,16,3.98401,0.104752
+drought_ensemble_spread,national,2813,0.173,79,1.89506,0.0221
+drought_ensemble_spread,sudd,1439,0.047,16,3.51962,0.0440483

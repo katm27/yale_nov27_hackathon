@@ -1,0 +1,11 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+acled_civ_events,national,2996,0.024,79,0,0
+acled_civ_events,sudd,572,0.035,16,0,0
+acled_civ_fatalities,national,1844,0.027,79,0,0
+acled_civ_fatalities,sudd,433,0.026,16,0,0
+acled_demonstrations,national,388,0.014,79,0,0
+acled_demonstrations,sudd,36,0.417,16,0,0
+acled_pv_events,national,3679,0.022,79,0,0
+acled_pv_events,sudd,662,0.048,16,0,0
+acled_pv_fatalities,national,2311,0.016,79,0,0
+acled_pv_fatalities,sudd,510,0.034,16,0,0

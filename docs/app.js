@@ -161,7 +161,7 @@
   let countyLayer;
 
   // ---------- trends (Mann-Kendall / Sen's slope, computed by scripts/trend_stats.py) ----------
-  const T_P = 0, T_Q = 1, T_SEN = 2, T_PCT = 3, T_TAU = 4, T_N = 5, T_SIG = 6, T_TEST = 7, T_TXT = 8;
+  const T_P = 0, T_Q = 1, T_SEN = 2, T_PCT = 3, T_TAU = 4, T_N = 5, T_SIG = 6, T_TEST = 7, T_TXT = 8, T_LISA = 9, T_PNAIVE = 10;
   const trendOf = (vid, cid) => (state.trends && state.trends[vid] && state.trends[vid][cid]) || null;
   function trendHtml(v, cid, compact) {
     const tr = trendOf(v.id, cid);
@@ -169,7 +169,7 @@
     const sigTxt = tr[T_SIG] ? `<span class="sig-badge">◆ Significant trend</span>` : `<span class="nosig-badge">No significant trend</span>`;
     const slope = tr[T_SEN] == null ? "n/a" : `${tr[T_SEN] >= 0 ? "+" : ""}${fmt(tr[T_SEN])} ${v.units || ""}/yr`;
     const pct = tr[T_PCT] == null ? "" : ` (${tr[T_PCT] >= 0 ? "+" : ""}${fmt(tr[T_PCT], 2)}%/yr)`;
-    const stats = `Sen's slope ${slope}${pct} · ${tr[T_TEST] === "S" ? "seasonal " : ""}Mann-Kendall p = ${fmt(tr[T_P], 2)}, FDR q = ${fmt(tr[T_Q], 2)}, n = ${tr[T_N]}`;
+    const stats = `Sen's slope ${slope}${pct} · ${tr[T_TEST] === "S" ? "seasonal Mann-Kendall with Hirsch–Slack persistence correction" : "Mann-Kendall with Hamed–Rao persistence correction"}: p = ${fmt(tr[T_P], 2)}${tr[T_PNAIVE] != null ? ` (uncorrected ${fmt(tr[T_PNAIVE], 2)})` : ""}, FDR q = ${fmt(tr[T_Q], 2)}, n = ${tr[T_N]}${tr[T_LISA] && tr[T_LISA] !== "ns" ? ` · Local Moran's I cluster: ${tr[T_LISA]}` : ""}`;
     return `<div class="trend">${sigTxt}<div class="trend-txt">${tr[T_TXT]}</div>${compact ? "" : `<div class="trend-stats">${stats}</div>`}</div>`;
   }
 
@@ -292,7 +292,10 @@
     if (v.temporal && v.temporal !== "monthly") html += `<div class="note">Time step of source: ${v.temporal}${v.carry_forward_months ? ` (latest value carried forward up to ${v.carry_forward_months} months)` : ""}.</div>`;
     if (state.trends && state.trends[v.id]) {
       const nSig = Object.values(state.trends[v.id]).filter((t) => t[T_SIG]).length;
-      html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall, false-discovery-rate q &lt; 0.05 across counties): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
+      const reg = v.regional || {}, rtxt = (k, lab) => reg[k] ? `${lab}: median ${trendIsPct(v) && reg[k].median_pct != null ? `${reg[k].median_pct >= 0 ? "+" : ""}${fmt(reg[k].median_pct, 2)}%/yr` : `${fmt(reg[k].median_slope)} ${v.units || ""}/yr`}, regional Kendall p = ${fmt(reg[k].p, 2)}${reg[k].p < 0.05 ? " <b>(significant)</b>" : ""}` : "";
+      if (reg.national || reg.sudd) html += `<div class="note"><b>Regional trend</b> (pools counties; bootstrap over years keeps spatial & seasonal correlation) — ${[rtxt("national", "all counties"), rtxt("sudd", "Sudd")].filter(Boolean).join(" · ")}</div>`;
+      if (v.trend_moran_I != null) html += `<div class="note"><b>Spatial clustering of trends</b>: Moran's I = ${fmt(v.trend_moran_I, 2)} (p = ${fmt(v.trend_moran_p, 2)})${v.trend_moran_p < 0.05 ? " — neighbouring counties trend alike, so read trends regionally" : ""}.</div>`;
+      html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall corrected for month-to-month persistence, then false-discovery-rate q &lt; 0.05 across counties): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
     }
     html += `<div class="note"><span class="nodata"></span> no data · Source: ${v.source || "–"}${v.native_resolution ? ` · ${v.native_resolution}` : ""}</div>`;
     const rs = [...state.rasterOn].map((k) => state.rasters.find((r) => r.key === k)).filter(Boolean);

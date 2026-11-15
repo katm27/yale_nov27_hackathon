@@ -1,0 +1,7 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+s5p_aerosol_index,national,8909,0.065,79,11.1034,0.113433
+s5p_aerosol_index,sudd,1706,0.073,16,10.7865,0.106337
+s5p_co,national,2502,0.354,79,0.560836,0.174646
+s5p_co,sudd,279,0.633,16,0.414645,0.137819
+s5p_no2,national,837,0.643,79,0.329334,0.0531333
+s5p_no2,sudd,-153,0.618,16,-0.324795,-0.0506685

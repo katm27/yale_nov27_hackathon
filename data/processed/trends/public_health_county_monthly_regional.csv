@@ -1,0 +1,5 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+vacc_mcv1_cov,national,,,78,,
+vacc_mcv1_cov,sudd,,,16,,
+vacc_penta3_cov,national,,,78,,
+vacc_penta3_cov,sudd,,,16,,

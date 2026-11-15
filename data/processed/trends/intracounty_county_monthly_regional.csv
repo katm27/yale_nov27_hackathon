@@ -1,0 +1,9 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+intracounty_communal_deaths,national,-74,0.211,79,0,0
+intracounty_communal_deaths,sudd,6,0.851,16,,0
+intracounty_communal_events,national,-135,0.036,79,0,0
+intracounty_communal_events,sudd,-7,0.791,16,0,0
+intracounty_conflict_deaths,national,-170,0.028,79,0,0
+intracounty_conflict_deaths,sudd,-1,0.984,16,0,0
+intracounty_conflict_events,national,-237,0.008,79,0,0
+intracounty_conflict_events,sudd,-14,0.593,16,0,0

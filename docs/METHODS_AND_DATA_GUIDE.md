@@ -615,6 +615,12 @@ A flagged variable then gets `index_ok = false` and `baseline_mode = "annual"`.
   of one state, so they vary between states but not within a state.
 
 ### 3.7 Trend statistics (`scripts/trend_stats.py`)
+
+> **Updated 15 Nov 2026:** trend significance now corrects for month-to-month persistence (Hirsch–Slack correlated
+> seasonal Kendall for monthly series; Hamed–Rao for annual/survey series with n ≥ 10), then applies the
+> false-discovery-rate correction across counties. The spatial structure of each trend map is described with global
+> and local Moran's I, and regional claims use a regional Kendall test with a year-block bootstrap (national and
+> Sudd). Plain-language explanation, formulas and results: [`STATISTICS_EXPLAINED.md`](STATISTICS_EXPLAINED.md).
 Trends are computed for every county × variable on the **observed values in 2018-01…2025-12**: no carry-forward,
 and only the months present in the processed CSV. The tests are non-parametric. They suit skewed, zero-heavy and
 non-normal series and make no assumption that the trend is linear.
@@ -1027,6 +1033,8 @@ Medium at best.
   the final change-detection method.
 - **Crosswalk bugs fixed** (§2.2): Abyei HNO 2024–25, ET foreign and combined origins, Renk River Port FMR point.
 - **Legend wording** now states the FDR rule.
+- **Persistence correction** (Hirsch–Slack / Hamed–Rao) and **spatial statistics** (Moran's I, LISA, regional
+  Kendall bootstrap) added — see `STATISTICS_EXPLAINED.md`. Significant county-variables fell from 4,510 to 1,015.
 - **No "% of 2018 level" phrase** for °C / index variables in the hover sentence (only when a ratio is meaningful).
 - **Counts are summed over seasons/years** in raw mode (variables flagged `aggregate: "sum"` by the build — people, events, deaths, incidents, detections); index modes still compare monthly averages.
 - **Survey stocks in flow arrows** use only the latest month of a season/year window (no repeated summing).
@@ -1036,7 +1044,6 @@ Medium at best.
 
 | Issue | Effect | Fix |
 |---|---|---|
-| MK p-values ignore autocorrelation (flagged in the sentence only) | Over-confident significance for temperature (77/79 counties), drought ensemble (72/79), prices, population, flood series | Hamed–Rao variance correction or Yue–Pilon pre-whitening in `trend_stats.py` |
 | Drought-ensemble trend artefact | The TerraClimate members' dry drift produces "significant drying" in 72/79 counties | Trend-test the CHIRPS and IMERG members only, or re-baseline the TerraClimate members to 2000–2025 |
 | National timeline `mean` is unweighted | Small counties weigh as much as large ones | Area-weight (climate) or population-weight (human) |
 | Carried survey values look like observations | Users may read an 8-month-old IPC or DTM value as current | Hatch or fade carried months in charts and on the map |

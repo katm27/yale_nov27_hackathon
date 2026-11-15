@@ -1,0 +1,15 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+pet_mm,national,7418,0.036,79,1.11066,1.55525
+pet_mm,sudd,1432,0.051,16,1.02046,1.49304
+precip_mm,national,1201,0.106,79,0.0283624,0.0189286
+precip_mm,sudd,1146,0.04,16,2.61135,2.03948
+soilwet_root,national,-4132,0.151,79,-0.0862565,-0.0005
+soilwet_root,sudd,-814,0.244,16,-0.0361631,-0.0002375
+spei3,national,-4158,0.148,79,-17.8986,-0.0863
+spei3,sudd,251,0.747,16,3.80543,0.00779167
+tair_c,national,7413,0.04,79,0.591604,0.165875
+tair_c,sudd,1428,0.065,16,0.600745,0.171146
+tmax_c,national,6630,0.043,79,0.531776,0.18325
+tmax_c,sudd,1318,0.061,16,0.545483,0.190167
+tmin_c,national,8127,0.025,79,0.612447,0.136583
+tmin_c,sudd,1607,0.04,16,0.582223,0.132412

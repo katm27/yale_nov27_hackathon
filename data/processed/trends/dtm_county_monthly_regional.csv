@@ -1,0 +1,15 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+dtm_et_events,national,680,0.056,79,0,0
+dtm_et_events,sudd,75,0.369,16,0,0
+dtm_et_new_idps,national,33,0.892,79,0,0
+dtm_et_new_idps,sudd,14,0.895,16,0,0
+dtm_et_new_idps_conflict,national,140,0.447,79,0,0
+dtm_et_new_idps_conflict,sudd,49,0.401,16,0,0
+dtm_et_new_idps_disaster,national,-76,0.647,79,0,0
+dtm_et_new_idps_disaster,sudd,-26,0.683,16,0,0
+dtm_et_returnees,national,616,0.167,79,0,0
+dtm_et_returnees,sudd,65,0.482,16,0,0
+dtm_idps,national,17,0.887,78,0.380329,119.594
+dtm_idps,sudd,175,0.003,16,15.5677,2963.02
+dtm_returnees,national,749,0.001,78,27.5992,1918.71
+dtm_returnees,sudd,113,0.012,16,30.0995,1699.02

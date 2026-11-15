@@ -111,8 +111,25 @@ def build_trends(variables: list[dict], county_ids: list[str]) -> None:
     for var, g in t.groupby("variable"):
         out[var] = {r.county_id: [sig(r.p, 3), sig(r.q_fdr, 3), sig(r.sen_slope_per_year), sig(r.sen_slope_pct_per_year, 3),
                                   sig(r.tau, 3), int(r.n), int(bool(r.significant)),
-                                  "S" if str(r.test).startswith("seasonal") else "M", r.interpretation]
+                                  "S" if str(r.test).startswith("seasonal") else "M", r.interpretation,
+                                  getattr(r, "lisa", "ns") if isinstance(getattr(r, "lisa", None), str) else "ns",
+                                  sig(getattr(r, "p_naive", float("nan")), 3)]
                     for r in g.drop_duplicates("county_id", keep="last").itertuples()}
+    # spatial + regional statistics into variable metadata
+    byid = {v["id"]: v for v in variables}
+    for var, g in t.groupby("variable"):
+        if var in byid and "moran_I" in g and g["moran_I"].notna().any():
+            byid[var]["trend_moran_I"] = sig(float(g["moran_I"].dropna().iloc[0]), 3)
+            byid[var]["trend_moran_p"] = sig(float(g["moran_p"].dropna().iloc[0]), 3)
+    regf = [f for f in glob.glob(os.path.join(ROOT, "data", "processed", "trends", "*_regional.csv")) if os.path.getsize(f) > 5]
+    if regf:
+        reg = pd.concat([pd.read_csv(f) for f in regf], ignore_index=True).dropna(subset=["S"])
+        reg = reg.sort_values("n_counties").drop_duplicates(["variable", "region"], keep="last")
+        for r in reg.itertuples():
+            if r.variable in byid:
+                byid[r.variable].setdefault("regional", {})[r.region] = {
+                    "S": sig(r.S), "p": sig(r.p_boot, 3), "n": int(r.n_counties),
+                    "median_pct": sig(r.median_sen_pct_per_year, 3), "median_slope": sig(r.median_sen_per_year, 3)}
     with open(os.path.join(OUT, "trends.json"), "w") as fh:
         json.dump(out, fh, separators=(",", ":"))
     n_sig = int(t["significant"].sum())
@@ -364,6 +381,8 @@ def main() -> None:
         import shutil
         shutil.copy(prof, os.path.join(OUT, "profiles.json"))
     build_trends(variables, county_ids)
+    with open(os.path.join(OUT, "variables.json"), "w") as fh:   # rewrite with spatial/regional trend metadata
+        json.dump({"months": MONTH_STR, "variables": variables}, fh, indent=1)
     build_flows(counties)
     with open(os.path.join(OUT, "layers.json"), "w") as fh:
         json.dump({"points": points, "rasters": rasters}, fh, indent=1)

@@ -1,0 +1,3 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+chirps_precip_mm,national,-3525,0.012,79,-0.214817,-0.16875
+chirps_precip_mm,sudd,-589,0.039,16,-0.0208688,-0.0166667
