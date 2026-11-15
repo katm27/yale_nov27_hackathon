@@ -174,7 +174,7 @@
 
   // ---------- trends (Mann-Kendall / Sen's slope, computed by scripts/trend_stats.py) ----------
   const T_P = 0, T_Q = 1, T_SEN = 2, T_PCT = 3, T_TAU = 4, T_N = 5, T_SIG = 6, T_TEST = 7, T_TXT = 8, T_LISA = 9, T_PNAIVE = 10, T_TODATE = 11, T_BASIS = 12;
-  const BASIS_TXT = { wet_season: "Jun–Sep wet-season total", flood_season: "Aug–Nov flood-season average", annual_total: "annual totals", seasonal: "same-month comparisons" };
+  const BASIS_TXT = { vs_base_month: "each month compared with the same month of 2018", wet_season: "Jun–Sep wet-season total", flood_season: "Aug–Nov flood-season average", annual_total: "annual totals", seasonal: "same-month comparisons" };
   // trend map follows the slider: Sen's slope from 2018 to the slider's year (needs ≥3 years, so 2020 at the earliest)
   const trendYear = () => Math.min(2025, Math.max(2020, +state.months[state.t].slice(0, 4)));
   const trendOf = (vid, cid) => (state.trends && state.trends[vid] && state.trends[vid][cid]) || null;

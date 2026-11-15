@@ -418,6 +418,31 @@ BASIS_TEXT = {"wet_season": "Jun–Sep wet-season total", "flood_season": "Aug�
               "annual_total": "annual total", "seasonal": "same-month comparisons", "observed": "observed values"}
 
 
+def anchored_month_slope(d: pd.Series, x: np.ndarray, base_year: int, upto: int | None = None):
+    """Seasonality-controlled slope anchored on the baseline year (default 2018).
+
+    For every month (y, m) after the baseline year, compare it with the SAME calendar month of the baseline year:
+        slope_ym = (x[y,m] - x[base,m]) / (y - base)            (units per year)
+        pct_ym   = 100 * (x[y,m] - x[base,m]) / |x[base,m]| / (y - base)   (% of that month's baseline value per year)
+    Headline = median over all (y, m). Pairs where both values are 0 (e.g. dry-season rain, months with no events)
+    carry no information and are skipped, so they cannot drag the median to zero.
+    """
+    yy, mm = d.dt.year.to_numpy(), d.dt.month.to_numpy()
+    base = {m: v for y, m, v in zip(yy, mm, x) if y == base_year and np.isfinite(v)}
+    sl, pc = [], []
+    for y, m, v in zip(yy, mm, x):
+        if y <= base_year or (upto is not None and y > upto) or m not in base or not np.isfinite(v):
+            continue
+        b = base[m]
+        if v == 0 and b == 0:
+            continue
+        k = y - base_year
+        sl.append((v - b) / k)
+        if abs(b) > 1e-9:
+            pc.append(100 * (v - b) / abs(b) / k)
+    return (float(np.median(sl)) if sl else np.nan), (float(np.median(pc)) if pc else np.nan), len(sl)
+
+
 def display_slope(d: pd.Series, x: np.ndarray, basis: str, t: np.ndarray, season: np.ndarray):
     """Headline Sen's slope per year on the chosen basis, and the baseline (first-year) value for a % figure."""
     if basis in ("wet_season", "flood_season", "annual_total"):
@@ -473,12 +498,22 @@ def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "month
     # headline slope on a seasonal-aware basis (+ trend-to-date for the slider)
     meta = meta or {}
     season_ = d.dt.month.to_numpy()
+    res["sparse"] = bool(len(x) and np.mean(x == 0) > 0.4)
+    if temporal == "monthly" and (d.dt.year == by).any():
+        # seasonality-controlled: each month vs the same month of the baseline year
+        res["basis"] = "vs_base_month"
+        sl, pc, npairs = anchored_month_slope(d, x, by)
+        res["display_slope"], res["display_pct"] = sl, pc
+        res["display_base"] = res["baseline_mean"]
+        for Y in range(2020, 2026):
+            s2, p2, n2 = anchored_month_slope(d, x, by, upto=Y)
+            res[f"todate_{Y}"], res[f"todate_pct_{Y}"] = (s2, p2) if Y - by >= 2 and n2 else (np.nan, np.nan)
+        return res
     basis = basis_of(var, {**meta, "temporal": temporal}, x)
     sl, b0, _ = display_slope(d, x, basis, t, season_)
     res["basis"] = basis
     res["display_slope"] = sl
     res["display_base"] = b0 if np.isfinite(b0) else res["baseline_mean"]
-    res["sparse"] = bool(len(x) and np.mean(x == 0) > 0.4)
     for Y in range(2020, 2026):
         m_ = (d.dt.year <= Y).to_numpy()
         if m_.sum() >= 3 and d[m_].dt.year.nunique() >= 3:
@@ -490,7 +525,15 @@ def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "month
 
 
 def interpret(row: dict, meta: dict) -> str:
-    """One plain-language sentence for the map hover."""
+    """One plain-language sentence for the map hover (wraps _interpret)."""
+    txt = _interpret(row, meta)
+    if row.get("basis") == "vs_base_month":
+        by = meta.get("baseline_year", 2018)
+        txt = txt.replace("Sen's slope ", f"median change vs the same month of {by}: ").replace("about ", f"median change vs the same month of {by} ≈ ")
+    return txt
+
+
+def _interpret(row: dict, meta: dict) -> str:
     p, slope, q = row.get("p"), row.get("sen_slope_per_year"), row.get("q_fdr")
     if row.get("test") is None or p is None or not np.isfinite(p):
         return "Too few observations for a trend test."
@@ -498,6 +541,8 @@ def interpret(row: dict, meta: dict) -> str:
     pct = row.get("sen_slope_pct_per_year")
     pct_txt = f" ({pct:+.1f}% of the {meta.get('baseline_year', 'baseline')} level per year)" if row.get("pct_ok") and pct is not None and np.isfinite(pct) else ""
     basis = row.get("basis")
+    if basis == "vs_base_month":
+        pct_txt = pct_txt.replace(" level per year", " same-month level per year")
     if basis in ("wet_season", "flood_season", "annual_total"):
         u0 = _RE.sub(r"\s*(/\s*month|per month)", "", units) if basis in ("wet_season", "annual_total") else units
         units = {"wet_season": f"{u0} (Jun–Sep total)", "flood_season": f"{units} (Aug–Nov average)", "annual_total": f"{u0} (annual total)"}[basis]
@@ -568,11 +613,17 @@ def compute_trends(df: pd.DataFrame, meta: dict | None = None, window: tuple[str
             r["sen_slope_per_year"] = r["display_slope"]
         b = r.get("display_base", r["baseline_mean"])
         r["pct_ok"] = pct_ok
-        r["sen_slope_pct_per_year"] = 100 * r["sen_slope_per_year"] / abs(b) if pct_ok and b is not None and np.isfinite(b) and abs(b) > 1e-9 else np.nan
-        for Y in range(2020, 2026):
-            k = f"todate_{Y}"
-            if pct_ok and b is not None and np.isfinite(b) and abs(b) > 1e-9 and np.isfinite(r.get(k, np.nan)):
-                r[k] = 100 * r[k] / abs(b)
+        if r.get("basis") == "vs_base_month":
+            r["sen_slope_pct_per_year"] = r.get("display_pct", np.nan) if pct_ok else np.nan
+            for Y in range(2020, 2026):
+                if pct_ok:
+                    r[f"todate_{Y}"] = r.get(f"todate_pct_{Y}", np.nan)
+        else:
+            r["sen_slope_pct_per_year"] = 100 * r["sen_slope_per_year"] / abs(b) if pct_ok and b is not None and np.isfinite(b) and abs(b) > 1e-9 else np.nan
+            for Y in range(2020, 2026):
+                k = f"todate_{Y}"
+                if pct_ok and b is not None and np.isfinite(b) and abs(b) > 1e-9 and np.isfinite(r.get(k, np.nan)):
+                    r[k] = 100 * r[k] / abs(b)
         r["direction"] = direction_of(var, m)
         rows.append(r)
     out = pd.DataFrame(rows)

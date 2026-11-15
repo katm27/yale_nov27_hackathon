@@ -1,7 +1,7 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
-surface_water_km2,national,6287,0.001,79,30.226,5.55425
-surface_water_km2,sudd,2505,0.001,16,77.494,41.5312
+surface_water_km2,national,6287,0.001,79,44.292,3.36308
+surface_water_km2,sudd,2505,0.001,16,66.4308,25.0678
 surface_water_obs_pct,national,552,0.536,79,,0
 surface_water_obs_pct,sudd,145,0.412,16,,0
-surface_water_pct,national,6288,0.001,79,,0.06925
-surface_water_pct,sudd,2505,0.001,16,,0.883275
+surface_water_pct,national,6288,0.001,79,,0.0458
+surface_water_pct,sudd,2505,0.001,16,,0.403969

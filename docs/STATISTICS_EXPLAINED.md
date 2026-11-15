@@ -140,3 +140,17 @@ end years), so early maps built on 3 years look more extreme than later ones; th
 - **No per-pixel significance test.** With 3–8 points a pixel slope describes change; it does not prove a trend.
   Use the county trends (sections 3–5) for significance.
 - Built by `scripts/raster_trends.py`.
+
+## 8. Headline trend: each month vs the same month of 2018 (seasonality-controlled)
+
+Since 15 Nov 2026 the headline slope for every monthly series compares each month with the **same calendar month of
+the baseline year** (2018, or a source's first full year):
+
+    change_ym = (x[y, m] − x[2018, m]) / (y − 2018)              e.g. (Jan 2024 − Jan 2018) / 6, (Feb 2022 − Feb 2018) / 4
+    % change_ym = 100 · (x[y, m] − x[2018, m]) / |x[2018, m]| / (y − 2018)
+
+The headline value is the median over all months after 2018 (a Sen-type estimator anchored on 2018), so January is only
+ever compared with January. Pairs where both months are 0 (dry-season rain, months without events) carry no information
+and are skipped. The "trend to date" for slider year Y uses only months up to Y. Significance still comes from the
+seasonal Mann-Kendall test (Hirsch–Slack corrected), which likewise compares like months only. Annual or survey-round
+series (no months) keep the ordinary Sen's slope.

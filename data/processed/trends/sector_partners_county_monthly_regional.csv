@@ -1,5 +1,5 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
 nutrition_partners,national,-3676,0.042,79,,0
-nutrition_partners,sudd,-1062,0.023,16,,-0.0916667
-protection_partners,national,2047,0.118,79,,0.166667
-protection_partners,sudd,167,0.517,16,,0
+nutrition_partners,sudd,-1062,0.023,16,,-0.2
+protection_partners,national,2047,0.118,79,,0
+protection_partners,sudd,167,0.517,16,,-0.141667

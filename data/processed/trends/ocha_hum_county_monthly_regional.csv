@@ -3,7 +3,7 @@ hno_pin,national,211,0.103,79,4.10334,3106
 hno_pin,sudd,20,0.44,16,-0.321979,-255
 hno_severity,national,,,79,,
 hno_severity,sudd,,,16,,
-ops_orgs,national,-2827,0.012,79,-3.33333,-0.225
-ops_orgs,sudd,-1096,0.012,16,-4.04367,-0.575
+ops_orgs,national,-2827,0.012,79,-1.53846,-0.2
+ops_orgs,sudd,-1096,0.012,16,-7.20779,-1
 ops_orgs_national_ngo,national,86,0.926,79,0,0
-ops_orgs_national_ngo,sudd,-320,0.181,16,0,0
+ops_orgs_national_ngo,sudd,-320,0.181,16,-8,-0.266667
