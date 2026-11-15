@@ -12,10 +12,14 @@ script only converts it.
 Run: python3 scripts/fetch_flows_dtm_renk_intentions.py
 """
 import csv
+import sys
 from collections import defaultdict
 from pathlib import Path
 
 import openpyxl
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from county_crosswalk import to_ocha  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data/raw/flows/dtm_renk_intentions/renk_tc_intention_survey_2024-07_node41946.xlsx"
@@ -45,7 +49,7 @@ def main():
         if r[i_cty] != "South Sudan" or not r[i_adm2] or str(r[i_adm2]).upper() == "NA":
             dropped += n
             continue
-        pc = name2pc.get(norm(r[i_adm2]))
+        pc = to_ocha(r[i_adm2], "iom_dtm")
         if not pc:
             unmatched[r[i_adm2]] += n
             continue

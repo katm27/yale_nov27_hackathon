@@ -19,18 +19,15 @@ import numpy as np
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from human_common import RAW, download, hdx_resources, load_counties, norm_name, finalize, base_meta
+from human_common import RAW, download, hdx_resources, load_counties, finalize, base_meta
+from county_crosswalk import to_ocha
 
 SRC = "ipc"
 RAWD = RAW / "ipc"
-ALIAS = {"raga": "raja", "waururalonly": "wau", "yeicounty": "yei", "abyeiregion": "abyei",
-         "akoka": "baliet", "kajokeji": "kajokeji"}
-
-
 def county_lookup():
-    g = load_counties()
-    m = {norm_name(n): p for n, p in zip(g.name, g.district_id)}
-    return lambda name: m.get(ALIAS.get(norm_name(name), norm_name(name)))
+    """IPC area name -> OCHA P-code via data/crosswalks/county_crosswalk_master.csv (Akoka -> Baliet,
+    'Wau (Rural Only)' -> Wau, 'Abyei region' -> Abyei, Raga -> Raja ...). 'Returnees' -> None (dropped)."""
+    return lambda name: to_ocha(name, "ipc")
 
 
 def fetch():

@@ -1,0 +1,1 @@
+WPDx-Basic, Socrata https://data.waterpointdata.org/resource/eqje-vguj.json?$where=clean_country_name='South Sudan' (downloaded Nov 2026, 6099 rows). Licence CC BY 4.0. Also on HDX: https://data.humdata.org/dataset/wpdx_ssd

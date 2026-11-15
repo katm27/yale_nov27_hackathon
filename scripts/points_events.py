@@ -6,7 +6,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from points_temporal import read_fc, write_fc, set_validity, stamp_events, clip_window
+from points_temporal import read_fc, write_fc, set_validity, stamp_events, clip_window, tag_meta
 
 
 def check(name):
@@ -21,6 +21,8 @@ def main():
     for name, basis in [("points_ucdp_events.geojson", "event date (UCDP GED date_start)"),
                         ("points_insecurity_insight.geojson", "event date (Insecurity Insight incident date)")]:
         n, bad = stamp_events(name, basis=basis)
+        tag_meta(name.replace("points_", "").replace(".geojson", ""),
+                 "Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).")
         print(name, "events", n, "unparseable", bad, "check (n, outside 2018-2025, year!=date, min, max):", check(name))
     fc = read_fc("polygons_ethnic_groups.geojson")
     for f in fc["features"]:

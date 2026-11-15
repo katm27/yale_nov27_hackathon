@@ -30,6 +30,9 @@ from pathlib import Path
 
 import openpyxl
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from county_crosswalk import to_ocha  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 RAW = ROOT / "data/raw/flows/dtm_mt_od"
 OUT = ROOT / "data/processed/flows"
@@ -210,7 +213,7 @@ def main():
             to = str(r[pc_idx] or "").strip()
             if not re.fullmatch(r"SS\d{4}", to):
                 continue
-            to = iom2ocha.get(to, to)
+            to = to_ocha(to) or to
             if to not in valid:
                 unmatched[f"R{rnd} dest code {to}"] += 1
                 continue
@@ -226,7 +229,7 @@ def main():
                 if oname.lower() in NULLS:
                     unmatched[f"{layer}: origin blank/unknown"] += ind
                     continue
-                frm = name2pc.get(norm(oname))
+                frm = to_ocha(oname, "iom_dtm")  # master crosswalk (scripts/county_crosswalk.py)
                 if not frm:
                     unmatched[f"{layer}: origin name '{oname}'"] += ind
                     continue

@@ -1,6 +1,8 @@
 """Validate the Sentinel-1 flood layer (flood_s1_pipeline.py) against UNOSAT VIIRS flood maps.
 
-1. Pixel level (~440 m grid): UNOSAT 5-day flood-extent + permanent-water polygons, 2021-09..2022-10
+1. Pixel level (~440 m grid), "new flood": UNOSAT water on a date MINUS UNOSAT water on 10-14 Mar 2022 (dry-season
+   reference, analogous to the S1 March reference) vs S1 flood class (w == 1|2 minus open water in March 2022).
+   UNOSAT 5-day flood-extent + permanent-water polygons, 2021-09..2022-10
    (FL20220424SSD_SHP.zip from https://unosat.org/static/unosat_filesystem/3399/FL20220424SSD_SHP.zip, unzipped in
    data/raw/unosat_floods/_cache/), UNOSAT cloud-obstruction areas excluded. Metrics: F1, IoU, area ratio S1/UNOSAT.
    NOTE: 2022-10-04..08 was used to choose the S1 thresholds -> reported separately (not independent).
@@ -40,6 +42,10 @@ def pixel_level():
     lab = hc.labels_for(gc, gtr, gs)
     area = f.pixel_area_km2(gtr, gs)
     water = {m: w for m, w, _ in f.water_series()}
+    ref_d = "20220310_20220314"
+    Uref = rast(SHP / f"VIIRS_{ref_d}_MaximumFloodWaterExtent_SouthSudan.shp", gtr, gs) | rast(SHP / f"VIIRS_{ref_d}_PermanentWater_SouthSudan.shp", gtr, gs)
+    cref = rast(SHP / f"VIIRS_{ref_d}_CloudObstruction_SouthSudan.shp", gtr, gs)
+    ow_ref = water["2022-03"] == 2
     rows = []
     for fe in sorted(glob.glob(str(SHP / "VIIRS_*_*_*Flood*Extent*_SouthSudan.shp")) + sorted(glob.glob(str(SHP / "VIIRS_*_MaximumFloodWater_SouthSudan.shp")))):
         m = re.search(r"VIIRS_(\d{8})_(\d{8})_", fe)
@@ -48,7 +54,7 @@ def pixel_level():
             continue
         mid = pd.Timestamp(d0) + (pd.Timestamp(d1) - pd.Timestamp(d0)) / 2
         mon = mid.strftime("%Y-%m")
-        if mon not in water:
+        if mon not in water or f"{d0}_{d1}" == ref_d or d0 < "20210601":
             continue
         pw_f = SHP / f"VIIRS_{d0}_{d1}_PermanentWater_SouthSudan.shp"
         cl_f = SHP / f"VIIRS_{d0}_{d1}_CloudObstruction_SouthSudan.shp"
@@ -57,8 +63,8 @@ def pixel_level():
             U |= rast(pw_f, gtr, gs)
         cloud = rast(cl_f, gtr, gs) if cl_f.exists() else np.zeros(gs, bool)
         w = water[mon]
-        ok = (lab > 0) & (w >= 0) & ~cloud
-        P = (w == 1) & ok; T = U & ok
+        ok = (lab > 0) & (w >= 0) & ~cloud & ~cref & ~Uref
+        P = (w >= 1) & ~ow_ref & ok; T = U & ok
         tp = (area * (P & T)).sum(); fp = (area * (P & ~T)).sum(); fn = (area * (~P & T)).sum()
         rows.append(dict(unosat=f"{d0}_{d1}", month=mon, calibration=(f"{d0}_{d1}" == CAL),
                          unosat_km2=round(float((area * T).sum())), s1_km2=round(float((area * P).sum())),
@@ -78,7 +84,7 @@ def pixel_level():
 def state_level():
     g = gpd.read_file(hc.COUNTIES)[["district_id", "admin1"]]
     s1 = pd.read_csv(hc.PROC / "flood_s1_county_monthly.csv")
-    s1 = s1[s1.variable == "flood_s1_water_km2"].merge(g, left_on="county_id", right_on="district_id")
+    s1 = s1[s1.variable == "flood_s1_flood_km2"].merge(g, left_on="county_id", right_on="district_id")
     mo = pd.read_csv(hc.PROC / "water_county_monthly.csv")
     mo = mo[mo.variable == "surface_water_km2"].merge(g, left_on="county_id", right_on="district_id")
     rows = []

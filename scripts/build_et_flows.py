@@ -16,11 +16,24 @@ import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).parent))
 from human_common import DATA, fix_pcode, load_counties  # noqa: E402
+from county_crosswalk import to_ocha, to_ocha_multi  # noqa: E402
 
 ET_DIR = DATA / "drive_mirror" / "01_analysis_ready"
 OUT = DATA / "processed" / "flows" / "et_flows.csv"
 FOREIGN = {"SDN", "ETH", "UGA", "KEN", "CAF", "COD", "SD", "ET", "UG", "KE", "CF", "CD"}
 ISO2 = {"SD": "SDN", "ET": "ETH", "UG": "UGA", "KE": "KEN", "CF": "CAF", "CD": "COD"}
+ISO3 = {"SDN", "ETH", "UGA", "KEN", "CAF", "COD"}
+
+
+def foreign_of(code):
+    """Country ISO3 for a foreign admin code: IOM uses ISO2 prefixes (SD02114, UG3011, CD5307) and, in the 2020
+    file, ISO3 prefixes (COD5306, CAF632)."""
+    c = str(code).strip().upper()
+    if c[:3] in ISO3 and c[3:4].isdigit():
+        return c[:3]
+    if c[:2] in ISO2 and c[2:3].isdigit() and not c.startswith("SS"):
+        return ISO2[c[:2]]
+    return None
 
 
 def crosswalk():
@@ -82,7 +95,7 @@ def main():
     g = load_counties()
     valid = set(g.district_id)
     cw = crosswalk()
-    fix = lambda p: (lambda q: cw.get(q, fix_pcode(q)) if q else None)(fix_pcode(p))
+    fix = lambda p: to_ocha(p) or (lambda q: cw.get(q, q) if q else None)(fix_pcode(p))
     frames = []
     files = sorted(set(ET_DIR.glob("*Event*Tracking*.xlsx")) | set(ET_DIR.glob("*EventTracking*.xlsx")))
     for f in files:
@@ -99,17 +112,36 @@ def main():
     e["from_pcode"] = e["from"].map(fix)
     foreign = fc.isin(FOREIGN - {"SSD"}) & (fc != "SSD")
     e.loc[foreign, "from_pcode"] = fc[foreign]
-    # IOM sometimes stores a foreign admin-2 code (e.g. SD02114) without the country column
-    pref = e["from_pcode"].astype(str).str[:2]
-    e.loc[pref.isin(ISO2) & ~e["from_pcode"].isin(valid), "from_pcode"] = pref.map(ISO2)
+    # IOM sometimes stores a foreign admin-2 code (e.g. SD02114, COD5306, CAF632) without the country column
+    fo = e["from"].map(foreign_of)
+    sel = fo.notna() & ~e["from_pcode"].isin(valid) & ~e["from_pcode"].isin(FOREIGN)
+    e.loc[sel, "from_pcode"] = fo[sel]
+    # combined origins (2020 file: 'SS0305/SS0310' = Duk/Twic East) -> split equally over the member counties
+    multi = e["from"].map(lambda v: to_ocha_multi(v) if isinstance(v, str) and "/" in v else [])
+    split = multi.str.len() > 1
+    if split.any():
+        parts = []
+        for i, r in e[split].iterrows():
+            for pc in multi[i]:
+                q = r.copy()
+                q["from_pcode"], q["ind"], q["quality"] = pc, r["ind"] / len(multi[i]), "split_combined_origin"
+                parts.append(q)
+        print(f"split {split.sum()} rows with combined origin ({e[split].ind.sum():,.0f} ind)")
+        e = pd.concat([e[~split], pd.DataFrame(parts)], ignore_index=True)
+    if "quality" not in e:
+        e["quality"] = "ok"
+    e["quality"] = e["quality"].fillna("ok")
     e["reason"] = e.trigger.map(reason_of)
     e["month"] = e.date.dt.strftime("%Y-%m")
     ok = e.to_pcode.isin(valid) & (e.from_pcode.isin(valid) | e.from_pcode.isin(FOREIGN))
     print(f"matched {ok.mean():.1%} of rows ({e[ok].ind.sum():,.0f} of {e.ind.sum():,.0f} individuals)")
-    flows = (e[ok].groupby(["month", "from_pcode", "to_pcode", "reason", "population"]).ind.sum()
+    unk = e[~ok]
+    print("dropped (unknown/blank origin or destination):", unk.groupby(unk["from"].astype(str)).ind.sum()
+          .sort_values(ascending=False).head(10).to_dict())
+    flows = (e[ok].groupby(["month", "from_pcode", "to_pcode", "reason", "population", "quality"]).ind.sum()
              .rename("individuals").reset_index())
     flows["source"] = "IOM DTM South Sudan Event Tracking"
-    flows["quality"] = "ok"
+    flows = flows[["month", "from_pcode", "to_pcode", "reason", "population", "individuals", "source", "quality"]]
     OUT.parent.mkdir(parents=True, exist_ok=True)
     flows.to_csv(OUT, index=False)
     inter = flows[flows.from_pcode != flows.to_pcode]

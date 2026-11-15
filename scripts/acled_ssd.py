@@ -15,6 +15,7 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from county_crosswalk import to_ocha  # noqa: E402
 from human_common import (RAW, PROC, MONTHS, download, hdx_resources, load_counties, norm_name,
                           finalize, base_meta)
 
@@ -72,11 +73,11 @@ def main():
             n2 = NAME_FIX.get(n, n)
             if tag == "sdn":
                 cid, how = "SS0001", "manual: ACLED codes Abyei Area under Sudan (SD19001)"
-            elif pc in pcodes and norm_name(g.set_index("district_id").name[pc]) == n2:
+            elif pc in pcodes and to_ocha(a2, "acled") == pc:
                 cid = pc
                 how = "pcode+name" if a2 == g.set_index("district_id").name[pc] else "pcode+name variant"
-            elif n2 in by_norm:
-                cid, how = by_norm[n2], ("name" if n2 == n else "name variant")
+            elif to_ocha(a2, "acled"):
+                cid, how = to_ocha(a2, "acled"), ("name" if n2 in by_norm else "name variant (crosswalk)")
                 if pc in pcodes and pc != cid:
                     how += f" (ACLED pcode {pc} disagrees)"
             elif pc in pcodes:

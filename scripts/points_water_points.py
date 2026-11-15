@@ -77,17 +77,20 @@ def main():
         periods = []
         last_pre = pre[-1] if pre else None
         start = f"{iy:04d}-01" if iy and iy >= 2018 else None
-        if last_pre or not inwin:
-            d0, h0 = last_pre if last_pre else (rep or None, {"status_id": r.get("status_id")})
-            periods.append((start, d0, h0))
+        if last_pre:
+            periods.append((start, last_pre[0], last_pre[1]))
+        elif not inwin:
+            periods.append((start, rep or None, {"status_id": r.get("status_id")}))
+        elif not iy or iy < 2018:  # existed before its first (in-window) report: status unknown until then
+            periods.append((start, None, {}))
         for i, (d, h) in enumerate(inwin):
             periods.append((d[:7], d, h))
         for i, (vf, d, h) in enumerate(periods):
             vt = None
             if i + 1 < len(periods) and periods[i + 1][0]:
                 vt = (pd.Period(periods[i + 1][0], "M") - 1).strftime("%Y-%m")
-            st = stat.get(h.get("status_id"), r.get("status_clean") or "unknown") if h else "unknown"
-            if i == len(periods) - 1 and r.get("status_clean"):
+            st = stat.get(h.get("status_id"), r.get("status_clean") or "unknown") if h else "not reported before first in-window report"
+            if h and i == len(periods) - 1 and r.get("status_clean"):
                 st = r["status_clean"].lower() if h.get("status_id") == r.get("status_id") else st
             basis = (f"install year {iy}" if iy else "install year unknown") + \
                     (f"; status as reported {d}" if d else "; no report date") + \

@@ -25,6 +25,21 @@ long["date"] = long["month"].where(long["month"].notna(), long["year"].astype(st
 long["date"] = long["date"].str.slice(0, 7) + "-01"
 long = long[(long["date"] >= "2018-01-01") & (long["date"] <= "2025-12-01")]
 out = long.rename(columns={"county_pcode": "county_id"})[["county_id", "date", "variable", "value"]].dropna(subset=["value"])
+
+# County fix (docs/AUDIT_county_crosswalk.md): the IOM FMR point "Renk River Port (Renk Mina Port)" (11.761, 32.780) lies a
+# few hundred metres on the Manyo side of the COD-AB v03 river boundary, so the team file counts it in Manyo (SS0708).
+# The port is in Renk town -> move it to Renk (SS0711). It is the only FMR point assigned to Manyo.
+FMP_COUNTY_FIX = {"Renk River Port (Renk Mina Port)": ("SS0708", "SS0711")}
+v = "fmr_monitoring_points_in_county"
+for _, (frm, to) in FMP_COUNTY_FIX.items():
+    m_from = (out.variable == v) & (out.county_id == frm) & (out.value > 0)
+    for d in out.loc[m_from, "date"]:
+        m_to = (out.variable == v) & (out.county_id == to) & (out.date == d)
+        if m_to.any():
+            out.loc[m_to, "value"] += 1
+        else:
+            out = pd.concat([out, pd.DataFrame([{"county_id": to, "date": d, "variable": v, "value": 1.0}])], ignore_index=True)
+    out.loc[m_from, "value"] -= 1
 out.to_csv(os.path.join(ROOT, "data", "processed", "unified_county_monthly.csv"), index=False)
 
 def label(v):
@@ -77,6 +92,8 @@ for _, r in dic.iterrows():
 json.dump(meta, open(os.path.join(ROOT, "data", "processed", "meta", "unified.json"), "w"), indent=1)
 
 pts = read("fmr/fmr_monitoring_points.csv")
+for name, (frm, to) in FMP_COUNTY_FIX.items():
+    pts.loc[(pts["fmp.name"] == name) & (pts["fmp_county_pcode"] == frm), "fmp_county_pcode"] = to
 feats = [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [float(p["fmp.longitude"]), float(p["fmp.latitude"])]},
           "properties": {"name": p["fmp.name"], "type": "IOM Flow Monitoring point", "county_pcode": p["fmp_county_pcode"],
                          "note": p["location_note"] if isinstance(p["location_note"], str) else "", "source": "IOM DTM FMR (team unified dataset)"}}

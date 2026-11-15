@@ -13,6 +13,7 @@ import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from overlay_utils import ROOT, counties, write_long, write_meta
+from county_crosswalk import to_ocha
 
 RAW = os.path.join(ROOT, "data", "raw", "public_health")
 URL = ("https://docs.google.com/spreadsheets/d/e/2PACX-1vRfjaIXE1hvEIXD66g6cuCbPrGdZkx6vLIgXO_znVbjQ-OgwfaI1kJPhxhgjw2Yg08"
@@ -20,10 +21,6 @@ URL = ("https://docs.google.com/spreadsheets/d/e/2PACX-1vRfjaIXE1hvEIXD66g6cuCbP
 PAGE = "https://data.humdata.org/dataset/world-sub-national-immunization-coverage"
 IGME = ("https://sdmx.data.unicef.org/ws/public/sdmxapi/rest/data/UNICEF,CME,1.0/SSD.CME_MRY0T4+CME_MRY0.._T"
         "?format=csv&startPeriod=2018")
-FIX = {"AKOKA": "BALIET", "AWEIL CENTRAL": "AWEIL CENTRE", "KAJO KEJI": "KAJO-KEJI", "KHORFLUS": "CANAL/PIGI",
-       "LONGECHUK": "LONGOCHUK", "NASIR": "LUAKPINY/NASIR", "OLD FANGAK": "FANGAK", "PANYIJAR": "PANYIJIAR",
-       "RUBKOANA": "RUBKONA", "SOUTH BOR": "BOR SOUTH"}
-
 
 def main():
     os.makedirs(RAW, exist_ok=True)
@@ -34,9 +31,7 @@ def main():
         f.write(f"WHO/UNICEF sub-national immunization coverage (HDX {PAGE}): {URL}\n")
     v = pd.read_excel(p, sheet_name="Data")
     s = v[(v.iso == "SSD") & v.Vaccine.isin(["HepB3", "MCV1"]) & (v.Numerator >= 0) & (v.Denominator > 0)].copy()
-    c = counties()
-    ids = dict(zip(c.name.str.upper(), c.district_id))
-    s["county_id"] = s.Admin2.str.upper().map(lambda n: ids.get(FIX.get(n, n)))
+    s["county_id"] = s.Admin2.map(lambda n: to_ocha(n, "who"))  # crosswalk: AKOKA->Baliet, KHORFLUS->Canal/Pigi ...
     assert s.county_id.notna().all(), s[s.county_id.isna()].Admin2.unique()
     # Admin2 rows can share a denominator (e.g. Akoka + Baliet): sum numerators and denominators per county
     a = s.groupby(["county_id", "Year", "Vaccine"])[["Numerator", "Denominator"]].sum().reset_index()

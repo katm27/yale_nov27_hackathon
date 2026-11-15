@@ -17,6 +17,7 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from county_crosswalk import to_ocha  # noqa: E402
 from human_common import (RAW, DATA, MONTHS, download, hdx_resources, load_counties, norm_name, fix_pcode,
                           finalize, base_meta)
 
@@ -101,10 +102,6 @@ def extract_round(path):
 
 
 def mobility_tracking(g):
-    by_norm = {norm_name(n): p for n, p in zip(g.name, g.district_id)}
-    by_norm.update({"kajokeji": "SS0102", "panyijar": "SS0607", "panyijiar": "SS0607", "nasir": "SS0704",
-                    "luakpiny": "SS0704", "pigi": "SS0304", "canal": "SS0304", "abyei": "SS0001",
-                    "abyeiadministrativearea": "SS0001", "longechuk": "SS0703", "mayendit": "SS0605"})
     out = []
     for path in sorted(BL.glob("*.xlsx")):
         rnd = round_of(path.name)
@@ -114,7 +111,7 @@ def mobility_tracking(g):
         if d["pcode"].notna().any():
             d["county_id"] = d["pcode"].map(fix_pcode)
         else:
-            d["county_id"] = d["name"].map(lambda n: by_norm.get(norm_name(n)))
+            d["county_id"] = d["name"].map(lambda n: to_ocha(n, "iom_dtm"))
         d = d[d.county_id.isin(set(g.district_id))]
         s = d.groupby("county_id")[["idps", "returnees"]].sum()
         print(f"MT round {rnd:>2} ({ROUND_DATE[rnd]}): counties={len(s)} IDPs={s.idps.sum():,.0f} "
@@ -155,15 +152,12 @@ def read_et(path):
 def event_tracking(g):
     files = sorted(ET_DIR.glob("*Event*Tracking*.xlsx")) + sorted(ET_DIR.glob("*EventTracking*.xlsx"))
     files = sorted(set(files))
-    by_norm = {norm_name(n): p for n, p in zip(g.name, g.district_id)}
-    by_norm.update({"kajokeji": "SS0102", "panyijar": "SS0607", "nasir": "SS0704", "pigi": "SS0304",
-                    "abyei": "SS0001", "abyeiarea": "SS0001", "longechuk": "SS0703", "mayendit": "SS0605"})
     frames = []
     for f in files:
         e = read_et(f)
         if "name" in e:
             miss = e.county_id.isna() | ~e.county_id.isin(set(g.district_id))
-            e.loc[miss, "county_id"] = e.loc[miss, "name"].map(lambda n: by_norm.get(norm_name(n)))
+            e.loc[miss, "county_id"] = e.loc[miss, "name"].map(lambda n: to_ocha(n, "iom_dtm"))
         e["file"] = f.name
         # each annual file also carries a few late-reported events from the previous year that may duplicate
         # the previous file (event ids differ between file formats) -> keep only rows dated in the file's year

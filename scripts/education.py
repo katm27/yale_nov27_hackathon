@@ -16,6 +16,7 @@ import geopandas as gpd
 import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from county_crosswalk import to_ocha
 from overlay_utils import ROOT, PROC, DOCS_DATA, counties, write_long, write_meta, add_points_meta, assign_county
 
 RAW = os.path.join(ROOT, "data", "raw", "education")
@@ -25,10 +26,6 @@ PAGE = "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-
 OSM_URL = ("https://production-raw-data-api.s3.amazonaws.com/ISO3/SSD/education_facilities/"
            "hotosm_ssd_education_facilities_osm_geojson.zip")
 OSM = os.path.join(ROOT, "data", "raw", "osm", "education_facilities", "education_facilities.geojson")
-NAME_FIX = {"abiemnom": "Abiemnhom", "akoka": "Baliet", "aweil town": "Aweil Centre", "bor": "Bor South",
-            "longchok": "Longochuk", "malut": "Melut", "mayiandit": "Mayendit", "nasir": "Luakpiny/Nasir",
-            "nyirol (diror)": "Nyirol", "old fangak": "Fangak", "panyinjiar": "Panyijiar", "piji": "Canal/Pigi",
-            "ruweng": "Pariang", "uror (wunror)": "Uror", "yei river": "Yei"}
 TYPES = {"PRI": "primary school", "SEC": "secondary school", "ALP": "accelerated learning", "PRE": "pre-school",
          "ECD": "early childhood", "NUR": "nursery"}
 
@@ -47,8 +44,7 @@ def main():
     a = pd.read_excel(p, sheet_name=0)
     a = a[a.Closed == 0].copy()
     # county: by coordinates where available, else by (fixed) county name
-    byname = {n.lower(): i for n, i in zip(c.name, c.district_id)}
-    a["cname_id"] = a.County.str.lower().map(lambda n: byname.get(str(n).lower()) or byname.get(NAME_FIX.get(n, "").lower()))
+    a["cname_id"] = a.County.map(lambda n: to_ocha(n, "sssams"))  # name fallback via the master crosswalk
     ok = a.Latitude.between(3, 13) & a.Longitude.between(23, 36.5)
     g = gpd.GeoDataFrame(a[ok], geometry=gpd.points_from_xy(a[ok].Longitude, a[ok].Latitude), crs=4326)
     g = assign_county(g)

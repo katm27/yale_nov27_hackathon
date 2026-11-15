@@ -84,6 +84,19 @@ def set_validity(props, vf, vt, basis):
     return props
 
 
+def tag_meta(key, extra_note=None):
+    """Add `temporal` (and optionally a note sentence) to an existing points.json entry."""
+    p = os.path.join(ROOT, "data", "processed", "meta", "points.json")
+    lst = json.load(open(p))
+    for e in lst:
+        if e.get("key") == key:
+            e["temporal"] = TEMPORAL.get(key, e.get("temporal"))
+            if extra_note and extra_note not in e.get("notes", ""):
+                e["notes"] = (e.get("notes", "") + " " + extra_note).strip()
+    with open(p, "w") as f:
+        json.dump(lst, f, indent=1, ensure_ascii=False)
+
+
 def stamp_events(name, date_field="date", basis=None):
     """Event layer: verify `date`, set valid_from = valid_to = YYYY-MM(date)."""
     fc = read_fc(name)
@@ -167,7 +180,15 @@ def periods_from_snapshots(snap_dates, present, attrs_by_date):
     return out
 
 
+# how each layer's valid_from/valid_to were obtained (copied into points.json as `temporal`)
+TEMPORAL = {"logcluster_hubs": "periods", "unmiss": "periods", "markets": "periods", "fmr_monitoring": "periods",
+            "crisis_sites": "periods", "oil": "periods", "ucdp_events": "events", "insecurity_insight": "events",
+            "health": "snapshot", "schools": "snapshot", "pipelines": "snapshot", "water_points": "snapshot"}
+
+
 def update_points_meta(entry):
+    if entry["key"] in TEMPORAL:
+        entry.setdefault("temporal", TEMPORAL[entry["key"]])
     p = os.path.join(ROOT, "data", "processed", "meta", "points.json")
     lst = json.load(open(p)) if os.path.exists(p) else []
     lst = [e for e in lst if e.get("key") != entry["key"]] + [entry]
