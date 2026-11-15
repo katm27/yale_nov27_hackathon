@@ -197,8 +197,12 @@
     const col = scaleFor(v).color(x);
     const rasterVisible = state.rasterOn.size > 0;
     const tr = trendOf(v.id, f.properties.district_id);
-    if (tr && tr[T_SIG] && !selected && (state.mode !== "trend" || trendYear() === 2025)) { baseStyle.color = "#ffffff"; baseStyle.weight = 2.6; }
-    if (col == null) return { ...baseStyle, fillColor: "#898781", fillOpacity: rasterVisible ? 0 : 0.08, dashArray: "2 3" };
+    // significance outlines always come from the full 2018–2025 Mann-Kendall test, whatever the slider year
+    if (tr && !selected) {
+      if (tr[T_SIG]) { baseStyle.color = "#ffffff"; baseStyle.weight = 2.8; }
+      else if (tr[T_P] != null && tr[T_P] < 0.05) { baseStyle.color = "#ffffff"; baseStyle.weight = 2; baseStyle.dashArray = "5 4"; }
+    }
+    if (col == null) return { ...baseStyle, fillColor: "#898781", fillOpacity: rasterVisible ? 0 : 0.08, dashArray: baseStyle.dashArray || "2 3" };
     return { ...baseStyle, fillColor: col, fillOpacity: rasterVisible ? 0.35 : 0.78 };
   }
 
@@ -274,7 +278,7 @@
     countyLayer.eachLayer((l) => {
       if (l.isTooltipOpen && l.isTooltipOpen()) l.setTooltipContent(tooltipHtml(l.feature.properties));
       const tr = trendOf(state.colorBy, l.feature.properties.district_id);
-      if ((tr && tr[T_SIG]) || state.selected === l.feature.properties.district_id) l.bringToFront();  // keep outlines visible
+      if ((tr && (tr[T_SIG] || (tr[T_P] != null && tr[T_P] < 0.05))) || state.selectedList.includes(l.feature.properties.district_id)) l.bringToFront();  // keep outlines visible
     });
   }
 
@@ -317,7 +321,9 @@
       const reg = v.regional || {}, rtxt = (k, lab) => reg[k] ? `${lab}: median ${trendIsPct(v) && reg[k].median_pct != null ? `${reg[k].median_pct >= 0 ? "+" : ""}${fmt(reg[k].median_pct, 2)}%/yr` : `${fmt(reg[k].median_slope)} ${v.units || ""}/yr`}, regional Kendall p = ${fmt(reg[k].p, 2)}${reg[k].p < 0.05 ? " <b>(significant)</b>" : ""}` : "";
       if (reg.national || reg.sudd) html += `<div class="note"><b>Regional trend</b> (pools counties; bootstrap over years keeps spatial & seasonal correlation) — ${[rtxt("national", "all counties"), rtxt("sudd", "Sudd")].filter(Boolean).join(" · ")}</div>`;
       if (v.trend_moran_I != null) html += `<div class="note"><b>Spatial clustering of trends</b>: Moran's I = ${fmt(v.trend_moran_I, 2)} (p = ${fmt(v.trend_moran_p, 2)})${v.trend_moran_p < 0.05 ? " — neighbouring counties trend alike, so read trends regionally" : ""}.</div>`;
-      html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall corrected for month-to-month persistence, then false-discovery-rate q &lt; 0.05 across counties): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
+      const nDash = Object.values(state.trends[v.id]).filter((t) => !t[T_SIG] && t[T_P] != null && t[T_P] < 0.05).length;
+      html += `<div class="note sig-note"><span class="sig-swatch"></span> <b>Solid white outline</b>: significant 2018–2025 trend after correcting for persistence and for testing many counties (${nSig} counties).<br><span class="sig-swatch dashed"></span> <b>Dashed white outline</b>: Mann-Kendall p &lt; 0.05 (persistence-corrected) for 2018–2025, but not after the many-counties correction (${nDash} counties) — suggestive, treat with care.<br>Outlines always use the full 2018–2025 series, wherever the slider is.</div>`;
+      if (false) html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall corrected for month-to-month persistence, then false-discovery-rate q &lt; 0.05 across counties): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
     }
     html += `<div class="note"><span class="nodata"></span> no data · Source: ${v.source || "–"}${v.native_resolution ? ` · ${v.native_resolution}` : ""}</div>`;
     const rs = [...state.rasterOn].map((k) => (state.mode === "trend" && state.rasters.find((r) => r.key === `${k}_trend`)) || state.rasters.find((r) => r.key === k)).filter(Boolean);
@@ -328,8 +334,13 @@
       html += `<div class="ticks"><span>${fmt(r.vmin)}</span><span>${r.units || ""} · ${r.colormap || ""}</span><span>${fmt(r.vmax)}</span></div>`;
     }
     // keep title + colour bar visible; fold the explanatory notes
+    // keep the significance-outline key visible (outside the collapsible notes)
+    const sigM = html.match(/<div class="note sig-note">[\s\S]*?<\/div>/);
+    let sigHtml = "";
+    if (sigM) { html = html.replace(sigM[0], ""); sigHtml = sigM[0]; }
     const cut = html.indexOf('<div class="note">');
-    if (cut > 0) html = html.slice(0, cut) + `<details${state.legendOpen ? " open" : ""}><summary>How to read this</summary>${html.slice(cut)}</details>`;
+    if (cut > 0) html = html.slice(0, cut) + sigHtml + `<details${state.legendOpen ? " open" : ""}><summary>How to read this</summary>${html.slice(cut)}</details>`;
+    else html += sigHtml;
     el.innerHTML = html;
     const det = el.querySelector("details"); if (det) det.ontoggle = () => (state.legendOpen = det.open);
     el.hidden = false;

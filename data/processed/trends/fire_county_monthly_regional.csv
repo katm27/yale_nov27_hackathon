@@ -1,7 +1,7 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
-burned_area_km2,national,-285,0.831,79,0,0
-burned_area_km2,sudd,-515,0.187,16,0,0
-burned_area_pct,national,-285,0.831,79,0,0
-burned_area_pct,sudd,-515,0.187,16,0,0
-fire_count,national,1,1,79,0,0
-fire_count,sudd,-449,0.284,16,0,0
+burned_area_km2,national,-285,0.831,79,,0
+burned_area_km2,sudd,-515,0.187,16,,-0.134125
+burned_area_pct,national,-285,0.831,79,,0
+burned_area_pct,sudd,-515,0.187,16,,-0.0009875
+fire_count,national,1,1,79,,-58.1
+fire_count,sudd,-449,0.284,16,,-148.73

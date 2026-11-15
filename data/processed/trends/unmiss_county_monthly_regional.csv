@@ -1,5 +1,5 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
-unmiss_presence,national,10,0.13,79,0,0
-unmiss_presence,sudd,0,1,16,0,0
-unmiss_troops,national,-2,0.931,79,0,0
-unmiss_troops,sudd,11,0.352,16,0,0
+unmiss_presence,national,10,0.13,79,,0
+unmiss_presence,sudd,0,1,16,,0
+unmiss_troops,national,-2,0.931,79,,0
+unmiss_troops,sudd,11,0.352,16,,0

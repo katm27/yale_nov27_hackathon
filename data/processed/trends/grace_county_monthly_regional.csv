@@ -1,9 +1,9 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
-g3p_gwsa_cm,national,7037,0.01,79,113.851,3.154
-g3p_gwsa_cm,sudd,1546,0.009,16,85.2965,3.51633
-g3p_gwsa_unc_cm,national,-1217,0.178,79,-0.200394,-0.0119583
-g3p_gwsa_unc_cm,sudd,-181,0.254,16,-0.168044,-0.01025
-grace_tws_cm,national,15133,0.003,79,158.389,2.7105
-grace_tws_cm,sudd,3022,0.006,16,197.856,2.7775
-grace_tws_unc_cm,national,-7742,0.041,79,-1.99651,-0.032
-grace_tws_unc_cm,sudd,-1568,0.041,16,-1.99651,-0.032
+g3p_gwsa_cm,national,7037,0.01,79,,3.154
+g3p_gwsa_cm,sudd,1546,0.009,16,,3.51633
+g3p_gwsa_unc_cm,national,-1217,0.178,79,,-0.0119583
+g3p_gwsa_unc_cm,sudd,-181,0.254,16,,-0.01025
+grace_tws_cm,national,15133,0.003,79,,2.7105
+grace_tws_cm,sudd,3022,0.006,16,,2.7775
+grace_tws_unc_cm,national,-7742,0.041,79,,-0.032
+grace_tws_unc_cm,sudd,-1568,0.041,16,,-0.032

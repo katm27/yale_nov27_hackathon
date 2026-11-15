@@ -600,7 +600,7 @@ def compute_trends(df: pd.DataFrame, meta: dict | None = None, window: tuple[str
     cols = ["county_id", "variable", "test", "n", "S", "Z", "tau", "p", "p_naive", "q_fdr", "significant", "sen_slope_per_year",
             "sen_slope_pct_per_year", "sen_slope_seasonal", "basis", "pct_ok", "direction", "baseline_year", "baseline_mean", "lag1",
             "lisa", "lisa_p", "moran_I", "moran_p"] + [f"todate_{Y}" for Y in range(2020, 2026)] + ["interpretation"]
-    return out[cols]
+    return out.reindex(columns=cols)   # static-only sources have no basis/to-date columns
 
 
 def write_trends(source: str) -> str | None:

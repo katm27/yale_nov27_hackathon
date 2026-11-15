@@ -1,9 +1,9 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
-viirs_fire_count,national,1737,0.299,79,0,0
-viirs_fire_count,sudd,-247,0.616,16,0,0
-viirs_frp_sum,national,1226,0.45,79,0,0
-viirs_frp_sum,sudd,-268,0.581,16,0,0
-viirs_noaa20_fire_count,national,1142,0.176,79,0,0
-viirs_noaa20_fire_count,sudd,378,0.162,16,0.0371839,0.0625
-viirs_noaa20_frp_sum,national,927,0.282,79,0,0
-viirs_noaa20_frp_sum,sudd,390,0.155,16,0.0435578,1.78642
+viirs_fire_count,national,1737,0.299,79,,72.5
+viirs_fire_count,sudd,-247,0.616,16,,-179.55
+viirs_frp_sum,national,1226,0.45,79,,-25.625
+viirs_frp_sum,sudd,-268,0.581,16,,-2174.66
+viirs_noaa20_fire_count,national,1142,0.176,79,,107
+viirs_noaa20_fire_count,sudd,378,0.162,16,,59.625
+viirs_noaa20_frp_sum,national,927,0.282,79,,395.528
+viirs_noaa20_frp_sum,sudd,390,0.155,16,,1449.35

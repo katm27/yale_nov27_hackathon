@@ -1,9 +1,9 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
-flood_oil_wells_flooded,national,111,0.032,5,0,0
-flood_oil_wells_flooded,sudd,104,0.024,3,0,0
-flood_oilfield_exposure_km2,national,367,0.005,7,0,0
-flood_oilfield_exposure_km2,sudd,339,0.003,5,0,0
-flood_population_exposed,national,1377,0.153,79,0,0
-flood_population_exposed,sudd,190,0.552,16,0,0
-flood_population_exposed_pct,national,1133,0.225,79,0,0
-flood_population_exposed_pct,sudd,73,0.804,16,0,0
+flood_oil_wells_flooded,national,111,0.032,5,,0
+flood_oil_wells_flooded,sudd,104,0.024,3,,0.0208333
+flood_oilfield_exposure_km2,national,367,0.005,7,,0.184583
+flood_oilfield_exposure_km2,sudd,339,0.003,5,,0.514688
+flood_population_exposed,national,1377,0.153,79,,19.7333
+flood_population_exposed,sudd,190,0.552,16,,225.277
+flood_population_exposed_pct,national,1133,0.225,79,,0.0095
+flood_population_exposed_pct,sudd,73,0.804,16,,0.126958
