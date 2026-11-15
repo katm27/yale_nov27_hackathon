@@ -22,7 +22,7 @@
     months: [], vars: [], varById: {}, series: {}, checked: new Set(), colorBy: null,
     mode: "trend", agg: "month", t: 0, selected: null,
     rasters: [], rasterOn: new Set(), rasterLayers: {}, points: [], pointLayers: {},
-    timer: null, charts: [],
+    timer: null, charts: [], natExtra: new Set(), selectedList: [], compareMode: false,
   };
 
   // ---------- helpers ----------
@@ -74,7 +74,9 @@
     const tr = trendOf(v.id, c); if (!tr) return null;
     return trendIsPct(v) ? tr[T_PCT] : tr[T_SEN];
   }
-  const trendIsPct = (v) => v.index_ok !== false && !v.sparse_count;
+  // a "% of 2018 level" only makes sense for positive quantities with a meaningful zero
+  const trendIsPct = (v) => v.index_ok !== false && !v.sparse_count && !v.national_only &&
+    !/%|standard|flag|index|\bsd\b|°|deg|class|share|fraction|anomal/i.test(`${v.units || ""} ${v.id}`);
   function valueAt(v, c, i, mode = state.mode) {
     if (mode === "trend") return trendValue(v, c);
     const s = state.series[v.id]; if (!s || !s[c]) return null;
@@ -153,7 +155,7 @@
     "OpenStreetMap": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "© OpenStreetMap contributors", maxZoom: 19 }),
   };
   (matchMedia("(prefers-color-scheme: dark)").matches ? base["Dark gray"] : base["Light gray"]).addTo(map);
-  L.control.layers(base, null, { position: "topright" }).addTo(map);
+  L.control.layers(base, null, { position: "topleft" }).addTo(map);
   map.createPane("rasters").style.zIndex = 350;
   map.createPane("counties").style.zIndex = 400;
   map.createPane("flows").style.zIndex = 450;
@@ -168,15 +170,15 @@
     if (!tr) return v.temporal === "static" ? `<div class="trend muted">Static layer: no trend test.</div>` : `<div class="trend muted">No trend test (too few observations).</div>`;
     const sigTxt = tr[T_SIG] ? `<span class="sig-badge">◆ Significant trend</span>` : `<span class="nosig-badge">No significant trend</span>`;
     const slope = tr[T_SEN] == null ? "n/a" : `${tr[T_SEN] >= 0 ? "+" : ""}${fmt(tr[T_SEN])} ${v.units || ""}/yr`;
-    const pct = tr[T_PCT] == null ? "" : ` (${tr[T_PCT] >= 0 ? "+" : ""}${fmt(tr[T_PCT], 2)}%/yr)`;
-    const stats = `Sen's slope ${slope}${pct} · ${tr[T_TEST] === "S" ? "seasonal Mann-Kendall with Hirsch–Slack persistence correction" : "Mann-Kendall with Hamed–Rao persistence correction"}: p = ${fmt(tr[T_P], 2)}${tr[T_PNAIVE] != null ? ` (uncorrected ${fmt(tr[T_PNAIVE], 2)})` : ""}, FDR q = ${fmt(tr[T_Q], 2)}, n = ${tr[T_N]}${tr[T_LISA] && tr[T_LISA] !== "ns" ? ` · Local Moran's I cluster: ${tr[T_LISA]}` : ""}`;
+    const pct = tr[T_PCT] == null || !trendIsPct(v) ? "" : ` (${tr[T_PCT] >= 0 ? "+" : ""}${fmt(tr[T_PCT], 2)}%/yr)`;
+    const stats = `${tr[T_TEST] === "S" ? "Seasonal Mann-Kendall test, corrected for month-to-month persistence (Hirsch–Slack)" : "Mann-Kendall test, corrected for persistence where possible (Hamed–Rao)"}: p = ${fmt(tr[T_P], 2)}${tr[T_PNAIVE] != null ? ` (uncorrected ${fmt(tr[T_PNAIVE], 2)})` : ""}, FDR q = ${fmt(tr[T_Q], 2)}, n = ${tr[T_N]}${tr[T_LISA] && tr[T_LISA] !== "ns" ? ` · ${{ HH: "part of a cluster of counties with similarly high trends", LL: "part of a cluster of counties with similarly low trends", HL: "higher trend than its neighbours", LH: "lower trend than its neighbours" }[tr[T_LISA]]} (Local Moran's I)` : ""}`;
     return `<div class="trend">${sigTxt}<div class="trend-txt">${tr[T_TXT]}</div>${compact ? "" : `<div class="trend-stats">${stats}</div>`}</div>`;
   }
 
   function styleCounty(f) {
     const v = state.varById[state.colorBy];
-    const selected = state.selected === f.properties.district_id;
-    const baseStyle = { color: selected ? "#0b0b0b" : "#898781", weight: selected ? 2.5 : 0.7, pane: "counties", dashArray: null };
+    const si = state.selectedList.indexOf(f.properties.district_id), selected = si >= 0;
+    const baseStyle = { color: selected ? (state.selectedList.length > 1 ? COUNTY_COLORS[si] : "#0b0b0b") : "#898781", weight: selected ? 3 : 0.7, pane: "counties", dashArray: null };
     if (!v) return { ...baseStyle, fillOpacity: 0 };
     const x = valueAt(v, f.properties.district_id, state.t);
     const col = scaleFor(v).color(x);
@@ -318,10 +320,11 @@
     const q = $("#filter").value.trim().toLowerCase();
     const el = $("#var-list");
     el.innerHTML = "";
-    let lastCat = null, lastGroup = null;
+    let lastCat = null, lastGroup = null, shown = 0;
+    const matcher = searchMatcher(q);
     for (const v of state.vars) {
-      const hay = `${v.label} ${v.id} ${v.group} ${v.source}`.toLowerCase();
-      if (q && !hay.includes(q)) continue;
+      if (q && !matcher(v)) continue;
+      shown++;
       if (v.category !== lastCat) {
         el.insertAdjacentHTML("beforeend", `<div class="cat-title">${v.category === "human" ? "Human & infrastructure" : v.category === "environment" ? "Environment & climate" : v.category}</div>`);
         lastCat = v.category; lastGroup = null;
@@ -331,9 +334,17 @@
       row.className = "var-row";
       const id = `cb-${v.id}`;
       const cov = `${v.first_period.slice(0, 4)}–${v.last_period.slice(0, 4)}${v.temporal && v.temporal !== "monthly" ? ", " + v.temporal : ""}`;
+      if (v.national_only) {
+        row.innerHTML = `<span class="colorby nat" title="National-only series: shown in the National timeline, not on the county map">N</span>
+          <input type="checkbox" id="${id}" ${state.natExtra.has(v.id) ? "checked" : ""}>
+          <label for="${id}">${v.label} <span class="meta">· national only — adds a chart to the National timeline</span></label>`;
+        row.querySelector("input").onchange = (e) => { e.target.checked ? state.natExtra.add(v.id) : state.natExtra.delete(v.id); renderNational(); writeHash(); };
+        el.appendChild(row); continue;
+      }
       row.innerHTML = `<button class="colorby ${state.colorBy === v.id ? "on" : ""}" title="Colour the map by this variable" aria-label="Colour map by ${v.label}"></button>
         <input type="checkbox" id="${id}" ${state.checked.has(v.id) ? "checked" : ""}>
-        <label for="${id}" title="${(v.notes || v.source || "").replace(/"/g, "&quot;")}">${v.label} <span class="meta">${v.units ? "· " + v.units + " " : ""}(${cov})</span></label>`;
+        <label for="${id}">${v.label} <span class="meta">${v.units ? "· " + v.units + " " : ""}(${cov})</span></label>
+        ${state.colorBy === v.id || state.checked.has(v.id) ? `<div class="var-plain">${plainOf(v)}</div>` : ""}`;
       row.querySelector("button").onclick = () => setColorBy(v.id);
       row.querySelector("input").onchange = (e) => {
         if (e.target.checked) { state.checked.add(v.id); if (!state.colorBy) setColorBy(v.id); else ensureSeries(v.id).then(renderDetail); }
@@ -341,7 +352,41 @@
       };
       el.appendChild(row);
     }
+    if (q && !shown) el.innerHTML = `<p class="empty">No variables match “${q.replace(/</g, "&lt;")}”. Try: flood, rain, drought, heat, fighting, displaced, food prices, aid, pollution.</p>`;
   }
+
+  // ---------- search: plain words, plurals and synonyms; matches labels, topics, definitions (not source names) ----------
+  const SYN = {
+    flood: ["flood", "inundat", "surface water", "water extent", "sudd", "sentinel-1"], water: ["water", "flood", "inundat", "wetland", "sudd", "groundwater", "storage"],
+    rain: ["rain", "precip", "chirps", "imerg", "wet"], drought: ["drought", "spei", "pdsi", "dry", "deficit"], dry: ["dry", "drought", "deficit"],
+    heat: ["temperature", "\\btmax", "\\blst", "hottest", "heat", "warm"], hot: ["temperature", "hottest", "heat"], temperature: ["temperature", "\\btmax", "\\btmin", "lst"],
+    displaced: ["displac", "\\bidp", "et_ind", "migration", "flow monitoring", "returnee", "refugee", "arriv"], displacement: ["displac", "\\bidp", "migration", "returnee"],
+    migration: ["migration", "displac", "flow monitoring", "arriv", "returnee"], refugee: ["refugee", "unhcr", "arriv"], idp: ["\\bidp", "displac"],
+    fighting: ["conflict", "acled", "ucdp", "violence", "clash", "battle", "attack", "fatalit"], conflict: ["conflict", "acled", "ucdp", "violence", "clash", "fatalit"],
+    violence: ["violence", "acled", "ucdp", "attack", "sexual"], war: ["conflict", "acled", "ucdp", "sudan"],
+    pollution: ["pollution", "aerosol", "\\bno2", "\\bco\\b", "s5p", "air quality", "dust", "smoke", "oil", "contamin"], air: ["aerosol", "no2", "air", "dust", "smoke"],
+    fire: ["fire", "burn", "viirs"], vegetation: ["ndvi", "evi", "vegetation", "green"], crops: ["crop", "ndvi", "land cover"],
+    food: ["food", "ipc", "price", "hunger", "malnutrition", "nutrition"], hunger: ["ipc", "food", "malnutrition", "hunger"], price: ["price", "wfp", "exchange"],
+    aid: ["aid", "funding", "usaid", "fts", "humanitarian", "hrp", "partner"], funding: ["funding", "usaid", "fts", "aid"], money: ["funding", "usaid", "fts", "price"],
+    women: ["women", "girls", "gender", "sexual", "gbv", "wps"], gbv: ["gbv", "sexual", "gender", "protection"], gender: ["gender", "women", "gbv", "wps"],
+    health: ["health", "hospital", "vaccin", "mortality", "cholera"], school: ["school", "educat", "enrol"], peacekeeping: ["unmiss", "peacekeep"], un: ["unmiss", "un "],
+    cattle: ["cattle", "livestock", "goat", "sheep", "graz"], population: ["population", "worldpop", "people"], oil: ["oil", "pipeline", "well"],
+  };
+  const stem = (w) => w.replace(/(ings|ing|ies|es|s|ed)$/i, "");
+  function searchMatcher(q) {
+    const words = q.split(/\s+/).filter(Boolean);
+    const pats = words.map((w) => {
+      const key = Object.keys(SYN).find((k) => stem(k) === stem(w) || k === w);
+      const alts = [w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), stem(w).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")].filter((x) => x.length > 1).map((x) => `\\b${x}`);
+      if (key) alts.push(...SYN[key]);
+      return new RegExp(alts.join("|"), "i");
+    });
+    return (v) => {
+      const hay = `${v.label} ${v.id.replace(/_/g, " ")} ${v.group || ""} ${v.topic || ""} ${v.plain || ""} ${(v.synonyms || []).join(" ")}`;
+      return pats.every((re) => re.test(hay));
+    };
+  }
+  const plainOf = (v) => (v.plain || v.notes || "").split(/(?<=\.)\s/)[0].slice(0, 220);
 
   async function ensureSeries(id) {
     if (!state.series[id]) {
@@ -356,7 +401,7 @@
   async function setColorBy(id) {
     state.colorBy = id;
     if (id) { state.checked.add(id); await ensureSeries(id); }
-    renderVarList(); refreshCounties(); renderLegend(); renderDetail();
+    renderVarList(); refreshCounties(); renderLegend(); renderDetail(); writeHash();
   }
 
   function renderRasterList() {
@@ -418,7 +463,7 @@
       p._color = CATEGORICAL[k % CATEGORICAL.length];
       const row = document.createElement("div");
       row.className = "var-row";
-      row.innerHTML = `<input type="checkbox" id="p-${p.key}"><span class="swatch" style="background:${p._color}"></span><label for="p-${p.key}">${p.label}${p.notes ? ` <span class="meta">· ${p.notes.slice(0, 60)}</span>` : ""}</label>`;
+      row.innerHTML = `<input type="checkbox" id="p-${p.key}"><span class="swatch" style="background:${p._color}"></span><label for="p-${p.key}">${p.label}${p.plain ? ` <span class="meta">· ${p.plain.slice(0, 90)}</span>` : ""}</label>`;
       row.querySelector("input").onchange = async (e) => {
         if (e.target.checked) { await loadPoints(p); } else if (state.pointLayers[p.key]) { map.removeLayer(state.pointLayers[p.key].layer); delete state.pointLayers[p.key]; }
       };
@@ -463,81 +508,165 @@
         const pr = f.properties || {};
         const rows = Object.entries(pr).filter(([, val]) => val !== null && val !== "" && typeof val !== "object").slice(0, 12)
           .map(([k, val]) => `<tr><td style="color:var(--muted);padding-right:6px">${k}</td><td>${String(val).slice(0, 120)}</td></tr>`).join("");
-        l.bindPopup(`<b>${p.label}</b><table>${rows}</table>`);
+        const head = pr.name || pr.facility_name || pr.site_name || pr.title || "";
+        const status = pr.status ? `<div><b>Status:</b> ${pr.status}</div>` : "";
+        const when = pr.date ? `<div><b>Date:</b> ${String(pr.date).slice(0, 10)}</div>` : (pr.valid_from || pr.valid_to) ? `<div><b>Period:</b> ${pr.valid_from ? String(pr.valid_from).slice(0, 7) : "before 2018"} → ${pr.valid_to ? String(pr.valid_to).slice(0, 7) : "2025+"}</div>` : "";
+        const ev = pr.evidence || pr.date_basis ? `<div class="hint">Evidence: ${String(pr.evidence || pr.date_basis).slice(0, 220)}</div>` : "";
+        l.bindPopup(`<b>${p.label}</b>${head ? `<div>${head}</div>` : ""}${status}${when}${ev}<details><summary>All fields</summary><table>${rows}</table></details>`);
       },
     }).addTo(map);
   }
   function refreshPoints() { for (const e of Object.values(state.pointLayers)) if (e.timed) drawPoints(e); }
 
-  // ---------- detail panel ----------
+  // ---------- detail panel (docked beside the map; compare up to 3 counties) ----------
+  const COUNTY_COLORS = ["#2a78d6", "#eb6834", "#1baf7a"];
+  const countyProps = (cid) => { const l = countyLayer.getLayers().find((x) => x.feature.properties.district_id === cid); return l ? l.feature.properties : { name: cid, admin1: "" }; };
+  const chartKind = (v) => (/flag/i.test(v.units || "") ? "flag" : /standard|spei|pdsi|drought_ensemble/i.test(`${v.units || ""} ${v.id}`) ? "std" : "raw");
+  function openDetail(open) {
+    const wrap = $("#mapwrap");
+    wrap.classList.toggle("with-detail", open);
+    $("#detail").hidden = !open;
+    setTimeout(() => map.invalidateSize(), 50);
+  }
+  function rawWindowSeries(v, cid) {
+    const keys = [], labels = [], vals = [], firstIdx = [];
+    state.months.forEach((_, i) => { const k = windowKey(i); if (!keys.includes(k)) { keys.push(k); firstIdx.push(i); labels.push(windowLabel(i)); vals.push(valueAt(v, cid, i, "raw")); } });
+    return { keys, labels, vals, firstIdx };
+  }
+  function nowText(v, cid) {
+    const raw = valueAt(v, cid, state.t, "raw");
+    if (raw == null) return "no data";
+    const k = chartKind(v);
+    if (k === "flag") return `${fmt(raw)} ${state.agg === "month" ? (raw >= 1 ? "(extreme month)" : "(normal month)") : "months flagged"}`;
+    if (k === "std") return `${fmt(raw, 2)} (${raw <= -1.5 ? "very dry" : raw <= -1 ? "dry" : raw >= 1.5 ? "very wet" : raw >= 1 ? "wet" : "near normal"}; below −1 = dry, above +1 = wet)`;
+    const idx = valueAt(v, cid, state.t, "index_month");
+    const rel = idx == null ? "" : usesDiff(v) ? ` (${idx >= 0 ? "+" : ""}${fmt(idx)} vs ${v.baseline_year})` : ` (${fmt(idx, 2)}× ${state.agg === "month" ? "same month of" : ""} ${v.baseline_year})`;
+    return `${fmt(raw)} ${v.units || ""}${rel}`;
+  }
   async function renderDetail() {
     const el = $("#detail");
-    if (!state.selected) { el.hidden = true; return; }
-    const f = countyLayer.getLayers().find((l) => l.feature.properties.district_id === state.selected).feature.properties;
-    $("#detail-title").textContent = `${f.name} County`;
-    $("#detail-sub").textContent = `${f.admin1} · ${f.district_id} · ${windowLabel(state.t)}`;
-    const pr = state.profiles && state.profiles[f.district_id];
+    const sel = state.selectedList;
+    if (!sel.length) { openDetail(false); return; }
+    openDetail(true);
+    const P = sel.map(countyProps);
+    $("#detail-title").textContent = sel.length === 1 ? `${P[0].name} County` : `Comparing ${P.map((p) => p.name).join(", ")}`;
+    $("#detail-sub").innerHTML = `${sel.length === 1 ? `${P[0].admin1} · ${sel[0]} · ` : ""}${windowLabel(state.t)}`;
     const pbox = document.getElementById("detail-profile") || (() => { const d = document.createElement("div"); d.id = "detail-profile"; $("#detail-sub").after(d); return d; })();
-    pbox.innerHTML = pr ? `<div class="profile full">${pr.livelihood_zone && pr.livelihood_zone.name ? `<div class="pf-lz">${pr.livelihood_zone.name}</div>` : ""}
-      ${["livelihoods", "history", "conflict_impact"].map((k) => (pr[k] ? `<p><b>${{ livelihoods: "Livelihoods", history: "History", conflict_impact: "Conflict impact" }[k]}:</b> ${pr[k]}</p>` : "")).join("")}
-      ${pr.sources && pr.sources.length ? `<p class="hint">Sources: ${pr.sources.slice(0, 4).map((u, i) => `<a href="${u}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(" ")}</p>` : ""}</div>` : "";
+    const pr = state.profiles && state.profiles[sel[0]];
+    pbox.innerHTML = `<div class="detail-actions">
+        <button id="btn-compare" class="${state.compareMode ? "on" : ""}">${state.compareMode ? "Click a county on the map to add it…" : "＋ Compare another county"}</button>
+        <button id="btn-csv">⬇ Download CSV</button><button id="btn-copycsv">Copy data</button><button id="btn-link">🔗 Copy link to this view</button></div>
+      ${sel.length > 1 ? `<div class="legend-chips">${P.map((p, i) => `<span><i style="background:${COUNTY_COLORS[i]}"></i>${p.name} <button data-rm="${sel[i]}" title="Remove">×</button></span>`).join("")}</div>` : ""}
+      ${sel.length === 1 && pr ? `<details class="profile full" open><summary>${pr.livelihood_zone && pr.livelihood_zone.name ? pr.livelihood_zone.name : "County profile"}</summary>
+        ${["livelihoods", "history", "conflict_impact"].map((k) => (pr[k] ? `<p><b>${{ livelihoods: "Livelihoods", history: "History", conflict_impact: "Conflict impact" }[k]}:</b> ${pr[k]}</p>` : "")).join("")}
+        ${pr.sources && pr.sources.length ? `<p class="hint">Sources: ${pr.sources.slice(0, 4).map((u, i) => `<a href="${u}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(" ")}</p>` : ""}</details>` : ""}`;
+    $("#btn-compare").onclick = () => { state.compareMode = !state.compareMode; renderDetail(); };
+    $("#btn-csv").onclick = () => downloadCSV();
+    $("#btn-copycsv").onclick = () => copyText(buildCSV(), "Data copied to the clipboard (CSV).");
+    $("#btn-link").onclick = () => { writeHash(); copyText(location.href, "Link copied. It reopens this view (variables, counties, month, mode)."); };
+    pbox.querySelectorAll("[data-rm]").forEach((b) => (b.onclick = () => { state.selectedList = state.selectedList.filter((c) => c !== b.dataset.rm); state.selected = state.selectedList[0] || null; refreshCounties(); renderDetail(); writeHash(); }));
+
     state.charts.forEach((c) => c.destroy()); state.charts = [];
     const box = $("#detail-charts"); box.innerHTML = "";
-    const ids = [...state.checked];
-    if (!ids.length) { box.innerHTML = `<p class="empty">Tick variables in the sidebar to compare their trends here.</p>`; el.hidden = false; return; }
+    const ids = [...state.checked].filter((id) => state.varById[id] && !state.varById[id].national_only);
+    if (!ids.length) { box.innerHTML = `<p class="empty">Tick variables in the sidebar to see their history here.</p>`; return; }
     await Promise.all(ids.map(ensureSeries));
     const ink2 = getComputedStyle(document.documentElement).getPropertyValue("--ink-2").trim();
     const line = getComputedStyle(document.documentElement).getPropertyValue("--line").trim();
+
+    // Combined comparison chart: every ticked variable on ONE axis, as standard deviations from its own 2018–2025 mean
+    if (ids.length > 1 && sel.length === 1) {
+      const blk = document.createElement("div"); blk.className = "chart-block";
+      blk.innerHTML = `<h3>All ticked variables together</h3><div class="hint">Each line is scaled to its own average (0) and typical variation (±1), using 12-month averages, so different units can share one axis. Up = higher than usual.</div><canvas class="tall"></canvas>`;
+      box.appendChild(blk);
+      const { labels } = rawWindowSeries(state.varById[ids[0]], sel[0]);
+      const datasets = ids.map((id, k) => {
+        const v = state.varById[id], arr = (state.series[id] || {})[sel[0]] || [];
+        const roll = arr.map((_, i) => { const w = arr.slice(Math.max(0, i - 11), i + 1).filter((x) => x != null && isFinite(x)); return w.length >= 6 ? w.reduce((a, b) => a + b, 0) / w.length : null; });
+        const ok = roll.filter((x) => x != null), mu = ok.reduce((a, b) => a + b, 0) / (ok.length || 1);
+        const sd = Math.sqrt(ok.reduce((a, b) => a + (b - mu) ** 2, 0) / (ok.length || 1)) || 1;
+        const z = roll.map((x) => (x == null ? null : (x - mu) / sd));
+        const per = state.months.map((_, i) => i).filter((i) => windowKey(i) !== (i ? windowKey(i - 1) : null));
+        return { label: v.label, data: per.map((i) => z[i]), borderColor: CATEGORICAL[k % CATEGORICAL.length], borderWidth: 2, pointRadius: 0, tension: 0.2, spanGaps: false };
+      });
+      const ch = new Chart(blk.querySelector("canvas"), { type: "line", data: { labels, datasets },
+        options: { animation: false, responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+          plugins: { legend: { display: true, position: "bottom", labels: { boxWidth: 10, font: { size: 10 } } }, tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.raw == null ? "–" : (c.raw >= 0 ? "+" : "") + c.raw.toFixed(1)} SD` } } },
+          scales: { x: { ticks: { color: ink2, maxTicksLimit: 8, font: { size: 10 } }, grid: { display: false } }, y: { title: { display: true, text: "SD from own average", color: ink2, font: { size: 10 } }, ticks: { color: ink2, font: { size: 10 } }, grid: { color: line } } } } });
+      state.charts.push(ch);
+    }
+
     for (const id of ids) {
-      const v = state.varById[id];
-      // One point per window (month / season / year).
-      const keys = [], labels = [], vals = [], firstIdx = [];
-      const cm = state.mode === "trend" ? "index_month" : state.mode;  // charts always show the time series
-      state.months.forEach((_, i) => { const k = windowKey(i); if (!keys.includes(k)) { keys.push(k); firstIdx.push(i); labels.push(windowLabel(i)); vals.push(valueAt(v, state.selected, i, cm)); } });
+      const v = state.varById[id], kind = chartKind(v);
+      const S = sel.map((cid) => rawWindowSeries(v, cid));
+      const { labels, keys, firstIdx } = S[0];
       const cur = keys.indexOf(windowKey(state.t));
-      const block = document.createElement("div");
-      block.className = "chart-block";
-      block.innerHTML = `<h3>${v.label}${v.units && state.mode === "raw" ? ` (${v.units})` : ""}</h3>
-        <div class="now">${windowLabel(state.t)}: <b>${describeValue(v, vals[cur], cm)}</b></div>${trendHtml(v, state.selected, false)}<canvas></canvas>`;
+      // 2018 reference: the same calendar month/season of the baseline year, repeated (dashed grey)
+      const baseVals = keys.map((k, j) => { const i = firstIdx[j]; const idx = baselineWindowIdx(i, v.baseline_year || 2018); const vals = idx.map((q) => ((state.series[id] || {})[sel[0]] || [])[q]); return state.agg === "year" ? null : mean(vals); });
+      const block = document.createElement("div"); block.className = "chart-block";
+      const caution = v.caution ? `<div class="caution">⚠ ${v.caution}</div>` : "";
+      block.innerHTML = `<h3>${v.label} <span class="muted">(${v.units || ""})</span></h3>
+        <div class="var-plain">${plainOf(v)}${v.how_to_read ? ` <i>${v.how_to_read}</i>` : ""}</div>${caution}
+        ${sel.map((cid, i) => `<div class="now">${sel.length > 1 ? `<i class="dot" style="background:${COUNTY_COLORS[i]}"></i>${countyProps(cid).name} — ` : ""}${windowLabel(state.t)}: <b>${nowText(v, cid)}</b></div>`).join("")}
+        ${sel.map((cid, i) => (sel.length > 1 ? `<div class="cmp-name"><i class="dot" style="background:${COUNTY_COLORS[i]}"></i>${countyProps(cid).name}</div>` : "") + trendHtml(v, cid, false)).join("")}<canvas></canvas>`;
       box.appendChild(block);
-      const ref = cm === "raw" || v.temporal === "static" ? null : usesDiff(v) ? 0 : 1;
-      const ratio = ref === 1;
-      // Ratios: log axis clamped to 1/8x..8x so tiny dry-season baselines don't flatten the chart.
-      const plotVals = ratio ? vals.map((x) => (x == null ? null : Math.min(8, Math.max(0.125, x)))) : vals;
-      const color = v.id === state.colorBy ? "#2a78d6" : "#52514e";
+      const datasets = S.map((ser, i) => ({ label: countyProps(sel[i]).name, data: ser.vals, borderColor: sel.length > 1 ? COUNTY_COLORS[i] : "#2a78d6", borderWidth: 2, pointRadius: 0, pointHitRadius: 8, tension: 0.15, spanGaps: false }));
+      if (kind === "raw" && sel.length === 1 && v.temporal === "monthly" && baseVals.some((x) => x != null))
+        datasets.push({ label: `${v.baseline_year} same ${state.agg === "month" ? "month" : "season"}`, data: baseVals, borderColor: "#898781", borderDash: [4, 3], borderWidth: 1.2, pointRadius: 0, tension: 0.15 });
+      const refs = kind === "std" ? [-1, 0, 1] : [];
       const chart = new Chart(block.querySelector("canvas"), {
-        type: "line",
-        data: { labels, datasets: [{ data: plotVals, borderColor: color, borderWidth: 2, pointRadius: 0, pointHitRadius: 8, spanGaps: false, tension: 0.15 }] },
+        type: kind === "flag" && state.agg !== "month" ? "bar" : "line",
+        data: { labels, datasets },
         options: {
-          animation: false, responsive: true, maintainAspectRatio: false,
-          interaction: { mode: "index", intersect: false },
-          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => describeValue(v, vals[c.dataIndex], cm) } } },
-          scales: {
-            x: { ticks: { color: ink2, maxTicksLimit: 8, autoSkip: true, font: { size: 10 } }, grid: { display: false } },
-            y: ratio
-              ? { type: "logarithmic", min: 0.125, max: 8, afterBuildTicks: (ax) => { ax.ticks = [0.125, 0.25, 0.5, 1, 2, 4, 8].map((value) => ({ value })); },
-                  ticks: { color: ink2, font: { size: 10 }, callback: (x) => `${x}×` }, grid: { color: line } }
-              : { ticks: { color: ink2, maxTicksLimit: 4, font: { size: 10 } }, grid: { color: line } },
-          },
+          animation: false, responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+          plugins: { legend: { display: datasets.length > 1, position: "bottom", labels: { boxWidth: 10, font: { size: 10 } } },
+            tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.raw == null ? "–" : fmt(c.raw)} ${v.units || ""}` } } },
+          scales: { x: { ticks: { color: ink2, maxTicksLimit: 8, autoSkip: true, font: { size: 10 } }, grid: { display: false } },
+                    y: { ticks: { color: ink2, maxTicksLimit: 5, font: { size: 10 } }, grid: { color: line } } },
           onClick: (_, els) => { if (els.length) setTime(firstIdx[els[0].index]); },
         },
-        plugins: [{
-          id: "marks",
-          afterDraw(c) {
-            const { ctx, chartArea: a, scales } = c;
-            ctx.save();
-            if (ref != null) { const y = scales.y.getPixelForValue(ref); if (y >= a.top && y <= a.bottom) { ctx.strokeStyle = ink2; ctx.setLineDash([3, 3]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.left, y); ctx.lineTo(a.right, y); ctx.stroke(); } }
-            const x = scales.x.getPixelForValue(cur); ctx.setLineDash([]); ctx.strokeStyle = "#eb6834"; ctx.lineWidth = 2;
-            ctx.beginPath(); ctx.moveTo(x, a.top); ctx.lineTo(x, a.bottom); ctx.stroke();
-            ctx.restore();
-          },
-        }],
+        plugins: [{ id: "marks", afterDraw(c) {
+          const { ctx, chartArea: a, scales } = c; ctx.save();
+          for (const r of refs) { const y = scales.y.getPixelForValue(r); if (y >= a.top && y <= a.bottom) { ctx.strokeStyle = r === 0 ? ink2 : r < 0 ? "#b4461b" : "#256abf"; ctx.setLineDash([3, 3]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.left, y); ctx.lineTo(a.right, y); ctx.stroke();
+            ctx.fillStyle = ctx.strokeStyle; ctx.font = "10px sans-serif"; if (r) ctx.fillText(r < 0 ? "dry" : "wet", a.right - 22, y - 2); } }
+          const x = scales.x.getPixelForValue(cur); ctx.setLineDash([]); ctx.strokeStyle = "#eb6834"; ctx.lineWidth = 2;
+          ctx.beginPath(); ctx.moveTo(x, a.top); ctx.lineTo(x, a.bottom); ctx.stroke(); ctx.restore(); } }],
       });
       state.charts.push(chart);
     }
-    el.hidden = false;
   }
 
+  // ---------- export & shareable state ----------
+  function buildCSV() {
+    const ids = [...state.checked, ...(state.colorBy ? [state.colorBy] : [])].filter((x, i, a) => a.indexOf(x) === i && state.varById[x]);
+    const cids = state.selectedList.length ? state.selectedList : Object.keys((state.series[ids[0]] || {}));
+    const rows = [["county_id", "county", "state", "variable", "label", "units", "month", "value"]];
+    for (const id of ids) { const v = state.varById[id], s = state.series[id] || {};
+      for (const c of cids) { const p = countyProps(c), arr = s[c] || []; state.months.forEach((m, i) => { if (arr[i] != null) rows.push([c, p.name, p.admin1, id, v.label, v.units || "", m, arr[i]]); }); } }
+    return rows.map((r) => r.map((x) => (/[",\n]/.test(String(x)) ? `"${String(x).replace(/"/g, '""')}"` : x)).join(",")).join("\n");
+  }
+  function downloadCSV() {
+    const csv = buildCSV();
+    try {
+      const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+      a.download = `south_sudan_${state.selectedList.join("_") || "all_counties"}_${new Date().toISOString().slice(0, 10)}.csv`;
+      document.body.appendChild(a); a.click(); a.remove();
+    } catch (e) { copyText(csv, "Download blocked here — the CSV was copied to your clipboard instead."); }
+  }
+  function copyText(txt, msg) {
+    const done = () => toast(msg), fail = () => { const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) { toast("Copy not allowed here; select and copy from the box."); return; } ta.remove(); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, fail); else fail();
+  }
+  function toast(msg) { let t = $("#toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; document.body.appendChild(t); } t.textContent = msg; t.className = "show"; setTimeout(() => (t.className = ""), 2600); }
+  function writeHash() {
+    if (!state.months.length) return;
+    const h = new URLSearchParams({ m: state.mode, a: state.agg, t: state.months[state.t], v: state.colorBy || "", c: [...state.checked].join(","),
+      s: state.selectedList.join(","), f: state.flowMode || "best", r: [...state.rasterOn].join(","), p: Object.keys(state.pointLayers).join(","), n: [...state.natExtra].join(",") });
+    try { history.replaceState(null, "", `#${h.toString()}`); } catch (e) { /* sandboxed */ }
+  }
+  function readHash() {
+    try { const h = new URLSearchParams(location.hash.slice(1)); return h.has("m") ? h : null; } catch (e) { return null; }
+  }
 
   // ---------- migration flows (origin -> destination arrows) ----------
   const REASON_STYLE = {
@@ -607,7 +736,11 @@
       const src = F.sources[si];
       let when = "";
       if (src.kind === "stock") { const obs = (src.observed || []).filter((o) => o <= flowWindowMonths().slice(-1)[0]).pop(); when = ` — survey round ${obs}`; }
-      return `<span class="ok">Showing: ${SOURCE_SHORT[src.key] || src.key}${when}.</span> ${FLOW_EXPLAIN[src.key] || src.label}`;
+      const lead = state.flowMode === "best"
+        ? (src.kind === "stock" ? `Best available for ${windowLabel(state.t)}: no monthly movement data this month, so showing the latest survey of where displaced people came from (${SOURCE_SHORT[src.key] || src.key}${when}).`
+                                : `Best available for ${windowLabel(state.t)}: ${SOURCE_SHORT[src.key] || src.key} (monthly movements).`)
+        : `Showing: ${SOURCE_SHORT[src.key] || src.key}${when}.`;
+      return `<span class="ok">${lead}</span> ${FLOW_EXPLAIN[src.key] || src.label}`;
     }).join("<br>");
   }
   function drawFlows() {
@@ -666,7 +799,7 @@
     h += `<p class="hint">○ White circles on the border = crossing points where people arrived from neighbouring countries.</p><p class="hint" id="flow-status"></p>`;
     el.innerHTML = h;
     $("#flow-on").onchange = (e) => { state.flowOn = e.target.checked; drawFlows(); };
-    el.querySelectorAll('input[name="flow-src"]').forEach((rb) => (rb.onchange = () => { state.flowMode = rb.value; drawFlows(); }));
+    el.querySelectorAll('input[name="flow-src"]').forEach((rb) => (rb.onchange = () => { state.flowMode = rb.value; drawFlows(); writeHash(); }));
     el.querySelectorAll(".flow-reason").forEach((cb) => (cb.onchange = () => { cb.checked ? state.flowReasons.add(cb.value) : state.flowReasons.delete(cb.value); drawFlows(); }));
   }
 
@@ -727,7 +860,8 @@
     state.natCharts.forEach((c) => c.destroy()); state.natCharts = []; box.innerHTML = "";
     const ink2 = getComputedStyle(document.documentElement).getPropertyValue("--ink-2").trim();
     const line = getComputedStyle(document.documentElement).getPropertyValue("--line").trim();
-    for (const spec of NATIONAL) {
+    const specs = [...NATIONAL, ...[...state.natExtra].map((id) => ({ label: state.varById[id].label, ids: [id], how: "national", units: state.varById[id].units || "", color: "#6250d6" }))];
+    for (const spec of specs) {
       const v = natVar(spec); if (!v) continue;
       try { await ensureSeries(v.id); } catch (e) { continue; }
       const data = nationalSeries(spec, v); if (!data || !data.some((x) => x != null)) continue;
@@ -741,7 +875,10 @@
           animation: false, responsive: false, maintainAspectRatio: false,
           plugins: { legend: { display: false }, tooltip: { callbacks: { title: (c) => monthLabel(c[0].dataIndex), label: (c) => `${fmt(c.raw)} ${spec.units}` } } },
           scales: { x: { display: true, ticks: { color: ink2, font: { size: 9 }, maxTicksLimit: 4, callback: (val, i) => state.months[i].slice(0, 4) }, grid: { display: false } },
-                    y: { ticks: { color: ink2, font: { size: 9 }, maxTicksLimit: 3, callback: (x) => fmt(x, 2) }, grid: { color: line } } },
+                    y: { ...(() => { const ok = data.filter((x) => x != null && isFinite(x)); const lo = Math.min(...ok), hi = Math.max(...ok);
+                          // tiny negative corrections (e.g. -29k against 100M) should not stretch the axis
+                          return { min: lo < 0 && Math.abs(lo) > 0.03 * Math.abs(hi) ? lo : Math.max(0, lo < 0 ? 0 : lo * 0.9), max: hi === lo ? hi + 1 : hi }; })(),
+                         ticks: { color: ink2, font: { size: 9 }, maxTicksLimit: 3, callback: (x) => fmt(x, 2) }, grid: { color: line } } },
           onClick: (evt, els, ch) => { const i = Math.round(ch.scales.x.getValueForPixel(evt.x)); if (i >= 0 && i < state.months.length) setTime(i); },
         },
         plugins: [{ id: "cursor", afterDraw(c) { const { ctx, chartArea: a, scales } = c; const x = scales.x.getPixelForValue(state.t);
@@ -766,7 +903,8 @@
     $("#time").value = i;
     $("#time-label").textContent = windowLabel(i);
     refreshCounties(); updateRasters(); refreshPoints(); drawFlows(); updateNational();
-    if (state.selected) renderDetail();
+    if (state.selectedList.length) renderDetail();
+    clearTimeout(state._hashT); state._hashT = setTimeout(writeHash, 400);
   }
   function togglePlay() {
     if (state.timer) { clearInterval(state.timer); state.timer = null; $("#play").textContent = "▶"; return; }
@@ -800,26 +938,47 @@
       style: styleCounty,
       onEachFeature: (f, l) => {
         l.bindTooltip(() => tooltipHtml(f.properties), { sticky: true, direction: "right", offset: [16, 0], className: "county-tt" });
-        l.on("click", () => { state.selected = f.properties.district_id; refreshCounties(); renderDetail(); });
+        l.on("click", () => {
+          const cid = f.properties.district_id;
+          if (state.compareMode && state.selectedList.length && !state.selectedList.includes(cid)) { state.selectedList = [...state.selectedList, cid].slice(-3); state.compareMode = false; }
+          else state.selectedList = [cid];
+          state.selected = state.selectedList[0]; refreshCounties(); renderDetail(); writeHash();
+        });
         l.on("mouseover", () => l.setStyle({ weight: 2.5, color: "#0b0b0b" }));
         l.on("mouseout", () => countyLayer.resetStyle(l));
       },
     }).addTo(map);
     map.fitBounds(countyLayer.getBounds(), { padding: [10, 10] });
 
-    $("#mode").onchange = (e) => { state.mode = e.target.value; document.body.dataset.mode = state.mode; state.vars.forEach((v) => { if (usesDiff(v) && state.series[v.id]) computeDiffSpan(v); }); refreshCounties(); renderLegend(); renderDetail(); };
+    $("#mode").onchange = (e) => { state.mode = e.target.value; document.body.dataset.mode = state.mode; state.vars.forEach((v) => { if (usesDiff(v) && state.series[v.id]) computeDiffSpan(v); }); setTime(state.t); renderLegend(); writeHash(); };
     $("#agg").onchange = (e) => { state.agg = e.target.value; state.vars.forEach((v) => { if (usesDiff(v) && state.series[v.id]) computeDiffSpan(v); }); setTime(state.t); renderLegend(); };
     $("#time").oninput = (e) => setTime(+e.target.value);
     $("#play").onclick = togglePlay;
     $("#filter").oninput = renderVarList;
     $("#raster-opacity").oninput = updateRasters;
-    $("#detail-close").onclick = () => { state.selected = null; refreshCounties(); renderDetail(); };
+    $("#detail-close").onclick = () => { state.selected = null; state.selectedList = []; state.compareMode = false; refreshCounties(); renderDetail(); writeHash(); };
 
     renderRasterList(); renderPointList();
-    const first = state.vars.find((v) => v.id === "chirps_precip_mm") || state.vars.find((v) => v.id === "precip_mm") || state.vars[0];
+    // restore a shared view from the URL (#m=…&v=…&c=…&s=…&t=…), else defaults
+    const H = readHash();
+    let tStart = state.months.indexOf("2019-08") >= 0 ? state.months.indexOf("2019-08") : 0;
+    if (H) {
+      const list = (k) => (H.get(k) || "").split(",").filter(Boolean);
+      if (H.get("m")) { state.mode = H.get("m"); $("#mode").value = state.mode; }
+      if (H.get("a")) { state.agg = H.get("a"); $("#agg").value = state.agg; }
+      list("c").filter((x) => state.varById[x]).forEach((x) => state.checked.add(x));
+      list("n").filter((x) => state.varById[x]).forEach((x) => state.natExtra.add(x));
+      state.selectedList = list("s").filter((x) => countyLayer.getLayers().some((l) => l.feature.properties.district_id === x)).slice(0, 3);
+      state.selected = state.selectedList[0] || null;
+      if (H.get("f")) state.flowMode = H.get("f");
+      const ti = state.months.indexOf(H.get("t")); if (ti >= 0) tStart = ti;
+      list("r").forEach((k) => { const cb = document.getElementById(`r-${k}`); if (cb) { cb.checked = true; state.rasterOn.add(k); } });
+      for (const k of list("p")) { const p = state.points.find((x) => x.key === k); const cb = document.getElementById(`p-${k}`); if (p && cb) { cb.checked = true; loadPoints(p); } }
+    }
+    const first = (H && state.varById[H.get("v")]) || state.vars.find((v) => v.id === "chirps_precip_mm") || state.vars.find((v) => v.id === "precip_mm") || state.vars.find((v) => !v.national_only);
     if (first) await setColorBy(first.id); else renderVarList();
     renderNational().then(() => map.invalidateSize()).catch((e) => console.warn("national", e));
-    setTime(state.months.indexOf("2019-08") >= 0 ? state.months.indexOf("2019-08") : 0);
+    setTime(tStart);
   }
   boot().catch((e) => { console.error(e); $("#var-list").innerHTML = `<p class="empty">Could not load data: ${e.message}</p>`; });
 })();

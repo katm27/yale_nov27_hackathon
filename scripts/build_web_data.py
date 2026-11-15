@@ -106,7 +106,8 @@ def build_trends(variables: list[dict], county_ids: list[str]) -> None:
     if len(nat):
         t = pd.concat([t[~t["county_id"].isin(NATIONAL_IDS)]] + [nat.assign(county_id=c) for c in county_ids], ignore_index=True)
     shown = {v["id"] for v in variables}
-    t = t[t["variable"].isin(shown) & t["test"].notna()]
+    natonly = {v["id"] for v in variables if v.get("national_only")}
+    t = t[t["variable"].isin(shown - natonly) & t["test"].notna()]
     out = {}
     for var, g in t.groupby("variable"):
         out[var] = {r.county_id: [sig(r.p, 3), sig(r.q_fdr, 3), sig(r.sen_slope_per_year), sig(r.sen_slope_pct_per_year, 3),
@@ -236,6 +237,16 @@ def build_flows(counties) -> None:
     print("flows:", ", ".join(f"{s['key']} {len(s['months'])} months" for s in sources))
 
 
+LABELS = {}
+_lp = os.path.join(ROOT, "data", "variable_labels.json")
+if os.path.exists(_lp):
+    LABELS = json.load(open(_lp))
+POINT_LABELS = {}
+_pp = os.path.join(ROOT, "data", "points_labels.json")
+if os.path.exists(_pp):
+    POINT_LABELS = json.load(open(_pp))
+
+
 def main() -> None:
     os.makedirs(os.path.join(OUT, "series"), exist_ok=True)
     counties = gpd.read_file(os.path.join(ROOT, "data", "counties.geojson"))
@@ -338,6 +349,18 @@ def main() -> None:
             m["sparse_count"] = True
         if m["min"] is not None and m["min"] < 0:
             m["index_ok"] = False  # ratio index is meaningless for values that cross zero
+        # national-only series (identical in every county) are kept off the county map
+        rows_ok = [r for r in arr if np.isfinite(r).any()]
+        same = len(rows_ok) > 1 and all(np.array_equal(np.nan_to_num(r, nan=-9e9), np.nan_to_num(rows_ok[0], nan=-9e9)) for r in rows_ok[1:])
+        if same and (np.nanstd(rows_ok[0]) > 0 or str(m.get("native_resolution", "")).lower().startswith("national")):
+            m["national_only"] = True
+        # plain-language labels / definitions / topics (data/variable_labels.json, written by hand + review)
+        lab = LABELS.get(var, {})
+        for k in ("label", "plain", "method", "how_to_read", "direction", "topic", "caution", "synonyms"):
+            if lab.get(k):
+                if k == "label":
+                    m.setdefault("label_original", m.get("label"))
+                m[k] = lab[k]
         variables.append(m)
 
     order = {"environment": 0, "human": 1, "other": 2}
@@ -364,6 +387,8 @@ def main() -> None:
         else:
             key_short = key
         info = dict(pts_meta.get(key_short, pts_meta.get(key, {})))
+        pl = POINT_LABELS.get(key, POINT_LABELS.get(key_short, {}))
+        info.update({k: v for k, v in pl.items() if k in ("label", "plain", "topic") and v})
         info.update({"key": key, "file": f"data/{name}"})
         info.setdefault("label", key_short.replace("_", " ").title())
         info.setdefault("category", "human")

@@ -1,0 +1,53 @@
+{
+ "key": "chirps_trend",
+ "label": "Rainfall (CHIRPS v3) — trend 2018→year (Sen's slope)",
+ "units": "mm/month/yr",
+ "bounds": [
+  [
+   3.313536493165293,
+   23.299999999999994
+  ],
+  [
+   12.4,
+   36.09537398197111
+  ]
+ ],
+ "vmin": -27.0,
+ "vmax": 27.0,
+ "colormap": "div_brbg",
+ "colors": [
+  "#543005",
+  "#8c510a",
+  "#bf812d",
+  "#dfc27d",
+  "#f6e8c3",
+  "#f5f5f5",
+  "#c7eae5",
+  "#80cdc1",
+  "#35978f",
+  "#01665e",
+  "#003c30"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "0.05° (~5.5 km)",
+ "source": "CHIRPS v3.0 monthly (Climate Hazards Center, UCSB)",
+ "trend_of": "chirps",
+ "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

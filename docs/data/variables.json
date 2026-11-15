@@ -4139,6 +4139,7 @@
    "p98": 1.835,
    "min": 1.082,
    "max": 1.837,
+   "national_only": true,
    "regional": {
     "sudd": {
      "S": -1568.0,
@@ -4357,7 +4358,8 @@
    "p02": 15120000.0,
    "p98": 343500000.0,
    "min": 9793000.0,
-   "max": 396900000.0
+   "max": 396900000.0,
+   "national_only": true
   },
   {
    "id": "fts_hum_funding_year_usd",
@@ -4383,7 +4385,8 @@
    "p02": 916700000.0,
    "p98": 1505000000.0,
    "min": 916700000.0,
-   "max": 1505000000.0
+   "max": 1505000000.0,
+   "national_only": true
   },
   {
    "id": "fts_us_gov_funding_month_usd",
@@ -4409,7 +4412,8 @@
    "p02": 0,
    "p98": 274400000.0,
    "min": -29150.0,
-   "max": 307900000.0
+   "max": 307900000.0,
+   "national_only": true
   },
   {
    "id": "fts_us_gov_funding_year_usd",
@@ -4435,7 +4439,8 @@
    "p02": 281500000.0,
    "p98": 850700000.0,
    "min": 281500000.0,
-   "max": 850700000.0
+   "max": 850700000.0,
+   "national_only": true
   },
   {
    "id": "fts_us_share_year",
@@ -4461,7 +4466,8 @@
    "p02": 0.307,
    "p98": 0.594,
    "min": 0.307,
-   "max": 0.594
+   "max": 0.594,
+   "national_only": true
   },
   {
    "id": "hrp_coverage_year",
@@ -4487,7 +4493,8 @@
    "p02": 0.464,
    "p98": 0.756,
    "min": 0.464,
-   "max": 0.756
+   "max": 0.756,
+   "national_only": true
   },
   {
    "id": "hrp_funding_year_usd",
@@ -4513,7 +4520,8 @@
    "p02": 787200000.0,
    "p98": 1289000000.0,
    "min": 787200000.0,
-   "max": 1289000000.0
+   "max": 1289000000.0,
+   "national_only": true
   },
   {
    "id": "hrp_requirement_year_usd",
@@ -4539,7 +4547,8 @@
    "p02": 1507000000.0,
    "p98": 2056000000.0,
    "min": 1507000000.0,
-   "max": 2056000000.0
+   "max": 2056000000.0,
+   "national_only": true
   },
   {
    "id": "state_dept_disbursed_month_usd",
@@ -4565,7 +4574,8 @@
    "p02": 238900.0,
    "p98": 14550000.0,
    "min": 0,
-   "max": 23160000.0
+   "max": 23160000.0,
+   "national_only": true
   },
   {
    "id": "us_aid_disbursed_month_usd",
@@ -4591,7 +4601,8 @@
    "p02": 5805000.0,
    "p98": 172200000.0,
    "min": 3530000.0,
-   "max": 181100000.0
+   "max": 181100000.0,
+   "national_only": true
   },
   {
    "id": "us_aid_obligated_month_usd",
@@ -4617,7 +4628,8 @@
    "p02": -101000.0,
    "p98": 255500000.0,
    "min": -702900.0,
-   "max": 307500000.0
+   "max": 307500000.0,
+   "national_only": true
   },
   {
    "id": "usaid_disbursed_month_usd",
@@ -4643,7 +4655,8 @@
    "p02": 897800.0,
    "p98": 167900000.0,
    "min": -101000.0,
-   "max": 178600000.0
+   "max": 178600000.0,
+   "national_only": true
   },
   {
    "id": "usaid_obligated_month_usd",
@@ -4669,7 +4682,8 @@
    "p02": -702900.0,
    "p98": 255400000.0,
    "min": -728600.0,
-   "max": 307400000.0
+   "max": 307400000.0,
+   "national_only": true
   },
   {
    "category": "human",
@@ -7013,7 +7027,8 @@
    "p02": 3.0,
    "p98": 14.0,
    "min": 2.0,
-   "max": 15.0
+   "max": 15.0,
+   "national_only": true
   },
   {
    "id": "fmr_all_movements_observed",
@@ -7040,7 +7055,8 @@
    "p98": 130400.0,
    "min": 20300.0,
    "max": 130400.0,
-   "aggregate": "sum"
+   "aggregate": "sum",
+   "national_only": true
   },
   {
    "id": "fmr_arrived_from_other_county_conflict",
@@ -7250,7 +7266,8 @@
    "p02": 0.022,
    "p98": 0.47,
    "min": 0.022,
-   "max": 0.47
+   "max": 0.47,
+   "national_only": true
   },
   {
    "id": "fmr_departed_to_other_county_conflict",
@@ -7461,7 +7478,8 @@
    "p98": 21940.0,
    "min": 2.0,
    "max": 22430.0,
-   "aggregate": "sum"
+   "aggregate": "sum",
+   "national_only": true
   },
   {
    "id": "fmr_internal_forced_disaster",
@@ -7488,7 +7506,8 @@
    "p98": 2816.0,
    "min": 0,
    "max": 3080.0,
-   "aggregate": "sum"
+   "aggregate": "sum",
+   "national_only": true
   },
   {
    "id": "fmr_internal_forced_food",
@@ -7515,7 +7534,8 @@
    "p98": 1213.0,
    "min": 0,
    "max": 2505.0,
-   "aggregate": "sum"
+   "aggregate": "sum",
+   "national_only": true
   },
   {
    "id": "fmr_internal_forced_total",
@@ -7542,7 +7562,8 @@
    "p98": 23420.0,
    "min": 72.0,
    "max": 23580.0,
-   "aggregate": "sum"
+   "aggregate": "sum",
+   "national_only": true
   },
   {
    "id": "fmr_monitoring_points_in_county",
@@ -8620,7 +8641,8 @@
    "p02": 0,
    "p98": 11.0,
    "min": 0,
-   "max": 12.0
+   "max": 12.0,
+   "national_only": true
   },
   {
    "id": "ii_education_attacks",
@@ -8648,7 +8670,8 @@
    "min": 0,
    "max": 5.0,
    "baseline_mode": "annual",
-   "sparse_count": true
+   "sparse_count": true,
+   "national_only": true
   },
   {
    "id": "ii_health_attacks",
@@ -8676,7 +8699,8 @@
    "min": 0,
    "max": 8.0,
    "baseline_mode": "annual",
-   "sparse_count": true
+   "sparse_count": true,
+   "national_only": true
   },
   {
    "id": "ii_sexual_violence_incidents",
@@ -8702,7 +8726,8 @@
    "p02": 0,
    "p98": 6.0,
    "min": 0,
-   "max": 11.0
+   "max": 11.0,
+   "national_only": true
   },
   {
    "category": "human",
@@ -9028,7 +9053,8 @@
    "p02": 1116000000.0,
    "p98": 1238000000.0,
    "min": 1116000000.0,
-   "max": 1238000000.0
+   "max": 1238000000.0,
+   "national_only": true
   },
   {
    "id": "unmiss_expenditure_fy_usd",
@@ -9054,7 +9080,8 @@
    "p02": 1110000000.0,
    "p98": 1199000000.0,
    "min": 1110000000.0,
-   "max": 1199000000.0
+   "max": 1199000000.0,
+   "national_only": true
   },
   {
    "id": "unmiss_uniformed_personnel",
@@ -9080,7 +9107,8 @@
    "p02": 14580.0,
    "p98": 16740.0,
    "min": 11380.0,
-   "max": 16760.0
+   "max": 16760.0,
+   "national_only": true
   },
   {
    "id": "pop_total",
@@ -10280,7 +10308,8 @@
    "p02": 71.87,
    "p98": 92.92,
    "min": 71.87,
-   "max": 92.92
+   "max": 92.92,
+   "national_only": true
   },
   {
    "category": "human",
@@ -10361,7 +10390,8 @@
    "p02": 96.71,
    "p98": 133.7,
    "min": 96.71,
-   "max": 133.7
+   "max": 133.7,
+   "national_only": true
   },
   {
    "category": "human",
@@ -10469,7 +10499,8 @@
    "p02": 26.7,
    "p98": 47.0,
    "min": 26.7,
-   "max": 47.0
+   "max": 47.0,
+   "national_only": true
   },
   {
    "id": "wps_rank",
@@ -10496,7 +10527,8 @@
    "p02": 163.0,
    "p98": 173.0,
    "min": 163.0,
-   "max": 173.0
+   "max": 173.0,
+   "national_only": true
   },
   {
    "id": "wps_index",
@@ -10523,7 +10555,8 @@
    "p02": 0.388,
    "p98": 0.541,
    "min": 0.388,
-   "max": 0.541
+   "max": 0.541,
+   "national_only": true
   },
   {
    "id": "wps_community_safety_pct",
@@ -10550,7 +10583,8 @@
    "p02": 42.6,
    "p98": 48.4,
    "min": 42.6,
-   "max": 48.4
+   "max": 48.4,
+   "national_only": true
   },
   {
    "id": "wps_parliament_women_pct",
@@ -10577,7 +10611,8 @@
    "p02": 26.6,
    "p98": 32.33,
    "min": 26.6,
-   "max": 32.33
+   "max": 32.33,
+   "national_only": true
   },
   {
    "id": "wps_cellphone_pct",
@@ -10604,7 +10639,8 @@
    "p02": 27.0,
    "p98": 58.49,
    "min": 27.0,
-   "max": 58.49
+   "max": 58.49,
+   "national_only": true
   },
   {
    "id": "wps_employment_pct",
@@ -10631,7 +10667,8 @@
    "p02": 55.66,
    "p98": 66.6,
    "min": 55.66,
-   "max": 66.6
+   "max": 66.6,
+   "national_only": true
   },
   {
    "id": "wps_financial_inclusion_pct",
@@ -10658,7 +10695,8 @@
    "p02": 4.191,
    "p98": 4.7,
    "min": 4.191,
-   "max": 4.7
+   "max": 4.7,
+   "national_only": true
   },
   {
    "id": "wps_education_years",
@@ -10685,7 +10723,8 @@
    "p02": 3.9,
    "p98": 4.762,
    "min": 3.9,
-   "max": 4.762
+   "max": 4.762,
+   "national_only": true
   }
  ]
 }
