@@ -1,0 +1,5 @@
+,dr_spi3_chirps,dr_spei3_tc,dr_pdsi_tc_z,dr_spei3_imerg
+dr_spi3_chirps,1.0,0.34,0.27,0.39
+dr_spei3_tc,0.34,1.0,0.45,0.31
+dr_pdsi_tc_z,0.27,0.45,1.0,0.39
+dr_spei3_imerg,0.39,0.31,0.39,1.0

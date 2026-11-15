@@ -123,11 +123,9 @@ def main():
              notes="Geo-PKO estimates troop numbers from unit sizes on UN maps (approximate). 2025 = Oct 2024 values for "
                    "locations still shown on the Jan 2025 map. UNPOL/FPU police strength not fully included."),
     ])
-    add_points_meta({"key": "unmiss", "label": "UNMISS peacekeeping deployments", "category": "human",
-                     "source": "Geo-PKO v2.3 (2018-2024) + UN Geospatial map 4456 Rev.62/67 (Jan 2025, Jan 2026)",
-                     "source_url": "https://www.pcr.uu.se/data/geo-pko/",
-                     "notes": "One point per location per year (field `year`), with type (HQ / team site), estimated troops "
-                              "and contributing countries/units. 2026 locations from Jan 2026 map (Aweil, Tambura, Yei, Torit closed)."})
+    # time-dynamic point layer (one feature per location x period) + points.json entry: scripts/points_unmiss.py
+    import points_unmiss
+    points_unmiss.main()
 
 
 if __name__ == "__main__":

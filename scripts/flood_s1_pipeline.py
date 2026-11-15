@@ -13,8 +13,11 @@ are eroded, the scene is converted to dB and reprojected (average) onto a fixed 
 grid. Per pixel and month we keep: mean VV dB, mean VH dB, minimum VV dB, number of acquisitions
 -> data/raw/s1_flood/grids/YYYY-MM.npz (uint8 quantised, 0.25 dB steps; raw, not committed).
 
-Stage 2 `finalize`: per pixel-month   water = mean VV dB < VV_T  AND  mean VH dB < VH_T   (open water / sparse
-flooded vegetation; thresholds from the bimodal VV histogram over the Sudd/Nile, see docs/CLIMATE_DATA_DECISIONS.md).
+Stage 2 `finalize`: per pixel-month   water = mean VH dB < -17 (open water: specular, dark)  OR
+mean (VV - VH) dB > 8.5 (flooded herbaceous vegetation: double bounce raises VV far more than VH).
+A pure low-backscatter rule (VV < -18 dB) finds almost nothing in the Sudd because most flood water there stands
+under grass/papyrus and is BRIGHT. Thresholds were calibrated on ONE UNOSAT VIIRS flood map (4-8 Oct 2022,
+pixel F1 0.61, area ratio 1.09) and validated on the other UNOSAT dates (scripts/flood_s1_validate.py).
 Pixels without any acquisition inherit the previous month (max 2 months). Permanent water = water in >= 10 of 12
 months in at least 6 of the 8 years. County outputs (data/processed/flood_s1_county_monthly.csv):
   flood_s1_water_km2      all SAR-detected water (open water + flooded sparse vegetation)
@@ -47,8 +50,8 @@ RES = 0.004
 OVR = 16
 GRID_DIR = hc.REPO / "data" / "raw" / "s1_flood" / "grids"
 OUT = hc.PROC / "flood_s1_county_monthly.csv"
-VV_T = -18.0   # dB, see finalize() / decisions doc
-VH_T = -24.0
+VH_T = -17.0    # dB: open water (specular, dark in cross-pol)
+RATIO_T = 8.5   # dB: VV-VH, flooded herbaceous vegetation (double bounce brightens VV much more than VH)
 MAX_CARRY = 2
 KEY = "flood_s1"
 
@@ -145,7 +148,8 @@ def run_grids(months):
 # ------------------------------------------------------------------------------------------- stage 2
 def classify(z):
     vv, vh = dq(z["vv"]), dq(z["vh"])
-    w = np.where(np.isnan(vv), -1, ((vv < VV_T) & (vh < VH_T)).astype("int8")).astype("int8")
+    wet = (vh < VH_T) | ((vv - vh) > RATIO_T)
+    w = np.where(np.isnan(vv) | np.isnan(vh), -1, wet.astype("int8")).astype("int8")
     return w
 
 
@@ -229,15 +233,15 @@ def finalize():
                          canvas, 0.0, 1.0, "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
                          "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid", dates,
                          "Copernicus Sentinel-1 IW GRD RTC (sentinel-1-rtc) via Microsoft Planetary Computer",
-                         notes=f"Water = monthly mean VV < {VV_T} dB and VH < {VH_T} dB. Sees through cloud. "
-                               "Transparent = dry land; grey = no acquisition within 2 months. Dense papyrus/Typha "
-                               "swamp (double bounce) is not detected.")
+                         notes=f"Water = monthly mean VH < {VH_T} dB (open water) or VV-VH > {RATIO_T} dB (flooded vegetation). "
+                               "Sees through cloud. Transparent = dry land; grey = no acquisition within 2 months.")
     src = "Copernicus Sentinel-1 A/B IW GRD, radiometrically terrain-corrected (sentinel-1-rtc) via Microsoft Planetary Computer"
     url = "https://planetarycomputer.microsoft.com/dataset/sentinel-1-rtc"
-    note = (f"Radar (C-band SAR) water = monthly mean gamma0 VV < {VV_T} dB and VH < {VH_T} dB on a ~440 m grid "
-            "(scenes read at 160 m, block-averaged). Sees through cloud (unlike MODIS) and detects open water and "
-            "water under sparse/emergent vegetation; dense papyrus/Typha swamp (double-bounce, bright) and wet "
-            "smooth clay can be mis-classified (missed / false water). Revisit 6-12 days 2018-2021, ~12-24 days "
+    note = (f"Radar (C-band SAR) water = monthly mean gamma0 VH < {VH_T} dB (open water) OR VV-VH > {RATIO_T} dB "
+            "(flooded herbaceous vegetation, double bounce) on a ~440 m grid (scenes read at 160 m, block-averaged). "
+            "Sees through cloud (unlike MODIS) and sees water under grass/papyrus, which is most of the Sudd flood. "
+            "Possible false water: wind-roughened lakes are missed, built-up areas and some woody wetlands can pass "
+            "the ratio rule. Revisit 6-12 days 2018-2021, ~12-24 days "
             "after Sentinel-1B failed (Dec 2021) until Sentinel-1C (2025); pixels without an acquisition inherit "
             "the previous month (max 2). County-months with <50% known area are dropped. Validation vs UNOSAT: see "
             "docs/CLIMATE_DATA_DECISIONS.md and scripts/flood_s1_validate.py.")

@@ -5,3 +5,6 @@ data/raw/**/_cache/
 .ipynb_checkpoints/
 data/raw/osm/*/
 data/raw/oil/goit_map_*.geojson
+data/raw/s1_flood/grids/
+data/raw/drought_ensemble/_cache/
+data/raw/isna/isna_hno_analysis_output_county_2023.xlsx

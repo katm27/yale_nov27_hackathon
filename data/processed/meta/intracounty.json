@@ -1,0 +1,62 @@
+[
+ {
+  "category": "human",
+  "temporal": "monthly",
+  "index_ok": false,
+  "id": "intracounty_conflict_events",
+  "label": "Local/communal conflict events (UCDP)",
+  "units": "events/month",
+  "aggregation": "count of GED non-state/one-sided events by local actors",
+  "source": "UCDP Georeferenced Event Dataset (GED) v26.1; actor classification scripts/intracounty_conflict.py",
+  "source_url": "https://ucdp.uu.se/downloads/",
+  "native_resolution": "event points (where_prec<=3)",
+  "group": "Conflict",
+  "higher_is": "worse",
+  "notes": "Local violence: UCDP non-state + one-sided events whose perpetrators are communal identity groups (Dinka/Nuer sections, Murle, Toposa, Misseriya, ...) or South Sudanese local militias (NAS, SPLA-IO factions, UCDP actors AAKG and CPC) fighting each other or attacking civilians. Government and foreign actors excluded. Only deadly events of dyads above UCDP's 25-deaths/year threshold, so cattle raiding is under-counted; counted where the event happened (actors' home county unknown). Zeros in 2018 make ratio indexing meaningless (index_ok false)."
+ },
+ {
+  "category": "human",
+  "temporal": "monthly",
+  "index_ok": false,
+  "id": "intracounty_conflict_deaths",
+  "label": "Local/communal conflict deaths (UCDP)",
+  "units": "deaths/month",
+  "aggregation": "sum of GED best estimate",
+  "source": "UCDP Georeferenced Event Dataset (GED) v26.1; actor classification scripts/intracounty_conflict.py",
+  "source_url": "https://ucdp.uu.se/downloads/",
+  "native_resolution": "event points (where_prec<=3)",
+  "group": "Conflict",
+  "higher_is": "worse",
+  "notes": "Local violence: UCDP non-state + one-sided events whose perpetrators are communal identity groups (Dinka/Nuer sections, Murle, Toposa, Misseriya, ...) or South Sudanese local militias (NAS, SPLA-IO factions, UCDP actors AAKG and CPC) fighting each other or attacking civilians. Government and foreign actors excluded. Only deadly events of dyads above UCDP's 25-deaths/year threshold, so cattle raiding is under-counted; counted where the event happened (actors' home county unknown). Zeros in 2018 make ratio indexing meaningless (index_ok false)."
+ },
+ {
+  "category": "human",
+  "temporal": "monthly",
+  "index_ok": false,
+  "id": "intracounty_communal_events",
+  "label": "Inter-communal violence events (UCDP)",
+  "units": "events/month",
+  "aggregation": "count of GED events between communal groups (or communal group vs civilians)",
+  "source": "UCDP Georeferenced Event Dataset (GED) v26.1; actor classification scripts/intracounty_conflict.py",
+  "source_url": "https://ucdp.uu.se/downloads/",
+  "native_resolution": "event points (where_prec<=3)",
+  "group": "Conflict",
+  "higher_is": "worse",
+  "notes": "Local violence: UCDP non-state + one-sided events whose perpetrators are communal identity groups (Dinka/Nuer sections, Murle, Toposa, Misseriya, ...) or South Sudanese local militias (NAS, SPLA-IO factions, UCDP actors AAKG and CPC) fighting each other or attacking civilians. Government and foreign actors excluded. Only deadly events of dyads above UCDP's 25-deaths/year threshold, so cattle raiding is under-counted; counted where the event happened (actors' home county unknown). Zeros in 2018 make ratio indexing meaningless (index_ok false)."
+ },
+ {
+  "category": "human",
+  "temporal": "monthly",
+  "index_ok": false,
+  "id": "intracounty_communal_deaths",
+  "label": "Inter-communal violence deaths (UCDP)",
+  "units": "deaths/month",
+  "aggregation": "sum of GED best estimate",
+  "source": "UCDP Georeferenced Event Dataset (GED) v26.1; actor classification scripts/intracounty_conflict.py",
+  "source_url": "https://ucdp.uu.se/downloads/",
+  "native_resolution": "event points (where_prec<=3)",
+  "group": "Conflict",
+  "higher_is": "worse",
+  "notes": "Local violence: UCDP non-state + one-sided events whose perpetrators are communal identity groups (Dinka/Nuer sections, Murle, Toposa, Misseriya, ...) or South Sudanese local militias (NAS, SPLA-IO factions, UCDP actors AAKG and CPC) fighting each other or attacking civilians. Government and foreign actors excluded. Only deadly events of dyads above UCDP's 25-deaths/year threshold, so cattle raiding is under-counted; counted where the event happened (actors' home county unknown). Zeros in 2018 make ratio indexing meaningless (index_ok false)."
+ }
+]

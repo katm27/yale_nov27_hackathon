@@ -115,3 +115,5 @@ if __name__ == "__main__":
     _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
     from trend_stats import write_trends
     write_trends("education")  # Mann-Kendall + Sen's slope (scripts/trend_stats.py)
+    import points_snapshots  # snapshot temporal fields (valid_from/valid_to/date_basis)
+    points_snapshots.schools()

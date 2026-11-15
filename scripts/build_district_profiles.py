@@ -180,7 +180,8 @@ def compute_key_facts(ids: list[str]) -> dict[str, dict]:
     return out
 
 
-def facts_sentence(kf: dict) -> str:
+def facts_sentence(kf: dict, short: bool = False) -> str:
+    """Compact numeric summary; `short` keeps only ACLED and the IDP peak."""
     parts = []
     if kf["acled_pv_events_2018_2025"]:
         s = (f"ACLED 2018-25: {kf['acled_pv_events_2018_2025']} political-violence events, "
@@ -192,6 +193,8 @@ def facts_sentence(kf: dict) -> str:
         parts.append("ACLED 2018-25: no political-violence events recorded")
     if kf.get("dtm_idps_peak"):
         parts.append(f"IDPs peak {kf['dtm_idps_peak']:,} ({kf['dtm_idps_peak_date']})")
+    if short:
+        return "; ".join(parts) + "."
     if kf.get("ipc_phase3plus_pct_peak"):
         parts.append(f"IPC3+ peak {kf['ipc_phase3plus_pct_peak']}%")
     if kf.get("dtm_et_displaced_by_flooding_2020_2025"):
@@ -233,10 +236,12 @@ def main() -> int:
             lz["secondary"] = {"code": sec[0][0], "name": ZONES[sec[0][0]][0],
                                "share": round(sec[0][1], 2)}
         conflict = n.get("conflict_narrative", "").strip()
-        fs = facts_sentence(kf)
-        conflict_full = f"{conflict} {fs}".strip() if conflict else fs
-        if len(conflict_full) > MAX_CHARS:  # keep narrative; numbers are always in key_facts
-            conflict_full = conflict
+        conflict_full = conflict
+        for short in (False, True):  # longest numeric summary that fits; all numbers stay in key_facts
+            cand = f"{conflict} {facts_sentence(kf, short)}".strip()
+            if len(cand) <= MAX_CHARS:
+                conflict_full = cand
+                break
         rec = {
             "name": p["name"],
             "state": p["admin1"],

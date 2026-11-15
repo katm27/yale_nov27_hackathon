@@ -1,0 +1,18 @@
+[
+  {
+    "id": "modis_et_monthly_mm",
+    "label": "Evapotranspiration, monthly (MODIS)",
+    "category": "environment",
+    "group": "Water",
+    "units": "mm/month",
+    "source": "MODIS MOD16A2GF v061 (Terra, 8-day, gap-filled) via NASA AppEEARS",
+    "source_url": "https://doi.org/10.5067/MODIS/MOD16A2GF.061",
+    "native_resolution": "500 m (aggregated to ~1 km grid)",
+    "temporal": "monthly",
+    "aggregation": "8-day ET totals prorated to calendar months by day overlap (last composite of each year is 5/6 days), per ~1 km cell; then mean of valid cells in county",
+    "higher_is": "neutral",
+    "index_ok": true,
+    "notes": "Actual ET (Penman-Monteith MOD16). Open water, urban and barren pixels are fill and excluded (e.g. the permanent Sudd open water), so wetland counties are under-represented. Cells need >=75% of month's days valid. Annual sums vs MOD16A3GF modis_et_mm: r=1.0, ratio 0.9999. AppEEARS area request clipped to the South Sudan outline, geographic projection.",
+    "raster": "modis_et_monthly"
+  }
+]

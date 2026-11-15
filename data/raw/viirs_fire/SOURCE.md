@@ -11,6 +11,6 @@ S-NPP 2018-01-01..2025-12-31, NOAA-20 2020-01-01..2025-12-31 (standard-processin
 
 Files here: `viirs_<snpp|noaa20>_<year>.csv.gz` = detections after filtering (confidence n/h, type 0, inside a county) with the county_id they fall in. The unfiltered bbox API responses are cached in `_api_cache/` (not committed).
 
-Filter counts: {"VIIRS_SNPP_SP": {"bbox": 1860663, "conf_nh": 1620097, "type0": 1617187, "in_country": 920097}}
+Filter counts: {"VIIRS_SNPP_SP": {"bbox": 9479403, "conf_nh": 8268186, "type0": 8261050, "in_country": 4811879}, "VIIRS_NOAA20_SP": {"bbox": 7066475, "conf_nh": 6102394, "type0": 6098851, "in_country": 3558126}}
 
 Citation: NASA FIRMS, VIIRS 375 m active fire product VNP14IMGTDL / VJ114IMGTDL (Schroeder et al. 2014). doi:10.5067/FIRMS/VIIRS/VNP14IMGT_NRT.002

@@ -213,3 +213,5 @@ if __name__ == "__main__":
     _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
     from trend_stats import write_trends
     write_trends("insecurity_insight_national")
+    import points_events  # valid_from/valid_to/date_basis on event points and ethnic polygons
+    points_events.main()

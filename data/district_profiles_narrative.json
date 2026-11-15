@@ -1,1 +1,665 @@
-{}
+{
+ "SS0101": {
+  "history": "Multi-ethnic county hosting Juba, the national capital and county seat; host communities include the Bari, Lokoya and Lulubo; payams include Rejaf, Gondokoro, Mangalla, Lobonok and Wonduruba.",
+  "conflict_narrative": "UNMISS reported SSPDF-NAS hostilities affecting civilians in Juba County (2023-24) and Murle armed incursions near Gondokoro and Mangalla (2023).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/juba/",
+   "https://en.wikipedia.org/wiki/Juba_County",
+   "https://icr.ethz.ch/data/epr/geoepr/",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0102": {
+  "history": "Home mainly to the Kuku; borders Uganda. Once seen as a stable model county, it was heavily depopulated by conflict from 2016.",
+  "conflict_narrative": "UNMISS found Yei and Kajo-Keji most affected by 2018-19 violence; SSPDF-NAS violence again affected parts of Kajo-Keji in 2024.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/kajo-keji/",
+   "https://en.wikipedia.org/wiki/Kajo_Keji_County",
+   "https://www.ecoi.net/en/file/local/2012167/final_-_human_rights_division_report_on_central_equatoria_-_3_july_2019.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0103": {
+  "history": "County on the Juba-Yei road with headquarters at Lainya town; part of the former Yei River State. Affected by the National Salvation Front (NAS) insurgency since 2016-17.",
+  "conflict_narrative": "Villages in Lainya and Yei (e.g. Mukaya) were attacked repeatedly in 2018-19; UNMISS attributed many 2022 abductions in Mukaya payam to NAS.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/lainya/",
+   "https://en.wikipedia.org/wiki/Lainya_County",
+   "https://www.ecoi.net/en/file/local/2012167/final_-_human_rights_division_report_on_central_equatoria_-_3_july_2019.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf"
+  ]
+ },
+ "SS0104": {
+  "history": "Greenbelt county bordering Uganda and DR Congo, inhabited mainly by Kakwa, Keliko and Lugbara farmers; a food supplier for Yei and Juba.",
+  "conflict_narrative": "UNMISS documented NAS abductions (2022-23) and, in 2025, SSPDF aerial bombardment of SPLA-IO positions incl. the Kendila cantonment site.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/morobo/",
+   "https://en.wikipedia.org/wiki/Morobo_County",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0105": {
+  "history": "Mundari agro-pastoralist county on both banks of the White Nile north of Juba, carved out of Juba County in 2001; headquarters Terekeka town.",
+  "conflict_narrative": "UNMISS reported intercommunal violence by community-based militias around Juba and Terekeka counties in 2022.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/terekeka/",
+   "https://en.wikipedia.org/wiki/Terekeka_County",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf"
+  ]
+ },
+ "SS0106": {
+  "history": "Yei River County, home to Pojulu, Kakwa, Keliko, Makaraka, Mundu and others; Yei town is a cross-border trade hub near Uganda and DR Congo and hosts IDPs and Congolese refugees.",
+  "conflict_narrative": "Epicentre of the 2018-19 SSPDF/NAS conflict documented by UNMISS; NAS abductions in Lasu, Otogo and Tore payams continued in 2022-25.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/yei/",
+   "https://en.wikipedia.org/wiki/Yei_County",
+   "https://www.ecoi.net/en/file/local/2012167/final_-_human_rights_division_report_on_central_equatoria_-_3_july_2019.pdf",
+   "https://www.ecoi.net/en/file/local/2048257/unmiss_annual_brief_violence_against_civilians_2020_final_for_publication.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0201": {
+  "history": "Named after its Buya and Didinga agro-pastoralist inhabitants; headquarters Chukudum, which hosted the first SPLM National Convention in 1994. Borders Uganda and Kenya.",
+  "conflict_narrative": "UNMISS reported a 2024 attack on Didinga honey harvesters in Budi's mountains, an area contested with Karamojong communities of Uganda.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/budi/",
+   "https://en.wikipedia.org/wiki/Budi_County",
+   "https://unmiss.unmissions.org/sites/default/files/human_rights_brief_violence_affecting_civilians_july-september_2024.pdf"
+  ]
+ },
+ "SS0202": {
+  "history": "Highland county around Ikotos town inhabited by Lango, Ketebo and other agro-pastoral groups growing sorghum and millet; dry-season cattle raiding has long occurred, notably in the Kidepo valley.",
+  "conflict_narrative": "UNMISS documented 2024 incursions by armed Logir elements in Chokorol payam, Ikotos, injuring and killing civilians.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/ikotos/",
+   "https://en.wikipedia.org/wiki/Ikotos_County",
+   "https://unmiss.unmissions.org/sites/default/files/human_rights_brief_violence_affecting_civilians_july-september_2024.pdf"
+  ]
+ },
+ "SS0203": {
+  "history": "Largest group is the Toposa pastoralists, with the Jie minority in Jie payam and Nyangatom near the Kenya-Ethiopia border; payams include Narus, Natinga and Kauto.",
+  "conflict_narrative": "UNMISS reported cross-border attacks by armed Turkana from Kenya on Toposa communities (2023) and Murle armed raids from GPAA (2024-25).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/kapoeta-east/",
+   "https://en.wikipedia.org/wiki/Kapoeta_East_County",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0204": {
+  "history": "Toposa pastoralist county whose principal settlement is Riwoto.",
+  "conflict_narrative": "UNMISS reported Murle armed elements from GPAA reaching parts of Kapoeta North in 2024.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/kapoeta-north/",
+   "https://en.wikipedia.org/wiki/Kapoeta_North_County",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0205": {
+  "history": "Toposa and Didinga county around Kapoeta town (county HQ), with Kapoeta Mission Hospital serving a large catchment including returnees and IDPs.",
+  "conflict_narrative": "",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/kapoeta-south/",
+   "https://en.wikipedia.org/wiki/Kapoeta_South_County"
+  ]
+ },
+ "SS0206": {
+  "history": "Also called Lopa/Lafon; largest community is the Lopit, followed by the Pari, Tennet and Lotuko; mostly single-season farmers.",
+  "conflict_narrative": "UNMISS reported raids by Murle armed elements from GPAA on Pari and Toposa communities in Lafon in 2023-25.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/lafon/",
+   "https://en.wikipedia.org/wiki/Lafon_County",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0207": {
+  "history": "Acholi county bordering Uganda; towns include Magwi (headquarters), Nimule, Pageri, Palotaka and Pajok, with the White Nile entering at Nimule.",
+  "conflict_narrative": "UNMISS reported intercommunal violence involving Dinka Bor cattle keepers in and around Magwi County in the first half of 2022.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/magwi/",
+   "https://en.wikipedia.org/wiki/Magwi_County",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf"
+  ]
+ },
+ "SS0208": {
+  "history": "Seat of Torit town, capital of Eastern Equatoria; inhabited by Lotuko (Otuho), Madi and Acholi groups; affected by the Second Sudanese Civil War and LRA activity.",
+  "conflict_narrative": "UNMISS reported Murle armed elements from GPAA reaching parts of Torit County in 2023-24.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/torit/",
+   "https://en.wikipedia.org/wiki/Torit_County",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0301": {
+  "history": "Lou Nuer county on the Ethiopian border with headquarters at Akobo town; a pastoral population that moves with livestock in search of water and pasture, and some residents have sought refuge in Ethiopia.",
+  "conflict_narrative": "UNMISS documented Lou Nuer-Murle cycles of attack and cattle raiding affecting Akobo in 2020 and again in 2022-24.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/akobo/",
+   "https://en.wikipedia.org/wiki/Akobo_County",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0302": {
+  "history": "Inhabited by the Gawaar (Gaawar) Nuer; part of the Sudd-edge floodplain of northern Jonglei.",
+  "conflict_narrative": "UNMISS: the Gawaar Nuer 'White Army' militia from Ayod fought alongside the Kitgwang faction in Upper Nile in Aug-Dec 2022.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/ayod/",
+   "https://en.wikipedia.org/wiki/Ayod_County",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf"
+  ]
+ },
+ "SS0303": {
+  "history": "Dinka Bor county containing Bor town, the capital of Jonglei State, on the east bank of the White Nile.",
+  "conflict_narrative": "UNMISS reported Murle armed raids into Bor South (2020, 2023-24) and Dinka Bor cattle keepers' involvement in violence around Magwi (2022).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/bor-south/",
+   "https://en.wikipedia.org/wiki/Pochalla_County",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0304": {
+  "history": "Northwestern Jonglei county on the White Nile corridor, home to Padang Dinka (Paweny, Thoi, Rut, Luac), Gawaar and Lou Nuer, and Shilluk communities.",
+  "conflict_narrative": "Pigi armed elements joined the 2022 Upper Nile fighting (UNMISS); Pigi and Fangak were hit by spillover violence from Upper Nile in 2025.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/canal-pigi/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0305": {
+  "history": "Primarily Dinka county (per UNMISS) south of the Sudd; Duk Payuel is the birthplace of 'Lost Boy' John Dau.",
+  "conflict_narrative": "UNMISS documented recurring Murle armed attacks on Duk (2020, 2023); in 2024 they caused 118 victims there, about 20% of Jonglei's total.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/duk/",
+   "https://en.wikipedia.org/wiki/Duk_County",
+   "https://icr.ethz.ch/data/epr/geoepr/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0306": {
+  "history": "Inhabited mainly by the Laak and Thiang sections of the Nuer, agro-pastoralists of the Sudd; headquarters Phom el Zeraf where the Bahr el Zeraf meets the White Nile.",
+  "conflict_narrative": "Most flood-affected county in 2021 (OCHA). Fighting reached New Fangak in 2022; May 2025 air strikes on Old Fangak killed 9 civilians.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/fangak/",
+   "https://en.wikipedia.org/wiki/Fangak_County",
+   "https://www.211check.org/post/data-story-south-sudan-floods-database-2021",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0307": {
+  "history": "Lou Nuer county (per UNMISS) in northern Jonglei; Lankien is a main town.",
+  "conflict_narrative": "UNMISS documented Murle raids on Nyirol (2020, 2023-24) and a 2022 attack in Fashoda by Lou Nuer youth from Lankien.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/nyirol/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0308": {
+  "history": "Home of the Murle, Kachipo and Jie; seat of the Greater Pibor Administrative Area (GPAA), announced in 2020; headquarters Pibor town. Areas include Gumuruk, Likuangole and Verteth.",
+  "conflict_narrative": "Dinka and Nuer militias attacked Likuangole and Gumuruk in 2020, and Nuer militias launched a large attack on GPAA on 24 Dec 2022 (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/pibor/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0309": {
+  "history": "Anyuak (Anuak) farming county on the Ethiopian border, part of the Greater Pibor Administrative Area; hosts Ethiopian Anyuak refugees.",
+  "conflict_narrative": "UNMISS reported Murle armed elements' incursions in parts of Pochalla in 2024.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/pochalla/",
+   "https://en.wikipedia.org/wiki/Pochalla_County",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0310": {
+  "history": "Twic (Twi) Dinka county with headquarters at Panyagor; former Twi Dinka district in colonial times and birthplace of John Garang.",
+  "conflict_narrative": "UNMISS documented Murle raids into Twic East in 2020 and 2024.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/twic-east/",
+   "https://en.wikipedia.org/wiki/Twic_East_County",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0311": {
+  "history": "Lou Nuer county in northern Jonglei; home area of Gen. Simon Gatwech Dual, former SPLA-IO chief of staff.",
+  "conflict_narrative": "UNMISS documented Murle raids on Uror in 2020 and 2023 within wider Lou Nuer-Murle cycles of violence.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/uror/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0401": {
+  "history": "Aliab Dinka county with headquarters at Mingkaman on the White Nile. Mingkaman received about 85,000 IDPs from Bor South, Twic East and Duk by Jan 2014; little direct 2013-18 fighting.",
+  "conflict_narrative": "Reciprocal Aliab Dinka-Mundari raiding near the Terekeka border rose in 2020-21; severe Nile flooding in mid-2020 displaced riverside settlements (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/awerial/"
+  ]
+ },
+ "SS0402": {
+  "history": "Gok Dinka county with headquarters at Cueibet town; relatively insulated from the 1983-2005 and 2013-2018 wars but affected by intra-Gok sectional conflict since the late 1990s.",
+  "conflict_narrative": "Inter-sectional raiding rose after the 2018 R-ARCSS; cross-border violence with Agar Dinka (2021) and Tonj South (late 2022), easing since 2022 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/cueibet/"
+  ]
+ },
+ "SS0403": {
+  "history": "Agar Dinka county containing Rumbek, capital of Lakes State and SPLM/A headquarters after 1997; not directly affected by SPLA vs SPLA-IO fighting in 2013-2018.",
+  "conflict_narrative": "After 2018, clashes among Agar sections and with Gok Dinka grew more lethal; a new governor from 2021 imposed coercive security measures (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/rumber-center/"
+  ]
+ },
+ "SS0404": {
+  "history": "Agar Dinka county with headquarters in Aduel payam; long affected by inter- and intra-sectional feuds and cattle raiding from southern Unity State.",
+  "conflict_narrative": "Gony-Thuyic sub-section fighting escalated in 2019-2021 despite a Nov 2019 peace deal; cross-border violence with Yirol West also flared (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/rumbek-east/"
+  ]
+ },
+ "SS0405": {
+  "history": "Pakam (Agar) Dinka county at the Lakes-Warrap-Unity tri-border, exposed to disputes over water, grazing and cattle raiding.",
+  "conflict_narrative": "Gak-Manuer fighting killed 79 in Nov 2019; Pakam-Luach-Jang clashes on the Tonj East border killed an estimated 143 in Feb and 76 in Apr 2023 (CSRF/UNSC).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/rumbek-north/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0406": {
+  "history": "Home to the Belle ('Jur Bel') and Bongo farming and fishing communities; hosted the 2000 Wunlit follow-up peace conference.",
+  "conflict_narrative": "Raids on cattle camps continued after 2018, incl. the killing of six Gok Dinka cattle traders in Dec 2019; road security reportedly improved from 2022 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/wulu/"
+  ]
+ },
+ "SS0407": {
+  "history": "Ciec Dinka (Ador, Lou) and Atuot county in Greater Yirol, an SPLM/A stronghold in the second civil war; includes the Nile port of Shambe.",
+  "conflict_narrative": "Raiding from Panyijiar (Unity) is a recurring threat; in June 2025 a boat carrying Nuer civilians was attacked in Yirol East, killing four (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/yirol-east/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0408": {
+  "history": "Atuot (Reel, Apak) county around Yirol town and Lake Yirol, part of Greater Yirol; payams include Aluakluak, Geer and Mapuordit.",
+  "conflict_narrative": "Agar Dinka-Atuot clashes rose sharply in 2021 in Aluakluak and Gher payams; an intra-Atuot clash in 2021 killed 20 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/yirol-west/",
+   "https://en.wikipedia.org/wiki/Yirol_West_County"
+  ]
+ },
+ "SS0501": {
+  "history": "Home to Luo ('Jur Chol') and Dinka Malual communities, headquarters in Aroyo payam; relatively insulated from both the second civil war raids and 2013-2018 fighting, and hosted IDPs from Wau and Raja.",
+  "conflict_narrative": "Recent tensions involve land, water points and farmer-herder disputes between Luo farmers and Fulani pastoralists; peace conferences in 2021 and 2023 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/aweil-center/"
+  ]
+ },
+ "SS0502": {
+  "history": "Most populous Dinka Malual (Abiem) county, headquarters at Mabil (Wanyjok area); heavily affected by murahalin raids during the 1983-2005 war and home to several national leaders.",
+  "conflict_narrative": "Less directly affected by the 2013-18 war; SSPM/A rebels were active in 2016-18, causing some displacement (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/aweil-east/"
+  ]
+ },
+ "SS0503": {
+  "history": "Dinka Malual (Giernyang) county with headquarters at Gok Machar, on the disputed border with Sudan incl. the '14-Mile Area'; badly hit by murahalin raids in 1983-2005.",
+  "conflict_narrative": "Directly affected early in the 2013-18 war; since 2023 the state has hosted people fleeing the SAF-RSF war in Sudan (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/aweil-north/"
+  ]
+ },
+ "SS0504": {
+  "history": "Dinka Malual (Paliet) and Luo ('Jur Chol') county with headquarters in Nyocawany payam, away from the Sudan border; few direct effects of the 2013-2018 war.",
+  "conflict_narrative": "Mostly low-level localised conflict since 2018, e.g. an April 2019 boundary dispute over Wathmuok among Paliet sub-sections, resolved at a peace conference (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/aweil-south/"
+  ]
+ },
+ "SS0505": {
+  "history": "Dinka Malual and Luo ('Jur Chol') county with headquarters at Nyamlel; Nyamlel and Marial Bai were severely hit by militia raids during the 1983-2005 war.",
+  "conflict_narrative": "Isolated Dinka Malual-Rizeigat incidents (2020-21) and land disputes (2022-24) are reported, far below second civil war levels (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/aweil-west/"
+  ]
+ },
+ "SS0001": {
+  "history": "Abyei Administrative Area, contested between Sudan and South Sudan since 1905 boundary decisions; Ngok Dinka mainly in the south, Misseriya mainly in the north. Policed by UN force UNISFA.",
+  "conflict_narrative": "Clashes at Kolom killed at least 33 in Jan 2020; Twic-Ngok Dinka border violence from Feb 2022 escalated again in late 2023 (CSRF, UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/abyei/",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unisfa.unmissions.org/"
+  ]
+ },
+ "SS0801": {
+  "history": "Rek Dinka (Apuk-Giir) agro-pastoral county with headquarters at Liet-Nhom; not directly hit by 2013-2018 fighting but a major recruitment area for government forces.",
+  "conflict_narrative": "Since 2018, land/boundary disputes tied to elite competition and cross-border violence with Unity State (2019) have driven insecurity (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/gogrial-east/"
+  ]
+ },
+ "SS0802": {
+  "history": "Rek Dinka (Aguok and Apuk) county containing Kuajok, the Warrap State capital, and Gogrial town (county HQ); a recruitment base for state forces in 2014 and 2018-19.",
+  "conflict_narrative": "Disputes over Nyinakook with Jur River communities have caused intermittent violence; elite competition shapes local conflict since 2018 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/gogrial-west/"
+  ]
+ },
+ "SS0803": {
+  "history": "Luac-Jang and Rek Dinka county with headquarters at Romic; rich dry-season grazing lands bordering Lakes and Unity states.",
+  "conflict_narrative": "A 2020 disarmament drive ended in about 148 deaths around Romic (UN Panel of Experts); UNMISS ranked Tonj East/North armed groups top in Warrap victims in 2024.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/tonj-east/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0804": {
+  "history": "Rek Dinka county with headquarters at Warrap town; Greater Tonj elites are prominent in national politics. Only limited direct effects from the 2013-2018 war.",
+  "conflict_narrative": "Since 2019 clan and sub-section violence has surged amid post-R-ARCSS recruitment; Tonj East/North armed elements caused 70% of Warrap's victims in 2024 (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/tonj-north/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0805": {
+  "history": "Rek Dinka and Bongo county around Tonj town, the largest town between Rumbek and Wau; no direct civil-war fighting in 2013-2018.",
+  "conflict_narrative": "Grazing, boundary and cattle-raiding disputes fuelled repeated clashes in 2020; 2021 brought both drought and floods (CSRF/REACH).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/tonj-south/"
+  ]
+ },
+ "SS0806": {
+  "history": "Twic Mayardit Dinka county with headquarters at Turalei, bordering the Abyei Area; not directly affected by 2013-2018 fighting.",
+  "conflict_narrative": "Twic-Ngok Dinka border fighting since Feb 2022 made Warrap the state with most civilian victims in 2023 (UNMISS); clashes with Mayom youth also in 2022.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/twic/",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf"
+  ]
+ },
+ "SS0601": {
+  "history": "Padang Dinka (Alor) county on the contested Sudan border, part of the Ruweng Administrative Area (RAA) established in 2020.",
+  "conflict_narrative": "Since 2018, road ambushes and Bul Nuer-Alor Dinka tensions dominate; 11 people were killed in a 2022 cattle raid (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/abiemnhom/"
+  ]
+ },
+ "SS0602": {
+  "history": "Western Jikany Nuer county created in 2005; held mainly by SPLA-IO in 2013-2018 despite government offensives in 2014, 2015 and 2018.",
+  "conflict_narrative": "11 police killed pursuing Mayom raiders (May 2021); Guit-Pariang clashes killed 23 (Feb 2022); SSPDF-SPLA-IO fighting in Dec 2023 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/guit/"
+  ]
+ },
+ "SS0603": {
+  "history": "Jagey (Jagei) Nuer county in central Unity, a frontline in past wars and site of the Thar Jath oil field.",
+  "conflict_narrative": "Fighting around the Mirmir SPLA-IO cantonment in Feb-Apr 2022 formed part of the southern Unity violence in which UNMISS counted 173 civilians killed.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/koch/",
+   "https://unmiss.unmissions.org/sites/default/files/report_on_attacks_on_civilians_in_southern_unity_state_-_06_september_2022.pdf"
+  ]
+ },
+ "SS0604": {
+  "history": "Dok Nuer county; Leer town was an SPLA-IO stronghold and target of government offensives incl. in 2018.",
+  "conflict_narrative": "Feb-May 2022 attacks by government forces and allied militias killed ~173 civilians, raped 131 and displaced ~44,000 in southern Unity, centred on Leer (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/leer/",
+   "https://unmiss.unmissions.org/sites/default/files/report_on_attacks_on_civilians_in_southern_unity_state_-_06_september_2022.pdf"
+  ]
+ },
+ "SS0605": {
+  "history": "Haak Nuer county in southern Unity; an SPLA-IO stronghold hit by government offensives in 2014, 2015 and 2018.",
+  "conflict_narrative": "Cross-border cattle raids from Tonj (2019-20) and government-opposition tensions persisted; Mayendit-based militias were implicated in the 2022 Leer attacks (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/mayendit/",
+   "https://unmiss.unmissions.org/sites/default/files/report_on_attacks_on_civilians_in_southern_unity_state_-_06_september_2022.pdf"
+  ]
+ },
+ "SS0606": {
+  "history": "Bul Nuer county with headquarters at Mayom town; home of influential commanders such as the late Paulino Matip.",
+  "conflict_narrative": "Elite splits led to the SSPM/A rebellion; in July 2022 an attack on Mayom town killed 12 incl. the county commissioner (CSRF, OHCHR).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/mayom/"
+  ]
+ },
+ "SS0607": {
+  "history": "Nyuong Nuer county largely within the Sudd wetlands, bordering Lakes State; an opposition stronghold hit by government offensives in 2014-2015.",
+  "conflict_narrative": "Cross-border cattle raiding with Lakes (Rumbek, Yirol) recurred in 2021-25 despite peace deals in 2018, 2022 and Sept 2024 (CSRF, UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/panyijiar/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0608": {
+  "history": "Padang Dinka (Ruweng/Panaruu, Paweny) county, seat of the Ruweng Administrative Area created in 2020; loyal to the government in 2013-2018. Hosts Nuba Mountains refugees at Ajoung Thok, Pamir and Yida.",
+  "conflict_narrative": "Localised insecurity centres on Wunkur payam, incl. a July 2023 SSPDF-SPLA-IO clash that killed at least seven (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/pariang/"
+  ]
+ },
+ "SS0609": {
+  "history": "Leek Nuer county containing Bentiu (Unity State capital) and Rubkona town, centre of the Unity oil fields; its UNMISS PoC (up to ~150,000 people) became an IDP camp in 2021.",
+  "conflict_narrative": "Severe floods in 2021-22 surrounded Bentiu; the IDP camp relies on dykes to stay dry (MSF). 18 Misseriya herders were killed in a March 2022 grazing dispute (UNSC).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/rubkona/",
+   "https://www.msf.ie/article/catastrophic-floods-cause-mass-displacement-and-escalating-humanitarian-crisis-south-sudan"
+  ]
+ },
+ "SS0701": {
+  "history": "Padang Dinka (Ngok Lual Yak) county in central Upper Nile, east of Malakal and crossed by the Sobat, with land disputes involving Nuer to the south and Shilluk along the Nile.",
+  "conflict_narrative": "",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/baliet/"
+  ]
+ },
+ "SS0702": {
+  "history": "Seen by the Shilluk (Chollo) as the heart of their kingdom; includes Kodok (county seat) and Tonga. Shilluk-Padang Dinka territorial disputes date to the second civil war.",
+  "conflict_narrative": "Aug-Dec 2022 Kitgwang/White Army vs Agwelek fighting hit Tonga and Kodok; about 22,000 people sheltered at Kodok near the UNMISS base (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/fashoda/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf"
+  ]
+ },
+ "SS0703": {
+  "history": "Eastern Jikany Nuer (Gajaak) and Koma county near Ethiopia and Sudan's Blue Nile; largely pro-opposition in 2013-2018, when SPLA offensives displaced civilians.",
+  "conflict_narrative": "Post-2018 defections led to SPLA-IO vs ex-SPLA-IO fighting in Feb-Mar 2022 and SSPDF-SPLA-IO clashes in Mathiang in June 2023 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/longochuk/"
+  ]
+ },
+ "SS0704": {
+  "history": "Eastern Jikany Nuer (Gaagwang, Gaajok) county on the Sobat River around Nasir port town, a focal point of Anya-Nya 2 and later opposition activity.",
+  "conflict_narrative": "SSPDF vs White Army fighting began in Nasir in Feb 2025 and spread along the Sobat, driving a nationwide spike in violence (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/luakpiny-nasir/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0705": {
+  "history": "Mabanese (Tom, Dagu, Buni) and Burun county including Bunj; hosts some 142,000-150,000 refugees in camps, far more than the host population.",
+  "conflict_narrative": "Militia violence and attacks on aid compounds in Bunj (2018, 2019) declined after the 2018 peace deal; late-2019 floods cut access (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/maban/"
+  ]
+ },
+ "SS0706": {
+  "history": "Eastern Jikany Nuer (Gajaak) and Koma county on the Ethiopian border; Pagak hosted the SPLA-IO's headquarters during 2013-2018, and a 2017-18 offensive displaced over 40,000 to Ethiopia.",
+  "conflict_narrative": "Post-2018 SPLA-IO defections, notably in Aug 2019, sparked intra-Gajaak tensions and fighting in Dec 2019-Jan 2020 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/maiwut/"
+  ]
+ },
+ "SS0707": {
+  "history": "Contains Malakal, Upper Nile State capital since 1914, claimed by both Shilluk and Padang Dinka; control alternated between SPLA and SPLA-IO in 2013-2018. Hosts the Malakal PoC site.",
+  "conflict_narrative": "Over 20,000 people fled to the Malakal PoC site during the 2022 Upper Nile fighting; ethnic clashes occurred there and at Upper Nile University in 2023 (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/malakal/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf"
+  ]
+ },
+ "SS0708": {
+  "history": "Shilluk (Chollo) county in the far north of the west bank of the White Nile, with land, water and grazing disputes involving neighbouring Renk.",
+  "conflict_narrative": "Fighting between Shilluk forces and Kitgwang-allied militias spread into Manyo in Nov-Dec 2022, displacing thousands (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/manyo/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf"
+  ]
+ },
+ "SS0709": {
+  "history": "Dinka (Ageer) county on the east bank of the White Nile, containing the Melut oil basin; a strategic location in both civil wars.",
+  "conflict_narrative": "Relatively stable since 2018 (CSRF); hosted some 14,600 people displaced by the 2022 Upper Nile fighting (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/melut/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf"
+  ]
+ },
+ "SS0710": {
+  "history": "Shilluk (Chollo) and Padang Dinka county on the White Nile corridor south of Malakal, at the edge of the Shilluk Kingdom; heavily fought over in 2013-2018.",
+  "conflict_narrative": "The Aug 2022 Upper Nile conflict began with clashes between Agwelek and Kitgwang forces in Panyikang on 10 August (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/panyikang/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf"
+  ]
+ },
+ "SS0711": {
+  "history": "Dinka (Abialang) county at South Sudan's northern tip around Renk town, strategically located and contested in past civil wars; seasonal Falata herder movements have caused disputes.",
+  "conflict_narrative": "Since April 2023 the Joda/Wunthow crossing in Renk has been the main entry point for people fleeing Sudan's war, with over 800,000 crossing (REACH, MSF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/renk/",
+   "https://repository.impact-initiatives.org/document/repository/8d39fa52/REACH_SSD_Brief_Renk-Emergency-Assessment_July-2025.pdf",
+   "https://www.msf.org/war-sudan-exacerbates-humanitarian-needs-south-sudan"
+  ]
+ },
+ "SS0712": {
+  "history": "Eastern Jikany Nuer (Gaajok) county on the Sobat River bordering Ethiopia and Jonglei, at the boundary between Lou and Jikany Nuer lands.",
+  "conflict_narrative": "Lou-Jikany fighting near Doma (Mar 2019) and intra-Gaajok clashes killing dozens (May 2021); affected by the 2025 SSPDF-White Army hostilities (CSRF, UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/ulang/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf"
+  ]
+ },
+ "SS0901": {
+  "history": "Home to Balanda Bor, Luo ('Jur Chol') and Dinka Marial Bai communities, headquarters Nyin Akok; the 2014 Mapel training-centre clash occurred here. Little direct impact from the 2013-18 war.",
+  "conflict_narrative": "Over 28,000 people fled communal clashes in Feb-Jun 2019, esp. in Kuarjena and Rocrocdong payams (IOM DTM via CSRF); Luo/Dinka Marial Bai disputes persist (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/jur-river/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS0902": {
+  "history": "Largest county, bordering Sudan and CAR, home to many 'Fertit' groups (Kresh, Balanda, Banda, Aja and others) around Raja town. SPLA-IO briefly overran Raja town in June 2016.",
+  "conflict_narrative": "Paul Malong's SSUF/A forces were defeated in Raja in Aug 2019; gold-mining tensions at Boro Medina since 2023 and insecurity on the road to South Darfur (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/raja/"
+  ]
+ },
+ "SS0903": {
+  "history": "Contains Wau, capital of Western Bahr el Ghazal, with Balanda and other 'Fertit', Luo ('Jur Chol') and Dinka communities; June 2016 attacks in Wau town drove mass displacement to the UN PoC site.",
+  "conflict_narrative": "Government-opposition fighting around Mboro and Baggari in 2018 eased in 2019; SPLA-IO defections and splits keep Baggari area insecure (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/wau/"
+  ]
+ },
+ "SS1001": {
+  "history": "Zande (Azande) county with headquarters at Ezo town, bordering DR Congo and CAR; long exposed to LRA attacks and cross-border armed groups.",
+  "conflict_narrative": "Tens of thousands fled the 2021 Tambura violence into Ezo; UNMISS said 500 Ezo youths were recruited and sent to Tambura in Sept 2021 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/ezo/"
+  ]
+ },
+ "SS1002": {
+  "history": "Azande, Baka and Mundu county with headquarters at Ibba town; hit by LRA abductions from 2005-06.",
+  "conflict_narrative": "Clashes between residents and Mbororo-Fulani herders rose from 2022; a spring 2023 attack killed three and displaced about 13,500 (UNSC via CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/ibba/"
+  ]
+ },
+ "SS1003": {
+  "history": "Baka, Mundu, Avukaya, Zande and Moro Kodo county with headquarters at Maridi town; land disputes date to land given to SPLA soldiers in the 1990s.",
+  "conflict_narrative": "Farmer-pastoralist tensions over crop damage and contested land persist; SPLA-IO/SPLA clashes occurred in 2016-17 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/maridi/"
+  ]
+ },
+ "SS1004": {
+  "history": "Moru and Mundu county with headquarters at Kediba, on the Western-Central Equatoria border; dry-season herds from Lakes and Central Equatoria migrate here.",
+  "conflict_narrative": "UNMISS reported SSPDF operations against NAS and NAS abuses affecting civilians in Mundri East in 2024.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/mundri-east/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS1005": {
+  "history": "Moru, Belle and Mundu county with headquarters at Mundri town; greater Mundri has seen growing farmer-herder polarisation since 2005.",
+  "conflict_narrative": "UNMISS attributed many 2020 abductions in the Mundri area mainly to NAS.",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/mundri-west/",
+   "https://www.ecoi.net/en/file/local/2048257/unmiss_annual_brief_violence_against_civilians_2020_final_for_publication.pdf"
+  ]
+ },
+ "SS1006": {
+  "history": "Belle ('Jur Bel'), Bongo, Wira, Nyamusa and Moru county with headquarters at Mvolo town, closely linked to Wulu (Lakes); hosted the Mvolo peace conference.",
+  "conflict_narrative": "Security improved after the 2018 R-ARCSS but violence by often unidentified groups rose again during 2020 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/mvolo/"
+  ]
+ },
+ "SS1007": {
+  "history": "Remote Balanda, Bongo and Azande county with headquarters at Nagero town; SPLA-IO briefly seized Nagero in May 2018, followed by an SPLA counter-offensive.",
+  "conflict_narrative": "Hosted thousands of mainly Balanda IDPs fleeing the 2021 Tambura violence; displaced people formed most of those in need (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/nagero/"
+  ]
+ },
+ "SS1008": {
+  "history": "Zande county with headquarters at Nzara town, site of the July 1955 Nzara demonstrations within the colonial Zande Scheme; conflict spread was limited in 2013-2018.",
+  "conflict_narrative": "Periodic low-level insecurity since 2018, e.g. a June 2019 SSPDF incident at Mogoroko and killings in Sakure payam in Sept 2021 (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/nzara/"
+  ]
+ },
+ "SS1009": {
+  "history": "Azande and Balanda county with headquarters at Tambura town, bordering CAR; part of the former Tambura State.",
+  "conflict_narrative": "Azande-Balanda violence from June 2021 displaced around 80,000 people (CSRF); renewed tensions in June 2024 drove many sexual violence cases (UNMISS).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/tambura/",
+   "https://www.csrf-southsudan.org/wp-content/uploads/2021/12/CSRF-Analysis-Tambura-Violence-Displacement-and-Response-20-Dec-2021.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf"
+  ]
+ },
+ "SS1010": {
+  "history": "Zande county containing Yambio, capital of Western Equatoria and historic seat of the Azande Kingdom, re-established with a coronation in Feb 2022; hosts refugees from DR Congo and CAR.",
+  "conflict_narrative": "Clashes declined after 2018, but 2021 saw targeted attacks on officials and SSPDF/SPLA-IO confrontations in Yambio town (CSRF).",
+  "sources": [
+   "https://archive.csrf-southsudan.org/county_profile/yambio/"
+  ]
+ }
+}

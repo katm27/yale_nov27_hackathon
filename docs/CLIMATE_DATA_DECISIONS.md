@@ -1,0 +1,195 @@
+# Climate and environment data decisions
+
+South Sudan county map, 79 counties, monthly 2018–2025, indexed to 2018. This document reviews every environmental
+variable in the app, explains the flood-product choice and the drought ensemble, and states which contamination and
+gender/water indicators can be measured. Reviewed 15 Nov 2026.
+
+**Classes used below**
+- **Obs**: a direct observation or a physical retrieval from one instrument (reflectance, backscatter, brightness temperature, gauge).
+- **Merged**: a satellite retrieval blended with gauges or with other satellites (IMERG, CHIRPS).
+- **Model**: reanalysis or a land-surface or water-balance model forced by other data (MERRA-2, TerraClimate, GLW4).
+- **Derived**: an index computed from one of the classes above (SPEI, PDSI, MNDWI water, flood exposure).
+
+**Recommendation codes**
+- **Primary**: the default layer for its topic.
+- **Secondary**: keep it for cross-checking.
+- **Context**: static or annual background.
+- **Drop**: remove it, or hide it from the default view.
+
+## 1. Variable-by-variable review
+
+| Variable(s) | Class | Producer, algorithm, version | Resolution, latency | Known issues in South Sudan | Rec. |
+|---|---|---|---|---|---|
+| `chirps_precip_mm` | Merged | UCSB CHC, **CHIRPS v3.0** (IR cold-cloud duration + CHPclim + station blend; ERA5 used where IR is weak) | 0.05°, monthly; prelim ~2 days, final ~3 weeks | Very few GTS gauges in SSD, so it falls back to IR climatology. It is **-30 to -48 %** below IMERG in Sudd counties (Rubkona, Guit, Mayendit). Its 2018–2025 trend is **-25 mm/yr per yr**, while IMERG gives **+5** (docs/VALIDATION_rainfall.md). | **Primary** for rainfall level and spatial detail |
+| `precip_mm` (drive_climate) | Merged | NASA GPM **IMERG V07 Final** (passive-microwave + IR morphing, monthly GPCC gauge calibration), via NASA POWER | 0.1°, ~3.5 months latency | Passive microwave over wetland or flooded surfaces is noisy. Anomaly r with CHIRPS is only 0.33. Little dry bias. | **Secondary** (independent of CHIRPS; used in SPEI) |
+| `power_precip_mm` | Model | MERRA-2 PRECTOTCORR (bias-corrected toward GPCP), NASA POWER | 0.5°×0.625°, ~1 month | Reanalysis convection is too smooth, and at county scale it is near-duplicate information. | **Drop** from the default view (keep in data) |
+| `tc_ppt` | Model / interp. | **TerraClimate v1.1** (Abatzoglou et al. 2018). Climatically-aided interpolation: WorldClim normals plus CRU-TS / JRA-55 (ERA5 from 2023+) anomalies | 1/24°, annual release, ~1 year latency | **~40 % drier** than IMERG/CHIRPS. Its 2018–25 values sit far below its own 1991–2020 normals, which looks like an inherited CRU/ERA5 discontinuity, not a real drought. | **Secondary** (relative patterns only) |
+| `tair_c`, `tmax_c`, `tmin_c` | Model | MERRA-2 T2M via POWER | ~50 km, ~1 month | It smooths the Sudd-highland contrast. Reanalysis trends are plausible but not station-verified. | **Primary** for temperature trend, because it is homogeneous |
+| `tc_tmax`, `tc_tmin` | Model | TerraClimate | ~4 km | Same anomaly source as above, downscaled. | Secondary |
+| `modis_lst_day_c`, `modis_lst_night_c` | Obs | MODIS MOD11A2 v061 (split-window), Terra | 1 km, 8-day, ~1 week | Clear-sky only, so wet-season months are biased toward dry days. | Secondary (surface heat) |
+| `power_t2m_max`, `power_ws*` | Model | MERRA-2 via POWER | ~50 km | Wind has no clear human link. | Drop from the default view |
+| `tc_ws` | Model | TerraClimate | ~4 km | Same as above. | Drop |
+| `soilwet_root` | Model | MERRA-2 GWETROOT (Catchment LSM) | ~50 km | It is driven by MERRA-2 precipitation and knows nothing about floodplain inundation. | Secondary |
+| `tc_soil` | Model | TerraClimate one-layer bucket | ~4 km | Inherits the tc_ppt dry bias. | Secondary |
+| SMAP (other agent) | Obs | SMAP L-band radiometer (L3/L4) | 9–36 km | Starts 2015. Water and flood pixels are flagged. Retrievals over the Sudd are unreliable (open water). | Owned elsewhere |
+| `pet_mm` | Derived | Thornthwaite from MERRA-2 T2M | ~50 km | Thornthwaite **underestimates PET in hot semi-arid climates** and ignores VPD and wind. | Secondary; prefer `tc_pet` (Penman-Monteith) for magnitude |
+| `tc_pet`, `tc_aet`, `tc_def`, `tc_q` | Model | TerraClimate (Penman-Monteith; Thornthwaite-Mather bucket) | ~4 km | Inherits the tc_ppt dry bias, so def is overstated and q is understated. | Secondary |
+| `modis_et_mm` (annual), monthly ET (other agent) | Model / obs | MOD16A3GF v061 (Penman-Monteith with MODIS LAI/albedo + GMAO met) | 500 m | Fill over open water and urban pixels. It misses Sudd wetland ET. | Secondary |
+| `spei3` | Derived | SPEI-3: IMERG P minus Thornthwaite PET, log-logistic, county series 2000–2026 | county | Short baseline (≤26 yr), and Thornthwaite PET (see above). | **Member** of the drought ensemble |
+| `tc_pdsi` | Derived | TerraClimate PDSI (Palmer) | ~4 km | The raw national mean is **-6.6**, which is meaningless as absolute severity (see tc_ppt). It has 9–12-month memory. | Keep only re-standardised (`dr_pdsi_tc_z`) |
+| `tc_extreme_*` | Derived | Percentile flags vs 1991–2020 TerraClimate | ~4 km | `tc_extreme_dry` fires far too often because of the dry bias. | Secondary; use with care |
+| **`drought_ensemble_mean`, `_spread`** (new) | Derived | This repo, `scripts/drought_ensemble.py` (see §3) | county | See §3. | **Primary** drought layer + uncertainty |
+| `modis_ndvi`, `modis_evi` | Obs | MOD13A1 + MYD13A1 v061 (16-day MVC, pixel reliability) | 500 m | Flooding lowers NDVI (water), so a "greenness drop" in the Sudd can be a flood, not a drought. | **Primary** vegetation |
+| `modis_refl_*` | Obs | MOD09A1 v061 | 500 m | Raw bands, with no direct meaning for users. | Drop from the default view |
+| `surface_water_*` | Derived | MODIS MOD09A1/MYD09A1 MNDWI(B4,B7) > 0.1 (this repo) | 500 m, 8-day composites | Cloud blocks most of Jun–Oct. It **misses water under vegetation** (most of the Sudd flood). Vs UNOSAT it is **~0.5×** in area (state r 0.76). | **Secondary** (optical cross-check; full 2018–25 series) |
+| **`flood_s1_*`** (new) | Derived | Sentinel-1 C-band SAR RTC, this repo (see §2) | 10 m read at 160 m, classified at ~440 m | See §2. | **Primary** flood layer |
+| `fire_count`, `burned_area_*`, `viirs_*` | Obs | MODIS MOD14A1/MCD64A1 v061; VIIRS 375 m (FIRMS) | 375 m–1 km | Cloud and smoke cause omission. MCD64A1 has missing months on Planetary Computer. | VIIRS **primary** for counts, MCD64A1 for burned area |
+| `s5p_no2`, `s5p_co`, `s5p_aerosol_index` | Obs | Sentinel-5P TROPOMI L2 OFFL/RPRO | 3.5×5.5 km | NO₂ is near the detection limit outside Juba and fires, and only 4 orbits per month are sampled. | Secondary (`s5p_no2` as an oil/flaring signal only near oil fields) |
+| `power_aod_*` | Model / obs | CERES SYN1deg (MODIS-assimilated) | 1° | Too coarse for counties. | Drop |
+| `lulc_*` | Derived (ML) | Esri / Impact Observatory 10 m LULC v02 (Sentinel-2) | annual, 2017–2023 | Classifier changes between years. "Flooded vegetation" is a useful annual flood-footprint check. | Context |
+| Night lights, monthly ET, SMAP (other agents) | Obs | VIIRS DNB VNP46A3; MOD16A2; SMAP | — | Reviewed by their owners. | — |
+| `soil_*`, `elevation_*`, `richness_*` | Static | SoilGrids 2.0, Copernicus DEM, BiodiversityMapping | — | Static, so not a trend. | Context |
+| `cattle_*` | Model | FAO GLW4 (2015, random-forest disaggregation of old census) | ~10 km, static | No transhumance, and the census inputs are 2008-era. | Context |
+
+**Rainfall bottom line.** No product is "truth" because South Sudan has almost no reporting gauges. Show CHIRPS by
+default and show the IMERG/CHIRPS disagreement. Never report a rainfall trend that appears in only one product: CHIRPS
+falls, IMERG rises, and TerraClimate falls.
+
+## 2. Flood product decision
+
+**Requirement:** county-month flood extent for 2018-01 to 2025-12 that works through wet-season cloud and in the Sudd,
+where most flood water stands under grass, papyrus or Typha.
+
+| Option | Coverage | Access from this environment | Sees through cloud | Water under vegetation | Verdict |
+|---|---|---|---|---|---|
+| Our MODIS MNDWI (`water_county_monthly.csv`) | 2018–2025 | done | no (Jun–Oct gaps, carried forward) | no | Secondary (optical cross-check) |
+| UNOSAT VIIRS flood maps (HDX) | event-based, 2019–2025, about 60 dates | open | partly (5-day VIIRS composites) | yes, partly (VIIRS flood algorithm) | **Validation only** (irregular dates) |
+| NASA MODIS NRT Global Flood Product (MCDWD) | 2021+ (NRT archive) | needs Earthdata login (urs.earthdata.nasa.gov **not reachable**) | no | no | Not possible; would also miss 2018–2020 |
+| Copernicus GFM (Sentinel-1, 3-algorithm ensemble) | 2015+ | EODC STAC **returned HTTP 502**. The API needs a GFM account. | yes | partly (open water only by design; flooded vegetation is excluded) | Best on paper, not accessible. Revisit if an account is available. |
+| FloodScan (AER, passive microwave) | 1998+ | the HDX "free" admin-2 file holds **only the last 90 days** (Aug–Nov 2026 checked; 79 SSD pcodes). History is commercial. | yes | yes (fraction of a ~10 km cell) | Not possible for 2018–2025 |
+| JRC Global Surface Water monthly history | 1984–**2021** (v1.4) | open tiles | no (Landsat) | no | Context only (ends 2021, cloud-limited) |
+| **Sentinel-1 RTC via Planetary Computer, this repo** | 2018–2025 (S1A+B to Dec 2021, then S1A only; S1C from 2025) | **open, done** | **yes** | **yes**, with a VV/VH ratio rule | **Chosen** |
+
+**Implementation** (`scripts/flood_s1_pipeline.py`, `data/processed/flood_s1_county_monthly.csv`, `meta/flood_s1.json`,
+overlay `docs/rasters/flood_s1/`):
+- Every Sentinel-1 IW GRD RTC scene (gamma0, VV and VH) over the country, about 90–180 per month, is read at its 1/16 COG
+  overview (160 m). That overview is a block average of the 10 m linear power, so speckle is suppressed.
+- Each scene is converted to dB and averaged onto a fixed 0.004° (~440 m) grid. The monthly mean is taken per pixel.
+- **Classification rule:** water = VH < −17 dB (open, specular water) **OR** VV−VH > 8.5 dB (flooded herbaceous
+  vegetation: the double bounce raises VV far more than VH).
+- **Why not a plain low-backscatter rule:** VV < −18 dB finds almost no water in October 2022, when UNOSAT mapped
+  48 000 km², because Sudd flood water is radar-*bright*. Inside the UNOSAT water polygons the median VV is −5.8 dB and
+  VV−VH is 9.0 dB. Outside them, VV is −7.0 dB and VV−VH is 5.5 dB.
+- The thresholds were set on **one** UNOSAT map (4–8 Oct 2022: pixel F1 0.61, area ratio 1.09) and tested on the others.
+- **Gap filling and masks:**
+  - Pixels with no acquisition inherit the previous month's state (max 2 months).
+  - County-months with less than 50 % of the area known are dropped.
+  - Permanent water = water in ≥10 of 12 months in ≥6 of 8 years. `flood_s1_flood_km2` is water outside that mask.
+
+**Validation against UNOSAT** (`scripts/flood_s1_validate.py`, `data/processed/validation/flood_s1_vs_unosat_*.csv`):
+VALIDATION_PLACEHOLDER
+
+**Caveats**
+- Wind-roughened open lakes are missed.
+- Some woody wetland and urban double bounce can pass the ratio rule.
+- Sentinel-1 revisit falls from 6 to 12 days to 12 to 24 days after the Sentinel-1B failure (23 Dec 2021). For
+  2022–2024, mid-month floods may be sampled once or twice.
+- The monthly mean smooths floods that last less than about 10 days.
+- Sentinel-1 orbits changed between 2018–21 and 2022–25, so check `flood_s1_obs_pct` before reading a trend.
+
+## 3. Drought index ensemble and uncertainty
+
+`scripts/drought_ensemble.py` → `data/processed/drought_ensemble_county_monthly.csv`, `meta/drought_ensemble.json`
+(all `index_ok: false`).
+
+| Member | Input | Method | Baseline |
+|---|---|---|---|
+| `spei3` (existing) | IMERG V07 P − Thornthwaite PET (MERRA-2) | log-logistic SPEI-3 | county 2000–2026 |
+| `dr_spi3_chirps` | CHIRPS v3.0 (1991–2025 crop via /vsicurl) | gamma SPI-3 with zero-rain probability | 1991–2020 |
+| `dr_spei3_tc` | TerraClimate ppt − Penman-Monteith PET (1991–2025) | log-logistic SPEI-3 (PWM fit) | 1991–2020 |
+| `dr_pdsi_tc_z` | TerraClimate PDSI (1991–2025) | z-score per county and calendar month | 1991–2020 |
+
+**Outputs**
+- `drought_ensemble_mean`: the mean of the members (at least 3 required).
+- `drought_ensemble_spread`: the standard deviation across members. This is the "drought uncertainty" in the hover card.
+- `drought_ensemble_range`: maximum minus minimum across members.
+- `drought_ensemble_agree`: the share of members with the same sign as the mean.
+
+**Results, 2018–2025**
+- Members agree only weakly. Pooled county-month correlations are r = 0.27–0.45:
+  - CHIRPS-SPI vs IMERG-SPEI: 0.39
+  - IMERG-SPEI vs TC-SPEI: 0.31
+  - TC-SPEI vs TC-PDSI: 0.45
+- The mean spread is **1.2 SD**. Spread is lowest in Mar–Jul (~1.0) and highest in Sep–Jan (1.3–1.4).
+- TerraClimate members are systematically dry: their 2018–25 means are −0.9 to −2.0 SD, against about 0 for CHIRPS
+  and IMERG. As a result, the ensemble mean leans dry, about −0.5 to −0.9.
+
+**Reading the ensemble**
+- A drought claim is robust only when `drought_ensemble_mean < −1`, `drought_ensemble_agree = 1` and the spread is
+  below about 0.7.
+- Otherwise the hover card should say "inputs disagree".
+- PDSI and TC-SPEI share TerraClimate precipitation, so the four members are effectively three independent rainfall
+  sources.
+
+## 4. Water contamination and pollution spread with floods: what is measurable
+
+| Candidate | Measurable? | Decision |
+|---|---|---|
+| Faecal contamination exposure: flood × population (WorldPop) with open defecation and latrines (ISNA) | **Yes, as exposure** | **Implemented**: `flood_population_exposed`, `flood_population_exposed_pct` (`scripts/flood_exposure.py`) |
+| Oil-field pollution exposure: flood within 5 km of 93 OSM oil wells and 5 GEM oil-field centres (Unity, Ruweng, Upper Nile) | **Yes, as exposure** | **Implemented**: `flood_oilfield_exposure_km2`, `flood_oil_wells_flooded` |
+| Turbidity or suspended sediment (NDTI = (red − green)/(red + green), or MODIS red reflectance over water) | Technically yes for the open Nile/Sobat channels. It is **not a contamination measure**: sediment is natural, and the Sudd swamp is vegetated, so it has no clean water pixels at 500 m. Sentinel-2 at 10–20 m is feasible on Planetary Computer but heavy, and is cloud-limited in the wet season, exactly when floods happen. | Not implemented. Possible next step: dry-season Sentinel-2 NDTI on the Bahr el Jebel/White Nile at Juba, Bor and Malakal. |
+| Produced-water / hydrocarbon contamination (Thar Jath, Unity, Paloich) | Field studies only (e.g. Sign of Hope hair and water samples, 2014–2019). Satellites cannot see dissolved hydrocarbons or salinity. Oil slicks on water are too small for Sentinel-1 at this scale. | Exposure proxy only |
+| Water-quality monitoring (E. coli, residual chlorine) | WASH-cluster water-quality data are not public at county level | Not possible |
+| Cholera / AWD outcome | WHO cholera on HDX is **national, 2026 only** (15 058 cases, Jan–Oct 2026). County line lists exist only in MoH/WHO sitrep PDFs (2024–25 outbreak). IDSR weekly bulletins are PDFs with <50 % completeness. | Not implemented (needs manual PDF extraction) |
+
+## 5. Gender, water access and groundwater
+
+**ISNA = South Sudan's MSNA**
+- The ISNA is run by REACH/IMPACT for OCHA and the ICCG. County tables are on HDX for **2022, 2023 and 2024**.
+- No county MSNA tables exist on HDX for 2018–2021. REACH's earlier "Area of Knowledge" data are settlement-level and
+  shared on request.
+- `scripts/isna_msna.py` → `data/processed/isna_county_monthly.csv` (annual, dated YYYY-07-01, 75–79 counties per round).
+
+| Variable | Description | Mean 2022 → 2024 |
+|---|---|---|
+| `isna_water_30min_plus_pct` | Round trip to the main drinking-water source ≥30 min | 41 → 49 % |
+| `isna_unsafe_water_collect_pct` | A household member felt unsafe while collecting water | 19 → 22 % |
+| `isna_surface_water_source_pct` | Main drinking source is surface water or an unprotected well | 30 → 39 % |
+| `isna_open_defecation_pct` | Household practises open defecation | 49 → 53 % |
+| `isna_wg_avoid_water_points_pct` | Women and girls avoid water points because they feel unsafe | 8 → 12 % |
+| `isna_wg_avoid_latrines_pct` | Women and girls avoid latrines and bathing areas because they feel unsafe | 3 → 9 % |
+| `isna_wg_avoid_any_pct` | Women and girls avoid at least one area because they feel unsafe | 33 → 30 % |
+
+**Caveats on the ISNA indicators**
+- These measure GBV **risk perception and exposure**, not incidence. GBVIMS incident data are confidential.
+- Question wording changed between rounds (e.g. the 2022 water-source categories). The 2024 multi-select rows are
+  missing for some counties.
+- With only 3 rounds, Mann-Kendall trends cannot be significant.
+- Who collects water (sex and age of the collector) is not in the published county tables for these rounds.
+
+**Other water and GBV sources**
+- Insecurity Insight CRSV (`ii_sexual_violence_incidents`) is owned by another agent.
+- IOM DTM mobility-tracking rounds hold WASH fields at site/settlement level only.
+- WPdx water points stop around 2019 and are static.
+
+**Groundwater**
+- **GRACE/GRACE-FO** terrestrial water storage needs an Earthdata login (urs.earthdata.nasa.gov not reachable). At about
+  300 km resolution it would be basin-scale only.
+- Open alternatives are **static**:
+  - BGS **Africa Groundwater Atlas** / MacDonald et al. (2012) aquifer productivity and depth-to-groundwater maps (5 km)
+  - UNICEF/UNOPS groundwater potential mapping for South Sudan (PDF maps)
+- Use them as context layers only. There is no groundwater time series.
+
+**Local (within-county) conflict**
+- `scripts/intracounty_conflict.py` → `intracounty_county_monthly.csv`, built from UCDP GED v26.1 non-state and
+  one-sided events whose actors are communal groups or South Sudanese local militias. Government and foreign actors
+  are excluded.
+- Over 2018–2025 there are 198 county-precision events: 171 communal and 27 militia.
+- **Variables:**
+  - `intracounty_conflict_events`
+  - `intracounty_conflict_deaths`
+  - `intracounty_communal_events`
+  - `intracounty_communal_deaths`
+- **Caveats:**
+  - UCDP's 25-deaths/year dyad threshold means cattle raiding is under-counted.
+  - The actors' home county is unknown.

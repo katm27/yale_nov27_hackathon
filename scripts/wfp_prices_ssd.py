@@ -135,3 +135,6 @@ if __name__ == "__main__":
     _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))
     from trend_stats import write_trends
     write_trends("wfp_prices")  # Mann-Kendall + Sen's slope (scripts/trend_stats.py)
+    # time-dynamic markets layer (valid_from/valid_to per active period) overrides the static file written above
+    import points_markets
+    points_markets.main()

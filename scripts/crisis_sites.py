@@ -89,3 +89,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # time-dynamic version (status periods; hubs moved to points_logcluster_hubs) overrides the file written above
+    import points_crisis_sites
+    points_crisis_sites.main()
