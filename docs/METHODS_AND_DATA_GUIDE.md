@@ -216,7 +216,7 @@ Hovering a county shows, from top to bottom:
 - Ratio charts use a log axis clamped to 1/8×–8×. A dashed line marks 1.0 (ratio) or 0 (difference).
 - Clicking a point moves the time slider to that window.
 
-### 1.9 National timeline (bottom strip)
+### 1.9 National trends in aid and socioeconomic outcomes (bottom drawer)
 Up to 15 country-wide series with the selected month marked. Each series is built in one of four ways:
 
 | `how` | Construction | Used for |

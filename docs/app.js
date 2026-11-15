@@ -11,7 +11,10 @@
   const NODATA = "url(#nodata-hatch)";
   const CATEGORICAL = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948", "#4a4a4a", "#0aa5b8"];
   const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const ORANGE = "#eb6834";
+  const ORANGE = "#fc3c23";   // accent: slider cursor
+  const MAIN = "#0B3D91";
+  const SUDD_NAMES = ["Panyijiar", "Mayendit", "Leer", "Guit", "Fangak", "Ayod", "Canal/Pigi", "Duk", "Twic East", "Bor South", "Yirol East", "Awerial", "Rubkona", "Koch", "Nyirol", "Uror"];
+  const GROUNDWATER_IDS = ["gldas_gws_anom_cm", "grace_tws_cm", "g3p_gws_cm"];
 
   const state = {
     months: [], vars: [], varById: {}, allVars: {}, series: {}, colorBy: null,
@@ -45,11 +48,15 @@
   // ---------- time windows ----------
   function seasonOf(i) {
     const [y, m] = state.months[i].split("-").map(Number);
-    if (m === 12) return { key: `${y + 1}-dry`, label: `Dry season ${y}/${String(y + 1).slice(2)}` };
-    if (m <= 3) return { key: `${y}-dry`, label: `Dry season ${y - 1}/${String(y).slice(2)}` };
-    if (m <= 6) return { key: `${y}-early`, label: `Early rains (Apr–Jun) ${y}` };
-    if (m <= 9) return { key: `${y}-main`, label: `Main rains (Jul–Sep) ${y}` };
-    return { key: `${y}-late`, label: `Late season (Oct–Nov) ${y}` };
+    if (m === 12 || m <= 2) {
+      const Y = m === 12 ? y + 1 : y;
+      const hasDec = state.months.includes(`${Y - 1}-12`), hasFeb = state.months.includes(`${Y}-02`);
+      const lab = hasDec && hasFeb ? `Dec ${Y - 1}–Feb ${Y}` : hasFeb ? `Jan–Feb ${Y}` : `Dec ${Y - 1}`;
+      return { key: `${Y}-djf`, label: `${lab} (dry and cool)` };
+    }
+    if (m <= 5) return { key: `${y}-mam`, label: `Mar–May ${y} (early rains)` };
+    if (m <= 8) return { key: `${y}-jja`, label: `Jun–Aug ${y} (rainy)` };
+    return { key: `${y}-son`, label: `Sep–Nov ${y} (late rains)` };
   }
   const windowKey = (i) => (state.agg === "month" ? state.months[i] : state.agg === "year" ? state.months[i].slice(0, 4) : seasonOf(i).key);
   const windowLabel = (i) => (state.agg === "month" ? monthLabel(i) : state.agg === "year" ? state.months[i].slice(0, 4) : seasonOf(i).label);
@@ -97,18 +104,11 @@
     const s = state.series[v.id]; if (!s || !s[c]) return null;
     const arr = s[c], wvals = windowIdx(i).map((j) => arr[j]);
     const raw = mean(wvals); if (raw == null) return null;
-    if (mode !== "index_month" || isStatic(v) || isCategorical(v)) {
-      if (v.aggregate === "sum" && state.agg !== "month") return wvals.reduce((a, x) => a + (x != null && isFinite(x) ? x : 0), 0);
-      return isShareUnits(v) ? raw * 100 : raw;
-    }
-    const base = mean(baselineWindowIdx(i, v.baseline_year || 2018).map((j) => arr[j]));
-    if (base == null) return null;
-    if (v.index_ok === false) return isShareUnits(v) ? (raw - base) * 100 : raw - base;
-    if (Math.abs(base) < 1e-9) return null;
-    return raw / base;
+    if (v.aggregate === "sum" && state.agg !== "month") return wvals.reduce((a, x) => a + (x != null && isFinite(x) ? x : 0), 0);
+    return isShareUnits(v) ? raw * 100 : raw;
   }
-  const centered = (v) => (state.mode === "trend" && usesTrend(v)) || (state.mode === "index_month" && !isStatic(v) && !isCategorical(v));
-  const isRatio = (v) => state.mode === "index_month" && v.index_ok !== false && !isStatic(v) && !isCategorical(v);
+  const centered = (v) => state.mode === "trend" && usesTrend(v);
+  const isRatio = () => false;
 
   // ---------- 7-bin percentile scale per variable & mode ----------
   function binsFor(v) {
@@ -148,17 +148,20 @@
   const colorOf = (v, x) => { const k = binOf(v, x); return k < 0 ? null : PAL7[k]; };
 
   // ---------- map & basemap ----------
-  const map = L.map("map", { zoomControl: true, minZoom: 5, maxZoom: 12, zoomSnap: 0.25 });
+  // Map limited to South Sudan and its neighbours: fewer tiles to load, nothing to get lost in.
+  const MAX_BOUNDS = L.latLngBounds([[-1.5, 17.5], [16.5, 42.5]]);
+  const map = L.map("map", { zoomControl: true, minZoom: 5, maxZoom: 12, zoomSnap: 0.25, maxBounds: MAX_BOUNDS, maxBoundsViscosity: 1 });
   const baseLayers = {
     "Terrain": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Terrain_Base/MapServer/tile/{z}/{y}/{x}", { attribution: "Terrain: Esri, USGS, NOAA · borders: Natural Earth", maxZoom: 13 }),
     "Satellite": L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}", { attribution: "Esri, Maxar, Earthstar Geographics" }),
     "OpenStreetMap (detailed)": L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution: "© OpenStreetMap contributors", maxZoom: 19 }),
   };
+  baseLayers.Terrain.options.bounds = MAX_BOUNDS;
   baseLayers.Terrain.addTo(map);
-  L.control.layers(baseLayers, null, { position: "topleft" }).addTo(map);
   map.createPane("mask").style.zIndex = 300;        // greys out terrain outside South Sudan
   map.createPane("bg").style.zIndex = 330;          // background layers (soil type, cattle)
-  map.createPane("rasters").style.zIndex = 440;
+  map.createPane("rasters").style.zIndex = 380;   // under the county outlines, so significance outlines stay visible
+  map.createPane("hatch").style.zIndex = 410; map.getPane("hatch").style.pointerEvents = "none";
   map.createPane("counties").style.zIndex = 400;
   map.createPane("water").style.zIndex = 430; map.getPane("water").style.pointerEvents = "none";
   map.createPane("points").style.zIndex = 600;
@@ -174,7 +177,7 @@
     for (const p of polys) holes.push(p[0].map(([x, y]) => [y, x]));
     L.polygon([outer, ...holes], { pane: "mask", stroke: false, fillColor: css("--maskfill") || "#efeee9", fillOpacity: 0.88, interactive: false }).addTo(map);
     L.geoJSON(ctx.neighbors, { pane: "mask", interactive: false, style: { color: "#7d7b74", weight: 1.2, fill: false } }).addTo(map);
-    L.geoJSON(ctx.ssd, { pane: "labels", interactive: false, style: { color: "#3b3a36", weight: 1.8, fill: false } }).addTo(map);
+    L.geoJSON(ctx.ssd, { pane: "labels", interactive: false, style: { color: MAIN, weight: 1.6, opacity: 0.85, dashArray: "6 4", fill: false } }).addTo(map);
     const NLAB = { "Sudan": [11.4, 27.6], "Ethiopia": [7.9, 36.4], "Kenya": [3.6, 36.6], "Uganda": [2.6, 32.4], "DR Congo": [3.4, 27.4], "Central African Rep.": [7.3, 22.6] };
     for (const [n, ll] of Object.entries(NLAB)) L.marker(ll, { pane: "labels", interactive: false, icon: L.divIcon({ className: "country-label", html: n.toUpperCase(), iconSize: null }) }).addTo(map);
     for (const [lat, lon, name, rank, capital] of ctx.towns) {
@@ -192,7 +195,7 @@
     if (!v) return st;
     const gridShown = !!activeRaster(v);
     const tr = trendOf(v.id, cid);
-    if (usesTrend(v) && tr && tr[T_SIG] && !selected) { st.color = "#1d1c1a"; st.weight = 2.4; }
+    if (!isStatic(v) && !isCategorical(v) && tr && tr[T_SIG] && !selected) { st.color = "#111111"; st.weight = 2.6; }
     if (gridShown) return st;                                     // the grid carries the colour; counties are outlines
     const x = valueAt(v, cid, state.t);
     const col = colorOf(v, x);
@@ -220,10 +223,6 @@
       return `${signed(x, 2)} ${slopeUnits(v)}${word}`;
     }
     if (isCategorical(v)) return soilName(x);
-    if (state.mode === "index_month" && !isStatic(v)) {
-      if (v.index_ok === false) return `${signed(x, 2)} ${isPctUnits(v) || isShareUnits(v) ? "percentage points" : unitsShort(v)} vs same ${state.agg === "month" ? "month" : state.agg === "season" ? "season" : "year"} of ${v.baseline_year || 2018}`;
-      return `${fmt(x, 2)}× the level in the same ${state.agg === "month" ? "month" : state.agg === "season" ? "season" : "year"} of ${v.baseline_year || 2018}`;
-    }
     return `${fmt(x)} ${unitsShort(v)}`;
   }
   const SOIL = { 0: "Acrisols (weathered, acidic)", 6: "Cambisols (young soils)", 10: "Ferralsols (deeply weathered)", 12: "Gleysols (waterlogged)", 18: "Luvisols (clay-enriched subsoil)", 29: "Vertisols (cracking clay, floods easily)" };
@@ -234,7 +233,7 @@
     { id: "et_ind_total", label: "People displaced or returning (IOM)", color: "#d7301f", units: "people" },
     { id: "fts_us_gov_funding_month_usd", label: "US humanitarian funding, national", color: "#2a78d6", units: "US$", money: true },
     { id: "surface_water_pct", label: "Surface water (% of county)", color: "#0a8f86", units: "%" },
-    { id: "spei3", label: "Drought index (SPEI; below 0 = drier)", color: "#b4461b", units: "", zero: true },
+    { id: "spei3", label: "Drought index (SPEI)", color: "#b4461b", units: "", zero: true },
   ];
   function sparkPanel(cid) {
     const v = state.varById[state.colorBy];
@@ -277,7 +276,7 @@
       const lab = state.mode === "trend" && usesTrend(v) ? `Trend 2018→${trendYear()} (Sen’s slope)` : windowLabel(state.t);
       line = `<div class="tt-var"><span class="muted">${esc(v.label)}</span><br>${lab}: <b>${describe(v, x, p.district_id)}</b></div>`;
     }
-    return `<div class="tt"><div class="tt-h"><b>${esc(p.name)}</b> <span class="muted">· ${esc(p.admin1)}</span></div>${line}${sparkPanel(p.district_id)}<div class="tt-foot">Orange line = ${monthLabel(state.t)} · click for the county profile</div></div>`;
+    return `<div class="tt"><div class="tt-h"><b>${esc(p.name)}</b> <span class="muted">· ${esc(p.admin1)}</span></div>${line}${sparkPanel(p.district_id)}</div>`;
   }
 
   const hoverEl = () => $("#hovercard") || (() => { const d = document.createElement("div"); d.id = "hovercard"; d.setAttribute("role", "tooltip"); document.body.appendChild(d); return d; })();
@@ -309,42 +308,59 @@
     if (r.bin_labels) return [r.bin_labels[0], null, null, null, r.bin_labels[1], null, r.bin_labels[2]];
     return [0, 1, 2, 3, 4, 5, 6].map((k) => `${fmt(e[k], 2)} to ${fmt(e[k + 1], 2)}`);
   }
+  const FLOW_W = (n) => Math.max(1.4, Math.min(9, 1.4 + 7.6 * Math.sqrt(n / 20000)));   // arrow width in px, fixed scale
+  const caveatHtml = (v) => {
+    const cov = isStatic(v) ? "single snapshot" : `${(v.temporal || "monthly").replace(/\s*\(.*\)/, "")}, ${monthLabelYM(v.first_period)} to ${monthLabelYM(v.last_period)}`;
+    const note = (v.caution || "").replace(/\s*Use it for patterns, not totals\.?/g, "").trim();
+    return `<details class="lg-more"><summary>Caveats and source</summary>${note ? `<p>${esc(note)}</p>` : ""}<p><b>Spatial resolution:</b> ${esc(v.native_resolution || "county")}</p><p><b>Temporal resolution:</b> ${esc(cov)}</p><p><b>Source:</b> ${esc(v.source || "–")}</p></details>`;
+  };
+  const monthLabelYM = (ym) => { if (!ym) return "–"; const [y, m] = String(ym).split("-"); return `${MONTH_NAMES[+m - 1] || ""} ${y}`.trim(); };
   function renderLegend() {
     const el = $("#legend");
     const v = state.varById[state.colorBy];
     let html = "";
     if (v) {
       const r = activeRaster(v), trendOn = state.mode === "trend" && usesTrend(v);
-      const what = trendOn ? `Trend, 2018→${trendYear()}: ${slopeUnits(v)}` : isCategorical(v) ? "Main soil type" : state.mode === "index_month" && !isStatic(v) ? (v.index_ok === false ? `Difference from the same ${state.agg === "month" ? "month" : "period"} of ${v.baseline_year || 2018}` : `Ratio to the same ${state.agg === "month" ? "month" : "period"} of ${v.baseline_year || 2018}`) : `${windowLabel(state.t)}: ${unitsShort(v)}`;
-      html += `<div class="lg-title">${esc(v.label)}</div><div class="lg-sub">${esc(what)}${r ? " · satellite grid" : ""}</div>`;
+      const what = trendOn ? `Trend, 2018 to ${trendYear()}, in ${slopeUnits(v)}` : isCategorical(v) ? "Main soil type" : `${windowLabel(state.t)}, in ${unitsShort(v) || "index units"}`;
+      html += `<div class="lg-title">${esc(v.label)}</div><div class="lg-sub">${esc(what)}</div>`;
       if (isCategorical(v)) {
         html += `<div class="lg-bins">${Object.keys(SOIL).map((k, i) => `<div><i style="background:${CATEGORICAL[i]}"></i>${SOIL[k]}</div>`).join("")}</div>`;
       } else {
         const labs = r ? rasterBinLabels(r) : binLabels(v);
         const rows = PAL7.map((c, k) => ({ c, lab: labs[k] })).reverse().filter((x) => x.lab);
         html += `<div class="lg-bins">${rows.map((x) => `<div><i style="background:${x.c}"></i>${esc(x.lab)}</div>`).join("")}<div><i class="nd"></i>No data</div></div>`;
-        const mid = trendOn || (state.mode === "index_month" && !isStatic(v)) ? "White = little or no change. " : "";
-        html += `<div class="lg-note">${trendOn ? "Green = increase, red = decrease. " : "Green = higher, red = lower. "}${mid}Colours show direction, not good or bad.</div>`;
-        html += `<div class="lg-note">${r ? "Grid colours use 7 equal steps of the grid’s range. Hover a county for its own value." : `Each colour holds about one-seventh of the county values for this measure${trendOn || state.mode === "index_month" ? ", split evenly between rises and falls" : ""}.`}</div>`;
-        if (trendOn && state.trends && state.trends[v.id]) {
+        if (!isStatic(v) && state.trends && state.trends[v.id]) {
           const nSig = Object.values(state.trends[v.id]).filter((t) => t[T_SIG]).length;
-          html += `<div class="lg-note"><span class="sig-swatch"></span> Thick dark outline: the 2018–2025 trend is statistically significant (${nSig} ${nSig === 1 ? "county" : "counties"}).</div>`;
+          html += `<div class="lg-note"><span class="sig-swatch"></span> <b>Outlined counties (${nSig}):</b> the 2018–2025 trend is statistically significant, meaning it is very unlikely to be chance.</div>`;
         }
+        if (GROUNDWATER_IDS.includes(v.id)) html += `<div class="lg-note"><span class="hatch-swatch"></span> <b>Hatched counties (Sudd wetland):</b> less reliable here, because flood water on the surface can be mistaken for groundwater.</div>`;
       }
-      if (v.caution) html += `<details class="lg-more"><summary>Caveats and source</summary><p>${esc(v.caution)}</p><p>Source: ${esc(v.source || "–")}${v.native_resolution ? ` · ${esc(v.native_resolution)}` : ""}</p></details>`;
-      else html += `<details class="lg-more"><summary>Source</summary><p>${esc(v.source || "–")}${v.native_resolution ? ` · ${esc(v.native_resolution)}` : ""}</p></details>`;
+      html += caveatHtml(v);
     }
     if (state.flowOn) {
       const G = state.curated.flow_groups;
       const shown = state.flowGroup === "all" ? Object.keys(G) : [state.flowGroup];
-      html += `<div class="lg-flows"><div class="lg-title">Migration arrows (IOM)</div>${shown.map((k) => `<div><i class="arrow" style="background:${G[k].color}"></i>${esc(G[k].label)}</div>`).join("")}<div class="lg-note">From the county people left to where they arrived. Thicker = more people.</div></div>`;
+      const widths = [1000, 5000, 20000].map((n) => `<div class="fw"><i style="height:${FLOW_W(n)}px"></i>${n.toLocaleString("en-US")} people</div>`).join("");
+      html += `<div class="lg-flows"><div class="lg-title">Migration arrows (IOM)</div>${shown.map((k) => `<div><i class="arrow" style="background:${G[k].color}"></i>${esc(G[k].label)}</div>`).join("")}<div class="lg-fw">${widths}</div></div>`;
     }
-    const bgHtml = [...state.bgOn].filter((k) => k !== "water").map((k) => bgLegend(k)).join("");
-    html += bgHtml;
+    if (state.bgOn.has("water")) {
+      const wl = state.rasters.filter((x) => x.base_layer).flatMap((x) => x.legend || []).filter((x, i, a) => a.findIndex((y) => y[1] === x[1]) === i);
+      if (wl.length) html += `<div class="lg-flows"><div class="lg-title">Water (NASA MODIS, monthly)</div>${wl.map(([c, l]) => `<div><i style="background:${c}"></i>${esc(l)}</div>`).join("")}</div>`;
+    }
+    html += [...state.bgOn].filter((k) => k !== "water").map((k) => bgLegend(k)).join("");
     el.innerHTML = html ? `<button class="lg-min" aria-expanded="${!state.legendMin}" title="${state.legendMin ? "Show key" : "Hide key"}">${state.legendMin ? "Key ▸" : "–"}</button><div class="lg-body">${html}</div>` : "";
     el.classList.toggle("min", !!state.legendMin);
     const mb = el.querySelector(".lg-min"); if (mb) mb.onclick = () => { state.legendMin = !state.legendMin; renderLegend(); };
     el.hidden = !html;
+    updateSuddHatch();
+  }
+  let suddHatch = null;
+  function updateSuddHatch() {
+    const on = !!state.colorBy && GROUNDWATER_IDS.includes(state.colorBy);
+    if (on && !suddHatch && state.countiesGJ) {
+      const feats = state.countiesGJ.features.filter((f) => SUDD_NAMES.includes(f.properties.name));
+      suddHatch = L.geoJSON({ type: "FeatureCollection", features: feats }, { pane: "hatch", interactive: false, style: { color: "#111", weight: 1, fillColor: "url(#sudd-hatch)", fillOpacity: 1 } }).addTo(map);
+    } else if (!on && suddHatch) { map.removeLayer(suddHatch); suddHatch = null; }
   }
   function bgLegend(k) {
     if (k === "soil_type") return `<div class="lg-flows"><div class="lg-title">Background: main soil type</div><div class="lg-bins">${Object.keys(SOIL).map((c, i) => `<div><i style="background:${CATEGORICAL[i]}"></i>${SOIL[c]}</div>`).join("")}</div></div>`;
@@ -356,24 +372,55 @@
 
   // ---------- sidebar: measures ----------
   const plainOf = (v) => (v.plain || v.notes || "").split(/(?<=\.)\s/).slice(0, 2).join(" ");
+  // ---------- stories: colour-coded groups of measures that tell one story (data/stories.json) ----------
+  const storyVars = (st) => [...new Set((st.steps || []).map((x) => x.var).filter((id) => state.varById[id]))];
+  function renderStories() {
+    const el = $("#stories"); if (!el) return;
+    const S = state.stories || [];
+    if (!S.length) { el.innerHTML = ""; return; }
+    const act = S.find((x) => x.key === state.story);
+    el.innerHTML = `<div class="story-chips">${S.map((x) => `<button class="story-chip${x.key === state.story ? " on" : ""}" data-k="${esc(x.key)}" style="--c:${esc(x.color)}">${esc(x.title)}</button>`).join("")}${act ? `<button class="story-chip clear" data-k="">Show all measures</button>` : ""}</div>` +
+      (act ? `<div class="story-box" style="--c:${esc(act.color)}"><p>${act.summary}</p><ol>${act.steps.map((st, k) => `<li><button class="linkbtn story-step" data-i="${k}">${esc(st.say)}</button></li>`).join("")}</ol></div>` : "");
+    el.querySelectorAll(".story-chip").forEach((b) => (b.onclick = () => { state.story = b.dataset.k || null; renderStories(); renderVarList(); }));
+    el.querySelectorAll(".story-step").forEach((b) => (b.onclick = () => applyView(act.steps[+b.dataset.i])));
+  }
+  /** Apply a saved view: {var, month, mode, county, flows, flowGroup, grid}. */
+  async function applyView(w) {
+    if (!w) return;
+    if (w.mode && [...$("#mode").options].some((o) => o.value === w.mode)) { state.mode = w.mode; $("#mode").value = w.mode; renderModeHint(); }
+    if (w.agg) { state.agg = w.agg; $("#agg").value = w.agg; }
+    if (w.grid != null) { state.gridOn = !!w.grid; $("#grid-on").checked = state.gridOn; }
+    if (w.flows != null) { state.flowOn = !!w.flows; if (w.flowGroup) state.flowGroup = w.flowGroup; renderFlowControls(); }
+    if (w.var !== undefined) await setColorBy(state.varById[w.var] ? w.var : null);
+    if (w.county) { state.selected = w.county; state.compare = []; }
+    const ti = w.month ? state.months.indexOf(w.month) : -1;
+    setTime(ti >= 0 ? ti : state.t);
+    if (w.county) { refreshCounties(); await renderDetail(); showTab("county"); }
+    if (w.national) openNat(true);
+    if (w.zoom && countyLayer) { const l = countyLayer.getLayers().find((x) => x.feature.properties.district_id === w.county); if (l) map.fitBounds(l.getBounds().pad(1.2)); }
+  }
   function renderVarList() {
     const q = $("#filter").value.trim().toLowerCase();
     const el = $("#var-list"); el.innerHTML = "";
+    const act = (state.stories || []).find((x) => x.key === state.story);
+    const only = act ? new Set(storyVars(act)) : null;
     const none = document.createElement("label"); none.className = "var-row";
     none.innerHTML = `<input type="radio" name="var" ${state.colorBy ? "" : "checked"}> <span>No measure (background and points only)</span>`;
     none.querySelector("input").onchange = () => setColorBy(null);
-    if (!q) el.appendChild(none);
+    if (!q && !only) el.appendChild(none);
     let lastCat = null, lastGroup = null;
     for (const v of state.vars) {
+      if (only && !only.has(v.id)) continue;
       const hay = `${v.label} ${v.group} ${v.plain || ""} ${(v.synonyms || []).join(" ")}`.toLowerCase();
       if (q && !q.split(/\s+/).every((w) => hay.includes(w))) continue;
       if (v.category !== lastCat) { el.insertAdjacentHTML("beforeend", `<div class="cat-title">${v.category === "climate" ? "Climate and environment" : "People, conflict and aid"}</div>`); lastCat = v.category; lastGroup = null; }
       if (v.group !== lastGroup) { el.insertAdjacentHTML("beforeend", `<div class="group-title">${esc(v.group)}</div>`); lastGroup = v.group; }
       const on = state.colorBy === v.id;
       const cov = isStatic(v) ? "single snapshot" : `${v.first_period.slice(0, 4)}–${v.last_period.slice(0, 4)}${v.temporal && v.temporal !== "monthly" ? ", " + v.temporal.replace(/\s*\(.*\)/, "") : ""}`;
-      const row = document.createElement("div"); row.className = `var-item${on ? " on" : ""}`;
-      row.innerHTML = `<label class="var-row"><input type="radio" name="var" ${on ? "checked" : ""}> <span>${esc(v.label)} ${state.curated.rasters[v.id] ? '<span class="grid-ico" title="Satellite grid available">▦</span>' : ""}<span class="meta"> · ${cov}</span></span></label>
-        ${on ? `<div class="var-plain">${esc(plainOf(v))}${v.how_to_read ? ` <i>${esc(v.how_to_read)}</i>` : ""}</div>` : ""}`;
+      const dots = (state.stories || []).filter((st) => storyVars(st).includes(v.id)).map((st) => `<i class="sdot" style="background:${esc(st.color)}" title="${esc(st.title)}"></i>`).join("");
+      const row = document.createElement("div"); row.className = `var-item${on ? " on" : ""}${v.sub ? " sub" : ""}`;
+      row.innerHTML = `<label class="var-row"><input type="radio" name="var" ${on ? "checked" : ""}> <span>${esc(v.label)} ${state.curated.rasters[v.id] ? '<span class="grid-ico" title="Finer-resolution grid available">▦</span>' : ""}${dots}<span class="meta"> · ${cov}</span></span></label>
+        ${on ? `<div class="var-plain">${esc(plainOf(v))}</div>` : ""}`;
       row.querySelector("input").onchange = () => setColorBy(v.id);
       el.appendChild(row);
     }
@@ -398,7 +445,6 @@
     if (!v || !state.gridOn) return null;
     const key = state.curated.rasters[v.id]; if (!key) return null;
     if (state.mode === "trend" && usesTrend(v)) return state.rasterByKey[`${key}_trend`] || null;
-    if (state.mode === "index_month") return null;   // grids hold values, not change vs 2018
     return state.rasterByKey[key] || null;
   }
   function rasterDateFor(r, i) {
@@ -443,8 +489,6 @@
       row.querySelector("input").onchange = (e) => { e.target.checked ? state.bgOn.add(b.key) : state.bgOn.delete(b.key); applyBackground(); writeHash(); };
       el.appendChild(row);
     }
-    const wl = state.rasters.filter((x) => x.base_layer).flatMap((x) => x.legend || []).filter((x, i, a) => a.findIndex((y) => y[1] === x[1]) === i);
-    if (wl.length) el.insertAdjacentHTML("beforeend", `<div class="hint wl-key">${wl.map(([c, l]) => `<span class="wl"><i style="background:${c}"></i>${esc(l)}</span>`).join("")}</div>`);
   }
   async function applyBackground() {
     if (state.bgOn.has("soil_type") && !soilLayer) {
@@ -481,9 +525,9 @@
       const area = (f) => { const b = L.geoJSON(f).getBounds(); return (b.getNorth() - b.getSouth()) * (b.getEast() - b.getWest()); };
       gj.features.sort((a, b) => area(b) - area(a));
       [...new Set(gj.features.map((f) => f.properties.group || f.properties.name))].sort().forEach((g, i) => (ETHNIC_COLORS[g] = CATEGORICAL[i % CATEGORICAL.length]));
-      $(`#pl-${p.key}`).innerHTML = `<div class="eth-key">${Object.entries(ETHNIC_COLORS).map(([g, c]) => `<span><i style="background:${c}"></i>${esc(g)}</span>`).join("")}</div><p class="hint">Settlement areas from GeoEPR 2021 (ETH Zurich); areas overlap where groups live together. Click an area for its political-power status. Covers the ten groups coded by the Ethnic Power Relations dataset only.</p>`;
+      $(`#pl-${p.key}`).innerHTML = `<div class="eth-key">${Object.entries(ETHNIC_COLORS).map(([g, c]) => `<span><i style="background:${c}"></i>${esc(g)}</span>`).join("")}</div><p class="hint">Settlement areas from GeoEPR 2021 (ETH Zurich); areas overlap where groups live together. Click an area for its political-power status.</p>`;
     } else {
-      $(`#pl-${p.key}`).innerHTML = p.plain && typeof p.plain === "string" ? `<p class="hint">${esc(p.plain.split(/(?<=\.)\s/)[0])} Hollow markers = closed, damaged or not working.</p>` : "";
+      $(`#pl-${p.key}`).innerHTML = p.plain && typeof p.plain === "string" ? `<p class="hint">${esc(p.plain.split(/(?<=\.)\s/)[0])} Hollow markers mean the center is closed, damaged or not working.</p>` : "";
     }
     const entry = { p, gj, timed, layer: null };
     state.pointLayers[p.key] = entry;
@@ -519,13 +563,14 @@
       },
       onEachFeature: (f, l) => {
         const pr = f.properties || {};
-        const rows = Object.entries(pr).filter(([, val]) => val !== null && val !== "" && typeof val !== "object").slice(0, 12)
-          .map(([k, val]) => `<tr><td class="muted">${esc(k)}</td><td>${esc(String(val).slice(0, 120))}</td></tr>`).join("");
+        const nice = (k) => (/[A-Z ]/.test(k) ? k : k.replace(/_/g, " ").replace(/^./, (c) => c.toUpperCase()));
+        const rows = Object.entries(pr).filter(([k, val]) => val !== null && val !== "" && typeof val !== "object" && !/^(ids?|gwid|gwgroupid|groupid|fid|objectid|_.*)$/i.test(k)).slice(0, 14)
+          .map(([k, val]) => `<tr><td class="muted">${esc(nice(k))}</td><td>${/^https?:/.test(String(val)) ? `<a href="${esc(val)}" target="_blank" rel="noopener">link</a>` : esc(String(val).slice(0, 200))}</td></tr>`).join("");
         const head = pr.name || pr.facility_name || pr.site_name || pr.title || "";
         const status = pr.status ? `<div><b>Status:</b> ${esc(pr.status)}</div>` : "";
         const when = pr.date ? `<div><b>Date:</b> ${esc(String(pr.date).slice(0, 10))}</div>` : (pr.valid_from || pr.valid_to) ? `<div><b>Period:</b> ${pr.valid_from ? esc(String(pr.valid_from).slice(0, 7)) : "before 2018"} → ${pr.valid_to ? esc(String(pr.valid_to).slice(0, 7)) : "2025+"}</div>` : "";
         const ev = pr.evidence || pr.date_basis ? `<div class="hint">Evidence: ${esc(String(pr.evidence || pr.date_basis).slice(0, 220))}</div>` : "";
-        l.bindPopup(`<b>${esc(p.label)}</b>${head ? `<div>${esc(head)}</div>` : ""}${status}${when}${ev}<details><summary>All fields</summary><table>${rows}</table></details>`);
+        l.bindPopup(`<b>${esc(p.label)}</b>${head ? `<div>${esc(head)}</div>` : ""}${status}${when}${ev}<details${isPoly ? " open" : ""}><summary>Details</summary><table>${rows}</table></details>`);
       },
     }).addTo(map);
   }
@@ -573,7 +618,7 @@
       }
     }
     const st = $("#flow-status");
-    if (st) st.innerHTML = !state.flowOn ? "" : !any ? `<span class="none">No IOM Event Tracking data for ${windowLabel(state.t)}. Records start in late 2019; most months from 2020 on are covered.</span>` : `${[...agg.values()].reduce((a, b) => a + b, 0).toLocaleString("en-US")} people moving in ${windowLabel(state.t)} (top ${Math.min(agg.size, 150)} routes shown).`;
+    if (st) st.innerHTML = !state.flowOn ? "" : !any ? `<span class="none">No IOM Event Tracking data for ${windowLabel(state.t)}. Records start in late 2019; most months from 2020 on are covered.</span>` : `${[...agg.values()].reduce((a, b) => a + b, 0).toLocaleString("en-US")} people moving in ${windowLabel(state.t)}. Every route IOM recorded is drawn, up to the 150 largest when there are more.`;
     if (!state.flowOn) return;
     const list = [...agg.entries()].map(([k, n]) => { const [a, b, g] = k.split("|"); return { a: +a, b: +b, g, n }; }).sort((x, y) => y.n - x.n).slice(0, 150);
     const max = Math.max(1, ...list.map((f) => f.n));
@@ -583,10 +628,10 @@
     const G = state.curated.flow_groups, gi = Object.keys(G);
     for (const f of list.slice().reverse()) {   // biggest drawn last = on top
       const A = F.nodes[f.a], B = F.nodes[f.b], g = G[f.g];
-      const w = Math.max(2.2, Math.min(15, 14 * Math.sqrt(f.n / max)));
+      const w = FLOW_W(f.n);
       if (!String(A[3]).startsWith("SS")) crossings.set(f.a, (crossings.get(f.a) || 0) + f.n);
       const pts = bezier(A, B, 0.12 + 0.05 * gi.indexOf(f.g));
-      L.polyline(pts, { renderer: flowRenderer, pane: "flows", color: "#ffffff", weight: w + 3.5, opacity: 0.9, lineCap: "round", interactive: false }).addTo(state.flowLayer);
+      L.polyline(pts, { renderer: flowRenderer, pane: "flows", color: "#ffffff", weight: w + 2.5, opacity: 0.9, lineCap: "round", interactive: false }).addTo(state.flowLayer);
       const line = L.polyline(pts, { renderer: flowRenderer, pane: "flows", color: g.color, weight: w, opacity: 0.95, lineCap: "round" })
         .bindTooltip(`<b>${esc(A[2])} → ${esc(B[2])}</b><br>${esc(g.label)}<br><b>${f.n.toLocaleString("en-US")}</b> people · ${windowLabel(state.t)}<br><span class="muted">IOM Event Tracking</span>`, { sticky: true });
       line.addTo(state.flowLayer);
@@ -617,20 +662,51 @@
     hits.sort((a, b) => (a.to > a.from ? 1 : 0) - (b.to > b.from ? 1 : 0) || (a.from < b.from ? 1 : -1));   // single-month first
     return hits;
   }
-  function renderContext() {
+  /** National monthly line for a series: sum or mean over counties, or the single national series. */
+  function nationalLine(id, how) {
+    const s = state.series[id]; if (!s) return null;
+    const cs = Object.keys(s);
+    if (how === "national" || cs.length === 1) return natArr(id);
+    return state.months.map((_, i) => { const xs = cs.map((c) => s[c][i]).filter((x) => x != null && isFinite(x)); if (!xs.length) return null; const t = xs.reduce((a, b) => a + b, 0); return how === "sum" ? t : t / xs.length; });
+  }
+  state.ctxCharts = [];
+  async function renderContext() {
     const el = $("#context"); if (!el) return;
     const ym = state.months[state.t];
     const hits = periodFor(ym);
     const evs = (state.events || []).filter((e) => e.date.slice(0, 7) === ym);
+    const key = hits.map((p) => p.from + p.to).join("|") + "#" + evs.length;
+    if (key === state._ctxKey) { state.ctxCharts.forEach((c) => c.draw()); return; }
+    state._ctxKey = key;
+    state.ctxCharts.forEach((c) => c.destroy()); state.ctxCharts = [];
     if (!hits.length && !evs.length) { el.innerHTML = `<p class="hint">${state.context ? "No summary for this month." : "Loading…"}</p>`; return; }
     const range = (p) => (p.from === p.to ? monthLabel(state.months.indexOf(p.from)) : `${monthLabel(state.months.indexOf(p.from))} – ${monthLabel(state.months.indexOf(p.to))}`);
-    let html = `<div class="ctx-when">${monthLabel(state.t)}</div>`;
+    const charts = [];
+    for (const p of hits) for (const c of p.charts || []) if (!charts.some((x) => x.id === c.id)) charts.push({ ...c, from: p.from, to: p.to });
+    let html = "";
+    if (charts.length) html += `<h3 class="ctx-h">National Trends</h3>${charts.map((c, k) => `<div class="ctx-chart"><div class="cc-t">${esc(c.label)}${c.units ? ` <span class="muted">(${esc(c.units)})</span>` : ""}</div><div class="cc-box"><canvas id="ctxc-${k}"></canvas></div></div>`).join("")}`;
     for (const p of hits) {
-      html += `<article class="ctx"><div class="ctx-range">${esc(range(p))}</div><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>${p.links ? `<p class="ctx-links"><b>In the charts:</b> ${esc(p.links)}</p>` : ""}
+      html += `<article class="ctx"><div class="ctx-range">${esc(range(p))}</div><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>${p.links ? `<p class="ctx-links">${esc(String(p.links).replace(/^\s*In the charts:\s*/i, ""))}</p>` : ""}
         ${p.sources && p.sources.length ? `<p class="ctx-src">Sources: ${p.sources.map((s, i) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label || `[${i + 1}]`)}</a>`).join(" · ")}</p>` : ""}</article>`;
     }
     if (evs.length) html += `<div class="ctx-evs"><h3>Also recorded this month</h3><ul>${evs.map((e) => `<li>${esc(e.title)}${e.source_url ? ` <a href="${esc(e.source_url)}" target="_blank" rel="noopener">source</a>` : ""}</li>`).join("")}</ul></div>`;
     el.innerHTML = html;
+    if (!charts.length) return;
+    await Promise.all(charts.map((c) => ensureSeries(c.id).catch(() => null)));
+    if (state._ctxKey !== key) return;
+    const ink2 = css("--ink-2"), line = css("--line");
+    charts.forEach((c, k) => {
+      const data = nationalLine(c.id, c.how); const cv = document.getElementById(`ctxc-${k}`);
+      if (!data || !cv) { if (cv) cv.parentElement.parentElement.remove(); return; }
+      const a = state.months.indexOf(c.from), b = state.months.indexOf(c.to);
+      state.ctxCharts.push(new Chart(cv, { type: "line", data: { labels: state.months, datasets: [{ data, borderColor: MAIN, borderWidth: 1.6, pointRadius: 0, pointHitRadius: 6, tension: 0, spanGaps: false }] },
+        options: { animation: false, responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+          plugins: { legend: { display: false }, tooltip: { callbacks: { title: (q) => monthLabel(q[0].dataIndex), label: (q) => `${q.raw == null ? "–" : fmt(q.raw)} ${c.units || ""}` } } },
+          scales: { x: { ticks: { color: ink2, font: { size: 10 }, autoSkip: false, maxRotation: 0, callback: (_, i) => (i % 24 === 6 ? state.months[i].slice(0, 4) : null) }, grid: { color: (q) => (q.index % 12 === 0 ? line : "transparent"), drawTicks: false } },
+            y: { beginAtZero: c.how !== "mean", ticks: { color: ink2, font: { size: 10 }, maxTicksLimit: 4, callback: (x) => fmt(x, 2) }, grid: { color: line } } } },
+        plugins: [{ id: "marks", beforeDraw(ch) { const { ctx, chartArea: ar, scales } = ch; if (a < 0 || b < 0) return; ctx.save(); ctx.fillStyle = "rgba(11,61,145,0.08)"; const x0 = scales.x.getPixelForValue(a), x1 = scales.x.getPixelForValue(b); ctx.fillRect(x0, ar.top, Math.max(2, x1 - x0), ar.bottom - ar.top); ctx.restore(); },
+          afterDraw(ch) { const { ctx, chartArea: ar, scales } = ch; const x = scales.x.getPixelForValue(state.t); ctx.save(); ctx.strokeStyle = ORANGE; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x, ar.top); ctx.lineTo(x, ar.bottom); ctx.stroke(); ctx.restore(); } }] }));
+    });
   }
   function showTab(which) {
     const ctx = which === "context";
@@ -651,13 +727,15 @@
     const strength = sig ? "This trend is statistically significant (unlikely to be chance, after allowing for testing all 79 counties)." : tr[T_P] != null && tr[T_P] < 0.05 ? "This trend is suggestive but not significant once all 79 counties are tested together." : "This change is not statistically significant: it could be chance.";
     return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen’s slope). ${strength}`;
   }
+  const COMPARE_COLORS = [MAIN, "#fc3c23", "#1baf7a", "#a05eb5"];
   const countyProps = (cid) => { const l = countyLayer.getLayers().find((x) => x.feature.properties.district_id === cid); return l ? l.feature.properties : { name: cid, admin1: "" }; };
   async function renderDetail() {
     const cid = state.selected;
     $("#tab-county").disabled = !cid;
-    if (!cid) { showTab("context"); return; }
+    if (!cid) { $("#tab-county").textContent = "Click on a county for more detailed info"; showTab("context"); return; }
     const P = countyProps(cid), v = state.varById[state.colorBy];
     $("#tab-county").textContent = `${P.name} County`;
+    state.compare = (state.compare || []).filter((c) => c !== cid);
     $("#detail-title").textContent = `${P.name} County`;
     $("#detail-sub").textContent = `${P.admin1} State`;
     const pr = state.profiles && state.profiles[cid];
@@ -667,10 +745,13 @@
         ${["livelihoods", "history", "conflict_impact"].map((k) => (pr[k] ? `<p><b>${{ livelihoods: "Livelihoods", history: "History", conflict_impact: "Conflict impact" }[k]}.</b> ${esc(pr[k])}</p>` : "")).join("")}
         ${pr.sources && pr.sources.length ? `<p class="hint">Sources: ${pr.sources.slice(0, 4).map((u, i) => `<a href="${esc(u)}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(" ")}</p>` : ""}</div>`;
     }
-    html += `<div id="detail-chart"></div><div class="detail-actions"><button id="btn-csv">Download this data (CSV)</button><button id="btn-link">Copy link to this view</button></div>`;
+    const cmp = (state.compare || []).map((c) => `<span class="cmp-chip" style="--c:${COMPARE_COLORS[(state.compare || []).indexOf(c) + 1]}">${esc(countyProps(c).name)} <button data-c="${esc(c)}" aria-label="Remove">×</button></span>`).join("");
+    const top = `<div class="cmp-row"><button id="btn-compare" class="pill${state.comparing ? " on" : ""}">${state.comparing ? "Click a county on the map…" : "+ Compare with another county"}</button>${cmp}</div>`;
+    html = top + html + `<div id="detail-chart"></div><div class="detail-actions"><button id="btn-csv">Download this data (CSV)</button></div>`;
     $("#detail-body").innerHTML = html;
     $("#btn-csv").onclick = downloadCSV;
-    $("#btn-link").onclick = () => { writeHash(); copyText(location.href, "Link copied."); };
+    $("#btn-compare").onclick = () => { state.comparing = !state.comparing; renderDetail(); };
+    $("#detail-body").querySelectorAll(".cmp-chip button").forEach((b) => (b.onclick = () => { state.compare = state.compare.filter((c) => c !== b.dataset.c); renderDetail(); }));
     state.charts.forEach((c) => c.destroy()); state.charts = [];
     const box = $("#detail-chart");
     if (!v) { box.innerHTML = `<p class="empty">Choose a measure in the left panel to see this county’s history.</p>`; return; }
@@ -678,12 +759,13 @@
     const now = valueAt(v, cid, state.t, "raw");
     box.innerHTML = `<div class="chart-block"><h3>${esc(v.label)}</h3><div class="var-plain">${esc(plainOf(v))}</div>
       <p class="now">${windowLabel(state.t)}: <b>${isCategorical(v) ? soilName(now) : now == null ? "no data" : `${fmt(now)} ${esc(unitsShort(v))}`}</b></p>
-      <p class="trend-s">${trendSentence(v, cid)}</p>${v.caution ? `<p class="caution">${esc(v.caution)}</p>` : ""}${isStatic(v) ? "" : "<canvas></canvas>"}</div>`;
+      <p class="trend-s">${trendSentence(v, cid)}</p>${isStatic(v) ? "" : '<div class="chart-box"><canvas></canvas></div>'}</div>`;
     if (isStatic(v)) return;
     const S = rawWindowSeries(v, cid), cur = S.keys.indexOf(windowKey(state.t));
     const baseVals = S.firstIdx.map((i) => (state.agg === "year" ? null : mean(baselineWindowIdx(i, v.baseline_year || 2018).map((q) => ((state.series[v.id] || {})[cid] || [])[q]))));
-    const ds = [{ label: P.name, data: S.vals, borderColor: "#2a78d6", borderWidth: 2, pointRadius: 0, pointHitRadius: 8, tension: 0.15, spanGaps: false }];
-    if (v.temporal === "monthly" && baseVals.some((x) => x != null)) ds.push({ label: `Same ${state.agg === "month" ? "month" : "season"} in ${v.baseline_year || 2018}`, data: baseVals.map((x) => (x != null && isShareUnits(v) ? x * 100 : x)), borderColor: "#898781", borderDash: [4, 3], borderWidth: 1.2, pointRadius: 0 });
+    const ds = [{ label: P.name, data: S.vals, borderColor: COMPARE_COLORS[0], borderWidth: 2, pointRadius: 0, pointHitRadius: 8, tension: 0.15, spanGaps: false }];
+    (state.compare || []).forEach((c, k) => ds.push({ label: countyProps(c).name, data: rawWindowSeries(v, c).vals, borderColor: COMPARE_COLORS[k + 1], borderWidth: 1.8, pointRadius: 0, pointHitRadius: 8, tension: 0.15, spanGaps: false }));
+    if (v.temporal === "monthly" && !(state.compare || []).length && baseVals.some((x) => x != null)) ds.push({ label: `Same ${state.agg === "month" ? "month" : "season"} in ${v.baseline_year || 2018}`, data: baseVals.map((x) => (x != null && isShareUnits(v) ? x * 100 : x)), borderColor: "#898781", borderDash: [4, 3], borderWidth: 1.2, pointRadius: 0 });
     const ink2 = css("--ink-2"), line = css("--line");
     state.charts.push(new Chart(box.querySelector("canvas"), {
       type: "line", data: { labels: S.labels, datasets: ds },
@@ -807,11 +889,47 @@
   }
   const lastIdx = (arr) => { for (let i = arr.length - 1; i >= 0; i--) if (arr[i] != null) return i; return null; };
 
+
+  // ---------- "How to use" panel ----------
+  const HOWTO_HTML = `<button class="howto-close" aria-label="Close">×</button>
+  <h2>How to use</h2>
+  <h3>What this map shows</h3>
+  <p>This map lays South Sudan’s counties beneath two kinds of monthly data from 2018 to 2025. The first describes the climate conditions that farming, herding, and flood risk depend on: rainfall, vegetation greenness, land surface temperature, soil moisture, and surface water. The second records displacement, armed conflict, humanitarian funding, and UN presence. Checkboxes turn each layer on or off, the time slider moves through the record one month at a time, and clicking a county opens its values for the selected month. Users can place a climate layer beneath a human one to ask whether a county that flooded in September also took in displaced families by December.</p>
+  <h3>Reading the colours and outlines</h3>
+  <p><b>Trend view</b> (the default): each county’s colour is its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, so the seasons do not count as a trend. Every county is compared with its own 2018 baseline: green means the measure rose, red means it fell, and white means little or no change. Colours show direction, not good or bad.</p>
+  <p><b>Values in original units</b>: colours compare counties with each other in the selected month or season, not with 2018. The same county can therefore look very different in the two views: a county can have a low value (red in this view) that is still rising since 2018 (green in the trend view).</p>
+  <p>Each of the seven colours holds about one-seventh of the county values for the measure. On finer-resolution grids, the colours are seven equal steps of the grid’s range.</p>
+  <p><b>Outlined counties</b>: the 2018–2025 trend passed the Mann-Kendall significance test after allowing for slow-moving conditions (one month resembling the next) and for testing all 79 counties at once. An outline means the change is very unlikely to be chance; no outline does not prove there was no change, because eight years is a short record.</p>
+  <p><b>Black hatching</b> means no data for that county and period.</p>
+  <h3>Understanding the data: implications and utility</h3>
+  <p>In few countries do households depend on the seasons as closely as in South Sudan, where most families live off rain-fed farming, cattle, or fishing. A single rainy season, running roughly from April to October, sets when families plant, when herders drive cattle toward the rivers, and when roads wash out for months at a time. When the rains arrive late or the floodwater fails to recede, families move; that movement can bring herding and farming communities into competition over scarce land and water. The floods that covered large parts of Jonglei, Unity, and Upper Nile between 2019 and 2022 are the clearest recent example, since many of the families who fled the water had already fled the fighting years before.</p>
+  <p>Rainfall records how much rain fell in each county during the month, which means the most when set against what usually falls there. Vegetation greenness (NDVI) follows rainfall with a lag of several weeks. A county that stays brown into the rainy season points to failing pasture and crops, while one that greens unusually early or late points to a shifted season. Land surface temperature measures how hot the ground itself becomes (not the air temperature a weather station reports), so it serves as a marker of dry-season heat stress on crops, livestock, and people. Soil moisture shows how much water the ground already holds. Saturated soil cannot absorb the next storm, which is why heavy rain on already-wet ground in the Sudd produces floods that last for months rather than days. Surface water maps where standing water covers the land, capturing both the seasonal swell of the Sudd wetland and the floods that spread beyond it.</p>
+  <ul>
+    <li>Maximum temperatures (day temperatures) are particularly important for assessing heat stress, wildfire risk, and drought conditions. Heat stress is particularly relevant in urban areas where the heat island effect can intensify impacts.</li>
+    <li>Minimum temperatures (night temperatures) are critical for human health (e.g., sleep quality), animal health, agricultural productivity (e.g., frost risk), and ecosystem stability.</li>
+    <li>Precipitation patterns are broadly organized by climatic zones and rain fronts, but at finer scales, they are influenced by topography, distance from the coast, prevailing winds, and local convection processes.</li>
+  </ul>
+  <p>The displacement layer counts internally displaced people and returnees in each county using figures from IOM’s Displacement Tracking Matrix. IOM collects these figures in survey rounds a few months apart, so the value for any given month reflects the most recent round rather than a fresh count. The conflict layer records reported incidents of political and communal violence, including the cattle raids and revenge attacks that tend to rise in the dry season. The funding layer reports what donors committed to the humanitarian response. The UN presence layer marks where UNMISS and UN agencies operated, which shows where international actors could see and respond to a crisis.</p>
+  <p>The map supports exploration rather than proof. Placing a flood beside a rise in displacement raises a question, but answering it takes field reporting, interviews, and local knowledge. A satellite can show that the water rose; it cannot say who left, or why. This tool provides a foundation for exploring these dynamics, helping users identify key climate patterns and potential vulnerabilities across different regions and seasons.</p>
+  <h3>Data caveats</h3>
+  <p>Displacement coverage is thin in the earliest months, since IOM’s tracking covered fewer than 50 counties in 2018 and reached nearly every county only in early 2019; a county shown with black hatching lacks data for that month, which is different from reporting zero displaced people. Conflict data come largely from media and partner reports, so remote counties are likely undercounted, while counties near UN bases may appear more violent simply because more observers were there to document what happened. County-level averages also flatten local variation; a single rainfall value can conceal a flooded river corridor beside dry uplands. Finally, South Sudan redrew its states in 2015 and again in 2017 before returning to ten states in 2020. The map uses one fixed set of county boundaries throughout, so figures that sources reported under the interim state names have been matched to those counties.</p>`;
+  function openHowto(open) {
+    const el = $("#howto"); el.hidden = !open; $("#howto-toggle").setAttribute("aria-expanded", open);
+    if (open && !el.innerHTML) { el.innerHTML = HOWTO_HTML; el.querySelector(".howto-close").onclick = () => openHowto(false); }
+  }
+  function setSidebar(open) {
+    $("#app").classList.toggle("side-hidden", !open); $("#side-show").hidden = open;
+    setTimeout(() => map.invalidateSize(), 260);
+  }
+  function renderModeHint() {
+    const el = $("#mode-hint"); if (!el) return;
+    el.textContent = state.mode === "trend" ? "Each county is compared with its own 2018 levels, month by month: green = rose since 2018, red = fell." : "Colours compare counties with each other in the selected period, not with 2018.";
+  }
   // ---------- views ----------
   function openNat(open) {
     state.natOpen = open;
     const d = $("#nat-drawer"); d.hidden = !open; $("#nat-toggle").setAttribute("aria-expanded", open);
-    $("#nat-toggle").textContent = open ? "Hide national timeline" : "National timeline";
+    $("#nat-toggle").textContent = open ? "Hide national trends" : "See national trends in aid and socioeconomic outcomes";
     if (open && $("#national").parentElement !== $("#nat-slot")) { $("#nat-slot").appendChild($("#national")); renderNational(); }
     setTimeout(() => map.invalidateSize(), 60);
     writeHash();
@@ -822,6 +940,11 @@
     if (view === "landing") { if ($("#national").parentElement !== $("#national-home")) { $("#national-home").appendChild($("#national")); renderNational(); } else updateNational(); window.scrollTo(0, 0); }
     else { openNat(!!state.natOpen); setTimeout(() => { map.invalidateSize(); if (!state._fitted) { fitMap(); state._fitted = true; } }, 30); updateNational(); }
     writeHash();
+  }
+  function renderWalkthrough(w) {
+    const el = $("#walkthrough"); if (!el || !w || !w.steps) return;
+    el.innerHTML = `<h3>${esc(w.title)}</h3><p class="wt-intro">${w.intro}</p><ol class="wt-steps">${w.steps.map((st, k) => `<li><h4>${esc(st.heading)}</h4><p>${st.text}</p>${st.view ? `<button class="wt-go" data-i="${k}">Show me on the map →</button>` : ""}</li>`).join("")}</ol>${w.caveat ? `<p class="caveat">${w.caveat}</p>` : ""}`;
+    el.querySelectorAll(".wt-go").forEach((b) => (b.onclick = async () => { setView("map"); await applyView(w.steps[+b.dataset.i].view); }));
   }
   const fitMap = () => countyLayer && map.fitBounds(countyLayer.getBounds(), { padding: [8, 8] });
 
@@ -859,6 +982,9 @@
 
     fetchJSON("data/basemap_context.json").then(drawBasemapContext).catch((e) => console.warn("basemap context", e));
     fetchJSON("data/trends.json").then((t) => { state.trends = t; state.vars.forEach((v) => (v._bins = null)); refreshCounties(); renderLegend(); }).catch(() => {});
+    fetchJSON("data/stories.json").then((st) => { state.stories = st.stories || st; renderStories(); renderVarList(); }).catch(() => {});
+    fetchJSON("data/walkthrough.json").then(renderWalkthrough).catch(() => {});
+    fetchJSON("data/landing_text.json").then((lt) => { if (lt.exec_last_para && $("#exec-last")) $("#exec-last").innerHTML = lt.exec_last_para; }).catch(() => {});
     fetchJSON("data/profiles.json").then((pj) => (state.profiles = pj)).catch(() => {});
     fetchJSON("data/context_timeline.json").then((c) => { state.context = c; renderContext(); }).catch(() => { state.context = { periods: [] }; renderContext(); });
     fetchJSON("data/context_events.json").then((ce) => { state.events = (ce.events || ce || []).filter((e) => e.date); renderContext(); }).catch(() => {});
@@ -870,20 +996,28 @@
       style: styleCounty,
       onEachFeature: (f, l) => {
         l.on("mousemove", (e) => showHover(f.properties, e.originalEvent));
-        l.on("click", () => { state.selected = f.properties.district_id; refreshCounties(); renderDetail().then(() => showTab("county")); writeHash(); });
+        l.on("click", () => {
+          const id = f.properties.district_id;
+          if (state.comparing && state.selected && id !== state.selected) { state.compare = [...(state.compare || []).filter((c) => c !== id), id].slice(-3); state.comparing = false; renderDetail().then(() => showTab("county")); return; }
+          state.comparing = false; state.selected = id; state.compare = []; refreshCounties(); renderDetail().then(() => showTab("county")); writeHash();
+        });
         l.on("mouseover", () => l.setStyle({ weight: 2.5, color: "#0b0b0b" }));
         l.on("mouseout", () => { countyLayer.resetStyle(l); hideHover(); });
       },
     }).addTo(map);
     map.fitBounds(countyLayer.getBounds(), { padding: [8, 8] }); townsVisible();
 
-    $("#mode").onchange = (e) => { state.mode = e.target.value; refreshCounties(); updateRasters(); renderLegend(); if (state.selected) renderDetail(); writeHash(); };
+    $("#howto-toggle").onclick = () => openHowto($("#howto").hidden);
+    $("#side-hide").onclick = () => setSidebar(false);
+    $("#side-show").onclick = () => setSidebar(true);
+    renderModeHint();
+    $("#mode").onchange = (e) => { state.mode = e.target.value; renderModeHint(); refreshCounties(); updateRasters(); renderLegend(); if (state.selected) renderDetail(); writeHash(); };
     $("#agg").onchange = (e) => { state.agg = e.target.value; setTime(state.t); renderLegend(); };
     $("#time").oninput = (e) => setTime(+e.target.value);
     $("#play").onclick = togglePlay;
     $("#filter").oninput = renderVarList;
     $("#grid-on").onchange = (e) => { state.gridOn = e.target.checked; refreshCounties(); updateRasters(); renderLegend(); writeHash(); };
-    $("#detail-close").onclick = () => { state.selected = null; refreshCounties(); renderDetail(); writeHash(); };
+    $("#detail-close").onclick = () => { state.selected = null; state.compare = []; state.comparing = false; refreshCounties(); renderDetail(); $("#tab-county").textContent = "Click on a county for more detailed info"; writeHash(); };
     $("#tab-context").onclick = () => showTab("context");
     $("#tab-county").onclick = () => state.selected && showTab("county");
     $("#nat-toggle").onclick = () => openNat(!state.natOpen);

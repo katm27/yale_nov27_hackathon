@@ -14,6 +14,9 @@
     <pattern id="nodata-hatch" patternUnits="userSpaceOnUse" width="7" height="7" patternTransform="rotate(45)">
       <rect width="7" height="7" fill="#111"/><line x1="0" y1="0" x2="0" y2="7" stroke="#8a8a8a" stroke-width="2.2"/>
     </pattern>
+    <pattern id="sudd-hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="8" stroke="#111" stroke-width="2" stroke-opacity=".75"/>
+    </pattern>
   </defs>
 </svg>
 
@@ -31,27 +34,16 @@
   <main class="wrap">
     <section class="summary" aria-labelledby="sum-h">
       <h2 id="sum-h">Executive summary</h2>
-      <p>This dashboard brings together 18 climate and environment measures and 10 measures of conflict, food and aid for each of South Sudan’s 79 counties, month by month from January 2018 to December 2025. For each county and measure, the map shows the <b>trend</b>: the typical change per year since 2018, estimated with Sen’s slope, a method that is not thrown off by single extreme months. For monthly data, each month is compared with the same month of 2018, so the normal swing between dry and rainy seasons does not count as a trend. Where a test shows the trend is unlikely to be chance, the county is outlined.</p>
-      <p>The clearest signal is <b>water</b>. Since 2018, the land has been holding more water, flood water has spread further across the Sudd wetland, and floods and other disasters have displaced hundreds of thousands of people in most years. Over the same period, money for the UN aid appeal fell sharply in 2025, when US government funding dropped to less than half of its 2024 level.</p>
+      <p>This dashboard brings together 18 climate and environment measures and 10 measures of conflict, food and aid for each of South Sudan’s 79 counties, month by month from January 2018 to December 2025. For each county and measure, the map shows the <b>trend</b>: the typical change per year since 2018, estimated with Sen’s slope and tested for significance using the Mann-Kendall test. For monthly data, each month is compared with the same month of 2018, controlling for seasonality. Where a test shows the trend is unlikely to be chance, the county is outlined.</p>
+      <p id="exec-last">The clearest signal is <b>water</b>. Since 2018, the land has been holding more water, flood water has spread further across the Sudd wetland, and floods and other disasters have displaced hundreds of thousands of people in most years. Over the same period, money for the UN aid appeal fell sharply in 2025, when US government funding dropped to less than half of its 2024 level.</p>
 
-      <h3>Key findings</h3>
-      <ol class="findings">
-        <li><b>The land is storing more water.</b> NASA GRACE satellites, which weigh the water held in soils, wetlands and aquifers, show a rise in 76 of 79 counties (a statistically significant trend in each of them). The typical rise is 3.7 cm of water per year, and the yearly national average went from +1.4 cm in 2018 to +16.2 cm in 2025, compared with the 2002–2020 average.</li>
-        <li><b>The Sudd wetland is staying flooded.</b> In the 16 counties of the Sudd, the average area under water each month grew from about 2,800 km² in 2018 to 11,000–14,000 km² in 2021–2025. The share of each county under water rose by a typical 1.3 percentage points per year, with a significant rise in 12 of the 16 counties.</li>
-        <li><b>Rain over South Sudan itself shows no clear trend.</b> NASA’s IMERG rainfall record shows no significant change in any county. The extra water on the land is therefore not explained by rain falling inside the country alone.</li>
-        <li><b>Floods are a major cause of displacement.</b> The International Organization for Migration (IOM) recorded about 475,000 people displaced by floods in each of 2020 and 2021, 416,000 in 2022 and 360,000 in 2024. In 2023, about 396,000 people arrived fleeing the war in Sudan.</li>
-        <li><b>The ground got cooler by day, while the air got slightly warmer.</b> MODIS satellites show daytime ground temperatures falling, with a significant drop in 63 counties (typically −0.34 °C per year). Air temperature rose slightly, by about +0.02 °C per year nationally, but not significantly in any single county.</li>
-        <li><b>The air got hazier.</b> Haze from dust and smoke (aerosol optical depth) rose in 75 of 79 counties, with a significant trend in each of them, by about 2% per year. Active fires show no clear national trend.</li>
-        <li><b>Violence against civilians stayed high.</b> The Armed Conflict Location &amp; Event Data project (ACLED) recorded 563 civilians killed in attacks in 2018 and 1,670–1,907 a year in 2021–2023. In 2025, IOM recorded about 337,000 people displaced by national-level conflict, up from about 7,000 in 2024.</li>
-        <li><b>Hunger is persistent.</b> Averaged across counties, 44–54% of people faced crisis-level hunger or worse (IPC Phase 3+) in every year with data.</li>
-        <li><b>Aid fell sharply in 2025.</b> The UN aid appeal received 46% of the money requested in 2025 (US$787 million of US$1.70 billion), against 56–76% in 2018–2024. US government humanitarian funding fell from US$708 million in 2024 to US$282 million in 2025, and the US share of all humanitarian funding fell from 50% to 31%. The number of aid organisations reporting work in each county also declined over the period.</li>
-      </ol>
+      <div id="walkthrough"></div>
       <p class="caveat"><b>Reading the trends with care.</b> Eight years is a short record. A trend describes 2018–2025 and should not be extended into the future. Some sources start later than 2018 or have gaps (for example, MODIS has no data for July–October 2025, and IOM Event Tracking starts in 2020). Counts of events depend on what gets reported. Each measure’s caveats are shown when you select it on the map.</p>
     </section>
 
     <section id="national-home" aria-labelledby="nat-h">
       <div class="nat-intro">
-        <h2 id="nat-h">National timeline</h2>
+        <h2 id="nat-h">National trends in aid and socioeconomic outcomes</h2>
         <p>These are country-wide series: aid funding, peacekeeping, conflict-related sexual violence, forced travel and women’s security. Hover over a chart to read exact values.</p>
       </div>
       <div id="national"><div id="nat-charts" class="nat-grid"></div></div>
@@ -69,30 +61,24 @@
 <div id="app" hidden>
   <aside id="sidebar" aria-label="Map controls">
     <header class="brand">
-      <button class="linkbtn" id="back-home">← Summary</button>
+      <div class="brand-row"><button class="linkbtn" id="back-home">← Summary</button><button id="side-hide" class="linkbtn" aria-label="Hide the side panel" title="Hide the side panel">« Hide panel</button></div>
       <h1>Climate Trends in South Sudan</h1>
-      <p class="sub">Pick one measure to colour the map. Move the time slider to step through 2018–2025.</p>
+      <button id="nat-toggle" class="pill wide" aria-expanded="false">See national trends in aid and socioeconomic outcomes</button>
     </header>
 
     <section class="panel">
       <label class="field-label" for="mode">Show</label>
       <select id="mode">
-        <option value="trend">Trend: change per year since 2018 (Sen’s slope)</option>
-        <option value="index_month">Change compared with the same month of 2018</option>
+        <option value="trend">Seasonally-adjusted trend relative to 2018 baseline (Sen’s slope)</option>
         <option value="raw">Values in original units</option>
       </select>
+      <p class="hint" id="mode-hint"></p>
       <label class="field-label" for="agg">Time step</label>
       <select id="agg">
         <option value="month">Monthly</option>
-        <option value="season">Seasonal (dry Dec–Mar · early rains Apr–Jun · main rains Jul–Sep · late Oct–Nov)</option>
+        <option value="season">Seasonal</option>
         <option value="year">Yearly</option>
       </select>
-    </section>
-
-    <section class="panel">
-      <div class="panel-head"><h2>Measures</h2><input id="filter" type="search" placeholder="Search…" aria-label="Search measures"></div>
-      <label class="var-row grid-toggle"><input type="checkbox" id="grid-on" checked> <span>Show climate measures as fine-resolution satellite grids where available <span class="meta">(▦)</span></span></label>
-      <div id="var-list"></div>
     </section>
 
     <section class="panel">
@@ -101,8 +87,16 @@
     </section>
 
     <section class="panel">
+      <div class="panel-head"><h2>Measures</h2><input id="filter" type="search" placeholder="Search…" aria-label="Search measures"></div>
+      <div id="stories"></div>
+      <label class="var-row grid-toggle"><input type="checkbox" id="grid-on" checked> <span>Show climate measures at a more detailed and granular level (finer spatial resolution) than the district-level <span class="meta">(▦)</span></span></label>
+      <div id="var-list"></div>
+    </section>
+
+
+    <section class="panel">
       <h2>Background layers</h2>
-      <p class="hint">These sit under the county colours. Choose “No measure” above the list to see them on their own.</p>
+      <p class="hint">These sit under the other datasets as an informative layer of characteristics of South Sudan’s landscape that influence agricultural productivity and grazing activity (which may make regions more vulnerable to raids). Choose “No measure” in the above list of climate and human variables to see them on their own.</p>
       <div id="bg-list"></div>
     </section>
 
@@ -124,16 +118,18 @@
         <button id="play" aria-label="Play">▶</button>
         <input id="time" type="range" min="0" max="95" value="0" aria-label="Month">
         <output id="time-label">Jan 2018</output>
-        <button id="nat-toggle" class="pill" aria-expanded="false">National timeline</button>
+        <button id="howto-toggle" class="pill" aria-expanded="false">How to use</button>
       </div>
 
       <div id="legend" class="card" hidden></div>
+      <button id="side-show" class="card" hidden aria-label="Show the side panel">» Measures</button>
+      <div id="howto" class="card" hidden></div>
     </div>
 
     <aside id="side" aria-label="Context and county details">
       <div class="tabs" role="tablist">
-        <button role="tab" id="tab-context" aria-selected="true">What was happening</button>
-        <button role="tab" id="tab-county" aria-selected="false" disabled>County</button>
+        <button role="tab" id="tab-context" aria-selected="true">Background and context</button>
+        <button role="tab" id="tab-county" aria-selected="false" disabled>Click on a county for more detailed info</button>
       </div>
       <section id="context" role="tabpanel"></section>
       <section id="detail" role="tabpanel" hidden>
@@ -144,8 +140,8 @@
       </section>
     </aside>
 
-    <section id="nat-drawer" hidden aria-label="National timeline">
-      <div class="drawer-head"><h2>National timeline</h2><span class="hint">Orange line = month on the slider · click a chart to jump to that month</span><button id="nat-close" aria-label="Close national timeline">×</button></div>
+    <section id="nat-drawer" hidden aria-label="National trends in aid and socioeconomic outcomes">
+      <div class="drawer-head"><h2>National trends in aid and socioeconomic outcomes</h2><button id="nat-close" aria-label="Close national timeline">×</button></div>
       <div id="nat-slot"></div>
     </section>
   </main>

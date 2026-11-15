@@ -16,7 +16,7 @@ grouping of IOM Event Tracking migration arrows (climate vs conflict). All other
 - Colours: one 7-bin red → white → green scale; county bins are percentiles of each measure (white = little or no change in
   trend mode); no data = black hatching. Grids keep their 7 equal-width bins (`scripts/recolor_rasters_rwg.py`), because the raw grids are not stored.
 - Hover reports Sen's slope in native units per year (percentage points for % and shares).
-- "What was happening" text: `docs/data/context_timeline.json` (sourced half-year summaries, built by `scripts/build_context_timeline.py`).
+- "Background and context" text: `docs/data/context_timeline.json` (sourced half-year summaries, built by `scripts/build_context_timeline.py`).
 - Neighbouring countries and towns: `scripts/build_basemap_context.py` (Natural Earth).
 - Soil moisture uses TerraClimate: NASA SMAP needs an Earthdata login and is not in the data yet.
 
