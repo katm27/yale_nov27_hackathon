@@ -49,7 +49,7 @@ MANUAL = {
 MULTI = {"ruwengadministrativearea": ["SS0601", "SS0608"],
          "greaterpiboradministrativearea": ["SS0308", "SS0309"], "greatpiboradministrativearea": ["SS0308", "SS0309"],
          "piboradministrativearea": ["SS0308", "SS0309"],
-         "duktwiceast": ["SS0305", "SS0310"]}
+         "duktwiceast": ["SS0305", "SS0310"], "ss0305ss0310": ["SS0305", "SS0310"]}
 ADMIN_AREA = {"SS0001": "Abyei Administrative Area (AAA; final status undetermined, also claimed by Sudan)",
               "SS0308": "Greater Pibor Administrative Area (GPAA, Feb 2020; = Pibor + Pochalla)",
               "SS0309": "Greater Pibor Administrative Area (GPAA, Feb 2020; = Pibor + Pochalla)",

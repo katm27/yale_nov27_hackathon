@@ -8,8 +8,8 @@
    "share": 0.9
   },
   "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 690 political-violence events, 1057 deaths (peak 2023); IDPs peak 172,600 (2024-09); IPC3+ peak 50%; flood-displaced 56,896.",
+  "history": "Multi-ethnic county hosting Juba, the national capital and county seat; host communities include the Bari, Lokoya and Lulubo; payams include Rejaf, Gondokoro, Mangalla, Lobonok and Wonduruba.",
+  "conflict_impact": "UNMISS reported SSPDF-NAS hostilities affecting civilians in Juba County (2023-24) and Murle armed incursions near Gondokoro and Mangalla (2023). ACLED 2018-25: 690 political-violence events, 1057 deaths (peak 2023); IDPs peak 172,600 (2024-09); IPC3+ peak 50%; flood-displaced 56,896.",
   "key_facts": {
    "acled_pv_events_2018_2025": 690,
    "acled_pv_fatalities_2018_2025": 1057,
@@ -43,6 +43,11 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/juba/",
+   "https://en.wikipedia.org/wiki/Juba_County",
+   "https://icr.ethz.ch/data/epr/geoepr/",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -59,8 +64,8 @@
    "share": 0.99
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 130 political-violence events, 210 deaths (peak 2025); IDPs peak 41,183 (2018-12); IPC3+ peak 65%.",
+  "history": "Home mainly to the Kuku; borders Uganda. Once seen as a stable model county, it was heavily depopulated by conflict from 2016.",
+  "conflict_impact": "UNMISS found Yei and Kajo-Keji most affected by 2018-19 violence; SSPDF-NAS violence again affected parts of Kajo-Keji in 2024. ACLED 2018-25: 130 political-violence events, 210 deaths (peak 2025); IDPs peak 41,183 (2018-12); IPC3+ peak 65%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 130,
    "acled_pv_fatalities_2018_2025": 210,
@@ -93,6 +98,10 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/kajo-keji/",
+   "https://en.wikipedia.org/wiki/Kajo_Keji_County",
+   "https://www.ecoi.net/en/file/local/2012167/final_-_human_rights_division_report_on_central_equatoria_-_3_july_2019.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -109,8 +118,8 @@
    "share": 1.0
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 239 political-violence events, 353 deaths (peak 2019); IDPs peak 55,190 (2021-12); IPC3+ peak 70%.",
+  "history": "County on the Juba-Yei road with headquarters at Lainya town; part of the former Yei River State. Affected by the National Salvation Front (NAS) insurgency since 2016-17.",
+  "conflict_impact": "Villages in Lainya and Yei (e.g. Mukaya) were attacked repeatedly in 2018-19; UNMISS attributed many 2022 abductions in Mukaya payam to NAS. ACLED 2018-25: 239 political-violence events, 353 deaths (peak 2019); IDPs peak 55,190 (2021-12); IPC3+ peak 70%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 239,
    "acled_pv_fatalities_2018_2025": 353,
@@ -143,6 +152,10 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/lainya/",
+   "https://en.wikipedia.org/wiki/Lainya_County",
+   "https://www.ecoi.net/en/file/local/2012167/final_-_human_rights_division_report_on_central_equatoria_-_3_july_2019.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -159,8 +172,8 @@
    "share": 0.98
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 189 political-violence events, 252 deaths (peak 2025); IDPs peak 27,378 (2022-08); IPC3+ peak 60%.",
+  "history": "Greenbelt county bordering Uganda and DR Congo, inhabited mainly by Kakwa, Keliko and Lugbara farmers; a food supplier for Yei and Juba.",
+  "conflict_impact": "UNMISS documented NAS abductions (2022-23) and, in 2025, SSPDF aerial bombardment of SPLA-IO positions incl. the Kendila cantonment site. ACLED 2018-25: 189 political-violence events, 252 deaths (peak 2025); IDPs peak 27,378 (2022-08); IPC3+ peak 60%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 189,
    "acled_pv_fatalities_2018_2025": 252,
@@ -193,6 +206,11 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/morobo/",
+   "https://en.wikipedia.org/wiki/Morobo_County",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -209,8 +227,8 @@
    "share": 0.81
   },
   "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 48 political-violence events, 150 deaths (peak 2018); IDPs peak 35,746 (2020-12); IPC3+ peak 60%; flood-displaced 106,145.",
+  "history": "Mundari agro-pastoralist county on both banks of the White Nile north of Juba, carved out of Juba County in 2001; headquarters Terekeka town.",
+  "conflict_impact": "UNMISS reported intercommunal violence by community-based militias around Juba and Terekeka counties in 2022. ACLED 2018-25: 48 political-violence events, 150 deaths (peak 2018); IDPs peak 35,746 (2020-12); IPC3+ peak 60%; flood-displaced 106,145.",
   "key_facts": {
    "acled_pv_events_2018_2025": 48,
    "acled_pv_fatalities_2018_2025": 150,
@@ -245,6 +263,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/terekeka/",
+   "https://en.wikipedia.org/wiki/Terekeka_County",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -261,8 +282,8 @@
    "share": 0.99
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 393 political-violence events, 386 deaths (peak 2018); IDPs peak 85,550 (2021-09); IPC3+ peak 45%.",
+  "history": "Yei River County, home to Pojulu, Kakwa, Keliko, Makaraka, Mundu and others; Yei town is a cross-border trade hub near Uganda and DR Congo and hosts IDPs and Congolese refugees.",
+  "conflict_impact": "Epicentre of the 2018-19 SSPDF/NAS conflict documented by UNMISS; NAS abductions in Lasu, Otogo and Tore payams continued in 2022-25. ACLED 2018-25: 393 political-violence events, 386 deaths (peak 2018); IDPs peak 85,550 (2021-09); IPC3+ peak 45%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 393,
    "acled_pv_fatalities_2018_2025": 386,
@@ -295,6 +316,12 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/yei/",
+   "https://en.wikipedia.org/wiki/Yei_County",
+   "https://www.ecoi.net/en/file/local/2012167/final_-_human_rights_division_report_on_central_equatoria_-_3_july_2019.pdf",
+   "https://www.ecoi.net/en/file/local/2048257/unmiss_annual_brief_violence_against_civilians_2020_final_for_publication.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -311,8 +338,8 @@
    "share": 0.85
   },
   "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 169 political-violence events, 278 deaths (peak 2021); IDPs peak 16,550 (2021-12); IPC3+ peak 80%.",
+  "history": "Named after its Buya and Didinga agro-pastoralist inhabitants; headquarters Chukudum, which hosted the first SPLM National Convention in 1994. Borders Uganda and Kenya.",
+  "conflict_impact": "UNMISS reported a 2024 attack on Didinga honey harvesters in Budi's mountains, an area contested with Karamojong communities of Uganda. ACLED 2018-25: 169 political-violence events, 278 deaths (peak 2021); IDPs peak 16,550 (2021-12); IPC3+ peak 80%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 169,
    "acled_pv_fatalities_2018_2025": 278,
@@ -346,6 +373,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/budi/",
+   "https://en.wikipedia.org/wiki/Budi_County",
+   "https://unmiss.unmissions.org/sites/default/files/human_rights_brief_violence_affecting_civilians_july-september_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -367,8 +397,8 @@
    }
   },
   "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income. Also Equatorial maize and cassava zone (44%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 84 political-violence events, 113 deaths (peak 2022); IDPs peak 20,852 (2018-12); IPC3+ peak 55%.",
+  "history": "Highland county around Ikotos town inhabited by Lango, Ketebo and other agro-pastoral groups growing sorghum and millet; dry-season cattle raiding has long occurred, notably in the Kidepo valley.",
+  "conflict_impact": "UNMISS documented 2024 incursions by armed Logir elements in Chokorol payam, Ikotos, injuring and killing civilians. ACLED 2018-25: 84 political-violence events, 113 deaths (peak 2022); IDPs peak 20,852 (2018-12); IPC3+ peak 55%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 84,
    "acled_pv_fatalities_2018_2025": 113,
@@ -402,6 +432,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/ikotos/",
+   "https://en.wikipedia.org/wiki/Ikotos_County",
+   "https://unmiss.unmissions.org/sites/default/files/human_rights_brief_violence_affecting_civilians_july-september_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -418,8 +451,8 @@
    "share": 1.0
   },
   "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 112 political-violence events, 230 deaths (peak 2024); IDPs peak 24,107 (2019-06); IPC3+ peak 70%.",
+  "history": "Largest group is the Toposa pastoralists, with the Jie minority in Jie payam and Nyangatom near the Kenya-Ethiopia border; payams include Narus, Natinga and Kauto.",
+  "conflict_impact": "UNMISS reported cross-border attacks by armed Turkana from Kenya on Toposa communities (2023) and Murle armed raids from GPAA (2024-25). ACLED 2018-25: 112 political-violence events, 230 deaths (peak 2024); IDPs peak 24,107 (2019-06); IPC3+ peak 70%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 112,
    "acled_pv_fatalities_2018_2025": 230,
@@ -452,6 +485,11 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/kapoeta-east/",
+   "https://en.wikipedia.org/wiki/Kapoeta_East_County",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -468,8 +506,8 @@
    "share": 1.0
   },
   "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 45 political-violence events, 127 deaths (peak 2022); IDPs peak 14,233 (2021-12); IPC3+ peak 75%.",
+  "history": "Toposa pastoralist county whose principal settlement is Riwoto.",
+  "conflict_impact": "UNMISS reported Murle armed elements from GPAA reaching parts of Kapoeta North in 2024. ACLED 2018-25: 45 political-violence events, 127 deaths (peak 2022); IDPs peak 14,233 (2021-12); IPC3+ peak 75%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 45,
    "acled_pv_fatalities_2018_2025": 127,
@@ -502,6 +540,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/kapoeta-north/",
+   "https://en.wikipedia.org/wiki/Kapoeta_North_County",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -518,7 +559,7 @@
    "share": 0.97
   },
   "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
-  "history": "",
+  "history": "Toposa and Didinga county around Kapoeta town (county HQ), with Kapoeta Mission Hospital serving a large catchment including returnees and IDPs.",
   "conflict_impact": "ACLED 2018-25: 61 political-violence events, 93 deaths (peak 2024); IDPs peak 11,095 (2019-06); IPC3+ peak 65%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 61,
@@ -552,6 +593,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/kapoeta-south/",
+   "https://en.wikipedia.org/wiki/Kapoeta_South_County",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -573,8 +616,8 @@
    }
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also South-Eastern semi-arid pastoral zone (28%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 61 political-violence events, 65 deaths (peak 2023); IDPs peak 21,808 (2025-02); IPC3+ peak 55%; flood-displaced 9,298.",
+  "history": "Also called Lopa/Lafon; largest community is the Lopit, followed by the Pari, Tennet and Lotuko; mostly single-season farmers.",
+  "conflict_impact": "UNMISS reported raids by Murle armed elements from GPAA on Pari and Toposa communities in Lafon in 2023-25. ACLED 2018-25: 61 political-violence events, 65 deaths (peak 2023); IDPs peak 21,808 (2025-02); IPC3+ peak 55%; flood-displaced 9,298.",
   "key_facts": {
    "acled_pv_events_2018_2025": 61,
    "acled_pv_fatalities_2018_2025": 65,
@@ -609,6 +652,10 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/lafon/",
+   "https://en.wikipedia.org/wiki/Lafon_County",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -625,8 +672,8 @@
    "share": 0.73
   },
   "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 106 political-violence events, 206 deaths (peak 2022); IDPs peak 62,306 (2022-08); IPC3+ peak 45%; flood-displaced 2,537.",
+  "history": "Acholi county bordering Uganda; towns include Magwi (headquarters), Nimule, Pageri, Palotaka and Pajok, with the White Nile entering at Nimule.",
+  "conflict_impact": "UNMISS reported intercommunal violence involving Dinka Bor cattle keepers in and around Magwi County in the first half of 2022. ACLED 2018-25: 106 political-violence events, 206 deaths (peak 2022); IDPs peak 62,306 (2022-08); IPC3+ peak 45%; flood-displaced 2,537.",
   "key_facts": {
    "acled_pv_events_2018_2025": 106,
    "acled_pv_fatalities_2018_2025": 206,
@@ -660,6 +707,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/magwi/",
+   "https://en.wikipedia.org/wiki/Magwi_County",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -676,8 +726,8 @@
    "share": 0.99
   },
   "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 306 political-violence events, 326 deaths (peak 2022); IDPs peak 3,350 (2018-06); IPC3+ peak 50%.",
+  "history": "Seat of Torit town, capital of Eastern Equatoria; inhabited by Lotuko (Otuho), Madi and Acholi groups; affected by the Second Sudanese Civil War and LRA activity.",
+  "conflict_impact": "UNMISS reported Murle armed elements from GPAA reaching parts of Torit County in 2023-24. ACLED 2018-25: 306 political-violence events, 326 deaths (peak 2022); IDPs peak 3,350 (2018-06); IPC3+ peak 50%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 306,
    "acled_pv_fatalities_2018_2025": 326,
@@ -710,6 +760,10 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/torit/",
+   "https://en.wikipedia.org/wiki/Torit_County",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -726,8 +780,8 @@
    "share": 0.81
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 291 political-violence events, 468 deaths (peak 2023); IDPs peak 27,889 (2018-06); IPC3+ peak 85%; flood-displaced 13,267.",
+  "history": "Lou Nuer county on the Ethiopian border with headquarters at Akobo town; a pastoral population that moves with livestock in search of water and pasture, and some residents have sought refuge in Ethiopia.",
+  "conflict_impact": "UNMISS documented Lou Nuer-Murle cycles of attack and cattle raiding affecting Akobo in 2020 and again in 2022-24. ACLED 2018-25: 291 political-violence events, 468 deaths (peak 2023); IDPs peak 27,889 (2018-06); IPC3+ peak 85%; flood-displaced 13,267.",
   "key_facts": {
    "acled_pv_events_2018_2025": 291,
    "acled_pv_fatalities_2018_2025": 468,
@@ -761,6 +815,12 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/akobo/",
+   "https://en.wikipedia.org/wiki/Akobo_County",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -782,8 +842,8 @@
    }
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also Nile basin fishing and agro-pastoral zone (39%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 119 political-violence events, 249 deaths (peak 2025); IDPs peak 63,312 (2021-12); IPC3+ peak 85%; flood-displaced 106,649.",
+  "history": "Inhabited by the Gawaar (Gaawar) Nuer; part of the Sudd-edge floodplain of northern Jonglei.",
+  "conflict_impact": "UNMISS: the Gawaar Nuer 'White Army' militia from Ayod fought alongside the Kitgwang faction in Upper Nile in Aug-Dec 2022. ACLED 2018-25: 119 political-violence events, 249 deaths (peak 2025); IDPs peak 63,312 (2021-12); IPC3+ peak 85%; flood-displaced 106,649.",
   "key_facts": {
    "acled_pv_events_2018_2025": 119,
    "acled_pv_fatalities_2018_2025": 249,
@@ -817,6 +877,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/ayod/",
+   "https://en.wikipedia.org/wiki/Ayod_County",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -833,8 +896,8 @@
    "share": 0.91
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 190 political-violence events, 315 deaths (peak 2020); IDPs peak 89,493 (2023-04); IPC3+ peak 65%; flood-displaced 22,799.",
+  "history": "Dinka Bor county containing Bor town, the capital of Jonglei State, on the east bank of the White Nile.",
+  "conflict_impact": "UNMISS reported Murle armed raids into Bor South (2020, 2023-24) and Dinka Bor cattle keepers' involvement in violence around Magwi (2022). ACLED 2018-25: 190 political-violence events, 315 deaths (peak 2020); IDPs peak 89,493 (2023-04); IPC3+ peak 65%; flood-displaced 22,799.",
   "key_facts": {
    "acled_pv_events_2018_2025": 190,
    "acled_pv_fatalities_2018_2025": 315,
@@ -868,6 +931,12 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/bor-south/",
+   "https://en.wikipedia.org/wiki/Pochalla_County",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -884,8 +953,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 90 political-violence events, 102 deaths (peak 2025); IDPs peak 104,779 (2023-04); IPC3+ peak 90%; flood-displaced 17,248.",
+  "history": "Northwestern Jonglei county on the White Nile corridor, home to Padang Dinka (Paweny, Thoi, Rut, Luac), Gawaar and Lou Nuer, and Shilluk communities.",
+  "conflict_impact": "Pigi armed elements joined the 2022 Upper Nile fighting (UNMISS); Pigi and Fangak were hit by spillover violence from Upper Nile in 2025. ACLED 2018-25: 90 political-violence events, 102 deaths (peak 2025); IDPs peak 104,779 (2023-04); IPC3+ peak 90%; flood-displaced 17,248.",
   "key_facts": {
    "acled_pv_events_2018_2025": 90,
    "acled_pv_fatalities_2018_2025": 102,
@@ -918,6 +987,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/canal-pigi/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -939,8 +1011,8 @@
    }
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also Nile basin fishing and agro-pastoral zone (31%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 218 political-violence events, 448 deaths (peak 2024); IDPs peak 58,587 (2025-02); IPC3+ peak 85%; flood-displaced 8,566.",
+  "history": "Primarily Dinka county (per UNMISS) south of the Sudd; Duk Payuel is the birthplace of 'Lost Boy' John Dau.",
+  "conflict_impact": "UNMISS documented recurring Murle armed attacks on Duk (2020, 2023); in 2024 they caused 118 victims there, about 20% of Jonglei's total. ACLED 2018-25: 218 political-violence events, 448 deaths (peak 2024); IDPs peak 58,587 (2025-02); IPC3+ peak 85%; flood-displaced 8,566.",
   "key_facts": {
    "acled_pv_events_2018_2025": 218,
    "acled_pv_fatalities_2018_2025": 448,
@@ -974,6 +1046,12 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/duk/",
+   "https://en.wikipedia.org/wiki/Duk_County",
+   "https://icr.ethz.ch/data/epr/geoepr/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -995,8 +1073,8 @@
    }
   },
   "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Eastern plains sorghum and cattle zone (38%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 68 political-violence events, 136 deaths (peak 2025); IDPs peak 91,755 (2024-09); IPC3+ peak 85%; flood-displaced 174,169.",
+  "history": "Inhabited mainly by the Laak and Thiang sections of the Nuer, agro-pastoralists of the Sudd; headquarters Phom el Zeraf where the Bahr el Zeraf meets the White Nile.",
+  "conflict_impact": "Most flood-affected county in 2021 (OCHA). Fighting reached New Fangak in 2022; May 2025 air strikes on Old Fangak killed 9 civilians. ACLED 2018-25: 68 political-violence events, 136 deaths (peak 2025); IDPs peak 91,755 (2024-09); IPC3+ peak 85%; flood-displaced 174,169.",
   "key_facts": {
    "acled_pv_events_2018_2025": 68,
    "acled_pv_fatalities_2018_2025": 136,
@@ -1030,6 +1108,11 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/fangak/",
+   "https://en.wikipedia.org/wiki/Fangak_County",
+   "https://www.211check.org/post/data-story-south-sudan-floods-database-2021",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1046,8 +1129,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 231 political-violence events, 439 deaths (peak 2024); IDPs peak 44,600 (2023-04); IPC3+ peak 80%; flood-displaced 2,523.",
+  "history": "Lou Nuer county (per UNMISS) in northern Jonglei; Lankien is a main town.",
+  "conflict_impact": "UNMISS documented Murle raids on Nyirol (2020, 2023-24) and a 2022 attack in Fashoda by Lou Nuer youth from Lankien. ACLED 2018-25: 231 political-violence events, 439 deaths (peak 2024); IDPs peak 44,600 (2023-04); IPC3+ peak 80%; flood-displaced 2,523.",
   "key_facts": {
    "acled_pv_events_2018_2025": 231,
    "acled_pv_fatalities_2018_2025": 439,
@@ -1080,6 +1163,12 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/nyirol/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1096,8 +1185,8 @@
    "share": 0.73
   },
   "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 435 political-violence events, 1646 deaths (peak 2022); IDPs peak 54,008 (2022-08); IPC3+ peak 85%; flood-displaced 31,615.",
+  "history": "Home of the Murle, Kachipo and Jie; seat of the Greater Pibor Administrative Area (GPAA), announced in 2020; headquarters Pibor town. Areas include Gumuruk, Likuangole and Verteth.",
+  "conflict_impact": "Dinka and Nuer militias attacked Likuangole and Gumuruk in 2020, and Nuer militias launched a large attack on GPAA on 24 Dec 2022 (UNMISS). ACLED 2018-25: 435 political-violence events, 1646 deaths (peak 2022); IDPs peak 54,008 (2022-08); IPC3+ peak 85%; flood-displaced 31,615.",
   "key_facts": {
    "acled_pv_events_2018_2025": 435,
    "acled_pv_fatalities_2018_2025": 1646,
@@ -1132,6 +1221,10 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/pibor/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1148,8 +1241,8 @@
    "share": 0.99
   },
   "livelihoods": "Farming (maize, sorghum) with two harvests, supplemented by livestock, fishing and natural resources such as honey and shea from the Boma/Badingilo area.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 68 political-violence events, 88 deaths (peak 2023); IDPs peak 13,992 (2024-09); IPC3+ peak 65%; flood-displaced 13,522.",
+  "history": "Anyuak (Anuak) farming county on the Ethiopian border, part of the Greater Pibor Administrative Area; hosts Ethiopian Anyuak refugees.",
+  "conflict_impact": "UNMISS reported Murle armed elements' incursions in parts of Pochalla in 2024. ACLED 2018-25: 68 political-violence events, 88 deaths (peak 2023); IDPs peak 13,992 (2024-09); IPC3+ peak 65%; flood-displaced 13,522.",
   "key_facts": {
    "acled_pv_events_2018_2025": 68,
    "acled_pv_fatalities_2018_2025": 88,
@@ -1182,6 +1275,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/pochalla/",
+   "https://en.wikipedia.org/wiki/Pochalla_County",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1203,8 +1299,8 @@
    }
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also Nile basin fishing and agro-pastoral zone (35%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 105 political-violence events, 226 deaths (peak 2025); IDPs peak 17,940 (2024-09); IPC3+ peak 75%; flood-displaced 11,516.",
+  "history": "Twic (Twi) Dinka county with headquarters at Panyagor; former Twi Dinka district in colonial times and birthplace of John Garang.",
+  "conflict_impact": "UNMISS documented Murle raids into Twic East in 2020 and 2024. ACLED 2018-25: 105 political-violence events, 226 deaths (peak 2025); IDPs peak 17,940 (2024-09); IPC3+ peak 75%; flood-displaced 11,516.",
   "key_facts": {
    "acled_pv_events_2018_2025": 105,
    "acled_pv_fatalities_2018_2025": 226,
@@ -1238,6 +1334,10 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/twic-east/",
+   "https://en.wikipedia.org/wiki/Twic_East_County",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1254,8 +1354,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 281 political-violence events, 636 deaths (peak 2020); IDPs peak 37,365 (2020-09); IPC3+ peak 75%; flood-displaced 37,360.",
+  "history": "Lou Nuer county in northern Jonglei; home area of Gen. Simon Gatwech Dual, former SPLA-IO chief of staff.",
+  "conflict_impact": "UNMISS documented Murle raids on Uror in 2020 and 2023 within wider Lou Nuer-Murle cycles of violence. ACLED 2018-25: 281 political-violence events, 636 deaths (peak 2020); IDPs peak 37,365 (2020-09); IPC3+ peak 75%; flood-displaced 37,360.",
   "key_facts": {
    "acled_pv_events_2018_2025": 281,
    "acled_pv_fatalities_2018_2025": 636,
@@ -1288,6 +1388,11 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/uror/",
+   "https://docs.southsudanngoforum.org/sites/default/files/2021-04/21-03-11%20Jonglei%20report%20FINAL.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1309,8 +1414,8 @@
    }
   },
   "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding. Also Nile basin fishing and agro-pastoral zone (44%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 43 political-violence events, 66 deaths (peak 2020); IDPs peak 110,680 (2019-03); IPC3+ peak 80%; flood-displaced 39,110.",
+  "history": "Aliab Dinka county with headquarters at Mingkaman on the White Nile. Mingkaman received about 85,000 IDPs from Bor South, Twic East and Duk by Jan 2014; little direct 2013-18 fighting.",
+  "conflict_impact": "Reciprocal Aliab Dinka-Mundari raiding near the Terekeka border rose in 2020-21; severe Nile flooding in mid-2020 displaced riverside settlements (CSRF). ACLED 2018-25: 43 political-violence events, 66 deaths (peak 2020); IDPs peak 110,680 (2019-03); IPC3+ peak 80%; flood-displaced 39,110.",
   "key_facts": {
    "acled_pv_events_2018_2025": 43,
    "acled_pv_fatalities_2018_2025": 66,
@@ -1344,6 +1449,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/awerial/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1360,8 +1466,8 @@
    "share": 0.75
   },
   "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 307 political-violence events, 696 deaths (peak 2021); IDPs peak 19,348 (2020-03); IPC3+ peak 80%; flood-displaced 7,860.",
+  "history": "Gok Dinka county with headquarters at Cueibet town; relatively insulated from the 1983-2005 and 2013-2018 wars but affected by intra-Gok sectional conflict since the late 1990s.",
+  "conflict_impact": "Inter-sectional raiding rose after the 2018 R-ARCSS; cross-border violence with Agar Dinka (2021) and Tonj South (late 2022), easing since 2022 (CSRF). ACLED 2018-25: 307 political-violence events, 696 deaths (peak 2021); IDPs peak 19,348 (2020-03); IPC3+ peak 80%; flood-displaced 7,860.",
   "key_facts": {
    "acled_pv_events_2018_2025": 307,
    "acled_pv_fatalities_2018_2025": 696,
@@ -1395,6 +1501,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/cueibet/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1411,8 +1518,8 @@
    "share": 0.85
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 264 political-violence events, 445 deaths (peak 2021); IDPs peak 7,807 (2021-09); IPC3+ peak 65%.",
+  "history": "Agar Dinka county containing Rumbek, capital of Lakes State and SPLM/A headquarters after 1997; not directly affected by SPLA vs SPLA-IO fighting in 2013-2018.",
+  "conflict_impact": "After 2018, clashes among Agar sections and with Gok Dinka grew more lethal; a new governor from 2021 imposed coercive security measures (CSRF). ACLED 2018-25: 264 political-violence events, 445 deaths (peak 2021); IDPs peak 7,807 (2021-09); IPC3+ peak 65%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 264,
    "acled_pv_fatalities_2018_2025": 445,
@@ -1446,6 +1553,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/rumber-center/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1467,8 +1575,8 @@
    }
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain. Also Ironstone Plateau agro-pastoral zone (45%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 160 political-violence events, 335 deaths (peak 2021); IDPs peak 10,375 (2021-12); IPC3+ peak 70%; flood-displaced 4,577.",
+  "history": "Agar Dinka county with headquarters in Aduel payam; long affected by inter- and intra-sectional feuds and cattle raiding from southern Unity State.",
+  "conflict_impact": "Gony-Thuyic sub-section fighting escalated in 2019-2021 despite a Nov 2019 peace deal; cross-border violence with Yirol West also flared (CSRF). ACLED 2018-25: 160 political-violence events, 335 deaths (peak 2021); IDPs peak 10,375 (2021-12); IPC3+ peak 70%; flood-displaced 4,577.",
   "key_facts": {
    "acled_pv_events_2018_2025": 160,
    "acled_pv_fatalities_2018_2025": 335,
@@ -1502,6 +1610,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/rumbek-east/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1518,8 +1627,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 146 political-violence events, 655 deaths (peak 2023); IDPs peak 81,373 (2019-11); IPC3+ peak 70%.",
+  "history": "Pakam (Agar) Dinka county at the Lakes-Warrap-Unity tri-border, exposed to disputes over water, grazing and cattle raiding.",
+  "conflict_impact": "Gak-Manuer fighting killed 79 in Nov 2019; Pakam-Luach-Jang clashes on the Tonj East border killed an estimated 143 in Feb and 76 in Apr 2023 (CSRF/UNSC). ACLED 2018-25: 146 political-violence events, 655 deaths (peak 2023); IDPs peak 81,373 (2019-11); IPC3+ peak 70%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 146,
    "acled_pv_fatalities_2018_2025": 655,
@@ -1552,6 +1661,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/rumbek-north/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1568,8 +1679,8 @@
    "share": 0.83
   },
   "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 33 political-violence events, 39 deaths (peak 2021); IDPs peak 15,945 (2021-09); IPC3+ peak 59%; flood-displaced 367.",
+  "history": "Home to the Belle ('Jur Bel') and Bongo farming and fishing communities; hosted the 2000 Wunlit follow-up peace conference.",
+  "conflict_impact": "Raids on cattle camps continued after 2018, incl. the killing of six Gok Dinka cattle traders in Dec 2019; road security reportedly improved from 2022 (CSRF). ACLED 2018-25: 33 political-violence events, 39 deaths (peak 2021); IDPs peak 15,945 (2021-09); IPC3+ peak 59%; flood-displaced 367.",
   "key_facts": {
    "acled_pv_events_2018_2025": 33,
    "acled_pv_fatalities_2018_2025": 39,
@@ -1603,6 +1714,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/wulu/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1624,8 +1736,8 @@
    }
   },
   "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Greater Bahr el Ghazal sorghum and cattle zone (32%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 123 political-violence events, 194 deaths (peak 2025); IDPs peak 37,711 (2021-12); IPC3+ peak 85%; flood-displaced 18,895.",
+  "history": "Ciec Dinka (Ador, Lou) and Atuot county in Greater Yirol, an SPLM/A stronghold in the second civil war; includes the Nile port of Shambe.",
+  "conflict_impact": "Raiding from Panyijiar (Unity) is a recurring threat; in June 2025 a boat carrying Nuer civilians was attacked in Yirol East, killing four (UNMISS). ACLED 2018-25: 123 political-violence events, 194 deaths (peak 2025); IDPs peak 37,711 (2021-12); IPC3+ peak 85%; flood-displaced 18,895.",
   "key_facts": {
    "acled_pv_events_2018_2025": 123,
    "acled_pv_fatalities_2018_2025": 194,
@@ -1660,6 +1772,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/yirol-east/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1676,8 +1790,8 @@
    "share": 0.85
   },
   "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 107 political-violence events, 270 deaths (peak 2021); IDPs peak 30,092 (2021-09); IPC3+ peak 75%.",
+  "history": "Atuot (Reel, Apak) county around Yirol town and Lake Yirol, part of Greater Yirol; payams include Aluakluak, Geer and Mapuordit.",
+  "conflict_impact": "Agar Dinka-Atuot clashes rose sharply in 2021 in Aluakluak and Gher payams; an intra-Atuot clash in 2021 killed 20 (CSRF). ACLED 2018-25: 107 political-violence events, 270 deaths (peak 2021); IDPs peak 30,092 (2021-09); IPC3+ peak 75%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 107,
    "acled_pv_fatalities_2018_2025": 270,
@@ -1711,6 +1825,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/yirol-west/",
+   "https://en.wikipedia.org/wiki/Yirol_West_County",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1732,8 +1848,8 @@
    }
   },
   "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area. Also Greater Bahr el Ghazal sorghum and cattle zone (35%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 7 political-violence events, 3 deaths (peak 2022); IDPs peak 20,685 (2019-11); IPC3+ peak 65%; flood-displaced 15,986.",
+  "history": "Home to Luo ('Jur Chol') and Dinka Malual communities, headquarters in Aroyo payam; relatively insulated from both the second civil war raids and 2013-2018 fighting, and hosted IDPs from Wau and Raja.",
+  "conflict_impact": "Recent tensions involve land, water points and farmer-herder disputes between Luo farmers and Fulani pastoralists; peace conferences in 2021 and 2023 (CSRF). ACLED 2018-25: 7 political-violence events, 3 deaths (peak 2022); IDPs peak 20,685 (2019-11); IPC3+ peak 65%; flood-displaced 15,986.",
   "key_facts": {
    "acled_pv_events_2018_2025": 7,
    "acled_pv_fatalities_2018_2025": 3,
@@ -1767,6 +1883,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/aweil-center/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1783,8 +1900,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 56 political-violence events, 190 deaths (peak 2020); IDPs peak 22,210 (2024-09); IPC3+ peak 65%; flood-displaced 64,303.",
+  "history": "Most populous Dinka Malual (Abiem) county, headquarters at Mabil (Wanyjok area); heavily affected by murahalin raids during the 1983-2005 war and home to several national leaders.",
+  "conflict_impact": "Less directly affected by the 2013-18 war; SSPM/A rebels were active in 2016-18, causing some displacement (CSRF). ACLED 2018-25: 56 political-violence events, 190 deaths (peak 2020); IDPs peak 22,210 (2024-09); IPC3+ peak 65%; flood-displaced 64,303.",
   "key_facts": {
    "acled_pv_events_2018_2025": 56,
    "acled_pv_fatalities_2018_2025": 190,
@@ -1817,6 +1934,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/aweil-east/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1833,8 +1951,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 18 political-violence events, 13 deaths (peak 2019); IDPs peak 12,000 (2022-08); IPC3+ peak 60%; flood-displaced 118,722.",
+  "history": "Dinka Malual (Giernyang) county with headquarters at Gok Machar, on the disputed border with Sudan incl. the '14-Mile Area'; badly hit by murahalin raids in 1983-2005.",
+  "conflict_impact": "Directly affected early in the 2013-18 war; since 2023 the state has hosted people fleeing the SAF-RSF war in Sudan (CSRF). ACLED 2018-25: 18 political-violence events, 13 deaths (peak 2019); IDPs peak 12,000 (2022-08); IPC3+ peak 60%; flood-displaced 118,722.",
   "key_facts": {
    "acled_pv_events_2018_2025": 18,
    "acled_pv_fatalities_2018_2025": 13,
@@ -1867,6 +1985,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/aweil-north/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1883,8 +2002,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 6 political-violence events, 3 deaths (peak 2022); IDPs peak 18,518 (2019-11); IPC3+ peak 66%; flood-displaced 6,526.",
+  "history": "Dinka Malual (Paliet) and Luo ('Jur Chol') county with headquarters in Nyocawany payam, away from the Sudan border; few direct effects of the 2013-2018 war.",
+  "conflict_impact": "Mostly low-level localised conflict since 2018, e.g. an April 2019 boundary dispute over Wathmuok among Paliet sub-sections, resolved at a peace conference (CSRF). ACLED 2018-25: 6 political-violence events, 3 deaths (peak 2022); IDPs peak 18,518 (2019-11); IPC3+ peak 66%; flood-displaced 6,526.",
   "key_facts": {
    "acled_pv_events_2018_2025": 6,
    "acled_pv_fatalities_2018_2025": 3,
@@ -1917,6 +2036,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/aweil-south/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1933,8 +2053,8 @@
    "share": 0.87
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 30 political-violence events, 15 deaths (peak 2024); IDPs peak 73,147 (2019-11); IPC3+ peak 60%; flood-displaced 48,144.",
+  "history": "Dinka Malual and Luo ('Jur Chol') county with headquarters at Nyamlel; Nyamlel and Marial Bai were severely hit by militia raids during the 1983-2005 war.",
+  "conflict_impact": "Isolated Dinka Malual-Rizeigat incidents (2020-21) and land disputes (2022-24) are reported, far below second civil war levels (CSRF). ACLED 2018-25: 30 political-violence events, 15 deaths (peak 2024); IDPs peak 73,147 (2019-11); IPC3+ peak 60%; flood-displaced 48,144.",
   "key_facts": {
    "acled_pv_events_2018_2025": 30,
    "acled_pv_fatalities_2018_2025": 15,
@@ -1968,6 +2088,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/aweil-west/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -1984,8 +2105,8 @@
    "share": 0.98
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 48 political-violence events, 123 deaths (peak 2025); IDPs peak 19,228 (2021-12); IPC3+ peak 55%; flood-displaced 1,168.",
+  "history": "Padang Dinka (Alor) county on the contested Sudan border, part of the Ruweng Administrative Area (RAA) established in 2020.",
+  "conflict_impact": "Since 2018, road ambushes and Bul Nuer-Alor Dinka tensions dominate; 11 people were killed in a 2022 cattle raid (CSRF). ACLED 2018-25: 48 political-violence events, 123 deaths (peak 2025); IDPs peak 19,228 (2021-12); IPC3+ peak 55%; flood-displaced 1,168.",
   "key_facts": {
    "acled_pv_events_2018_2025": 48,
    "acled_pv_fatalities_2018_2025": 123,
@@ -2018,6 +2139,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/abiemnhom/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2039,8 +2161,8 @@
    }
   },
   "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan. Also Nile basin fishing and agro-pastoral zone (38%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 43 political-violence events, 127 deaths (peak 2018); IDPs peak 32,893 (2025-02); IPC3+ peak 75%; flood-displaced 15,181.",
+  "history": "Western Jikany Nuer county created in 2005; held mainly by SPLA-IO in 2013-2018 despite government offensives in 2014, 2015 and 2018.",
+  "conflict_impact": "11 police killed pursuing Mayom raiders (May 2021); Guit-Pariang clashes killed 23 (Feb 2022); SSPDF-SPLA-IO fighting in Dec 2023 (CSRF). ACLED 2018-25: 43 political-violence events, 127 deaths (peak 2018); IDPs peak 32,893 (2025-02); IPC3+ peak 75%; flood-displaced 15,181.",
   "key_facts": {
    "acled_pv_events_2018_2025": 43,
    "acled_pv_fatalities_2018_2025": 127,
@@ -2074,6 +2196,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/guit/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2090,8 +2213,8 @@
    "share": 0.78
   },
   "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 106 political-violence events, 110 deaths (peak 2021); IDPs peak 36,468 (2021-12); IPC3+ peak 85%; flood-displaced 21,009.",
+  "history": "Jagey (Jagei) Nuer county in central Unity, a frontline in past wars and site of the Thar Jath oil field.",
+  "conflict_impact": "Fighting around the Mirmir SPLA-IO cantonment in Feb-Apr 2022 formed part of the southern Unity violence in which UNMISS counted 173 civilians killed. ACLED 2018-25: 106 political-violence events, 110 deaths (peak 2021); IDPs peak 36,468 (2021-12); IPC3+ peak 85%; flood-displaced 21,009.",
   "key_facts": {
    "acled_pv_events_2018_2025": 106,
    "acled_pv_fatalities_2018_2025": 110,
@@ -2125,6 +2248,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/koch/",
+   "https://unmiss.unmissions.org/sites/default/files/report_on_attacks_on_civilians_in_southern_unity_state_-_06_september_2022.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2146,8 +2271,8 @@
    }
   },
   "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Greater Bahr el Ghazal sorghum and cattle zone (29%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 113 political-violence events, 312 deaths (peak 2022); IDPs peak 58,308 (2022-08); IPC3+ peak 85%; flood-displaced 37,458.",
+  "history": "Dok Nuer county; Leer town was an SPLA-IO stronghold and target of government offensives incl. in 2018.",
+  "conflict_impact": "Feb-May 2022 attacks by government forces and allied militias killed ~173 civilians, raped 131 and displaced ~44,000 in southern Unity, centred on Leer (UNMISS). ACLED 2018-25: 113 political-violence events, 312 deaths (peak 2022); IDPs peak 58,308 (2022-08); IPC3+ peak 85%; flood-displaced 37,458.",
   "key_facts": {
    "acled_pv_events_2018_2025": 113,
    "acled_pv_fatalities_2018_2025": 312,
@@ -2181,6 +2306,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/leer/",
+   "https://unmiss.unmissions.org/sites/default/files/report_on_attacks_on_civilians_in_southern_unity_state_-_06_september_2022.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2197,8 +2324,8 @@
    "share": 0.94
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 80 political-violence events, 111 deaths (peak 2022); IDPs peak 30,855 (2025-02); IPC3+ peak 85%; flood-displaced 28,299.",
+  "history": "Haak Nuer county in southern Unity; an SPLA-IO stronghold hit by government offensives in 2014, 2015 and 2018.",
+  "conflict_impact": "Cross-border cattle raids from Tonj (2019-20) and government-opposition tensions persisted; Mayendit-based militias were implicated in the 2022 Leer attacks (UNMISS). ACLED 2018-25: 80 political-violence events, 111 deaths (peak 2022); IDPs peak 30,855 (2025-02).",
   "key_facts": {
    "acled_pv_events_2018_2025": 80,
    "acled_pv_fatalities_2018_2025": 111,
@@ -2232,6 +2359,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/mayendit/",
+   "https://unmiss.unmissions.org/sites/default/files/report_on_attacks_on_civilians_in_southern_unity_state_-_06_september_2022.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2248,8 +2377,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 164 political-violence events, 780 deaths (peak 2019); IDPs peak 44,283 (2025-02); IPC3+ peak 65%; flood-displaced 29,685.",
+  "history": "Bul Nuer county with headquarters at Mayom town; home of influential commanders such as the late Paulino Matip.",
+  "conflict_impact": "Elite splits led to the SSPM/A rebellion; in July 2022 an attack on Mayom town killed 12 incl. the county commissioner (CSRF, OHCHR). ACLED 2018-25: 164 political-violence events, 780 deaths (peak 2019); IDPs peak 44,283 (2025-02); IPC3+ peak 65%; flood-displaced 29,685.",
   "key_facts": {
    "acled_pv_events_2018_2025": 164,
    "acled_pv_fatalities_2018_2025": 780,
@@ -2282,6 +2411,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/mayom/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2303,8 +2433,8 @@
    }
   },
   "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Greater Bahr el Ghazal sorghum and cattle zone (49%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 78 political-violence events, 116 deaths (peak 2025); IDPs peak 46,126 (2022-08); IPC3+ peak 75%; flood-displaced 92,048.",
+  "history": "Nyuong Nuer county largely within the Sudd wetlands, bordering Lakes State; an opposition stronghold hit by government offensives in 2014-2015.",
+  "conflict_impact": "Cross-border cattle raiding with Lakes (Rumbek, Yirol) recurred in 2021-25 despite peace deals in 2018, 2022 and Sept 2024 (CSRF, UNMISS). ACLED 2018-25: 78 political-violence events, 116 deaths (peak 2025); IDPs peak 46,126 (2022-08); IPC3+ peak 75%; flood-displaced 92,048.",
   "key_facts": {
    "acled_pv_events_2018_2025": 78,
    "acled_pv_fatalities_2018_2025": 116,
@@ -2338,6 +2468,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/panyijiar/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2354,8 +2486,8 @@
    "share": 0.99
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 77 political-violence events, 164 deaths (peak 2022); IDPs peak 41,117 (2018-12); IPC3+ peak 70%; flood-displaced 9,936.",
+  "history": "Padang Dinka (Ruweng/Panaruu, Paweny) county, seat of the Ruweng Administrative Area created in 2020; loyal to the government in 2013-2018. Hosts Nuba Mountains refugees at Ajoung Thok, Pamir and Yida.",
+  "conflict_impact": "Localised insecurity centres on Wunkur payam, incl. a July 2023 SSPDF-SPLA-IO clash that killed at least seven (CSRF). ACLED 2018-25: 77 political-violence events, 164 deaths (peak 2022); IDPs peak 41,117 (2018-12); IPC3+ peak 70%; flood-displaced 9,936.",
   "key_facts": {
    "acled_pv_events_2018_2025": 77,
    "acled_pv_fatalities_2018_2025": 164,
@@ -2388,6 +2520,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/pariang/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2404,8 +2537,8 @@
    "share": 0.99
   },
   "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 175 political-violence events, 234 deaths (peak 2021); IDPs peak 270,344 (2023-04); IPC3+ peak 80%; flood-displaced 56,554.",
+  "history": "Leek Nuer county containing Bentiu (Unity State capital) and Rubkona town, centre of the Unity oil fields; its UNMISS PoC (up to ~150,000 people) became an IDP camp in 2021.",
+  "conflict_impact": "Severe floods in 2021-22 surrounded Bentiu; the IDP camp relies on dykes to stay dry (MSF). 18 Misseriya herders were killed in a March 2022 grazing dispute (UNSC). ACLED 2018-25: 175 political-violence events, 234 deaths (peak 2021); IDPs peak 270,344 (2023-04).",
   "key_facts": {
    "acled_pv_events_2018_2025": 175,
    "acled_pv_fatalities_2018_2025": 234,
@@ -2438,6 +2571,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/rubkona/",
+   "https://www.msf.ie/article/catastrophic-floods-cause-mass-displacement-and-escalating-humanitarian-crisis-south-sudan",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2454,7 +2589,7 @@
    "share": 0.76
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
+  "history": "Padang Dinka (Ngok Lual Yak) county in central Upper Nile, east of Malakal and crossed by the Sobat, with land disputes involving Nuer to the south and Shilluk along the Nile.",
   "conflict_impact": "ACLED 2018-25: 27 political-violence events, 119 deaths (peak 2025); IDPs peak 14,520 (2018-06); IPC3+ peak 65%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 27,
@@ -2489,6 +2624,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/baliet/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2505,8 +2641,8 @@
    "share": 1.0
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 59 political-violence events, 330 deaths (peak 2022); IDPs peak 32,808 (2023-04); IPC3+ peak 65%; flood-displaced 11,791.",
+  "history": "Seen by the Shilluk (Chollo) as the heart of their kingdom; includes Kodok (county seat) and Tonga. Shilluk-Padang Dinka territorial disputes date to the second civil war.",
+  "conflict_impact": "Aug-Dec 2022 Kitgwang/White Army vs Agwelek fighting hit Tonga and Kodok; about 22,000 people sheltered at Kodok near the UNMISS base (UNMISS). ACLED 2018-25: 59 political-violence events, 330 deaths (peak 2022); IDPs peak 32,808 (2023-04); IPC3+ peak 65%; flood-displaced 11,791.",
   "key_facts": {
    "acled_pv_events_2018_2025": 59,
    "acled_pv_fatalities_2018_2025": 330,
@@ -2539,6 +2675,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/fashoda/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2555,8 +2693,8 @@
    "share": 0.99
   },
   "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: no political-violence events recorded; IDPs peak 9,411 (2021-12); IPC3+ peak 85%.",
+  "history": "Eastern Jikany Nuer (Gajaak) and Koma county near Ethiopia and Sudan's Blue Nile; largely pro-opposition in 2013-2018, when SPLA offensives displaced civilians.",
+  "conflict_impact": "Post-2018 defections led to SPLA-IO vs ex-SPLA-IO fighting in Feb-Mar 2022 and SSPDF-SPLA-IO clashes in Mathiang in June 2023 (CSRF). ACLED 2018-25: no political-violence events recorded; IDPs peak 9,411 (2021-12); IPC3+ peak 85%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 0,
    "acled_pv_fatalities_2018_2025": 0,
@@ -2589,6 +2727,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/longochuk/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2605,8 +2744,8 @@
    "share": 1.0
   },
   "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 147 political-violence events, 398 deaths (peak 2025); IDPs peak 61,459 (2019-03); IPC3+ peak 75%; flood-displaced 4,377.",
+  "history": "Eastern Jikany Nuer (Gaagwang, Gaajok) county on the Sobat River around Nasir port town, a focal point of Anya-Nya 2 and later opposition activity.",
+  "conflict_impact": "SSPDF vs White Army fighting began in Nasir in Feb 2025 and spread along the Sobat, driving a nationwide spike in violence (UNMISS). ACLED 2018-25: 147 political-violence events, 398 deaths (peak 2025); IDPs peak 61,459 (2019-03); IPC3+ peak 75%; flood-displaced 4,377.",
   "key_facts": {
    "acled_pv_events_2018_2025": 147,
    "acled_pv_fatalities_2018_2025": 398,
@@ -2639,6 +2778,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/luakpiny-nasir/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2655,8 +2796,8 @@
    "share": 1.0
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 94 political-violence events, 109 deaths (peak 2021); IDPs peak 51,923 (2019-11); IPC3+ peak 65%.",
+  "history": "Mabanese (Tom, Dagu, Buni) and Burun county including Bunj; hosts some 142,000-150,000 refugees in camps, far more than the host population.",
+  "conflict_impact": "Militia violence and attacks on aid compounds in Bunj (2018, 2019) declined after the 2018 peace deal; late-2019 floods cut access (CSRF). ACLED 2018-25: 94 political-violence events, 109 deaths (peak 2021); IDPs peak 51,923 (2019-11); IPC3+ peak 65%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 94,
    "acled_pv_fatalities_2018_2025": 109,
@@ -2689,6 +2830,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/maban/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2705,8 +2847,8 @@
    "share": 1.0
   },
   "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 75 political-violence events, 188 deaths (peak 2018); IDPs peak 12,163 (2020-12); IPC3+ peak 80%; flood-displaced 5,612.",
+  "history": "Eastern Jikany Nuer (Gajaak) and Koma county on the Ethiopian border; Pagak hosted the SPLA-IO's headquarters during 2013-2018, and a 2017-18 offensive displaced over 40,000 to Ethiopia.",
+  "conflict_impact": "Post-2018 SPLA-IO defections, notably in Aug 2019, sparked intra-Gajaak tensions and fighting in Dec 2019-Jan 2020 (CSRF). ACLED 2018-25: 75 political-violence events, 188 deaths (peak 2018); IDPs peak 12,163 (2020-12); IPC3+ peak 80%; flood-displaced 5,612.",
   "key_facts": {
    "acled_pv_events_2018_2025": 75,
    "acled_pv_fatalities_2018_2025": 188,
@@ -2739,6 +2881,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/maiwut/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2755,8 +2898,8 @@
    "share": 1.0
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 99 political-violence events, 111 deaths (peak 2022); IDPs peak 89,434 (2024-09); IPC3+ peak 70%; flood-displaced 29,047.",
+  "history": "Contains Malakal, Upper Nile State capital since 1914, claimed by both Shilluk and Padang Dinka; control alternated between SPLA and SPLA-IO in 2013-2018. Hosts the Malakal PoC site.",
+  "conflict_impact": "Over 20,000 people fled to the Malakal PoC site during the 2022 Upper Nile fighting; ethnic clashes occurred there and at Upper Nile University in 2023 (UNMISS). ACLED 2018-25: 99 political-violence events, 111 deaths (peak 2022); IDPs peak 89,434 (2024-09); IPC3+ peak 70%; flood-displaced 29,047.",
   "key_facts": {
    "acled_pv_events_2018_2025": 99,
    "acled_pv_fatalities_2018_2025": 111,
@@ -2789,6 +2932,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/malakal/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2805,8 +2951,8 @@
    "share": 0.99
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 31 political-violence events, 156 deaths (peak 2021); IDPs peak 39,381 (2025-02); IPC3+ peak 64%; flood-displaced 12,095.",
+  "history": "Shilluk (Chollo) county in the far north of the west bank of the White Nile, with land, water and grazing disputes involving neighbouring Renk.",
+  "conflict_impact": "Fighting between Shilluk forces and Kitgwang-allied militias spread into Manyo in Nov-Dec 2022, displacing thousands (UNMISS). ACLED 2018-25: 31 political-violence events, 156 deaths (peak 2021); IDPs peak 39,381 (2025-02); IPC3+ peak 64%; flood-displaced 12,095.",
   "key_facts": {
    "acled_pv_events_2018_2025": 31,
    "acled_pv_fatalities_2018_2025": 156,
@@ -2839,6 +2985,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/manyo/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2855,8 +3003,8 @@
    "share": 1.0
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 20 political-violence events, 96 deaths (peak 2022); IDPs peak 47,460 (2021-12); IPC3+ peak 65%; flood-displaced 24,687.",
+  "history": "Dinka (Ageer) county on the east bank of the White Nile, containing the Melut oil basin; a strategic location in both civil wars.",
+  "conflict_impact": "Relatively stable since 2018 (CSRF); hosted some 14,600 people displaced by the 2022 Upper Nile fighting (UNMISS). ACLED 2018-25: 20 political-violence events, 96 deaths (peak 2022); IDPs peak 47,460 (2021-12); IPC3+ peak 65%; flood-displaced 24,687.",
   "key_facts": {
    "acled_pv_events_2018_2025": 20,
    "acled_pv_fatalities_2018_2025": 96,
@@ -2889,6 +3037,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/melut/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2905,8 +3055,8 @@
    "share": 0.78
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 71 political-violence events, 127 deaths (peak 2022); IDPs peak 31,273 (2023-04); IPC3+ peak 86%; flood-displaced 39,647.",
+  "history": "Shilluk (Chollo) and Padang Dinka county on the White Nile corridor south of Malakal, at the edge of the Shilluk Kingdom; heavily fought over in 2013-2018.",
+  "conflict_impact": "The Aug 2022 Upper Nile conflict began with clashes between Agwelek and Kitgwang forces in Panyikang on 10 August (UNMISS). ACLED 2018-25: 71 political-violence events, 127 deaths (peak 2022); IDPs peak 31,273 (2023-04); IPC3+ peak 86%; flood-displaced 39,647.",
   "key_facts": {
    "acled_pv_events_2018_2025": 71,
    "acled_pv_fatalities_2018_2025": 127,
@@ -2940,6 +3090,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/panyikang/",
+   "https://unmiss.unmissions.org/sites/default/files/greater_upper_nile_report.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -2956,8 +3108,8 @@
    "share": 1.0
   },
   "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 33 political-violence events, 81 deaths (peak 2023); IDPs peak 45,381 (2024-09); IPC3+ peak 55%; flood-displaced 83,827.",
+  "history": "Dinka (Abialang) county at South Sudan's northern tip around Renk town, strategically located and contested in past civil wars; seasonal Falata herder movements have caused disputes.",
+  "conflict_impact": "Since April 2023 the Joda/Wunthow crossing in Renk has been the main entry point for people fleeing Sudan's war, with over 800,000 crossing (REACH, MSF). ACLED 2018-25: 33 political-violence events, 81 deaths (peak 2023); IDPs peak 45,381 (2024-09); IPC3+ peak 55%; flood-displaced 83,827.",
   "key_facts": {
    "acled_pv_events_2018_2025": 33,
    "acled_pv_fatalities_2018_2025": 81,
@@ -2990,6 +3142,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/renk/",
+   "https://repository.impact-initiatives.org/document/repository/8d39fa52/REACH_SSD_Brief_Renk-Emergency-Assessment_July-2025.pdf",
+   "https://www.msf.org/war-sudan-exacerbates-humanitarian-needs-south-sudan",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3006,8 +3161,8 @@
    "share": 1.0
   },
   "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 92 political-violence events, 221 deaths (peak 2025); IDPs peak 26,523 (2020-03); IPC3+ peak 80%.",
+  "history": "Eastern Jikany Nuer (Gaajok) county on the Sobat River bordering Ethiopia and Jonglei, at the boundary between Lou and Jikany Nuer lands.",
+  "conflict_impact": "Lou-Jikany fighting near Doma (Mar 2019) and intra-Gaajok clashes killing dozens (May 2021); affected by the 2025 SSPDF-White Army hostilities (CSRF, UNMISS). ACLED 2018-25: 92 political-violence events, 221 deaths (peak 2025); IDPs peak 26,523 (2020-03); IPC3+ peak 80%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 92,
    "acled_pv_fatalities_2018_2025": 221,
@@ -3040,6 +3195,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/ulang/",
+   "https://unoau.unmissions.org/sites/default/files/2026-01/UNMISS%20HRD%20Q2%20Brief%20on%20Violence%20Affecting%20Civilians%20%209%20Sept%20%202025.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3056,8 +3213,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 84 political-violence events, 267 deaths (peak 2021); IDPs peak 40,453 (2021-09); IPC3+ peak 65%; flood-displaced 30,279.",
+  "history": "Rek Dinka (Apuk-Giir) agro-pastoral county with headquarters at Liet-Nhom; not directly hit by 2013-2018 fighting but a major recruitment area for government forces.",
+  "conflict_impact": "Since 2018, land/boundary disputes tied to elite competition and cross-border violence with Unity State (2019) have driven insecurity (CSRF). ACLED 2018-25: 84 political-violence events, 267 deaths (peak 2021); IDPs peak 40,453 (2021-09); IPC3+ peak 65%; flood-displaced 30,279.",
   "key_facts": {
    "acled_pv_events_2018_2025": 84,
    "acled_pv_fatalities_2018_2025": 267,
@@ -3090,6 +3247,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/gogrial-east/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3106,8 +3264,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 51 political-violence events, 81 deaths (peak 2023); IDPs peak 59,619 (2021-09); IPC3+ peak 60%; flood-displaced 104,449.",
+  "history": "Rek Dinka (Aguok and Apuk) county containing Kuajok, the Warrap State capital, and Gogrial town (county HQ); a recruitment base for state forces in 2014 and 2018-19.",
+  "conflict_impact": "Disputes over Nyinakook with Jur River communities have caused intermittent violence; elite competition shapes local conflict since 2018 (CSRF). ACLED 2018-25: 51 political-violence events, 81 deaths (peak 2023); IDPs peak 59,619 (2021-09); IPC3+ peak 60%; flood-displaced 104,449.",
   "key_facts": {
    "acled_pv_events_2018_2025": 51,
    "acled_pv_fatalities_2018_2025": 81,
@@ -3140,6 +3298,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/gogrial-west/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3156,8 +3315,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 342 political-violence events, 1435 deaths (peak 2024); IDPs peak 69,063 (2021-09); IPC3+ peak 70%; flood-displaced 34,754.",
+  "history": "Luac-Jang and Rek Dinka county with headquarters at Romic; rich dry-season grazing lands bordering Lakes and Unity states.",
+  "conflict_impact": "A 2020 disarmament drive ended in about 148 deaths around Romic (UN Panel of Experts); UNMISS ranked Tonj East/North armed groups top in Warrap victims in 2024. ACLED 2018-25: 342 political-violence events, 1435 deaths (peak 2024); IDPs peak 69,063 (2021-09); IPC3+ peak 70%; flood-displaced 34,754.",
   "key_facts": {
    "acled_pv_events_2018_2025": 342,
    "acled_pv_fatalities_2018_2025": 1435,
@@ -3190,6 +3349,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/tonj-east/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3206,8 +3367,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 380 political-violence events, 1768 deaths (peak 2021); IDPs peak 108,126 (2021-09); IPC3+ peak 70%; flood-displaced 63,539.",
+  "history": "Rek Dinka county with headquarters at Warrap town; Greater Tonj elites are prominent in national politics. Only limited direct effects from the 2013-2018 war.",
+  "conflict_impact": "Since 2019 clan and sub-section violence has surged amid post-R-ARCSS recruitment; Tonj East/North armed elements caused 70% of Warrap's victims in 2024 (UNMISS). ACLED 2018-25: 380 political-violence events, 1768 deaths (peak 2021); IDPs peak 108,126 (2021-09).",
   "key_facts": {
    "acled_pv_events_2018_2025": 380,
    "acled_pv_fatalities_2018_2025": 1768,
@@ -3240,6 +3401,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/tonj-north/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3256,8 +3419,8 @@
    "share": 0.83
   },
   "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 209 political-violence events, 527 deaths (peak 2020); IDPs peak 82,465 (2021-09); IPC3+ peak 65%; flood-displaced 98,248.",
+  "history": "Rek Dinka and Bongo county around Tonj town, the largest town between Rumbek and Wau; no direct civil-war fighting in 2013-2018.",
+  "conflict_impact": "Grazing, boundary and cattle-raiding disputes fuelled repeated clashes in 2020; 2021 brought both drought and floods (CSRF/REACH). ACLED 2018-25: 209 political-violence events, 527 deaths (peak 2020); IDPs peak 82,465 (2021-09); IPC3+ peak 65%; flood-displaced 98,248.",
   "key_facts": {
    "acled_pv_events_2018_2025": 209,
    "acled_pv_fatalities_2018_2025": 527,
@@ -3291,6 +3454,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/tonj-south/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3307,8 +3471,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 226 political-violence events, 597 deaths (peak 2023); IDPs peak 129,824 (2021-12); IPC3+ peak 65%; flood-displaced 124,781.",
+  "history": "Twic Mayardit Dinka county with headquarters at Turalei, bordering the Abyei Area; not directly affected by 2013-2018 fighting.",
+  "conflict_impact": "Twic-Ngok Dinka border fighting since Feb 2022 made Warrap the state with most civilian victims in 2023 (UNMISS); clashes with Mayom youth also in 2022. ACLED 2018-25: 226 political-violence events, 597 deaths (peak 2023); IDPs peak 129,824 (2021-12); IPC3+ peak 65%; flood-displaced 124,781.",
   "key_facts": {
    "acled_pv_events_2018_2025": 226,
    "acled_pv_fatalities_2018_2025": 597,
@@ -3341,6 +3505,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/twic/",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3357,8 +3524,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 329 political-violence events, 988 deaths (peak 2023); IPC3+ peak 55%; flood-displaced 46,274.",
+  "history": "Abyei Administrative Area, contested between Sudan and South Sudan since 1905 boundary decisions; Ngok Dinka mainly in the south, Misseriya mainly in the north. Policed by UN force UNISFA.",
+  "conflict_impact": "Clashes at Kolom killed at least 33 in Jan 2020; Twic-Ngok Dinka border violence from Feb 2022 escalated again in late 2023 (CSRF, UNMISS). ACLED 2018-25: 329 political-violence events, 988 deaths (peak 2023); IPC3+ peak 55%; flood-displaced 46,274.",
   "key_facts": {
    "acled_pv_events_2018_2025": 329,
    "acled_pv_fatalities_2018_2025": 988,
@@ -3387,6 +3554,10 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/abyei/",
+   "https://www.developmentaid.org/api/frontend/cms/file/2023/03/2022_annual_brief_on_violence_affecting_civilians_in_south_sudan_0.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/annual_brief_on_violence_affecting_civilians_2023.pdf",
+   "https://unisfa.unmissions.org/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3408,8 +3579,8 @@
    }
   },
   "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain. Also Ironstone Plateau agro-pastoral zone (31%); Western plains groundnuts sesame and sorghum zone (26%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 155 political-violence events, 233 deaths (peak 2019); IDPs peak 69,917 (2018-12); IPC3+ peak 70%; flood-displaced 24,648.",
+  "history": "Home to Balanda Bor, Luo ('Jur Chol') and Dinka Marial Bai communities, headquarters Nyin Akok; the 2014 Mapel training-centre clash occurred here. Little direct impact from the 2013-18 war.",
+  "conflict_impact": "Over 28,000 people fled communal clashes in Feb-Jun 2019, esp. in Kuarjena and Rocrocdong payams (IOM DTM via CSRF); Luo/Dinka Marial Bai disputes persist (UNMISS). ACLED 2018-25: 155 political-violence events, 233 deaths (peak 2019); IDPs peak 69,917 (2018-12).",
   "key_facts": {
    "acled_pv_events_2018_2025": 155,
    "acled_pv_fatalities_2018_2025": 233,
@@ -3444,6 +3615,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/jur-river/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3460,8 +3633,8 @@
    "share": 0.99
   },
   "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 32 political-violence events, 60 deaths (peak 2018); IDPs peak 16,488 (2019-06); IPC3+ peak 80%; flood-displaced 8,981.",
+  "history": "Largest county, bordering Sudan and CAR, home to many 'Fertit' groups (Kresh, Balanda, Banda, Aja and others) around Raja town. SPLA-IO briefly overran Raja town in June 2016.",
+  "conflict_impact": "Paul Malong's SSUF/A forces were defeated in Raja in Aug 2019; gold-mining tensions at Boro Medina since 2023 and insecurity on the road to South Darfur (CSRF). ACLED 2018-25: 32 political-violence events, 60 deaths (peak 2018); IDPs peak 16,488 (2019-06); IPC3+ peak 80%; flood-displaced 8,981.",
   "key_facts": {
    "acled_pv_events_2018_2025": 32,
    "acled_pv_fatalities_2018_2025": 60,
@@ -3494,6 +3667,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/raja/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3510,8 +3684,8 @@
    "share": 1.0
   },
   "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 142 political-violence events, 201 deaths (peak 2018); IDPs peak 114,615 (2019-06); IPC3+ peak 71%.",
+  "history": "Contains Wau, capital of Western Bahr el Ghazal, with Balanda and other 'Fertit', Luo ('Jur Chol') and Dinka communities; June 2016 attacks in Wau town drove mass displacement to the UN PoC site.",
+  "conflict_impact": "Government-opposition fighting around Mboro and Baggari in 2018 eased in 2019; SPLA-IO defections and splits keep Baggari area insecure (CSRF). ACLED 2018-25: 142 political-violence events, 201 deaths (peak 2018); IDPs peak 114,615 (2019-06); IPC3+ peak 71%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 142,
    "acled_pv_fatalities_2018_2025": 201,
@@ -3544,6 +3718,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/wau/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3565,8 +3740,8 @@
    }
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade. Also Western plains groundnuts sesame and sorghum zone (31%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 26 political-violence events, 47 deaths (peak 2025); IDPs peak 58,996 (2022-08); IPC3+ peak 55%.",
+  "history": "Zande (Azande) county with headquarters at Ezo town, bordering DR Congo and CAR; long exposed to LRA attacks and cross-border armed groups.",
+  "conflict_impact": "Tens of thousands fled the 2021 Tambura violence into Ezo; UNMISS said 500 Ezo youths were recruited and sent to Tambura in Sept 2021 (CSRF). ACLED 2018-25: 26 political-violence events, 47 deaths (peak 2025); IDPs peak 58,996 (2022-08); IPC3+ peak 55%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 26,
    "acled_pv_fatalities_2018_2025": 47,
@@ -3600,6 +3775,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/ezo/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3616,8 +3792,8 @@
    "share": 0.88
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 24 political-violence events, 20 deaths (peak 2022); IDPs peak 9,270 (2019-11); IPC3+ peak 66%.",
+  "history": "Azande, Baka and Mundu county with headquarters at Ibba town; hit by LRA abductions from 2005-06.",
+  "conflict_impact": "Clashes between residents and Mbororo-Fulani herders rose from 2022; a spring 2023 attack killed three and displaced about 13,500 (UNSC via CSRF). ACLED 2018-25: 24 political-violence events, 20 deaths (peak 2022); IDPs peak 9,270 (2019-11); IPC3+ peak 66%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 24,
    "acled_pv_fatalities_2018_2025": 20,
@@ -3651,6 +3827,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/ibba/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3667,8 +3844,8 @@
    "share": 0.89
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 50 political-violence events, 60 deaths (peak 2021); IDPs peak 15,932 (2020-03); IPC3+ peak 35%; flood-displaced 5,820.",
+  "history": "Baka, Mundu, Avukaya, Zande and Moro Kodo county with headquarters at Maridi town; land disputes date to land given to SPLA soldiers in the 1990s.",
+  "conflict_impact": "Farmer-pastoralist tensions over crop damage and contested land persist; SPLA-IO/SPLA clashes occurred in 2016-17 (CSRF). ACLED 2018-25: 50 political-violence events, 60 deaths (peak 2021); IDPs peak 15,932 (2020-03); IPC3+ peak 35%; flood-displaced 5,820.",
   "key_facts": {
    "acled_pv_events_2018_2025": 50,
    "acled_pv_fatalities_2018_2025": 60,
@@ -3702,6 +3879,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/maridi/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3723,8 +3901,8 @@
    }
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade. Also Ironstone Plateau agro-pastoral zone (34%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 89 political-violence events, 109 deaths (peak 2025); IDPs peak 25,707 (2019-03); IPC3+ peak 51%.",
+  "history": "Moru and Mundu county with headquarters at Kediba, on the Western-Central Equatoria border; dry-season herds from Lakes and Central Equatoria migrate here.",
+  "conflict_impact": "UNMISS reported SSPDF operations against NAS and NAS abuses affecting civilians in Mundri East in 2024. ACLED 2018-25: 89 political-violence events, 109 deaths (peak 2025); IDPs peak 25,707 (2019-03); IPC3+ peak 51%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 89,
    "acled_pv_fatalities_2018_2025": 109,
@@ -3758,6 +3936,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/mundri-east/",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3774,8 +3954,8 @@
    "share": 0.79
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 49 political-violence events, 62 deaths (peak 2023); IDPs peak 8,142 (2019-03); IPC3+ peak 61%; flood-displaced 3,933.",
+  "history": "Moru, Belle and Mundu county with headquarters at Mundri town; greater Mundri has seen growing farmer-herder polarisation since 2005.",
+  "conflict_impact": "UNMISS attributed many 2020 abductions in the Mundri area mainly to NAS. ACLED 2018-25: 49 political-violence events, 62 deaths (peak 2023); IDPs peak 8,142 (2019-03); IPC3+ peak 61%; flood-displaced 3,933.",
   "key_facts": {
    "acled_pv_events_2018_2025": 49,
    "acled_pv_fatalities_2018_2025": 62,
@@ -3809,6 +3989,8 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/mundri-west/",
+   "https://www.ecoi.net/en/file/local/2048257/unmiss_annual_brief_violence_against_civilians_2020_final_for_publication.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3825,8 +4007,8 @@
    "share": 1.0
   },
   "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 34 political-violence events, 37 deaths (peak 2020); IDPs peak 5,560 (2018-12); IPC3+ peak 70%; flood-displaced 8,040.",
+  "history": "Belle ('Jur Bel'), Bongo, Wira, Nyamusa and Moru county with headquarters at Mvolo town, closely linked to Wulu (Lakes); hosted the Mvolo peace conference.",
+  "conflict_impact": "Security improved after the 2018 R-ARCSS but violence by often unidentified groups rose again during 2020 (CSRF). ACLED 2018-25: 34 political-violence events, 37 deaths (peak 2020); IDPs peak 5,560 (2018-12); IPC3+ peak 70%; flood-displaced 8,040.",
   "key_facts": {
    "acled_pv_events_2018_2025": 34,
    "acled_pv_fatalities_2018_2025": 37,
@@ -3859,6 +4041,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/mvolo/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3875,8 +4058,8 @@
    "share": 1.0
   },
   "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 37 political-violence events, 93 deaths (peak 2025); IDPs peak 42,898 (2025-02); IPC3+ peak 70%.",
+  "history": "Remote Balanda, Bongo and Azande county with headquarters at Nagero town; SPLA-IO briefly seized Nagero in May 2018, followed by an SPLA counter-offensive.",
+  "conflict_impact": "Hosted thousands of mainly Balanda IDPs fleeing the 2021 Tambura violence; displaced people formed most of those in need (CSRF). ACLED 2018-25: 37 political-violence events, 93 deaths (peak 2025); IDPs peak 42,898 (2025-02); IPC3+ peak 70%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 37,
    "acled_pv_fatalities_2018_2025": 93,
@@ -3909,6 +4092,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/nagero/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3930,8 +4114,8 @@
    }
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade. Also Western plains groundnuts sesame and sorghum zone (40%).",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: no political-violence events recorded; IDPs peak 10,095 (2023-04); IPC3+ peak 30%; flood-displaced 326.",
+  "history": "Zande county with headquarters at Nzara town, site of the July 1955 Nzara demonstrations within the colonial Zande Scheme; conflict spread was limited in 2013-2018.",
+  "conflict_impact": "Periodic low-level insecurity since 2018, e.g. a June 2019 SSPDF incident at Mogoroko and killings in Sakure payam in Sept 2021 (CSRF). ACLED 2018-25: no political-violence events recorded; IDPs peak 10,095 (2023-04); IPC3+ peak 30%; flood-displaced 326.",
   "key_facts": {
    "acled_pv_events_2018_2025": 0,
    "acled_pv_fatalities_2018_2025": 0,
@@ -3965,6 +4149,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/nzara/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -3981,8 +4166,8 @@
    "share": 0.84
   },
   "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 243 political-violence events, 591 deaths (peak 2021); IDPs peak 86,147 (2022-08); IPC3+ peak 85%.",
+  "history": "Azande and Balanda county with headquarters at Tambura town, bordering CAR; part of the former Tambura State.",
+  "conflict_impact": "Azande-Balanda violence from June 2021 displaced around 80,000 people (CSRF); renewed tensions in June 2024 drove many sexual violence cases (UNMISS). ACLED 2018-25: 243 political-violence events, 591 deaths (peak 2021); IDPs peak 86,147 (2022-08); IPC3+ peak 85%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 243,
    "acled_pv_fatalities_2018_2025": 591,
@@ -4016,6 +4201,9 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/tambura/",
+   "https://www.csrf-southsudan.org/wp-content/uploads/2021/12/CSRF-Analysis-Tambura-Violence-Displacement-and-Response-20-Dec-2021.pdf",
+   "https://unmiss.unmissions.org/sites/default/files/2025-10/annual_brief_on_violence_affecting_civilians_in_south_sudan_january_-_december_2024.pdf",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
@@ -4032,8 +4220,8 @@
    "share": 0.77
   },
   "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
-  "history": "",
-  "conflict_impact": "ACLED 2018-25: 150 political-violence events, 82 deaths (peak 2025); IDPs peak 30,723 (2018-06); IPC3+ peak 40%.",
+  "history": "Zande county containing Yambio, capital of Western Equatoria and historic seat of the Azande Kingdom, re-established with a coronation in Feb 2022; hosts refugees from DR Congo and CAR.",
+  "conflict_impact": "Clashes declined after 2018, but 2021 saw targeted attacks on officials and SSPDF/SPLA-IO confrontations in Yambio town (CSRF). ACLED 2018-25: 150 political-violence events, 82 deaths (peak 2025); IDPs peak 30,723 (2018-06); IPC3+ peak 40%.",
   "key_facts": {
    "acled_pv_events_2018_2025": 150,
    "acled_pv_fatalities_2018_2025": 82,
@@ -4067,6 +4255,7 @@
   "sources": [
    "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
    "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://archive.csrf-southsudan.org/county_profile/yambio/",
    "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
    "https://ucdp.uu.se/downloads/",
    "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",

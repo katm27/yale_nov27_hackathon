@@ -14,6 +14,8 @@ from pathlib import Path
 
 import pandas as pd
 import requests
+import sys as _sys
+_sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -27,7 +29,8 @@ START, END = "2018-01-01", "2025-12-01"
 MONTHS = pd.date_range(START, END, freq="MS")
 
 # DTM / some OCHA products code the Abyei Administrative Area as SS1101; our boundary file uses SS0001
-PCODE_ALIASES = {"SS1101": "SS0001", "SS11": "SS00", "SS0807": "SS0001"}  # SS0807 = Abyei in HNO 2023
+PCODE_ALIASES = {"SS1101": "SS0001", "SS11": "SS00", "SS0807": "SS0001"}  # SS0807 = Abyei in HNO 2023 / 3W 2021-22
+# full list of code/name aliases: data/crosswalks/county_crosswalk_master.csv (scripts/county_crosswalk.py)
 
 
 def load_counties():
@@ -48,10 +51,16 @@ def norm_name(s: str) -> str:
 
 
 def fix_pcode(p):
+    """Code -> OCHA P-code (aliases from data/crosswalks/county_crosswalk_master.csv via scripts/county_crosswalk.py).
+    Unknown codes are returned upper-cased (callers drop codes outside the gold set)."""
     if p is None or (isinstance(p, float) and pd.isna(p)):
         return None
     p = str(p).strip().upper()
-    return PCODE_ALIASES.get(p, p)
+    if p in PCODE_ALIASES:
+        return PCODE_ALIASES[p]
+    from county_crosswalk import CODE_ALIASES, _tables
+    _tables()
+    return CODE_ALIASES.get(p, p)
 
 
 def download(url: str, dest: Path, overwrite: bool = False, timeout: int = 300) -> Path:

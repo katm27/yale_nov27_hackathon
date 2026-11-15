@@ -23,10 +23,10 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 ## 5. UI
 - [x] Arrows: one clear source at a time ("best available" per month), explained in UI; fix cross-border origins (verified crossings) and county anchors — lead
 - [x] Map mode "Trend": colour by Sen's slope (%/yr of 2018 and ×-change 2018→2025); white outline = Mann-Kendall significant — lead
-- [~] Hover card (built; profiles/drought ensemble/flood product fill in as agents finish): district profile (history, livelihoods, conflict impact) at top; Sen's slope + MK note; sparklines of forced migration, US humanitarian aid, flood extent, drought (with uncertainty band) — lead + agent "profiles"
+- [~] Hover card (built; profiles done for all 79 counties; drought ensemble/flood product fill in as climate agent finishes): district profile (history, livelihoods, conflict impact) at top; Sen's slope + MK note; sparklines of forced migration, US humanitarian aid, flood extent, drought (with uncertainty band) — lead + agent "profiles"
 - [x] Bottom national timeline: USAID / US aid, total humanitarian funding (FTS), HRP coverage, UNMISS uniformed personnel, key climate series, GBV indicators — lead
 - [~] GBV & water: REACH MSNA women's safety / water-collection indicators, water points (WPDx), groundwater options; within-county conflict indicators — agent "gbv-water"
 
 ## Already running (started earlier)
 - [~] NASA AppEEARS: night lights, monthly ET, SMAP, Jul–Oct 2025 MODIS fill
-- [~] FIRMS VIIRS fires, CHIRPS v3 rainfall cross-check, Insecurity Insight incidents
+- [x] FIRMS VIIRS fires, CHIRPS v3 rainfall cross-check, Insecurity Insight incidents (national only: source censors coordinates)

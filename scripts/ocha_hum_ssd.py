@@ -17,17 +17,14 @@ from pathlib import Path
 import pandas as pd
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from human_common import RAW, download, hdx_resources, load_counties, norm_name, fix_pcode, finalize, base_meta
+from human_common import RAW, download, hdx_resources, load_counties, fix_pcode, finalize, base_meta
+from county_crosswalk import to_ocha
 
 SRC = "ocha_hum"
 HNO = RAW / "ocha_hno"
 W3 = RAW / "ocha_3w"
 HAPI = RAW / "hdx_hapi"
 MONTHS = {m: i for i, m in enumerate(["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"], 1)}
-ALIAS = {"abyeiregion": "abyei", "abyeiadministrativearea": "abyei", "abyeiarea": "abyei", "raga": "raja", "kajokeji": "kajokeji",
-         "panyijar": "panyijiar", "nasir": "luakpinynasir", "pigi": "canalpigi", "canal": "canalpigi",
-         "longechuk": "longochuk", "yeicounty": "yei", "bor": "borsouth", "pibor": "pibor",
-         "kapoetaeast": "kapoetaeast", "mayendit": "mayendit"}
 W3_FILES = {2019: "ss_20200616_3w_op_jan-dec_2019.xlsx", 2020: "ss_20210119_3w_op_jan-november_2020.xlsx",
             2021: "ss_20220130_3w_op_january-december_2021.xlsx", 2022: "ss_20230216_3w_op_january-december_2022.xlsx",
             2023: "ss_20240104_3w_op_january-to-december_2023.xlsx",
@@ -52,9 +49,8 @@ def fetch():
 
 
 def lookup_factory():
-    g = load_counties()
-    m = {norm_name(n): p for n, p in zip(g.name, g.district_id)}
-    return lambda n: m.get(ALIAS.get(norm_name(n), norm_name(n)))
+    """County name -> OCHA P-code via the master crosswalk (data/crosswalks/county_crosswalk_master.csv)."""
+    return to_ocha
 
 
 def hno(lookup):
@@ -77,7 +73,9 @@ def hno(lookup):
     rows += [(lookup(a), 2024, "hno_severity", v) for a, v in zip(d["Admin two"], d["InterSectoral_Severity"])]
     h = pd.read_csv(HAPI / "hdx_hapi_humanitarian_needs_ssd.csv")
     h = h[(h.admin_level == 2) & (h.sector_name == "Intersectoral") & (h.category == "total") & (h.population_status == "INN")]
-    rows += [(fix_pcode(p), int(y[:4]), "hno_pin", v) for p, y, v in zip(h.admin2_code, h.reference_period_start, h.population)]
+    # HAPI leaves admin2_code blank for Abyei (provider_admin2_name 'Abyei Region'): fall back to the provider name
+    rows += [(to_ocha(p) or to_ocha(pn), int(y[:4]), "hno_pin", v)
+             for p, pn, y, v in zip(h.admin2_code, h.provider_admin2_name, h.reference_period_start, h.population)]
     df = pd.DataFrame(rows, columns=["county_id", "year", "variable", "value"])
     df["value"] = pd.to_numeric(df.value, errors="coerce")
     bad = df[df.county_id.isna()]
