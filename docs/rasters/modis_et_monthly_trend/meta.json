@@ -40,7 +40,7 @@
  "native_resolution": "500 m MODIS (8-day, gap-filled), rendered from ~1 km (0.01°) grid",
  "source": "MODIS MOD16A2GF v061 via NASA AppEEARS",
  "trend_of": "modis_et_monthly",
- "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope. Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,

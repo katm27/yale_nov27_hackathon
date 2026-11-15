@@ -40,7 +40,7 @@
  "native_resolution": "500 m MODIS, rendered from ~1 km (0.01°) grid",
  "source": "MODIS MOD16A3GF v061 (annual, gap-filled) via Microsoft Planetary Computer",
  "trend_of": "modis_et",
- "basis": "annual total of the MODIS MOD16A3GF annual product (one value per year)",
+ "basis": "annual total of the MODIS MOD16A3GF annual product (one value per year).",
  "years_with_data": {
   "2020": 3,
   "2021": 4,

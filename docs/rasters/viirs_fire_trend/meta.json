@@ -40,7 +40,7 @@
  "native_resolution": "375 m detections binned to 0.05° (~5.5 km)",
  "source": "NASA FIRMS VIIRS S-NPP 375 m standard processing (VNP14IMGTDL SP)",
  "trend_of": "viirs_fire",
- "basis": "annual total (Jan-Dec) of nominal/high-confidence VIIRS S-NPP vegetation-fire detections per 0.05° cell",
+ "basis": "annual total (Jan-Dec) of nominal/high-confidence VIIRS S-NPP vegetation-fire detections per 0.05° cell.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,

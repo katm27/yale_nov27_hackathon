@@ -40,7 +40,7 @@
  "native_resolution": "1° grid, ~300 km effective",
  "source": "GFZ GravIS COST-G GRACE/GRACE-FO Level-3 TWS",
  "trend_of": "grace_tws",
- "basis": "annual mean (Jan-Dec) of the monthly values (storage anomaly; no dry-season zeros). GRACE-FO starts Jun 2018: 2018 = 5 months (Jun, Jul, Oct-Dec), accepted via the anomaly method (threshold lowered to 5 of 12 months). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "basis": "annual mean (Jan-Dec) of the monthly values (storage anomaly; no dry-season zeros). GRACE-FO starts Jun 2018: 2018 = 5 months (Jun, Jul, Oct-Dec), accepted via the anomaly method (threshold lowered to 5 of 12 months). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,

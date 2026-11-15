@@ -40,7 +40,7 @@
  "native_resolution": "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid",
  "source": "Copernicus Sentinel-1 IW GRD RTC (sentinel-1-rtc) via Microsoft Planetary Computer",
  "trend_of": "flood_s1",
- "basis": "wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02° cell from the monthly Sentinel-1 classification (gap-filled as in flood_s1_pipeline) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "basis": "wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02° cell from the monthly Sentinel-1 classification (gap-filled as in flood_s1_pipeline). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,

@@ -40,7 +40,7 @@
  "native_resolution": "1/24° (~4 km)",
  "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
  "trend_of": "tc_tmax",
- "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "basis": "annual mean (Jan-Dec) of the monthly values. Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,

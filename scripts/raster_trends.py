@@ -64,15 +64,22 @@ ANOM = (" Missing months are filled by the climatology-anomaly method (yearly = 
 def yearly_from_months(get, season, agg="mean", min_frac=0.5):
     """get(y, m) -> 2-D array (NaN = no data) or None. Returns (n_years, H, W) float32 yearly values."""
     if agg == "sum":
-        out = []
-        for y in YEARS:
-            arrs = [get(y, m) for m in season]
-            if any(a is None for a in arrs):
-                out.append(None)
+        # annual total; a missing month is filled with the pixel's mean for that calendar month (<= 4 per year)
+        data = {(y, m): get(y, m) for y in YEARS for m in season}
+        shape = next(a.shape for a in data.values() if a is not None)
+        clim = {}
+        for m in season:
+            have = [data[(y, m)] for y in YEARS if data[(y, m)] is not None]
+            clim[m] = np.nanmean(have, axis=0) if have else None
+        out = np.full((len(YEARS), *shape), np.nan, "float32")
+        for i, y in enumerate(YEARS):
+            miss = [m for m in season if data[(y, m)] is None]
+            if len(miss) > 4 or any(clim[m] is None for m in miss):
                 continue
-            out.append(np.sum(arrs, axis=0).astype("float32"))
-        shape = next(a.shape for a in out if a is not None)
-        return np.stack([a if a is not None else np.full(shape, np.nan, "float32") for a in out])
+            out[i] = np.sum([data[(y, m)] if data[(y, m)] is not None else clim[m] for m in season], axis=0)
+            if miss:
+                print(f"  {y}: months {miss} missing, filled with climatology", flush=True)
+        return out
     # pass 1: per-season-month climatology
     csum, ccnt, shape = {}, {}, None
     for y in YEARS:
@@ -419,7 +426,9 @@ LAYERS = [
     dict(key="burned_area", run=monthly(load_burned, ALL, "sum"), cmap="div_puor",
          units="% of cell burned per year", unit_out="% of cell burned per year, per yr",
          basis=("annual total (Jan-Dec) of the monthly MODIS MCD64A1 burned share of each 0.01° cell, in % "
-                "(a cell burned in two months counts twice); re-derived from Planetary Computer")),
+                "(a cell burned in two months counts twice); re-derived from Planetary Computer. Months absent on Planetary "
+                "Computer (2023-09, 2024-07, 2025-05, 2025-08..10; all outside the Nov-Apr fire season) are filled with "
+                "the pixel's 2018-2025 mean for that calendar month")),
     dict(key="flood_s1", run=yearly_flood_s1, cmap="div_brbg", units="% of pixel classified water",
          unit_out="percentage points/yr",
          basis=("wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02° cell from the monthly Sentinel-1 "
