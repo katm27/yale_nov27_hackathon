@@ -165,15 +165,16 @@
   "key": "gbv_one_stop_centres",
   "category": "human",
   "temporal": "periods",
-  "source": "UNFPA, UNICEF and FAO/World Bank ELRP reports 2018-2023; host facility coordinates from the WHO Master Facility List; team compilation (Nov 2026)",
+  "source": "UNFPA South Sudan annual reports 2022-2024, newsletters and situation reports; UNICEF; UN Peacebuilding Fund evaluation; UNMISS; South Sudan Medical Journal; host facility coordinates from the WHO Master Facility List",
   "source_url": "https://southsudan.unfpa.org/",
-  "details": "13 one-stop centres + Bentiu safe house; valid_from = first evidence of operation (year-only evidence -> end of that year); documented through Q1 2023 (UNFPA newsletter: 13 OSCs), presumed operating afterwards, a period that includes the 2025 funding cuts. No dated point data exist for women and girls' friendly spaces or protection desks.",
-  "label": "GBV one-stop centres",
-  "notes": "Centres offering medical, psychosocial, legal and police help to survivors of sexual and gender-based violence, shown from the first evidence they were operating; no site was confirmed individually after early 2023.",
+  "details": "Month-by-month status from dated evidence: 'named in a source' between two dated mentions of the centre (UNFPA 2018/2020 lists, UNICEF May 2020, UN Peacebuilding Fund evaluation Nov 2021, UNMISS Oct 2023, South Sudan Medical Journal Nov 2023, UNFPA newsletters Q1 2024 and Q1 2025, UNFPA situation report Feb-Mar 2025); 'UNFPA reports 13 centres' where only UNFPA's yearly nationwide count (annual reports 2021-2024; the 2024 paragraph repeats 2023) covers it - this applies only to the 12 UNFPA-network centres; 'status unconfirmed' after the last evidence (hollow marker). Akobo one-stop centre (UN Peacebuilding Fund, 2021) and the Juba and Wau safe houses (UNFPA 2022-2024) were added; Yei is UNICEF-supported. Some first dates (Dec 2019 and Dec 2021 ELRP tables, UNFPA 2021 annual report) come from the team compilation and were not re-checked. No dated, machine-readable GBV service map exists for women and girls' friendly spaces or protection desks.",
+  "label": "Gender-based violence (GBV) one-stop centres",
+  "notes": "Hospital centres where survivors of sexual and gender-based violence get medical care, counselling, legal and police help in one place, plus three safe houses, each shown from the first report that it was working; UNFPA reported 13 centres every year up to 2024 but named only a few of them after 2020 (Juba in 2023, Wau up to early 2025, Malakal and Bentiu in early 2025), so a hollow marker means no source has confirmed that centre since its last mention, not that it closed.",
   "plain": true,
   "status_values": [
-   "operating (documented)",
-   "presumed operating (last confirmed early 2023)"
+   "operating (this centre named in a source)",
+   "operating (not named in this period; covered by UNFPA's nationwide count of 13 or by a later mention)",
+   "status unconfirmed (no source since its last mention)"
   ]
  },
  {
@@ -287,7 +288,7 @@
   "key": "disasters",
   "category": "environment",
   "temporal": "periods",
-  "label": "Natural disasters (floods, droughts, storms)",
+  "label": "Natural disasters (floods, droughts, heatwaves)",
   "notes": "Floods, drought alerts and heatwaves reported in 2018-2025, one dot per affected county (or one for the whole country) shown for as long as the event lasted; flood numbers are people affected as counted by the UN, and a dot sits at the county centre, not at the flooded place.",
   "plain": true,
   "details": "Floods: OCHA county tables on HDX for 2021 (13 Dec), 2022 (30 Nov), 2024 (20 Dec) and 2025 (30 Nov); 2019 and 2020 counties are those named on OCHA's flood maps (5 Nov 2019: 32 counties, 908,000 affected; 21 Oct 2020: 39 counties, state totals from the 31 Jan 2021 situation report) with IOM DTM/IRNA displacement figures for 2019. Each flood season runs from OCHA's reported start month to its last report (2021: month per county where given). No OCHA flood table or GLIDE flood event exists for 2023. Droughts: GDACS agricultural-drought alerts (European Drought Observatory), counties with >= 25% of their area in the alert polygon. Heatwaves: national school closures in March 2024 and February 2025, placed at Juba. No storm events were found in GDACS, IFRC GO or ReliefWeb for South Sudan 2018-2025. Epidemics are excluded.",

@@ -199,6 +199,7 @@
     }
   ],
   "points": [
+    "points_disasters",
     "points_crisis_sites",
     "points_gbv_one_stop_centres",
     "points_health",

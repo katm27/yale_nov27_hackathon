@@ -525,7 +525,7 @@
       const area = (f) => { const b = L.geoJSON(f).getBounds(); return (b.getNorth() - b.getSouth()) * (b.getEast() - b.getWest()); };
       gj.features.sort((a, b) => area(b) - area(a));
       [...new Set(gj.features.map((f) => f.properties.group || f.properties.name))].sort().forEach((g, i) => (ETHNIC_COLORS[g] = CATEGORICAL[i % CATEGORICAL.length]));
-      $(`#pl-${p.key}`).innerHTML = `<div class="eth-key">${Object.entries(ETHNIC_COLORS).map(([g, c]) => `<span><i style="background:${c}"></i>${esc(g)}</span>`).join("")}</div><p class="hint">Settlement areas from GeoEPR 2021 (ETH Zurich); areas overlap where groups live together. Click an area for its political-power status.</p>`;
+      $(`#pl-${p.key}`).innerHTML = `<div class="eth-key">${Object.entries(ETHNIC_COLORS).map(([g, c]) => `<span><i style="background:${c}"></i>${esc(g)}</span>`).join("")}</div><p class="hint">Settlement areas from GeoEPR 2023 (ETH Zurich); areas overlap where groups live together. Click an area for its political-power status.</p>`;
     } else {
       $(`#pl-${p.key}`).innerHTML = p.plain && typeof p.plain === "string" ? `<p class="hint">${esc(p.plain.split(/(?<=\.)\s/)[0])} Hollow markers mean the center is closed, damaged or not working.</p>` : "";
     }
@@ -541,6 +541,10 @@
     if (pr.year) { const y = String(pr.year); return (y >= lo.slice(0, 4) && y <= hi.slice(0, 4)) || (y <= hi.slice(0, 4) && !pr.end_year) || (pr.end_year && y <= hi.slice(0, 4) && String(pr.end_year) >= lo.slice(0, 4)); }
     return true;
   }
+  const HIDDEN_FIELDS = /^(school_id|facility_id|wpdx_id|ucdp_id|event_id|market_id|osm_id|county_id|county_pcode|coord_quality|date_basis|in_moh_2016|in_mfl_2023|status_stale|inside_ssd|where_prec|geo_precision|valid_from|valid_to|Dataset ids)$/;
+  const FIELD_LABELS = { name: "Name", status: "Status", enrol_female: "Girls enrolled", troops_est: "Estimated troops", fpu_present: "Formed police unit present", units_tcc: "Units (troop-contributing countries)",
+    prod_oil_mbbl_y: "Oil production (million barrels a year)", side_a: "Side A", side_b: "Side B", deaths: "Deaths", deaths_best: "Deaths (best estimate)", fatalities: "Deaths", county: "County", state: "State", admin1: "State", admin2: "County",
+    evidence: "Evidence", source: "Source", source_url: "Source link", year: "Year", end_year: "Until", type: "Type", operator: "Operator", date: "Date" };
   function drawPoints(entry) {
     if (entry.layer) map.removeLayer(entry.layer);
     const { p, gj, timed } = entry, isPoly = /^polygons_/.test(p.key);
@@ -563,8 +567,8 @@
       },
       onEachFeature: (f, l) => {
         const pr = f.properties || {};
-        const nice = (k) => (/[A-Z ]/.test(k) ? k : k.replace(/_/g, " ").replace(/^./, (c) => c.toUpperCase()));
-        const rows = Object.entries(pr).filter(([k, val]) => val !== null && val !== "" && typeof val !== "object" && !/^(ids?|gwid|gwgroupid|groupid|fid|objectid|_.*)$/i.test(k)).slice(0, 14)
+        const nice = (k) => FIELD_LABELS[k] || (/[A-Z ]/.test(k) ? k : k.replace(/_/g, " ").replace(/^./, (c) => c.toUpperCase()));
+        const rows = Object.entries(pr).filter(([k, val]) => val !== null && val !== "" && typeof val !== "object" && !HIDDEN_FIELDS.test(k) && !/^(ids?|gwid|gwgroupid|groupid|fid|objectid|_.*)$/i.test(k)).slice(0, 14)
           .map(([k, val]) => `<tr><td class="muted">${esc(nice(k))}</td><td>${/^https?:/.test(String(val)) ? `<a href="${esc(val)}" target="_blank" rel="noopener">link</a>` : esc(String(val).slice(0, 200))}</td></tr>`).join("");
         const head = pr.name || pr.facility_name || pr.site_name || pr.title || "";
         const status = pr.status ? `<div><b>Status:</b> ${esc(pr.status)}</div>` : "";

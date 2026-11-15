@@ -402,27 +402,17 @@ def ethnic():
 
 
 import ethnic_groups_temporal as _egt  # noqa: E402
+import gbv_one_stop_centres as _gbv  # noqa: E402
 ETHNIC_ORDER = _egt.status_order(2023)
 
 
 # --------------------------------------------------------------------------------------------- new layers
 def gbv_centres():
-    items = []
-    for f in zjson("gbv_one_stop_centres_2018_2025.geojson")["features"]:
-        p = f["properties"]
-        st = {"operating (documented)": "operating (documented)",
-              "presumed operating (last confirmed Q1 2023)": "presumed operating (last confirmed early 2023)"}[p["status"]]
-        q = {"name": p["name"], "type": "safe house" if "safe house" in p["name"].lower() else "GBV one-stop centre",
-             "status": st, "valid_from": p["valid_from"], "valid_to": p["valid_to"], "evidence": p["evidence"],
-             "date_basis": ("first date with evidence the site was operating (not necessarily its opening); "
-                            "no site-level confirmation after Q1 2023"),
-             "host_facility": p["host_facility"], "service": p["service"], "first_evidence": p["first_evidence"],
-             "coord_quality": "host facility location (WHO Master Facility List)",
-             "source": "UNFPA, UNICEF and FAO/World Bank ELRP reports 2018-2023; " + TEAM}
-        items.append((q, f["geometry"]))
-    feats = assign_county_fc([feat(g, p) for p, g in month_periods(items, "name")])
-    feats = [feat(f["geometry"], ordered(f["properties"], FIRST)) for f in feats]
-    write_fc("points_gbv_one_stop_centres.geojson", feats)
+    """Rebuilt by scripts/gbv_one_stop_centres.py: month-by-month status from dated evidence (site named / UNFPA's
+    nationwide count / unconfirmed after the last evidence), Akobo OSC and the Juba and Wau safe houses added."""
+    import gbv_one_stop_centres as gbv
+    feats, _ = gbv.build()
+    gbv.write_meta(feats)
     return "points_gbv_one_stop_centres.geojson", "name"
 
 
@@ -608,10 +598,7 @@ PLAIN = {
                       notes="Mapped oil pipelines coloured by the documented status of the oil block they serve; "
                             "proposed routes are shown but were never built."),
     "ethnic_groups": dict(label=_egt.LABEL, order=ETHNIC_ORDER, notes=_egt.NOTES.format(last=2023)),
-    "gbv_one_stop_centres": dict(label="GBV one-stop centres", order=["operating (documented)", "presumed operating (last confirmed early 2023)"],
-                                 notes="Centres offering medical, psychosocial, legal and police help to survivors of "
-                                       "sexual and gender-based violence, shown from the first evidence they were "
-                                       "operating; no site was confirmed individually after early 2023."),
+    "gbv_one_stop_centres": dict(label=_gbv.LABEL, order=None, notes=_gbv.NOTES),
     "oil_pollution": dict(label="Oil spills and pollution reports", order=POLL_ORDER,
                           notes="Two documented 2019 oil pipeline spills north of Bentiu and two located reports of "
                                 "contaminated water and flooded wells in the Unity oil fields."),
@@ -648,7 +635,7 @@ PLAIN = {
 }
 NEW_META = {
     "gbv_one_stop_centres": dict(category="human", temporal="periods",
-                                 source="UNFPA, UNICEF and FAO/World Bank ELRP reports 2018-2023; host facility coordinates from the WHO Master Facility List; team compilation (Nov 2026)",
+                                 source="UNFPA South Sudan annual reports 2022-2024, newsletters and situation reports; UNICEF; UN Peacebuilding Fund evaluation; UNMISS; South Sudan Medical Journal; host facility coordinates from the WHO Master Facility List",
                                  source_url="https://southsudan.unfpa.org/"),
     "oil_pollution": dict(category="environment", temporal="periods",
                           source="Sign of Hope (Feb 2020) spill investigation; PAX (2023); New Lines/Placemark (2026); Kenyatta University sampling as reported; team compilation (Nov 2026)",
@@ -668,7 +655,7 @@ DETAILS = {
     "oil": "GEM GOGET field points (attributes kept; GEM status in gem_status) with production periods reconciled to the team block timeline; 102 OSM wells (HOT Raw Data API, Nov 2026) replace the 93 undated OSM wells and get their block's status periods: Blocks 3&7 operating -> halted 2024-02..2024-12 -> resumed 2025-01; Blocks 1,2&4 shut -> partial 2018-08 (Toma South) -> operating 2019-01 -> disrupted 2025-12 (Heglig seized 8 Dec 2025); Block 5A shut -> operating 2021-06 -> disrupted 2025-12. Block assignment by location (east of 31E = 3&7; Guit/Koch/Leer/Mayendit/Panyijiar = 5A). Block-level status, not well-by-well. Gas-flare satellite check (MODIS) was inconclusive and is not used.",
     "pipelines": "Overture/OSM pipeline lines and GEM GOIT routes; status periods follow the oil block of each line (location rule as for wells; Greater Nile follows Blocks 1,2&4). The team's 169 OSM field-line segments all lie on these lines.",
     "ethnic_groups": _egt.DETAILS,
-    "gbv_one_stop_centres": "13 one-stop centres + Bentiu safe house; valid_from = first evidence of operation (year-only evidence -> end of that year); documented through Q1 2023 (UNFPA newsletter: 13 OSCs), presumed operating afterwards, a period that includes the 2025 funding cuts. No dated point data exist for women and girls' friendly spaces or protection desks.",
+    "gbv_one_stop_centres": _gbv.DETAILS,
     "oil_pollution": "Spills on the Unity-Heglig export pipeline ~24 Aug 2019 (~2 million L) and ~28 Oct 2019 (~4 million L), GPS from Sign of Hope; after repair shown as spill site (removal not documented). Reports: flooded Block 2 wells (PAX 2023: 159 wells ~41% submerged; New Lines/Placemark 2026: 50+ of ~400 Unity wells underwater) placed at the Unity field; Kenyatta University river samples near Bentiu/Rotriak (lead up to 18 ug/L, hydrocarbons >5x limits; sampling dates unpublished) placed at Rotriak. Feb 2024 Petrodar spill is in Sudan -> timeline only.",
     "oil_wells_flooding": "Share of Sentinel-1 VV pixels below -15 dB in a 100-500 m ring around each of 102 OSM wells, monthly median; flagged when >= 25%. Undercounts flooded vegetation; near-zero 2021 likely an artefact (also Sentinel-1B loss Dec 2021). OSM maps ~100 of ~400 Unity wells.",
     "surface_water_quality": "Eight ~11x11 km sites; water pixels only, up to 3 clearest scenes per month. Status = NDTI (red-green)/(red+green) anomaly vs the site's median for that calendar month: > +0.04 more turbid, < -0.04 clearer (|anomaly| > 0.04 is about the top 20% of site-months). NDCI chlorophyll proxy included. 2018-19 Sentinel-2 L2A may be offset from 2020-25 HLS. Thar Jath wetland has only 15 months.",
@@ -812,7 +799,7 @@ def main():
         "oil": status_values_of("points_oil.geojson", OIL_ORDER),
         "pipelines": status_values_of("lines_pipelines.geojson", OIL_ORDER),
         "ethnic_groups": status_values_of("polygons_ethnic_groups.geojson", ETHNIC_ORDER),
-        "gbv_one_stop_centres": status_values_of("points_gbv_one_stop_centres.geojson", PLAIN["gbv_one_stop_centres"]["order"]),
+        "gbv_one_stop_centres": _gbv.order_with(read_fc("points_gbv_one_stop_centres.geojson")["features"]),
         "oil_pollution": status_values_of("points_oil_pollution.geojson", POLL_ORDER),
         "oil_wells_flooding": status_values_of("points_oil_wells_flooding.geojson", FLOOD_ORDER),
         "surface_water_quality": status_values_of("points_surface_water_quality.geojson", WQ_ORDER),

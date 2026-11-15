@@ -65,8 +65,8 @@
   "topic": "Population & society"
  },
  "points_gbv_one_stop_centres": {
-  "label": "GBV one-stop centres",
-  "plain": "Centres offering medical, psychosocial, legal and police help to survivors of sexual and gender-based violence, shown from the first evidence they were operating; no site was confirmed individually after early 2023.",
+  "label": "Gender-based violence (GBV) one-stop centres",
+  "plain": "Hospital centres where survivors of sexual and gender-based violence get medical care, counselling, legal and police help in one place, plus three safe houses, each shown from the first report that it was working; UNFPA reported 13 centres every year up to 2024 but named only a few of them after 2020 (Juba in 2023, Wau up to early 2025, Malakal and Bentiu in early 2025), so a hollow marker means no source has confirmed that centre since its last mention, not that it closed.",
   "topic": "Gender & protection"
  },
  "points_oil_pollution": {
@@ -85,7 +85,7 @@
   "topic": "Water & floods"
  },
  "points_disasters": {
-  "label": "Natural disasters (floods, droughts, storms)",
+  "label": "Natural disasters (floods, droughts, heatwaves)",
   "plain": "Floods, drought alerts and heatwaves reported in 2018-2025, one dot per affected county (or one for the whole country) shown for as long as the event lasted; flood numbers are people affected as counted by the UN, and a dot sits at the county centre, not at the flooded place.",
   "topic": "Water & floods"
  }

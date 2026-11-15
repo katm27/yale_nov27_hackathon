@@ -401,7 +401,7 @@ def heatwaves():
 
 
 # --------------------------------------------------------------------------------------------- outputs
-LABEL = "Natural disasters (floods, droughts, storms)"
+LABEL = "Natural disasters (floods, droughts, heatwaves)"
 PLAIN = ("Floods, drought alerts and heatwaves reported in 2018-2025, one dot per affected county (or one for the whole "
          "country) shown for as long as the event lasted; flood numbers are people affected as counted by the UN, and "
          "a dot sits at the county centre, not at the flooded place.")
