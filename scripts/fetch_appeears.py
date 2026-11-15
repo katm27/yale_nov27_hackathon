@@ -586,6 +586,11 @@ RASTERS = [
          colors=["#f7fbff", "#c6dbef", "#6baed6", "#2171b5", "#08306b"], cmap_name="blues",
          native="500 m MODIS (8-day, gap-filled), rendered from ~1 km (0.01°) grid",
          source="MODIS MOD16A2GF v061 via NASA AppEEARS"),
+    dict(key="modis13a3_ndvi", var="modis13a3_ndvi", label="NDVI, monthly 1 km (MODIS MOD13A3)",
+         units="NDVI", vmin=0.1, vmax=0.9,
+         colors=["#7f4a10", "#b8863b", "#e3cf8c", "#d9ef8b", "#91cf60", "#3f9a3f", "#145a24", "#06331a"],
+         cmap_name="brown-yellow-green", native="1 km MODIS (0.01° grid)",
+         source="MODIS MOD13A3 v061 via NASA AppEEARS"),
     dict(key="smap_sm_surface", var="smap_sm_surface", label="Surface soil moisture 0-5 cm (SMAP L4)",
          units="m³/m³", vmin=0.0, vmax=0.45,
          colors=["#8c510a", "#d8b365", "#f6e8c3", "#c7eae5", "#5ab4ac", "#01665e", "#003c30"], cmap_name="brown-teal",
@@ -695,7 +700,8 @@ def meta_list(cons):
            "monthly composite (pixel reliability good/marginal), mean of valid ~1 km cells in county", "better", True,
            "Different compositing from modis_ndvi (MOD13A3 is a weighted average of 16-day 1 km composites; "
            "modis_ndvi is the Terra+Aqua 500 m monthly maximum), so kept as a separate id; MOD13A3 runs lower. "
-           "Covers Aug-Oct 2025 missing from the Planetary Computer series." + cn("modis13a3_ndvi")),
+           "Covers Aug-Oct 2025 missing from the Planetary Computer series." + cn("modis13a3_ndvi"),
+           raster="modis13a3_ndvi"),
         _m("modis13a3_evi", "EVI, monthly 1 km (MODIS MOD13A3)", "Vegetation", "index -1..1",
            "MODIS MOD13A3 v061 (Terra monthly 1 km)", "https://doi.org/10.5067/MODIS/MOD13A3.061", "1 km",
            "monthly composite (pixel reliability good/marginal), mean of valid ~1 km cells in county", "better", True,

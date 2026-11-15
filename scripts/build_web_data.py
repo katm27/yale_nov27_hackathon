@@ -34,7 +34,7 @@ MONTH_STR = [str(m) for m in MONTHS]
 NATIONAL_IDS = {"SS", "SSD", "national"}
 # Sparse "round"-type series are carried forward this many months so the slider
 # shows the latest known value (flagged in metadata as carried forward).
-DEFAULT_CARRY = {"monthly": 0, "periodic": 6, "round": 6, "annual": 11, "static": 95}
+DEFAULT_CARRY = {"monthly": 0, "periodic": 8, "round": 8, "annual": 0, "static": 95}
 
 
 def sig(x: float, n: int = 4):
@@ -115,7 +115,7 @@ def build_trends(variables: list[dict], county_ids: list[str]) -> None:
     with open(os.path.join(OUT, "trends.json"), "w") as fh:
         json.dump(out, fh, separators=(",", ":"))
     n_sig = int(t["significant"].sum())
-    print(f"trends: {len(t)} county-variables for {len(out)} variables, {n_sig} significant (p<0.05)")
+    print(f"trends: {len(t)} county-variables for {len(out)} variables, {n_sig} significant (FDR q<0.05)")
 
 
 # --------------------------------------------------------------------------- migration flows
@@ -248,6 +248,8 @@ def main() -> None:
         if var not in meta:
             print("! no metadata for", var, "from", g["file"].iloc[0])
         temporal = m.get("temporal", "monthly")
+        if str(temporal).lower().startswith(("irregular", "round", "periodic")):
+            temporal = "periodic"   # survey rounds / analyses (IPC, DTM): carry the latest value forward
         g = g.groupby(["county_id", "period"])["value"].mean().reset_index()
         first_year = int(g["period"].min().year)
         last = g["period"].max()
@@ -257,6 +259,13 @@ def main() -> None:
             g["period"] = MONTHS[0]
         mat = (g.pivot(index="county_id", columns="period", values="value")
                  .reindex(index=county_ids, columns=MONTHS))
+        if temporal == "annual":
+            # an annual value describes the whole calendar year: fill every month of that year
+            yrs = np.array([p.year for p in MONTHS])
+            for y in np.unique(yrs):
+                cols = mat.columns[yrs == y]
+                mat.loc[:, cols] = np.repeat(mat[cols].mean(axis=1).values[:, None], len(cols), axis=1)
+            m["baseline_mode"] = "annual"
         observed = mat.notna().values.copy()
         carry = int(m.get("carry_forward_months", DEFAULT_CARRY.get(temporal, 0)))
         if carry:

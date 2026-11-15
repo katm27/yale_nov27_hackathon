@@ -45,15 +45,6 @@
   "temporal": "periods"
  },
  {
-  "key": "fmr_monitoring",
-  "label": "IOM Flow Monitoring points (active months)",
-  "category": "human",
-  "source": "IOM DTM South Sudan Flow Monitoring Registry (team unified dataset)",
-  "source_url": "data/raw/ssd_unified/README.md",
-  "notes": "Where FMR counts travellers; FMR numbers depend on these locations. Temporal: valid_from/valid_to = first/last month with recorded internal forced trips (Jan 2020-Aug 2025); >6 empty months split a point into periods; Nov 2023-Dec 2024 (no public data) is bridged. Points still active in Aug 2025 are open-ended. active_months / travellers summarise each period.",
-  "temporal": "periods"
- },
- {
   "key": "crisis_sites",
   "label": "PoC sites, IDP & refugee camps (status over time)",
   "category": "human",
@@ -90,6 +81,15 @@
   "temporal": "snapshot"
  },
  {
+  "key": "water_points",
+  "label": "Water points (WPDx, last known status)",
+  "category": "human",
+  "source": "Water Point Data Exchange WPDx-Basic (OCHA/WASH WIMS 2006-13, ACF/RWSS 2016, Water for South Sudan 2011-15, UNHCR 2019), CC BY 4.0",
+  "source_url": "https://data.waterpointdata.org/dataset/Water-Point-Data-Exchange-Basic-WPDx-Basic-/eqje-vguj",
+  "notes": "Temporal: valid_from = install year if >= 2018 (none in the data: install years <= 2015 or unknown) else null; valid_to null (decommissioning not recorded). status = functional status at status_report_date; almost all reports predate 2018 (status_stale=true: last known status, not current). UNHCR camp points reported Sep 2019 get a separate status period from 2019-09. Not a complete inventory of current water points.",
+  "temporal": "snapshot"
+ },
+ {
   "key": "schools",
   "label": "Schools",
   "category": "human",
@@ -99,12 +99,12 @@
   "temporal": "snapshot"
  },
  {
-  "key": "water_points",
-  "label": "Water points (WPDx, last known status)",
+  "key": "fmr_monitoring",
+  "label": "IOM Flow Monitoring points (active months)",
   "category": "human",
-  "source": "Water Point Data Exchange WPDx-Basic (OCHA/WASH WIMS 2006-13, ACF/RWSS 2016, Water for South Sudan 2011-15, UNHCR 2019), CC BY 4.0",
-  "source_url": "https://data.waterpointdata.org/dataset/Water-Point-Data-Exchange-Basic-WPDx-Basic-/eqje-vguj",
-  "notes": "Temporal: valid_from = install year if >= 2018 (none in the data: install years <= 2015 or unknown) else null; valid_to null (decommissioning not recorded). status = functional status at status_report_date; almost all reports predate 2018 (status_stale=true: last known status, not current). UNHCR camp points reported Sep 2019 get a separate status period from 2019-09. Not a complete inventory of current water points.",
-  "temporal": "snapshot"
+  "source": "IOM DTM South Sudan Flow Monitoring Registry (team unified dataset)",
+  "source_url": "data/raw/ssd_unified/README.md",
+  "notes": "Where FMR counts travellers; FMR numbers depend on these locations. Temporal: valid_from/valid_to = first/last month with recorded internal forced trips (Jan 2020-Aug 2025); >6 empty months split a point into periods; Nov 2023-Dec 2024 (no public data) is bridged. Points still active in Aug 2025 are open-ended. active_months / travellers summarise each period.",
+  "temporal": "periods"
  }
 ]

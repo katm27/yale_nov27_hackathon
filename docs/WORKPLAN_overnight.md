@@ -3,9 +3,9 @@
 Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as work proceeds; each item lists its owner.
 
 ## 1. County reconciliation (gold standard = OCHA COD-AB v03, 79 counties incl. Abyei)
-- [~] Master crosswalk `data/crosswalks/county_crosswalk_master.csv` (OCHA P-code ↔ IOM codes ↔ ACLED/IPC/HNO/WFP/UNHCR/GADM names; 2015–2020 32/28-state era and 2020 administrative areas noted) — agent "crosswalk"
-- [~] Per-source audit `docs/AUDIT_county_crosswalk.md` (match rates, fixes, residual issues); re-run any pipeline whose join was wrong — agent "crosswalk"
-- [~] Verified border-crossing points for cross-border flow arrows `data/crosswalks/border_crossings.csv` — agent "crosswalk"
+- [x] Master crosswalk `data/crosswalks/county_crosswalk_master.csv` (OCHA P-code ↔ IOM codes ↔ ACLED/IPC/HNO/WFP/UNHCR/GADM names; 2015–2020 32/28-state era and 2020 administrative areas noted) — agent "crosswalk"
+- [x] Per-source audit `docs/AUDIT_county_crosswalk.md` (match rates, fixes, residual issues); re-run any pipeline whose join was wrong — agent "crosswalk"
+- [x] Verified border-crossing points for cross-border flow arrows `data/crosswalks/border_crossings.csv` — agent "crosswalk"
 
 ## 2. Time-dynamic point layers (standard properties `valid_from` / `valid_to`, YYYY-MM)
 - [x] Logistics Cluster CONOPS maps (all dated PDFs) → hubs over time — agent "points-time"
@@ -14,7 +14,7 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 - [x] App: filter every point layer by the time-slider window (valid_from/valid_to, date, year) — lead
 
 ## 3. Methods, sources & confidence guide
-- [ ] `docs/METHODS_AND_DATA_GUIDE.md`: every calculation, every source, confidence rating per dataset — lead (after data agents finish)
+- [~] `docs/METHODS_AND_DATA_GUIDE.md` (drafted; updating with final results): every calculation, every source, confidence rating per dataset — lead (after data agents finish)
 
 ## 4. Climate data review
 - [x] `docs/CLIMATE_DATA_DECISIONS.md`: raw vs derived products, provenance; flood product choice (MODIS water vs UNOSAT/GFM/FloodScan etc.); water contamination / pollution spread options — agent "climate-review"

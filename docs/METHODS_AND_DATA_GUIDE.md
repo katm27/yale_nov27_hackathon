@@ -123,7 +123,8 @@ Hovering a county shows, from top to bottom:
 5. **Four sparklines** (full 2018–2025, orange line = selected month):
    - forced migration (`et_ind_total`);
    - US humanitarian funding (`fts_us_gov_funding_month_usd`, national);
-   - flood extent: the first available of `flood_s1_pct` → `surface_water_pct`;
+   - flood extent: the first id found among `flood_s1_pct`, `flood_gfm_pct`, `flood_pct`, then any `flood_*_pct`,
+     then `surface_water_pct` (today this resolves to MODIS `surface_water_pct`; see the id-mismatch issue in §6.1);
    - drought: `drought_ensemble_mean`, with a shaded band of ± ½ × `drought_ensemble_spread`; falls back to `spei3`.
 
 ### 1.6 Arrows (migration flows)
@@ -755,3 +756,315 @@ from `docs/data/variables.json`, as months with data / 96 and counties with data
 | S8 | **Crisis sites** → points only | PoC sites, IDP and refugee camps, transit centre | Curated: OSM, UNMISS/UNHCR/IOM lists, UNMISS press releases | point | periods 2018–2025 | — | `crisis_sites.py`, `points_crisis_sites.py` | `osm/`, `gazetteer/` | ODbL / public |
 | S9 | **District profiles** → hover card | Livelihood zone, history, conflict narrative, key facts | FEWS NET LHZ 2018; CSRF county profiles; UNMISS HRD reports; computed key facts | county | static text | Area overlay (EPSG:6933) | `build_district_profiles.py` | `fews_lhz/`, `district_profiles_narrative.json` | See `district_profiles_sources.md` |
 | S10 | **Team Drive mirror** | All Drive files. Most of `01_analysis_ready` is from earlier Sahel work; the SSD files are `ssd_*`, `IOM_DTM_SSD_*`, UNMISS PDFs, and the boundaries. | Team | — | — | — | `mirror_drive.sh` | `data/drive_mirror/` | Team |
+
+---
+
+## 5. Confidence assessment
+
+### 5.1 How to read the ratings
+Every dataset is rated **High / Medium / Low** on four criteria. Each rating is a **confidence**: High always means
+"good", including for processing risk.
+
+| Criterion | High | Medium | Low |
+|---|---|---|---|
+| **(a) Source quality** | Physical measurement or established curated dataset, validated in this region | Model, merged or reporting-based product with known biases here | Known large bias, stale, or weak method for South Sudan |
+| **(b) Spatial fidelity at county level** | Native data much finer than a county; correct county assignment | Coarse relative to small counties, partial coverage, or point-of-observation bias | National or state values copied to counties, or most counties missing |
+| **(c) Temporal completeness 2018–2025** | Complete or nearly complete: ≤ 2 of 96 months missing, or every year for annual data | Gaps (e.g. the 2025 MODIS catalogue hole), late start, or a coarse time step | A few snapshots or rounds only |
+| **(d) Processing risk** | Simple, checked processing | Non-trivial choices (thresholds, gap-filling, attribution) or a known build issue | Unvalidated new method or a known artefact |
+
+The ratings are deliberately conservative. A Medium is not a failing grade: most humanitarian data in South Sudan is
+Medium at best.
+
+### 5.2 Key validation evidence
+| Check | Result | Implication |
+|---|---|---|
+| VIIRS (S-NPP 375 m) vs MODIS active fire, same county-months (`validation/viirs_vs_modis_fire.csv`) | Pooled Pearson **r = 0.982**, Spearman 0.969; national monthly r = 0.988; median county r = 0.975. VIIRS sees **1.45×** more fires. NOAA-20 vs S-NPP r = 0.998. | Fire seasonality and spatial pattern are robust; prefer VIIRS for counts. |
+| CHIRPS v3 vs IMERG vs TerraClimate rainfall (`VALIDATION_rainfall.md`, 7 584 county-months) | Raw monthly r: CHIRPS–IMERG 0.89 (median county **r = 0.92**, bias −4.5 %). **Anomaly r only 0.33.** TerraClimate is ~40 % drier (CHIRPS +58.5 %, IMERG +64.6 % vs TC). **Trends disagree:** CHIRPS −25.5, IMERG +5.4, TerraClimate −20.0 mm/yr per year. Worst counties: Rubkona (r 0.70, CHIRPS −48 %), Guit (−43 %), Mayendit (−30 %). | Rainfall *levels and seasonality* are reliable. Rainfall *anomalies and trends* are **not** robust: no single-product rainfall trend should be reported. |
+| MODIS MNDWI surface water vs UNOSAT VIIRS water tables (`raw/unosat_floods/validation_state.csv`, 260 state × date pairs, 19 months 2022–2025) | State-level **r = 0.76**. MODIS total **≈ 0.50×** UNOSAT: **0.99×** in Jun–Sep, **0.38×** in the dry season, when UNOSAT counts vegetated swamp. | Relative signal only. MODIS under-detects flooded vegetation (the Sudd). |
+| IPC 20 % rule vs published area phase (2018–2022, recomputed for this guide) | Exact match in **92 %** of 772 area-analyses; within one phase in 100 %. | Derived 2022–2025 phases are reliable to ±1 phase. Borderline counties may be off by one. |
+| Drought-index members (`drought_ensemble.json`) | Pooled correlations **r = 0.27–0.45** (CHIRPS-SPI vs IMERG-SPEI 0.39; IMERG vs TC-SPEI 0.31). Mean spread **1.2 SD**. TerraClimate members average −0.9 to −2.0 SD in 2018–25. | Drought severity in a given month depends on which rainfall product is trusted. Use the spread. |
+| AppEEARS monthly ET vs MOD16A3GF annual | Annual sums **r = 1.0**, ratio 0.9999 | The monthly ET processing is consistent with the annual product. |
+| IOM DTM API / HDX HAPI admin-2 IDPs vs admin-0 | County sums ≈ **4× the national total** | Rejected; baseline-assessment files used instead. |
+| Mobility Tracking O-D by round | Cross-county IDP stock **73 k in R13** vs 500–725 k in the other rounds; 99 % of R13 origins = current county | R13 is a coding artefact; treat it with caution. |
+| IOM ET / FMR internal consistency (team unified README) | Causes sum to totals in every row (5.39 M people-movements); FMR departures + within + missing = national total; 2025 extract matches HDX within 6 people of 38 098 | High internal consistency. Not a measure of coverage. |
+| Sentinel-1 flood vs UNOSAT | Thresholds tuned on the 4–8 Oct 2022 map (pixel F1 0.61, area ratio 1.09; **not independent**). Absolute dry-season thresholds rejected (F1 0.03–0.10). | ⏳ pending: independent pixel- and state-level validation (`flood_s1_validate.py`). |
+
+### 5.3 Ratings: climate and environment
+| Dataset | (a) Source quality | (b) Spatial fidelity | (c) Temporal 2018–25 | (d) Processing risk | Bottom line |
+|---|---|---|---|---|---|
+| E1 CHIRPS v3 rainfall | **M**: almost no GTS gauges in SSD, falls back to IR climatology; −30 to −48 % vs IMERG in Sudd counties | **H**: 0.05° area-weighted | **H**: 96/96 | **H**: simple, cross-validated | Good for levels and maps; **trend Low** (disagrees with IMERG) |
+| E2 IMERG V07 rainfall | **M**: passive microwave noisy over wetlands; gauge calibration has few gauges | **M**: 0.1°; county means computed upstream (Drive pipeline), not re-verified here | **H**: 96/96 | **M**: upstream conversion we did not write | Independent cross-check of CHIRPS; same trend caveat |
+| E3 MERRA-2 temperature (`tair/tmax/tmin`) | **M**: reanalysis, not station-verified | **L**: ~50 km cells, comparable to or larger than counties; smooths the Sudd–highland contrast | **H**: 96/96 | **H** | Best available for the regional warming direction. The magnitude is suspect: Juba shows +0.23 °C/yr, about 10× the long-term regional warming rate, so the 8-year window and possible reanalysis drift likely contribute. County differences are not meaningful. Significance is inflated (lag-1 0.57). |
+| E3 `spei3`, `pet_mm`, `soilwet_root` | **M**: Thornthwaite PET underestimates in hot semi-arid climates; GWETROOT driven by MERRA-2 rain with no inundation | **L–M**: ~50 km inputs | **H** | **M**: computed upstream | One drought member; prefer the ensemble |
+| E4 NASA POWER centroid series (wind, T2M_MAX, PRECTOTCORR, AOD) | **M**: reanalysis or CERES | **L**: single cell at the centroid; AOD 1° | **H** | **H** | Context only; drop from the default view |
+| E5 TerraClimate precipitation and water balance (`tc_ppt`, `aet`, `def`, `soil`, `q`, `pdsi`) | **L**: ~40 % drier than CHIRPS/IMERG; 2018–25 far below its own 1991–2020 normals (PDSI national mean −6.6), an inherited CRU/ERA5 discontinuity | **M**: 4 km grid, but anomalies come from coarse inputs | **H** | **H** | Spatial pattern only; **its trends (70/79 "significant" declines) are not credible** |
+| E5 TerraClimate temperature, VPD, srad, wind | **M** | **M** | **H** | **H** | Secondary to MERRA-2 |
+| E5 TerraClimate extreme flags | **L**: dry and heat flags fire in ~30 % of months because of the bias above | **M** | **H** | **M**: percentile on county means | Use with great care |
+| E6 Drought ensemble (mean/spread/agree) | **M**: members correlate only r = 0.27–0.45; effectively 3 independent rainfall sources | **M**: county series from 4–10 km grids | **H**: 96/96 | **M**: new code, mixed baselines (1991–2020 vs 2000–2026); TerraClimate members pull the mean dry (−0.5 to −0.9) | **Use the spread.** A drought claim is robust only if mean < −1, agree = 1 and spread < ~0.7. The 72/79 "significant drying" trends are an artefact of the TerraClimate drift. |
+| E7 MODIS NDVI/EVI | **H**: standard v061 product, QA-masked | **H**: 500 m → 1 km | **M**: 93/96; **Aug–Oct 2025 missing** on PC (⏳ pending: AppEEARS MOD13A3 fill) | **H** | Primary vegetation layer. Flooding lowers NDVI in the Sudd: a "greenness drop" there can be a flood, not a drought. |
+| E8 MODIS LST day/night | **H** | **H** | **M**: 91/96 (2022-10, Jul–Oct 2025 missing); clear-sky only, so the wet season is biased to dry days | **H** | Surface-heat context |
+| E9 MODIS reflectance bands | **H** | **H** | **M**: 92/96 | **H** | No direct meaning for users; hide by default |
+| E10 MODIS ET annual | **M**: MOD16 is fill over open water, urban and barren pixels; misses Sudd wetland ET | **M**: wetland counties under-represented | **M**: annual, 8 values | **H** | Context |
+| E11 MODIS ET monthly (AppEEARS) | **M**: as E10 | **M** | **L**: 2018–2021 only (48/96), ⏳ pending: 2022–25 | **H**: annual check r = 1.0 | Will reach M/H when complete |
+| E13 MODIS active fire | **H** | **H**: 1 km native-grid count | **M**: 91/96 (Jul–Nov 2025 missing); some months scaled for missing sensor-days | **M**: the scaling assumes uniform fire activity across days | Superseded by VIIRS for counts (r = 0.98) |
+| E14 VIIRS active fire (FIRMS S-NPP) | **H** | **H**: 375 m points, gas flares removed (type 0) | **H**: 96/96, one sensor throughout | **H** | **Most reliable dynamic environmental layer.** Note: detections, not burned area. |
+| E15 MODIS burned area | **H** | **H** | **M**: 90/96 (6 months missing) | **H** | Primary burned-area layer; gaps break the seasonal sums |
+| E16 MODIS surface water | **M**: MNDWI > 0.1 threshold chosen by visual checks | **L**: misses water under vegetation; ≈0.5× UNOSAT (0.38× dry season); state r = 0.76 | **M**: 92/96; Jun–Oct cloud gaps filled ≤ 2 months; Jul–Oct 2025 missing | **M**: gap fill and the 20 % known-area rule | **Relative signal only** |
+| E17 Sentinel-1 flood | **H** (provisional): SAR sees through cloud and flooded vegetation (VV/VH double bounce) | **M–H** (provisional): ~440 m grid | **M** (provisional): revisit halves after the Sentinel-1B failure (Dec 2021); orbit change 2021→2022; ≤ 2-month gap fill | **L** until validated: thresholds tuned on one UNOSAT date | ⏳ pending: county CSV + independent validation. Intended to become the **primary** flood layer. |
+| E18 Flood exposure (population, oil) | **M**: exposure, not measured contamination | **M** | as E17 | **M** | ⏳ pending |
+| E19 Sentinel-5P NO₂ / CO / aerosol index | **M**: NO₂ near the detection limit away from Juba and fires | **M**: 3.5–7 km pixels, but only **4 of ~45 monthly orbits sampled** | **M**: 91–92/96; starts mid-2018 (partial baseline); cloud-affected wet season | **M**: orbit sampling noise | CO and aerosol index useful for the dry-season burning signal; NO₂ county trends **Low** |
+| E20 Esri/IO land cover | **M**: classifier changes between years | **H**: 10 m (1-in-64 sample); built area noisy in small towns | **L**: annual 2017–2023 only | **M** | Context; "flooded vegetation" is a useful annual flood check |
+| E21 Soil, elevation, species richness | **M**: SoilGrids modelled; richness = range-map potential, not observed species | **M** | n/a (static) | **H** | Context |
+| E22 GLW4 livestock (2015) | **L**: model from ~2008-era census; no transhumance | **L–M**: ~9 km | **L**: static 2015 | **H** | Context only; do not infer herd changes |
+
+### 5.4 Ratings: conflict, displacement, humanitarian and social data
+| Dataset | (a) Source quality | (b) Spatial fidelity | (c) Temporal 2018–25 | (d) Processing risk | Bottom line |
+|---|---|---|---|---|---|
+| H1 ACLED admin-2 aggregates | **M**: media and partner reporting, so counts follow reporting intensity; no political-violence events recorded in Nzara or Longochuk in 2018–25 | **H**: published per admin-2, joined by name/code | **H**: 96/96, true zeros | **H** | Primary county conflict layer. Read as *recorded* violence. |
+| H2 ACLED state-level sub-events (sexual violence, abduction, …) | **M**: as H1; sexual violence is a weak proxy for "political violence targeting women" | **L**: **state totals repeated on every county**; no Abyei | **H**: 96/96 | **M**: summing counties multiplies the total (the national timeline uses one county per state); population exposure double counts repeat exposure | Shows *which state and when*, never which county |
+| H3 UCDP GED v26.1 | **H**: curated, event-level, transparent death estimates | **M–H**: only events at county precision (`where_prec` ≤ 3) are counted, so coarser events are lost | **H**: 96/96, but very sparse after 2021 | **H** | High quality but conservative (≥ 1 death; dyads ≥ 25 deaths/yr) |
+| H4 Local / intra-county conflict (UCDP subset) | **M**: under-counts cattle raiding (UCDP thresholds) | **M**: counted where the event happened; actors' home county unknown | **H** | **M**: actor classification by name in this project, not externally validated | Indicative; only 198 events in 8 years; no county passes FDR |
+| H5 Insecurity Insight (aid workers, health, education, CRSV) | **M**: open-source reporting | **L**: **national only**, because the source censors coordinates; map points sit at state centroids | **H**: 96/96 (CRSV from 2020) | **H** | National timeline only |
+| H6 ISNA WASH and GBV-risk indicators | **M–H**: county-representative household survey, but ±5–10 point margins and wording changes between rounds | **H**: county | **L**: 3 rounds (2022–24); no trend test possible | **M**: some 2024 multi-select rows missing | Measures **risk perception and exposure**, not GBV incidence |
+| H7 WPS Index | **M**: composite; methodology re-based between editions | **L**: national | **L**: 5 editions | **H** | National context badge |
+| D1 IOM DTM Event Tracking | **M**: flash monitoring of sudden events, not exhaustive (zero = nothing tracked) | **H**: county of arrival, with origin county | **M**: Dec 2019 onwards; baseline 2020 | **H**: causes sum to totals; matches earlier files | Primary *monthly* displacement layer and default arrows |
+| D2 IOM DTM Flow Monitoring | **M**: counts only people passing monitoring points (mostly Renk from 2023) | **L–M**: depends on where the points are | **L**: county data blank Nov 2023–Dec 2024; ends Aug 2025 | **M**: several merged extracts; Sep–Oct 2024 reason shares look like a template carry-over | Route evidence, not volume |
+| D3 IOM DTM Mobility Tracking baseline (IDP and returnee stock) | **M–H**: comprehensive key-informant census; R2 has partial coverage | **H**: county; no Abyei | **L**: 14 rounds, and **currently not carried forward in the app** (§3.4) | **M**: the 4× inflated API county figures were rejected in favour of the baseline files | Best stock measure; fix the carry-forward before use |
+| D4 Mobility Tracking O-D arrows | **M** | **M**: majority-origin attribution pushes counts toward same-county origins | **L**: 13 rounds, stock carried ≤ 24 months | **L–M**: **R13 anomaly** (73 k vs 500–725 k); 1.42 M IDP person-entries with unknown origin dropped | Shows where the displaced come from; not monthly movement |
+| D5 Renk intention survey | **M**: sample survey | **L**: one origin (Renk) | **L**: one month | **H**: unscaled, clearly labelled | Illustrative only |
+| D6 UNHCR refugees hosted | **H**: official registration | **M**: only 18 camp-hosting counties; dispersed and state-level refugees unallocated | **M**: annual end-year | **M**: hand camp → county mapping | Reliable for camp counties |
+| D7 WorldPop population | **M**: modelled projection; does not capture displacement | **H**: 1 km | **H**: annual 2018–25 | **H** | Denominator. Its 79/79 "significant" growth trends are the model's assumption, not evidence. |
+| F1 IPC acute food insecurity | **H**: multi-agency consensus analysis | **H**: county; payams summed | **L–M**: 11 analyses, **none in 2021**; **not carried forward in the app** (§3.4) | **M**: 2022+ phase derived with the 20 % rule (92 % exact) | Key outcome layer; compare analyses, not months |
+| F2 IPC AMN / GAM | **H** | **H** | **L**: one snapshot (2025) | **H** | Context |
+| F3 WFP market prices | **H**: systematic market monitoring | **L–M**: 26–32 of 79 counties; a market stands in for its county | **M**: 39–92 months by commodity | **M**: unit conversion; SSP inflation (≈250 → > 4 000 SSP/USD) dominates SSP series, so **use USD** | Good for price shocks in market towns |
+| F4 OCHA HNO PiN and severity | **M**: modelled planning figures; method changed 2019 and 2023 | **H**: county | **L**: PiN 6 years (none 2018/2020); severity 3 years | **M**: mixed HDX workbooks + HAPI; pre-2015 codes in 2019 | Compare within a year, not across years |
+| F5 OCHA 3W presence | **M**: reporting coverage grew over time (partly an artefact) | **H** | **M**: 2019–2025 (Dec 2020 missing); no 2018 | **H** | Proxy for response presence |
+| F6 Funding (FTS, US aid, HRP) | **H**: official tracking (FTS is donor-reported) | **L**: national only | **H** | **H** | National timeline only. US funding by decision or transaction month is lumpy. |
+| F7 UNMISS presence and troops | **M**: Geo-PKO troop numbers estimated from unit sizes; 2025 numbers carried from Oct 2024 | **M**: base locations, not patrol coverage | **M**: annual; county sites series from Dec 2023 | **M** | Context |
+| F8 Logistics Cluster hubs | **M**: maps, not registries | **M**: town-level coordinates (some approximate) | **M**: no map Oct 2023–Jan 2026 (carried) | **M**: PDF extraction, some read visually | Context |
+| S1 Health facilities | **M**: list with no functionality status | **H** | **L**: snapshot (2023/24) | **H** | Access context, not service availability |
+| S2 Schools and enrolment (2015) | **L**: 2015 census; enrolment for ~3 300 of ~4 900 schools | **H** | **L**: pre-window snapshot | **H** | Context only; no 2018–25 education trend is possible |
+| S3 Immunisation 2018 | **L**: admin coverage often > 100 %; near-0 = non-reporting | **M** | **L**: 2018 only | **H** | Not decision-grade |
+| S4 Child mortality (IGME) | **M**: modelled, wide uncertainty, no survey since 2010 | **L**: national | **M** | **H** | National context |
+| S5 Oil infrastructure | **M**: only 5 GEM fields; OSM wells mapped only in Rubkona/Guit | **M** | **L**: static (point status periods sourced) | **M**: pipelines may be double counted | Context; absence ≠ no wells |
+| S6 GeoEPR ethnic geography | **M**: 10 politically relevant groups only | **L–M**: coarse polygons, overlapping | **L**: 2011–2021 static | **H** | Sensitive: toggle-only context, never attribution |
+| S7 WPDx water points | **L**: statuses mostly pre-2018 (stale) | **H** | **L** | **H** | Not a current inventory |
+| S9 District profiles | **M**: curated narrative from CSRF, UNMISS HRD and other cited sources | **H** | n/a | **M**: hand-written; numbers recomputed on each build | Read as background, not evidence |
+| Cross-cutting: county crosswalk | **H**: OCHA COD-AB v03 gold standard | **M**: multi-county administrative areas (Ruweng, Pibor) need explicit handling | n/a | **M**: ⏳ pending: audit with per-source match rates | Re-rate after the audit |
+
+### 5.5 What a decision-maker can rely on
+- **Rely on at county level, with normal caution:**
+  - VIIRS fire
+  - MODIS NDVI and burned area
+  - ACLED admin-2 conflict
+  - UCDP
+  - IOM Event Tracking
+  - IPC (compare between analyses)
+  - CHIRPS rainfall *levels*
+  - WFP USD prices in market counties
+  - UNHCR camp populations
+- **Use as relative or indicative signals:**
+  - MODIS surface water
+  - Sentinel-5P
+  - drought ensemble (with its spread)
+  - MERRA-2 temperature trend
+  - Flow Monitoring routes
+  - Mobility Tracking stocks
+  - HNO PiN
+  - 3W presence
+  - ISNA (3 rounds)
+- **National or state context only (do not compare counties):**
+  - funding
+  - WPS
+  - Insecurity Insight
+  - ACLED state sub-events
+  - IGME mortality
+  - UNMISS personnel and budget
+- **Do not use for 2018–2025 trends:**
+  - TerraClimate precipitation and water balance and its extreme flags
+  - any single-product rainfall trend
+  - 2015 schools, 2018 immunisation, GLW 2015 livestock, WPDx water points
+  - WorldPop "trends" (modelled)
+
+---
+
+## 6. Known gaps and what would fix them
+
+### 6.1 Build issues to fix in this repository (no new data needed)
+| Issue | Effect | Fix |
+|---|---|---|
+| `temporal` labels "irregular (per round)" / "irregular (per IPC analysis)" do not match `DEFAULT_CARRY` | IPC and DTM Mobility Tracking stocks appear only in their round months (10–14 of 96) | Set `carry_forward_months` in `meta/ipc.json` and `meta/dtm.json`, or map `irregular*` → `round` in `build_web_data.py` |
+| Annual series start in July 2018 | The same-month index is blank Jan–Jun for annual variables | Set `baseline_mode = "annual"` for every non-monthly variable in the build |
+| White outline uses unadjusted p | Expected false positives: ~4 counties per variable even with no real trend | Outline on `q_fdr < 0.05`, or add a "strict" toggle |
+| MK p-values ignore autocorrelation | Over-confident significance for temperature, prices, drought, population | Hamed–Rao variance correction or Yue–Pilon pre-whitening in `trend_stats.py` |
+| `interpret()` writes "% of 2018 level" for °C and index variables | Confusing hover sentence | Suppress the % phrase when `index_ok = false` |
+| Seasonal/annual windows average counts | Seasonal value = mean month, not the total | Label as "monthly average", or sum counts (`units` contains "/month") |
+| Flow window sums repeat a carried stock | Seasonal and annual stock arrows are inflated | Use the latest round in the window instead of summing |
+| National timeline `mean` is unweighted | Small counties weigh as much as large ones | Area-weight (climate) or population-weight (human) |
+| Hover and timeline flood ids (`flood_s1_pct`, `flood_s1_km2`) do not match the Sentinel-1 output names (`flood_s1_flood_pct`, `flood_s1_flood_km2`) | Once flood variables exist, the `flood_*` prefix fallback could pick the wrong variable, e.g. `flood_population_exposed_pct` or `flood_oilfield_exposure_km2` | Put the exact ids in `SPARKS` and `NATIONAL` in `docs/app.js` |
+| ⏳ Sentinel-1 flood `finalize` + validation not yet run | Hover and national flood series fall back to MODIS surface water | Run `flood_s1_pipeline.py finalize`, `flood_s1_validate.py`, `flood_exposure.py`, then rebuild; fill `VALIDATION_PLACEHOLDER` in `CLIMATE_DATA_DECISIONS.md` |
+| `CLIMATE_DATA_DECISIONS.md` §2 describes absolute S1 thresholds (VH < −17 dB OR VV−VH > 8.5 dB); `flood_s1_pipeline.py` now uses change detection (VV−VH > March reference + 3 dB OR VV < −18 and VH < −24 dB) | Documentation mismatch | Update the climate document once the final method is fixed |
+
+### 6.2 Data that needs an account, a key or a data request
+| Gap | What would fix it | Who / how |
+|---|---|---|
+| Event-level ACLED: actors, exact locations, "political violence targeting women", county sub-events | ACLED researcher account (myACLED). Event-level data allow county-level sexual-violence and PVTW counts. | acleddata.com registration; respect the redistribution terms |
+| Monthly MODIS ET 2022–25, MOD13A3 fill for Jul–Oct 2025, SMAP soil moisture | Finish the AppEEARS tasks | NASA Earthdata login via `EARTHDATA_USERNAME` / `EARTHDATA_PASSWORD`; ⏳ pending |
+| Night-time lights (VIIRS Black Marble VNP46A3) | Not offered by AppEEARS. Use LAADS DAAC (Earthdata login) or Google Earth Engine. | Earthdata or GEE account |
+| GRACE/GRACE-FO groundwater, GLDAS, MCDWD NRT flood | `urs.earthdata.nasa.gov` was not reachable from the build environment | Earthdata login from another network. GRACE is ~300 km, so basin-scale only. |
+| Copernicus GFM flood ensemble (2015+) | Its STAC returned HTTP 502; the API needs a GFM account | GFM account; would cross-check Sentinel-1 |
+| FloodScan 1998+ history | Commercial (AER); only the last 90 days are free on HDX | AER licence or a humanitarian data-sharing request |
+| FIRMS refresh | Free MAP_KEY | `FIRMS_MAP_KEY` environment variable |
+| IPC county AMN before 2025; IPC API | IPC API key | IPC Global Support Unit |
+| DTM payam files (R5–R12) and Renk surveys | dtm.iom.int blocks scripted downloads (HTTP 403) | Manual download, or ask IOM DTM South Sudan for an extract |
+| FMR county data Nov 2023–May 2024 (unpublished) and county flows Jun–Dec 2024 | Not public | Data request to IOM DTM South Sudan |
+| GBV incidence (GBVIMS), WASH water quality (E. coli, chlorine) | Confidential or unpublished | GBV AoR / WASH Cluster data-sharing agreements. Use ISNA risk indicators meanwhile. |
+| Cholera / AWD by county | County line lists exist only in MoH/WHO sitrep PDFs | Manual extraction, or a WHO/MoH request |
+| County humanitarian funding | FTS is national; CBPF has partial project locations | OCHA CBPF project-location data |
+| Landmine contamination | UNMAS IMSMA extract not public | UNMAS IM request |
+| Education 2018–25, vaccination after 2018, U5MR by county | No open county series (no DHS/MICS since 2010) | Ministry EMIS / DHIS2 access; IHME LBD rasters (GHDx login) |
+| Rainfall ground truth | Almost no GTS gauges | South Sudan Meteorological Department station data; the TAHMO network |
+
+### 6.3 Methodological upgrades
+- **Per-capita toggle** for counts (WorldPop denominator). The research notes recommend it.
+- **Rolling 3- or 12-month sums** for sparse counts before indexing.
+- **Event annotations** on the national timeline (R-ARCSS Sep 2018; unity government Feb 2020; floods 2019–22; Sudan
+  war Apr 2023; pipeline rupture Feb 2024; Nasir crisis Mar 2025), each checked against ReliefWeb or ACLED.
+- **Climatology baseline** (e.g. 2003–2017) for satellite variables, as an alternative to a single, unusual 2018.
+
+---
+
+## 7. Reproducibility
+
+### 7.1 Environment
+- **Python:** 3.10+ with `numpy pandas geopandas shapely pyproj rasterio rasterstats affine xarray h5py fsspec
+  scipy matplotlib Pillow openpyxl requests pystac-client planetary-computer duckdb pymupdf`.
+- **Network access** is needed for PC STAC, NKN THREDDS, UCSB CHC, NASA POWER, FIRMS, HDX CKAN and the UCDP
+  download. Most sources need **no login**.
+
+**Credentials: environment variables only.** Never commit them or write them into files. The scripts read them
+at run time:
+
+| Variable | Used by | How to get it |
+|---|---|---|
+| `FIRMS_MAP_KEY` | `fetch_firms_viirs.py` | Free at firms.modaps.eosdis.nasa.gov/api/map_key |
+| `EARTHDATA_USERNAME`, `EARTHDATA_PASSWORD` | `fetch_appeears.py` | Free NASA Earthdata account (urs.earthdata.nasa.gov) |
+
+**Optional cache and work directories:**
+- `MODIS_WORK` (~1 GB), `APPEEARS_WORK`, `TC_WORKDIR` (~350 MB), `CHIRPS_CACHE`, `FIRMS_CACHE`, `UCDP_CACHE`,
+  `STATIC_CACHE`, `FIRMS_THREADS`.
+- Large intermediates stay outside git, per [`DATA_CONTRACT.md`](../data/DATA_CONTRACT.md) §5: raw files > 50 MB
+  are recorded as URLs in `SOURCE.md`.
+
+### 7.2 Order of operations
+Each pipeline writes its county CSV, its metadata JSON and its trend table, through `trend_stats.write_trends()`
+at the end of the script.
+
+```bash
+# 0. Inputs from the team Drive (boundaries, Drive climate table, ET xlsx, UNMISS / CONOPS PDFs)
+bash scripts/mirror_drive.sh
+
+# 1. Geography and crosswalks (no downloads)
+python scripts/build_county_crosswalk.py
+python scripts/build_border_crossings.py
+
+# 2. Climate and environment
+python scripts/convert_drive_climate.py          # IMERG, MERRA-2, SPEI-3
+python scripts/fetch_chirps.py                   # + docs/VALIDATION_rainfall.md, validation CSV
+python scripts/fetch_terraclimate.py --workdir "$TC_WORKDIR"
+python scripts/drought_ensemble.py               # needs CHIRPS and TerraClimate
+python scripts/fetch_nasa_power.py
+python scripts/fetch_modis_land.py ndvi lst et refl && python scripts/make_modis_rasters.py
+python scripts/fire_pipeline.py all
+FIRMS_MAP_KEY=... python scripts/fetch_firms_viirs.py      # key from the environment, never committed
+python scripts/water_pipeline.py && python scripts/water_validate_unosat.py
+python scripts/flood_s1_pipeline.py grids && python scripts/flood_s1_pipeline.py finalize   # ⏳ finalize pending
+python scripts/flood_s1_validate.py && python scripts/flood_exposure.py                       # ⏳ pending
+python scripts/s5p_pipeline.py 4
+python scripts/landcover_pipeline.py
+python scripts/static_pipeline.py
+python scripts/livestock_glw4.py
+python scripts/pop_worldpop.py
+python scripts/fetch_appeears.py all             # Earthdata credentials from the environment; ⏳ pending
+
+# 3. Conflict, displacement, humanitarian
+python scripts/acled_ssd.py
+python scripts/acled_state_weekly.py             # needs the team ACLED export in data/raw/acled_aggregated/
+python scripts/ucdp_ssd.py && python scripts/intracounty_conflict.py
+python scripts/fetch_insecurity_insight.py
+python scripts/dtm_ssd.py
+python scripts/convert_unified_dataset.py        # ET, FMR, funding, UNMISS national, LogCluster
+python scripts/build_et_flows.py
+python scripts/fetch_flows_dtm_mt_od.py          # R5-R12 files must already be saved by hand
+python scripts/fetch_flows_dtm_renk_intentions.py
+python scripts/unhcr_ssd.py
+python scripts/ipc_ssd.py
+python scripts/ocha_hum_ssd.py
+python scripts/isna_msna.py
+python scripts/wfp_prices_ssd.py
+python scripts/wps_national.py
+python scripts/public_health.py
+python scripts/health_facilities.py
+python scripts/education.py
+python scripts/ethnic_groups.py
+python scripts/oil_infrastructure.py
+python scripts/unmiss_deployments.py
+
+# 4. Time-dynamic point layers (after their base layers exist)
+python scripts/points_crisis_sites.py
+python scripts/points_unmiss.py
+python scripts/points_logcluster_hubs.py
+python scripts/points_markets.py
+python scripts/points_fmr.py
+python scripts/points_oil_status.py
+python scripts/points_water_points.py
+python scripts/points_snapshots.py
+python scripts/points_events.py
+
+# 5. Profiles, trends (optional full recompute), web bundle
+python scripts/build_district_profiles.py
+python scripts/trend_stats.py                    # recompute every trends CSV
+python scripts/build_web_data.py                 # -> docs/data/ (variables, series, trends, flows, layers, profiles)
+```
+
+**Checks after `build_web_data.py`:** read its log for these lines:
+- `! county ids not in boundary file (dropped)`
+- `! no metadata for …`
+- `trends: … significant`
+- `flows: …`
+
+The variable table in `README.md` is generated from `docs/data/variables.json`.
+
+### 7.3 Run and publish
+- **Locally:** `cd docs && python3 -m http.server`, then open http://localhost:8000.
+- **GitHub Pages:** Settings → Pages → this branch, folder `/docs`.
+- **Hosts with file-count limits:** `python scripts/pack_for_artifact.py OUT_DIR` makes a low-file-count copy:
+  - all series in one `series_all.json`;
+  - raster PNGs as per-layer, per-year JSON of data URIs;
+  - Leaflet CSS images inlined.
+
+### 7.4 Provenance rules
+- Every number in the app traces back through four steps:
+  1. a variable id;
+  2. its `meta/<source>.json` entry (source, URL, resolution, aggregation, notes);
+  3. the pipeline script;
+  4. `data/raw/<source>/SOURCE.md`.
+- `variables.json` adds the computed coverage (`first_period`, `last_period`, `counties_with_data`,
+  `months_observed`), baseline year, carry-forward, sparse flag and value percentiles.
+- Raw files > 50 MB are not committed; their URLs are in `SOURCE.md`.
+- These raw folders have no `SOURCE.md` yet: `drought_ensemble/`, `fews_lhz/`, `flows/` (the subfolders have
+  one), `isna/`, `nasa_power/`, `s1_flood/`, `ssd_unified/` (it has a `README.md`). Their provenance is in the
+  script docstrings.
+
+---
+
+### Pending items (update this list as agents finish)
+- ⏳ County crosswalk audit (`docs/AUDIT_county_crosswalk.md`): per-source match rates, then re-rate the
+  crosswalk row in §5.4.
+- ⏳ Sentinel-1 flood layer: finalize, independent validation, exposure indicators. Then update E17/E18 in §4–§5,
+  the hover flood sparkline, and the `VALIDATION_PLACEHOLDER` in `CLIMATE_DATA_DECISIONS.md`.
+- ⏳ NASA AppEEARS: monthly ET 2022–25, MOD13A3 / LST / MCD64A1 fill of the 2025 MODIS gap, SMAP soil moisture.
+  Night lights need another route (§6.2).
+- ⏳ Time-dynamic point layers: final QA (agent "points-time").
+- ⏳ Climate review: final drought-ensemble and contamination sections, GBV/water indicators (agent
+  "climate-review"/"gbv-water"); ISNA is already integrated (H6).

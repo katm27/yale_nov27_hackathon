@@ -37,6 +37,8 @@ def main():
     for r in pts.itertuples(index=False):
         name = r[0]
         lat, lon, cid, note = r[1], r[2], r[3], r[4]
+        if name == "Renk River Port (Renk Mina Port)" and cid == "SS0708":
+            cid = "SS0711"  # on the Manyo side of the COD-AB river line, but in Renk town (docs/AUDIT_county_crosswalk.md)
         base = dict(name=name, type="IOM Flow Monitoring point")
         common = dict(county_id=cid, county_pcode=cid, note=note if isinstance(note, str) else "",
                       source="IOM DTM FMR (team unified dataset)")

@@ -188,23 +188,27 @@ def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "month
 
 def interpret(row: dict, meta: dict) -> str:
     """One plain-language sentence for the map hover."""
-    p, slope = row.get("p"), row.get("sen_slope_per_year")
+    p, slope, q = row.get("p"), row.get("sen_slope_per_year"), row.get("q_fdr")
     if row.get("test") is None or p is None or not np.isfinite(p):
         return "Too few observations for a trend test."
     units = meta.get("units") or ""
     pct = row.get("sen_slope_pct_per_year")
     pct_txt = f" ({pct:+.1f}% of the {meta.get('baseline_year', 'baseline')} level per year)" if pct is not None and np.isfinite(pct) else ""
     fmt = lambda v: f"{v:+.3g}"
-    ptxt = "p < 0.001" if p < 0.001 else f"p = {p:.3f}"
-    if p < ALPHA and np.isfinite(slope) and slope != 0:
+    ptxt = ("p < 0.001" if p < 0.001 else f"p = {p:.3f}") + (f", FDR q = {q:.3f}" if q is not None and np.isfinite(q) else "")
+    sig = q is not None and np.isfinite(q) and q < ALPHA      # significance = FDR-adjusted across the 79 counties
+    lag = row.get("lag1")
+    ac = " Strong month-to-month persistence (lag-1 r > 0.5) may still overstate significance." if lag is not None and np.isfinite(lag) and lag > 0.5 else ""
+    if sig and np.isfinite(slope) and slope != 0:
         direction = "rising" if slope > 0 else "falling"
         hi = meta.get("higher_is", "neutral")
         judge = "" if hi == "neutral" else (" — improving" if (slope > 0) == (hi == "better") else " — worsening")
         return (f"Significant {direction} trend over 2018–2025 ({row['test']}, {ptxt}): "
-                f"about {fmt(slope)} {units} per year{pct_txt}{judge}.")
-    if p < ALPHA:
-        return f"Significant monotonic trend ({row['test']}, {ptxt}), but the median slope is ~0 (many tied values)."
-    return f"No significant monotonic trend over 2018–2025 ({row['test']}, p = {p:.2f}); Sen's slope {fmt(slope) if np.isfinite(slope) else 'n/a'} {units}/yr."
+                f"about {fmt(slope)} {units} per year{pct_txt}{judge}.{ac}")
+    if sig:
+        return f"Significant monotonic trend ({row['test']}, {ptxt}), but the median slope is ~0 (many tied values).{ac}"
+    weak = " (nominal p < 0.05, but not significant after correcting for testing 79 counties)" if p < ALPHA else ""
+    return f"No significant monotonic trend over 2018–2025 ({row['test']}, {ptxt}){weak}; Sen's slope {fmt(slope) if np.isfinite(slope) else 'n/a'} {units}/yr."
 
 
 # ----------------------------------------------------------------------------- pipeline hook
@@ -244,7 +248,8 @@ def compute_trends(df: pd.DataFrame, meta: dict | None = None, window: tuple[str
     if out.empty:
         return out
     out["q_fdr"] = out.groupby("variable")["p"].transform(lambda s: pd.Series(bh_fdr(s), index=s.index))
-    out["significant"] = out["p"] < ALPHA
+    # significance uses Benjamini-Hochberg FDR-adjusted q (controls false positives across the 79 counties)
+    out["significant"] = out["q_fdr"] < ALPHA
     out["interpretation"] = [interpret(r, {**meta.get(r["variable"], {}), "baseline_year": r["baseline_year"]})
                              for r in out.to_dict("records")]
     cols = ["county_id", "variable", "test", "n", "S", "Z", "tau", "p", "q_fdr", "significant", "sen_slope_per_year",
@@ -272,7 +277,7 @@ def write_trends(source: str) -> str | None:
     out = os.path.join(TREND_DIR, os.path.basename(path).replace(".csv", "_trends.csv"))
     tr.to_csv(out, index=False, float_format="%.6g")
     n_sig = int(tr["significant"].sum()) if len(tr) else 0
-    print(f"[trend_stats] {os.path.basename(out)}: {len(tr)} county-variables, {n_sig} significant at p<{ALPHA}")
+    print(f"[trend_stats] {os.path.basename(out)}: {len(tr)} county-variables, {n_sig} significant at FDR q<{ALPHA}")
     return out
 
 

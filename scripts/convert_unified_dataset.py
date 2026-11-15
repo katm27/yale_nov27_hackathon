@@ -92,8 +92,8 @@ for _, r in dic.iterrows():
 json.dump(meta, open(os.path.join(ROOT, "data", "processed", "meta", "unified.json"), "w"), indent=1)
 
 pts = read("fmr/fmr_monitoring_points.csv")
-for name, (frm, to) in FMP_COUNTY_FIX.items():
-    pts.loc[(pts["fmp.name"] == name) & (pts["fmp_county_pcode"] == frm), "fmp_county_pcode"] = to
+for fmp_name, (frm, to) in FMP_COUNTY_FIX.items():
+    pts.loc[(pts["fmp.name"] == fmp_name) & (pts["fmp_county_pcode"] == frm), "fmp_county_pcode"] = to
 feats = [{"type": "Feature", "geometry": {"type": "Point", "coordinates": [float(p["fmp.longitude"]), float(p["fmp.latitude"])]},
           "properties": {"name": p["fmp.name"], "type": "IOM Flow Monitoring point", "county_pcode": p["fmp_county_pcode"],
                          "note": p["location_note"] if isinstance(p["location_note"], str) else "", "source": "IOM DTM FMR (team unified dataset)"}}
