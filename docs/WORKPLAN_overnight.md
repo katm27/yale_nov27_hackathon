@@ -11,7 +11,7 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 - [~] Logistics Cluster CONOPS maps (all dated PDFs) → hubs over time — agent "points-time"
 - [~] UNMISS deployment maps (map 4456 revisions + Geo-PKO) → sites over time — agent "points-time"
 - [~] Other layers: PoC/IDP/refugee sites open/close dates, WFP markets active months, FMR monitoring points active months, oil fields status (incl. 2024 export shutdown), health/schools (snapshot dates) — agent "points-time"
-- [ ] App: filter every point layer by the time-slider window — lead
+- [x] App: filter every point layer by the time-slider window (valid_from/valid_to, date, year) — lead
 
 ## 3. Methods, sources & confidence guide
 - [ ] `docs/METHODS_AND_DATA_GUIDE.md`: every calculation, every source, confidence rating per dataset — lead (after data agents finish)
@@ -21,10 +21,10 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 - [~] Implement recommended derived flood series + drought-index ensemble & uncertainty + feasible contamination proxies — agent "climate-review"
 
 ## 5. UI
-- [ ] Arrows: one clear source at a time ("best available" per month), explained in UI; fix cross-border origins (verified crossings) and county anchors — lead
-- [ ] Map mode "Trend": colour by Sen's slope (%/yr of 2018 and ×-change 2018→2025); white outline = Mann-Kendall significant — lead
-- [ ] Hover card: district profile (history, livelihoods, conflict impact) at top; Sen's slope + MK note; sparklines of forced migration, US humanitarian aid, flood extent, drought (with uncertainty band) — lead + agent "profiles"
-- [ ] Bottom national timeline: USAID / US aid, total humanitarian funding (FTS), HRP coverage, UNMISS uniformed personnel, key climate series, GBV indicators — lead
+- [x] Arrows: one clear source at a time ("best available" per month), explained in UI; fix cross-border origins (verified crossings) and county anchors — lead
+- [x] Map mode "Trend": colour by Sen's slope (%/yr of 2018 and ×-change 2018→2025); white outline = Mann-Kendall significant — lead
+- [~] Hover card (built; profiles/drought ensemble/flood product fill in as agents finish): district profile (history, livelihoods, conflict impact) at top; Sen's slope + MK note; sparklines of forced migration, US humanitarian aid, flood extent, drought (with uncertainty band) — lead + agent "profiles"
+- [x] Bottom national timeline: USAID / US aid, total humanitarian funding (FTS), HRP coverage, UNMISS uniformed personnel, key climate series, GBV indicators — lead
 - [~] GBV & water: REACH MSNA women's safety / water-collection indicators, water points (WPDx), groundwater options; within-county conflict indicators — agent "gbv-water"
 
 ## Already running (started earlier)
