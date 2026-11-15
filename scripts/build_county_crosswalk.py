@@ -83,6 +83,7 @@ def main():
     def add(src, code, name, state=""):
         code = "" if code is None or str(code) in ("nan", "None") else str(code).strip()
         name = "" if name is None or str(name) in ("nan", "None") else str(name).strip()
+        name = re.sub(r"\s+", " ", re.sub(r"Other ?Admin ?2", " ", name)).strip()  # IOM ET 2024 export artefact
         if not name and not code:
             return
         k = nn(name)
@@ -186,7 +187,7 @@ def main():
         for n, c in d.itertuples(index=False):
             add("acled", c, n)
     codes["SS0001"]["acled"].add("SD19001")
-    names["SS0001"]["acled"].add("Abyei (ACLED Sudan file, Admin1 Abyei)")
+    names["SS0001"]["acled"].add("Abyei")  # ACLED Sudan file, Admin1/Admin2 "Abyei"
     # ---- IPC
     d = pd.read_csv(RAW / "ipc/ipc_ssd_area_long.csv")
     for n in d.Area.dropna().unique():

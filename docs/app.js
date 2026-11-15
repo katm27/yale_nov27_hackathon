@@ -188,7 +188,7 @@
   const SPARKS = [
     { label: "Forced migration (people displaced/returning, IOM ET)", ids: ["et_ind_total"], color: "#e34948" },
     { label: "US humanitarian funding — national (OCHA FTS, USD/month)", ids: ["fts_us_gov_funding_month_usd", "us_aid_disbursed_month_usd"], color: "#2a78d6" },
-    { label: "Flood / surface-water extent (% of county)", ids: ["flood_s1_pct", "flood_gfm_pct", "flood_pct", "surface_water_pct"], prefix: "flood_", color: "#1baf7a" },
+    { label: "Surface water / flood extent, all seasons (MODIS, % of county)", ids: ["surface_water_pct"], color: "#1baf7a" },
     { label: "Drought index (ensemble mean; band = spread across sources)", ids: ["drought_ensemble_mean", "spei3"], band: "drought_ensemble_spread", color: "#eb6834" },
   ];
   function sparkVar(sp) {
@@ -224,7 +224,7 @@
     const pr = state.profiles && state.profiles[cid]; if (!pr) return "";
     const lz = pr.livelihood_zone && pr.livelihood_zone.name ? `<div class="pf-lz">${pr.livelihood_zone.name}</div>` : "";
     const part = (t) => (t ? `<div class="pf">${t}</div>` : "");
-    return `<div class="profile">${lz}${part(pr.livelihoods)}${part(pr.history)}${part(pr.conflict_impact)}</div>`;
+    return `<div class="profile">${lz}${part(pr.livelihoods)}${part(pr.conflict_impact)}</div>`;
   }
 
   function tooltipHtml(p) {
@@ -470,6 +470,11 @@
     const f = countyLayer.getLayers().find((l) => l.feature.properties.district_id === state.selected).feature.properties;
     $("#detail-title").textContent = `${f.name} County`;
     $("#detail-sub").textContent = `${f.admin1} · ${f.district_id} · ${windowLabel(state.t)}`;
+    const pr = state.profiles && state.profiles[f.district_id];
+    const pbox = document.getElementById("detail-profile") || (() => { const d = document.createElement("div"); d.id = "detail-profile"; $("#detail-sub").after(d); return d; })();
+    pbox.innerHTML = pr ? `<div class="profile full">${pr.livelihood_zone && pr.livelihood_zone.name ? `<div class="pf-lz">${pr.livelihood_zone.name}</div>` : ""}
+      ${["livelihoods", "history", "conflict_impact"].map((k) => (pr[k] ? `<p><b>${{ livelihoods: "Livelihoods", history: "History", conflict_impact: "Conflict impact" }[k]}:</b> ${pr[k]}</p>` : "")).join("")}
+      ${pr.sources && pr.sources.length ? `<p class="hint">Sources: ${pr.sources.slice(0, 4).map((u, i) => `<a href="${u}" target="_blank" rel="noopener">[${i + 1}]</a>`).join(" ")}</p>` : ""}</div>` : "";
     state.charts.forEach((c) => c.destroy()); state.charts = [];
     const box = $("#detail-charts"); box.innerHTML = "";
     const ids = [...state.checked];
@@ -671,9 +676,11 @@
     { label: "Sexual violence events (ACLED, gender-based violence)", ids: ["acled_st_sexual_violence_events"], how: "state_sum", units: "events / month", color: "#e87ba4" },
     { label: "Sexual-violence incidents (Insecurity Insight, national)", ids: ["ii_sexual_violence_incidents"], how: "national", units: "incidents / month", color: "#e87ba4" },
     { label: "Attacks on aid workers (Insecurity Insight, national)", ids: ["ii_aid_worker_incidents"], how: "national", units: "incidents / month", color: "#e34948" },
-    { label: "Flood / surface-water extent (all counties)", ids: ["flood_s1_km2", "flood_gfm_km2", "flood_km2", "surface_water_km2"], prefix: "flood_", suffix: "_km2", how: "sum", units: "km²", color: "#1baf7a" },
+    { label: "Surface water / flood extent, all seasons (MODIS)", ids: ["surface_water_km2"], how: "sum", units: "km²", color: "#1baf7a" },
+    { label: "Flooded area, Sentinel-1 radar (reliable Jul–Nov; sees flooded vegetation)", ids: ["flood_s1_flood_km2"], how: "sum", units: "km²", color: "#1baf7a" },
+    { label: "People in flooded areas (Sentinel-1 × WorldPop)", ids: ["flood_population_exposed"], how: "sum", units: "people", color: "#1baf7a" },
     { label: "Drought index (national mean; ensemble if available)", ids: ["drought_ensemble_mean", "spei3"], how: "mean", units: "index", color: "#eb6834" },
-    { label: "Rainfall (national mean, IMERG)", ids: ["precip_mm"], how: "mean", units: "mm / month", color: "#2a78d6" },
+    { label: "Rainfall (national mean, CHIRPS v3 — primary)", ids: ["chirps_precip_mm", "precip_mm"], how: "mean", units: "mm / month", color: "#2a78d6" },
     { label: "Vegetation greenness NDVI (national mean)", ids: ["modis_ndvi"], how: "mean", units: "NDVI", color: "#008300" },
   ];
   state.natCharts = [];
@@ -775,7 +782,7 @@
     countyLayer = L.geoJSON(counties, {
       style: styleCounty,
       onEachFeature: (f, l) => {
-        l.bindTooltip(() => tooltipHtml(f.properties), { sticky: true, className: "county-tt" });
+        l.bindTooltip(() => tooltipHtml(f.properties), { sticky: true, direction: "right", offset: [16, 0], className: "county-tt" });
         l.on("click", () => { state.selected = f.properties.district_id; refreshCounties(); renderDetail(); });
         l.on("mouseover", () => l.setStyle({ weight: 2.5, color: "#0b0b0b" }));
         l.on("mouseout", () => countyLayer.resetStyle(l));
@@ -792,7 +799,7 @@
     $("#detail-close").onclick = () => { state.selected = null; refreshCounties(); renderDetail(); };
 
     renderRasterList(); renderPointList();
-    const first = state.vars.find((v) => v.id === "precip_mm") || state.vars[0];
+    const first = state.vars.find((v) => v.id === "chirps_precip_mm") || state.vars.find((v) => v.id === "precip_mm") || state.vars[0];
     if (first) await setColorBy(first.id); else renderVarList();
     renderNational().then(() => map.invalidateSize()).catch((e) => console.warn("national", e));
     setTime(state.months.indexOf("2019-08") >= 0 ? state.months.indexOf("2019-08") : 0);

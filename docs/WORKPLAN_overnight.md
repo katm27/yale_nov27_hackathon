@@ -17,15 +17,15 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 - [ ] `docs/METHODS_AND_DATA_GUIDE.md`: every calculation, every source, confidence rating per dataset — lead (after data agents finish)
 
 ## 4. Climate data review
-- [~] `docs/CLIMATE_DATA_DECISIONS.md`: raw vs derived products, provenance; flood product choice (MODIS water vs UNOSAT/GFM/FloodScan etc.); water contamination / pollution spread options — agent "climate-review"
-- [~] Implement recommended derived flood series + drought-index ensemble & uncertainty + feasible contamination proxies — agent "climate-review"
+- [x] `docs/CLIMATE_DATA_DECISIONS.md`: raw vs derived products, provenance; flood product choice (MODIS water vs UNOSAT/GFM/FloodScan etc.); water contamination / pollution spread options — agent "climate-review"
+- [x] Implement recommended derived flood series + drought-index ensemble & uncertainty + feasible contamination proxies — agent "climate-review"
 
 ## 5. UI
 - [x] Arrows: one clear source at a time ("best available" per month), explained in UI; fix cross-border origins (verified crossings) and county anchors — lead
 - [x] Map mode "Trend": colour by Sen's slope (%/yr of 2018 and ×-change 2018→2025); white outline = Mann-Kendall significant — lead
-- [~] Hover card (built; profiles done for all 79 counties; drought ensemble/flood product fill in as climate agent finishes): district profile (history, livelihoods, conflict impact) at top; Sen's slope + MK note; sparklines of forced migration, US humanitarian aid, flood extent, drought (with uncertainty band) — lead + agent "profiles"
+- [x] Hover card (built; profiles done for all 79 counties; drought ensemble/flood product fill in as climate agent finishes): district profile (history, livelihoods, conflict impact) at top; Sen's slope + MK note; sparklines of forced migration, US humanitarian aid, flood extent, drought (with uncertainty band) — lead + agent "profiles"
 - [x] Bottom national timeline: USAID / US aid, total humanitarian funding (FTS), HRP coverage, UNMISS uniformed personnel, key climate series, GBV indicators — lead
-- [~] GBV & water: REACH MSNA women's safety / water-collection indicators, water points (WPDx), groundwater options; within-county conflict indicators — agent "gbv-water"
+- [x] GBV & water: REACH MSNA women's safety / water-collection indicators, water points (WPDx), groundwater options; within-county conflict indicators — agent "gbv-water"
 
 ## Already running (started earlier)
 - [~] NASA AppEEARS: night lights, monthly ET, SMAP, Jul–Oct 2025 MODIS fill

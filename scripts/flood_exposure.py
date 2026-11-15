@@ -1,5 +1,5 @@
 """Flood exposure of people and oil infrastructure per county-month (contamination-pathway proxies), from the
-Sentinel-1 flood layer (flood_s1_pipeline.py: water outside the 2018-2025 permanent-water mask).
+Sentinel-1 flood layer (flood_s1_pipeline.py: flooded class = inundation beyond the dry-season reference).
 
 These are EXPOSURE indicators, not measured contamination: no open dataset measures water quality (faecal
 bacteria, hydrocarbons, salinity) in South Sudan county by month. They identify where flood water overlaps with
@@ -9,8 +9,8 @@ the two documented contamination sources:
                                 Pathway: flooded pit latrines / open defecation (ISNA: ~50% of households practise
                                 open defecation) -> faecal contamination of drinking water (cholera, AWD, hepatitis E).
   flood_population_exposed_pct  same, % of county population.
-  flood_oilfield_exposure_km2   flooded area within 5 km of an oil well or oil-field centre (docs/data/points_oil.geojson:
-                                93 OSM wells + 5 GEM GOGET fields, Unity / Ruweng / Upper Nile). Pathway: produced-water
+  flood_oilfield_exposure_km2   flooded area within 5 km of an oil well or oil-field centre (docs/data/points_oil.geojson,
+                                OSM wells + GEM GOGET field centres, Unity / Ruweng / Upper Nile). Pathway: produced-water
                                 pits and spills spread by flood water (documented around Thar Jath, Unity and Paloich).
   flood_oil_wells_flooded       number of oil wells/fields whose location (440 m cell) or any cell within 1 km is flooded.
 Usage: python scripts/flood_exposure.py   (after flood_s1_pipeline.py)
@@ -40,7 +40,7 @@ def main():
     lab = hc.labels_for(gc, gtr, gs)
     area = f.pixel_area_km2(gtr, gs)
     ids = hc.county_ids()
-    perm = np.load(f.GRID_DIR.parent / "permanent_water.npy")
+    pass
     # oil zone
     oil = gpd.read_file(hc.REPO / "docs/data/points_oil.geojson").to_crs(4326)
     zone = oil.to_crs(32636).buffer(BUF_KM * 1000).to_crs(4326)
@@ -59,7 +59,7 @@ def main():
     plab = hc.labels_for(pcrs, ptr, pop[2018][0].shape)
     rows = []
     for m, w, obs in f.water_series():
-        flood = ((w == 1) & ~perm).astype("float32")
+        flood = (w == 1).astype("float32")
         flood[w < 0] = np.nan
         a, _, _ = pop[int(m[:4])]
         frac = np.full(a.shape, np.nan, "float32")
@@ -68,9 +68,9 @@ def main():
         known = np.isfinite(frac)
         exp = hc.bincount(plab, np.where(known, a * frac, 0)); ptot = hc.bincount(plab, a)
         pknown = hc.bincount(plab, np.where(known, a, 0))
-        fz = hc.bincount(lab, area * ((w == 1) & ~perm & oz)); kz = hc.bincount(lab, area * ((w >= 0) & oz))
+        fz = hc.bincount(lab, area * ((w == 1) & oz)); kz = hc.bincount(lab, area * ((w >= 0) & oz))
         tz = hc.bincount(lab, area * oz)
-        wet = ndimage.binary_dilation((w == 1) & ~perm, iterations=2)
+        wet = ndimage.binary_dilation(w == 1, iterations=2)
         nw = {}
         for r, c, cid in wells:
             if 0 <= r < gs[0] and 0 <= c < gs[1] and w[r, c] >= 0:
@@ -94,7 +94,7 @@ def main():
                   source_url="https://planetarycomputer.microsoft.com/dataset/sentinel-1-rtc", temporal="monthly",
                   native_resolution="~440 m flood x 1 km population", raster=None)
     caveat = (" Exposure, not measured contamination: no open county-level water-quality data exist for South Sudan. "
-              "Flood = Sentinel-1 water outside the permanent-water mask (see flood_s1 notes; Sudd papyrus partly missed).")
+              "Flood = Sentinel-1 flooded class (VV-VH rise >3 dB over the March reference; reliable Jul-Nov, under-detects receding Dec-Jun water).")
     hc.write_meta(SRC, [
         dict(id="flood_population_exposed", label="People living in flooded areas", units="people",
              aggregation="sum over 1 km cells of population x flooded fraction (scaled up if <100% of the county observed)",

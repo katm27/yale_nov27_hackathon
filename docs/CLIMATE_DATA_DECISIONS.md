@@ -41,8 +41,8 @@ gender/water indicators can be measured. Reviewed 15 Nov 2026.
 | **`drought_ensemble_mean`, `_spread`** (new) | Derived | This repo, `scripts/drought_ensemble.py` (see §3) | county | See §3. | **Primary** drought layer + uncertainty |
 | `modis_ndvi`, `modis_evi` | Obs | MOD13A1 + MYD13A1 v061 (16-day MVC, pixel reliability) | 500 m | Flooding lowers NDVI (water), so a "greenness drop" in the Sudd can be a flood, not a drought. | **Primary** vegetation |
 | `modis_refl_*` | Obs | MOD09A1 v061 | 500 m | Raw bands, with no direct meaning for users. | Drop from the default view |
-| `surface_water_*` | Derived | MODIS MOD09A1/MYD09A1 MNDWI(B4,B7) > 0.1 (this repo) | 500 m, 8-day composites | Cloud blocks most of Jun–Oct. It **misses water under vegetation** (most of the Sudd flood). Vs UNOSAT it is **~0.5×** in area (state r 0.76). | **Secondary** (optical cross-check; full 2018–25 series) |
-| **`flood_s1_*`** (new) | Derived | Sentinel-1 C-band SAR RTC, this repo (see §2) | 10 m read at 160 m, classified at ~440 m | See §2. | **Primary** flood layer |
+| `surface_water_*` | Derived | MODIS MOD09A1/MYD09A1 MNDWI(B4,B7) > 0.1 (this repo) | 500 m, 8-day composites | Cloud blocks most of Jun–Oct. It **misses water under vegetation**. Vs UNOSAT it is **~0.5×** in area (state r 0.76; dry-season r 0.82, better than S1). | **Secondary**, all-season (dry-season/receding water) |
+| **`flood_s1_*`** (new) | Derived | Sentinel-1 C-band SAR RTC (Catalyst gamma0), this repo: VV−VH change detection (see §2) | 10 m read at 160 m, ~440 m grid, monthly | It under-detects receding dry-season water (F1 0.04), and revisit is thinner in 2022–24. | **Primary** flood layer for Jul–Nov |
 | `fire_count`, `burned_area_*`, `viirs_*` | Obs | MODIS MOD14A1/MCD64A1 v061; VIIRS 375 m (FIRMS) | 375 m–1 km | Cloud and smoke cause omission. MCD64A1 has missing months on Planetary Computer. | VIIRS **primary** for counts, MCD64A1 for burned area |
 | `s5p_no2`, `s5p_co`, `s5p_aerosol_index` | Obs | Sentinel-5P TROPOMI L2 OFFL/RPRO | 3.5×5.5 km | NO₂ is near the detection limit outside Juba and fires, and only 4 orbits per month are sampled. | Secondary (`s5p_no2` as an oil/flaring signal only near oil fields) |
 | `power_aod_*` | Model / obs | CERES SYN1deg (MODIS-assimilated) | 1° | Too coarse for counties. | Drop |
@@ -68,34 +68,88 @@ where most flood water stands under grass, papyrus or Typha.
 | Copernicus GFM (Sentinel-1, 3-algorithm ensemble) | 2015+ | EODC STAC **returned HTTP 502**. The API needs a GFM account. | yes | partly (open water only by design; flooded vegetation is excluded) | Best on paper, not accessible. Revisit if an account is available. |
 | FloodScan (AER, passive microwave) | 1998+ | the HDX "free" admin-2 file holds **only the last 90 days** (Aug–Nov 2026 checked; 79 SSD pcodes). History is commercial. | yes | yes (fraction of a ~10 km cell) | Not possible for 2018–2025 |
 | JRC Global Surface Water monthly history | 1984–**2021** (v1.4) | open tiles | no (Landsat) | no | Context only (ends 2021, cloud-limited) |
-| **Sentinel-1 RTC via Planetary Computer, this repo** | 2018–2025 (S1A+B to Dec 2021, then S1A only; S1C from 2025) | **open, done** | **yes** | **yes**, with a VV/VH ratio rule | **Chosen** |
+| **Sentinel-1 RTC via Planetary Computer, this repo** | 2018–2025 (S1A+B to Dec 2021, then S1A only; S1C from 2025) | **open, done** | **yes** | **yes**, with a VV−VH ratio change rule | **Chosen** (wet-season primary) |
 
 **Implementation** (`scripts/flood_s1_pipeline.py`, `data/processed/flood_s1_county_monthly.csv`, `meta/flood_s1.json`,
-overlay `docs/rasters/flood_s1/`):
-- Every Sentinel-1 IW GRD RTC scene (gamma0, VV and VH) over the country, about 90–180 per month, is read at its 1/16 COG
-  overview (160 m). That overview is a block average of the 10 m linear power, so speckle is suppressed.
-- Each scene is converted to dB and averaged onto a fixed 0.004° (~440 m) grid. The monthly mean is taken per pixel.
-- **Classification rule:** water = VH < −17 dB (open, specular water) **OR** VV−VH > 8.5 dB (flooded herbaceous
-  vegetation: the double bounce raises VV far more than VH).
-- **Why not a plain low-backscatter rule:** VV < −18 dB finds almost no water in October 2022, when UNOSAT mapped
-  48 000 km², because Sudd flood water is radar-*bright*. Inside the UNOSAT water polygons the median VV is −5.8 dB and
-  VV−VH is 9.0 dB. Outside them, VV is −7.0 dB and VV−VH is 5.5 dB.
-- The thresholds were set on **one** UNOSAT map (4–8 Oct 2022: pixel F1 0.61, area ratio 1.09) and tested on the others.
-- **Gap filling and masks:**
-  - Pixels with no acquisition inherit the previous month's state (max 2 months).
-  - County-months with less than 50 % of the area known are dropped.
-  - Permanent water = water in ≥10 of 12 months in ≥6 of 8 years. `flood_s1_flood_km2` is water outside that mask.
+overlay `docs/rasters/flood_s1/`, 96 months, 79 counties):
+- **Inputs.** Every Sentinel-1 IW GRD RTC scene (gamma0, VV and VH) over the country is used, 70–183 per month. Each
+  is read at its 1/16 COG overview (160 m). That overview is a block average of the 10 m linear power, so speckle is
+  suppressed.
+- **Grid.** Scenes are converted to dB and averaged onto a fixed 0.004° (~440 m) grid, giving a monthly mean per pixel.
+  The intermediate grids are 0.85 GB in `data/raw/s1_flood/_cache/grids/`, which is gitignored.
+- **First attempt: absolute thresholds (rejected).**
+  - A classic low-backscatter rule (VV < −18 dB) finds about 0 km² in October 2022, when UNOSAT mapped 48 000 km².
+    Sudd flood water stands under grass, papyrus or Typha and is radar-**bright**: double bounce raises VV far more
+    than VH. Inside the UNOSAT polygons the median VV−VH is 9.0 dB; outside it is 5.5 dB.
+  - An absolute "VH < −17 or VV−VH > 8.5" rule fits October (F1 0.61) but fails in the dry season, where pixel F1
+    against the January, March and May 2022 UNOSAT maps is 0.03–0.10. Dry grassland and cracking clay are darker than
+    the vegetated swamp UNOSAT counts as water, and about 230 000 km² was flagged as "open water".
+- **Final rule: change detection.**
+  - The reference is the per-pixel median of the **March** VV−VH ratio over 2018–2025.
+  - **Flooded** = monthly VV−VH more than **3 dB above the reference**.
+  - **Open water** = VV < −18 and VH < −24 dB.
+  - Permanent swamp is part of the reference, so it is not counted as flood.
+  - The 3 dB threshold was chosen on one date: UNOSAT 4–8 Oct 2022, new water vs 10–14 Mar 2022 (F1 0.59, area ratio
+    0.95).
+- **Gap filling.** Pixels with no acquisition inherit the previous month (max 2 months). County-months with less than
+  50 % of the area known are dropped.
+- **Variables:**
+  - `flood_s1_flood_km2`, `flood_s1_flood_pct` (index_ok false)
+  - `flood_s1_openwater_km2`
+  - `flood_s1_obs_pct` (quality flag)
+
+**National flood peaks (Sep–Oct):**
+
+| Year | Peak flood area |
+|---|---|
+| 2018 | low |
+| 2019 | 15 500 km² |
+| 2020 | 28 000 km² |
+| 2021 | 30 000 km² |
+| 2022 | 33 000 km² |
+| 2023 | 14 000 km² |
+| 2024 | 24 000 km² |
+| 2025 | 26 000 km² |
+
+The 2020–2022 Sudd mega-flood and the 2024 flood are reproduced. The dry-season minimum is 200–1 500 km².
 
 **Validation against UNOSAT** (`scripts/flood_s1_validate.py`, `data/processed/validation/flood_s1_vs_unosat_*.csv`):
-VALIDATION_PLACEHOLDER
+
+*Pixel level.* New flood (UNOSAT water on the date minus the UNOSAT 10–14 Mar 2022 water) vs the S1 flood class, with
+cloud-obstructed areas excluded. 19 independent dates, Sep 2021–Sep 2022:
+
+| Season | Dates | Median F1 | Range | Precision | Recall | Area ratio S1/UNOSAT |
+|---|---|---|---|---|---|---|
+| **Wet season (Jul–Nov)** | 10 | **0.51** | 0.43–0.61 | 0.64 | 0.52 | 0.80 |
+| **Dry season (Jan–Jun)** | 9 | **0.04** | — | — | — | 0.12 |
+
+In the dry season S1 does not see the receding flood UNOSAT still maps. That water is shallow or standing under
+drying vegetation, and it is close to the reference state.
+
+*State level.* 30 UNOSAT exposure tables, Oct 2022–Apr 2025, 250 state-dates. UNOSAT totals include permanent swamp,
+while the S1 flood class does not.
+
+| Comparison | Wet-season months, r | Dry-season months, r | Overall, r | Median area ratio vs UNOSAT |
+|---|---|---|---|---|
+| S1 flood | **0.88** | 0.41 | 0.62 | 0.38 |
+| MODIS MNDWI | 0.82 | **0.82** | 0.76 | 0.48 |
+
+**Recommendation**
+- Use **`flood_s1_flood_km2` as the primary flood layer for the flood season (Jul–Nov)** and for annual flood peaks. It
+  is cloud-proof and sees water under vegetation.
+- Keep MODIS `surface_water_km2` as the secondary, all-season layer, which is better for receding and dry-season water.
+- Use UNOSAT for validation only.
+- Copernicus GFM would be the natural upgrade if an account becomes available. Note that GFM also excludes flooded
+  vegetation, so in the Sudd it would behave more like our open-water class.
 
 **Caveats**
 - Wind-roughened open lakes are missed.
-- Some woody wetland and urban double bounce can pass the ratio rule.
-- Sentinel-1 revisit falls from 6 to 12 days to 12 to 24 days after the Sentinel-1B failure (23 Dec 2021). For
-  2022–2024, mid-month floods may be sampled once or twice.
+- Woody wetland, rice and built-up double bounce can raise VV−VH.
+- Sentinel-1 revisit fell from 6–12 days to 12–24 days after the Sentinel-1B failure (23 Dec 2021). Some areas in
+  2022–24 have no acquisition in a month: 61 % coverage of the bounding box in Feb 2022.
+- `flood_s1_openwater_km2` jumps about 10× in 2025, probably from Sentinel-1C acquisitions and processing changes, so it
+  is not trend-safe. The flood class, being relative to each pixel's reference, is less affected.
 - The monthly mean smooths floods that last less than about 10 days.
-- Sentinel-1 orbits changed between 2018–21 and 2022–25, so check `flood_s1_obs_pct` before reading a trend.
 
 ## 3. Drought index ensemble and uncertainty
 
@@ -135,8 +189,8 @@ VALIDATION_PLACEHOLDER
 
 | Candidate | Measurable? | Decision |
 |---|---|---|
-| Faecal contamination exposure: flood × population (WorldPop) with open defecation and latrines (ISNA) | **Yes, as exposure** | **Implemented**: `flood_population_exposed`, `flood_population_exposed_pct` (`scripts/flood_exposure.py`) |
-| Oil-field pollution exposure: flood within 5 km of 93 OSM oil wells and 5 GEM oil-field centres (Unity, Ruweng, Upper Nile) | **Yes, as exposure** | **Implemented**: `flood_oilfield_exposure_km2`, `flood_oil_wells_flooded` |
+| Faecal contamination exposure: S1 flood × population (WorldPop R2025A 1 km, year-matched), with open defecation (ISNA ~50 %) | **Yes, as exposure** | **Implemented**: `flood_population_exposed`, `flood_population_exposed_pct` (`scripts/flood_exposure.py`, 79 counties, 2018–2025). Peaks are ~75 k (Oct 2019), ~215 k (2020), ~225 k (2021), ~200 k (2022) and ~120 k (2024). This is far below OCHA's "people affected" (~0.8–1 M in 2021) because WorldPop puts people on dry settlement mounds and dyke-protected towns, while OCHA counts livelihoods and access lost. |
+| Oil-field pollution exposure: S1 flood within 5 km of the 104 oil well and field points in `docs/data/points_oil.geojson` (OSM wells + GEM GOGET; 848 km² zone) | **Yes, as exposure** | **Implemented**: `flood_oilfield_exposure_km2` (7 counties) and `flood_oil_wells_flooded` (5 counties). Peaks are ~120 km² in the oil zones in Sep 2021 and Sep 2022, with the maximum in Guit (SS0602, Thar Jath area, 101 km²). |
 | Turbidity or suspended sediment (NDTI = (red − green)/(red + green), or MODIS red reflectance over water) | Technically yes for the open Nile/Sobat channels. It is **not a contamination measure**: sediment is natural, and the Sudd swamp is vegetated, so it has no clean water pixels at 500 m. Sentinel-2 at 10–20 m is feasible on Planetary Computer but heavy, and is cloud-limited in the wet season, exactly when floods happen. | Not implemented. Possible next step: dry-season Sentinel-2 NDTI on the Bahr el Jebel/White Nile at Juba, Bor and Malakal. |
 | Produced-water / hydrocarbon contamination (Thar Jath, Unity, Paloich) | Field studies only (e.g. Sign of Hope hair and water samples, 2014–2019). Satellites cannot see dissolved hydrocarbons or salinity. Oil slicks on water are too small for Sentinel-1 at this scale. | Exposure proxy only |
 | Water-quality monitoring (E. coli, residual chlorine) | WASH-cluster water-quality data are not public at county level | Not possible |

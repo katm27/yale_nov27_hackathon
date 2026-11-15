@@ -11,7 +11,7 @@ Stage 1 `grids` (heavy, ~2-3 h): for each month, every RTC scene intersecting So
 COG overview (160 m; overviews are block averages of the 10 m linear gamma0, so speckle is reduced), edge pixels
 are eroded, the scene is converted to dB and reprojected (average) onto a fixed EPSG:4326 0.004 deg (~440 m)
 grid. Per pixel and month we keep: mean VV dB, mean VH dB, minimum VV dB, number of acquisitions
--> data/raw/s1_flood/grids/YYYY-MM.npz (uint8 quantised, 0.25 dB steps; raw, not committed).
+-> data/raw/s1_flood/_cache/grids/YYYY-MM.npz (uint8 quantised, 0.25 dB steps; gitignored).
 
 Stage 2 `finalize` (change detection): reference = per-pixel median of the March (dry-season) VV-VH ratio over
 2018-2025. Per pixel-month: FLOODED = (VV-VH) - reference > 3 dB; OPEN WATER = VV < -18 and VH < -24 dB.
@@ -46,7 +46,7 @@ import hazards_common as hc
 
 RES = 0.004
 OVR = 16
-GRID_DIR = hc.REPO / "data" / "raw" / "s1_flood" / "grids"
+GRID_DIR = hc.REPO / "data" / "raw" / "s1_flood" / "_cache" / "grids"  # gitignored, ~0.85 GB
 OUT = hc.PROC / "flood_s1_county_monthly.csv"
 OPEN_VV, OPEN_VH = -18.0, -24.0   # dB: open (specular) water, dark in both polarisations
 DRATIO_T = 3.0   # dB: rise of VV-VH above the pixel's dry-season (March) reference = flooded vegetation

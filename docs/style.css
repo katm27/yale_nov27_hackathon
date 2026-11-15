@@ -130,3 +130,7 @@ a { color: var(--accent); }
 #legend .ticks span:nth-child(2) { text-align: center; }
 #timebar { z-index: 640; }
 #legend { z-index: 500; }
+
+.tt .profile .pf, .tt .trend-txt { -webkit-line-clamp: 2; }
+#detail .profile.full { margin: 8px 0; }
+#detail .profile.full p { margin: 4px 0; font-size: 12px; }
