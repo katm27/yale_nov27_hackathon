@@ -865,7 +865,7 @@
   "method": "TerraClimate one-layer water-balance model, plant-extractable soil water.",
   "direction": "wetter_drier",
   "topic": "Drought & rainfall",
-  "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought. Use it for patterns, not totals.",
+  "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought.",
   "synonyms": [
    "drought",
    "dry",
@@ -1386,7 +1386,7 @@
   "method": "TerraClimate actual evapotranspiration (water-balance model).",
   "direction": "more_less",
   "topic": "Drought & rainfall",
-  "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought. Use it for patterns, not totals.",
+  "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought.",
   "synonyms": [
    "evaporation",
    "evapotranspiration",

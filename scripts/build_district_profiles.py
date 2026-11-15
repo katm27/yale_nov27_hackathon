@@ -26,6 +26,7 @@ LHZ_URL = "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip"
 LHZ_DOC = ("https://fews.net/sites/default/files/documents/reports/"
            "Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf")
 MAX_CHARS = 300
+MAX_CONFLICT_CHARS = 900  # conflict_impact is a 3-5 sentence narrative
 SECONDARY_MIN = 0.25
 
 # Zone summaries condensed from FEWS NET, "Livelihoods Zone Map and Descriptions for the
@@ -56,12 +57,12 @@ ZONES = {
              "products."),
     "SS07": ("Greater Bahr el Ghazal sorghum and cattle",
              "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep "
-             "(about 80% of households own cattle), plus fishing and wild foods; cereal deficit, "
+             "(most households own cattle), plus fishing and wild foods; cereal deficit, "
              "trading livestock for grain."),
     "SS08": ("Nile basin fishing and agro-pastoral",
              "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize "
              "cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods "
-             "recur every 3-5 years."),
+             "recur every few years."),
     "SS09": ("North-Western Nile basin cattle and maize",
              "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, "
              "with fishing and wild foods; cereal deficit relying on imports from Sudan."),
@@ -207,7 +208,8 @@ def livelihood_text(zones: list[tuple[str, float]]) -> str:
     text = ZONES[code][1]
     sec = [(c, s) for c, s in zones[1:] if s > SECONDARY_MIN]
     if sec:
-        add = " Also " + "; ".join(f"{ZONES[c][0]} zone ({s:.0%})" for c, s in sec) + "."
+        names = [ZONES[c][0] for c, _ in sec]  # no area percentages in prose; shares stay in key_facts
+        add = " Also partly in the " + " and ".join(names) + (" zones." if len(names) > 1 else " zone.")
         if len(text) + len(add) > MAX_CHARS:
             text = text.split(";")[0].rstrip(".") + "."
         text += add
@@ -235,13 +237,13 @@ def main() -> int:
         if sec:
             lz["secondary"] = {"code": sec[0][0], "name": ZONES[sec[0][0]][0],
                                "share": round(sec[0][1], 2)}
+        # conflict_impact is a hand-written, number-free narrative (district_profiles_narrative.json
+        # "conflict_impact") built from conflict_narrative, the sources and key_facts in words.
+        # All statistics stay in key_facts; facts_sentence() is only a fallback for new counties.
         conflict = n.get("conflict_narrative", "").strip()
-        conflict_full = conflict
-        for short in (False, True):  # longest numeric summary that fits; all numbers stay in key_facts
-            cand = f"{conflict} {facts_sentence(kf, short)}".strip()
-            if len(cand) <= MAX_CHARS:
-                conflict_full = cand
-                break
+        conflict_full = n.get("conflict_impact", "").strip()
+        if not conflict_full:
+            conflict_full = f"{conflict} {facts_sentence(kf, True)}".strip()
         rec = {
             "name": p["name"],
             "state": p["admin1"],
@@ -259,7 +261,7 @@ def main() -> int:
             ])),
         }
         for k in ("livelihoods", "history", "conflict_impact"):
-            if len(rec[k]) > MAX_CHARS:
+            if len(rec[k]) > (MAX_CONFLICT_CHARS if k == "conflict_impact" else MAX_CHARS):
                 warnings.append(f"{cid} {k} is {len(rec[k])} chars")
             if not rec[k]:
                 warnings.append(f"{cid} {k} empty")
