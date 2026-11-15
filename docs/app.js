@@ -718,7 +718,7 @@
   function writeHash() {
     if (!state.months.length) return;
     const h = new URLSearchParams({ m: state.mode, a: state.agg, t: state.months[state.t], v: state.colorBy || "", c: [...state.checked].join(","),
-      s: state.selectedList.join(","), f: state.flowMode || "best", r: [...state.rasterOn].join(","), p: Object.keys(state.pointLayers).join(","), n: [...state.natExtra].join(",") });
+      s: state.selectedList.join(","), f: state.flowMode || "best", fo: state.flowOn ? "1" : "0", r: [...state.rasterOn].join(","), p: Object.keys(state.pointLayers).join(","), n: [...state.natExtra].join(",") });
     try { history.replaceState(null, "", `#${h.toString()}`); } catch (e) { /* sandboxed */ }
   }
   function readHash() {
@@ -737,7 +737,7 @@
   const SOURCE_STYLE = { et: [null, 0.85, 160], fmr: ["6 5", 0.85, 120], dtm_mt_idp_od: ["1 5", 0.6, 90],
     dtm_mt_returnee_od: ["1 5", 0.6, 90], dtm_renk_intentions: ["10 4 2 4", 0.8, 40] };
   const srcStyle = (k) => SOURCE_STYLE[k] || ["2 3", 0.7, 60];
-  state.flowOn = true; state.flowSources = null; state.flowReasons = null; state.flowLayer = null;
+  state.flowOn = false; state.flowSources = null; state.flowReasons = null; state.flowLayer = null;
   const flowRenderer = L.svg({ pane: "flows", padding: 0.5 });
   let flowDefsReady = false;
   function ensureArrowDefs() {
@@ -845,7 +845,7 @@
     const F = state.flows, el = $("#flow-controls"); if (!F || !el) return;
     const used = new Set(); Object.values(F.months).forEach((rows) => rows.forEach((r) => used.add(F.reasons[r[3]])));
     state.flowReasons = new Set(used);
-    let h = `<div class="var-row"><input type="checkbox" id="flow-on" checked><label for="flow-on"><b>Show migration arrows</b> <span class="meta">(arrow width ∝ √people; colour = reason)</span></label></div>`;
+    let h = `<div class="var-row"><input type="checkbox" id="flow-on" ${state.flowOn ? "checked" : ""}><label for="flow-on"><b>Show migration arrows</b> <span class="meta">(arrow width ∝ √people; colour = reason)</span></label></div>`;
     h += `<div class="group-title">Data shown</div>`;
     const opt = (val, lab, meta) => `<div class="var-row"><input type="radio" name="flow-src" value="${val}" id="fs-${val}" ${state.flowMode === val ? "checked" : ""}><label for="fs-${val}">${lab} <span class="meta">${meta}</span></label></div>`;
     h += opt("best", "Best available each month", "· Event Tracking, else Flow Monitoring, else latest Mobility Tracking survey");
@@ -855,7 +855,7 @@
       h += `<div class="var-row"><input type="checkbox" class="flow-reason" value="${r}" id="fr-${r}" checked><span class="swatch" style="background:${c}"></span><label for="fr-${r}">${lab}</label></div>`; });
     h += `<p class="hint">○ White circles on the border = crossing points where people arrived from neighbouring countries.</p><p class="hint" id="flow-status"></p>`;
     el.innerHTML = h;
-    $("#flow-on").onchange = (e) => { state.flowOn = e.target.checked; drawFlows(); };
+    $("#flow-on").onchange = (e) => { state.flowOn = e.target.checked; drawFlows(); writeHash(); };
     el.querySelectorAll('input[name="flow-src"]').forEach((rb) => (rb.onchange = () => { state.flowMode = rb.value; drawFlows(); writeHash(); }));
     el.querySelectorAll(".flow-reason").forEach((cb) => (cb.onchange = () => { cb.checked ? state.flowReasons.add(cb.value) : state.flowReasons.delete(cb.value); drawFlows(); }));
   }
@@ -1044,6 +1044,7 @@
       state.selectedList = list("s").filter((x) => countyLayer.getLayers().some((l) => l.feature.properties.district_id === x)).slice(0, 3);
       state.selected = state.selectedList[0] || null;
       if (H.get("f")) state.flowMode = H.get("f");
+      if (H.get("fo") === "1") state.flowOn = true;
       const ti = state.months.indexOf(H.get("t")); if (ti >= 0) tStart = ti;
       list("r").forEach((k) => { const cb = document.getElementById(`r-${k}`); if (cb) { cb.checked = true; state.rasterOn.add(k); } });
       for (const k of list("p")) { const p = state.points.find((x) => x.key === k); const cb = document.getElementById(`p-${k}`); if (p && cb) { cb.checked = true; loadPoints(p); } }
