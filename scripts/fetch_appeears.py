@@ -760,7 +760,15 @@ def assemble():
     out.to_csv(p, index=False)
     present = set(out.variable)
     meta = [m for m in meta_list(cons) if m["id"] in present]
+    gee_smap = sorted(p.stem[-4:] for p in parts if p.stem.startswith("smap_gee_"))
     for m in meta:
+        if gee_smap and m["id"].startswith("smap_"):
+            ae = sorted(p.stem[-4:] for p in parts if re.fullmatch(r"smap_\d{4}", p.stem))
+            m["source"] = m["source"].replace(" via NASA AppEEARS", "") + (
+                f" via Google Earth Engine (NASA/SMAP/SPL4SMGP/008; years {', '.join(gee_smap)})"
+                + (f" and NASA AppEEARS (years {', '.join(ae)})" if ae else ""))
+            m["notes"] += " Monthly means of the 3-hourly fields computed in Earth Engine (scripts/gee_smap.py)."
+            continue
         m["notes"] += " AppEEARS area request clipped to the South Sudan outline, geographic projection."
     mp = ROOT / "data" / "processed" / "meta" / "appeears.json"
     mp.write_text(json.dumps(meta, indent=2, ensure_ascii=False))

@@ -1,0 +1,53 @@
+{
+  "_note": "Story filters for the variable list. Every number was recomputed from docs/data (series, trends.json, flows.json) on 15 Nov 2026; the Lake Victoria levels are from Mulangwa et al. 2026, Hydrology and Earth System Sciences 30, 5297-5325, doi:10.5194/hess-30-5297-2026. Correlations between county trends are descriptive: neighbouring counties are not independent, so treat them as leads to explore, not proof.",
+  "stories": [
+    {
+      "key": "upstream",
+      "title": "Water from upstream",
+      "color": "#14868c",
+      "summary": "Water stored in the land rose in all 79 counties (significant in 76, typically +3.7 cm a year), yet rainfall over South Sudan shows no significant trend in any county in either the IMERG or CHIRPS record. The extra water is consistent with floods arriving down the White Nile: Lake Victoria passed its 1964 record level in 2020, 2021 and 2024. Worth exploring: a flood that starts in another country's rainy season.",
+      "steps": [
+        {"var": "grace_tws_cm", "month": "2025-12", "mode": "trend", "say": "Every county is getting wetter underground and on the surface; outlined counties (76 of 79) have a statistically significant rise, typically +3.7 cm of water a year."},
+        {"var": "precip_mm", "month": "2025-12", "mode": "trend", "say": "Now rainfall: no county has a significant trend, so local rain does not explain the extra water."},
+        {"var": "grace_tws_cm", "month": "2022-10", "mode": "raw", "county": "SS0609", "say": "October 2022, the national peak of the series: the country averaged +32 cm above its 2002-2020 normal, and the wettest counties sit along the Nile and the Sudd."},
+        {"var": "sudd_inundation_pct", "month": "2022-10", "mode": "raw", "county": "SS0609", "say": "Where the water went: Rubkona, around Bentiu, was 0.4% flooded in October 2018 and 46.5% flooded in October 2022."}
+      ]
+    },
+    {
+      "key": "displaced",
+      "title": "Floods that move people",
+      "color": "#7350a6",
+      "summary": "IOM recorded about 2.0 million flood displacements in 2020-2025, and about a third of them (35%) were recorded in the 16 Sudd counties, which are 16 of 79 counties. Flood displacements peak in August, a month before radar-measured flooded area peaks in September-October. Worth exploring: whether the August surge is an early-warning window for aid.",
+      "steps": [
+        {"var": "flood_s1_flood_pct", "month": "2022-09", "mode": "raw", "county": "SS0605", "say": "September 2022 had the largest flooded area in the radar record (about 34,200 km² nationally); Mayendit was 72% flooded. Turn on the migration arrows and pick 'Climate'."},
+        {"var": "flood_s1_flood_pct", "month": "2022-08", "mode": "raw", "county": "SS0306", "say": "In August 2022 the biggest flood arrow runs from Fangak to Ayod (14,000 people); Fangak is the county IOM recorded the most flood displacements in, about 174,000 in 2020-2025."},
+        {"var": "ipc_phase3plus_pct", "month": "2022-10", "mode": "raw", "county": "SS0306", "say": "Hunger in the same places: in October 2022, 80% of Fangak's people were in crisis-level hunger or worse, and in every IPC analysis since 2018 the Sudd counties averaged 12 to 21 points more than the rest of the country."},
+        {"var": "sudd_inundation_pct", "month": "2025-12", "mode": "trend", "say": "The flooding is not a one-off: the flooded share rose significantly in 12 of the 16 Sudd counties, fastest in Rubkona (+7.6 percentage points a year)."}
+      ]
+    },
+    {
+      "key": "fire",
+      "title": "Drowned fire, cooler ground",
+      "color": "#b8840f",
+      "summary": "In the 16 Sudd counties, satellite fire detections fell from 114,628 in 2018 to 42,431 in 2022 (-63%) as dry-season grazing land stayed under water, and daytime ground temperature fell significantly in 63 counties. Across counties, those with larger flooding trends had larger falls in burned area (Spearman r = -0.52), and ground cooling tracks greening (r = -0.68). Worth exploring: lost dry-season pasture is the link between wetter land and herders' livelihoods.",
+      "steps": [
+        {"var": "viirs_fire_count", "month": "2025-12", "mode": "trend", "say": "Fires fell in 49 counties, though no single county's trend is significant: dry-season burning varies a lot from year to year."},
+        {"var": "viirs_fire_count", "month": "2022-03", "mode": "raw", "county": "SS0306", "say": "Fangak in the March 2022 burning season: 112 fire detections in the whole of 2022, against 11,197 in 2018."},
+        {"var": "modis_lst_day_c", "month": "2025-12", "mode": "trend", "county": "SS0609", "say": "Daytime ground temperature fell significantly in 63 counties (typically -0.34 °C a year); Rubkona, now half water, cooled by -0.74 °C a year."},
+        {"var": "modis_ndvi", "month": "2025-12", "mode": "trend", "say": "Greenness rose in 77 of 79 counties (none individually significant), and the counties that greened most cooled most."}
+      ]
+    },
+    {
+      "key": "aid",
+      "title": "Wettest year, thinnest aid",
+      "color": "#3c8d4f",
+      "summary": "2025 had the highest yearly average water storage since 2018 (+16.2 cm), floods displaced about 242,000 people (IOM), and air and drone strikes jumped to 61 in Jonglei and 53 in Upper Nile, from 0 and 2 in 2024. Yet the UN appeal was only 46% funded and US humanitarian funding fell from US$708 million to US$282 million. Worth exploring: where climate stress, new violence and aid cuts landed in the same counties.",
+      "steps": [
+        {"var": "grace_tws_cm", "month": "2025-10", "mode": "raw", "say": "October 2025: the national average stood +30.6 cm above normal, and 2025 as a whole had the highest yearly average since 2018 (+16.2 cm)."},
+        {"var": "flood_s1_flood_pct", "month": "2025-09", "mode": "raw", "county": "SS0605", "say": "September 2025 flooding: Mayendit 58%, Koch 40%, Nasir 30% of county area beyond the dry-season norm."},
+        {"var": "acled_st_air_drone_strikes", "month": "2025-03", "mode": "raw", "county": "SS0704", "say": "March 2025, the month of the Nasir fighting: ACLED records 15 air and drone strikes in Upper Nile state (state totals); Jonglei follows with 29 in May, the month the MSF hospital in Old Fangak was bombed."},
+        {"var": "ipc_phase3plus_pct", "month": "2025-09", "mode": "raw", "county": "SS0306", "say": "Fangak in September 2025: 80% in crisis-level hunger, after about 43,000 flood and 60,000 conflict displacements that year. Open National trends to see the funding fall."}
+      ]
+    }
+  ]
+}
