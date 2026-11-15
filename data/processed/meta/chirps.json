@@ -1,0 +1,18 @@
+[
+ {
+  "id": "chirps_precip_mm",
+  "label": "Rainfall (CHIRPS v3)",
+  "category": "environment",
+  "group": "Precipitation",
+  "units": "mm/month",
+  "source": "CHIRPS v3.0 monthly (Climate Hazards Center, UCSB)",
+  "source_url": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/",
+  "native_resolution": "0.05° (~5.5 km)",
+  "temporal": "monthly",
+  "aggregation": "area-weighted mean of 0.05° cells (cell coverage fraction x cos lat)",
+  "higher_is": "better",
+  "index_ok": true,
+  "raster": "chirps",
+  "notes": "Coverage 2018-01..2025-12. Satellite IR + station blend with gauge-undercatch correction (v3 is wetter than v2). Cross-validated against IMERG precip_mm and TerraClimate tc_ppt: see docs/VALIDATION_rainfall.md. Ratio to 2018 is meaningless in dry-season months near 0 mm; compare wet-season or annual totals."
+ }
+]
