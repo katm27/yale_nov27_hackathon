@@ -19,6 +19,7 @@
     <section class="panel">
       <label class="field-label" for="mode">Show values as</label>
       <select id="mode">
+        <option value="trend">Trend 2018–2025: Sen's slope (% of 2018 level per year)</option>
         <option value="index_month">Index vs same month/season in 2018 (removes seasonality)</option>
         <option value="index_annual">Index vs 2018 annual average (2018 = 1.0)</option>
         <option value="raw">Raw values (original units)</option>
@@ -65,21 +66,28 @@
   </aside>
 
   <main id="main">
-    <div id="map" role="application" aria-label="Map of South Sudan counties"></div>
+    <div id="mapwrap">
+      <div id="map" role="application" aria-label="Map of South Sudan counties"></div>
 
-    <div id="timebar">
-      <button id="play" aria-label="Play">▶</button>
-      <input id="time" type="range" min="0" max="95" value="0" aria-label="Month">
-      <output id="time-label">Jan 2018</output>
+      <div id="timebar">
+        <button id="play" aria-label="Play">▶</button>
+        <input id="time" type="range" min="0" max="95" value="0" aria-label="Month">
+        <output id="time-label">Jan 2018</output>
+      </div>
+
+      <div id="legend" class="card" hidden></div>
+
+      <section id="detail" class="card" hidden>
+        <button id="detail-close" aria-label="Close">×</button>
+        <h2 id="detail-title"></h2>
+        <p id="detail-sub" class="sub"></p>
+        <div id="detail-charts"></div>
+      </section>
     </div>
 
-    <div id="legend" class="card" hidden></div>
-
-    <section id="detail" class="card" hidden>
-      <button id="detail-close" aria-label="Close">×</button>
-      <h2 id="detail-title"></h2>
-      <p id="detail-sub" class="sub"></p>
-      <div id="detail-charts"></div>
+    <section id="national" aria-label="National timeline">
+      <div class="nat-head"><h2>National timeline</h2><span class="hint">Country-wide series · orange line = selected month · click a chart to jump there</span></div>
+      <div id="nat-charts"></div>
     </section>
   </main>
 </div>

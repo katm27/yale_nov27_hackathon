@@ -20,7 +20,7 @@
   const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const state = {
     months: [], vars: [], varById: {}, series: {}, checked: new Set(), colorBy: null,
-    mode: "index_month", agg: "month", t: 0, selected: null,
+    mode: "trend", agg: "month", t: 0, selected: null,
     rasters: [], rasterOn: new Set(), rasterLayers: {}, points: [], pointLayers: {},
     timer: null, charts: [],
   };
@@ -69,15 +69,22 @@
   }
 
   /** Value shown for variable v, county c, time index i (in current mode/agg). */
-  function valueAt(v, c, i) {
+  const TREND_YEARS = 7;  // 2018 -> 2025
+  function trendValue(v, c) {
+    const tr = trendOf(v.id, c); if (!tr) return null;
+    return trendIsPct(v) ? tr[T_PCT] : tr[T_SEN];
+  }
+  const trendIsPct = (v) => v.index_ok !== false && !v.sparse_count;
+  function valueAt(v, c, i, mode = state.mode) {
+    if (mode === "trend") return trendValue(v, c);
     const s = state.series[v.id]; if (!s || !s[c]) return null;
     const arr = s[c];
     const raw = mean(windowIdx(i).map((j) => arr[j]));
     if (raw == null) return null;
-    if (state.mode === "raw" || v.temporal === "static") return raw;
+    if (mode === "raw" || v.temporal === "static") return raw;
     const by = v.baseline_year || 2018;
     let base;
-    if (state.mode === "index_month" && v.baseline_mode !== "annual") base = mean(baselineWindowIdx(i, by).map((j) => arr[j]));
+    if (mode === "index_month" && v.baseline_mode !== "annual") base = mean(baselineWindowIdx(i, by).map((j) => arr[j]));
     else base = mean(state.months.map((_, j) => j).filter((j) => yearOf(j) === by).map((j) => arr[j]));
     if (base == null) return null;
     if (v.index_ok === false) return raw - base;
@@ -88,6 +95,16 @@
 
   // ---------- colour scales ----------
   function scaleFor(v) {
+    if (state.mode === "trend" && v.temporal !== "static") {
+      const up = v.higher_is === "better" ? DIV_GOOD : v.higher_is === "worse" ? DIV_BAD : DIV_UP_NEUTRAL;
+      const down = v.higher_is === "better" ? DIV_BAD : v.higher_is === "worse" ? DIV_GOOD : DIV_DOWN_NEUTRAL;
+      if (v._trendSpan == null) {
+        const vals = Object.keys((state.trends || {})[v.id] || {}).map((c) => Math.abs(trendValue(v, c))).filter((x) => isFinite(x)).sort((a, b) => a - b);
+        v._trendSpan = vals.length ? Math.max(trendIsPct(v) ? 1 : 1e-6, vals[Math.floor(vals.length * 0.9)]) : 1;
+      }
+      const span = v._trendSpan;
+      return { kind: "trend", span, up, down, color: (x) => divColor(x == null ? null : x / span, up, down) };
+    }
     if (!isIndexMode() || v.temporal === "static") {
       const lo = v.p02 ?? v.min, hi = v.p98 ?? v.max;
       return { kind: "seq", lo, hi, color: (x) => {
@@ -167,18 +184,66 @@
     return { ...baseStyle, fillColor: col, fillOpacity: rasterVisible ? 0.35 : 0.78 };
   }
 
+  // ---------- hover card: profile + trend + sparklines ----------
+  const SPARKS = [
+    { label: "Forced migration (people displaced/returning, IOM ET)", ids: ["et_ind_total"], color: "#e34948" },
+    { label: "US humanitarian funding — national (OCHA FTS, USD/month)", ids: ["fts_us_gov_funding_month_usd", "us_aid_disbursed_month_usd"], color: "#2a78d6" },
+    { label: "Flood / surface-water extent (% of county)", ids: ["flood_s1_pct", "flood_gfm_pct", "flood_pct", "surface_water_pct"], prefix: "flood_", color: "#1baf7a" },
+    { label: "Drought index (ensemble mean; band = spread across sources)", ids: ["drought_ensemble_mean", "spei3"], band: "drought_ensemble_spread", color: "#eb6834" },
+  ];
+  function sparkVar(sp) {
+    let id = sp.ids.find((x) => state.varById[x]);
+    if (!id && sp.prefix) id = (state.vars.find((v) => v.id.startsWith(sp.prefix) && v.id.endsWith("_pct")) || {}).id;
+    return id ? state.varById[id] : null;
+  }
+  function sparkline(sp, cid) {
+    const v = sparkVar(sp); if (!v || !state.series[v.id] || !state.series[v.id][cid]) return "";
+    const arr = state.series[v.id][cid], W = 230, H = 22, n = arr.length;
+    const band = sp.band && state.series[sp.band] && state.series[sp.band][cid];
+    const lo = (i) => (band && arr[i] != null && band[i] != null ? arr[i] - band[i] / 2 : arr[i]);
+    const hi = (i) => (band && arr[i] != null && band[i] != null ? arr[i] + band[i] / 2 : arr[i]);
+    const vals = arr.map((x, i) => [lo(i), hi(i)]).flat().filter((x) => x != null && isFinite(x));
+    if (!vals.length) return "";
+    let mn = Math.min(...vals), mx = Math.max(...vals); if (mx === mn) { mx += 1; mn -= 1; }
+    const X = (i) => (i / (n - 1)) * W, Y = (y) => H - 2 - ((y - mn) / (mx - mn)) * (H - 4);
+    let d = "", pen = false;
+    arr.forEach((y, i) => { if (y == null || !isFinite(y)) { pen = false; return; } d += `${pen ? "L" : "M"}${X(i).toFixed(1)},${Y(y).toFixed(1)}`; pen = true; });
+    let bandPath = "";
+    if (band) {
+      const top = [], bot = [];
+      arr.forEach((y, i) => { if (y != null && band[i] != null) { top.push(`${X(i).toFixed(1)},${Y(hi(i)).toFixed(1)}`); bot.unshift(`${X(i).toFixed(1)},${Y(lo(i)).toFixed(1)}`); } });
+      if (top.length) bandPath = `<path d="M${top.join("L")}L${bot.join("L")}Z" fill="${sp.color}" opacity="0.18"/>`;
+    }
+    const zero = mn < 0 && mx > 0 ? `<line x1="0" x2="${W}" y1="${Y(0)}" y2="${Y(0)}" stroke="var(--line)" stroke-dasharray="2 2"/>` : "";
+    const cx = X(state.t), cur = arr[state.t];
+    return `<div class="spark"><div class="spark-l">${sp.label}${v.id !== sp.ids[0] ? ` <span class="muted">(${v.label})</span>` : ""}: <b>${cur == null ? "–" : fmt(cur)}</b></div>
+      <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true">${zero}${bandPath}<path d="${d}" fill="none" stroke="${sp.color}" stroke-width="1.6"/>
+      <line x1="${cx}" x2="${cx}" y1="0" y2="${H}" stroke="#eb6834" stroke-width="1.5"/></svg></div>`;
+  }
+  function profileHtml(cid) {
+    const pr = state.profiles && state.profiles[cid]; if (!pr) return "";
+    const lz = pr.livelihood_zone && pr.livelihood_zone.name ? `<div class="pf-lz">${pr.livelihood_zone.name}</div>` : "";
+    const part = (t) => (t ? `<div class="pf">${t}</div>` : "");
+    return `<div class="profile">${lz}${part(pr.livelihoods)}${part(pr.history)}${part(pr.conflict_impact)}</div>`;
+  }
+
   function tooltipHtml(p) {
     const v = state.varById[state.colorBy];
     let line = "";
     if (v) {
       const x = valueAt(v, p.district_id, state.t);
-      line = `<br>${v.label}: <b>${describeValue(v, x)}</b>${trendHtml(v, p.district_id, true)}`;
+      line = `<div class="tt-var">${v.label}: <b>${describeValue(v, x)}</b></div>${trendHtml(v, p.district_id, true)}`;
     }
-    return `<b>${p.name}</b> · ${p.admin1}${line}`;
+    const sparks = SPARKS.map((sp) => sparkline(sp, p.district_id)).join("");
+    return `<div class="tt"><div class="tt-h"><b>${p.name}</b> · ${p.admin1} <span class="muted">· ${windowLabel(state.t)}</span></div>${profileHtml(p.district_id)}${line}${sparks ? `<div class="sparks">${sparks}</div>` : ""}</div>`;
   }
-  function describeValue(v, x) {
-    if (x == null) return "no data";
-    if (state.mode === "raw" || v.temporal === "static") return `${fmt(x)} ${v.units || ""}`;
+  function describeValue(v, x, mode = state.mode) {
+    if (x == null) return mode === "trend" ? "no trend test" : "no data";
+    if (mode === "trend" && v.temporal !== "static") {
+      if (trendIsPct(v)) { const f = Math.max(0, 1 + (x * TREND_YEARS) / 100); return `${x >= 0 ? "+" : ""}${fmt(x, 2)}% of ${v.baseline_year} level per year (≈${fmt(f, 2)}× from 2018 to 2025)`; }
+      return `${x >= 0 ? "+" : ""}${fmt(x)} ${v.units || ""} per year (Sen's slope)`;
+    }
+    if (mode === "raw" || v.temporal === "static") return `${fmt(x)} ${v.units || ""}`;
     if (usesDiff(v)) return `${x >= 0 ? "+" : ""}${fmt(x)} ${v.units || ""} vs ${v.baseline_year}`;
     return `${fmt(x)}× ${v.baseline_year} level`;
   }
@@ -187,7 +252,7 @@
     if (!countyLayer) return;
     countyLayer.setStyle(styleCounty);
     countyLayer.eachLayer((l) => {
-      l.setTooltipContent(tooltipHtml(l.feature.properties));
+      if (l.isTooltipOpen && l.isTooltipOpen()) l.setTooltipContent(tooltipHtml(l.feature.properties));
       const tr = trendOf(state.colorBy, l.feature.properties.district_id);
       if ((tr && tr[T_SIG]) || state.selected === l.feature.properties.district_id) l.bringToFront();  // keep outlines visible
     });
@@ -206,15 +271,18 @@
     } else {
       const left = [...sc.down].reverse(), right = sc.up;
       const g = [...left, MID(), ...right].join(",");
-      const lo = sc.kind === "ratio" ? "≤0.5×" : `−${fmt(sc.span)}`;
-      const hi = sc.kind === "ratio" ? "≥2×" : `+${fmt(sc.span)}`;
-      const mid = sc.kind === "ratio" ? `1.0 = ${v.baseline_year}` : `0 = ${v.baseline_year}`;
+      const tpct = sc.kind === "trend" && trendIsPct(v);
+      const xf = (pct) => fmt(Math.max(0, 1 + (pct * TREND_YEARS) / 100), 2);
+      const lo = sc.kind === "ratio" ? "≤0.5×" : sc.kind === "trend" ? (tpct ? `−${fmt(sc.span, 2)}%/yr (≈${xf(-sc.span)}×)` : `−${fmt(sc.span)} ${v.units || ""}/yr`) : `−${fmt(sc.span)}`;
+      const hi = sc.kind === "ratio" ? "≥2×" : sc.kind === "trend" ? (tpct ? `+${fmt(sc.span, 2)}%/yr (≈${xf(sc.span)}×)` : `+${fmt(sc.span)} ${v.units || ""}/yr`) : `+${fmt(sc.span)}`;
+      const mid = sc.kind === "ratio" ? `1.0 = ${v.baseline_year}` : sc.kind === "trend" ? "no change" : `0 = ${v.baseline_year}`;
       html += `<div class="bar" style="background:linear-gradient(90deg,${g})"></div>
         <div class="ticks"><span>${lo}</span><span>${mid}</span><span>${hi}</span></div>`;
       const dir = v.higher_is === "neutral" ? "Purple = higher, orange = lower than baseline"
         : `Blue = better, red = worse than baseline (higher is ${v.higher_is})`;
       html += `<div class="note">${dir}${sc.kind === "diff" ? ` · change in ${v.units || "units"} (ratio not meaningful)` : ""}</div>`;
-      if (v.sparse_count) html += `<div class="note">Sparse count: shown as change from the ${v.baseline_year} monthly average (most ${v.baseline_year} months were zero, so a ratio is undefined).</div>`;
+      if (sc.kind === "trend") html += `<div class="note"><b>Trend 2018–2025 (Sen's slope)</b>: the median yearly change in each county's series${tpct ? `, as a % of its ${v.baseline_year} level; × = implied change from 2018 to 2025 (e.g. +10%/yr ≈ 1.7×)` : ` in ${v.units || "units"} per year (a % of baseline is not meaningful for this variable)`}. Monthly series use the seasonal Sen's slope. This map does not change with the time slider; arrows and points do.</div>`;
+      else if (v.sparse_count) html += `<div class="note">Sparse count: shown as change from the ${v.baseline_year} monthly average (most ${v.baseline_year} months were zero, so a ratio is undefined).</div>`;
       else if (state.mode === "index_month") html += `<div class="note">Compared with the same ${state.agg === "month" ? "month" : state.agg === "season" ? "season" : "year"} in ${v.baseline_year}.</div>`;
     }
     if (v.baseline_year && v.baseline_year !== 2018 && isIndexMode()) html += `<div class="note">⚠ Source starts in ${v.baseline_year}; baseline = ${v.baseline_year}.</div>`;
@@ -231,7 +299,11 @@
       if (cm) html += `<div class="bar" style="background:linear-gradient(90deg,${cm.join(",")})"></div>`;
       html += `<div class="ticks"><span>${fmt(r.vmin)}</span><span>${r.units || ""} · ${r.colormap || ""}</span><span>${fmt(r.vmax)}</span></div>`;
     }
+    // keep title + colour bar visible; fold the explanatory notes
+    const cut = html.indexOf('<div class="note">');
+    if (cut > 0) html = html.slice(0, cut) + `<details${state.legendOpen ? " open" : ""}><summary>How to read this</summary>${html.slice(cut)}</details>`;
     el.innerHTML = html;
+    const det = el.querySelector("details"); if (det) det.ontoggle = () => (state.legendOpen = det.open);
     el.hidden = false;
   }
 
@@ -350,7 +422,7 @@
 
   async function loadPoints(p) {
     const gj = await fetchJSON(p.file);
-    const timed = gj.features.some((f) => f.properties && (f.properties.date || f.properties.year));
+    const timed = gj.features.some((f) => f.properties && (f.properties.date || f.properties.year || f.properties.valid_from || f.properties.valid_to));
     const entry = { p, gj, timed, layer: null };
     state.pointLayers[p.key] = entry;
     drawPoints(entry);
@@ -360,6 +432,10 @@
     const idx = windowIdx(state.t);
     const lo = state.months[idx[0]], hi = state.months[idx[idx.length - 1]];
     if (pr.date) { const ym = String(pr.date).slice(0, 7); return ym >= lo && ym <= hi; }
+    if ("valid_from" in pr || "valid_to" in pr) {  // feature exists from valid_from to valid_to (YYYY-MM; null = open-ended)
+      const from = pr.valid_from ? String(pr.valid_from).slice(0, 7) : "0000-00", to = pr.valid_to ? String(pr.valid_to).slice(0, 7) : "9999-99";
+      return from <= hi && to >= lo;
+    }
     if (pr.year) { const y = String(pr.year); return y >= lo.slice(0, 4) && y <= hi.slice(0, 4) || (y <= hi.slice(0, 4) && !pr.end_year) || (pr.end_year && y <= hi.slice(0, 4) && String(pr.end_year) >= lo.slice(0, 4)); }
     return true;
   }
@@ -369,7 +445,7 @@
     const isEvent = timed && gj.features.some((f) => f.properties && f.properties.date);
     entry.layer = L.geoJSON(gj, {
       pane: "points",
-      filter: (f) => !isEvent || featureInWindow(f),
+      filter: (f) => !timed || featureInWindow(f),
       style: (f) => (f.geometry && /Point/.test(f.geometry.type) ? {} : { color: p._color, weight: 2, fillOpacity: 0.15 }),
       pointToLayer: (f, ll) => {
         const pr = f.properties || {};
@@ -405,14 +481,15 @@
       const v = state.varById[id];
       // One point per window (month / season / year).
       const keys = [], labels = [], vals = [], firstIdx = [];
-      state.months.forEach((_, i) => { const k = windowKey(i); if (!keys.includes(k)) { keys.push(k); firstIdx.push(i); labels.push(windowLabel(i)); vals.push(valueAt(v, state.selected, i)); } });
+      const cm = state.mode === "trend" ? "index_month" : state.mode;  // charts always show the time series
+      state.months.forEach((_, i) => { const k = windowKey(i); if (!keys.includes(k)) { keys.push(k); firstIdx.push(i); labels.push(windowLabel(i)); vals.push(valueAt(v, state.selected, i, cm)); } });
       const cur = keys.indexOf(windowKey(state.t));
       const block = document.createElement("div");
       block.className = "chart-block";
       block.innerHTML = `<h3>${v.label}${v.units && state.mode === "raw" ? ` (${v.units})` : ""}</h3>
-        <div class="now">${windowLabel(state.t)}: <b>${describeValue(v, vals[cur])}</b></div>${trendHtml(v, state.selected, false)}<canvas></canvas>`;
+        <div class="now">${windowLabel(state.t)}: <b>${describeValue(v, vals[cur], cm)}</b></div>${trendHtml(v, state.selected, false)}<canvas></canvas>`;
       box.appendChild(block);
-      const ref = state.mode === "raw" || v.temporal === "static" ? null : usesDiff(v) ? 0 : 1;
+      const ref = cm === "raw" || v.temporal === "static" ? null : usesDiff(v) ? 0 : 1;
       const ratio = ref === 1;
       // Ratios: log axis clamped to 1/8x..8x so tiny dry-season baselines don't flatten the chart.
       const plotVals = ratio ? vals.map((x) => (x == null ? null : Math.min(8, Math.max(0.125, x)))) : vals;
@@ -423,7 +500,7 @@
         options: {
           animation: false, responsive: true, maintainAspectRatio: false,
           interaction: { mode: "index", intersect: false },
-          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => describeValue(v, vals[c.dataIndex]) } } },
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => describeValue(v, vals[c.dataIndex], cm) } } },
           scales: {
             x: { ticks: { color: ink2, maxTicksLimit: 8, autoSkip: true, font: { size: 10 } }, grid: { display: false } },
             y: ratio
@@ -492,72 +569,170 @@
     return pts;
   }
   function flowWindowMonths() { return windowIdx(state.t).map((j) => state.months[j]); }
-  function flowStatus() {
+  const FLOW_PRIORITY = ["et", "fmr", "dtm_mt_idp_od"];
+  const FLOW_EXPLAIN = {
+    et: "IOM Event Tracking: people newly displaced or returning in this month, from the county they left to the county where IOM recorded them. Cross-border arrivals start at the border crossing.",
+    fmr: "IOM Flow Monitoring: people travelling because of conflict, disaster or hunger, counted at monitoring points (mostly Renk from 2023). Shows routes seen at those points, not all movement.",
+    dtm_mt_idp_od: "IOM Mobility Tracking: everyone displaced at the latest survey round, drawn from the county they came from to where they live now. A stock (cumulative), not this month's movement.",
+    dtm_mt_returnee_od: "IOM Mobility Tracking: returnees at the latest survey round, from where they were displaced to where they returned. A stock, not this month's movement.",
+    dtm_renk_intentions: "IOM Renk transit-centre survey (Jul 2024 only): where people arriving at Renk said they intended to go. A sample of intentions.",
+  };
+  state.flowMode = "best";
+  function sourceForMonth(m) {
+    const F = state.flows;
+    if (state.flowMode !== "best") { const si = F.sources.findIndex((x) => x.key === state.flowMode); return si >= 0 && F.sources[si].months.includes(m) ? si : -1; }
+    for (const k of FLOW_PRIORITY) { const si = F.sources.findIndex((x) => x.key === k); if (si >= 0 && F.sources[si].months.includes(m)) return si; }
+    return -1;
+  }
+  function flowStatus(used) {
     const F = state.flows; if (!F) return "";
-    const ms = flowWindowMonths();
-    return F.sources.filter((src) => !state.flowSources || state.flowSources.has(src.key)).map((src) => {
-      const have = ms.filter((m) => src.months.includes(m)).length;
-      const name = SOURCE_SHORT[src.key] || src.key;
-      if (have === ms.length && src.kind === "stock") {
-        const obs = (src.observed || []).filter((o) => o <= ms[ms.length - 1]).pop();
-        return `<span class="ok">✓ ${name} (survey round ${obs}${ms.includes(obs) ? "" : ", carried forward"})</span>`;
-      }
-      if (have === ms.length) return `<span class="ok">✓ ${name}</span>`;
-      if (have > 0) return `<span class="part">◐ ${name}: ${have}/${ms.length} months</span>`;
-      const note = src.key === "fmr" ? (ms[0] >= "2023-11" && ms[0] <= "2024-12" ? " (IOM published no county data Nov 2023–Dec 2024)" : ms[0] < "2020-01" ? " (series starts Jan 2020)" : "") :
-                   src.key === "et" && ms[0] < "2020-01" ? " (series starts 2020)" : "";
-      return `<span class="none">✕ ${name}: no county flow data${note}</span>`;
-    }).join(" · ");
+    if (!used.size) {
+      const m = flowWindowMonths()[0];
+      const why = state.flowMode === "fmr" && m >= "2023-11" && m <= "2024-12" ? " IOM published no county-level Flow Monitoring data for Nov 2023–Dec 2024."
+        : m < "2018-12" ? " No county-level flow data exists before Dec 2018." : "";
+      return `<span class="none">No arrows for ${windowLabel(state.t)} from this source.${why}</span>`;
+    }
+    return [...used].map((si) => {
+      const src = F.sources[si];
+      let when = "";
+      if (src.kind === "stock") { const obs = (src.observed || []).filter((o) => o <= flowWindowMonths().slice(-1)[0]).pop(); when = ` — survey round ${obs}`; }
+      return `<span class="ok">Showing: ${SOURCE_SHORT[src.key] || src.key}${when}.</span> ${FLOW_EXPLAIN[src.key] || src.label}`;
+    }).join("<br>");
   }
   function drawFlows() {
     if (state.flowLayer) { map.removeLayer(state.flowLayer); state.flowLayer = null; }
     const F = state.flows;
-    const st = $("#flow-status"); if (st) st.innerHTML = F ? flowStatus() : "";
-    if (!F || !state.flowOn) return;
+    if (!F) return;
     const ms = flowWindowMonths();
-    const agg = new Map();
-    for (const m of ms) for (const [si, a, b, r, n] of F.months[m] || []) {
-      const src = F.sources[si];
-      if (state.flowSources && !state.flowSources.has(src.key)) continue;
-      if (state.flowReasons && !state.flowReasons.has(F.reasons[r])) continue;
-      const k = `${si}|${a}|${b}|${r}`; agg.set(k, (agg.get(k) || 0) + n);
+    const agg = new Map(), used = new Set();
+    if (state.flowOn) for (const m of ms) {
+      const pick = sourceForMonth(m); if (pick < 0) continue;
+      used.add(pick);
+      for (const [si, a, b, r, n] of F.months[m] || []) {
+        if (si !== pick) continue;
+        if (state.flowReasons && !state.flowReasons.has(F.reasons[r])) continue;
+        const k = `${si}|${a}|${b}|${r}`; agg.set(k, (agg.get(k) || 0) + n);
+      }
     }
-    const all = [...agg.entries()].map(([k, n]) => { const [si, a, b, r] = k.split("|").map(Number); return { si, a, b, r, n }; });
-    const list = [];
-    F.sources.forEach((src, si) => list.push(...all.filter((f) => f.si === si).sort((x, y) => y.n - x.n).slice(0, srcStyle(src.key)[2])));
-    list.sort((x, y) => y.n / (F.sources[y.si].max || 1) - x.n / (F.sources[x.si].max || 1));  // biggest drawn first, small on top
+    const st = $("#flow-status"); if (st) st.innerHTML = state.flowOn ? flowStatus(used) : "";
+    if (!state.flowOn) return;
+    const list = [...agg.entries()].map(([k, n]) => { const [si, a, b, r] = k.split("|").map(Number); return { si, a, b, r, n }; })
+      .sort((x, y) => y.n - x.n).slice(0, 200);
     state.flowLayer = L.layerGroup().addTo(map);
     ensureArrowDefs();
+    const crossingsUsed = new Map();
     for (const f of list) {
       const src = F.sources[f.si], A = F.nodes[f.a], B = F.nodes[f.b], reason = F.reasons[f.r];
       const [color, rlabel] = REASON_STYLE[reason] || REASON_STYLE.other;
       const w = Math.max(1.3, Math.min(14, 11 * Math.sqrt(f.n / (src.max || 1))));
+      if (!String(A[3]).startsWith("SS")) crossingsUsed.set(f.a, (crossingsUsed.get(f.a) || 0) + f.n);
       const line = L.polyline(bezier(A, B, 0.12 + 0.03 * f.r), {
-        renderer: flowRenderer, pane: "flows", color, weight: w, opacity: srcStyle(src.key)[1], lineCap: "round",
-        dashArray: srcStyle(src.key)[0],
-      }).bindTooltip(`<b>${A[2]} → ${B[2]}</b><br>${rlabel} · <b>${f.n.toLocaleString()}</b> people<br><span style="color:var(--muted)">${src.label} · ${windowLabel(state.t)}${src.kind === "stock" ? " · people living away from origin at the latest survey round (stock, not monthly movement)" : ""}</span>`, { sticky: true });
+        renderer: flowRenderer, pane: "flows", color, weight: w, opacity: 0.85, lineCap: "round",
+      }).bindTooltip(`<b>${A[2]} → ${B[2]}</b><br>${rlabel} · <b>${f.n.toLocaleString()}</b> people<br><span style="color:var(--muted)">${SOURCE_SHORT[src.key] || src.key} · ${windowLabel(state.t)}${src.kind === "stock" ? " · stock at the latest survey round, not monthly movement" : ""}</span>`, { sticky: true });
       line.addTo(state.flowLayer);
       if (line._path) line._path.setAttribute("marker-end", `url(#ah-${f.r})`);
+    }
+    for (const [ni, n] of crossingsUsed) {
+      const N = F.nodes[ni];
+      L.circleMarker([N[0], N[1]], { pane: "flows", radius: 6, color: "#0b0b0b", weight: 2, fillColor: "#ffffff", fillOpacity: 1 })
+        .bindTooltip(`${N[2]}<br><b>${n.toLocaleString()}</b> people arriving`, { permanent: false, direction: "top" }).addTo(state.flowLayer);
     }
   }
   function renderFlowControls() {
     const F = state.flows, el = $("#flow-controls"); if (!F || !el) return;
-    state.flowSources = new Set(F.sources.map((x) => x.key));
     const used = new Set(); Object.values(F.months).forEach((rows) => rows.forEach((r) => used.add(F.reasons[r[3]])));
     state.flowReasons = new Set(used);
-    let h = `<div class="var-row"><input type="checkbox" id="flow-on" checked><label for="flow-on"><b>Show migration arrows</b> <span class="meta">(width ∝ √people)</span></label></div>`;
-    h += `<div class="group-title">Source</div>`;
-    F.sources.forEach((x) => { h += `<div class="var-row"><input type="checkbox" class="flow-src" value="${x.key}" id="fs-${x.key}" checked>
-      <svg width="22" height="8" aria-hidden="true"><line x1="1" y1="4" x2="21" y2="4" stroke="var(--ink-2)" stroke-width="3" stroke-linecap="round" ${srcStyle(x.key)[0] ? `stroke-dasharray="${srcStyle(x.key)[0]}"` : ""}/></svg>
-      <label for="fs-${x.key}">${SOURCE_SHORT[x.key] || x.key} <span class="meta">· ${x.kind === "stock" ? `${(x.observed || []).length} survey rounds` : `${x.months.length} months`} · ${x.label}</span></label></div>`; });
+    let h = `<div class="var-row"><input type="checkbox" id="flow-on" checked><label for="flow-on"><b>Show migration arrows</b> <span class="meta">(arrow width ∝ √people; colour = reason)</span></label></div>`;
+    h += `<div class="group-title">Data shown</div>`;
+    const opt = (val, lab, meta) => `<div class="var-row"><input type="radio" name="flow-src" value="${val}" id="fs-${val}" ${state.flowMode === val ? "checked" : ""}><label for="fs-${val}">${lab} <span class="meta">${meta}</span></label></div>`;
+    h += opt("best", "Best available each month", "· Event Tracking, else Flow Monitoring, else latest Mobility Tracking survey");
+    F.sources.forEach((x) => { h += opt(x.key, SOURCE_SHORT[x.key] || x.key, `· ${x.kind === "stock" ? `${(x.observed || []).length} survey rounds (stock)` : `${x.months.length} months`}`); });
     h += `<div class="group-title">Reason</div>`;
     F.reasons.filter((r) => used.has(r)).forEach((r) => { const [c, lab] = REASON_STYLE[r] || REASON_STYLE.other;
       h += `<div class="var-row"><input type="checkbox" class="flow-reason" value="${r}" id="fr-${r}" checked><span class="swatch" style="background:${c}"></span><label for="fr-${r}">${lab}</label></div>`; });
-    h += `<p class="hint" id="flow-status"></p>`;
+    h += `<p class="hint">○ White circles on the border = crossing points where people arrived from neighbouring countries.</p><p class="hint" id="flow-status"></p>`;
     el.innerHTML = h;
     $("#flow-on").onchange = (e) => { state.flowOn = e.target.checked; drawFlows(); };
-    el.querySelectorAll(".flow-src").forEach((cb) => (cb.onchange = () => { cb.checked ? state.flowSources.add(cb.value) : state.flowSources.delete(cb.value); drawFlows(); }));
+    el.querySelectorAll('input[name="flow-src"]').forEach((rb) => (rb.onchange = () => { state.flowMode = rb.value; drawFlows(); }));
     el.querySelectorAll(".flow-reason").forEach((cb) => (cb.onchange = () => { cb.checked ? state.flowReasons.add(cb.value) : state.flowReasons.delete(cb.value); drawFlows(); }));
+  }
+
+
+  // ---------- national timeline (bottom strip) ----------
+  const NATIONAL = [
+    { label: "US government humanitarian funding (OCHA FTS)", ids: ["fts_us_gov_funding_month_usd"], how: "national", units: "USD / month", color: "#2a78d6" },
+    { label: "USAID disbursements (ForeignAssistance.gov)", ids: ["usaid_disbursed_month_usd"], how: "national", units: "USD / month", color: "#2a78d6" },
+    { label: "All humanitarian funding (OCHA FTS)", ids: ["fts_hum_funding_month_usd"], how: "national", units: "USD / month", color: "#2a78d6" },
+    { label: "Humanitarian Response Plan coverage (OCHA FTS)", ids: ["hrp_coverage_year"], how: "national", scale: 100, units: "% funded", color: "#2a78d6" },
+    { label: "UNMISS uniformed personnel (UN DPO)", ids: ["unmiss_uniformed_personnel"], how: "national", units: "personnel", color: "#6250d6" },
+    { label: "People newly displaced or returning (IOM ET, all counties)", ids: ["et_ind_total"], how: "sum", units: "people / month", color: "#e34948" },
+    { label: "Conflict fatalities (ACLED political violence)", ids: ["acled_pv_fatalities"], how: "sum", units: "deaths / month", color: "#e34948" },
+    { label: "Within-county / intercommunal violence events", ids: ["intracounty_conflict_events", "ucdp_non_state_events"], how: "sum", units: "events / month", color: "#e34948" },
+    { label: "Sexual violence events (ACLED, gender-based violence)", ids: ["acled_st_sexual_violence_events"], how: "state_sum", units: "events / month", color: "#e87ba4" },
+    { label: "Sexual-violence incidents (Insecurity Insight)", ids: ["ii_sexual_violence_incidents"], how: "sum", units: "incidents / month", color: "#e87ba4" },
+    { label: "Flood / surface-water extent (all counties)", ids: ["flood_s1_km2", "flood_gfm_km2", "flood_km2", "surface_water_km2"], prefix: "flood_", suffix: "_km2", how: "sum", units: "km²", color: "#1baf7a" },
+    { label: "Drought index (national mean; ensemble if available)", ids: ["drought_ensemble_mean", "spei3"], how: "mean", units: "index", color: "#eb6834" },
+    { label: "Rainfall (national mean, IMERG)", ids: ["precip_mm"], how: "mean", units: "mm / month", color: "#2a78d6" },
+    { label: "Vegetation greenness NDVI (national mean)", ids: ["modis_ndvi"], how: "mean", units: "NDVI", color: "#008300" },
+  ];
+  state.natCharts = [];
+  function natVar(spec) {
+    let id = spec.ids.find((x) => state.varById[x]);
+    if (!id && spec.prefix) id = (state.vars.find((v) => v.id.startsWith(spec.prefix) && v.id.endsWith(spec.suffix || "")) || {}).id;
+    return id ? state.varById[id] : null;
+  }
+  function nationalSeries(spec, v) {
+    const s = state.series[v.id]; if (!s) return null;
+    const ids = Object.keys(s), n = state.months.length, out = new Array(n).fill(null);
+    let rows = ids;
+    if (spec.how === "national") rows = [ids.find((c) => s[c].some((x) => x != null))].filter(Boolean);
+    if (spec.how === "state_sum") {  // state totals are repeated on each county: take one county per state
+      const seen = new Set(); rows = [];
+      countyLayer.eachLayer((l) => { const p = l.feature.properties; if (!seen.has(p.admin1) && s[p.district_id]) { seen.add(p.admin1); rows.push(p.district_id); } });
+    }
+    for (let i = 0; i < n; i++) {
+      let tot = 0, k = 0;
+      for (const c of rows) { const x = s[c][i]; if (x != null && isFinite(x)) { tot += x; k++; } }
+      if (k) out[i] = (spec.how === "mean" ? tot / k : tot) * (spec.scale || 1);
+    }
+    return out;
+  }
+  async function renderNational() {
+    const box = $("#nat-charts"); if (!box) return;
+    state.natCharts.forEach((c) => c.destroy()); state.natCharts = []; box.innerHTML = "";
+    const ink2 = getComputedStyle(document.documentElement).getPropertyValue("--ink-2").trim();
+    const line = getComputedStyle(document.documentElement).getPropertyValue("--line").trim();
+    for (const spec of NATIONAL) {
+      const v = natVar(spec); if (!v) continue;
+      try { await ensureSeries(v.id); } catch (e) { continue; }
+      const data = nationalSeries(spec, v); if (!data || !data.some((x) => x != null)) continue;
+      const tile = document.createElement("div"); tile.className = "nat-tile";
+      tile.innerHTML = `<div class="nt-l" title="${v.label}">${spec.label}</div><div class="nt-v"></div><canvas></canvas>`;
+      box.appendChild(tile);
+      const chart = new Chart(tile.querySelector("canvas"), {
+        type: "line",
+        data: { labels: state.months, datasets: [{ data, borderColor: spec.color, borderWidth: 1.6, pointRadius: 0, pointHitRadius: 6, spanGaps: false, tension: 0.1 }] },
+        options: {
+          animation: false, responsive: false, maintainAspectRatio: false,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { title: (c) => monthLabel(c[0].dataIndex), label: (c) => `${fmt(c.raw)} ${spec.units}` } } },
+          scales: { x: { display: true, ticks: { color: ink2, font: { size: 9 }, maxTicksLimit: 4, callback: (val, i) => state.months[i].slice(0, 4) }, grid: { display: false } },
+                    y: { ticks: { color: ink2, font: { size: 9 }, maxTicksLimit: 3, callback: (x) => fmt(x, 2) }, grid: { color: line } } },
+          onClick: (evt, els, ch) => { const i = Math.round(ch.scales.x.getValueForPixel(evt.x)); if (i >= 0 && i < state.months.length) setTime(i); },
+        },
+        plugins: [{ id: "cursor", afterDraw(c) { const { ctx, chartArea: a, scales } = c; const x = scales.x.getPixelForValue(state.t);
+          ctx.save(); ctx.strokeStyle = "#eb6834"; ctx.lineWidth = 1.5; ctx.beginPath(); ctx.moveTo(x, a.top); ctx.lineTo(x, a.bottom); ctx.stroke(); ctx.restore(); } }],
+      });
+      chart._spec = spec; chart._tile = tile;
+      state.natCharts.push(chart);
+    }
+    updateNational();
+  }
+  function updateNational() {
+    for (const c of state.natCharts) {
+      const x = c.data.datasets[0].data[state.t];
+      c._tile.querySelector(".nt-v").textContent = `${monthLabel(state.t)}: ${x == null ? "–" : fmt(x)} ${c._spec.units}`;
+      c.draw();
+    }
   }
 
   // ---------- time ----------
@@ -565,7 +740,7 @@
     state.t = i;
     $("#time").value = i;
     $("#time-label").textContent = windowLabel(i);
-    refreshCounties(); updateRasters(); refreshPoints(); drawFlows();
+    refreshCounties(); updateRasters(); refreshPoints(); drawFlows(); updateNational();
     if (state.selected) renderDetail();
   }
   function togglePlay() {
@@ -590,14 +765,16 @@
     state.vars.forEach((v) => (state.varById[v.id] = v));
     state.rasters = layers.rasters || [];
     state.points = layers.points || [];
-    fetchJSON("data/trends.json").then((t) => { state.trends = t; refreshCounties(); renderLegend(); }).catch(() => {});
+    fetchJSON("data/trends.json").then((t) => { state.trends = t; state.vars.forEach((v) => (v._trendSpan = null)); refreshCounties(); renderLegend(); }).catch(() => {});
+    fetchJSON("data/profiles.json").then((pj) => { state.profiles = pj; }).catch(() => {});
+    SPARKS.forEach((sp) => { const v = sparkVar(sp); if (v) ensureSeries(v.id).catch(() => {}); if (sp.band && state.varById[sp.band]) ensureSeries(sp.band).catch(() => {}); });
     fetchJSON("data/flows.json").then((f) => { state.flows = f; renderFlowControls(); drawFlows(); }).catch((e) => console.warn("no flows", e));
     $("#time").max = state.months.length - 1;
 
     countyLayer = L.geoJSON(counties, {
       style: styleCounty,
       onEachFeature: (f, l) => {
-        l.bindTooltip(tooltipHtml(f.properties), { sticky: true });
+        l.bindTooltip(() => tooltipHtml(f.properties), { sticky: true, className: "county-tt" });
         l.on("click", () => { state.selected = f.properties.district_id; refreshCounties(); renderDetail(); });
         l.on("mouseover", () => l.setStyle({ weight: 2.5, color: "#0b0b0b" }));
         l.on("mouseout", () => countyLayer.resetStyle(l));
@@ -605,7 +782,7 @@
     }).addTo(map);
     map.fitBounds(countyLayer.getBounds(), { padding: [10, 10] });
 
-    $("#mode").onchange = (e) => { state.mode = e.target.value; state.vars.forEach((v) => { if (usesDiff(v) && state.series[v.id]) computeDiffSpan(v); }); refreshCounties(); renderLegend(); renderDetail(); };
+    $("#mode").onchange = (e) => { state.mode = e.target.value; document.body.dataset.mode = state.mode; state.vars.forEach((v) => { if (usesDiff(v) && state.series[v.id]) computeDiffSpan(v); }); refreshCounties(); renderLegend(); renderDetail(); };
     $("#agg").onchange = (e) => { state.agg = e.target.value; state.vars.forEach((v) => { if (usesDiff(v) && state.series[v.id]) computeDiffSpan(v); }); setTime(state.t); renderLegend(); };
     $("#time").oninput = (e) => setTime(+e.target.value);
     $("#play").onclick = togglePlay;
@@ -616,6 +793,7 @@
     renderRasterList(); renderPointList();
     const first = state.vars.find((v) => v.id === "precip_mm") || state.vars[0];
     if (first) await setColorBy(first.id); else renderVarList();
+    renderNational().then(() => map.invalidateSize()).catch((e) => console.warn("national", e));
     setTime(state.months.indexOf("2019-08") >= 0 ? state.months.indexOf("2019-08") : 0);
   }
   boot().catch((e) => { console.error(e); $("#var-list").innerHTML = `<p class="empty">Could not load data: ${e.message}</p>`; });

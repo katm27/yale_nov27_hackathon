@@ -91,3 +91,42 @@ a { color: var(--accent); }
 /* flows */
 #flow-status .ok { color: #0ca30c; } #flow-status .part { color: #c98500; } #flow-status .none { color: #d03b3b; }
 #flow-status { margin-top: 6px; }
+
+/* hover card */
+.county-tt { max-width: 340px; white-space: normal; padding: 8px 10px; }
+.tt { width: 300px; font-size: 12px; line-height: 1.35; }
+.tt-h { font-size: 13px; margin-bottom: 4px; }
+.tt .muted, .spark .muted { color: var(--muted); font-weight: normal; }
+.profile { border-left: 3px solid var(--line); padding-left: 6px; margin: 4px 0 6px; color: var(--ink-2); }
+.profile .pf-lz { font-weight: 600; color: var(--ink); }
+.profile .pf { margin-top: 2px; }
+.tt-var { margin-top: 4px; }
+.sparks { margin-top: 6px; border-top: 1px solid var(--line); padding-top: 4px; }
+.spark { margin-top: 4px; }
+.spark-l { font-size: 11px; color: var(--ink-2); }
+.spark svg { display: block; }
+
+/* layout: map above, national timeline below */
+#main { display: flex; flex-direction: column; }
+#mapwrap { position: relative; flex: 1; min-height: 0; }
+#national { flex: none; height: 178px; border-top: 1px solid var(--line); background: var(--surface); padding: 6px 12px 8px; overflow: hidden; }
+.nat-head { display: flex; gap: 12px; align-items: baseline; }
+.nat-head h2 { margin: 0; }
+#nat-charts { display: flex; gap: 12px; overflow-x: auto; height: 142px; padding-bottom: 4px; }
+.nat-tile { flex: none; width: 210px; }
+.nat-tile .nt-l { font-size: 11px; color: var(--ink-2); height: 28px; overflow: hidden; line-height: 1.25; }
+.nat-tile .nt-v { font-weight: 600; font-size: 12px; font-variant-numeric: tabular-nums; }
+.nat-tile canvas { width: 210px !important; height: 92px !important; cursor: pointer; }
+#detail { bottom: 70px; }
+@media (max-width: 760px) { #mapwrap { height: 60vh; flex: none; } #national { height: auto; } }
+
+#legend { top: auto; bottom: 84px; left: 12px; max-height: 55%; overflow-y: auto; }
+#legend summary { cursor: pointer; color: var(--accent); font-size: 12px; margin-top: 4px; }
+.profile .pf { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.tt .trend-txt { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.spark { margin-top: 2px; }
+#legend { min-width: 280px; }
+#legend .ticks { gap: 10px; }
+#legend .ticks span:nth-child(2) { text-align: center; }
+#timebar { z-index: 640; }
+#legend { z-index: 500; }

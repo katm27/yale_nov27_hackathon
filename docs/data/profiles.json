@@ -1,0 +1,4077 @@
+{
+ "SS0101": {
+  "name": "Juba",
+  "state": "Central Equatoria",
+  "livelihood_zone": {
+   "code": "SS03",
+   "name": "Highland forest and sorghum",
+   "share": 0.9
+  },
+  "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 690 political-violence events, 1057 deaths (peak 2023); IDPs peak 172,600 (2024-09); IPC3+ peak 50%; flood-displaced 56,896.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 690,
+   "acled_pv_fatalities_2018_2025": 1057,
+   "acled_civilian_targeting_fatalities_2018_2025": 578,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 205,
+   "ucdp_events_2018_2025": 27,
+   "ucdp_deaths_best_2018_2025": 135,
+   "ucdp_peak_year": 2019,
+   "dtm_idps_peak": 172600,
+   "dtm_idps_peak_date": "2024-09",
+   "dtm_idps_latest": 161019,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 56896,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 84616,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 16275,
+   "dtm_et_arrivals_from_sudan_2023_2025": 136272,
+   "ipc_phase3plus_pct_peak": 50,
+   "ipc_phase3plus_peak_date": "2024-09",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 345460,
+   "surface_water_pct_max": 2.0,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.1,
+   "lhz_shares": {
+    "SS03": 0.9,
+    "SS08": 0.05
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0102": {
+  "name": "Kajo-keji",
+  "state": "Central Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.99
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 130 political-violence events, 210 deaths (peak 2025); IDPs peak 41,183 (2018-12); IPC3+ peak 65%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 130,
+   "acled_pv_fatalities_2018_2025": 210,
+   "acled_civilian_targeting_fatalities_2018_2025": 70,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 71,
+   "ucdp_events_2018_2025": 10,
+   "ucdp_deaths_best_2018_2025": 63,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 41183,
+   "dtm_idps_peak_date": "2018-12",
+   "dtm_idps_latest": 13086,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 36047,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 293,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 139595,
+   "surface_water_pct_max": 0.6,
+   "surface_water_max_month": "2023-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0103": {
+  "name": "Lainya",
+  "state": "Central Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 1.0
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 239 political-violence events, 353 deaths (peak 2019); IDPs peak 55,190 (2021-12); IPC3+ peak 70%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 239,
+   "acled_pv_fatalities_2018_2025": 353,
+   "acled_civilian_targeting_fatalities_2018_2025": 119,
+   "acled_peak_year_fatalities": 2019,
+   "acled_peak_year_fatalities_value": 98,
+   "ucdp_events_2018_2025": 21,
+   "ucdp_deaths_best_2018_2025": 65,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 55190,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 12719,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 14996,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 581,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2018-01",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 70184,
+   "surface_water_pct_max": 11.4,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0104": {
+  "name": "Morobo",
+  "state": "Central Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.98
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 189 political-violence events, 252 deaths (peak 2025); IDPs peak 27,378 (2022-08); IPC3+ peak 60%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 189,
+   "acled_pv_fatalities_2018_2025": 252,
+   "acled_civilian_targeting_fatalities_2018_2025": 40,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 98,
+   "ucdp_events_2018_2025": 18,
+   "ucdp_deaths_best_2018_2025": 52,
+   "ucdp_peak_year": 2019,
+   "dtm_idps_peak": 27378,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 8626,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 822,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 8698,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 60,
+   "ipc_phase3plus_peak_date": "2018-01",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 82721,
+   "surface_water_pct_max": 3.6,
+   "surface_water_max_month": "2023-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.98
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0105": {
+  "name": "Terekeka",
+  "state": "Central Equatoria",
+  "livelihood_zone": {
+   "code": "SS02",
+   "name": "Ironstone Plateau agro-pastoral",
+   "share": 0.81
+  },
+  "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 48 political-violence events, 150 deaths (peak 2018); IDPs peak 35,746 (2020-12); IPC3+ peak 60%; flood-displaced 106,145.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 48,
+   "acled_pv_fatalities_2018_2025": 150,
+   "acled_civilian_targeting_fatalities_2018_2025": 77,
+   "acled_peak_year_fatalities": 2018,
+   "acled_peak_year_fatalities_value": 55,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 35746,
+   "dtm_idps_peak_date": "2020-12",
+   "dtm_idps_latest": 18527,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 106145,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 10898,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 6825,
+   "dtm_et_arrivals_from_sudan_2023_2025": 278,
+   "ipc_phase3plus_pct_peak": 60,
+   "ipc_phase3plus_peak_date": "2018-01",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 155038,
+   "surface_water_pct_max": 3.2,
+   "surface_water_max_month": "2019-10",
+   "surface_water_pct_median": 1.0,
+   "lhz_shares": {
+    "SS02": 0.81,
+    "SS06": 0.13,
+    "SS08": 0.07
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0106": {
+  "name": "Yei",
+  "state": "Central Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.99
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 393 political-violence events, 386 deaths (peak 2018); IDPs peak 85,550 (2021-09); IPC3+ peak 45%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 393,
+   "acled_pv_fatalities_2018_2025": 386,
+   "acled_civilian_targeting_fatalities_2018_2025": 204,
+   "acled_peak_year_fatalities": 2018,
+   "acled_peak_year_fatalities_value": 121,
+   "ucdp_events_2018_2025": 30,
+   "ucdp_deaths_best_2018_2025": 90,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 85550,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 36359,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 10094,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 5647,
+   "dtm_et_arrivals_from_sudan_2023_2025": 288,
+   "ipc_phase3plus_pct_peak": 45,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 25,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 135985,
+   "surface_water_pct_max": 22.5,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0201": {
+  "name": "Budi",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS03",
+   "name": "Highland forest and sorghum",
+   "share": 0.85
+  },
+  "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 169 political-violence events, 278 deaths (peak 2021); IDPs peak 16,550 (2021-12); IPC3+ peak 80%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 169,
+   "acled_pv_fatalities_2018_2025": 278,
+   "acled_civilian_targeting_fatalities_2018_2025": 185,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 79,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 18,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 16550,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 4390,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 75,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 35,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 79394,
+   "surface_water_pct_max": 0.2,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS03": 0.85,
+    "SS05": 0.15
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0202": {
+  "name": "Ikotos",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS03",
+   "name": "Highland forest and sorghum",
+   "share": 0.56,
+   "secondary": {
+    "code": "SS01",
+    "name": "Equatorial maize and cassava",
+    "share": 0.44
+   }
+  },
+  "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income. Also Equatorial maize and cassava zone (44%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 84 political-violence events, 113 deaths (peak 2022); IDPs peak 20,852 (2018-12); IPC3+ peak 55%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 84,
+   "acled_pv_fatalities_2018_2025": 113,
+   "acled_civilian_targeting_fatalities_2018_2025": 72,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 33,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 2,
+   "ucdp_peak_year": 2024,
+   "dtm_idps_peak": 20852,
+   "dtm_idps_peak_date": "2018-12",
+   "dtm_idps_latest": 6378,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 8671,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 55,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 70513,
+   "surface_water_pct_max": 0.6,
+   "surface_water_max_month": "2020-07",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS03": 0.56,
+    "SS01": 0.44
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0203": {
+  "name": "Kapoeta East",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS05",
+   "name": "South-Eastern semi-arid pastoral",
+   "share": 1.0
+  },
+  "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 112 political-violence events, 230 deaths (peak 2024); IDPs peak 24,107 (2019-06); IPC3+ peak 70%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 112,
+   "acled_pv_fatalities_2018_2025": 230,
+   "acled_civilian_targeting_fatalities_2018_2025": 124,
+   "acled_peak_year_fatalities": 2024,
+   "acled_peak_year_fatalities_value": 76,
+   "ucdp_events_2018_2025": 9,
+   "ucdp_deaths_best_2018_2025": 111,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 24107,
+   "dtm_idps_peak_date": "2019-06",
+   "dtm_idps_latest": 1116,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 6500,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 127645,
+   "surface_water_pct_max": 2.0,
+   "surface_water_max_month": "2018-05",
+   "surface_water_pct_median": 0.1,
+   "lhz_shares": {
+    "SS05": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0204": {
+  "name": "Kapoeta North",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS05",
+   "name": "South-Eastern semi-arid pastoral",
+   "share": 1.0
+  },
+  "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 45 political-violence events, 127 deaths (peak 2022); IDPs peak 14,233 (2021-12); IPC3+ peak 75%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 45,
+   "acled_pv_fatalities_2018_2025": 127,
+   "acled_civilian_targeting_fatalities_2018_2025": 37,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 71,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 235,
+   "ucdp_peak_year": 2022,
+   "dtm_idps_peak": 14233,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 7538,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 75,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 114264,
+   "surface_water_pct_max": 6.8,
+   "surface_water_max_month": "2019-10",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS05": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0205": {
+  "name": "Kapoeta South",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS05",
+   "name": "South-Eastern semi-arid pastoral",
+   "share": 0.97
+  },
+  "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 61 political-violence events, 93 deaths (peak 2024); IDPs peak 11,095 (2019-06); IPC3+ peak 65%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 61,
+   "acled_pv_fatalities_2018_2025": 93,
+   "acled_civilian_targeting_fatalities_2018_2025": 69,
+   "acled_peak_year_fatalities": 2024,
+   "acled_peak_year_fatalities_value": 27,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 11095,
+   "dtm_idps_peak_date": "2019-06",
+   "dtm_idps_latest": 4182,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 30,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 62421,
+   "surface_water_pct_max": 0.1,
+   "surface_water_max_month": "2019-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS05": 0.97
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0206": {
+  "name": "Lafon",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 0.63,
+   "secondary": {
+    "code": "SS05",
+    "name": "South-Eastern semi-arid pastoral",
+    "share": 0.28
+   }
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also South-Eastern semi-arid pastoral zone (28%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 61 political-violence events, 65 deaths (peak 2023); IDPs peak 21,808 (2025-02); IPC3+ peak 55%; flood-displaced 9,298.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 61,
+   "acled_pv_fatalities_2018_2025": 65,
+   "acled_civilian_targeting_fatalities_2018_2025": 56,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 39,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 21808,
+   "dtm_idps_peak_date": "2025-02",
+   "dtm_idps_latest": 21808,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 9298,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 55,
+   "ipc_phase3plus_peak_date": "2023-09",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 75205,
+   "surface_water_pct_max": 21.2,
+   "surface_water_max_month": "2019-09",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS06": 0.63,
+    "SS05": 0.28,
+    "SS03": 0.09
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0207": {
+  "name": "Magwi",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS03",
+   "name": "Highland forest and sorghum",
+   "share": 0.73
+  },
+  "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 106 political-violence events, 206 deaths (peak 2022); IDPs peak 62,306 (2022-08); IPC3+ peak 45%; flood-displaced 2,537.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 106,
+   "acled_pv_fatalities_2018_2025": 206,
+   "acled_civilian_targeting_fatalities_2018_2025": 96,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 90,
+   "ucdp_events_2018_2025": 7,
+   "ucdp_deaths_best_2018_2025": 77,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 62306,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 52010,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 2537,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 30407,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 7686,
+   "dtm_et_arrivals_from_sudan_2023_2025": 372,
+   "ipc_phase3plus_pct_peak": 45,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 86401,
+   "surface_water_pct_max": 1.9,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS03": 0.73,
+    "SS01": 0.25
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0208": {
+  "name": "Torit",
+  "state": "Eastern Equatoria",
+  "livelihood_zone": {
+   "code": "SS03",
+   "name": "Highland forest and sorghum",
+   "share": 0.99
+  },
+  "livelihoods": "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one rainy season, using forest and wild foods and bush products for food and income.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 306 political-violence events, 326 deaths (peak 2022); IDPs peak 3,350 (2018-06); IPC3+ peak 50%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 306,
+   "acled_pv_fatalities_2018_2025": 326,
+   "acled_civilian_targeting_fatalities_2018_2025": 180,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 100,
+   "ucdp_events_2018_2025": 6,
+   "ucdp_deaths_best_2018_2025": 51,
+   "ucdp_peak_year": 2019,
+   "dtm_idps_peak": 3350,
+   "dtm_idps_peak_date": "2018-06",
+   "dtm_idps_latest": 1762,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 1849,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1065,
+   "ipc_phase3plus_pct_peak": 50,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 30,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 80409,
+   "surface_water_pct_max": 1.4,
+   "surface_water_max_month": "2020-07",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS03": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0301": {
+  "name": "Akobo",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 0.81
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 291 political-violence events, 468 deaths (peak 2023); IDPs peak 27,889 (2018-06); IPC3+ peak 85%; flood-displaced 13,267.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 291,
+   "acled_pv_fatalities_2018_2025": 468,
+   "acled_civilian_targeting_fatalities_2018_2025": 290,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 91,
+   "ucdp_events_2018_2025": 7,
+   "ucdp_deaths_best_2018_2025": 76,
+   "ucdp_peak_year": 2019,
+   "dtm_idps_peak": 27889,
+   "dtm_idps_peak_date": "2018-06",
+   "dtm_idps_latest": 15040,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 13267,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 4977,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1032,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2022-10",
+   "ipc_phase3plus_pct_latest": 55,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 192930,
+   "surface_water_pct_max": 27.0,
+   "surface_water_max_month": "2019-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS06": 0.81,
+    "SS10": 0.18
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0302": {
+  "name": "Ayod",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 0.61,
+   "secondary": {
+    "code": "SS08",
+    "name": "Nile basin fishing and agro-pastoral",
+    "share": 0.39
+   }
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also Nile basin fishing and agro-pastoral zone (39%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 119 political-violence events, 249 deaths (peak 2025); IDPs peak 63,312 (2021-12); IPC3+ peak 85%; flood-displaced 106,649.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 119,
+   "acled_pv_fatalities_2018_2025": 249,
+   "acled_civilian_targeting_fatalities_2018_2025": 105,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 82,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 3,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 63312,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 26896,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 106649,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 4700,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 13936,
+   "dtm_et_arrivals_from_sudan_2023_2025": 742,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 164924,
+   "surface_water_pct_max": 19.1,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 6.4,
+   "lhz_shares": {
+    "SS06": 0.61,
+    "SS08": 0.39
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0303": {
+  "name": "Bor South",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 0.91
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 190 political-violence events, 315 deaths (peak 2020); IDPs peak 89,493 (2023-04); IPC3+ peak 65%; flood-displaced 22,799.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 190,
+   "acled_pv_fatalities_2018_2025": 315,
+   "acled_civilian_targeting_fatalities_2018_2025": 174,
+   "acled_peak_year_fatalities": 2020,
+   "acled_peak_year_fatalities_value": 84,
+   "ucdp_events_2018_2025": 5,
+   "ucdp_deaths_best_2018_2025": 105,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 89493,
+   "dtm_idps_peak_date": "2023-04",
+   "dtm_idps_latest": 85051,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 22799,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 33290,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 1128,
+   "dtm_et_arrivals_from_sudan_2023_2025": 4179,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 220750,
+   "surface_water_pct_max": 34.8,
+   "surface_water_max_month": "2019-08",
+   "surface_water_pct_median": 1.4,
+   "lhz_shares": {
+    "SS06": 0.91,
+    "SS08": 0.09
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0304": {
+  "name": "Canal/Pigi",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 90 political-violence events, 102 deaths (peak 2025); IDPs peak 104,779 (2023-04); IPC3+ peak 90%; flood-displaced 17,248.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 90,
+   "acled_pv_fatalities_2018_2025": 102,
+   "acled_civilian_targeting_fatalities_2018_2025": 41,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 55,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 33,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 104779,
+   "dtm_idps_peak_date": "2023-04",
+   "dtm_idps_latest": 27665,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 17248,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 5045,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 4258,
+   "dtm_et_arrivals_from_sudan_2023_2025": 643,
+   "ipc_phase3plus_pct_peak": 90,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 70,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 92120,
+   "surface_water_pct_max": 7.7,
+   "surface_water_max_month": "2021-12",
+   "surface_water_pct_median": 0.7,
+   "lhz_shares": {
+    "SS06": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0305": {
+  "name": "Duk",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 0.69,
+   "secondary": {
+    "code": "SS08",
+    "name": "Nile basin fishing and agro-pastoral",
+    "share": 0.31
+   }
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also Nile basin fishing and agro-pastoral zone (31%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 218 political-violence events, 448 deaths (peak 2024); IDPs peak 58,587 (2025-02); IPC3+ peak 85%; flood-displaced 8,566.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 218,
+   "acled_pv_fatalities_2018_2025": 448,
+   "acled_civilian_targeting_fatalities_2018_2025": 245,
+   "acled_peak_year_fatalities": 2024,
+   "acled_peak_year_fatalities_value": 106,
+   "ucdp_events_2018_2025": 5,
+   "ucdp_deaths_best_2018_2025": 93,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 58587,
+   "dtm_idps_peak_date": "2025-02",
+   "dtm_idps_latest": 58587,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 8566,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 182,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2018-01",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 142469,
+   "surface_water_pct_max": 11.4,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 2.3,
+   "lhz_shares": {
+    "SS06": 0.69,
+    "SS08": 0.31
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0306": {
+  "name": "Fangak",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS08",
+   "name": "Nile basin fishing and agro-pastoral",
+   "share": 0.62,
+   "secondary": {
+    "code": "SS06",
+    "name": "Eastern plains sorghum and cattle",
+    "share": 0.38
+   }
+  },
+  "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Eastern plains sorghum and cattle zone (38%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 68 political-violence events, 136 deaths (peak 2025); IDPs peak 91,755 (2024-09); IPC3+ peak 85%; flood-displaced 174,169.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 68,
+   "acled_pv_fatalities_2018_2025": 136,
+   "acled_civilian_targeting_fatalities_2018_2025": 47,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 93,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 68,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 91755,
+   "dtm_idps_peak_date": "2024-09",
+   "dtm_idps_latest": 44398,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 174169,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 85757,
+   "dtm_et_arrivals_from_sudan_2023_2025": 19083,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 80,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 181955,
+   "surface_water_pct_max": 31.0,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 3.5,
+   "lhz_shares": {
+    "SS08": 0.62,
+    "SS06": 0.38
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0307": {
+  "name": "Nyirol",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 231 political-violence events, 439 deaths (peak 2024); IDPs peak 44,600 (2023-04); IPC3+ peak 80%; flood-displaced 2,523.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 231,
+   "acled_pv_fatalities_2018_2025": 439,
+   "acled_civilian_targeting_fatalities_2018_2025": 253,
+   "acled_peak_year_fatalities": 2024,
+   "acled_peak_year_fatalities_value": 89,
+   "ucdp_events_2018_2025": 6,
+   "ucdp_deaths_best_2018_2025": 76,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 44600,
+   "dtm_idps_peak_date": "2023-04",
+   "dtm_idps_latest": 33765,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 2523,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 13400,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 16042,
+   "dtm_et_arrivals_from_sudan_2023_2025": 3324,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 55,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 113476,
+   "surface_water_pct_max": 6.7,
+   "surface_water_max_month": "2024-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS06": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0308": {
+  "name": "Pibor",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS05",
+   "name": "South-Eastern semi-arid pastoral",
+   "share": 0.73
+  },
+  "livelihoods": "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; wild foods and market purchase, including grain from Kenya and Ethiopia, fill the food gap.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 435 political-violence events, 1646 deaths (peak 2022); IDPs peak 54,008 (2022-08); IPC3+ peak 85%; flood-displaced 31,615.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 435,
+   "acled_pv_fatalities_2018_2025": 1646,
+   "acled_civilian_targeting_fatalities_2018_2025": 450,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 373,
+   "ucdp_events_2018_2025": 14,
+   "ucdp_deaths_best_2018_2025": 536,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 54008,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 26299,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 31615,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 56177,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 198,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 70,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 193677,
+   "surface_water_pct_max": 14.9,
+   "surface_water_max_month": "2019-10",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS05": 0.73,
+    "SS06": 0.18,
+    "SS12": 0.09
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0309": {
+  "name": "Pochalla",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS12",
+   "name": "Maize Sorghum Fishing and Natural Resources",
+   "share": 0.99
+  },
+  "livelihoods": "Farming (maize, sorghum) with two harvests, supplemented by livestock, fishing and natural resources such as honey and shea from the Boma/Badingilo area.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 68 political-violence events, 88 deaths (peak 2023); IDPs peak 13,992 (2024-09); IPC3+ peak 65%; flood-displaced 13,522.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 68,
+   "acled_pv_fatalities_2018_2025": 88,
+   "acled_civilian_targeting_fatalities_2018_2025": 34,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 31,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 13992,
+   "dtm_idps_peak_date": "2024-09",
+   "dtm_idps_latest": 10998,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 13522,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 893,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 12195,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2023-09",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 42371,
+   "surface_water_pct_max": 10.6,
+   "surface_water_max_month": "2018-06",
+   "surface_water_pct_median": 0.2,
+   "lhz_shares": {
+    "SS12": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0310": {
+  "name": "Twic East",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 0.65,
+   "secondary": {
+    "code": "SS08",
+    "name": "Nile basin fishing and agro-pastoral",
+    "share": 0.35
+   }
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products. Also Nile basin fishing and agro-pastoral zone (35%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 105 political-violence events, 226 deaths (peak 2025); IDPs peak 17,940 (2024-09); IPC3+ peak 75%; flood-displaced 11,516.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 105,
+   "acled_pv_fatalities_2018_2025": 226,
+   "acled_civilian_targeting_fatalities_2018_2025": 129,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 69,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 5,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 17940,
+   "dtm_idps_peak_date": "2024-09",
+   "dtm_idps_latest": 14590,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 11516,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 3376,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 75,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 93088,
+   "surface_water_pct_max": 26.6,
+   "surface_water_max_month": "2019-10",
+   "surface_water_pct_median": 3.8,
+   "lhz_shares": {
+    "SS06": 0.65,
+    "SS08": 0.35
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0311": {
+  "name": "Uror",
+  "state": "Jonglei",
+  "livelihood_zone": {
+   "code": "SS06",
+   "name": "Eastern plains sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock products.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 281 political-violence events, 636 deaths (peak 2020); IDPs peak 37,365 (2020-09); IPC3+ peak 75%; flood-displaced 37,360.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 281,
+   "acled_pv_fatalities_2018_2025": 636,
+   "acled_civilian_targeting_fatalities_2018_2025": 233,
+   "acled_peak_year_fatalities": 2020,
+   "acled_peak_year_fatalities_value": 257,
+   "ucdp_events_2018_2025": 9,
+   "ucdp_deaths_best_2018_2025": 337,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 37365,
+   "dtm_idps_peak_date": "2020-09",
+   "dtm_idps_latest": 15317,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 37360,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 24319,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 16946,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1755,
+   "ipc_phase3plus_pct_peak": 75,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 55,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 146940,
+   "surface_water_pct_max": 66.9,
+   "surface_water_max_month": "2019-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS06": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0401": {
+  "name": "Awerial",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS02",
+   "name": "Ironstone Plateau agro-pastoral",
+   "share": 0.56,
+   "secondary": {
+    "code": "SS08",
+    "name": "Nile basin fishing and agro-pastoral",
+    "share": 0.44
+   }
+  },
+  "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding. Also Nile basin fishing and agro-pastoral zone (44%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 43 political-violence events, 66 deaths (peak 2020); IDPs peak 110,680 (2019-03); IPC3+ peak 80%; flood-displaced 39,110.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 43,
+   "acled_pv_fatalities_2018_2025": 66,
+   "acled_civilian_targeting_fatalities_2018_2025": 21,
+   "acled_peak_year_fatalities": 2020,
+   "acled_peak_year_fatalities_value": 36,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 110680,
+   "dtm_idps_peak_date": "2019-03",
+   "dtm_idps_latest": 39627,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 39110,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 3874,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 117493,
+   "surface_water_pct_max": 6.4,
+   "surface_water_max_month": "2020-07",
+   "surface_water_pct_median": 1.6,
+   "lhz_shares": {
+    "SS02": 0.56,
+    "SS08": 0.44
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0402": {
+  "name": "Cueibet",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS02",
+   "name": "Ironstone Plateau agro-pastoral",
+   "share": 0.75
+  },
+  "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 307 political-violence events, 696 deaths (peak 2021); IDPs peak 19,348 (2020-03); IPC3+ peak 80%; flood-displaced 7,860.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 307,
+   "acled_pv_fatalities_2018_2025": 696,
+   "acled_civilian_targeting_fatalities_2018_2025": 203,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 204,
+   "ucdp_events_2018_2025": 8,
+   "ucdp_deaths_best_2018_2025": 104,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 19348,
+   "dtm_idps_peak_date": "2020-03",
+   "dtm_idps_latest": 8060,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 7860,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 2259,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 163265,
+   "surface_water_pct_max": 2.2,
+   "surface_water_max_month": "2020-09",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS02": 0.75,
+    "SS07": 0.25
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0403": {
+  "name": "Rumbek Centre",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 0.85
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 264 political-violence events, 445 deaths (peak 2021); IDPs peak 7,807 (2021-09); IPC3+ peak 65%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 264,
+   "acled_pv_fatalities_2018_2025": 445,
+   "acled_civilian_targeting_fatalities_2018_2025": 161,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 110,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 2,
+   "ucdp_peak_year": 2022,
+   "dtm_idps_peak": 7807,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 1532,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 5476,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 576,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 168835,
+   "surface_water_pct_max": 2.1,
+   "surface_water_max_month": "2020-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 0.85,
+    "SS02": 0.15
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0404": {
+  "name": "Rumbek East",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 0.55,
+   "secondary": {
+    "code": "SS02",
+    "name": "Ironstone Plateau agro-pastoral",
+    "share": 0.45
+   }
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain. Also Ironstone Plateau agro-pastoral zone (45%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 160 political-violence events, 335 deaths (peak 2021); IDPs peak 10,375 (2021-12); IPC3+ peak 70%; flood-displaced 4,577.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 160,
+   "acled_pv_fatalities_2018_2025": 335,
+   "acled_civilian_targeting_fatalities_2018_2025": 88,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 135,
+   "ucdp_events_2018_2025": 11,
+   "ucdp_deaths_best_2018_2025": 116,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 10375,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 8657,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 4577,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 148089,
+   "surface_water_pct_max": 7.9,
+   "surface_water_max_month": "2022-10",
+   "surface_water_pct_median": 0.1,
+   "lhz_shares": {
+    "SS07": 0.55,
+    "SS02": 0.45
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0405": {
+  "name": "Rumbek North",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 146 political-violence events, 655 deaths (peak 2023); IDPs peak 81,373 (2019-11); IPC3+ peak 70%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 146,
+   "acled_pv_fatalities_2018_2025": 655,
+   "acled_civilian_targeting_fatalities_2018_2025": 140,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 272,
+   "ucdp_events_2018_2025": 9,
+   "ucdp_deaths_best_2018_2025": 498,
+   "ucdp_peak_year": 2024,
+   "dtm_idps_peak": 81373,
+   "dtm_idps_peak_date": "2019-11",
+   "dtm_idps_latest": 18620,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 1681,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2020-01",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 49122,
+   "surface_water_pct_max": 5.2,
+   "surface_water_max_month": "2019-07",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0406": {
+  "name": "Wulu",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS02",
+   "name": "Ironstone Plateau agro-pastoral",
+   "share": 0.83
+  },
+  "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 33 political-violence events, 39 deaths (peak 2021); IDPs peak 15,945 (2021-09); IPC3+ peak 59%; flood-displaced 367.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 33,
+   "acled_pv_fatalities_2018_2025": 39,
+   "acled_civilian_targeting_fatalities_2018_2025": 20,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 20,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 1,
+   "ucdp_peak_year": 2022,
+   "dtm_idps_peak": 15945,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 9382,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 367,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 59,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 43995,
+   "surface_water_pct_max": 1.1,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS02": 0.83,
+    "SS04": 0.17
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0407": {
+  "name": "Yirol East",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS08",
+   "name": "Nile basin fishing and agro-pastoral",
+   "share": 0.56,
+   "secondary": {
+    "code": "SS07",
+    "name": "Greater Bahr el Ghazal sorghum and cattle",
+    "share": 0.32
+   }
+  },
+  "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Greater Bahr el Ghazal sorghum and cattle zone (32%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 123 political-violence events, 194 deaths (peak 2025); IDPs peak 37,711 (2021-12); IPC3+ peak 85%; flood-displaced 18,895.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 123,
+   "acled_pv_fatalities_2018_2025": 194,
+   "acled_civilian_targeting_fatalities_2018_2025": 90,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 56,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 37711,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 25618,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 18895,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 9016,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 112667,
+   "surface_water_pct_max": 8.6,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 1.7,
+   "lhz_shares": {
+    "SS08": 0.56,
+    "SS07": 0.32,
+    "SS02": 0.12
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0408": {
+  "name": "Yirol West",
+  "state": "Lakes",
+  "livelihood_zone": {
+   "code": "SS02",
+   "name": "Ironstone Plateau agro-pastoral",
+   "share": 0.85
+  },
+  "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 107 political-violence events, 270 deaths (peak 2021); IDPs peak 30,092 (2021-09); IPC3+ peak 75%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 107,
+   "acled_pv_fatalities_2018_2025": 270,
+   "acled_civilian_targeting_fatalities_2018_2025": 84,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 104,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 30092,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 10108,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 17455,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 75,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 35,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 130305,
+   "surface_water_pct_max": 10.7,
+   "surface_water_max_month": "2022-09",
+   "surface_water_pct_median": 0.2,
+   "lhz_shares": {
+    "SS02": 0.85,
+    "SS07": 0.15
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0501": {
+  "name": "Aweil Centre",
+  "state": "Northern Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS04",
+   "name": "Western plains groundnuts sesame and sorghum",
+   "share": 0.65,
+   "secondary": {
+    "code": "SS07",
+    "name": "Greater Bahr el Ghazal sorghum and cattle",
+    "share": 0.35
+   }
+  },
+  "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area. Also Greater Bahr el Ghazal sorghum and cattle zone (35%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 7 political-violence events, 3 deaths (peak 2022); IDPs peak 20,685 (2019-11); IPC3+ peak 65%; flood-displaced 15,986.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 7,
+   "acled_pv_fatalities_2018_2025": 3,
+   "acled_civilian_targeting_fatalities_2018_2025": 2,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 2,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 20685,
+   "dtm_idps_peak_date": "2019-11",
+   "dtm_idps_latest": 9321,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 15986,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 201,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 12820,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2022-10",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 57050,
+   "surface_water_pct_max": 2.4,
+   "surface_water_max_month": "2024-09",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS04": 0.65,
+    "SS07": 0.35
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0502": {
+  "name": "Aweil East",
+  "state": "Northern Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 56 political-violence events, 190 deaths (peak 2020); IDPs peak 22,210 (2024-09); IPC3+ peak 65%; flood-displaced 64,303.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 56,
+   "acled_pv_fatalities_2018_2025": 190,
+   "acled_civilian_targeting_fatalities_2018_2025": 65,
+   "acled_peak_year_fatalities": 2020,
+   "acled_peak_year_fatalities_value": 80,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 5,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 22210,
+   "dtm_idps_peak_date": "2024-09",
+   "dtm_idps_latest": 20386,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 64303,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 14767,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 17668,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2022-10",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 403520,
+   "surface_water_pct_max": 21.4,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0503": {
+  "name": "Aweil North",
+  "state": "Northern Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 18 political-violence events, 13 deaths (peak 2019); IDPs peak 12,000 (2022-08); IPC3+ peak 60%; flood-displaced 118,722.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 18,
+   "acled_pv_fatalities_2018_2025": 13,
+   "acled_civilian_targeting_fatalities_2018_2025": 8,
+   "acled_peak_year_fatalities": 2019,
+   "acled_peak_year_fatalities_value": 5,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 12000,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 0,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 118722,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 16046,
+   "ipc_phase3plus_pct_peak": 60,
+   "ipc_phase3plus_peak_date": "2020-01",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 162959,
+   "surface_water_pct_max": 8.5,
+   "surface_water_max_month": "2022-09",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0504": {
+  "name": "Aweil South",
+  "state": "Northern Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 6 political-violence events, 3 deaths (peak 2022); IDPs peak 18,518 (2019-11); IPC3+ peak 66%; flood-displaced 6,526.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 6,
+   "acled_pv_fatalities_2018_2025": 3,
+   "acled_civilian_targeting_fatalities_2018_2025": 2,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 2,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 18518,
+   "dtm_idps_peak_date": "2019-11",
+   "dtm_idps_latest": 6338,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 6526,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 168,
+   "ipc_phase3plus_pct_peak": 66,
+   "ipc_phase3plus_peak_date": "2024-09",
+   "ipc_phase3plus_pct_latest": 55,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 119905,
+   "surface_water_pct_max": 28.5,
+   "surface_water_max_month": "2024-09",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0505": {
+  "name": "Aweil West",
+  "state": "Northern Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 0.87
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 30 political-violence events, 15 deaths (peak 2024); IDPs peak 73,147 (2019-11); IPC3+ peak 60%; flood-displaced 48,144.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 30,
+   "acled_pv_fatalities_2018_2025": 15,
+   "acled_civilian_targeting_fatalities_2018_2025": 7,
+   "acled_peak_year_fatalities": 2024,
+   "acled_peak_year_fatalities_value": 5,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 73147,
+   "dtm_idps_peak_date": "2019-11",
+   "dtm_idps_latest": 19807,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 48144,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 437,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 16508,
+   "ipc_phase3plus_pct_peak": 60,
+   "ipc_phase3plus_peak_date": "2018-01",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 186551,
+   "surface_water_pct_max": 12.1,
+   "surface_water_max_month": "2022-09",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 0.87,
+    "SS04": 0.13
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0601": {
+  "name": "Abiemnhom",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 0.98
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 48 political-violence events, 123 deaths (peak 2025); IDPs peak 19,228 (2021-12); IPC3+ peak 55%; flood-displaced 1,168.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 48,
+   "acled_pv_fatalities_2018_2025": 123,
+   "acled_civilian_targeting_fatalities_2018_2025": 58,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 48,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 32,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 19228,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 6443,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 1168,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 2874,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1256,
+   "ipc_phase3plus_pct_peak": 55,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 31339,
+   "surface_water_pct_max": 1.7,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS11": 0.98
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0602": {
+  "name": "Guit",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS09",
+   "name": "North-Western Nile basin cattle and maize",
+   "share": 0.62,
+   "secondary": {
+    "code": "SS08",
+    "name": "Nile basin fishing and agro-pastoral",
+    "share": 0.38
+   }
+  },
+  "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan. Also Nile basin fishing and agro-pastoral zone (38%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 43 political-violence events, 127 deaths (peak 2018); IDPs peak 32,893 (2025-02); IPC3+ peak 75%; flood-displaced 15,181.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 43,
+   "acled_pv_fatalities_2018_2025": 127,
+   "acled_civilian_targeting_fatalities_2018_2025": 19,
+   "acled_peak_year_fatalities": 2018,
+   "acled_peak_year_fatalities_value": 52,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 47,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 32893,
+   "dtm_idps_peak_date": "2025-02",
+   "dtm_idps_latest": 32893,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 15181,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 401,
+   "ipc_phase3plus_pct_peak": 75,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 60,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 54000,
+   "surface_water_pct_max": 47.7,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 4.8,
+   "lhz_shares": {
+    "SS09": 0.62,
+    "SS08": 0.38
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0603": {
+  "name": "Koch",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS09",
+   "name": "North-Western Nile basin cattle and maize",
+   "share": 0.78
+  },
+  "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 106 political-violence events, 110 deaths (peak 2021); IDPs peak 36,468 (2021-12); IPC3+ peak 85%; flood-displaced 21,009.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 106,
+   "acled_pv_fatalities_2018_2025": 110,
+   "acled_civilian_targeting_fatalities_2018_2025": 28,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 42,
+   "ucdp_events_2018_2025": 7,
+   "ucdp_deaths_best_2018_2025": 27,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 36468,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 31523,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 21009,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 4943,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1423,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 60,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 104586,
+   "surface_water_pct_max": 24.5,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 1.1,
+   "lhz_shares": {
+    "SS09": 0.78,
+    "SS08": 0.21
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0604": {
+  "name": "Leer",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS08",
+   "name": "Nile basin fishing and agro-pastoral",
+   "share": 0.71,
+   "secondary": {
+    "code": "SS07",
+    "name": "Greater Bahr el Ghazal sorghum and cattle",
+    "share": 0.29
+   }
+  },
+  "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Greater Bahr el Ghazal sorghum and cattle zone (29%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 113 political-violence events, 312 deaths (peak 2022); IDPs peak 58,308 (2022-08); IPC3+ peak 85%; flood-displaced 37,458.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 113,
+   "acled_pv_fatalities_2018_2025": 312,
+   "acled_civilian_targeting_fatalities_2018_2025": 197,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 212,
+   "ucdp_events_2018_2025": 19,
+   "ucdp_deaths_best_2018_2025": 98,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 58308,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 45780,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 37458,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 53165,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 15835,
+   "dtm_et_arrivals_from_sudan_2023_2025": 8010,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 90102,
+   "surface_water_pct_max": 26.0,
+   "surface_water_max_month": "2020-08",
+   "surface_water_pct_median": 1.7,
+   "lhz_shares": {
+    "SS08": 0.71,
+    "SS07": 0.29
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0605": {
+  "name": "Mayendit",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 0.94
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 80 political-violence events, 111 deaths (peak 2022); IDPs peak 30,855 (2025-02); IPC3+ peak 85%; flood-displaced 28,299.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 80,
+   "acled_pv_fatalities_2018_2025": 111,
+   "acled_civilian_targeting_fatalities_2018_2025": 54,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 48,
+   "ucdp_events_2018_2025": 7,
+   "ucdp_deaths_best_2018_2025": 23,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 30855,
+   "dtm_idps_peak_date": "2025-02",
+   "dtm_idps_latest": 30855,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 28299,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 3621,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1030,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 69040,
+   "surface_water_pct_max": 47.0,
+   "surface_water_max_month": "2020-10",
+   "surface_water_pct_median": 3.1,
+   "lhz_shares": {
+    "SS07": 0.94,
+    "SS08": 0.06
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0606": {
+  "name": "Mayom",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS09",
+   "name": "North-Western Nile basin cattle and maize",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 164 political-violence events, 780 deaths (peak 2019); IDPs peak 44,283 (2025-02); IPC3+ peak 65%; flood-displaced 29,685.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 164,
+   "acled_pv_fatalities_2018_2025": 780,
+   "acled_civilian_targeting_fatalities_2018_2025": 411,
+   "acled_peak_year_fatalities": 2019,
+   "acled_peak_year_fatalities_value": 283,
+   "ucdp_events_2018_2025": 6,
+   "ucdp_deaths_best_2018_2025": 41,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 44283,
+   "dtm_idps_peak_date": "2025-02",
+   "dtm_idps_latest": 44283,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 29685,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 5462,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 7421,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 111103,
+   "surface_water_pct_max": 18.9,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 3.6,
+   "lhz_shares": {
+    "SS09": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0607": {
+  "name": "Panyijiar",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS08",
+   "name": "Nile basin fishing and agro-pastoral",
+   "share": 0.51,
+   "secondary": {
+    "code": "SS07",
+    "name": "Greater Bahr el Ghazal sorghum and cattle",
+    "share": 0.49
+   }
+  },
+  "livelihoods": "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods recur every 3-5 years. Also Greater Bahr el Ghazal sorghum and cattle zone (49%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 78 political-violence events, 116 deaths (peak 2025); IDPs peak 46,126 (2022-08); IPC3+ peak 75%; flood-displaced 92,048.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 78,
+   "acled_pv_fatalities_2018_2025": 116,
+   "acled_civilian_targeting_fatalities_2018_2025": 44,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 38,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 46126,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 19219,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 92048,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1570,
+   "ipc_phase3plus_pct_peak": 75,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 90025,
+   "surface_water_pct_max": 15.9,
+   "surface_water_max_month": "2020-08",
+   "surface_water_pct_median": 6.8,
+   "lhz_shares": {
+    "SS08": 0.51,
+    "SS07": 0.49
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0608": {
+  "name": "Pariang",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 0.99
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 77 political-violence events, 164 deaths (peak 2022); IDPs peak 41,117 (2018-12); IPC3+ peak 70%; flood-displaced 9,936.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 77,
+   "acled_pv_fatalities_2018_2025": 164,
+   "acled_civilian_targeting_fatalities_2018_2025": 78,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 48,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 1,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 41117,
+   "dtm_idps_peak_date": "2018-12",
+   "dtm_idps_latest": 12186,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 9936,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 5005,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 5156,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 109795,
+   "surface_water_pct_max": 26.5,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 2.8,
+   "lhz_shares": {
+    "SS11": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0609": {
+  "name": "Rubkona",
+  "state": "Unity",
+  "livelihood_zone": {
+   "code": "SS09",
+   "name": "North-Western Nile basin cattle and maize",
+   "share": 0.99
+  },
+  "livelihoods": "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, with fishing and wild foods; cereal deficit relying on imports from Sudan.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 175 political-violence events, 234 deaths (peak 2021); IDPs peak 270,344 (2023-04); IPC3+ peak 80%; flood-displaced 56,554.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 175,
+   "acled_pv_fatalities_2018_2025": 234,
+   "acled_civilian_targeting_fatalities_2018_2025": 91,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 59,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 26,
+   "ucdp_peak_year": 2022,
+   "dtm_idps_peak": 270344,
+   "dtm_idps_peak_date": "2023-04",
+   "dtm_idps_latest": 250889,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 56554,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 6237,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 1343,
+   "dtm_et_arrivals_from_sudan_2023_2025": 68425,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 60,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 273916,
+   "surface_water_pct_max": 49.5,
+   "surface_water_max_month": "2023-10",
+   "surface_water_pct_median": 12.8,
+   "lhz_shares": {
+    "SS09": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0701": {
+  "name": "Baliet",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 0.76
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 27 political-violence events, 119 deaths (peak 2025); IDPs peak 14,520 (2018-06); IPC3+ peak 65%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 27,
+   "acled_pv_fatalities_2018_2025": 119,
+   "acled_civilian_targeting_fatalities_2018_2025": 88,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 75,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 14520,
+   "dtm_idps_peak_date": "2018-06",
+   "dtm_idps_latest": 4696,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 9218,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 566,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 57,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 38000,
+   "surface_water_pct_max": 19.0,
+   "surface_water_max_month": "2020-08",
+   "surface_water_pct_median": 0.4,
+   "lhz_shares": {
+    "SS11": 0.76,
+    "SS10": 0.24
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0702": {
+  "name": "Fashoda",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 1.0
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 59 political-violence events, 330 deaths (peak 2022); IDPs peak 32,808 (2023-04); IPC3+ peak 65%; flood-displaced 11,791.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 59,
+   "acled_pv_fatalities_2018_2025": 330,
+   "acled_civilian_targeting_fatalities_2018_2025": 260,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 290,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 9,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 32808,
+   "dtm_idps_peak_date": "2023-04",
+   "dtm_idps_latest": 14180,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 11791,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 27606,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 7554,
+   "dtm_et_arrivals_from_sudan_2023_2025": 10280,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 46071,
+   "surface_water_pct_max": 29.8,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.4,
+   "lhz_shares": {
+    "SS11": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0703": {
+  "name": "Longochuk",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS10",
+   "name": "North-Eastern maize cattle and fishing",
+   "share": 0.99
+  },
+  "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: no political-violence events recorded; IDPs peak 9,411 (2021-12); IPC3+ peak 85%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 0,
+   "acled_pv_fatalities_2018_2025": 0,
+   "acled_civilian_targeting_fatalities_2018_2025": 0,
+   "acled_peak_year_fatalities": null,
+   "acled_peak_year_fatalities_value": 0,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 20,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 9411,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 1445,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 9000,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 18429,
+   "dtm_et_arrivals_from_sudan_2023_2025": 211,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2018-01",
+   "ipc_phase3plus_pct_latest": 65,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 63302,
+   "surface_water_pct_max": 18.9,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.1,
+   "lhz_shares": {
+    "SS10": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0704": {
+  "name": "Luakpiny/Nasir",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS10",
+   "name": "North-Eastern maize cattle and fishing",
+   "share": 1.0
+  },
+  "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 147 political-violence events, 398 deaths (peak 2025); IDPs peak 61,459 (2019-03); IPC3+ peak 75%; flood-displaced 4,377.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 147,
+   "acled_pv_fatalities_2018_2025": 398,
+   "acled_civilian_targeting_fatalities_2018_2025": 37,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 261,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 62,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 61459,
+   "dtm_idps_peak_date": "2019-03",
+   "dtm_idps_latest": 25370,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 4377,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 2675,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 15660,
+   "dtm_et_arrivals_from_sudan_2023_2025": 11971,
+   "ipc_phase3plus_pct_peak": 75,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 70,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 230768,
+   "surface_water_pct_max": 35.0,
+   "surface_water_max_month": "2022-11",
+   "surface_water_pct_median": 1.9,
+   "lhz_shares": {
+    "SS10": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0705": {
+  "name": "Maban",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 1.0
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 94 political-violence events, 109 deaths (peak 2021); IDPs peak 51,923 (2019-11); IPC3+ peak 65%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 94,
+   "acled_pv_fatalities_2018_2025": 109,
+   "acled_civilian_targeting_fatalities_2018_2025": 67,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 32,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 20,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 51923,
+   "dtm_idps_peak_date": "2019-11",
+   "dtm_idps_latest": 3487,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 38798,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 26009,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 133747,
+   "surface_water_pct_max": 15.1,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS11": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0706": {
+  "name": "Maiwut",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS10",
+   "name": "North-Eastern maize cattle and fishing",
+   "share": 1.0
+  },
+  "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 75 political-violence events, 188 deaths (peak 2018); IDPs peak 12,163 (2020-12); IPC3+ peak 80%; flood-displaced 5,612.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 75,
+   "acled_pv_fatalities_2018_2025": 188,
+   "acled_civilian_targeting_fatalities_2018_2025": 17,
+   "acled_peak_year_fatalities": 2018,
+   "acled_peak_year_fatalities_value": 57,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 4,
+   "ucdp_peak_year": 2020,
+   "dtm_idps_peak": 12163,
+   "dtm_idps_peak_date": "2020-12",
+   "dtm_idps_latest": 34,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 5612,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 3000,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1207,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 35,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 92495,
+   "surface_water_pct_max": 16.8,
+   "surface_water_max_month": "2019-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS10": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0707": {
+  "name": "Malakal",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 1.0
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 99 political-violence events, 111 deaths (peak 2022); IDPs peak 89,434 (2024-09); IPC3+ peak 70%; flood-displaced 29,047.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 99,
+   "acled_pv_fatalities_2018_2025": 111,
+   "acled_civilian_targeting_fatalities_2018_2025": 44,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 48,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 89434,
+   "dtm_idps_peak_date": "2024-09",
+   "dtm_idps_latest": 85177,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 29047,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 7717,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 14124,
+   "dtm_et_arrivals_from_sudan_2023_2025": 52119,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2024-09",
+   "ipc_phase3plus_pct_latest": 65,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 182923,
+   "surface_water_pct_max": 21.9,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.9,
+   "lhz_shares": {
+    "SS11": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0708": {
+  "name": "Manyo",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 0.99
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 31 political-violence events, 156 deaths (peak 2021); IDPs peak 39,381 (2025-02); IPC3+ peak 64%; flood-displaced 12,095.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 31,
+   "acled_pv_fatalities_2018_2025": 156,
+   "acled_civilian_targeting_fatalities_2018_2025": 11,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 133,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 39381,
+   "dtm_idps_peak_date": "2025-02",
+   "dtm_idps_latest": 39381,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 12095,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 728,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 11550,
+   "ipc_phase3plus_pct_peak": 64,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 55,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 64527,
+   "surface_water_pct_max": 17.2,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 1.2,
+   "lhz_shares": {
+    "SS11": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0709": {
+  "name": "Melut",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 1.0
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 20 political-violence events, 96 deaths (peak 2022); IDPs peak 47,460 (2021-12); IPC3+ peak 65%; flood-displaced 24,687.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 20,
+   "acled_pv_fatalities_2018_2025": 96,
+   "acled_civilian_targeting_fatalities_2018_2025": 38,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 51,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 47460,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 3227,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 24687,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 7965,
+   "dtm_et_arrivals_from_sudan_2023_2025": 8911,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2023-09",
+   "ipc_phase3plus_pct_latest": 50,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 72862,
+   "surface_water_pct_max": 10.5,
+   "surface_water_max_month": "2023-01",
+   "surface_water_pct_median": 2.1,
+   "lhz_shares": {
+    "SS11": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0710": {
+  "name": "Panyikang",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 0.78
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 71 political-violence events, 127 deaths (peak 2022); IDPs peak 31,273 (2023-04); IPC3+ peak 86%; flood-displaced 39,647.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 71,
+   "acled_pv_fatalities_2018_2025": 127,
+   "acled_civilian_targeting_fatalities_2018_2025": 25,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 103,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 85,
+   "ucdp_peak_year": 2022,
+   "dtm_idps_peak": 31273,
+   "dtm_idps_peak_date": "2023-04",
+   "dtm_idps_latest": 11033,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 39647,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 11510,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 8568,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1543,
+   "ipc_phase3plus_pct_peak": 86,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 60,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 45000,
+   "surface_water_pct_max": 8.4,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 0.9,
+   "lhz_shares": {
+    "SS11": 0.78,
+    "SS10": 0.19
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0711": {
+  "name": "Renk",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS11",
+   "name": "Northern sorghum and livestock",
+   "share": 1.0
+  },
+  "livelihoods": "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, labour migration and petty trade; mechanised farming near the Nile, otherwise subsistence with a cereal deficit.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 33 political-violence events, 81 deaths (peak 2023); IDPs peak 45,381 (2024-09); IPC3+ peak 55%; flood-displaced 83,827.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 33,
+   "acled_pv_fatalities_2018_2025": 81,
+   "acled_civilian_targeting_fatalities_2018_2025": 33,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 39,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 45381,
+   "dtm_idps_peak_date": "2024-09",
+   "dtm_idps_latest": 31469,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 83827,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 2487,
+   "dtm_et_arrivals_from_sudan_2023_2025": 101693,
+   "ipc_phase3plus_pct_peak": 55,
+   "ipc_phase3plus_peak_date": "2025-09",
+   "ipc_phase3plus_pct_latest": 55,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 345361,
+   "surface_water_pct_max": 9.4,
+   "surface_water_max_month": "2024-08",
+   "surface_water_pct_median": 0.3,
+   "lhz_shares": {
+    "SS11": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0712": {
+  "name": "Ulang",
+  "state": "Upper Nile",
+  "livelihood_zone": {
+   "code": "SS10",
+   "name": "North-Eastern maize cattle and fishing",
+   "share": 1.0
+  },
+  "livelihoods": "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally important; a net cereal importer, relatively isolated near the Ethiopian border.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 92 political-violence events, 221 deaths (peak 2025); IDPs peak 26,523 (2020-03); IPC3+ peak 80%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 92,
+   "acled_pv_fatalities_2018_2025": 221,
+   "acled_civilian_targeting_fatalities_2018_2025": 64,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 78,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 77,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 26523,
+   "dtm_idps_peak_date": "2020-03",
+   "dtm_idps_latest": 6377,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 4000,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 38002,
+   "dtm_et_arrivals_from_sudan_2023_2025": 868,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 65,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 99521,
+   "surface_water_pct_max": 13.8,
+   "surface_water_max_month": "2025-11",
+   "surface_water_pct_median": 1.1,
+   "lhz_shares": {
+    "SS10": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0801": {
+  "name": "Gogrial East",
+  "state": "Warrap",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 84 political-violence events, 267 deaths (peak 2021); IDPs peak 40,453 (2021-09); IPC3+ peak 65%; flood-displaced 30,279.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 84,
+   "acled_pv_fatalities_2018_2025": 267,
+   "acled_civilian_targeting_fatalities_2018_2025": 171,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 66,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 40453,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 30070,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 30279,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 85808,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1982,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 30,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 95892,
+   "surface_water_pct_max": 23.9,
+   "surface_water_max_month": "2024-09",
+   "surface_water_pct_median": 0.3,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0802": {
+  "name": "Gogrial West",
+  "state": "Warrap",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 51 political-violence events, 81 deaths (peak 2023); IDPs peak 59,619 (2021-09); IPC3+ peak 60%; flood-displaced 104,449.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 51,
+   "acled_pv_fatalities_2018_2025": 81,
+   "acled_civilian_targeting_fatalities_2018_2025": 47,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 51,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 3,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 59619,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 54590,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 104449,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 8562,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 8009,
+   "ipc_phase3plus_pct_peak": 60,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 30,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 232952,
+   "surface_water_pct_max": 35.9,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0803": {
+  "name": "Tonj East",
+  "state": "Warrap",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 342 political-violence events, 1435 deaths (peak 2024); IDPs peak 69,063 (2021-09); IPC3+ peak 70%; flood-displaced 34,754.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 342,
+   "acled_pv_fatalities_2018_2025": 1435,
+   "acled_civilian_targeting_fatalities_2018_2025": 510,
+   "acled_peak_year_fatalities": 2024,
+   "acled_peak_year_fatalities_value": 283,
+   "ucdp_events_2018_2025": 18,
+   "ucdp_deaths_best_2018_2025": 486,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 69063,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 16676,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 34754,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 81021,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 235,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 45,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 121699,
+   "surface_water_pct_max": 9.7,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0804": {
+  "name": "Tonj North",
+  "state": "Warrap",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 380 political-violence events, 1768 deaths (peak 2021); IDPs peak 108,126 (2021-09); IPC3+ peak 70%; flood-displaced 63,539.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 380,
+   "acled_pv_fatalities_2018_2025": 1768,
+   "acled_civilian_targeting_fatalities_2018_2025": 846,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 454,
+   "ucdp_events_2018_2025": 13,
+   "ucdp_deaths_best_2018_2025": 156,
+   "ucdp_peak_year": 2022,
+   "dtm_idps_peak": 108126,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 28839,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 63539,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 154931,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 986,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 35,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 227975,
+   "surface_water_pct_max": 22.3,
+   "surface_water_max_month": "2024-09",
+   "surface_water_pct_median": 1.4,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0805": {
+  "name": "Tonj South",
+  "state": "Warrap",
+  "livelihood_zone": {
+   "code": "SS02",
+   "name": "Ironstone Plateau agro-pastoral",
+   "share": 0.83
+  },
+  "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 209 political-violence events, 527 deaths (peak 2020); IDPs peak 82,465 (2021-09); IPC3+ peak 65%; flood-displaced 98,248.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 209,
+   "acled_pv_fatalities_2018_2025": 527,
+   "acled_civilian_targeting_fatalities_2018_2025": 197,
+   "acled_peak_year_fatalities": 2020,
+   "acled_peak_year_fatalities_value": 155,
+   "ucdp_events_2018_2025": 4,
+   "ucdp_deaths_best_2018_2025": 50,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 82465,
+   "dtm_idps_peak_date": "2021-09",
+   "dtm_idps_latest": 20434,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 98248,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 27908,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 343,
+   "dtm_et_arrivals_from_sudan_2023_2025": 1343,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 25,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 102311,
+   "surface_water_pct_max": 5.6,
+   "surface_water_max_month": "2024-07",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS02": 0.83,
+    "SS07": 0.16
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0806": {
+  "name": "Twic",
+  "state": "Warrap",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 226 political-violence events, 597 deaths (peak 2023); IDPs peak 129,824 (2021-12); IPC3+ peak 65%; flood-displaced 124,781.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 226,
+   "acled_pv_fatalities_2018_2025": 597,
+   "acled_civilian_targeting_fatalities_2018_2025": 307,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 271,
+   "ucdp_events_2018_2025": 5,
+   "ucdp_deaths_best_2018_2025": 52,
+   "ucdp_peak_year": 2019,
+   "dtm_idps_peak": 129824,
+   "dtm_idps_peak_date": "2021-12",
+   "dtm_idps_latest": 90007,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 124781,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 53813,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 2832,
+   "dtm_et_arrivals_from_sudan_2023_2025": 9457,
+   "ipc_phase3plus_pct_peak": 65,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 35,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 208514,
+   "surface_water_pct_max": 35.4,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 2.5,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0001": {
+  "name": "Abyei",
+  "state": "Abyei Region",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 329 political-violence events, 988 deaths (peak 2023); IPC3+ peak 55%; flood-displaced 46,274.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 329,
+   "acled_pv_fatalities_2018_2025": 988,
+   "acled_civilian_targeting_fatalities_2018_2025": 573,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 315,
+   "ucdp_events_2018_2025": 45,
+   "ucdp_deaths_best_2018_2025": 431,
+   "ucdp_peak_year": 2022,
+   "dtm_et_displaced_by_flooding_2020_2025": 46274,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 90488,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 1007,
+   "dtm_et_arrivals_from_sudan_2023_2025": 20065,
+   "ipc_phase3plus_pct_peak": 55,
+   "ipc_phase3plus_peak_date": "2023-09",
+   "ipc_phase3plus_pct_latest": 55,
+   "ipc_phase3plus_latest_date": "2023-09",
+   "ipc_phase3plus_pop_peak": 73677,
+   "surface_water_pct_max": 7.1,
+   "surface_water_max_month": "2022-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0901": {
+  "name": "Jur River",
+  "state": "Western Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS07",
+   "name": "Greater Bahr el Ghazal sorghum and cattle",
+   "share": 0.43,
+   "secondary": {
+    "code": "SS02",
+    "name": "Ironstone Plateau agro-pastoral",
+    "share": 0.31
+   }
+  },
+  "livelihoods": "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep (about 80% of households own cattle), plus fishing and wild foods; cereal deficit, trading livestock for grain. Also Ironstone Plateau agro-pastoral zone (31%); Western plains groundnuts sesame and sorghum zone (26%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 155 political-violence events, 233 deaths (peak 2019); IDPs peak 69,917 (2018-12); IPC3+ peak 70%; flood-displaced 24,648.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 155,
+   "acled_pv_fatalities_2018_2025": 233,
+   "acled_civilian_targeting_fatalities_2018_2025": 157,
+   "acled_peak_year_fatalities": 2019,
+   "acled_peak_year_fatalities_value": 80,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 30,
+   "ucdp_peak_year": 2024,
+   "dtm_idps_peak": 69917,
+   "dtm_idps_peak_date": "2018-12",
+   "dtm_idps_latest": 15349,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 24648,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 42557,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 191183,
+   "surface_water_pct_max": 3.3,
+   "surface_water_max_month": "2024-09",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS07": 0.43,
+    "SS02": 0.31,
+    "SS04": 0.26
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0902": {
+  "name": "Raja",
+  "state": "Western Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS04",
+   "name": "Western plains groundnuts sesame and sorghum",
+   "share": 0.99
+  },
+  "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 32 political-violence events, 60 deaths (peak 2018); IDPs peak 16,488 (2019-06); IPC3+ peak 80%; flood-displaced 8,981.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 32,
+   "acled_pv_fatalities_2018_2025": 60,
+   "acled_civilian_targeting_fatalities_2018_2025": 11,
+   "acled_peak_year_fatalities": 2018,
+   "acled_peak_year_fatalities_value": 34,
+   "ucdp_events_2018_2025": 6,
+   "ucdp_deaths_best_2018_2025": 40,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 16488,
+   "dtm_idps_peak_date": "2019-06",
+   "dtm_idps_latest": 1377,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 8981,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 0,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 620,
+   "dtm_et_arrivals_from_sudan_2023_2025": 26688,
+   "ipc_phase3plus_pct_peak": 80,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 35,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 78545,
+   "surface_water_pct_max": 0.9,
+   "surface_water_max_month": "2024-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS04": 0.99
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS0903": {
+  "name": "Wau",
+  "state": "Western Bahr el Ghazal",
+  "livelihood_zone": {
+   "code": "SS04",
+   "name": "Western plains groundnuts sesame and sorghum",
+   "share": 1.0
+  },
+  "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 142 political-violence events, 201 deaths (peak 2018); IDPs peak 114,615 (2019-06); IPC3+ peak 71%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 142,
+   "acled_pv_fatalities_2018_2025": 201,
+   "acled_civilian_targeting_fatalities_2018_2025": 47,
+   "acled_peak_year_fatalities": 2018,
+   "acled_peak_year_fatalities_value": 132,
+   "ucdp_events_2018_2025": 18,
+   "ucdp_deaths_best_2018_2025": 53,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 114615,
+   "dtm_idps_peak_date": "2019-06",
+   "dtm_idps_latest": 11686,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 10426,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 9109,
+   "dtm_et_arrivals_from_sudan_2023_2025": 45387,
+   "ipc_phase3plus_pct_peak": 71,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 204717,
+   "surface_water_pct_max": 2.0,
+   "surface_water_max_month": "2024-08",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS04": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1001": {
+  "name": "Ezo",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.68,
+   "secondary": {
+    "code": "SS04",
+    "name": "Western plains groundnuts sesame and sorghum",
+    "share": 0.31
+   }
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade. Also Western plains groundnuts sesame and sorghum zone (31%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 26 political-violence events, 47 deaths (peak 2025); IDPs peak 58,996 (2022-08); IPC3+ peak 55%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 26,
+   "acled_pv_fatalities_2018_2025": 47,
+   "acled_civilian_targeting_fatalities_2018_2025": 30,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 18,
+   "ucdp_events_2018_2025": 1,
+   "ucdp_deaths_best_2018_2025": 2,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 58996,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 30602,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 61040,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 15426,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 55,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 10,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 57982,
+   "surface_water_pct_max": 2.4,
+   "surface_water_max_month": "2024-07",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.68,
+    "SS04": 0.31
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1002": {
+  "name": "Ibba",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.88
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 24 political-violence events, 20 deaths (peak 2022); IDPs peak 9,270 (2019-11); IPC3+ peak 66%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 24,
+   "acled_pv_fatalities_2018_2025": 20,
+   "acled_civilian_targeting_fatalities_2018_2025": 17,
+   "acled_peak_year_fatalities": 2022,
+   "acled_peak_year_fatalities_value": 8,
+   "ucdp_events_2018_2025": 0,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 9270,
+   "dtm_idps_peak_date": "2019-11",
+   "dtm_idps_latest": 5893,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 2041,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 9533,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 66,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 10,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 26024,
+   "surface_water_pct_max": 11.4,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.88,
+    "SS02": 0.12
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1003": {
+  "name": "Maridi",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.89
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 50 political-violence events, 60 deaths (peak 2021); IDPs peak 15,932 (2020-03); IPC3+ peak 35%; flood-displaced 5,820.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 50,
+   "acled_pv_fatalities_2018_2025": 60,
+   "acled_civilian_targeting_fatalities_2018_2025": 17,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 24,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 13,
+   "ucdp_peak_year": 2025,
+   "dtm_idps_peak": 15932,
+   "dtm_idps_peak_date": "2020-03",
+   "dtm_idps_latest": 7155,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 5820,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 2965,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 35,
+   "ipc_phase3plus_peak_date": "2019-01",
+   "ipc_phase3plus_pct_latest": 15,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 27809,
+   "surface_water_pct_max": 2.5,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.89,
+    "SS02": 0.11
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1004": {
+  "name": "Mundri East",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.66,
+   "secondary": {
+    "code": "SS02",
+    "name": "Ironstone Plateau agro-pastoral",
+    "share": 0.34
+   }
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade. Also Ironstone Plateau agro-pastoral zone (34%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 89 political-violence events, 109 deaths (peak 2025); IDPs peak 25,707 (2019-03); IPC3+ peak 51%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 89,
+   "acled_pv_fatalities_2018_2025": 109,
+   "acled_civilian_targeting_fatalities_2018_2025": 34,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 49,
+   "ucdp_events_2018_2025": 7,
+   "ucdp_deaths_best_2018_2025": 35,
+   "ucdp_peak_year": 2024,
+   "dtm_idps_peak": 25707,
+   "dtm_idps_peak_date": "2019-03",
+   "dtm_idps_latest": 10975,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 15629,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 38947,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 51,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 20,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 45123,
+   "surface_water_pct_max": 7.0,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.66,
+    "SS02": 0.34
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1005": {
+  "name": "Mundri West",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.79
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 49 political-violence events, 62 deaths (peak 2023); IDPs peak 8,142 (2019-03); IPC3+ peak 61%; flood-displaced 3,933.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 49,
+   "acled_pv_fatalities_2018_2025": 62,
+   "acled_civilian_targeting_fatalities_2018_2025": 7,
+   "acled_peak_year_fatalities": 2023,
+   "acled_peak_year_fatalities_value": 20,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 0,
+   "ucdp_peak_year": null,
+   "dtm_idps_peak": 8142,
+   "dtm_idps_peak_date": "2019-03",
+   "dtm_idps_latest": 1000,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 3933,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 306,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 4792,
+   "dtm_et_arrivals_from_sudan_2023_2025": 234,
+   "ipc_phase3plus_pct_peak": 61,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 20,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 33821,
+   "surface_water_pct_max": 11.3,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.79,
+    "SS02": 0.21
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1006": {
+  "name": "Mvolo",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS02",
+   "name": "Ironstone Plateau agro-pastoral",
+   "share": 1.0
+  },
+  "livelihoods": "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and sheep; moderately productive, with acute dry-season water shortages and seasonal cattle raiding.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 34 political-violence events, 37 deaths (peak 2020); IDPs peak 5,560 (2018-12); IPC3+ peak 70%; flood-displaced 8,040.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 34,
+   "acled_pv_fatalities_2018_2025": 37,
+   "acled_civilian_targeting_fatalities_2018_2025": 23,
+   "acled_peak_year_fatalities": 2020,
+   "acled_peak_year_fatalities_value": 24,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 3,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 5560,
+   "dtm_idps_peak_date": "2018-12",
+   "dtm_idps_latest": 0,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 8040,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 6804,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 900,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 35,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 59747,
+   "surface_water_pct_max": 3.8,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS02": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1007": {
+  "name": "Nagero",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS04",
+   "name": "Western plains groundnuts sesame and sorghum",
+   "share": 1.0
+  },
+  "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 37 political-violence events, 93 deaths (peak 2025); IDPs peak 42,898 (2025-02); IPC3+ peak 70%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 37,
+   "acled_pv_fatalities_2018_2025": 93,
+   "acled_civilian_targeting_fatalities_2018_2025": 16,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 58,
+   "ucdp_events_2018_2025": 5,
+   "ucdp_deaths_best_2018_2025": 23,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 42898,
+   "dtm_idps_peak_date": "2025-02",
+   "dtm_idps_latest": 42898,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 32548,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 9618,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 70,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 40,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 25363,
+   "surface_water_pct_max": 3.9,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS04": 1.0
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1008": {
+  "name": "Nzara",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.6,
+   "secondary": {
+    "code": "SS04",
+    "name": "Western plains groundnuts sesame and sorghum",
+    "share": 0.4
+   }
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade. Also Western plains groundnuts sesame and sorghum zone (40%).",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: no political-violence events recorded; IDPs peak 10,095 (2023-04); IPC3+ peak 30%; flood-displaced 326.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 0,
+   "acled_pv_fatalities_2018_2025": 0,
+   "acled_civilian_targeting_fatalities_2018_2025": 0,
+   "acled_peak_year_fatalities": null,
+   "acled_peak_year_fatalities_value": 0,
+   "ucdp_events_2018_2025": 2,
+   "ucdp_deaths_best_2018_2025": 3,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 10095,
+   "dtm_idps_peak_date": "2023-04",
+   "dtm_idps_latest": 2955,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 326,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 346,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 30,
+   "ipc_phase3plus_peak_date": "2019-08",
+   "ipc_phase3plus_pct_latest": 5,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 24323,
+   "surface_water_pct_max": 4.4,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.6,
+    "SS04": 0.4
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1009": {
+  "name": "Tambura",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS04",
+   "name": "Western plains groundnuts sesame and sorghum",
+   "share": 0.84
+  },
+  "livelihoods": "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest products, seasonal river fishing and sales of poultry, goats and sheep; a former surplus area.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 243 political-violence events, 591 deaths (peak 2021); IDPs peak 86,147 (2022-08); IPC3+ peak 85%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 243,
+   "acled_pv_fatalities_2018_2025": 591,
+   "acled_civilian_targeting_fatalities_2018_2025": 374,
+   "acled_peak_year_fatalities": 2021,
+   "acled_peak_year_fatalities_value": 387,
+   "ucdp_events_2018_2025": 13,
+   "ucdp_deaths_best_2018_2025": 226,
+   "ucdp_peak_year": 2021,
+   "dtm_idps_peak": 86147,
+   "dtm_idps_peak_date": "2022-08",
+   "dtm_idps_latest": 28228,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 61436,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 0,
+   "dtm_et_arrivals_from_sudan_2023_2025": 0,
+   "ipc_phase3plus_pct_peak": 85,
+   "ipc_phase3plus_peak_date": "2022-02",
+   "ipc_phase3plus_pct_latest": 30,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 101240,
+   "surface_water_pct_max": 4.8,
+   "surface_water_max_month": "2018-07",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS04": 0.84,
+    "SS01": 0.16
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ },
+ "SS1010": {
+  "name": "Yambio",
+  "state": "Western Equatoria",
+  "livelihood_zone": {
+   "code": "SS01",
+   "name": "Equatorial maize and cassava",
+   "share": 0.77
+  },
+  "livelihoods": "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting and wild/bush products, with cross-border trade.",
+  "history": "",
+  "conflict_impact": "ACLED 2018-25: 150 political-violence events, 82 deaths (peak 2025); IDPs peak 30,723 (2018-06); IPC3+ peak 40%.",
+  "key_facts": {
+   "acled_pv_events_2018_2025": 150,
+   "acled_pv_fatalities_2018_2025": 82,
+   "acled_civilian_targeting_fatalities_2018_2025": 52,
+   "acled_peak_year_fatalities": 2025,
+   "acled_peak_year_fatalities_value": 28,
+   "ucdp_events_2018_2025": 3,
+   "ucdp_deaths_best_2018_2025": 3,
+   "ucdp_peak_year": 2018,
+   "dtm_idps_peak": 30723,
+   "dtm_idps_peak_date": "2018-06",
+   "dtm_idps_latest": 8250,
+   "dtm_idps_latest_date": "2025-02",
+   "dtm_et_displaced_by_flooding_2020_2025": 0,
+   "dtm_et_displaced_by_communal_conflict_2020_2025": 6338,
+   "dtm_et_displaced_by_national_conflict_2020_2025": 253,
+   "dtm_et_arrivals_from_sudan_2023_2025": 932,
+   "ipc_phase3plus_pct_peak": 40,
+   "ipc_phase3plus_peak_date": "2018-09",
+   "ipc_phase3plus_pct_latest": 5,
+   "ipc_phase3plus_latest_date": "2025-09",
+   "ipc_phase3plus_pop_peak": 77557,
+   "surface_water_pct_max": 7.3,
+   "surface_water_max_month": "2025-06",
+   "surface_water_pct_median": 0.0,
+   "lhz_shares": {
+    "SS01": 0.77,
+    "SS04": 0.23
+   }
+  },
+  "sources": [
+   "https://fews.net/sites/default/files/documents/reports/Livelihoods%20Zone%20Map%20and%20Descriptions%20for%20South%20Sudan.pdf",
+   "https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip",
+   "https://data.humdata.org/dataset/south-sudan-acled-conflict-data",
+   "https://ucdp.uu.se/downloads/",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-baseline-assessment-iom-dtm",
+   "https://data.humdata.org/dataset/south-sudan-displacement-data-idps-returnees-emergency-event-tracking-iom-dtm",
+   "https://www.ipcinfo.org/ipc-country-analysis/en/?country=SSD"
+  ]
+ }
+}

@@ -120,10 +120,28 @@ def build_trends(variables: list[dict], county_ids: list[str]) -> None:
 
 # --------------------------------------------------------------------------- migration flows
 REASONS = ["conflict", "disaster", "food", "sudan_conflict", "return_relocation", "other", "unknown"]
-FOREIGN_NODES = {  # approximate entry corridors used as arrow origins for cross-border arrivals
-    "SDN": ("Sudan", 12.9, 32.9), "ETH": ("Ethiopia", 8.2, 34.9), "UGA": ("Uganda", 3.0, 32.0),
-    "KEN": ("Kenya", 4.0, 35.3), "CAF": ("Central African Rep.", 5.2, 25.0), "COD": ("DR Congo", 3.6, 29.6),
+# Fallback entry points ON the border (used only if data/crosswalks/border_crossings.csv is missing).
+FOREIGN_NODES = {
+    "SDN": ("Sudan (Joda–Renk crossing, approx.)", 12.15, 32.85), "ETH": ("Ethiopia (Pagak crossing, approx.)", 8.40, 33.95),
+    "UGA": ("Uganda (Nimule crossing, approx.)", 3.60, 32.06), "KEN": ("Kenya (Nadapal crossing, approx.)", 4.40, 34.25),
+    "CAF": ("Central African Rep. (border, approx.)", 5.05, 27.45), "COD": ("DR Congo (Kaya crossing, approx.)", 3.52, 30.90),
 }
+
+
+def border_crossings():
+    """Verified crossing points per country -> list of (node_id, label, lat, lon)."""
+    path = os.path.join(ROOT, "data", "crosswalks", "border_crossings.csv")
+    out = {}
+    if os.path.exists(path):
+        bc = pd.read_csv(path)
+        iso = next(c for c in bc.columns if "iso" in c.lower() or c.lower() == "country")
+        name = next(c for c in bc.columns if "name" in c.lower())
+        for r in bc.itertuples():
+            c = str(getattr(r, iso)).strip().upper()[:3]
+            out.setdefault(c, []).append((f"{c}@{getattr(r, name)}", f"{getattr(r, name)} crossing (from {c})", float(r.lat), float(r.lon)))
+    for c, (lab, la, lo) in FOREIGN_NODES.items():
+        out.setdefault(c, [(c, lab, la, lo)])
+    return out
 
 
 def build_flows(counties) -> None:
@@ -142,8 +160,25 @@ def build_flows(counties) -> None:
         key = os.path.basename(f)[:-10]
         if key not in src_files:
             src_files[key] = (key.replace("_", " "), f)
-    nodes = {r.district_id: [round(r.lat, 3), round(r.lon, 3), r.name] for r in counties.itertuples()}
-    nodes.update({k: [v[1], v[2], v[0]] for k, v in FOREIGN_NODES.items()})
+    # County anchors: centroid if it lies inside the polygon, otherwise a guaranteed interior point.
+    nodes = {}
+    for r in counties.itertuples():
+        from shapely.geometry import Point
+        pt = Point(r.lon, r.lat)
+        if not r.geometry.contains(pt):
+            pt = r.geometry.representative_point()
+        nodes[r.district_id] = [round(pt.y, 3), round(pt.x, 3), r.name]
+    crossings = border_crossings()
+    for c, lst in crossings.items():
+        for nid, lab, la, lo in lst:
+            nodes[nid] = [round(la, 3), round(lo, 3), lab]
+    # foreign origin -> nearest crossing of that country to the destination county
+    def nearest_crossing(country, to):
+        lst = crossings.get(country)
+        if not lst or to not in nodes:
+            return country
+        la, lo = nodes[to][0], nodes[to][1]
+        return min(lst, key=lambda x: (x[2] - la) ** 2 + (x[3] - lo) ** 2)[0]
     node_ids = list(nodes)
     nidx = {k: i for i, k in enumerate(node_ids)}
     sources, months = [], {}
@@ -152,9 +187,11 @@ def build_flows(counties) -> None:
             continue
         d = pd.read_csv(path, dtype=str)
         d["individuals"] = pd.to_numeric(d["individuals"], errors="coerce")
+        foreign = d["from_pcode"].isin(list(crossings))
+        d.loc[foreign, "from_pcode"] = [nearest_crossing(c, t) for c, t in zip(d.loc[foreign, "from_pcode"], d.loc[foreign, "to_pcode"])]
         d = d[(d["from_pcode"] != d["to_pcode"]) & d["from_pcode"].isin(nidx) & d["to_pcode"].isin(nidx) & (d["individuals"] > 0)]
         d = d[(d["month"] >= MONTH_STR[0]) & (d["month"] <= MONTH_STR[-1])]
-        d["reason"] = d["reason"].replace({"return": "return_relocation", "returnee": "return_relocation"})
+        d["reason"] = d["reason"].replace({"return": "return_relocation", "returnee": "return_relocation", "unknown": "other"})
         d["reason"] = d["reason"].where(d["reason"].isin(REASONS), "other")
         observed = sorted(d["month"].unique().tolist())
         if key in CARRY and observed:
@@ -309,6 +346,10 @@ def main() -> None:
             rasters.append(r)
         except Exception as e:  # noqa: BLE001
             print("! bad raster meta", f, e)
+    prof = os.path.join(ROOT, "data", "district_profiles.json")
+    if os.path.exists(prof):
+        import shutil
+        shutil.copy(prof, os.path.join(OUT, "profiles.json"))
     build_trends(variables, county_ids)
     build_flows(counties)
     with open(os.path.join(OUT, "layers.json"), "w") as fh:
