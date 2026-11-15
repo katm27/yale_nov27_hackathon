@@ -4707,5 +4707,39 @@
    "hunger",
    "3W"
   ]
+ },
+ "smap_sm_rootzone": {
+  "label": "Soil moisture, top 1 m (NASA SMAP)",
+  "plain": "How wet the soil is in the top metre, where crops and pasture roots draw water: the share of the soil volume that is water (0.30 = 30%).",
+  "method": "NASA SMAP Level-4 (SPL4SMGP v008): SMAP satellite microwave readings combined with NASA's GEOS land model every 3 hours on a 9 km grid; averaged to months, then to counties.",
+  "direction": "wetter_drier",
+  "topic": "Drought & rainfall",
+  "caution": "A model estimate guided by satellite readings, not a direct measurement of the top metre. 9 km cells, so small wetlands blur together.",
+  "synonyms": [
+   "drought",
+   "dry",
+   "dryness",
+   "soil moisture",
+   "soil",
+   "wetness",
+   "smap"
+  ]
+ },
+ "smap_sm_surface": {
+  "label": "Surface soil moisture, top 5 cm (NASA SMAP)",
+  "plain": "How wet the top 5 cm of soil is: the share of the soil volume that is water. Reacts within days to rain.",
+  "method": "NASA SMAP Level-4 (SPL4SMGP v008), 3-hourly, 9 km; averaged to months, then to counties.",
+  "direction": "wetter_drier",
+  "topic": "Drought & rainfall",
+  "caution": "Swings quickly with each rain; the 1 m layer is the better guide to drought.",
+  "synonyms": [
+   "drought",
+   "dry",
+   "dryness",
+   "soil moisture",
+   "soil",
+   "wetness",
+   "smap"
+  ]
  }
 }

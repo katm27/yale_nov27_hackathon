@@ -617,7 +617,10 @@ def render_rasters(width=900, levels=48):
     dtf = from_bounds(mx0, my0, mx1, my1, width, height)
     inside = features.rasterize(((geom, 1) for geom in g.to_crs("EPSG:3857").geometry), out_shape=(height, width),
                                 transform=dtf, fill=0, dtype="uint8").astype(bool)
+    only = [k for k in os.environ.get("APPEEARS_RENDER", "").split(",") if k]
     for L in RASTERS:
+        if only and L["key"] not in only:
+            continue
         files = sorted((WORK / "grids" / L["var"]).glob("*.npy"))
         if not files:
             continue

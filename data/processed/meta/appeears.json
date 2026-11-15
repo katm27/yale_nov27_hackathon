@@ -109,5 +109,37 @@
     "index_ok": false,
     "notes": "Hidden duplicate used to verify and gap-fill burned_area_pct. Overlap vs existing burned_area_pct (90 months): r=1.0, mean bias +0.0002. AppEEARS area request clipped to the South Sudan outline, geographic projection.",
     "hidden": true
+  },
+  {
+    "id": "smap_sm_surface",
+    "label": "Surface soil moisture 0-5 cm (SMAP L4)",
+    "category": "environment",
+    "group": "Water",
+    "units": "m³/m³",
+    "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km, NASA GEOS land model + SMAP brightness-temperature assimilation) via NASA AppEEARS",
+    "source_url": "https://doi.org/10.5067/LWJ6TF5SZRG3",
+    "native_resolution": "9 km",
+    "temporal": "monthly",
+    "aggregation": "per-cell monthly mean of 3-hourly values, then mean of ~1 km cells (nearest 9 km cell) in county",
+    "higher_is": "better",
+    "index_ok": true,
+    "notes": "Model-assimilation product (gap-free), not a direct retrieval; L4 surface layer is 0-5 cm. AppEEARS area request clipped to the South Sudan outline, geographic projection.",
+    "raster": "smap_sm_surface"
+  },
+  {
+    "id": "smap_sm_rootzone",
+    "label": "Root-zone soil moisture 0-100 cm (SMAP L4)",
+    "category": "environment",
+    "group": "Water",
+    "units": "m³/m³",
+    "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via NASA AppEEARS",
+    "source_url": "https://doi.org/10.5067/LWJ6TF5SZRG3",
+    "native_resolution": "9 km",
+    "temporal": "monthly",
+    "aggregation": "per-cell monthly mean of 3-hourly values, then county mean",
+    "higher_is": "better",
+    "index_ok": true,
+    "notes": "Model-assimilation estimate for 0-100 cm; smoother and lagged relative to surface soil moisture. AppEEARS area request clipped to the South Sudan outline, geographic projection.",
+    "raster": "smap_sm_rootzone"
   }
 ]

@@ -1,0 +1,87 @@
+{
+ "key": "smap_sm_surface",
+ "label": "Surface soil moisture 0-5 cm (SMAP L4)",
+ "units": "m\u00b3/m\u00b3",
+ "bounds": [
+  [
+   3.43784,
+   24.10216
+  ],
+  [
+   12.28635,
+   36.00099
+  ]
+ ],
+ "vmin": 0.0,
+ "vmax": 0.45,
+ "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "colors": [
+  "#b2182b",
+  "#ef8a62",
+  "#fddbc7",
+  "#ffffff",
+  "#d9f0d3",
+  "#7fbf7b",
+  "#1b7837"
+ ],
+ "scale": "linear",
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "native_resolution": "9 km (SMAP L4 EASE-Grid 2.0)",
+ "dates": [
+  "2018-01",
+  "2018-02",
+  "2018-03",
+  "2018-04",
+  "2018-05",
+  "2018-06",
+  "2018-07",
+  "2018-08",
+  "2018-09",
+  "2018-10",
+  "2018-11",
+  "2018-12",
+  "2019-01",
+  "2019-02",
+  "2019-03",
+  "2019-04",
+  "2019-05",
+  "2019-06",
+  "2019-07",
+  "2019-08",
+  "2019-09",
+  "2019-10",
+  "2019-11",
+  "2019-12"
+ ],
+ "source": "SMAP SPL4SMGP v008 via NASA AppEEARS",
+ "crs": "EPSG:3857",
+ "width": 900,
+ "height": 676,
+ "original_colormap": "brown-teal",
+ "original_colors": [
+  "#8c510a",
+  "#b88a3f",
+  "#ddbc75",
+  "#eedbac",
+  "#e4e8cf",
+  "#c8e9e3",
+  "#8accc5",
+  "#4ba79f",
+  "#167971",
+  "#00574e",
+  "#003e33",
+  "#003c30"
+ ],
+ "bins": [
+  0.0,
+  0.06429,
+  0.1286,
+  0.1929,
+  0.2571,
+  0.3214,
+  0.3857,
+  0.45
+ ],
+ "recolored": true,
+ "palette": "rwg7"
+}
