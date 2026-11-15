@@ -10,6 +10,10 @@ These lists are one-off inventories, not time series, so they cannot show openin
    null/null 'snapshot only'.
 All features get snapshot=true so the app can choose to keep them visible regardless of the slider.
 Re-runnable (overwrites the fields it sets).
+
+SUPERSEDED (Nov 2026): health() and schools() now finish by rebuilding the layers from the team's time-dynamic
+compilation (scripts/team_dynamic_layers.py: registry/survey status periods), so re-running the older pipelines
+does not bring back the static snapshots.
 """
 import os
 import re
@@ -41,6 +45,10 @@ def health():
         p["snapshot"] = True
     write_fc("points_health.geojson", fc["features"])
     print("health", len(fc["features"]), "of which in 2023 list:", n23)
+    import team_dynamic_layers as tdl  # superseding status-period layer
+    tdl.health()
+    tdl.write_points_meta({"health": tdl.status_values_of("points_health.geojson", tdl.HEALTH_ORDER)})
+    return
     update_points_meta({
         "key": "health", "label": "Health facilities (hospital / PHCC / PHCU)", "category": "human",
         "source": "WHO / MoH Master Facility List, April 2025 (HDX); MoH HF code list 2023",
@@ -61,6 +69,10 @@ def schools():
         p["snapshot"] = True
     write_fc("points_schools.geojson", fc["features"])
     print("schools", len(fc["features"]))
+    import team_dynamic_layers as tdl  # superseding status-period layer
+    tdl.schools()
+    tdl.write_points_meta({"schools": tdl.status_values_of("points_schools.geojson", tdl.SCHOOL_ORDER)})
+    return
     update_points_meta({
         "key": "schools", "label": "Schools", "category": "human",
         "source": "SSSAMS 2015 (HDX, CC0) + OpenStreetMap education facilities (HOT/HDX, ODbL)",

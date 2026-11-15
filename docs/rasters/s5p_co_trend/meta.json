@@ -1,0 +1,53 @@
+{
+ "key": "s5p_co_trend",
+ "label": "Sentinel-5P co (monthly, sampled orbits) — trend 2018→year (Sen's slope)",
+ "units": "mmol/m2 total CO/yr",
+ "bounds": [
+  [
+   3.4611126678059523,
+   24.0
+  ],
+  [
+   12.35,
+   36.09515541588254
+  ]
+ ],
+ "vmin": -2.4,
+ "vmax": 2.4,
+ "colormap": "div_puor",
+ "colors": [
+  "#2d004b",
+  "#542788",
+  "#8073ac",
+  "#b2abd2",
+  "#d8daeb",
+  "#f7f7f7",
+  "#fee0b6",
+  "#fdb863",
+  "#e08214",
+  "#b35806",
+  "#7f3b08"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
+ "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
+ "trend_of": "s5p_co",
+ "basis": "annual mean (Jan-Dec) of the monthly values (sampled orbits; S5P starts mid-2018) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mmol/m2 total CO/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

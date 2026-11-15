@@ -1,0 +1,53 @@
+{
+ "key": "viirs_fire_trend",
+ "label": "VIIRS active fires (S-NPP, per 0.05° cell) — trend 2018→year (Sen's slope)",
+ "units": "detections per 0.05° cell per year/yr",
+ "bounds": [
+  [
+   3.412126287818573,
+   23.399999999999995
+  ],
+  [
+   12.299999999999999,
+   35.994077479217665
+  ]
+ ],
+ "vmin": -22.0,
+ "vmax": 22.0,
+ "colormap": "div_puor",
+ "colors": [
+  "#2d004b",
+  "#542788",
+  "#8073ac",
+  "#b2abd2",
+  "#d8daeb",
+  "#f7f7f7",
+  "#fee0b6",
+  "#fdb863",
+  "#e08214",
+  "#b35806",
+  "#7f3b08"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "375 m detections binned to 0.05° (~5.5 km)",
+ "source": "NASA FIRMS VIIRS S-NPP 375 m standard processing (VNP14IMGTDL SP)",
+ "trend_of": "viirs_fire",
+ "basis": "annual total (Jan-Dec) of nominal/high-confidence VIIRS S-NPP vegetation-fire detections per 0.05° cell",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05° cell per year/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

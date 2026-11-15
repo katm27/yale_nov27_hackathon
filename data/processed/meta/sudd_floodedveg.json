@@ -1,0 +1,32 @@
+[
+ {
+  "category": "environment",
+  "group": "Water & floods (Sudd)",
+  "temporal": "monthly",
+  "higher_is": "neutral",
+  "index_ok": true,
+  "source": "Derived from the Sudd MODIS water index (MOD09A1, Planetary Computer)",
+  "source_url": "docs/VALIDATION_sudd_water.md",
+  "native_resolution": "500 m (MODIS), Sudd counties only",
+  "aggregation": "inundated area minus open-water area per county-month (gap-filled 8-day composites)",
+  "id": "sudd_floodedveg_km2",
+  "label": "Flooded vegetation, Sudd (MODIS)",
+  "units": "km\u00b2",
+  "notes": "Swamp and grassland standing in water (papyrus, reeds, flooded grass). Radar and plain water maps often miss it."
+ },
+ {
+  "category": "environment",
+  "group": "Water & floods (Sudd)",
+  "temporal": "monthly",
+  "higher_is": "neutral",
+  "index_ok": true,
+  "source": "Derived from the Sudd MODIS water index (MOD09A1, Planetary Computer)",
+  "source_url": "docs/VALIDATION_sudd_water.md",
+  "native_resolution": "500 m (MODIS), Sudd counties only",
+  "aggregation": "inundated area minus open-water area per county-month (gap-filled 8-day composites)",
+  "id": "sudd_floodedveg_pct",
+  "label": "Flooded vegetation, Sudd (% of county)",
+  "units": "% of county area",
+  "notes": "Flooded vegetation as a share of the county's area."
+ }
+]

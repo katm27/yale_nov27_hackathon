@@ -1,9 +1,9 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
-flood_s1_flood_km2,national,1887,0.109,79,0.17962,0
-flood_s1_flood_km2,sudd,438,0.297,16,1.02466,0.33125
-flood_s1_flood_pct,national,1873,0.112,79,0.179621,0
-flood_s1_flood_pct,sudd,433,0.305,16,1.02421,0.0097125
-flood_s1_obs_pct,national,-7343,0.027,79,-0.00256021,-0.0025
-flood_s1_obs_pct,sudd,-1543,0.014,16,-0.00183337,-0.00183333
-flood_s1_openwater_km2,national,456,0.499,79,0,0
-flood_s1_openwater_km2,sudd,413,0.342,16,0,0
+flood_s1_flood_km2,national,1887,0.109,79,,3.47485
+flood_s1_flood_km2,sudd,438,0.297,16,,26.2861
+flood_s1_flood_pct,national,1873,0.112,79,,0.0539327
+flood_s1_flood_pct,sudd,433,0.305,16,,0.656983
+flood_s1_obs_pct,national,-7343,0.027,79,,-0.001125
+flood_s1_obs_pct,sudd,-1543,0.014,16,,0
+flood_s1_openwater_km2,national,456,0.499,79,0.466892,0
+flood_s1_openwater_km2,sudd,413,0.342,16,47.6136,0

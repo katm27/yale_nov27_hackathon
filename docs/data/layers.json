@@ -2,129 +2,317 @@
  "points": [
   {
    "key": "lines_pipelines",
-   "label": "Oil pipelines (lines)",
+   "label": "Oil pipelines",
    "category": "human",
    "source": "GEM GOIT (CC-BY 4.0) + OpenStreetMap via Overture (ODbL)",
    "source_url": "https://globalenergymonitor.org/projects/global-oil-infrastructure-tracker/",
-   "notes": "Line layer docs/data/lines_pipelines.geojson; includes proposed GEM routes (status field). Temporal: snapshot (valid_from/valid_to null) - routes exist through the window; flow interruptions are recorded on the oil-field periods (points_oil).",
-   "temporal": "snapshot",
+   "notes": "Mapped oil pipelines coloured by the documented status of the oil block they serve; proposed routes are shown but were never built.",
+   "temporal": "periods",
+   "details": "Overture/OSM pipeline lines and GEM GOIT routes; status periods follow the oil block of each line (location rule as for wells; Greater Nile follows Blocks 1,2&4). The team's 169 OSM field-line segments all lie on these lines.",
+   "status_values": [
+    "shut in",
+    "partially operating",
+    "operating",
+    "halted (export pipeline rupture in Sudan)",
+    "operating (resumed)",
+    "disrupted (Heglig hub seized)",
+    "proposed route (not built)"
+   ],
+   "plain": "Routes of oil pipelines carrying South Sudan's crude north through Sudan, including some proposed routes. Pipeline breaks in Sudan have halted exports in the past.",
+   "topic": "Context (static)",
    "file": "data/lines_pipelines.geojson"
   },
   {
    "key": "points_crisis_sites",
-   "label": "PoC sites, IDP & refugee camps (status over time)",
+   "label": "Protection sites and displacement camps",
    "category": "human",
    "source": "Curated: OSM (HOT/HDX) coordinates; UNMISS / UNHCR / IOM public site lists; UNMISS press releases on PoC redesignation (2020-21)",
    "source_url": "https://data.humdata.org/dataset/hotosm_ssd_points_of_interest",
-   "notes": "Temporal: one feature per site and status period. PoC -> IDP camp redesignation: Bor & Wau Sep 2020 (documented), Juba PoC1/3 Nov 2020 and Bentiu Mar 2021 (month approximate); Wau former PoC closed 2021 (month unknown); Malakal stays a PoC site; Renk transit centre from Apr 2023. Other camps opened before 2018 and are open-ended. Logistics hubs moved to the logcluster_hubs layer. `coord_quality` flags approximate positions. Not exhaustive (see DTM layer).",
+   "notes": "UN protection of civilians sites, displacement camps and refugee camps, including when sites were handed over or closed.",
    "temporal": "periods",
+   "details": "Temporal: one feature per site and status period. PoC -> IDP camp redesignation: Bor & Wau Sep 2020 (documented), Juba PoC1/3 Nov 2020 and Bentiu Mar 2021 (month approximate); Wau former PoC closed 2021 (month unknown); Malakal stays a PoC site; Renk transit centre from Apr 2023. Other camps opened before 2018 and are open-ended. Logistics hubs moved to the logcluster_hubs layer. `coord_quality` flags approximate positions. Not exhaustive (see DTM layer).",
+   "plain": "UN Protection of Civilians sites, camps for displaced people and refugee camps, with changes in status over time (for example PoC sites turned into IDP camps in 2020-21). Not a complete list.",
+   "status_values": [
+    "UNMISS Protection of Civilians site (Dec 2013-)",
+    "2012-present (Maban)",
+    "redesignated IDP camp under government control",
+    "2016-present",
+    "UNMISS Protection of Civilians site (2014-)",
+    "redesignated IDP camp; expanded after 2021-22 floods",
+    "only remaining UNMISS PoC site",
+    "redesignated Sep 2020 (UNMISS withdrawal began 4 Sep 2020)",
+    "UNMISS PoC Adjacent Area (2016-)",
+    "redesignated Sep 2020; closed during 2021",
+    "2014-present",
+    "2011-present (Sudanese refugees, Maban)",
+    "2013-present (Jamjang)",
+    "2016-present (Jamjang)",
+    "2011-present (relocation ongoing)",
+    "Ethiopian refugees, 2011-present",
+    "CAR/DRC refugees, 2009-present",
+    "DRC refugees (largely emptied 2016-17)",
+    "opened with arrivals from Sudan after 15 Apr 2023"
+   ],
+   "topic": "Displacement & migration",
    "file": "data/points_crisis_sites.geojson"
   },
   {
    "key": "points_fmr_monitoring",
-   "label": "IOM Flow Monitoring points (active months)",
+   "label": "IOM travel monitoring points",
    "category": "human",
    "source": "IOM DTM South Sudan Flow Monitoring Registry (team unified dataset)",
    "source_url": "data/raw/ssd_unified/README.md",
-   "notes": "Where FMR counts travellers; FMR numbers depend on these locations. Temporal: valid_from/valid_to = first/last month with recorded internal forced trips (Jan 2020-Aug 2025); >6 empty months split a point into periods; Nov 2023-Dec 2024 (no public data) is bridged. Points still active in Aug 2025 are open-ended. active_months / travellers summarise each period.",
+   "notes": "Places where IOM counted people on the move, shown for the months they reported.",
    "temporal": "periods",
+   "details": "Where FMR counts travellers; FMR numbers depend on these locations. Temporal: valid_from/valid_to = first/last month with recorded internal forced trips (Jan 2020-Aug 2025); >6 empty months split a point into periods; Nov 2023-Dec 2024 (no public data) is bridged. Points still active in Aug 2025 are open-ended. active_months / travellers summarise each period.",
+   "plain": "Places where IOM staff count people on the move, and the months each was active. Flow-monitoring numbers depend on where these points are.",
+   "topic": "Displacement & migration",
    "file": "data/points_fmr_monitoring.geojson"
   },
   {
-   "key": "points_health",
-   "label": "Health facilities (hospital / PHCC / PHCU)",
+   "key": "points_gbv_one_stop_centres",
    "category": "human",
-   "source": "WHO / MoH Master Facility List, April 2025 (HDX); MoH HF code list 2023",
+   "temporal": "periods",
+   "source": "UNFPA, UNICEF and FAO/World Bank ELRP reports 2018-2023; host facility coordinates from the WHO Master Facility List; team compilation (Nov 2026)",
+   "source_url": "https://southsudan.unfpa.org/",
+   "details": "13 one-stop centres + Bentiu safe house; valid_from = first evidence of operation (year-only evidence -> end of that year); documented through Q1 2023 (UNFPA newsletter: 13 OSCs), presumed operating afterwards, a period that includes the 2025 funding cuts. No dated point data exist for women and girls' friendly spaces or protection desks.",
+   "label": "GBV one-stop centres",
+   "notes": "Centres offering medical, psychosocial, legal and police help to survivors of sexual and gender-based violence, shown from the first evidence they were operating; no site was confirmed individually after early 2023.",
+   "plain": true,
+   "status_values": [
+    "operating (documented)",
+    "presumed operating (last confirmed early 2023)"
+   ],
+   "file": "data/points_gbv_one_stop_centres.geojson"
+  },
+  {
+   "key": "points_health",
+   "label": "Health facilities",
+   "category": "human",
+   "source": "MoH health facility lists 2016 and 2023, IOM DTM village assessment 2019-20, WHO Master Facility List Mar 2024 (HDX); team compilation (Nov 2026)",
    "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
-   "notes": "Point per facility with type; functionality not reported. Some listed facilities lack coordinates (counted in county totals only). Temporal: SNAPSHOT (snapshot=true) - valid_from = list date (2023-01 if already in the 2023 MoH code list, else 2024-03), valid_to null; no opening/closure dates exist.",
-   "temporal": "snapshot",
+   "notes": "Hospitals and clinics with their registry status in each period, built by comparing the 2016, 2019-20, 2023 and 2024 facility lists and adding documented closures; being listed does not prove a facility was working.",
+   "temporal": "periods",
+   "details": "Status periods from MoH Apr 2016 list, IOM DTM village assessment Aug 2019-Mar 2020 (7 counties), MoH 2023 master list and WHO MFL Mar 2024, matched by name and distance; 'new since 2016' facilities start at the first list that has them (opened between Apr 2016 and that list); facilities dropped by 2023 are 'unconfirmed' to Dec 2023; Ulang (closed 14 Apr 2025) and Old Fangak (bombed 3 May 2025) documented. 461 matched facilities lack coordinates and are not mapped. About 11.5% of 'new since 2016' sit within 300 m of a 2016 facility (likely renamed). Aggregate 2022 and 2025 aid-cut closures are timeline events. Superseded the WHO-MFL snapshot layer (all its points are included).",
+   "plain": "Hospitals, health centres and health units from the 2025 national facility list. The list does not say whether a facility is currently working.",
+   "status_values": [
+    "registered",
+    "registered (new since 2016)",
+    "unconfirmed (dropped from the registry by 2023)",
+    "non-functional in 2016 (until relisted)",
+    "non-functional in 2016 (dropped from the registry by 2023)",
+    "non-functional (IOM DTM 2019-20)",
+    "non-functional (attack, documented)",
+    "closed (documented)"
+   ],
+   "topic": "Aid, services & peacekeeping",
    "file": "data/points_health.geojson"
   },
   {
    "key": "points_insecurity_insight",
-   "label": "Insecurity Insight incidents (aid workers, health, education, CRSV)",
+   "label": "Attacks on aid, health and education",
    "category": "human",
    "source": "Insecurity Insight (Security in Numbers Database) via HDX, CC BY-SA 4.0",
    "source_url": "https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities",
-   "notes": "One point per incident 2018-2025 with `date`, `type`, `victims`. LOW GEOLOCATION PRECISION: the source censors coordinates, so points sit at the centroid of the reported state / administrative area (`geo_precision`), stacked on top of each other - do not read them as incident locations. Records with no state ('No Information') or outside South Sudan are dropped from the layer. Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
+   "notes": "Reported incidents affecting aid workers, health care, education and sexual violence; locations are only approximate, often the centre of a state.",
    "temporal": "events",
+   "details": "One point per incident 2018-2025 with `date`, `type`, `victims`. LOW GEOLOCATION PRECISION: the source censors coordinates, so points sit at the centroid of the reported state / administrative area (`geo_precision`), stacked on top of each other - do not read them as incident locations. Records with no state ('No Information') or outside South Sudan are dropped from the layer. Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
+   "plain": "Reported incidents against aid workers, health care and schools, and conflict-related sexual violence, 2018-2025. Dots sit at state centres, not at the real incident location.",
+   "topic": "Conflict & violence",
    "file": "data/points_insecurity_insight.geojson"
   },
   {
    "key": "points_logcluster_hubs",
-   "label": "Logistics Cluster hubs & common storage (over time)",
+   "label": "Aid logistics hubs and warehouses",
    "category": "human",
    "source": "WFP Logistics Cluster, South Sudan Concept of Operations maps Jan 2018 - Jun 2026 (16 dated maps)",
    "source_url": "https://logcluster.org/en/where-we-work/ssd/documents",
-   "notes": "Temporal: one feature per site and period with constant storage capacity/manager; valid_from/valid_to from consecutive map dates (2018-01, 2019-01/06/09, 2020-03/04/08, 2021-05/10, 2022-09, 2023-01/04/09, 2026-02/03/06). No map Oct 2023-Jan 2026: sites carried through (date_basis says so). type = Logistics Cluster hub (coordination/transport services) / cluster common storage / partner-managed MSU; storage_m2 as printed. Coordinates = town (OCHA gazetteer) or map pin (coord_quality='approximate'), not the warehouse itself.",
+   "notes": "Humanitarian logistics hubs and shared warehouses, shown for the periods they appear on the Logistics Cluster's operations maps.",
    "temporal": "periods",
+   "details": "Temporal: one feature per site and period with constant storage capacity/manager; valid_from/valid_to from consecutive map dates (2018-01, 2019-01/06/09, 2020-03/04/08, 2021-05/10, 2022-09, 2023-01/04/09, 2026-02/03/06). No map Oct 2023-Jan 2026: sites carried through (date_basis says so). type = Logistics Cluster hub (coordination/transport services) / cluster common storage / partner-managed MSU; storage_m2 as printed. Coordinates = town (OCHA gazetteer) or map pin (coord_quality='approximate'), not the warehouse itself.",
+   "plain": "Humanitarian logistics hubs and shared storage sites shown on UN Logistics Cluster maps, 2018-2026. Positions are the town, not the exact warehouse.",
+   "topic": "Aid, services & peacekeeping",
    "file": "data/points_logcluster_hubs.geojson"
   },
   {
    "key": "points_markets",
-   "label": "WFP monitored markets (active months)",
+   "label": "Markets with WFP price monitoring",
    "category": "human",
    "source": "WFP VAM market monitoring (HDX)",
    "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
-   "notes": "Temporal: valid_from/valid_to = first/last month with retail prices 2018-01..2025-12; gaps longer than 6 months split a market into separate periods. valid_from null = already monitored before 2018. months_with_prices counts reporting months within the period.",
+   "notes": "Markets where WFP recorded food prices, shown for the months they were monitored.",
    "temporal": "periods",
+   "details": "Temporal: valid_from/valid_to = first/last month with retail prices 2018-01..2025-12; gaps longer than 6 months split a market into separate periods. valid_from null = already monitored before 2018. months_with_prices counts reporting months within the period.",
+   "plain": "Markets where the World Food Programme records food and fuel prices, and the months each reported. Price layers come from these markets.",
+   "topic": "Food & prices",
    "file": "data/points_markets.geojson"
   },
   {
    "key": "points_oil",
-   "label": "Oil fields (production status over time) and wells",
+   "label": "Oil fields and wells",
    "category": "human",
-   "source": "Global Energy Monitor GOGET (CC-BY 4.0) + OpenStreetMap wells (ODbL); status dates from Reuters/Bloomberg (2018-19 restarts) and Argus/Radio Tamazuj (2024 Dar Blend export halt, 2025 resumption)",
+   "source": "Global Energy Monitor GOGET (CC-BY 4.0), OpenStreetMap wells (ODbL); block status dates from Reuters, VOA, Radio Tamazuj, Sudan Tribune, Argus, AFP",
    "source_url": "https://globalenergymonitor.org/projects/global-oil-gas-extraction-tracker/",
-   "notes": "Temporal: oil fields get one feature per production_status period - Toma South shut in until Aug 2018, Unity until Dec 2018 (Dec 2013 war); Palogue/Qamari (Dar Blend) export disruption Feb-Dec 2024 after the pipeline rupture in Sudan, resumed Jan 2025; Tharjath shut 2013, restart undated (static). OSM wells: snapshot only (no dates).",
+   "notes": "Oil fields and mapped wells coloured by the documented production status of their oil block, including the 2018-19 restarts, the 2024 export halt and the December 2025 Heglig disruption.",
    "temporal": "periods",
+   "details": "GEM GOGET field points (attributes kept; GEM status in gem_status) with production periods reconciled to the team block timeline; 102 OSM wells (HOT Raw Data API, Nov 2026) replace the 93 undated OSM wells and get their block's status periods: Blocks 3&7 operating -> halted 2024-02..2024-12 -> resumed 2025-01; Blocks 1,2&4 shut -> partial 2018-08 (Toma South) -> operating 2019-01 -> disrupted 2025-12 (Heglig seized 8 Dec 2025); Block 5A shut -> operating 2021-06 -> disrupted 2025-12. Block assignment by location (east of 31E = 3&7; Guit/Koch/Leer/Mayendit/Panyijiar = 5A). Block-level status, not well-by-well. Gas-flare satellite check (MODIS) was inconclusive and is not used.",
+   "status_values": [
+    "shut in",
+    "partially operating",
+    "operating",
+    "halted (export pipeline rupture in Sudan)",
+    "operating (resumed)",
+    "disrupted (Heglig hub seized)"
+   ],
+   "plain": "Oil fields with their production status over time (shutdowns and restarts) and oil wells mapped by volunteers. Well mapping is incomplete.",
+   "topic": "Context (static)",
    "file": "data/points_oil.geojson"
+  },
+  {
+   "key": "points_oil_pollution",
+   "category": "environment",
+   "temporal": "periods",
+   "source": "Sign of Hope (Feb 2020) spill investigation; PAX (2023); New Lines/Placemark (2026); Kenyatta University sampling as reported; team compilation (Nov 2026)",
+   "source_url": "https://www.hoffnungszeichen.de/sites/default/files/documents/causing_a_black_tide_of_oil_-_south_sudans_polluting_pipeline_-_sign_of_hope.pdf",
+   "details": "Spills on the Unity-Heglig export pipeline ~24 Aug 2019 (~2 million L) and ~28 Oct 2019 (~4 million L), GPS from Sign of Hope; after repair shown as spill site (removal not documented). Reports: flooded Block 2 wells (PAX 2023: 159 wells ~41% submerged; New Lines/Placemark 2026: 50+ of ~400 Unity wells underwater) placed at the Unity field; Kenyatta University river samples near Bentiu/Rotriak (lead up to 18 ug/L, hydrocarbons >5x limits; sampling dates unpublished) placed at Rotriak. Feb 2024 Petrodar spill is in Sudan -> timeline only.",
+   "label": "Oil spills and pollution reports",
+   "notes": "Two documented 2019 oil pipeline spills north of Bentiu and two located reports of contaminated water and flooded wells in the Unity oil fields.",
+   "plain": true,
+   "status_values": [
+    "oil spill (active)",
+    "spill site (oil removal not documented)",
+    "contamination reported"
+   ],
+   "file": "data/points_oil_pollution.geojson"
+  },
+  {
+   "key": "points_oil_wells_flooding",
+   "category": "environment",
+   "temporal": "periods",
+   "source": "Sentinel-1 RTC radar (Microsoft Planetary Computer) at OpenStreetMap well locations; team analysis (Nov 2026)",
+   "source_url": "https://planetarycomputer.microsoft.com/dataset/sentinel-1-rtc",
+   "details": "Share of Sentinel-1 VV pixels below -15 dB in a 100-500 m ring around each of 102 OSM wells, monthly median; flagged when >= 25%. Undercounts flooded vegetation; near-zero 2021 likely an artefact (also Sentinel-1B loss Dec 2021). OSM maps ~100 of ~400 Unity wells.",
+   "label": "Flood water around oil wells (radar)",
+   "notes": "Mapped oil wells where satellite radar saw open flood water around the well in each period; this shows flooding, not contamination, and misses water under vegetation.",
+   "plain": true,
+   "status_values": [
+    "flood water around well (radar)",
+    "no open water detected (radar)"
+   ],
+   "file": "data/points_oil_wells_flooding.geojson"
   },
   {
    "key": "points_schools",
    "label": "Schools",
    "category": "human",
-   "source": "SSSAMS 2015 (HDX, CC0) + OpenStreetMap education facilities (HOT/HDX, ODbL)",
+   "source": "SSSAMS 2015 list and 2019 enrolment export (HDX, CC0), IOM DTM village assessment 2019-20, OpenStreetMap (ODbL); team compilation (Nov 2026)",
    "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
-   "notes": "SSSAMS points carry type and 2015 enrolment by sex (year=2015); OSM points year=2026. The two sources overlap (duplicates possible). Temporal: SNAPSHOT (snapshot=true, valid_from/valid_to null) - no opening/closure dates in either source.",
-   "temporal": "snapshot",
+   "notes": "Schools with their status from the 2015 and 2019 school lists, the 2019-20 village assessment and the 2020-21 COVID-19 closure; after May 2021 statuses are carried forward because no school-level data exists.",
+   "temporal": "periods",
+   "details": "SSSAMS 2015 list (coordinates) + SSSAMS 29 Oct 2019 enrolment export (joined on school code) + IOM DTM Aug 2019-Mar 2020 (392 DTM-only points, a few may duplicate SSSAMS); national COVID-19 closure 2020-03..2021-04; base status carried forward from 2021-05 (flagged 'presumed'). 2015 managed/enrolment-by-sex kept from the old layer. OpenStreetMap schools > 300 m from any SSSAMS/DTM school kept as undated. Heatwave closures (Mar 2024, Feb-Mar 2025) and flood closures are timeline events, not per-school periods.",
+   "plain": "Schools from the 2015 school census and from OpenStreetMap. The two sources overlap, so some schools may appear twice.",
+   "status_values": [
+    "operating (2019 enrolment)",
+    "operating (IOM DTM 2019-20)",
+    "listed, no learners reported (2019)",
+    "unconfirmed (missing from 2019 enrolment list)",
+    "non-operational (IOM DTM 2019-20)",
+    "closed (SSSAMS)",
+    "closed nationally (COVID-19)",
+    "presumed operating (last observed 2019-20)",
+    "presumed no learners (last observed 2019)",
+    "unconfirmed (last listed 2015)",
+    "presumed non-operational (last observed 2019-20)",
+    "mapped in OpenStreetMap (no dates)"
+   ],
+   "topic": "Aid, services & peacekeeping",
    "file": "data/points_schools.geojson"
   },
   {
+   "key": "points_surface_water_quality",
+   "category": "environment",
+   "temporal": "monthly",
+   "source": "NASA HLS v2 (2020-2025) and Sentinel-2 L2A (2018-2019) via Microsoft Planetary Computer; team analysis (Nov 2026)",
+   "source_url": "https://www.earthdata.nasa.gov/data/projects/hls",
+   "details": "Eight ~11x11 km sites; water pixels only, up to 3 clearest scenes per month. Status = NDTI (red-green)/(red+green) anomaly vs the site's median for that calendar month: > +0.04 more turbid, < -0.04 clearer (|anomaly| > 0.04 is about the top 20% of site-months). NDCI chlorophyll proxy included. 2018-19 Sentinel-2 L2A may be offset from 2020-25 HLS. Thar Jath wetland has only 15 months.",
+   "label": "River and wetland water colour (satellite)",
+   "notes": "Monthly satellite readings of muddiness at eight river and wetland sites compared with the usual level for that month; this tracks sediment and algae, not oil or chemical pollution.",
+   "plain": true,
+   "status_values": [
+    "more turbid than usual",
+    "near usual for the month",
+    "clearer than usual"
+   ],
+   "file": "data/points_surface_water_quality.geojson"
+  },
+  {
    "key": "points_ucdp_events",
-   "label": "UCDP GED conflict events (2018-2025)",
+   "label": "Deadly conflict events (UCDP)",
    "category": "human",
    "source": "UCDP Georeferenced Event Dataset v26.1",
    "source_url": "https://ucdp.uu.se/downloads/",
-   "notes": "Organized-violence events with >=1 death. type: state_based / non_state / one_sided; deaths = best estimate; where_prec 1=exact .. 3=county, >=4 coarse (admin-1/country). oil_related = keyword match on oil fields/pipelines (1 inside SSD; 5 cross-border oil events e.g. Heglig added with inside_ssd=false). Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
+   "notes": "Organised violence events with at least one death, sized by the number killed.",
    "temporal": "events",
+   "details": "Organized-violence events with >=1 death. type: state_based / non_state / one_sided; deaths = best estimate; where_prec 1=exact .. 3=county, >=4 coarse (admin-1/country). oil_related = keyword match on oil fields/pipelines (1 inside SSD; 5 cross-border oil events e.g. Heglig added with inside_ssd=false). Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
+   "plain": "Individual violent events that killed at least one person, 2018-2025, from the Uppsala Conflict Data Program, with the estimated number of deaths.",
+   "topic": "Conflict & violence",
    "file": "data/points_ucdp_events.geojson"
   },
   {
    "key": "points_unmiss",
-   "label": "UNMISS peacekeeping deployments (over time)",
+   "label": "UN peacekeeping bases",
    "category": "human",
    "source": "Geo-PKO v2.3 (UN maps 4456 Rev.30 Nov 2017 .. Rev.61 Oct 2024) + UN Geospatial map 4456 Rev.62 (Jan 2025) and Rev.67 (Jan 2026)",
    "source_url": "https://www.pcr.uu.se/data/geo-pko/",
-   "notes": "One feature per location and period with constant role / troop estimate (rounded to 10) / FPU presence; valid_from/valid_to from consecutive 4456 map revisions (38 maps). troops_est = Geo-PKO estimate from unit sizes (approximate); fpu_present = formed police unit at location. 2025 periods from Rev.62 have no troop numbers. Closures: Aweil Nov 2025 (documented), Yei & Torit between Jul 2025 (Rev.65) and Jan 2026 (Rev.67) -> valid_to 2025-12; Tambura closed Jan 2026 (open through 2025). PoC sites: see crisis-sites layer.",
+   "notes": "UN peacekeeping deployments in each period, with approximate troop numbers from UN deployment maps.",
    "temporal": "periods",
+   "details": "One feature per location and period with constant role / troop estimate (rounded to 10) / FPU presence; valid_from/valid_to from consecutive 4456 map revisions (38 maps). troops_est = Geo-PKO estimate from unit sizes (approximate); fpu_present = formed police unit at location. 2025 periods from Rev.62 have no troop numbers. Closures: Aweil Nov 2025 (documented), Yei & Torit between Jul 2025 (Rev.65) and Jan 2026 (Rev.67) -> valid_to 2025-12; Tambura closed Jan 2026 (open through 2025). PoC sites: see crisis-sites layer.",
+   "plain": "Locations of UN peacekeeping (UNMISS) bases and team sites over time, with approximate troop numbers and base closures.",
+   "topic": "Aid, services & peacekeeping",
    "file": "data/points_unmiss.geojson"
   },
   {
    "key": "points_water_points",
-   "label": "Water points (WPDx, last known status)",
+   "label": "Water points (last known status)",
    "category": "human",
    "source": "Water Point Data Exchange WPDx-Basic (OCHA/WASH WIMS 2006-13, ACF/RWSS 2016, Water for South Sudan 2011-15, UNHCR 2019), CC BY 4.0",
    "source_url": "https://data.waterpointdata.org/dataset/Water-Point-Data-Exchange-Basic-WPDx-Basic-/eqje-vguj",
-   "notes": "Temporal: valid_from = install year if >= 2018 (none in the data: install years <= 2015 or unknown) else null; valid_to null (decommissioning not recorded). status = functional status at status_report_date; almost all reports predate 2018 (status_stale=true: last known status, not current). UNHCR camp points reported Sep 2019 get a separate status period from 2019-09. Not a complete inventory of current water points.",
+   "notes": "Boreholes and other water points with their last reported working status, most of it reported before 2018 and possibly out of date.",
    "temporal": "snapshot",
+   "details": "Temporal: valid_from = install year if >= 2018 (none in the data: install years <= 2015 or unknown) else null; valid_to null (decommissioning not recorded). status = functional status at status_report_date; almost all reports predate 2018 (status_stale=true: last known status, not current). UNHCR camp points reported Sep 2019 get a separate status period from 2019-09. Not a complete inventory of current water points.",
+   "plain": "Boreholes, wells and taps recorded in water-point surveys, mostly from before 2018. Their working status is the last one reported and may be out of date.",
+   "status_values": [
+    "functional",
+    "non-functional",
+    "non-functional, dry season",
+    "not reported before first in-window report",
+    "abandoned/decommissioned"
+   ],
+   "topic": "Aid, services & peacekeeping",
    "file": "data/points_water_points.geojson"
   },
   {
    "key": "polygons_ethnic_groups",
-   "file": "data/polygons_ethnic_groups.geojson",
-   "label": "Ethnic Groups",
-   "category": "human"
+   "category": "human",
+   "temporal": "periods",
+   "source": "GeoEPR 2021 / EPR 2021 / ACD2EPR 2021 (ETH Zurich ICR)",
+   "source_url": "https://icr.ethz.ch/data/epr/geoepr/",
+   "details": "GeoEPR-2021 polygons clipped to South Sudan; EPR power status for 2011-2021; ACD2EPR links to rebel organisations. 2022-2025 features carry the same geometry/status, flagged as carried forward.",
+   "label": "Ethnic group areas",
+   "notes": "Settlement areas and political power status of ten major ethnic groups as coded up to 2021; areas shown after 2021 are carried forward, not re-coded.",
+   "plain": "Approximate settlement areas of South Sudan's politically relevant ethnic groups (such as Dinka, Nuer, Shilluk, Murle, Azande). Areas can overlap and smaller groups are missing.",
+   "status_values": [
+    "senior partner",
+    "junior partner",
+    "powerless",
+    "discriminated",
+    "senior partner (carried forward, not coded after 2021)",
+    "junior partner (carried forward, not coded after 2021)",
+    "powerless (carried forward, not coded after 2021)",
+    "discriminated (carried forward, not coded after 2021)"
+   ],
+   "topic": "Population & society",
+   "file": "data/polygons_ethnic_groups.geojson"
   }
  ],
  "rasters": [
@@ -394,6 +582,59 @@
    "notes": "Fixed colour scale 0 .. 98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
   },
   {
+   "key": "chirps_trend",
+   "label": "Rainfall (CHIRPS v3) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/month/yr",
+   "bounds": [
+    [
+     3.313536493165293,
+     23.299999999999994
+    ],
+    [
+     12.4,
+     36.09537398197111
+    ]
+   ],
+   "vmin": -27.0,
+   "vmax": 27.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "0.05\u00b0 (~5.5 km)",
+   "source": "CHIRPS v3.0 monthly (Climate Hazards Center, UCSB)",
+   "trend_of": "chirps",
+   "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "flood_s1",
    "label": "Flood / surface water (monthly, Sentinel-1 SAR)",
    "units": "fraction of pixel classified water",
@@ -514,6 +755,59 @@
    "notes": "Flooded = VV-VH ratio > 3.0 dB above the pixel's dry-season (March) reference, or open water (VV<-18.0, VH<-24.0 dB). Sees through cloud. Transparent = dry land; grey = no acquisition within 2 months."
   },
   {
+   "key": "flood_s1_trend",
+   "label": "Flood / surface water (monthly, Sentinel-1 SAR) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "percentage points/yr",
+   "bounds": [
+    [
+     3.3010476939770306,
+     24.0
+    ],
+    [
+     12.4,
+     36.10617576371243
+    ]
+   ],
+   "vmin": -8.0,
+   "vmax": 8.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid",
+   "source": "Copernicus Sentinel-1 IW GRD RTC (sentinel-1-rtc) via Microsoft Planetary Computer",
+   "trend_of": "flood_s1",
+   "basis": "wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02\u00b0 cell from the monthly Sentinel-1 classification (gap-filled as in flood_s1_pipeline) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "grace_tws",
    "bounds": [
     [
@@ -625,6 +919,59 @@
     "2025-12"
    ],
    "notes": "Anomaly vs the 2002\u20132020 mean. Brown = less water stored than usual, teal = more. ~300 km blur."
+  },
+  {
+   "key": "grace_tws_trend",
+   "label": "Water storage anomaly (GRACE/GRACE-FO) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "cm water/yr",
+   "bounds": [
+    [
+     3.0736723119556046,
+     23.0
+    ],
+    [
+     13.0,
+     37.052990650833046
+    ]
+   ],
+   "vmin": -7.1,
+   "vmax": 7.1,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1\u00b0 grid, ~300 km effective",
+   "source": "GFZ GravIS COST-G GRACE/GRACE-FO Level-3 TWS",
+   "trend_of": "grace_tws",
+   "basis": "annual mean (Jan-Dec) of the monthly values (storage anomaly; no dry-season zeros). GRACE-FO starts Jun 2018: 2018 = 5 months (Jun, Jul, Oct-Dec), accepted via the anomaly method (threshold lowered to 5 of 12 months). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in cm water/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "modis13a3_ndvi",
@@ -762,6 +1109,59 @@
    "crs": "EPSG:3857",
    "width": 900,
    "height": 676
+  },
+  {
+   "key": "modis13a3_ndvi_trend",
+   "label": "NDVI, monthly 1 km (MODIS MOD13A3) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "NDVI/yr",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -0.05,
+   "vmax": 0.05,
+   "colormap": "div_brgn",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f7f7f7",
+    "#d9f0d3",
+    "#a6dba0",
+    "#5aae61",
+    "#1b7837",
+    "#00441b"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1 km MODIS (0.01\u00b0 grid)",
+   "source": "MODIS MOD13A3 v061 via NASA AppEEARS",
+   "trend_of": "modis13a3_ndvi",
+   "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "modis_et",
@@ -951,6 +1351,112 @@
    "height": 676
   },
   {
+   "key": "modis_et_monthly_trend",
+   "label": "Evapotranspiration, monthly (MODIS MOD16A2GF) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/month/yr",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -18.0,
+   "vmax": 18.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "500 m MODIS (8-day, gap-filled), rendered from ~1 km (0.01\u00b0) grid",
+   "source": "MODIS MOD16A2GF v061 via NASA AppEEARS",
+   "trend_of": "modis_et_monthly",
+   "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
+   "key": "modis_et_trend",
+   "label": "Annual evapotranspiration (MODIS) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/year per year",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -160.0,
+   "vmax": 160.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "500 m MODIS, rendered from ~1 km (0.01\u00b0) grid",
+   "source": "MODIS MOD16A3GF v061 (annual, gap-filled) via Microsoft Planetary Computer",
+   "trend_of": "modis_et",
+   "basis": "annual total of the MODIS MOD16A3GF annual product (one value per year)",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/year per year. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "modis_lst_day",
    "label": "Daytime land surface temperature (MODIS)",
    "units": "\u00b0C",
@@ -1080,6 +1586,59 @@
    "crs": "EPSG:3857",
    "width": 900,
    "height": 676
+  },
+  {
+   "key": "modis_lst_day_trend",
+   "label": "Daytime land surface temperature (MODIS) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "\u00b0C/yr",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -1.9,
+   "vmax": 1.9,
+   "colormap": "div_rdbu",
+   "colors": [
+    "#053061",
+    "#2166ac",
+    "#4393c3",
+    "#92c5de",
+    "#d1e5f0",
+    "#f7f7f7",
+    "#fddbc7",
+    "#f4a582",
+    "#d6604d",
+    "#b2182b",
+    "#67001f"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1 km MODIS (0.01\u00b0 grid)",
+   "source": "MODIS MOD11A2 v061 (Terra) via Microsoft Planetary Computer",
+   "trend_of": "modis_lst_day",
+   "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "modis_ndvi",
@@ -1213,6 +1772,59 @@
    "crs": "EPSG:3857",
    "width": 900,
    "height": 676
+  },
+  {
+   "key": "modis_ndvi_trend",
+   "label": "NDVI (MODIS, monthly max) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "NDVI/yr",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -0.05,
+   "vmax": 0.05,
+   "colormap": "div_brgn",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f7f7f7",
+    "#d9f0d3",
+    "#a6dba0",
+    "#5aae61",
+    "#1b7837",
+    "#00441b"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "500 m MODIS, rendered from ~1 km (0.01\u00b0) grid",
+   "source": "MODIS MOD13A1/MYD13A1 v061 via Microsoft Planetary Computer",
+   "trend_of": "modis_ndvi",
+   "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "population",
@@ -1354,6 +1966,59 @@
    "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval."
   },
   {
+   "key": "s5p_aerosol_index_trend",
+   "label": "Sentinel-5P aerosol_index (monthly, sampled orbits) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "unitless (UV aerosol index)/yr",
+   "bounds": [
+    [
+     3.4611126678059523,
+     24.0
+    ],
+    [
+     12.35,
+     36.09515541588254
+    ]
+   ],
+   "vmin": -0.36000000000000004,
+   "vmax": 0.36000000000000004,
+   "colormap": "div_puor",
+   "colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
+   "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
+   "trend_of": "s5p_aerosol_index",
+   "basis": "annual mean (Jan-Dec) of the monthly values (sampled orbits; S5P starts mid-2018) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in unitless (UV aerosol index)/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "s5p_co",
    "label": "Sentinel-5P co (monthly, sampled orbits)",
    "units": "mmol/m2 total CO",
@@ -1470,6 +2135,59 @@
    "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval."
   },
   {
+   "key": "s5p_co_trend",
+   "label": "Sentinel-5P co (monthly, sampled orbits) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mmol/m2 total CO/yr",
+   "bounds": [
+    [
+     3.4611126678059523,
+     24.0
+    ],
+    [
+     12.35,
+     36.09515541588254
+    ]
+   ],
+   "vmin": -2.4,
+   "vmax": 2.4,
+   "colormap": "div_puor",
+   "colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
+   "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
+   "trend_of": "s5p_co",
+   "basis": "annual mean (Jan-Dec) of the monthly values (sampled orbits; S5P starts mid-2018) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mmol/m2 total CO/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "s5p_no2",
    "label": "Sentinel-5P no2 (monthly, sampled orbits)",
    "units": "umol/m2 tropospheric NO2",
@@ -1584,6 +2302,59 @@
    "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
    "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval."
+  },
+  {
+   "key": "s5p_no2_trend",
+   "label": "Sentinel-5P no2 (monthly, sampled orbits) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "umol/m2 tropospheric NO2/yr",
+   "bounds": [
+    [
+     3.4611126678059523,
+     24.0
+    ],
+    [
+     12.35,
+     36.09515541588254
+    ]
+   ],
+   "vmin": -5.7,
+   "vmax": 5.7,
+   "colormap": "div_puor",
+   "colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
+   "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
+   "trend_of": "s5p_no2",
+   "basis": "annual mean (Jan-Dec) of the monthly values (sampled orbits; S5P starts mid-2018) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in umol/m2 tropospheric NO2/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "sudd_inundation",
@@ -1721,6 +2492,57 @@
    "source": "MODIS MOD09A1 v061 (Terra) 8-day via Microsoft Planetary Computer; MCD43A4 NBAR for 12 missing Terra tile-composites (Sep-Oct 2022, Jan and Nov 2023)",
    "crs": "EPSG:3857",
    "notes": "Sudd AOI only (16 counties); transparent outside. A pixel's class is the day-weighted majority over the month's 8-day composites after gap filling (cloudy pixels: last clear state <=24 days, else same-composite 2018-2025 climatology). 2025-07..2025-11 missing: no MODIS on Planetary Computer for 4 Jul-24 Nov 2025."
+  },
+  {
+   "key": "sudd_inundation_trend",
+   "label": "Sudd inundation (MODIS, monthly) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "percentage points/yr",
+   "bounds": [
+    [
+     5.840594920504325,
+     29.080181338379663
+    ],
+    [
+     9.762499999099246,
+     32.986790890096216
+    ]
+   ],
+   "vmin": -31.0,
+   "vmax": 31.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+   ],
+   "native_resolution": "500 m (MOD09A1), displayed at ~400 m",
+   "source": "MODIS MOD09A1 v061 (Terra) 8-day via Microsoft Planetary Computer; MCD43A4 NBAR for 12 missing Terra tile-composites (Sep-Oct 2022, Jan and Nov 2023)",
+   "trend_of": "sudd_inundation",
+   "basis": "Sep-Dec high-water-season share (%) of cloud-free MODIS 8-day composites classified as open water or flooded vegetation (the product's own annual-peak window; Jun-Sep is mostly cloud over the Sudd). 2025 is omitted: Planetary Computer has no MODIS reflectance for 4 Jul - 24 Nov 2025.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "surface_water",
@@ -1966,6 +2788,59 @@
    "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
   },
   {
+   "key": "tc_aet_trend",
+   "label": "Actual evapotranspiration \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/month/yr",
+   "bounds": [
+    [
+     3.2720726012175145,
+     23.29166666666667
+    ],
+    [
+     12.416666666666675,
+     36.12893453973092
+    ]
+   ],
+   "vmin": -16.0,
+   "vmax": 16.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1/24\u00b0 (~4 km)",
+   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+   "trend_of": "tc_aet",
+   "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "tc_def",
    "label": "Climatic water deficit",
    "units": "mm/month",
@@ -2091,6 +2966,59 @@
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
    "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+  },
+  {
+   "key": "tc_def_trend",
+   "label": "Climatic water deficit \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/month/yr",
+   "bounds": [
+    [
+     3.2720726012175145,
+     23.29166666666667
+    ],
+    [
+     12.416666666666675,
+     36.12893453973092
+    ]
+   ],
+   "vmin": -14.0,
+   "vmax": 14.0,
+   "colormap": "div_brbg_r",
+   "colors": [
+    "#003c30",
+    "#01665e",
+    "#35978f",
+    "#80cdc1",
+    "#c7eae5",
+    "#f5f5f5",
+    "#f6e8c3",
+    "#dfc27d",
+    "#bf812d",
+    "#8c510a",
+    "#543005"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1/24\u00b0 (~4 km)",
+   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+   "trend_of": "tc_def",
+   "basis": "annual mean (Jan-Dec) of the monthly values (deficit is largest in the dry season, so the whole year is used) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. teal = deficit shrinking (wetter), brown = deficit growing (drier); white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "tc_pdsi",
@@ -2222,6 +3150,59 @@
    "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months (symmetric about 0); bilinear reprojection to EPSG:3857."
   },
   {
+   "key": "tc_pdsi_trend",
+   "label": "Palmer Drought Severity Index \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "index (-4 dry .. +4 wet)/yr",
+   "bounds": [
+    [
+     3.2720726012175145,
+     23.29166666666667
+    ],
+    [
+     12.416666666666675,
+     36.12893453973092
+    ]
+   ],
+   "vmin": -1.8,
+   "vmax": 1.8,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1/24\u00b0 (~4 km)",
+   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+   "trend_of": "tc_pdsi",
+   "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in index (-4 dry .. +4 wet)/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "tc_ppt",
    "label": "Precipitation (TerraClimate)",
    "units": "mm/month",
@@ -2349,6 +3330,59 @@
    "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
   },
   {
+   "key": "tc_ppt_trend",
+   "label": "Precipitation (TerraClimate) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/month/yr",
+   "bounds": [
+    [
+     3.2720726012175145,
+     23.29166666666667
+    ],
+    [
+     12.416666666666675,
+     36.12893453973092
+    ]
+   ],
+   "vmin": -32.0,
+   "vmax": 32.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1/24\u00b0 (~4 km)",
+   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+   "trend_of": "tc_ppt",
+   "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "tc_soil",
    "label": "Soil moisture (TerraClimate)",
    "units": "mm (end of month)",
@@ -2474,6 +3508,59 @@
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
    "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+  },
+  {
+   "key": "tc_soil_trend",
+   "label": "Soil moisture (TerraClimate) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/yr",
+   "bounds": [
+    [
+     3.2720726012175145,
+     23.29166666666667
+    ],
+    [
+     12.416666666666675,
+     36.12893453973092
+    ]
+   ],
+   "vmin": -37.0,
+   "vmax": 37.0,
+   "colormap": "div_brbg",
+   "colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1/24\u00b0 (~4 km)",
+   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+   "trend_of": "tc_soil",
+   "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   },
   {
    "key": "tc_tmax",
@@ -2604,6 +3691,59 @@
    "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
   },
   {
+   "key": "tc_tmax_trend",
+   "label": "Max temperature (TerraClimate) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "\u00b0C/yr",
+   "bounds": [
+    [
+     3.2720726012175145,
+     23.29166666666667
+    ],
+    [
+     12.416666666666675,
+     36.12893453973092
+    ]
+   ],
+   "vmin": -0.65,
+   "vmax": 0.65,
+   "colormap": "div_rdbu",
+   "colors": [
+    "#053061",
+    "#2166ac",
+    "#4393c3",
+    "#92c5de",
+    "#d1e5f0",
+    "#f7f7f7",
+    "#fddbc7",
+    "#f4a582",
+    "#d6604d",
+    "#b2182b",
+    "#67001f"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1/24\u00b0 (~4 km)",
+   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+   "trend_of": "tc_tmax",
+   "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "tc_ws",
    "label": "Wind speed (10 m)",
    "units": "m/s",
@@ -2731,6 +3871,59 @@
    "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
   },
   {
+   "key": "tc_ws_trend",
+   "label": "Wind speed (10 m) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "m/s/yr",
+   "bounds": [
+    [
+     3.2720726012175145,
+     23.29166666666667
+    ],
+    [
+     12.416666666666675,
+     36.12893453973092
+    ]
+   ],
+   "vmin": -0.16000000000000003,
+   "vmax": 0.16000000000000003,
+   "colormap": "div_puor",
+   "colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "1/24\u00b0 (~4 km)",
+   "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+   "trend_of": "tc_ws",
+   "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in m/s/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+  },
+  {
    "key": "viirs_fire",
    "label": "VIIRS active fires (S-NPP, per 0.05\u00b0 cell)",
    "units": "detections per 0.05\u00b0 cell per month (log10)",
@@ -2850,6 +4043,59 @@
    "crs": "EPSG:3857",
    "notes": "Colour = log10(number of nominal/high-confidence vegetation-fire detections in each 0.05\u00b0 cell that month): 0 = 1 detection, 1 = 10, 2 = 100+. Transparent = no detection.",
    "scale": "log10"
+  },
+  {
+   "key": "viirs_fire_trend",
+   "label": "VIIRS active fires (S-NPP, per 0.05\u00b0 cell) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "detections per 0.05\u00b0 cell per year/yr",
+   "bounds": [
+    [
+     3.412126287818573,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     35.994077479217665
+    ]
+   ],
+   "vmin": -22.0,
+   "vmax": 22.0,
+   "colormap": "div_puor",
+   "colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "375 m detections binned to 0.05\u00b0 (~5.5 km)",
+   "source": "NASA FIRMS VIIRS S-NPP 375 m standard processing (VNP14IMGTDL SP)",
+   "trend_of": "viirs_fire",
+   "basis": "annual total (Jan-Dec) of nominal/high-confidence VIIRS S-NPP vegetation-fire detections per 0.05\u00b0 cell",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05\u00b0 cell per year/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
   }
  ]
 }

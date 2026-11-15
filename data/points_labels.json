@@ -1,0 +1,87 @@
+{
+ "lines_pipelines": {
+  "label": "Oil pipelines (flow status)",
+  "plain": "Mapped oil pipelines coloured by the documented status of the oil block they serve; proposed routes are shown but were never built.",
+  "topic": "Context (static)"
+ },
+ "points_crisis_sites": {
+  "label": "Protection sites and displacement camps",
+  "plain": "UN Protection of Civilians sites, camps for displaced people and refugee camps, with changes in status over time (for example PoC sites turned into IDP camps in 2020-21). Not a complete list.",
+  "topic": "Displacement & migration"
+ },
+ "points_fmr_monitoring": {
+  "label": "IOM travel monitoring points",
+  "plain": "Places where IOM staff count people on the move, and the months each was active. Flow-monitoring numbers depend on where these points are.",
+  "topic": "Displacement & migration"
+ },
+ "points_health": {
+  "label": "Health facilities (registry status over time)",
+  "plain": "Hospitals and clinics with their registry status in each period, built by comparing the 2016, 2019-20, 2023 and 2024 facility lists and adding documented closures; being listed does not prove a facility was working.",
+  "topic": "Aid, services & peacekeeping"
+ },
+ "points_insecurity_insight": {
+  "label": "Attacks on aid, health and education",
+  "plain": "Reported incidents against aid workers, health care and schools, and conflict-related sexual violence, 2018-2025. Dots sit at state centres, not at the real incident location.",
+  "topic": "Conflict & violence"
+ },
+ "points_logcluster_hubs": {
+  "label": "Aid logistics hubs and warehouses",
+  "plain": "Humanitarian logistics hubs and shared storage sites shown on UN Logistics Cluster maps, 2018-2026. Positions are the town, not the exact warehouse.",
+  "topic": "Aid, services & peacekeeping"
+ },
+ "points_markets": {
+  "label": "Markets with WFP price monitoring",
+  "plain": "Markets where the World Food Programme records food and fuel prices, and the months each reported. Price layers come from these markets.",
+  "topic": "Food & prices"
+ },
+ "points_oil": {
+  "label": "Oil fields and wells (production status)",
+  "plain": "Oil fields and mapped wells coloured by the documented production status of their oil block, including the 2018-19 restarts, the 2024 export halt and the December 2025 Heglig disruption.",
+  "topic": "Context (static)"
+ },
+ "points_schools": {
+  "label": "Schools (status over time)",
+  "plain": "Schools with their status from the 2015 and 2019 school lists, the 2019-20 village assessment and the 2020-21 COVID-19 closure; after May 2021 statuses are carried forward because no school-level data exists.",
+  "topic": "Aid, services & peacekeeping"
+ },
+ "points_ucdp_events": {
+  "label": "Deadly conflict events (UCDP)",
+  "plain": "Individual violent events that killed at least one person, 2018-2025, from the Uppsala Conflict Data Program, with the estimated number of deaths.",
+  "topic": "Conflict & violence"
+ },
+ "points_unmiss": {
+  "label": "UN peacekeeping bases",
+  "plain": "Locations of UN peacekeeping (UNMISS) bases and team sites over time, with approximate troop numbers and base closures.",
+  "topic": "Aid, services & peacekeeping"
+ },
+ "points_water_points": {
+  "label": "Water points (last known status)",
+  "plain": "Boreholes, wells and taps recorded in water-point surveys, mostly from before 2018. Their working status is the last one reported and may be out of date.",
+  "topic": "Aid, services & peacekeeping"
+ },
+ "polygons_ethnic_groups": {
+  "label": "Ethnic group areas (GeoEPR)",
+  "plain": "Settlement areas and political power status of ten major ethnic groups as coded up to 2021; areas shown after 2021 are carried forward, not re-coded.",
+  "topic": "Population & society"
+ },
+ "points_gbv_one_stop_centres": {
+  "label": "GBV one-stop centres",
+  "plain": "Centres offering medical, psychosocial, legal and police help to survivors of sexual and gender-based violence, shown from the first evidence they were operating; no site was confirmed individually after early 2023.",
+  "topic": "Gender & protection"
+ },
+ "points_oil_pollution": {
+  "label": "Oil spills and pollution reports",
+  "plain": "Two documented 2019 oil pipeline spills north of Bentiu and two located reports of contaminated water and flooded wells in the Unity oil fields.",
+  "topic": "Water & floods"
+ },
+ "points_oil_wells_flooding": {
+  "label": "Flood water around oil wells (radar)",
+  "plain": "Mapped oil wells where satellite radar saw open flood water around the well in each period; this shows flooding, not contamination, and misses water under vegetation.",
+  "topic": "Water & floods"
+ },
+ "points_surface_water_quality": {
+  "label": "River and wetland water colour (satellite)",
+  "plain": "Monthly satellite readings of muddiness at eight river and wetland sites compared with the usual level for that month; this tracks sediment and algae, not oil or chemical pollution.",
+  "topic": "Water & floods"
+ }
+}

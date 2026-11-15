@@ -91,8 +91,9 @@ def tag_meta(key, extra_note=None):
     for e in lst:
         if e.get("key") == key:
             e["temporal"] = TEMPORAL.get(key, e.get("temporal"))
-            if extra_note and extra_note not in e.get("notes", ""):
-                e["notes"] = (e.get("notes", "") + " " + extra_note).strip()
+            fld = "details" if e.get("plain") else "notes"  # curated plain notes stay one sentence
+            if extra_note and extra_note not in e.get(fld, ""):
+                e[fld] = (e.get(fld, "") + " " + extra_note).strip()
     with open(p, "w") as f:
         json.dump(lst, f, indent=1, ensure_ascii=False)
 
@@ -186,11 +187,28 @@ TEMPORAL = {"logcluster_hubs": "periods", "unmiss": "periods", "markets": "perio
             "health": "snapshot", "schools": "snapshot", "pipelines": "snapshot", "water_points": "snapshot"}
 
 
+def keep_plain(lst, entry):
+    """If the existing points.json entry has curated user-facing text (plain=true, set by
+    scripts/team_dynamic_layers.py), keep its label / notes / status_values and store the incoming technical
+    notes under `details`."""
+    old = next((e for e in lst if e.get("key") == entry["key"]), None)
+    if not old or not old.get("plain"):
+        return entry
+    entry = dict(entry)
+    if entry.get("notes"):
+        entry["details"] = entry["notes"]
+    for k in ("label", "notes", "status_values", "plain", "source", "temporal"):
+        if k in old:
+            entry[k] = old[k]
+    return entry
+
+
 def update_points_meta(entry):
     if entry["key"] in TEMPORAL:
         entry.setdefault("temporal", TEMPORAL[entry["key"]])
     p = os.path.join(ROOT, "data", "processed", "meta", "points.json")
     lst = json.load(open(p)) if os.path.exists(p) else []
+    entry = keep_plain(lst, entry)
     lst = [e for e in lst if e.get("key") != entry["key"]] + [entry]
     with open(p, "w") as f:
         json.dump(lst, f, indent=1, ensure_ascii=False)

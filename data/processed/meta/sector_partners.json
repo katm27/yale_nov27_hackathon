@@ -1,0 +1,32 @@
+[
+ {
+  "category": "human",
+  "group": "Humanitarian response",
+  "units": "partners",
+  "higher_is": "better",
+  "temporal": "monthly",
+  "index_ok": false,
+  "native_resolution": "county",
+  "source": "OCHA South Sudan 3W operational presence (HDX), compiled by the team (Nov 2026)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-operational-presence",
+  "aggregation": "distinct organisations reporting activity in this sector in the county that month",
+  "id": "protection_partners",
+  "label": "Protection and GBV partners present",
+  "notes": "Number of aid organisations reporting protection work in the county that month; protection here includes gender-based violence, child protection and mine action, which the source does not separate. A stand-in for crisis and survivor services, not a count of service points. No data for December 2020. The way the 3W is reported changes from year to year (2023-2024 have more counties at zero), so month-to-month changes within a year are more reliable than comparisons between years."
+ },
+ {
+  "category": "human",
+  "group": "Humanitarian response",
+  "units": "partners",
+  "higher_is": "better",
+  "temporal": "monthly",
+  "index_ok": false,
+  "native_resolution": "county",
+  "source": "OCHA South Sudan 3W operational presence (HDX), compiled by the team (Nov 2026)",
+  "source_url": "https://data.humdata.org/dataset/south-sudan-operational-presence",
+  "aggregation": "distinct organisations reporting activity in this sector in the county that month",
+  "id": "nutrition_partners",
+  "label": "Nutrition partners present",
+  "notes": "Number of aid organisations reporting nutrition work in the county that month. A stand-in for feeding and treatment sites, whose locations are not published. No data for December 2020. The way the 3W is reported changes from year to year (2023-2024 have more counties at zero), so month-to-month changes within a year are more reliable than comparisons between years."
+ }
+]

@@ -114,10 +114,18 @@ def build_trends(variables: list[dict], county_ids: list[str]) -> None:
                                   sig(r.tau, 3), int(r.n), int(bool(r.significant)),
                                   "S" if str(r.test).startswith("seasonal") else "M", r.interpretation,
                                   getattr(r, "lisa", "ns") if isinstance(getattr(r, "lisa", None), str) else "ns",
-                                  sig(getattr(r, "p_naive", float("nan")), 3)]
+                                  sig(getattr(r, "p_naive", float("nan")), 3),
+                                  [sig(getattr(r, f"todate_{Y}", float("nan")), 3) for Y in range(2020, 2026)],
+                                  getattr(r, "basis", "") if isinstance(getattr(r, "basis", None), str) else ""]
                     for r in g.drop_duplicates("county_id", keep="last").itertuples()}
     # spatial + regional statistics into variable metadata
     byid = {v["id"]: v for v in variables}
+    if "direction" in t:
+        for var, g in t.groupby("variable"):
+            if var in byid and not byid[var].get("direction"):
+                byid[var]["direction"] = str(g["direction"].dropna().iloc[0]) if g["direction"].notna().any() else "more_less"
+            if var in byid and "basis" in g and g["basis"].notna().any():
+                byid[var]["trend_basis"] = str(g["basis"].dropna().iloc[0])
     for var, g in t.groupby("variable"):
         if var in byid and "moran_I" in g and g["moran_I"].notna().any():
             byid[var]["trend_moran_I"] = sig(float(g["moran_I"].dropna().iloc[0]), 3)
@@ -409,6 +417,10 @@ def main() -> None:
     with open(os.path.join(OUT, "variables.json"), "w") as fh:   # rewrite with spatial/regional trend metadata
         json.dump({"months": MONTH_STR, "variables": variables}, fh, indent=1)
     build_flows(counties)
+    tp = os.path.join(ROOT, "data", "topic_picks.json")
+    if os.path.exists(tp):
+        import shutil
+        shutil.copy(tp, os.path.join(OUT, "topic_picks.json"))
     with open(os.path.join(OUT, "layers.json"), "w") as fh:
         json.dump({"points": points, "rasters": rasters}, fh, indent=1)
 

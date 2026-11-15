@@ -91,6 +91,11 @@ def main():
         "notes": ("Line layer docs/data/lines_pipelines.geojson; includes proposed GEM routes (status field). Temporal: "
                   "snapshot (valid_from/valid_to null) - routes exist through the window; flow interruptions are "
                   "recorded on the oil-field periods (points_oil).")})
+    # Superseded by the reconciled block-status periods (Heglig Dec 2025, Thar Jath Jun 2021, OSM wells with periods)
+    import team_dynamic_layers as tdl
+    tdl.oil()
+    tdl.write_points_meta({"oil": tdl.status_values_of("points_oil.geojson", tdl.OIL_ORDER),
+                           "pipelines": tdl.status_values_of("lines_pipelines.geojson", tdl.OIL_ORDER)})
 
 
 if __name__ == "__main__":

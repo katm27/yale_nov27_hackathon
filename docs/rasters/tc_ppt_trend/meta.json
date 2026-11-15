@@ -1,0 +1,53 @@
+{
+ "key": "tc_ppt_trend",
+ "label": "Precipitation (TerraClimate) — trend 2018→year (Sen's slope)",
+ "units": "mm/month/yr",
+ "bounds": [
+  [
+   3.2720726012175145,
+   23.29166666666667
+  ],
+  [
+   12.416666666666675,
+   36.12893453973092
+  ]
+ ],
+ "vmin": -32.0,
+ "vmax": 32.0,
+ "colormap": "div_brbg",
+ "colors": [
+  "#543005",
+  "#8c510a",
+  "#bf812d",
+  "#dfc27d",
+  "#f6e8c3",
+  "#f5f5f5",
+  "#c7eae5",
+  "#80cdc1",
+  "#35978f",
+  "#01665e",
+  "#003c30"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "1/24° (~4 km)",
+ "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
+ "trend_of": "tc_ppt",
+ "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

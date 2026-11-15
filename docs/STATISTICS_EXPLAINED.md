@@ -124,3 +124,19 @@ product alone.
   correlation *between consecutive years* in a given month.
 - The regional bootstrap with 8 years has a coarse null distribution: its smallest possible p is about 0.001.
 - Trends in carried-forward survey data (IPC, DTM) partly reflect the carry-forward steps.
+
+## 7. "Trend to date" raster layers (`docs/rasters/<key>_trend/`)
+
+Each gridded layer has a companion map per end year YYYY = 2020..2025: the per-pixel **Sen's slope** (the same
+formula as `trend_stats.sens_slope`) of one value per year from 2018 through YYYY, needing at least 3 years.
+Units are the layer's units per year. The colour scale is fixed per layer (±98th percentile of |slope| across all
+end years), so early maps built on 3 years look more extreme than later ones; that is the noise of a short record.
+
+- **One value per year:** annual mean for state variables (NDVI, temperature, deficit, PDSI, wind, GRACE, S5P);
+  wet-season (Jun–Sep) mean for rainfall, ET, soil water and Sentinel-1 flooding, so dry-season zeros do not
+  flatten the slope; Sep–Dec for Sudd inundation (its high-water season; Jun–Sep is mostly cloud); annual totals
+  for VIIRS fire detections and MODIS burned area. Missing months are filled with the pixel's monthly
+  climatology plus the mean anomaly of the observed months. Each `meta.json` states its `basis`.
+- **No per-pixel significance test.** With 3–8 points a pixel slope describes change; it does not prove a trend.
+  Use the county trends (sections 3–5) for significance.
+- Built by `scripts/raster_trends.py`.

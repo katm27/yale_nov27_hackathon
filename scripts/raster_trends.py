@@ -57,7 +57,7 @@ GRID001 = from_origin(23.4, 12.3, 0.01, 0.01)  # AppEEARS / MODIS (Planetary Com
 ANNUAL_MEAN = "annual mean (Jan-Dec) of the monthly values"
 WET_MEAN = ("wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope")
 ANOM = (" Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly"
-        " of the observed months); a year needs >= half of the season observed.")
+        " of the observed months); a year needs >= half of the season observed unless stated otherwise.")
 
 
 # ----------------------------------------------------------------------------- yearly aggregation
@@ -246,6 +246,54 @@ def load_viirs():
     return (lambda y, m: grids.get((y, m))), from_origin(W, N, G, G)
 
 
+BURN_CACHE = os.path.join(ROOT, "data", "raw", "fire", "_cache", "burned_grids")  # gitignored
+
+
+def burned_month_grid(y, m):
+    """MCD64A1 burned fraction (0..1) of each 0.01 deg cell for one month, cached as .npy (re-derived from
+    Planetary Computer: the original monthly grids of fire_pipeline.py were not kept)."""
+    p = os.path.join(BURN_CACHE, f"{y}-{m:02d}.npy")
+    if os.path.exists(p):
+        return np.load(p)
+    import calendar
+    from concurrent.futures import ThreadPoolExecutor
+    from rasterio.warp import reproject, Resampling
+    import fire_pipeline as fp
+    import hazards_common as hc
+    mm = f"{y}-{m:02d}"
+    items = hc.search("modis-64A1-061", f"{mm}-01/{mm}-{calendar.monthrange(y, m)[1]:02d}")
+    items = [it for it in items if it.properties["start_datetime"][:7] == mm]
+    if not items:
+        return None
+    with ThreadPoolExecutor(4) as ex:
+        res = list(ex.map(lambda it: fp.read_window(it.assets["Burn_Date"].href, 1), items))
+    H, W = 890, 1260
+    tot = np.zeros((H, W), "float32")
+    cnt = np.zeros((H, W), "float32")
+    for r in res:
+        if r is None:
+            continue
+        arr, tr, crs = r
+        frac = np.where(arr == -1, np.nan, (arr > 0).astype("float32"))
+        dst = np.full((H, W), np.nan, "float32")
+        reproject(frac, dst, src_transform=tr, src_crs=crs, dst_transform=GRID001, dst_crs="EPSG:4326",
+                  src_nodata=np.nan, dst_nodata=np.nan, resampling=Resampling.average)
+        ok = np.isfinite(dst)
+        tot += np.where(ok, dst, 0)
+        cnt += ok
+    g = np.where(cnt > 0, tot / np.maximum(cnt, 1), np.nan).astype("float32")
+    os.makedirs(BURN_CACHE, exist_ok=True)
+    np.save(p, g)
+    return g
+
+
+def load_burned():
+    def get(y, m):
+        g = burned_month_grid(y, m)
+        return None if g is None else np.nan_to_num(g) * 100.0  # % of cell burned; unmapped counts as unburned
+    return get, GRID001
+
+
 def yearly_modis_et_annual():
     d = os.path.join(MODIS_PC, "modis_et_mm")
     out = []
@@ -347,7 +395,7 @@ LAYERS = [
     dict(key="modis_et_monthly", run=monthly(npy_layer(os.path.join(APPEEARS, "modis_et_monthly_mm")), WET),
          cmap="div_brbg", basis=WET_MEAN),
     dict(key="tc_tmax", run=monthly(TC("tmax"), ALL), cmap="div_rdbu", basis=ANNUAL_MEAN),
-    dict(key="tc_soil", run=monthly(TC("soil"), WET), cmap="div_brbg", basis=WET_MEAN),
+    dict(key="tc_soil", run=monthly(TC("soil"), WET), cmap="div_brbg", basis=WET_MEAN, unit_out="mm/yr"),
     dict(key="sudd_inundation", run=yearly_sudd, cmap="div_brbg",
          units="% of clear Sep-Dec composites inundated", unit_out="percentage points/yr",
          basis=("Sep-Dec high-water-season share (%) of cloud-free MODIS 8-day composites classified as open water or "
@@ -366,8 +414,12 @@ LAYERS = [
          cmap="div_rdbu", basis=ANNUAL_MEAN),
     dict(key="modis_ndvi", run=monthly(npy_layer(os.path.join(MODIS_PC, "modis_ndvi")), ALL),
          cmap="div_brgn", basis=ANNUAL_MEAN),
-    dict(key="modis_et", run=yearly_modis_et_annual, cmap="div_brbg",
+    dict(key="modis_et", run=yearly_modis_et_annual, cmap="div_brbg", unit_out="mm/year per year",
          basis="annual total of the MODIS MOD16A3GF annual product (one value per year)"),
+    dict(key="burned_area", run=monthly(load_burned, ALL, "sum"), cmap="div_puor",
+         units="% of cell burned per year", unit_out="% of cell burned per year, per yr",
+         basis=("annual total (Jan-Dec) of the monthly MODIS MCD64A1 burned share of each 0.01° cell, in % "
+                "(a cell burned in two months counts twice); re-derived from Planetary Computer")),
     dict(key="flood_s1", run=yearly_flood_s1, cmap="div_brbg", units="% of pixel classified water",
          unit_out="percentage points/yr",
          basis=("wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02° cell from the monthly Sentinel-1 "
@@ -407,7 +459,7 @@ def process(L):
     for e in END_YEARS:
         yrs = [y for y in YEARS if y <= e]
         s = sen_stack(Y[:len(yrs)], yrs)
-        if np.isfinite(s).any():
+        if np.isfinite(s).any() and np.isfinite(Y[len(yrs) - 1]).any():  # skip end years with no new data
             slopes[e] = s
             check_against_trend_stats(Y[:len(yrs)], s, yrs)
     if not slopes:
@@ -437,7 +489,7 @@ def process(L):
         "native_resolution": base_meta.get("native_resolution"),
         "source": base_meta.get("source"),
         "trend_of": key,
-        "basis": L["basis"] + (ANOM if "mean" in L["basis"] and "S-NPP" not in L["basis"] else ""),
+        "basis": L["basis"].rstrip(".") + "." + (ANOM if "mean" in L["basis"] and "S-NPP" not in L["basis"] else ""),
         "years_with_data": yr_count,
         "notes": (f"Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year "
                   f"(>= 3 years), in {units}. {CMAP_NOTE[L['cmap']]}; white = no change. No significance test is "

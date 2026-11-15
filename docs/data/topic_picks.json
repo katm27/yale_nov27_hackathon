@@ -1,0 +1,93 @@
+{
+ "Water & floods": [
+  "surface_water_pct",
+  "sudd_inundation_km2",
+  "flood_s1_flood_pct",
+  "flood_population_exposed",
+  "grace_tws_cm",
+  "lulc_flooded_veg_pct"
+ ],
+ "Drought & rainfall": [
+  "drought_ensemble_mean",
+  "chirps_precip_mm",
+  "spei3",
+  "drought_ensemble_spread",
+  "precip_mm",
+  "soilwet_root"
+ ],
+ "Heat & weather": [
+  "tmax_c",
+  "tair_c",
+  "modis_lst_day_c",
+  "tc_vpd",
+  "tmin_c"
+ ],
+ "Land & vegetation": [
+  "modis_ndvi",
+  "modis_evi",
+  "lulc_crop_pct",
+  "lulc_trees_pct",
+  "modis_et_monthly_mm"
+ ],
+ "Air quality & fires": [
+  "viirs_fire_count",
+  "burned_area_pct",
+  "s5p_co",
+  "s5p_aerosol_index",
+  "s5p_no2"
+ ],
+ "Conflict & violence": [
+  "acled_pv_events",
+  "acled_pv_fatalities",
+  "ucdp_deaths_best",
+  "intracounty_communal_events",
+  "acled_civ_fatalities",
+  "ii_aid_worker_incidents"
+ ],
+ "Displacement & migration": [
+  "et_ind_total",
+  "et_ind_flooding",
+  "dtm_idps",
+  "et_ind_arrived_from_sudan",
+  "unhcr_refugees",
+  "dtm_returnees"
+ ],
+ "Food & prices": [
+  "ipc_phase3plus_pct",
+  "ipc_phase3plus_pop",
+  "price_sorghum_usd",
+  "gam_prevalence_pct",
+  "wage_casual_labour_usd",
+  "fx_ssp_per_usd"
+ ],
+ "Aid, services & peacekeeping": [
+  "hno_pin",
+  "ops_orgs",
+  "hrp_coverage_year",
+  "health_facilities_per100k",
+  "isna_surface_water_source_pct",
+  "unmiss_troops"
+ ],
+ "Gender & protection": [
+  "isna_wg_avoid_water_points_pct",
+  "isna_unsafe_water_collect_pct",
+  "acled_st_sexual_violence_events",
+  "ii_sexual_violence_incidents",
+  "edu_girls_share",
+  "wps_index"
+ ],
+ "Population & society": [
+  "pop_total",
+  "population_estimate",
+  "u5mr_national",
+  "ethnic_excluded_share",
+  "ethnic_groups_count"
+ ],
+ "Context (static)": [
+  "elevation_mean",
+  "soil_vertisol_pct",
+  "cattle_density",
+  "oil_fields_count",
+  "richness_vertebrates"
+ ]
+}

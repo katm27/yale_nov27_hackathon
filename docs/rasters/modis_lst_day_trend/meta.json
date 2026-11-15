@@ -1,0 +1,53 @@
+{
+ "key": "modis_lst_day_trend",
+ "label": "Daytime land surface temperature (MODIS) — trend 2018→year (Sen's slope)",
+ "units": "°C/yr",
+ "bounds": [
+  [
+   3.4021089038843564,
+   23.399999999999995
+  ],
+  [
+   12.299999999999999,
+   36.004112600715054
+  ]
+ ],
+ "vmin": -1.9,
+ "vmax": 1.9,
+ "colormap": "div_rdbu",
+ "colors": [
+  "#053061",
+  "#2166ac",
+  "#4393c3",
+  "#92c5de",
+  "#d1e5f0",
+  "#f7f7f7",
+  "#fddbc7",
+  "#f4a582",
+  "#d6604d",
+  "#b2182b",
+  "#67001f"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "1 km MODIS (0.01° grid)",
+ "source": "MODIS MOD11A2 v061 (Terra) via Microsoft Planetary Computer",
+ "trend_of": "modis_lst_day",
+ "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in °C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

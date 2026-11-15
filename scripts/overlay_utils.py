@@ -39,9 +39,11 @@ def add_points_meta(entry):
                 lst = json.load(f)
             except json.JSONDecodeError:
                 lst = []
+    from points_temporal import keep_plain  # keep curated label/notes (scripts/team_dynamic_layers.py)
+    entry = keep_plain(lst, entry)
     lst = [e for e in lst if e.get("key") != entry["key"]] + [entry]
     with open(p, "w") as f:
-        json.dump(lst, f, indent=1)
+        json.dump(lst, f, indent=1, ensure_ascii=False)
 
 
 def write_long(source, df):

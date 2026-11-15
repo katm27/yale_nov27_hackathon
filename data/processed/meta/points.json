@@ -1,110 +1,286 @@
 [
  {
   "key": "ucdp_events",
-  "label": "UCDP GED conflict events (2018-2025)",
+  "label": "Conflict events with deaths (UCDP)",
   "category": "human",
   "source": "UCDP Georeferenced Event Dataset v26.1",
   "source_url": "https://ucdp.uu.se/downloads/",
-  "notes": "Organized-violence events with >=1 death. type: state_based / non_state / one_sided; deaths = best estimate; where_prec 1=exact .. 3=county, >=4 coarse (admin-1/country). oil_related = keyword match on oil fields/pipelines (1 inside SSD; 5 cross-border oil events e.g. Heglig added with inside_ssd=false). Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
-  "temporal": "events"
+  "notes": "Organised violence events with at least one death, sized by the number killed.",
+  "temporal": "events",
+  "details": "Organized-violence events with >=1 death. type: state_based / non_state / one_sided; deaths = best estimate; where_prec 1=exact .. 3=county, >=4 coarse (admin-1/country). oil_related = keyword match on oil fields/pipelines (1 inside SSD; 5 cross-border oil events e.g. Heglig added with inside_ssd=false). Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
+  "plain": true
  },
  {
   "key": "insecurity_insight",
-  "label": "Insecurity Insight incidents (aid workers, health, education, CRSV)",
+  "label": "Attacks on aid, health and education (Insecurity Insight)",
   "category": "human",
   "source": "Insecurity Insight (Security in Numbers Database) via HDX, CC BY-SA 4.0",
   "source_url": "https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities",
-  "notes": "One point per incident 2018-2025 with `date`, `type`, `victims`. LOW GEOLOCATION PRECISION: the source censors coordinates, so points sit at the centroid of the reported state / administrative area (`geo_precision`), stacked on top of each other - do not read them as incident locations. Records with no state ('No Information') or outside South Sudan are dropped from the layer. Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
-  "temporal": "events"
+  "notes": "Reported incidents affecting aid workers, health care, education and sexual violence; locations are only approximate, often the centre of a state.",
+  "temporal": "events",
+  "details": "One point per incident 2018-2025 with `date`, `type`, `victims`. LOW GEOLOCATION PRECISION: the source censors coordinates, so points sit at the centroid of the reported state / administrative area (`geo_precision`), stacked on top of each other - do not read them as incident locations. Records with no state ('No Information') or outside South Sudan are dropped from the layer. Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).",
+  "plain": true
  },
  {
   "key": "logcluster_hubs",
-  "label": "Logistics Cluster hubs & common storage (over time)",
+  "label": "Logistics hubs and common storage",
   "category": "human",
   "source": "WFP Logistics Cluster, South Sudan Concept of Operations maps Jan 2018 - Jun 2026 (16 dated maps)",
   "source_url": "https://logcluster.org/en/where-we-work/ssd/documents",
-  "notes": "Temporal: one feature per site and period with constant storage capacity/manager; valid_from/valid_to from consecutive map dates (2018-01, 2019-01/06/09, 2020-03/04/08, 2021-05/10, 2022-09, 2023-01/04/09, 2026-02/03/06). No map Oct 2023-Jan 2026: sites carried through (date_basis says so). type = Logistics Cluster hub (coordination/transport services) / cluster common storage / partner-managed MSU; storage_m2 as printed. Coordinates = town (OCHA gazetteer) or map pin (coord_quality='approximate'), not the warehouse itself.",
-  "temporal": "periods"
+  "notes": "Humanitarian logistics hubs and shared warehouses, shown for the periods they appear on the Logistics Cluster's operations maps.",
+  "temporal": "periods",
+  "details": "Temporal: one feature per site and period with constant storage capacity/manager; valid_from/valid_to from consecutive map dates (2018-01, 2019-01/06/09, 2020-03/04/08, 2021-05/10, 2022-09, 2023-01/04/09, 2026-02/03/06). No map Oct 2023-Jan 2026: sites carried through (date_basis says so). type = Logistics Cluster hub (coordination/transport services) / cluster common storage / partner-managed MSU; storage_m2 as printed. Coordinates = town (OCHA gazetteer) or map pin (coord_quality='approximate'), not the warehouse itself.",
+  "plain": true
  },
  {
   "key": "unmiss",
-  "label": "UNMISS peacekeeping deployments (over time)",
+  "label": "UN peacekeeping bases (UNMISS)",
   "category": "human",
   "source": "Geo-PKO v2.3 (UN maps 4456 Rev.30 Nov 2017 .. Rev.61 Oct 2024) + UN Geospatial map 4456 Rev.62 (Jan 2025) and Rev.67 (Jan 2026)",
   "source_url": "https://www.pcr.uu.se/data/geo-pko/",
-  "notes": "One feature per location and period with constant role / troop estimate (rounded to 10) / FPU presence; valid_from/valid_to from consecutive 4456 map revisions (38 maps). troops_est = Geo-PKO estimate from unit sizes (approximate); fpu_present = formed police unit at location. 2025 periods from Rev.62 have no troop numbers. Closures: Aweil Nov 2025 (documented), Yei & Torit between Jul 2025 (Rev.65) and Jan 2026 (Rev.67) -> valid_to 2025-12; Tambura closed Jan 2026 (open through 2025). PoC sites: see crisis-sites layer.",
-  "temporal": "periods"
+  "notes": "UN peacekeeping deployments in each period, with approximate troop numbers from UN deployment maps.",
+  "temporal": "periods",
+  "details": "One feature per location and period with constant role / troop estimate (rounded to 10) / FPU presence; valid_from/valid_to from consecutive 4456 map revisions (38 maps). troops_est = Geo-PKO estimate from unit sizes (approximate); fpu_present = formed police unit at location. 2025 periods from Rev.62 have no troop numbers. Closures: Aweil Nov 2025 (documented), Yei & Torit between Jul 2025 (Rev.65) and Jan 2026 (Rev.67) -> valid_to 2025-12; Tambura closed Jan 2026 (open through 2025). PoC sites: see crisis-sites layer.",
+  "plain": true
  },
  {
   "key": "markets",
-  "label": "WFP monitored markets (active months)",
+  "label": "Monitored food markets (WFP)",
   "category": "human",
   "source": "WFP VAM market monitoring (HDX)",
   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
-  "notes": "Temporal: valid_from/valid_to = first/last month with retail prices 2018-01..2025-12; gaps longer than 6 months split a market into separate periods. valid_from null = already monitored before 2018. months_with_prices counts reporting months within the period.",
-  "temporal": "periods"
+  "notes": "Markets where WFP recorded food prices, shown for the months they were monitored.",
+  "temporal": "periods",
+  "details": "Temporal: valid_from/valid_to = first/last month with retail prices 2018-01..2025-12; gaps longer than 6 months split a market into separate periods. valid_from null = already monitored before 2018. months_with_prices counts reporting months within the period.",
+  "plain": true
  },
  {
   "key": "crisis_sites",
-  "label": "PoC sites, IDP & refugee camps (status over time)",
+  "label": "Protection of civilians sites and camps",
   "category": "human",
   "source": "Curated: OSM (HOT/HDX) coordinates; UNMISS / UNHCR / IOM public site lists; UNMISS press releases on PoC redesignation (2020-21)",
   "source_url": "https://data.humdata.org/dataset/hotosm_ssd_points_of_interest",
-  "notes": "Temporal: one feature per site and status period. PoC -> IDP camp redesignation: Bor & Wau Sep 2020 (documented), Juba PoC1/3 Nov 2020 and Bentiu Mar 2021 (month approximate); Wau former PoC closed 2021 (month unknown); Malakal stays a PoC site; Renk transit centre from Apr 2023. Other camps opened before 2018 and are open-ended. Logistics hubs moved to the logcluster_hubs layer. `coord_quality` flags approximate positions. Not exhaustive (see DTM layer).",
-  "temporal": "periods"
- },
- {
-  "key": "oil",
-  "label": "Oil fields (production status over time) and wells",
-  "category": "human",
-  "source": "Global Energy Monitor GOGET (CC-BY 4.0) + OpenStreetMap wells (ODbL); status dates from Reuters/Bloomberg (2018-19 restarts) and Argus/Radio Tamazuj (2024 Dar Blend export halt, 2025 resumption)",
-  "source_url": "https://globalenergymonitor.org/projects/global-oil-gas-extraction-tracker/",
-  "notes": "Temporal: oil fields get one feature per production_status period - Toma South shut in until Aug 2018, Unity until Dec 2018 (Dec 2013 war); Palogue/Qamari (Dar Blend) export disruption Feb-Dec 2024 after the pipeline rupture in Sudan, resumed Jan 2025; Tharjath shut 2013, restart undated (static). OSM wells: snapshot only (no dates).",
-  "temporal": "periods"
- },
- {
-  "key": "pipelines",
-  "label": "Oil pipelines (lines)",
-  "category": "human",
-  "source": "GEM GOIT (CC-BY 4.0) + OpenStreetMap via Overture (ODbL)",
-  "source_url": "https://globalenergymonitor.org/projects/global-oil-infrastructure-tracker/",
-  "notes": "Line layer docs/data/lines_pipelines.geojson; includes proposed GEM routes (status field). Temporal: snapshot (valid_from/valid_to null) - routes exist through the window; flow interruptions are recorded on the oil-field periods (points_oil).",
-  "temporal": "snapshot"
+  "notes": "UN protection of civilians sites, displacement camps and refugee camps, including when sites were handed over or closed.",
+  "temporal": "periods",
+  "details": "Temporal: one feature per site and status period. PoC -> IDP camp redesignation: Bor & Wau Sep 2020 (documented), Juba PoC1/3 Nov 2020 and Bentiu Mar 2021 (month approximate); Wau former PoC closed 2021 (month unknown); Malakal stays a PoC site; Renk transit centre from Apr 2023. Other camps opened before 2018 and are open-ended. Logistics hubs moved to the logcluster_hubs layer. `coord_quality` flags approximate positions. Not exhaustive (see DTM layer).",
+  "plain": true,
+  "status_values": [
+   "UNMISS Protection of Civilians site (Dec 2013-)",
+   "2012-present (Maban)",
+   "redesignated IDP camp under government control",
+   "2016-present",
+   "UNMISS Protection of Civilians site (2014-)",
+   "redesignated IDP camp; expanded after 2021-22 floods",
+   "only remaining UNMISS PoC site",
+   "redesignated Sep 2020 (UNMISS withdrawal began 4 Sep 2020)",
+   "UNMISS PoC Adjacent Area (2016-)",
+   "redesignated Sep 2020; closed during 2021",
+   "2014-present",
+   "2011-present (Sudanese refugees, Maban)",
+   "2013-present (Jamjang)",
+   "2016-present (Jamjang)",
+   "2011-present (relocation ongoing)",
+   "Ethiopian refugees, 2011-present",
+   "CAR/DRC refugees, 2009-present",
+   "DRC refugees (largely emptied 2016-17)",
+   "opened with arrivals from Sudan after 15 Apr 2023"
+  ]
  },
  {
   "key": "health",
-  "label": "Health facilities (hospital / PHCC / PHCU)",
+  "label": "Health facilities (registry status over time)",
   "category": "human",
-  "source": "WHO / MoH Master Facility List, April 2025 (HDX); MoH HF code list 2023",
+  "source": "MoH health facility lists 2016 and 2023, IOM DTM village assessment 2019-20, WHO Master Facility List Mar 2024 (HDX); team compilation (Nov 2026)",
   "source_url": "https://data.humdata.org/dataset/south-sudan-health-facilities",
-  "notes": "Point per facility with type; functionality not reported. Some listed facilities lack coordinates (counted in county totals only). Temporal: SNAPSHOT (snapshot=true) - valid_from = list date (2023-01 if already in the 2023 MoH code list, else 2024-03), valid_to null; no opening/closure dates exist.",
-  "temporal": "snapshot"
+  "notes": "Hospitals and clinics with their registry status in each period, built by comparing the 2016, 2019-20, 2023 and 2024 facility lists and adding documented closures; being listed does not prove a facility was working.",
+  "temporal": "periods",
+  "details": "Status periods from MoH Apr 2016 list, IOM DTM village assessment Aug 2019-Mar 2020 (7 counties), MoH 2023 master list and WHO MFL Mar 2024, matched by name and distance; 'new since 2016' facilities start at the first list that has them (opened between Apr 2016 and that list); facilities dropped by 2023 are 'unconfirmed' to Dec 2023; Ulang (closed 14 Apr 2025) and Old Fangak (bombed 3 May 2025) documented. 461 matched facilities lack coordinates and are not mapped. About 11.5% of 'new since 2016' sit within 300 m of a 2016 facility (likely renamed). Aggregate 2022 and 2025 aid-cut closures are timeline events. Superseded the WHO-MFL snapshot layer (all its points are included).",
+  "plain": true,
+  "status_values": [
+   "registered",
+   "registered (new since 2016)",
+   "unconfirmed (dropped from the registry by 2023)",
+   "non-functional in 2016 (until relisted)",
+   "non-functional in 2016 (dropped from the registry by 2023)",
+   "non-functional (IOM DTM 2019-20)",
+   "non-functional (attack, documented)",
+   "closed (documented)"
+  ]
  },
  {
   "key": "water_points",
-  "label": "Water points (WPDx, last known status)",
+  "label": "Water points (last known status)",
   "category": "human",
   "source": "Water Point Data Exchange WPDx-Basic (OCHA/WASH WIMS 2006-13, ACF/RWSS 2016, Water for South Sudan 2011-15, UNHCR 2019), CC BY 4.0",
   "source_url": "https://data.waterpointdata.org/dataset/Water-Point-Data-Exchange-Basic-WPDx-Basic-/eqje-vguj",
-  "notes": "Temporal: valid_from = install year if >= 2018 (none in the data: install years <= 2015 or unknown) else null; valid_to null (decommissioning not recorded). status = functional status at status_report_date; almost all reports predate 2018 (status_stale=true: last known status, not current). UNHCR camp points reported Sep 2019 get a separate status period from 2019-09. Not a complete inventory of current water points.",
-  "temporal": "snapshot"
+  "notes": "Boreholes and other water points with their last reported working status, most of it reported before 2018 and possibly out of date.",
+  "temporal": "snapshot",
+  "details": "Temporal: valid_from = install year if >= 2018 (none in the data: install years <= 2015 or unknown) else null; valid_to null (decommissioning not recorded). status = functional status at status_report_date; almost all reports predate 2018 (status_stale=true: last known status, not current). UNHCR camp points reported Sep 2019 get a separate status period from 2019-09. Not a complete inventory of current water points.",
+  "plain": true,
+  "status_values": [
+   "functional",
+   "non-functional",
+   "non-functional, dry season",
+   "not reported before first in-window report",
+   "abandoned/decommissioned"
+  ]
  },
  {
   "key": "schools",
-  "label": "Schools",
+  "label": "Schools (status over time)",
   "category": "human",
-  "source": "SSSAMS 2015 (HDX, CC0) + OpenStreetMap education facilities (HOT/HDX, ODbL)",
+  "source": "SSSAMS 2015 list and 2019 enrolment export (HDX, CC0), IOM DTM village assessment 2019-20, OpenStreetMap (ODbL); team compilation (Nov 2026)",
   "source_url": "https://data.humdata.org/dataset/south-sudan-schools-and-enrolment-data-2015-sssams",
-  "notes": "SSSAMS points carry type and 2015 enrolment by sex (year=2015); OSM points year=2026. The two sources overlap (duplicates possible). Temporal: SNAPSHOT (snapshot=true, valid_from/valid_to null) - no opening/closure dates in either source.",
-  "temporal": "snapshot"
+  "notes": "Schools with their status from the 2015 and 2019 school lists, the 2019-20 village assessment and the 2020-21 COVID-19 closure; after May 2021 statuses are carried forward because no school-level data exists.",
+  "temporal": "periods",
+  "details": "SSSAMS 2015 list (coordinates) + SSSAMS 29 Oct 2019 enrolment export (joined on school code) + IOM DTM Aug 2019-Mar 2020 (392 DTM-only points, a few may duplicate SSSAMS); national COVID-19 closure 2020-03..2021-04; base status carried forward from 2021-05 (flagged 'presumed'). 2015 managed/enrolment-by-sex kept from the old layer. OpenStreetMap schools > 300 m from any SSSAMS/DTM school kept as undated. Heatwave closures (Mar 2024, Feb-Mar 2025) and flood closures are timeline events, not per-school periods.",
+  "plain": true,
+  "status_values": [
+   "operating (2019 enrolment)",
+   "operating (IOM DTM 2019-20)",
+   "listed, no learners reported (2019)",
+   "unconfirmed (missing from 2019 enrolment list)",
+   "non-operational (IOM DTM 2019-20)",
+   "closed (SSSAMS)",
+   "closed nationally (COVID-19)",
+   "presumed operating (last observed 2019-20)",
+   "presumed no learners (last observed 2019)",
+   "unconfirmed (last listed 2015)",
+   "presumed non-operational (last observed 2019-20)",
+   "mapped in OpenStreetMap (no dates)"
+  ]
  },
  {
   "key": "fmr_monitoring",
-  "label": "IOM Flow Monitoring points (active months)",
+  "label": "Migration monitoring points (IOM)",
   "category": "human",
   "source": "IOM DTM South Sudan Flow Monitoring Registry (team unified dataset)",
   "source_url": "data/raw/ssd_unified/README.md",
-  "notes": "Where FMR counts travellers; FMR numbers depend on these locations. Temporal: valid_from/valid_to = first/last month with recorded internal forced trips (Jan 2020-Aug 2025); >6 empty months split a point into periods; Nov 2023-Dec 2024 (no public data) is bridged. Points still active in Aug 2025 are open-ended. active_months / travellers summarise each period.",
-  "temporal": "periods"
+  "notes": "Places where IOM counted people on the move, shown for the months they reported.",
+  "temporal": "periods",
+  "details": "Where FMR counts travellers; FMR numbers depend on these locations. Temporal: valid_from/valid_to = first/last month with recorded internal forced trips (Jan 2020-Aug 2025); >6 empty months split a point into periods; Nov 2023-Dec 2024 (no public data) is bridged. Points still active in Aug 2025 are open-ended. active_months / travellers summarise each period.",
+  "plain": true
+ },
+ {
+  "key": "gbv_one_stop_centres",
+  "category": "human",
+  "temporal": "periods",
+  "source": "UNFPA, UNICEF and FAO/World Bank ELRP reports 2018-2023; host facility coordinates from the WHO Master Facility List; team compilation (Nov 2026)",
+  "source_url": "https://southsudan.unfpa.org/",
+  "details": "13 one-stop centres + Bentiu safe house; valid_from = first evidence of operation (year-only evidence -> end of that year); documented through Q1 2023 (UNFPA newsletter: 13 OSCs), presumed operating afterwards, a period that includes the 2025 funding cuts. No dated point data exist for women and girls' friendly spaces or protection desks.",
+  "label": "GBV one-stop centres",
+  "notes": "Centres offering medical, psychosocial, legal and police help to survivors of sexual and gender-based violence, shown from the first evidence they were operating; no site was confirmed individually after early 2023.",
+  "plain": true,
+  "status_values": [
+   "operating (documented)",
+   "presumed operating (last confirmed early 2023)"
+  ]
+ },
+ {
+  "key": "oil_pollution",
+  "category": "environment",
+  "temporal": "periods",
+  "source": "Sign of Hope (Feb 2020) spill investigation; PAX (2023); New Lines/Placemark (2026); Kenyatta University sampling as reported; team compilation (Nov 2026)",
+  "source_url": "https://www.hoffnungszeichen.de/sites/default/files/documents/causing_a_black_tide_of_oil_-_south_sudans_polluting_pipeline_-_sign_of_hope.pdf",
+  "details": "Spills on the Unity-Heglig export pipeline ~24 Aug 2019 (~2 million L) and ~28 Oct 2019 (~4 million L), GPS from Sign of Hope; after repair shown as spill site (removal not documented). Reports: flooded Block 2 wells (PAX 2023: 159 wells ~41% submerged; New Lines/Placemark 2026: 50+ of ~400 Unity wells underwater) placed at the Unity field; Kenyatta University river samples near Bentiu/Rotriak (lead up to 18 ug/L, hydrocarbons >5x limits; sampling dates unpublished) placed at Rotriak. Feb 2024 Petrodar spill is in Sudan -> timeline only.",
+  "label": "Oil spills and pollution reports",
+  "notes": "Two documented 2019 oil pipeline spills north of Bentiu and two located reports of contaminated water and flooded wells in the Unity oil fields.",
+  "plain": true,
+  "status_values": [
+   "oil spill (active)",
+   "spill site (oil removal not documented)",
+   "contamination reported"
+  ]
+ },
+ {
+  "key": "oil_wells_flooding",
+  "category": "environment",
+  "temporal": "periods",
+  "source": "Sentinel-1 RTC radar (Microsoft Planetary Computer) at OpenStreetMap well locations; team analysis (Nov 2026)",
+  "source_url": "https://planetarycomputer.microsoft.com/dataset/sentinel-1-rtc",
+  "details": "Share of Sentinel-1 VV pixels below -15 dB in a 100-500 m ring around each of 102 OSM wells, monthly median; flagged when >= 25%. Undercounts flooded vegetation; near-zero 2021 likely an artefact (also Sentinel-1B loss Dec 2021). OSM maps ~100 of ~400 Unity wells.",
+  "label": "Flood water around oil wells (radar)",
+  "notes": "Mapped oil wells where satellite radar saw open flood water around the well in each period; this shows flooding, not contamination, and misses water under vegetation.",
+  "plain": true,
+  "status_values": [
+   "flood water around well (radar)",
+   "no open water detected (radar)"
+  ]
+ },
+ {
+  "key": "surface_water_quality",
+  "category": "environment",
+  "temporal": "monthly",
+  "source": "NASA HLS v2 (2020-2025) and Sentinel-2 L2A (2018-2019) via Microsoft Planetary Computer; team analysis (Nov 2026)",
+  "source_url": "https://www.earthdata.nasa.gov/data/projects/hls",
+  "details": "Eight ~11x11 km sites; water pixels only, up to 3 clearest scenes per month. Status = NDTI (red-green)/(red+green) anomaly vs the site's median for that calendar month: > +0.04 more turbid, < -0.04 clearer (|anomaly| > 0.04 is about the top 20% of site-months). NDCI chlorophyll proxy included. 2018-19 Sentinel-2 L2A may be offset from 2020-25 HLS. Thar Jath wetland has only 15 months.",
+  "label": "River and wetland water colour (satellite)",
+  "notes": "Monthly satellite readings of muddiness at eight river and wetland sites compared with the usual level for that month; this tracks sediment and algae, not oil or chemical pollution.",
+  "plain": true,
+  "status_values": [
+   "more turbid than usual",
+   "near usual for the month",
+   "clearer than usual"
+  ]
+ },
+ {
+  "key": "ethnic_groups",
+  "category": "human",
+  "temporal": "periods",
+  "source": "GeoEPR 2021 / EPR 2021 / ACD2EPR 2021 (ETH Zurich ICR)",
+  "source_url": "https://icr.ethz.ch/data/epr/geoepr/",
+  "details": "GeoEPR-2021 polygons clipped to South Sudan; EPR power status for 2011-2021; ACD2EPR links to rebel organisations. 2022-2025 features carry the same geometry/status, flagged as carried forward.",
+  "label": "Ethnic group areas (GeoEPR)",
+  "notes": "Settlement areas and political power status of ten major ethnic groups as coded up to 2021; areas shown after 2021 are carried forward, not re-coded.",
+  "plain": true,
+  "status_values": [
+   "senior partner",
+   "junior partner",
+   "powerless",
+   "discriminated",
+   "senior partner (carried forward, not coded after 2021)",
+   "junior partner (carried forward, not coded after 2021)",
+   "powerless (carried forward, not coded after 2021)",
+   "discriminated (carried forward, not coded after 2021)"
+  ]
+ },
+ {
+  "key": "oil",
+  "label": "Oil fields and wells (production status)",
+  "category": "human",
+  "source": "Global Energy Monitor GOGET (CC-BY 4.0), OpenStreetMap wells (ODbL); block status dates from Reuters, VOA, Radio Tamazuj, Sudan Tribune, Argus, AFP",
+  "source_url": "https://globalenergymonitor.org/projects/global-oil-gas-extraction-tracker/",
+  "notes": "Oil fields and mapped wells coloured by the documented production status of their oil block, including the 2018-19 restarts, the 2024 export halt and the December 2025 Heglig disruption.",
+  "temporal": "periods",
+  "details": "GEM GOGET field points (attributes kept; GEM status in gem_status) with production periods reconciled to the team block timeline; 102 OSM wells (HOT Raw Data API, Nov 2026) replace the 93 undated OSM wells and get their block's status periods: Blocks 3&7 operating -> halted 2024-02..2024-12 -> resumed 2025-01; Blocks 1,2&4 shut -> partial 2018-08 (Toma South) -> operating 2019-01 -> disrupted 2025-12 (Heglig seized 8 Dec 2025); Block 5A shut -> operating 2021-06 -> disrupted 2025-12. Block assignment by location (east of 31E = 3&7; Guit/Koch/Leer/Mayendit/Panyijiar = 5A). Block-level status, not well-by-well. Gas-flare satellite check (MODIS) was inconclusive and is not used.",
+  "status_values": [
+   "shut in",
+   "partially operating",
+   "operating",
+   "halted (export pipeline rupture in Sudan)",
+   "operating (resumed)",
+   "disrupted (Heglig hub seized)"
+  ],
+  "plain": true
+ },
+ {
+  "key": "pipelines",
+  "label": "Oil pipelines (flow status)",
+  "category": "human",
+  "source": "GEM GOIT (CC-BY 4.0) + OpenStreetMap via Overture (ODbL)",
+  "source_url": "https://globalenergymonitor.org/projects/global-oil-infrastructure-tracker/",
+  "notes": "Mapped oil pipelines coloured by the documented status of the oil block they serve; proposed routes are shown but were never built.",
+  "temporal": "periods",
+  "details": "Overture/OSM pipeline lines and GEM GOIT routes; status periods follow the oil block of each line (location rule as for wells; Greater Nile follows Blocks 1,2&4). The team's 169 OSM field-line segments all lie on these lines.",
+  "status_values": [
+   "shut in",
+   "partially operating",
+   "operating",
+   "halted (export pipeline rupture in Sudan)",
+   "operating (resumed)",
+   "disrupted (Heglig hub seized)",
+   "proposed route (not built)"
+  ],
+  "plain": true
  }
 ]

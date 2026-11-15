@@ -15,6 +15,13 @@
   const DIV_UP_NEUTRAL = ["#c4c0f2", "#9085e9", "#6250d6", "#3d2f9a"];
   const DIV_DOWN_NEUTRAL = ["#f7c8a5", "#f09a69", "#eb6834", "#b4461b"];
   const MID = () => (matchMedia("(prefers-color-scheme: dark)").matches ? "#383835" : "#f0efec");
+  // direction-word palettes: [up ramp, down ramp]
+  const DIR_PALETTES = {
+    wetter_drier: [["#c7eae5", "#5ab4ac", "#01665e", "#003c30"], ["#f6e8c3", "#d8b365", "#8c510a", "#543005"]],
+    warmer_cooler: [["#fbc4a6", "#f0805a", "#d03b3b", "#8a1f1f"], ["#cde2fb", "#86b6ef", "#2a78d6", "#104281"]],
+    greener_browner: [["#c7e9c0", "#74c476", "#238b45", "#00441b"], ["#f6e8c3", "#d8b365", "#8c510a", "#543005"]],
+  };
+  const DIR_WORDS = { wetter_drier: ["wetter", "drier"], warmer_cooler: ["warmer", "cooler"], greener_browner: ["greener", "browner"] };
   const CATEGORICAL = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948"];
 
   const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -72,6 +79,8 @@
   const TREND_YEARS = 7;  // 2018 -> 2025
   function trendValue(v, c) {
     const tr = trendOf(v.id, c); if (!tr) return null;
+    const Y = trendYear();
+    if (Y < 2025 && tr[T_TODATE]) { const x = tr[T_TODATE][Y - 2020]; return x == null ? null : x; }
     return trendIsPct(v) ? tr[T_PCT] : tr[T_SEN];
   }
   // a "% of 2018 level" only makes sense for positive quantities with a meaningful zero
@@ -101,8 +110,9 @@
   // ---------- colour scales ----------
   function scaleFor(v) {
     if (state.mode === "trend" && v.temporal !== "static") {
-      const up = v.higher_is === "better" ? DIV_GOOD : v.higher_is === "worse" ? DIV_BAD : DIV_UP_NEUTRAL;
-      const down = v.higher_is === "better" ? DIV_BAD : v.higher_is === "worse" ? DIV_GOOD : DIV_DOWN_NEUTRAL;
+      const pal = DIR_PALETTES[v.direction];
+      const up = pal ? pal[0] : v.higher_is === "better" ? DIV_GOOD : v.higher_is === "worse" ? DIV_BAD : DIV_UP_NEUTRAL;
+      const down = pal ? pal[1] : v.higher_is === "better" ? DIV_BAD : v.higher_is === "worse" ? DIV_GOOD : DIV_DOWN_NEUTRAL;
       if (v._trendSpan == null) {
         const vals = Object.keys((state.trends || {})[v.id] || {}).map((c) => Math.abs(trendValue(v, c))).filter((x) => isFinite(x)).sort((a, b) => a - b);
         v._trendSpan = vals.length ? Math.max(trendIsPct(v) ? 1 : 1e-6, vals[Math.floor(vals.length * 0.9)]) : 1;
@@ -163,7 +173,10 @@
   let countyLayer;
 
   // ---------- trends (Mann-Kendall / Sen's slope, computed by scripts/trend_stats.py) ----------
-  const T_P = 0, T_Q = 1, T_SEN = 2, T_PCT = 3, T_TAU = 4, T_N = 5, T_SIG = 6, T_TEST = 7, T_TXT = 8, T_LISA = 9, T_PNAIVE = 10;
+  const T_P = 0, T_Q = 1, T_SEN = 2, T_PCT = 3, T_TAU = 4, T_N = 5, T_SIG = 6, T_TEST = 7, T_TXT = 8, T_LISA = 9, T_PNAIVE = 10, T_TODATE = 11, T_BASIS = 12;
+  const BASIS_TXT = { wet_season: "Jun–Sep wet-season total", flood_season: "Aug–Nov flood-season average", annual_total: "annual totals", seasonal: "same-month comparisons" };
+  // trend map follows the slider: Sen's slope from 2018 to the slider's year (needs ≥3 years, so 2020 at the earliest)
+  const trendYear = () => Math.min(2025, Math.max(2020, +state.months[state.t].slice(0, 4)));
   const trendOf = (vid, cid) => (state.trends && state.trends[vid] && state.trends[vid][cid]) || null;
   function trendHtml(v, cid, compact) {
     const tr = trendOf(v.id, cid);
@@ -184,7 +197,7 @@
     const col = scaleFor(v).color(x);
     const rasterVisible = state.rasterOn.size > 0;
     const tr = trendOf(v.id, f.properties.district_id);
-    if (tr && tr[T_SIG] && !selected) { baseStyle.color = "#ffffff"; baseStyle.weight = 2.6; }
+    if (tr && tr[T_SIG] && !selected && (state.mode !== "trend" || trendYear() === 2025)) { baseStyle.color = "#ffffff"; baseStyle.weight = 2.6; }
     if (col == null) return { ...baseStyle, fillColor: "#898781", fillOpacity: rasterVisible ? 0 : 0.08, dashArray: "2 3" };
     return { ...baseStyle, fillColor: col, fillOpacity: rasterVisible ? 0.35 : 0.78 };
   }
@@ -245,8 +258,10 @@
   function describeValue(v, x, mode = state.mode) {
     if (x == null) return mode === "trend" ? "no trend test" : "no data";
     if (mode === "trend" && v.temporal !== "static") {
-      if (trendIsPct(v)) { const f = Math.max(0, 1 + (x * TREND_YEARS) / 100); return `${x >= 0 ? "+" : ""}${fmt(x, 2)}% of ${v.baseline_year} level per year (≈${fmt(f, 2)}× from 2018 to 2025)`; }
-      return `${x >= 0 ? "+" : ""}${fmt(x)} ${v.units || ""} per year (Sen's slope)`;
+      const Y = trendYear(), dw = DIR_WORDS[v.direction], word = dw ? ` — ${x > 0 ? dw[0] : x < 0 ? dw[1] : "no change"}` : "";
+      const basis = v.trend_basis && ["wet_season", "flood_season", "annual_total"].includes(v.trend_basis) ? ` (${BASIS_TXT[v.trend_basis]})` : "";
+      if (trendIsPct(v)) { const f = Math.max(0, 1 + (x * (Y - 2018)) / 100); return `${x >= 0 ? "+" : ""}${fmt(x, 2)}% of ${v.baseline_year} level per year${basis}, 2018→${Y} (≈${fmt(f, 2)}×)${word}`; }
+      return `${x >= 0 ? "+" : ""}${fmt(x)} ${(v.units || "").replace(/\s*\/\s*month/, basis ? "" : "/month")} per year${basis}, 2018→${Y}${word}`;
     }
     if (mode === "raw" || v.temporal === "static") return `${fmt(x)} ${v.units || ""}`;
     if (usesDiff(v)) return `${x >= 0 ? "+" : ""}${fmt(x)} ${v.units || ""} vs ${v.baseline_year}`;
@@ -269,7 +284,10 @@
     const v = state.varById[state.colorBy];
     if (!v) { el.hidden = true; return; }
     const sc = scaleFor(v);
-    let html = `<div class="title">${v.label}</div>`;
+    let html = `<div class="title">${v.label}${state.mode === "trend" && v.temporal !== "static" ? ` — trend 2018→${trendYear()}` : ""}</div>`;
+    if (v.national_only) html += `<div class="caution">National-only series: the same value for every county.</div>`;
+    if (plainOf(v)) html += `<div class="var-plain">${plainOf(v)}</div>`;
+    if (v.caution) html += `<div class="caution">⚠ ${v.caution}</div>`;
     if (sc.kind === "seq") {
       html += `<div class="bar" style="background:linear-gradient(90deg,${BLUE.join(",")})"></div>
         <div class="ticks"><span>${fmt(sc.lo)}</span><span>${v.units || ""}</span><span>${fmt(sc.hi)}</span></div>`;
@@ -283,10 +301,12 @@
       const mid = sc.kind === "ratio" ? `1.0 = ${v.baseline_year}` : sc.kind === "trend" ? "no change" : `0 = ${v.baseline_year}`;
       html += `<div class="bar" style="background:linear-gradient(90deg,${g})"></div>
         <div class="ticks"><span>${lo}</span><span>${mid}</span><span>${hi}</span></div>`;
-      const dir = v.higher_is === "neutral" ? "Purple = higher, orange = lower than baseline"
+      const dw = DIR_WORDS[v.direction];
+      const dir = dw ? `${sc.kind === "trend" ? "Trend towards" : "Colour shows"}: ${dw[0]} (right) vs ${dw[1]} (left)${sc.kind === "trend" ? "" : " than the baseline"} — not “better” or “worse”`
+        : v.higher_is === "neutral" ? "Purple = higher, orange = lower than baseline"
         : `Blue = better, red = worse than baseline (higher is ${v.higher_is})`;
       html += `<div class="note">${dir}${sc.kind === "diff" ? ` · change in ${v.units || "units"} (ratio not meaningful)` : ""}</div>`;
-      if (sc.kind === "trend") html += `<div class="note"><b>Trend 2018–2025 (Sen's slope)</b>: the median yearly change in each county's series${tpct ? `, as a % of its ${v.baseline_year} level; × = implied change from 2018 to 2025 (e.g. +10%/yr ≈ 1.7×)` : ` in ${v.units || "units"} per year (a % of baseline is not meaningful for this variable)`}. Monthly series use the seasonal Sen's slope. This map does not change with the time slider; arrows and points do.</div>`;
+      if (sc.kind === "trend") html += `<div class="note"><b>Trend 2018→${trendYear()} (Sen's slope)</b>${v.trend_basis && BASIS_TXT[v.trend_basis] ? `, based on ${BASIS_TXT[v.trend_basis]}` : ""}. Move the time slider to see how the trend developed (first available: 2018→2020). ${trendYear() < 2025 ? "White significance outlines appear for the full 2018→2025 period. " : ""}The median yearly change in each county's series${tpct ? `, as a % of its ${v.baseline_year} level; × = implied change from 2018 to 2025 (e.g. +10%/yr ≈ 1.7×)` : ` in ${v.units || "units"} per year (a % of baseline is not meaningful for this variable)`}. Monthly series use the seasonal Sen's slope. This map does not change with the time slider; arrows and points do.</div>`;
       else if (v.sparse_count) html += `<div class="note">Sparse count: shown as change from the ${v.baseline_year} monthly average (most ${v.baseline_year} months were zero, so a ratio is undefined).</div>`;
       else if (state.mode === "index_month") html += `<div class="note">Compared with the same ${state.agg === "month" ? "month" : state.agg === "season" ? "season" : "year"} in ${v.baseline_year}.</div>`;
     }
@@ -300,7 +320,7 @@
       html += `<div class="note"><span class="sig-swatch"></span> White outline = significant 2018–2025 trend (Mann-Kendall corrected for month-to-month persistence, then false-discovery-rate q &lt; 0.05 across counties): ${nSig} of 79 counties. Hover for Sen's slope.</div>`;
     }
     html += `<div class="note"><span class="nodata"></span> no data · Source: ${v.source || "–"}${v.native_resolution ? ` · ${v.native_resolution}` : ""}</div>`;
-    const rs = [...state.rasterOn].map((k) => state.rasters.find((r) => r.key === k)).filter(Boolean);
+    const rs = [...state.rasterOn].map((k) => (state.mode === "trend" && state.rasters.find((r) => r.key === `${k}_trend`)) || state.rasters.find((r) => r.key === k)).filter(Boolean);
     for (const r of rs) {
       const cm = r.colors || r.legend_colors || null;
       html += `<div class="title" style="margin-top:8px">Raster: ${r.label}</div>`;
@@ -322,8 +342,10 @@
     el.innerHTML = "";
     let lastCat = null, lastGroup = null, shown = 0;
     const matcher = searchMatcher(q);
+    const topicIds = state.topic && state.topicPicks ? null : null;
     for (const v of state.vars) {
       if (q && !matcher(v)) continue;
+      if (state.topic && v.topic !== state.topic && !(state.topicPicks[state.topic] || []).includes(v.id)) continue;
       shown++;
       if (v.category !== lastCat) {
         el.insertAdjacentHTML("beforeend", `<div class="cat-title">${v.category === "human" ? "Human & infrastructure" : v.category === "environment" ? "Environment & climate" : v.category}</div>`);
@@ -353,6 +375,22 @@
       el.appendChild(row);
     }
     if (q && !shown) el.innerHTML = `<p class="empty">No variables match “${q.replace(/</g, "&lt;")}”. Try: flood, rain, drought, heat, fighting, displaced, food prices, aid, pollution.</p>`;
+  }
+
+  // ---------- guided topic picks ----------
+  function renderTopics() {
+    const el = $("#topic-picks"); if (!el || !state.topicPicks) return;
+    const topics = Object.keys(state.topicPicks);
+    el.innerHTML = `<div class="topic-head">Start with a question:</div><div class="topic-chips">${topics.map((t) => `<button class="chip ${state.topic === t ? "on" : ""}" data-t="${t}">${t}</button>`).join("")}${state.topic ? `<button class="chip clear" data-t="">Show all</button>` : ""}</div>`;
+    el.querySelectorAll("button").forEach((b) => (b.onclick = async () => {
+      const t = b.dataset.t; state.topic = t || null;
+      if (t) {
+        const picks = (state.topicPicks[t] || []).filter((id) => state.varById[id] && !state.varById[id].national_only);
+        picks.slice(0, 3).forEach((id) => state.checked.add(id));
+        if (picks[0]) await setColorBy(picks[0]);
+      }
+      renderTopics(); renderVarList();
+    }));
   }
 
   // ---------- search: plain words, plurals and synonyms; matches labels, topics, definitions (not source names) ----------
@@ -408,7 +446,8 @@
     const el = $("#raster-list");
     if (!state.rasters.length) { el.innerHTML = `<p class="empty">No raster overlays built yet.</p>`; return; }
     el.innerHTML = "";
-    for (const r of state.rasters) {
+    for (const r of state.rasters.filter((x) => !x.trend_of && !/_trend$/.test(x.key))) {
+      const hasTrend = state.rasters.some((x) => x.key === `${r.key}_trend`);
       const row = document.createElement("div");
       row.className = "var-row";
       row.innerHTML = `<input type="checkbox" id="r-${r.key}"><label for="r-${r.key}">${r.label} <span class="meta">· ${r.native_resolution || ""} (${(r.dates || []).length} steps)</span></label>`;
@@ -435,22 +474,27 @@
   function updateRasters() {
     const op = +$("#raster-opacity").value;
     for (const key of state.rasterOn) {
-      const r = state.rasters.find((x) => x.key === key);
-      const d = rasterDateFor(r, state.t);
+      let r = state.rasters.find((x) => x.key === key);
+      // in trend mode, show the "trend 2018→slider year" companion layer when it exists
+      const tr = state.mode === "trend" && state.rasters.find((x) => x.key === `${key}_trend`);
+      let d;
+      if (tr) { r = tr; d = String(trendYear()); if (!(tr.dates || []).includes(d)) d = (tr.dates || []).filter((x) => x <= d).pop() || (tr.dates || [])[0]; }
+      else d = rasterDateFor(r, state.t);
+      const shownKey = r.key;
       if (!d) continue;
-      let url = `rasters/${key}/${d}.png`;
+      let url = `rasters/${shownKey}/${d}.png`;
       if (r.packed) {
         const y = d.slice(0, 4);
         r._maps = r._maps || {}; r._pending = r._pending || {};
         if (!r._maps[y]) {
-          if (!r._pending[y]) r._pending[y] = fetchJSON(`rasters/${key}/${y}.json`).then((m) => { r._maps[y] = m; updateRasters(); });
+          if (!r._pending[y]) r._pending[y] = fetchJSON(`rasters/${shownKey}/${y}.json`).then((m) => { r._maps[y] = m; updateRasters(); });
           continue;
         }
         url = r._maps[y][d];
         if (!url) continue;
       }
       const b = r.bounds;
-      if (state.rasterLayers[key]) { state.rasterLayers[key].setUrl(url); state.rasterLayers[key].setOpacity(op); }
+      if (state.rasterLayers[key]) { state.rasterLayers[key].setUrl(url); state.rasterLayers[key].setBounds(L.latLngBounds(b)); state.rasterLayers[key].setOpacity(op); }
       else state.rasterLayers[key] = L.imageOverlay(url, b, { pane: "rasters", opacity: op, interactive: false }).addTo(map);
     }
   }
@@ -463,7 +507,7 @@
       p._color = CATEGORICAL[k % CATEGORICAL.length];
       const row = document.createElement("div");
       row.className = "var-row";
-      row.innerHTML = `<input type="checkbox" id="p-${p.key}"><span class="swatch" style="background:${p._color}"></span><label for="p-${p.key}">${p.label}${p.plain ? ` <span class="meta">· ${p.plain.slice(0, 90)}</span>` : ""}</label>`;
+      row.innerHTML = `<input type="checkbox" id="p-${p.key}"><span class="swatch" style="background:${p._color}"></span><label for="p-${p.key}">${p.label}${typeof p.plain === "string" && p.plain ? ` <span class="meta">· ${p.plain.slice(0, 90)}</span>` : ""}</label>`;
       row.querySelector("input").onchange = async (e) => {
         if (e.target.checked) { await loadPoints(p); } else if (state.pointLayers[p.key]) { map.removeLayer(state.pointLayers[p.key].layer); delete state.pointLayers[p.key]; }
       };
@@ -901,7 +945,8 @@
   function setTime(i) {
     state.t = i;
     $("#time").value = i;
-    $("#time-label").textContent = windowLabel(i);
+    $("#time-label").textContent = state.mode === "trend" ? `${windowLabel(i)} · trend 2018→${trendYear()}` : windowLabel(i);
+    if (state.mode === "trend") { state.vars.forEach((v) => (v._trendSpan = null)); renderLegend(); }
     refreshCounties(); updateRasters(); refreshPoints(); drawFlows(); updateNational();
     if (state.selectedList.length) renderDetail();
     clearTimeout(state._hashT); state._hashT = setTimeout(writeHash, 400);
@@ -930,6 +975,7 @@
     state.points = layers.points || [];
     fetchJSON("data/trends.json").then((t) => { state.trends = t; state.vars.forEach((v) => (v._trendSpan = null)); refreshCounties(); renderLegend(); }).catch(() => {});
     fetchJSON("data/profiles.json").then((pj) => { state.profiles = pj; }).catch(() => {});
+    fetchJSON("data/topic_picks.json").then((tp) => { state.topicPicks = tp; renderTopics(); }).catch(() => {});
     SPARKS.forEach((sp) => { const v = sparkVar(sp); if (v) ensureSeries(v.id).catch(() => {}); if (sp.band && state.varById[sp.band]) ensureSeries(sp.band).catch(() => {}); });
     fetchJSON("data/flows.json").then((f) => { state.flows = f; renderFlowControls(); drawFlows(); }).catch((e) => console.warn("no flows", e));
     $("#time").max = state.months.length - 1;

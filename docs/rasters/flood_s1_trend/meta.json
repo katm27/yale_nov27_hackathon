@@ -1,0 +1,53 @@
+{
+ "key": "flood_s1_trend",
+ "label": "Flood / surface water (monthly, Sentinel-1 SAR) — trend 2018→year (Sen's slope)",
+ "units": "percentage points/yr",
+ "bounds": [
+  [
+   3.3010476939770306,
+   24.0
+  ],
+  [
+   12.4,
+   36.10617576371243
+  ]
+ ],
+ "vmin": -8.0,
+ "vmax": 8.0,
+ "colormap": "div_brbg",
+ "colors": [
+  "#543005",
+  "#8c510a",
+  "#bf812d",
+  "#dfc27d",
+  "#f6e8c3",
+  "#f5f5f5",
+  "#c7eae5",
+  "#80cdc1",
+  "#35978f",
+  "#01665e",
+  "#003c30"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid",
+ "source": "Copernicus Sentinel-1 IW GRD RTC (sentinel-1-rtc) via Microsoft Planetary Computer",
+ "trend_of": "flood_s1",
+ "basis": "wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02° cell from the monthly Sentinel-1 classification (gap-filled as in flood_s1_pipeline) Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

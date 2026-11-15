@@ -36,6 +36,9 @@ def main():
         set_validity(p, cw[0], end, note)
     write_fc("polygons_ethnic_groups.geojson", fc["features"])
     print("ethnic polygons", len(fc["features"]))
+    import team_dynamic_layers as tdl  # 2018-2021 EPR coding + flagged carry-forward 2022-2025
+    tdl.ethnic()
+    tdl.write_points_meta({"ethnic_groups": tdl.status_values_of("polygons_ethnic_groups.geojson", tdl.ETHNIC_ORDER)})
 
 
 if __name__ == "__main__":

@@ -347,8 +347,92 @@ def regional_trends(df: pd.DataFrame, meta: dict, trends: pd.DataFrame) -> pd.Da
     return pd.DataFrame(rows)
 
 
+# ----------------------------------------------------------------------------- display basis (seasonal-aware slopes)
+WATER_SEASON = (6, 7, 8, 9)          # Jun–Sep: main rains (rainfall, ET, soil moisture)
+FLOOD_SEASON = (8, 9, 10, 11)        # Aug–Nov: flood peak (surface water, inundation, flooded area)
+_RE = __import__("re")
+_LAB = None
+
+
+def _labels():
+    global _LAB
+    if _LAB is None:
+        f = os.path.join(ROOT, "data", "variable_labels.json")
+        _LAB = json.load(open(f)) if os.path.exists(f) else {}
+    return _LAB
+
+
+def direction_of(var: str, meta: dict) -> str:
+    """Plain direction words for a variable: wetter_drier, warmer_cooler, greener_browner, more_less or better_worse."""
+    d = (_labels().get(var) or {}).get("direction") or meta.get("direction")
+    if d:
+        return d
+    v = var.lower()
+    if _RE.search(r"precip|ppt|chirps|rain|spei|spi|pdsi|drought|soil|soilwet|smap|surface_water|flood|inundat|sudd_|openwater|grace|gwsa|tws|aet|\bq\b|tc_q|runoff|wet|\bdef\b|tc_def|extreme_dry|extreme_wet", v):
+        return "wetter_drier"
+    if _RE.search(r"tmax|tmin|tair|lst|t2m|temp|heat|hottest", v):
+        return "warmer_cooler"
+    if _RE.search(r"ndvi|evi|vegetation", v):
+        return "greener_browner"
+    return "better_worse" if meta.get("higher_is") in ("better", "worse") else "more_less"
+
+
+def basis_of(var: str, meta: dict, x: np.ndarray) -> str:
+    """Which yearly value the headline slope is based on."""
+    v = var.lower()
+    if meta.get("temporal", "monthly") != "monthly":
+        return "observed"
+    if _RE.search(r"surface_water|flood|inundat|openwater|sudd_", v):
+        return "flood_season"
+    if _RE.search(r"precip|ppt|chirps|rain|_et_|et_mm|aet|soil|smap|runoff|tc_q", v):
+        return "wet_season"
+    unit = str(meta.get("units", "")).lower()
+    zeros = np.mean(x == 0) if len(x) else 0
+    if zeros > 0.4 or _RE.search(r"\b(events?|people|deaths|fatalities|incidents|detections|individuals|movements)\b", unit):
+        return "annual_total"
+    return "seasonal"
+
+
+def pct_meaningful(var: str, meta: dict, sparse: bool) -> bool:
+    txt = f"{meta.get('units', '')} {var}"
+    return meta.get("index_ok", True) is not False and not sparse and \
+        not _RE.search(r"%|standard|flag|index|\bsd\b|°|deg|class|share|fraction|anomal|spei|spi|pdsi|drought", txt, _RE.I)
+
+
+def yearly_values(d: pd.Series, x: np.ndarray, basis: str):
+    """Collapse a monthly series to one value per year according to the basis (complete seasons/years only)."""
+    df = pd.DataFrame({"y": d.dt.year.to_numpy(), "m": d.dt.month.to_numpy(), "x": x})
+    if basis == "wet_season":
+        g = df[df.m.isin(WATER_SEASON)].groupby("y")
+        return g.x.sum()[g.x.count() == len(WATER_SEASON)]
+    if basis == "flood_season":
+        g = df[df.m.isin(FLOOD_SEASON)].groupby("y")
+        return g.x.mean()[g.x.count() >= 3]
+    if basis == "annual_total":
+        g = df.groupby("y")
+        return g.x.sum()[g.x.count() >= 10]
+    return None
+
+
+BASIS_TEXT = {"wet_season": "Jun–Sep wet-season total", "flood_season": "Aug–Nov flood-season average",
+              "annual_total": "annual total", "seasonal": "same-month comparisons", "observed": "observed values"}
+
+
+def display_slope(d: pd.Series, x: np.ndarray, basis: str, t: np.ndarray, season: np.ndarray):
+    """Headline Sen's slope per year on the chosen basis, and the baseline (first-year) value for a % figure."""
+    if basis in ("wet_season", "flood_season", "annual_total"):
+        yv = yearly_values(d, x, basis)
+        if len(yv) >= 3:
+            return sens_slope(yv.index.to_numpy(float), yv.to_numpy(float)), float(yv.iloc[0]), int(yv.index[0])
+        return np.nan, np.nan, None
+    if basis == "seasonal":
+        return seasonal_sens_slope(t, x, season), np.nan, None
+    return sens_slope(t, x), np.nan, None
+
+
 # ----------------------------------------------------------------------------- per-series wrapper
-def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "monthly", baseline_year: int | None = None) -> dict:
+def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "monthly", baseline_year: int | None = None,
+                     var: str = "", meta: dict | None = None) -> dict:
     """Run the appropriate test for one county-variable series.
 
     monthly  -> Seasonal Kendall + seasonal Sen's slope (needs >= 3 years with data)
@@ -386,6 +470,22 @@ def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "month
     by = baseline_year or int(d.dt.year.min())
     base = x[(d.dt.year == by).to_numpy()]
     res["baseline_mean"] = float(np.mean(base)) if len(base) else np.nan
+    # headline slope on a seasonal-aware basis (+ trend-to-date for the slider)
+    meta = meta or {}
+    season_ = d.dt.month.to_numpy()
+    basis = basis_of(var, {**meta, "temporal": temporal}, x)
+    sl, b0, _ = display_slope(d, x, basis, t, season_)
+    res["basis"] = basis
+    res["display_slope"] = sl
+    res["display_base"] = b0 if np.isfinite(b0) else res["baseline_mean"]
+    res["sparse"] = bool(len(x) and np.mean(x == 0) > 0.4)
+    for Y in range(2020, 2026):
+        m_ = (d.dt.year <= Y).to_numpy()
+        if m_.sum() >= 3 and d[m_].dt.year.nunique() >= 3:
+            s2, _, _ = display_slope(d[m_].reset_index(drop=True), x[m_], basis, t[m_], season_[m_])
+            res[f"todate_{Y}"] = s2
+        else:
+            res[f"todate_{Y}"] = np.nan
     return res
 
 
@@ -396,8 +496,11 @@ def interpret(row: dict, meta: dict) -> str:
         return "Too few observations for a trend test."
     units = meta.get("units") or ""
     pct = row.get("sen_slope_pct_per_year")
-    ratio_ok = meta.get("index_ok", True) is not False and not str(meta.get("units", "")).strip().startswith(("°", "deg"))
-    pct_txt = f" ({pct:+.1f}% of the {meta.get('baseline_year', 'baseline')} level per year)" if ratio_ok and pct is not None and np.isfinite(pct) else ""
+    pct_txt = f" ({pct:+.1f}% of the {meta.get('baseline_year', 'baseline')} level per year)" if row.get("pct_ok") and pct is not None and np.isfinite(pct) else ""
+    basis = row.get("basis")
+    if basis in ("wet_season", "flood_season", "annual_total"):
+        u0 = _RE.sub(r"\s*(/\s*month|per month)", "", units) if basis in ("wet_season", "annual_total") else units
+        units = {"wet_season": f"{u0} (Jun–Sep total)", "flood_season": f"{units} (Aug–Nov average)", "annual_total": f"{u0} (annual total)"}[basis]
     fmt = lambda v: f"{v:+.3g}"
     ptxt = ("p < 0.001" if p < 0.001 else f"p = {p:.3f}") + (f", FDR q = {q:.3f}" if q is not None and np.isfinite(q) else "")
     sig = q is not None and np.isfinite(q) and q < ALPHA      # significance = FDR-adjusted across the 79 counties
@@ -413,11 +516,17 @@ def interpret(row: dict, meta: dict) -> str:
     if sig and np.isfinite(slope) and slope != 0:
         direction = "rising" if slope > 0 else "falling"
         hi = meta.get("higher_is", "neutral")
-        judge = "" if hi == "neutral" else (" — improving" if (slope > 0) == (hi == "better") else " — worsening")
+        dw = row.get("direction", "more_less")
+        words = {"wetter_drier": ("wetter", "drier"), "warmer_cooler": ("warmer", "cooler"), "greener_browner": ("greener", "browner")}
+        if dw in words:
+            judge = f" — {words[dw][0] if slope > 0 else words[dw][1]}"
+        else:
+            judge = "" if hi == "neutral" else (" — improving" if (slope > 0) == (hi == "better") else " — worsening")
         return (f"Significant {direction} trend over 2018–2025 ({row['test']}, {ptxt}): "
                 f"about {fmt(slope)} {units} per year{pct_txt}{judge}.{ac}")
     if sig:
-        return f"Significant monotonic trend ({row['test']}, {ptxt}), but the median slope is ~0 (many tied values).{ac}"
+        return (f"Significant monotonic trend ({row['test']}, {ptxt}): values tend to be higher in later years even though the "
+                f"typical change is small; slope ≈ {fmt(slope) if np.isfinite(slope) else 'n/a'} {units} per year.{ac}")
     weak = " (nominal p < 0.05, but not significant after correcting for testing 79 counties)" if p < ALPHA else ""
     return f"No significant monotonic trend over 2018–2025 ({row['test']}, {ptxt}){weak}; Sen's slope {fmt(slope) if np.isfinite(slope) else 'n/a'} {units}/yr."
 
@@ -450,10 +559,21 @@ def compute_trends(df: pd.DataFrame, meta: dict | None = None, window: tuple[str
         temporal = m.get("temporal", "monthly")
         g = g.groupby("date", as_index=False)["value"].mean().sort_values("date")
         by = m.get("baseline_year_override") or (2018 if (g["date"].dt.year == 2018).any() else int(g["date"].dt.year.min()))
-        r = trend_for_series(g["date"], g["value"], temporal, by)
+        r = trend_for_series(g["date"], g["value"], temporal, by, var, m)
         r.update(variable=var, county_id=cid, baseline_year=by)
-        b = r["baseline_mean"]
-        r["sen_slope_pct_per_year"] = 100 * r["sen_slope_per_year"] / abs(b) if np.isfinite(b) and abs(b) > 1e-9 else np.nan
+        # headline slope = seasonal-aware display slope; % only where a % of the baseline is meaningful
+        pct_ok = pct_meaningful(var, m, r.get("sparse", False))
+        r["sen_slope_seasonal"] = r["sen_slope_per_year"]
+        if np.isfinite(r.get("display_slope", np.nan)):
+            r["sen_slope_per_year"] = r["display_slope"]
+        b = r.get("display_base", r["baseline_mean"])
+        r["pct_ok"] = pct_ok
+        r["sen_slope_pct_per_year"] = 100 * r["sen_slope_per_year"] / abs(b) if pct_ok and b is not None and np.isfinite(b) and abs(b) > 1e-9 else np.nan
+        for Y in range(2020, 2026):
+            k = f"todate_{Y}"
+            if pct_ok and b is not None and np.isfinite(b) and abs(b) > 1e-9 and np.isfinite(r.get(k, np.nan)):
+                r[k] = 100 * r[k] / abs(b)
+        r["direction"] = direction_of(var, m)
         rows.append(r)
     out = pd.DataFrame(rows)
     if out.empty:
@@ -478,8 +598,8 @@ def compute_trends(df: pd.DataFrame, meta: dict | None = None, window: tuple[str
     out["interpretation"] = [interpret(r, {**meta.get(r["variable"], {}), "baseline_year": r["baseline_year"]})
                              for r in out.to_dict("records")]
     cols = ["county_id", "variable", "test", "n", "S", "Z", "tau", "p", "p_naive", "q_fdr", "significant", "sen_slope_per_year",
-            "sen_slope_pct_per_year", "baseline_year", "baseline_mean", "lag1", "lisa", "lisa_p", "moran_I", "moran_p",
-            "interpretation"]
+            "sen_slope_pct_per_year", "sen_slope_seasonal", "basis", "pct_ok", "direction", "baseline_year", "baseline_mean", "lag1",
+            "lisa", "lisa_p", "moran_I", "moran_p"] + [f"todate_{Y}" for Y in range(2020, 2026)] + ["interpretation"]
     return out[cols]
 
 

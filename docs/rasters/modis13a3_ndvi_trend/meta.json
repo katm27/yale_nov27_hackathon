@@ -1,0 +1,53 @@
+{
+ "key": "modis13a3_ndvi_trend",
+ "label": "NDVI, monthly 1 km (MODIS MOD13A3) — trend 2018→year (Sen's slope)",
+ "units": "NDVI/yr",
+ "bounds": [
+  [
+   3.4021089038843564,
+   23.399999999999995
+  ],
+  [
+   12.299999999999999,
+   36.004112600715054
+  ]
+ ],
+ "vmin": -0.05,
+ "vmax": 0.05,
+ "colormap": "div_brgn",
+ "colors": [
+  "#543005",
+  "#8c510a",
+  "#bf812d",
+  "#dfc27d",
+  "#f6e8c3",
+  "#f7f7f7",
+  "#d9f0d3",
+  "#a6dba0",
+  "#5aae61",
+  "#1b7837",
+  "#00441b"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "1 km MODIS (0.01° grid)",
+ "source": "MODIS MOD13A3 v061 via NASA AppEEARS",
+ "trend_of": "modis13a3_ndvi",
+ "basis": "annual mean (Jan-Dec) of the monthly values Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

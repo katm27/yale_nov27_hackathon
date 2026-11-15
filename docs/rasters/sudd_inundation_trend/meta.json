@@ -1,0 +1,51 @@
+{
+ "key": "sudd_inundation_trend",
+ "label": "Sudd inundation (MODIS, monthly) — trend 2018→year (Sen's slope)",
+ "units": "percentage points/yr",
+ "bounds": [
+  [
+   5.840594920504325,
+   29.080181338379663
+  ],
+  [
+   9.762499999099246,
+   32.986790890096216
+  ]
+ ],
+ "vmin": -31.0,
+ "vmax": 31.0,
+ "colormap": "div_brbg",
+ "colors": [
+  "#543005",
+  "#8c510a",
+  "#bf812d",
+  "#dfc27d",
+  "#f6e8c3",
+  "#f5f5f5",
+  "#c7eae5",
+  "#80cdc1",
+  "#35978f",
+  "#01665e",
+  "#003c30"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024"
+ ],
+ "native_resolution": "500 m (MOD09A1), displayed at ~400 m",
+ "source": "MODIS MOD09A1 v061 (Terra) 8-day via Microsoft Planetary Computer; MCD43A4 NBAR for 12 missing Terra tile-composites (Sep-Oct 2022, Jan and Nov 2023)",
+ "trend_of": "sudd_inundation",
+ "basis": "Sep-Dec high-water-season share (%) of cloud-free MODIS 8-day composites classified as open water or flooded vegetation (the product's own annual-peak window; Jun-Sep is mostly cloud over the Sudd). 2025 is omitted: Planetary Computer has no MODIS reflectance for 4 Jul - 24 Nov 2025.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+}

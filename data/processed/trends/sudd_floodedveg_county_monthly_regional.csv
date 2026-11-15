@@ -1,0 +1,5 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+sudd_floodedveg_km2,national,2230,0.003,16,41.738,76.7475
+sudd_floodedveg_km2,sudd,2230,0.003,16,41.738,76.7475
+sudd_floodedveg_pct,national,2229,0.003,16,,1.43969
+sudd_floodedveg_pct,sudd,2229,0.003,16,,1.43969
