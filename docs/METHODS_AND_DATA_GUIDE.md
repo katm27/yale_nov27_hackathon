@@ -23,7 +23,7 @@ Status: written 15 Nov 2026 and updated the same day (second pass) after these c
 - carry-forward of survey rounds and calendar-year filling of annual values;
 - the point-layer temporal QA.
 
-Only the NASA AppEEARS products are still in progress; they are marked **⏳ pending**.
+All pipelines have finished. Two NASA items remain open: SMAP soil moisture (queued at NASA, slow) and night-time lights (not available via AppEEARS) — see §6.
 
 Companion documents (more detail on specific topics):
 [`data/DATA_CONTRACT.md`](../data/DATA_CONTRACT.md) ·
@@ -807,8 +807,8 @@ from `docs/data/variables.json`, as months with data / 96 and counties with data
 | E8 | **MODIS LST** → `modis_lst_day_c`, `modis_lst_night_c` | Clear-sky land-surface temperature | **MOD11A2 v061** (Terra, 8-day) via PC | 1 km | 91 · 79 (missing 2022-10, 2025-07…10) | Monthly mean of clear composites (QA good, error ≤ 2 K) | `fetch_modis_land.py` | as E7 | NASA open data |
 | E9 | **MODIS reflectance** → `modis_refl_red/nir/swir1` | Surface reflectance | **MOD09A1 v061** (Terra) via PC | 500 m | 92 · 79 | Monthly mean of clear composites | `fetch_modis_land.py` | as E7 | NASA open data |
 | E10 | **MODIS ET, annual** → `modis_et_mm` | Actual evapotranspiration | **MOD16A3GF v061** via PC | 500 m | 8 years · 79 | Mean of valid cells (water, urban and barren pixels are fill) | `fetch_modis_land.py` | as E7 | NASA open data |
-| E11 | **MODIS ET, monthly (AppEEARS)** → `modis_et_monthly_mm` | Actual ET | **MOD16A2GF v061** via NASA AppEEARS | 500 m → ~1 km | **48/96 (2018–2021 only)** · 79 | 8-day totals prorated to months by day overlap; cells need ≥ 75 % valid days | `fetch_appeears.py` | `$APPEEARS_WORK` cache | NASA open data; Earthdata login. ⏳ pending: 2022–2025 |
-| E12 | **AppEEARS other products** → `modis13a3_ndvi/evi`, `appeears_lst_*` (2022–25), `appeears_burned_area_*`, `smap_sm_surface/rootzone` (SMAP L4 SPL4SMGP.008) | MODIS fill of Jul–Oct 2025; soil moisture | NASA AppEEARS | 1 km; SMAP 9 km | ⏳ pending: not yet in `data/processed` | Same as E11 | `fetch_appeears.py` | — | Earthdata login. **Night lights (VNP46A3) are not offered by AppEEARS.** |
+| E11 | **MODIS ET, monthly (AppEEARS)** → `modis_et_monthly_mm` | Actual ET | **MOD16A2GF v061** via NASA AppEEARS | 500 m → ~1 km | **96/96** · 79 | 8-day totals prorated to calendar months by day overlap; annual sums match `modis_et_mm` (r = 1.000, ratio 0.9999) | `fetch_appeears.py` | GeoTIFFs deleted after aggregation | NASA open data; Earthdata login |
+| E12 | **AppEEARS other products** → `modis13a3_ndvi/evi` (MOD13A3, 1 km monthly, 2018–2025 incl. Aug–Oct 2025; vs `modis_ndvi` r = 0.991, bias −0.034 — kept as separate ids because compositing differs); LST gap rows (2022-10, 2025-07..10) and burned-area gap rows (2023-09, 2024-07, 2025-05, 2025-08..10) spliced into the existing ids after overlap checks (LST r = 0.997, burned area r = 1.000) | MODIS gap fill | NASA AppEEARS | 1 km / 500 m | 96/96 | Same QC as originals | `fetch_appeears.py` | `data/raw/appeears/consistency.json` | Earthdata login. **SMAP soil moisture (SPL4SMGP) queued but not processed (AppEEARS processes ~1 task/2 h+); night lights (VNP46A3) not offered by AppEEARS.** |
 | E13 | **MODIS active fire** → `fire_count` | Fire pixel-detections per month (Terra + Aqua daily) | **MOD14A1/MYD14A1 v061** via PC | 1 km | 91 · 79 (missing 2025-07…11) | Native-grid count, all confidence levels; scaled for missing sensor-days | `fire_pipeline.py` | `fire/` (counts) | NASA open data |
 | E14 | **VIIRS active fire (FIRMS)** → `viirs_fire_count`, `viirs_frp_sum` (S-NPP 2018–25); `viirs_noaa20_*` (2020–25) | Fire detections, fire radiative power | NASA FIRMS **VIIRS 375 m SP, collection 2** (VNP14IMG / VJ114IMG) | 375 m | 96 · 79 (NOAA-20: 72) | Point-in-polygon; confidence nominal/high; type 0 only (gas flares removed) | `fetch_firms_viirs.py` | `viirs_fire/` (filtered detections) | NASA open data; free MAP_KEY |
 | E15 | **MODIS burned area** → `burned_area_km2`, `burned_area_pct` | Burned area per month | **MCD64A1 v061** via PC | 500 m | 90 · 79 (missing 2023-09, 2024-07, 2025-05, 2025-08…10) | Burned pixels × 0.2147 km² | `fire_pipeline.py` | `fire/` | NASA open data |
@@ -918,11 +918,11 @@ Medium at best.
 | E5 TerraClimate temperature, VPD, srad, wind | **M** | **M** | **H** | **H** | Secondary to MERRA-2 |
 | E5 TerraClimate extreme flags | **L**: dry and heat flags fire in ~30 % of months because of the bias above | **M** | **H** | **M**: percentile on county means | Use with great care |
 | E6 Drought ensemble (mean/spread/agree) | **M**: members correlate only r = 0.27–0.45; effectively 3 independent rainfall sources | **M**: county series from 4–10 km grids | **H**: 96/96 | **M**: new code, mixed baselines (1991–2020 vs 2000–2026); TerraClimate members pull the mean dry (−0.5 to −0.9) | **Use the spread.** A drought claim is robust only if mean < −1, agree = 1 and spread < ~0.7. The 72/79 "significant drying" trends are an artefact of the TerraClimate drift. |
-| E7 MODIS NDVI/EVI | **H**: standard v061 product, QA-masked | **H**: 500 m → 1 km | **M**: 93/96; **Aug–Oct 2025 missing** on PC (⏳ pending: AppEEARS MOD13A3 fill) | **H** | Primary vegetation layer. Flooding lowers NDVI in the Sudd: a "greenness drop" there can be a flood, not a drought. |
+| E7 MODIS NDVI/EVI | **H**: standard v061 product, QA-masked | **H**: 500 m → 1 km | **M/H**: 93/96 for the Terra+Aqua series; Aug–Oct 2025 covered by the companion MOD13A3 series `modis13a3_ndvi` | **H** | Primary vegetation layer. Flooding lowers NDVI in the Sudd: a "greenness drop" there can be a flood, not a drought. |
 | E8 MODIS LST day/night | **H** | **H** | **M**: 91/96 (2022-10, Jul–Oct 2025 missing); clear-sky only, so the wet season is biased to dry days | **H** | Surface-heat context |
 | E9 MODIS reflectance bands | **H** | **H** | **M**: 92/96 | **H** | No direct meaning for users; hide by default |
 | E10 MODIS ET annual | **M**: MOD16 is fill over open water, urban and barren pixels; misses Sudd wetland ET | **M**: wetland counties under-represented | **M**: annual, 8 values | **H** | Context |
-| E11 MODIS ET monthly (AppEEARS) | **M**: as E10 | **M** | **L**: 2018–2021 only (48/96), ⏳ pending: 2022–25 | **H**: annual check r = 1.0 | Will reach M/H when complete |
+| E11 MODIS ET monthly (AppEEARS) | **M**: model-based ET (as E10) | **M** | **H**: 96/96 | **H**: annual check r = 1.0 | Use for seasonal water-use patterns; open water/urban pixels have no ET |
 | E13 MODIS active fire | **H** | **H**: 1 km native-grid count | **M**: 91/96 (Jul–Nov 2025 missing); some months scaled for missing sensor-days | **M**: the scaling assumes uniform fire activity across days | Superseded by VIIRS for counts (r = 0.98) |
 | E14 VIIRS active fire (FIRMS S-NPP) | **H** | **H**: 375 m points, gas flares removed (type 0) | **H**: 96/96, one sensor throughout | **H** | **Most reliable dynamic environmental layer.** Note: detections, not burned area. |
 | E15 MODIS burned area | **H** | **H** | **M**: 90/96 (6 months missing) | **H** | Primary burned-area layer; gaps break the seasonal sums |
@@ -1047,7 +1047,7 @@ Medium at best.
 | Gap | What would fix it | Who / how |
 |---|---|---|
 | Event-level ACLED: actors, exact locations, "political violence targeting women", county sub-events | ACLED researcher account (myACLED). Event-level data allow county-level sexual-violence and PVTW counts. | acleddata.com registration; respect the redistribution terms |
-| Monthly MODIS ET 2022–25, MOD13A3 fill for Jul–Oct 2025, SMAP soil moisture | Finish the AppEEARS tasks | NASA Earthdata login via `EARTHDATA_USERNAME` / `EARTHDATA_PASSWORD`; ⏳ pending |
+| SMAP soil moisture 2018–2025 | Let the 8 queued AppEEARS tasks finish (>30 h), then `fetch_appeears.py process --wait` and `assemble` (SMAP parsing untested on real files; bundles expire ~30 days after completion) | Earthdata login |
 | Night-time lights (VIIRS Black Marble VNP46A3) | Not offered by AppEEARS. Use LAADS DAAC (Earthdata login) or Google Earth Engine. | Earthdata or GEE account |
 | GRACE/GRACE-FO groundwater, GLDAS, MCDWD NRT flood | `urs.earthdata.nasa.gov` was not reachable from the build environment | Earthdata login from another network. GRACE is ~300 km, so basin-scale only. |
 | Copernicus GFM flood ensemble (2015+) | Its STAC returned HTTP 502; the API needs a GFM account | GFM account; would cross-check Sentinel-1 |
@@ -1123,7 +1123,7 @@ python scripts/landcover_pipeline.py
 python scripts/static_pipeline.py
 python scripts/livestock_glw4.py
 python scripts/pop_worldpop.py
-python scripts/fetch_appeears.py all             # Earthdata credentials from the environment; ⏳ pending
+python scripts/fetch_appeears.py all             # Earthdata credentials from EARTHDATA_USERNAME / EARTHDATA_PASSWORD
 
 # 3. Conflict, displacement, humanitarian
 python scripts/acled_ssd.py
@@ -1196,14 +1196,13 @@ The variable table in `README.md` is generated from `docs/data/variables.json`.
 
 ---
 
-### Pending items
-- ⏳ **NASA AppEEARS** (still running):
-  - monthly MODIS ET 2022–25 (`modis_et_monthly_mm`, now 2018–2021 only);
-  - MOD13A3 NDVI/EVI, LST and MCD64A1 fill of the 2025 MODIS catalogue gap (Jul–Oct 2025);
-  - SMAP L4 soil moisture.
-  When these arrive, update E11/E12 in §4 and §5.3, the NDVI/LST/fire/water temporal ratings, and §6.2.
-- ⏳ **Night-time lights** (VIIRS Black Marble VNP46A3): AppEEARS does not offer them, so they need LAADS DAAC or
-  Earth Engine (§6.2).
+### Remaining open items
+- **SMAP soil moisture**: 8 AppEEARS tasks (one per year) are queued at NASA; they process about one task per 2+ hours.
+  Finish with `python scripts/fetch_appeears.py process --wait` then `assemble` (SMAP parsing untested on real files).
+- **Night-time lights** (VIIRS Black Marble VNP46A3): not offered by AppEEARS. Needs LAADS DAAC (Earthdata login) or
+  Google Earth Engine; not attempted further in this session.
+- **Groundwater (GRACE-FO / GLDAS)**: not in AppEEARS; needs an Earthdata login to PO.DAAC / GES DISC, which is not
+  reachable from this environment.
 
 Completed since the first draft: county crosswalk audit (§2.2, §5.4), Sentinel-1 flood + validation + exposure (§3.5,
 §4, §5), point-layer temporal QA (§1.7), and the climate review (`CLIMATE_DATA_DECISIONS.md`: flood product, drought

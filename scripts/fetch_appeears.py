@@ -747,6 +747,8 @@ def assemble():
         return
     df = pd.concat([pd.read_csv(p) for p in parts], ignore_index=True)
     df = df[(df.date >= "2018-01-01") & (df.date <= "2025-12-01")]
+    # LST task starts 2022-01-01; drop the partial month from a composite that began in Dec 2021
+    df = df[~(df.variable.str.startswith("appeears_lst") & (df.date < "2022-01-01"))]
     cons, gaps = consistency(df)
     (WORK / "consistency.json").write_text(json.dumps(cons, indent=1))
     out = df if gaps is None else pd.concat([df, gaps], ignore_index=True)

@@ -1,0 +1,146 @@
+{
+ "modis13a3_ndvi": {
+  "existing": "modis_ndvi",
+  "n_overlap": 7347,
+  "months_overlap": 93,
+  "pearson_r_county_month": 0.991,
+  "national_series_r": 0.9943,
+  "mean_bias_new_minus_old": -0.0343,
+  "mean_old": 0.5881,
+  "mean_new": 0.5537,
+  "ols_new_on_old": [
+   0.9772,
+   -0.0209
+  ],
+  "rmse": 0.0412,
+  "spliced_gap_months_under_existing_id": false,
+  "gap_months_available": [
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ]
+ },
+ "modis13a3_evi": {
+  "existing": "modis_evi",
+  "n_overlap": 7347,
+  "months_overlap": 93,
+  "pearson_r_county_month": 0.988,
+  "national_series_r": 0.9931,
+  "mean_bias_new_minus_old": -0.0307,
+  "mean_old": 0.3479,
+  "mean_new": 0.3172,
+  "ols_new_on_old": [
+   0.9183,
+   -0.0023
+  ],
+  "rmse": 0.0379,
+  "spliced_gap_months_under_existing_id": false,
+  "gap_months_available": [
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ]
+ },
+ "appeears_lst_day_c": {
+  "existing": "modis_lst_day_c",
+  "n_overlap": 3397,
+  "months_overlap": 43,
+  "pearson_r_county_month": 0.9981,
+  "national_series_r": 0.9979,
+  "mean_bias_new_minus_old": -0.0122,
+  "mean_old": 32.2563,
+  "mean_new": 32.2441,
+  "ols_new_on_old": [
+   0.9981,
+   0.0479
+  ],
+  "rmse": 0.2662,
+  "spliced_gap_months_under_existing_id": true,
+  "gap_months_filled": [
+   "2022-10",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ]
+ },
+ "appeears_lst_night_c": {
+  "existing": "modis_lst_night_c",
+  "n_overlap": 3394,
+  "months_overlap": 43,
+  "pearson_r_county_month": 0.998,
+  "national_series_r": 0.9985,
+  "mean_bias_new_minus_old": 0.0155,
+  "mean_old": 22.2886,
+  "mean_new": 22.3041,
+  "ols_new_on_old": [
+   0.9924,
+   0.1849
+  ],
+  "rmse": 0.1295,
+  "spliced_gap_months_under_existing_id": true,
+  "gap_months_filled": [
+   "2022-10",
+   "2025-07",
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ]
+ },
+ "appeears_burned_area_km2": {
+  "existing": "burned_area_km2",
+  "n_overlap": 7110,
+  "months_overlap": 90,
+  "pearson_r_county_month": 1.0,
+  "national_series_r": 1.0,
+  "mean_bias_new_minus_old": 0.7034,
+  "mean_old": 302.2767,
+  "mean_new": 302.9801,
+  "ols_new_on_old": [
+   1.0022,
+   0.0338
+  ],
+  "rmse": 2.8856,
+  "ratio_of_totals_new_over_old": 1.0023,
+  "spliced_gap_months_under_existing_id": true,
+  "gap_months_filled": [
+   "2023-09",
+   "2024-07",
+   "2025-05",
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ]
+ },
+ "appeears_burned_area_pct": {
+  "existing": "burned_area_pct",
+  "n_overlap": 7110,
+  "months_overlap": 90,
+  "pearson_r_county_month": 1.0,
+  "national_series_r": 1.0,
+  "mean_bias_new_minus_old": 0.0002,
+  "mean_old": 3.2591,
+  "mean_new": 3.2593,
+  "ols_new_on_old": [
+   0.9999,
+   0.0005
+  ],
+  "rmse": 0.0225,
+  "spliced_gap_months_under_existing_id": true,
+  "gap_months_filled": [
+   "2023-09",
+   "2024-07",
+   "2025-05",
+   "2025-08",
+   "2025-09",
+   "2025-10"
+  ]
+ },
+ "modis_et_monthly_mm (annual sum)": {
+  "existing": "modis_et_mm (MOD16A3GF annual)",
+  "n_overlap": 632,
+  "pearson_r_county_year": 1.0,
+  "mean_bias_new_minus_old": -0.05,
+  "ratio": 0.9999
+ }
+}

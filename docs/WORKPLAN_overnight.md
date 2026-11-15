@@ -14,7 +14,7 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 - [x] App: filter every point layer by the time-slider window (valid_from/valid_to, date, year) — lead
 
 ## 3. Methods, sources & confidence guide
-- [~] `docs/METHODS_AND_DATA_GUIDE.md` (drafted; updating with final results): every calculation, every source, confidence rating per dataset — lead (after data agents finish)
+- [x] `docs/METHODS_AND_DATA_GUIDE.md`: every calculation, every source, confidence rating per dataset — lead (after data agents finish)
 
 ## 4. Climate data review
 - [x] `docs/CLIMATE_DATA_DECISIONS.md`: raw vs derived products, provenance; flood product choice (MODIS water vs UNOSAT/GFM/FloodScan etc.); water contamination / pollution spread options — agent "climate-review"
@@ -28,5 +28,5 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 - [x] GBV & water: REACH MSNA women's safety / water-collection indicators, water points (WPDx), groundwater options; within-county conflict indicators — agent "gbv-water"
 
 ## Already running (started earlier)
-- [~] NASA AppEEARS: night lights, monthly ET, SMAP, Jul–Oct 2025 MODIS fill
+- [x] NASA AppEEARS: monthly ET, MOD13A3 NDVI/EVI, Jul–Oct 2025 LST & burned-area fill done; SMAP queued at NASA (>30 h); night lights not available via AppEEARS
 - [x] FIRMS VIIRS fires, CHIRPS v3 rainfall cross-check, Insecurity Insight incidents (national only: source censors coordinates)
