@@ -14,15 +14,15 @@
  ],
  "vmin": -18.0,
  "vmax": 18.0,
- "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
+ "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
  "colors": [
-  "#d73027",
-  "#fc8d59",
-  "#fee08b",
-  "#ffffbf",
-  "#d9ef8b",
-  "#91cf60",
-  "#1a9850"
+  "#b2182b",
+  "#ef8a62",
+  "#fddbc7",
+  "#ffffff",
+  "#d9f0d3",
+  "#7fbf7b",
+  "#1b7837"
  ],
  "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
  "dates": [
@@ -70,5 +70,7 @@
   12.86,
   18.0
  ],
- "recolored": true
+ "recolored": true,
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "palette": "rwg7"
 }

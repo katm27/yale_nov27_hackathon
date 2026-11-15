@@ -12,7 +12,7 @@
  ],
  "vmin": -34.65308586605337,
  "vmax": 34.65308586605337,
- "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
+ "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
  "scale": "linear",
  "label": "Water storage anomaly (GRACE/GRACE-FO)",
  "units": "cm water",
@@ -113,13 +113,13 @@
  "original_colormap": "brbg",
  "original_colors": null,
  "colors": [
-  "#d73027",
-  "#fc8d59",
-  "#fee08b",
-  "#ffffbf",
-  "#d9ef8b",
-  "#91cf60",
-  "#1a9850"
+  "#b2182b",
+  "#ef8a62",
+  "#fddbc7",
+  "#ffffff",
+  "#d9f0d3",
+  "#7fbf7b",
+  "#1b7837"
  ],
  "bins": [
   -34.65,
@@ -131,5 +131,7 @@
   24.75,
   34.65
  ],
- "recolored": true
+ "recolored": true,
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "palette": "rwg7"
 }

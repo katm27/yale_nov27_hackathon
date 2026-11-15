@@ -14,7 +14,7 @@
  ],
  "vmin": 0.0,
  "vmax": 1.0,
- "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
+ "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
  "native_resolution": "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid",
  "dates": [
   "2018-01",
@@ -120,13 +120,13 @@
  "original_colormap": "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
  "original_colors": null,
  "colors": [
-  "#d73027",
-  "#fc8d59",
-  "#fee08b",
-  "#ffffbf",
-  "#d9ef8b",
-  "#91cf60",
-  "#1a9850"
+  "#b2182b",
+  "#ef8a62",
+  "#fddbc7",
+  "#ffffff",
+  "#d9f0d3",
+  "#7fbf7b",
+  "#1b7837"
  ],
  "bins": [
   0.0,
@@ -138,5 +138,7 @@
   0.8571,
   1.0
  ],
- "recolored": true
+ "recolored": true,
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "palette": "rwg7"
 }

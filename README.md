@@ -8,6 +8,18 @@ consequences of conflict, **monthly 2018–2025**, with every variable indexed t
 - **Data contract:** [`data/DATA_CONTRACT.md`](data/DATA_CONTRACT.md) — every pipeline writes county × month × variable long CSVs.
 - **Variable research & decision-maker priorities:** [`docs/RESEARCH_variables_and_priorities.md`](docs/RESEARCH_variables_and_priorities.md)
 
+## What the app shows (curated view)
+The app opens on a landing page (executive summary, key findings, national timeline) with a button into the map.
+What the map shows is set in [`docs/data/curated.json`](docs/data/curated.json): 18 climate and 10 human measures, the
+satellite grids used for climate measures, background layers (water, soil moisture, soil type, cattle), 10 point layers and the
+grouping of IOM Event Tracking migration arrows (climate vs conflict). All other data stays in `docs/data/` but is not shown.
+- Colours: one 7-bin red → white → green scale; county bins are percentiles of each measure (white = little or no change in
+  trend mode); no data = black hatching. Grids keep their 7 equal-width bins (`scripts/recolor_rasters_rwg.py`), because the raw grids are not stored.
+- Hover reports Sen's slope in native units per year (percentage points for % and shares).
+- "What was happening" text: `docs/data/context_timeline.json` (sourced half-year summaries, built by `scripts/build_context_timeline.py`).
+- Neighbouring countries and towns: `scripts/build_basemap_context.py` (Natural Earth).
+- Soil moisture uses TerraClimate: NASA SMAP needs an Earthdata login and is not in the data yet.
+
 ## How it works
 1. `scripts/fetch_*.py`, `scripts/*_ssd.py`, `scripts/*_pipeline.py` download and aggregate each source to counties →
    `data/processed/<source>_county_monthly.csv` + `data/processed/meta/<source>.json`; fine-resolution raster overlays → `docs/rasters/<key>/YYYY-MM.png`.

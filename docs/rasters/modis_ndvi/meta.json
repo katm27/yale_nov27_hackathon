@@ -14,17 +14,17 @@
  ],
  "vmin": 0.1,
  "vmax": 0.9,
- "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
+ "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
  "colors": [
-  "#d73027",
-  "#fc8d59",
-  "#fee08b",
-  "#ffffbf",
-  "#d9ef8b",
-  "#91cf60",
-  "#1a9850"
+  "#b2182b",
+  "#ef8a62",
+  "#fddbc7",
+  "#ffffff",
+  "#d9f0d3",
+  "#7fbf7b",
+  "#1b7837"
  ],
- "nodata_color": "#bebebe (semi-transparent: cloud-masked / water / no retrieval)",
+ "nodata_color": "black diagonal hatching (no valid data)",
  "native_resolution": "500 m MODIS, rendered from ~1 km (0.01\u00b0) grid",
  "dates": [
   "2018-01",
@@ -150,5 +150,6 @@
   0.7857,
   0.9
  ],
- "recolored": true
+ "recolored": true,
+ "palette": "rwg7"
 }

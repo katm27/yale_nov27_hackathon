@@ -1,0 +1,60 @@
+{
+  "_note": "The variables, layers and charts the app shows. Everything else in docs/data stays available to scripts but is not shown. scripts/pack_for_artifact.py packs only what is listed here.",
+  "variables": [
+    {"category": "climate", "group": "Air & health", "id": "power_aod_550", "label": "Haze from dust and smoke (aerosol optical depth)"},
+    {"category": "climate", "group": "Water & drought", "id": "spei3", "label": "Drought index (SPEI, 3-month)"},
+    {"category": "climate", "group": "Water & drought", "id": "tc_extreme_count", "label": "Extreme-weather months (very wet, dry or hot)"},
+    {"category": "climate", "group": "Water & drought", "id": "precip_mm", "label": "Rainfall (NASA IMERG satellite)"},
+    {"category": "climate", "group": "Water & drought", "id": "tc_soil", "label": "Soil moisture"},
+    {"category": "climate", "group": "Water & drought", "id": "modis_et_monthly_mm", "label": "Evapotranspiration (water given off by land and plants, MODIS)"},
+    {"category": "climate", "group": "Water & drought", "id": "flood_s1_flood_pct", "label": "Flooded area (% of county, radar)"},
+    {"category": "climate", "group": "Water & drought", "id": "sudd_inundation_pct", "label": "Sudd wetland flooded area (% of county)"},
+    {"category": "climate", "group": "Water & drought", "id": "grace_tws_cm", "label": "Total water stored in the ground (GRACE satellites)"},
+    {"category": "climate", "group": "Fire", "id": "viirs_fire_count", "label": "Active fires (VIIRS satellite)"},
+    {"category": "climate", "group": "Temperature", "id": "tair_c", "label": "Air temperature"},
+    {"category": "climate", "group": "Temperature", "id": "modis_lst_day_c", "label": "Ground surface temperature (daytime, MODIS)"},
+    {"category": "climate", "group": "Vegetation & land", "id": "modis_ndvi", "label": "Vegetation greenness (NDVI)"},
+    {"category": "climate", "group": "Vegetation & land", "id": "lulc_built_pct", "label": "Built-up land (% of county)"},
+    {"category": "climate", "group": "Vegetation & land", "id": "lulc_crop_pct", "label": "Cropland (% of county)"},
+    {"category": "climate", "group": "Vegetation & land", "id": "lulc_flooded_veg_pct", "label": "Flooded vegetation / swamp (% of county)"},
+    {"category": "climate", "group": "Vegetation & land", "id": "soil_clay_0_30cm", "label": "Clay in topsoil (% of soil)"},
+    {"category": "climate", "group": "Vegetation & land", "id": "elevation_mean", "label": "Average elevation"},
+    {"category": "human", "group": "Armed conflict (ACLED)", "id": "acled_st_armed_clash_events", "label": "Armed clashes (events, state total)"},
+    {"category": "human", "group": "Armed conflict (ACLED)", "id": "acled_st_air_drone_strikes", "label": "Air and drone strikes (events, state total)"},
+    {"category": "human", "group": "Armed conflict (ACLED)", "id": "acled_civ_fatalities", "label": "Violence against civilians (people killed)"},
+    {"category": "human", "group": "Armed conflict (ACLED)", "id": "acled_st_territory_change_events", "label": "Territory changing hands (events, state total)"},
+    {"category": "human", "group": "Food & livelihoods", "id": "ipc_phase3plus_pct", "label": "Share of people facing crisis-level hunger or worse (IPC 3+)"},
+    {"category": "human", "group": "Food & livelihoods", "id": "wage_casual_labour_usd", "label": "Daily wage for casual labour (US$)"},
+    {"category": "human", "group": "Food & livelihoods", "id": "price_sorghum_local_usd", "label": "Local sorghum price (US$ per kg)"},
+    {"category": "human", "group": "Aid organisations working in the county", "id": "ops_orgs", "label": "All aid organisations"},
+    {"category": "human", "group": "Aid organisations working in the county", "id": "nutrition_partners", "label": "Nutrition organisations"},
+    {"category": "human", "group": "Aid organisations working in the county", "id": "protection_partners", "label": "Protection and GBV organisations"}
+  ],
+  "rasters": {
+    "viirs_fire_count": "viirs_fire",
+    "tc_soil": "tc_soil",
+    "modis_et_monthly_mm": "modis_et_monthly",
+    "flood_s1_flood_pct": "flood_s1",
+    "sudd_inundation_pct": "sudd_inundation",
+    "grace_tws_cm": "grace_tws",
+    "modis_lst_day_c": "modis_lst_day",
+    "modis_ndvi": "modis_ndvi"
+  },
+  "background": [
+    {"key": "water", "label": "Rivers, lakes and flood water (NASA MODIS, monthly)", "rasters": ["water_base_open", "water_base_floodveg"], "on": true},
+    {"key": "soil_moisture", "label": "Soil moisture (monthly grid)", "rasters": ["tc_soil"]},
+    {"key": "soil_type", "label": "Main soil type (by county)", "county_var": "soil_wrb_dominant"},
+    {"key": "cattle", "label": "Cattle density (2015)", "rasters": ["cattle_density"]}
+  ],
+  "points": ["points_crisis_sites", "points_gbv_one_stop_centres", "points_health", "points_insecurity_insight", "points_logcluster_hubs",
+             "points_oil", "points_schools", "polygons_ethnic_groups", "points_unmiss", "points_water_points"],
+  "flow_groups": {
+    "climate": {"label": "Climate: floods and other disasters", "reasons": ["disaster"], "color": "#1f78d1"},
+    "conflict": {"label": "Conflict: fighting, hunger and hardship, Sudan war", "reasons": ["conflict", "food", "sudan_conflict"], "color": "#d7301f"},
+    "other": {"label": "Returns, relocations and other reasons", "reasons": ["return_relocation", "other", "unknown"], "color": "#6b6b6b"}
+  },
+  "national_ids": ["hrp_coverage_year", "hrp_funding_year_usd", "hrp_requirement_year_usd", "usaid_disbursed_month_usd", "usaid_obligated_month_usd",
+    "fts_us_gov_funding_month_usd", "fts_us_gov_funding_year_usd", "fts_us_share_year", "ii_sexual_violence_incidents", "unmiss_budget_fy_usd",
+    "fmr_internal_forced_total", "wps_ipv_pct", "wps_community_safety_pct", "wps_education_years"],
+  "spark_ids": ["et_ind_total", "fts_us_gov_funding_month_usd", "surface_water_pct", "spei3", "soil_wrb_dominant"]
+}
