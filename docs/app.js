@@ -451,7 +451,7 @@
         const pr = f.properties || {};
         const sizeVal = +(pr.deaths_best ?? pr.deaths ?? pr.fatalities ?? 0);
         const r = isEvent ? Math.min(14, 4 + Math.sqrt(sizeVal)) : 5;
-        return L.circleMarker(ll, { radius: r, color: getComputedStyle(document.documentElement).getPropertyValue("--surface").trim() || "#fff", weight: 1.5, fillColor: p._color, fillOpacity: 0.9 });
+        return L.circleMarker(ll, { pane: "points", radius: r, color: getComputedStyle(document.documentElement).getPropertyValue("--surface").trim() || "#fff", weight: 1.5, fillColor: p._color, fillOpacity: 0.9 });
       },
       onEachFeature: (f, l) => {
         const pr = f.properties || {};

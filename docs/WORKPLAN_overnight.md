@@ -8,9 +8,9 @@ Status legend: [ ] todo · [~] in progress · [x] done. Updated by Claude as wor
 - [~] Verified border-crossing points for cross-border flow arrows `data/crosswalks/border_crossings.csv` — agent "crosswalk"
 
 ## 2. Time-dynamic point layers (standard properties `valid_from` / `valid_to`, YYYY-MM)
-- [~] Logistics Cluster CONOPS maps (all dated PDFs) → hubs over time — agent "points-time"
-- [~] UNMISS deployment maps (map 4456 revisions + Geo-PKO) → sites over time — agent "points-time"
-- [~] Other layers: PoC/IDP/refugee sites open/close dates, WFP markets active months, FMR monitoring points active months, oil fields status (incl. 2024 export shutdown), health/schools (snapshot dates) — agent "points-time"
+- [x] Logistics Cluster CONOPS maps (all dated PDFs) → hubs over time — agent "points-time"
+- [x] UNMISS deployment maps (map 4456 revisions + Geo-PKO) → sites over time — agent "points-time"
+- [x] Other layers: PoC/IDP/refugee sites open/close dates, WFP markets active months, FMR monitoring points active months, oil fields status (incl. 2024 export shutdown), health/schools (snapshot dates) — agent "points-time"
 - [x] App: filter every point layer by the time-slider window (valid_from/valid_to, date, year) — lead
 
 ## 3. Methods, sources & confidence guide
