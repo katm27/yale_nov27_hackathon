@@ -297,7 +297,7 @@
   // ---------- legend ----------
   function binLabels(v) {
     const b = binsFor(v), e = b.edges, f = (z) => (isRatio(v) ? `${fmt(2 ** z, 2)}×` : signedOr(z));
-    const signedOr = (z) => (b.centered ? signed(z, 2) : fmt(z, 3));
+    const signedOr = (z) => (b.centered ? signed(z, 2) : fmt(z, 2));
     const rng = (a, c) => (a === c ? null : `${f(a)} to ${f(c)}`);
     if (b.centered) return [`below ${f(e[0])}`, rng(e[0], e[1]), rng(e[1], e[2]), e[3] === 0 ? "no change" : `${f(e[2])} to ${f(e[3])}`, rng(e[3], e[4]), rng(e[4], e[5]), `above ${f(e[5])}`];
     return [`${f(e[0])} or less`, ...[0, 1, 2, 3, 4].map((k) => rng(e[k], e[k + 1])), `above ${f(e[5])}`];
@@ -954,7 +954,7 @@
     $("#time").value = i;
     $("#time-label").textContent = windowLabel(i);
     refreshCounties(); updateRasters(); refreshPoints(); drawFlows(); updateNational(); renderContext();
-    if (state.mode === "trend") renderLegend();
+    renderLegend();
     if (state.selected) renderDetail();
     clearTimeout(state._hashT); state._hashT = setTimeout(writeHash, 400);
   }

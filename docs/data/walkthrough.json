@@ -1,0 +1,100 @@
+{
+  "_note": "Landing-page walkthrough replacing 'Key findings'. Numbers recomputed from docs/data on 15 Nov 2026 (series/*.json, trends.json, flows.json). Lake Victoria levels: Mulangwa et al. 2026, Hydrology and Earth System Sciences 30, 5297-5325, doi:10.5194/hess-30-5297-2026.",
+  "title": "The flood that did not fall as rain: Rubkona and Fangak, 2018-2025",
+  "intro": "Rain over South Sudan has not increased since 2018, yet the land has filled with water. Around Bentiu (Rubkona County) and in Fangak, on the western and northern edges of the Sudd wetland, ground that dried out every year until 2020 has stayed flooded since 2021. Follow these steps to see that change from space, and what came after it on the ground.",
+  "steps": [
+    {
+      "heading": "Pick a measure and read its trend",
+      "text": "Choose 'Total water stored in the ground' with 'Show' set to the seasonally-adjusted trend. Water stored on and under the land rose in all 79 counties, typically by 3.7 cm a year. Counties with a thick dark outline (76 of 79) have a trend that is statistically significant, that is, unlikely to be chance. Rubkona's rise is +3.6 cm a year.",
+      "view": {
+        "var": "grace_tws_cm",
+        "month": "2025-12",
+        "mode": "trend",
+        "county": "SS0609",
+        "flows": false,
+        "flowGroup": "climate",
+        "grid": true
+      }
+    },
+    {
+      "heading": "Rule out the obvious cause: rain",
+      "text": "Switch to rainfall with the same trend view. No county has a significant rainfall trend, and the gauge-blended CHIRPS record shows the same. The water came from upstream: Lake Victoria, which feeds the White Nile, rose above its 1964 record level in 2020, 2021 and 2024, and a 2026 study finds the Sudd's flooded extent tracking those lake peaks 9 to 13 months later.",
+      "view": {
+        "var": "precip_mm",
+        "month": "2025-12",
+        "mode": "trend",
+        "county": "SS0609",
+        "flows": false,
+        "flowGroup": "climate",
+        "grid": false
+      }
+    },
+    {
+      "heading": "Move the time slider: the dry season stopped being dry",
+      "text": "Choose 'Sudd wetland flooded area', set 'Show' to values in original units, and drag the slider to March, the height of the dry season. In March 2018, 2019 and 2020, almost none of Rubkona was under water (under 0.1%). In March 2022 it was 48.5%, and in March 2023 57.4%. Step through the years to watch the water arrive in 2021 and stay.",
+      "view": {
+        "var": "sudd_inundation_pct",
+        "month": "2022-03",
+        "mode": "raw",
+        "county": "SS0609",
+        "flows": false,
+        "flowGroup": "climate",
+        "grid": true
+      }
+    },
+    {
+      "heading": "Hover and click a county: what the water changed",
+      "text": "Switch to 'Daytime ground surface temperature', hover over Rubkona and click it to open its charts. In March 2018 the ground there reached 42.9 °C by day; in March 2022, with half the county under water, it was 30.2 °C, and its cooling trend (−0.74 °C a year) is significant. The grassland that used to burn each dry season went under too: satellites counted 4,105 fires in Rubkona in 2018 and 387 in 2022, and in Fangak 11,197 in 2018 and 94 in 2021.",
+      "view": {
+        "var": "modis_lst_day_c",
+        "month": "2022-03",
+        "mode": "raw",
+        "county": "SS0609",
+        "flows": false,
+        "flowGroup": "climate",
+        "grid": true
+      }
+    },
+    {
+      "heading": "Turn on migration arrows: people moving away from the water",
+      "text": "Choose the radar flooded-area map, set the slider to August 2022 and turn on the migration arrows for 'Climate: floods and other disasters'. The thickest arrow runs from Fangak to Ayod: 14,000 people displaced by floods that month. Fangak is the county where IOM recorded the most flood displacements in 2020-2025, about 174,000. Arrows only show moves between counties: of Rubkona's roughly 47,500 flood displacements in 2021-2022, only 330 appear as moves to another county, while Rubkona itself received about 4,300 people fleeing floods elsewhere in 2022.",
+      "view": {
+        "var": "flood_s1_flood_pct",
+        "month": "2022-08",
+        "mode": "raw",
+        "county": "SS0306",
+        "flows": true,
+        "flowGroup": "climate",
+        "grid": false
+      }
+    },
+    {
+      "heading": "Compare with hunger",
+      "text": "Choose 'Share of people facing hunger (IPC 3+)'. In October 2022, 80% of people in both Rubkona and Fangak faced crisis-level hunger or worse; in Fangak that is up from 60-70% in every analysis from 2018 to 2020. In each of the 10 IPC analyses since 2018, the 16 Sudd counties averaged 12 to 21 percentage points more people in crisis than the rest of the country.",
+      "view": {
+        "var": "ipc_phase3plus_pct",
+        "month": "2022-10",
+        "mode": "raw",
+        "county": "SS0306",
+        "flows": false,
+        "flowGroup": "all",
+        "grid": false
+      }
+    },
+    {
+      "heading": "Open the national trends: the water kept rising as aid fell",
+      "text": "Click 'See national trends in aid and socioeconomic outcomes' at the top of the left panel. In 2025, water storage averaged +16.2 cm above normal across the country, the highest yearly average since 2018, and IOM recorded about 242,000 flood displacements. In the same year the UN appeal received 46% of what it asked for (US$787 million of US$1.70 billion), and US humanitarian funding fell from US$708 million in 2024 to US$282 million. In Fangak, 80% of people were again in crisis-level hunger by September 2025.",
+      "view": {
+        "var": "grace_tws_cm",
+        "month": "2025-10",
+        "mode": "raw",
+        "county": "SS0306",
+        "flows": false,
+        "flowGroup": "all",
+        "grid": true,
+        "national": true
+      }
+    }
+  ],
+  "caveat": "These are patterns in the data, not proof of cause: hunger, displacement and violence in the Sudd also have political and economic causes. GRACE sees about 300 km at a time, so read it regionally. The radar flood map counts only water beyond each place's normal dry-season state, so ground that stays flooded all year (much of Rubkona since 2021) looks nearly dry there; use the Sudd wetland map for that. NASA IMERG rainfall over Rubkona rises sharply after 2021 (873 mm in 2018, 2,629 mm in 2023) while CHIRPS shows no rise (900 mm and 809 mm), which suggests the satellite is misreading standing water as rain. IOM counts displacement movements, so one person can be counted more than once. The Sudd map has no data for July-November 2025."
+}

@@ -151,8 +151,8 @@ def main():
 
     url = "https://data.humdata.org/dataset/south-sudan-acute-food-insecurity-country-data"
     note = ("Current-period IPC figures placed at the first month of the analysis period "
-            "(2018-01, 2018-09, 2019-01, 2019-08, 2020-01, 2020-10, 2022-02, 2022-10, 2023-09, 2024-09, 2025-09); "
-            "no county analysis published for 2021 in these sources. 2018-2020 from IPC global country file.")
+            "(2018-01, 2018-09, 2019-01, 2019-08, 2020-01, 2022-02, 2022-10, 2023-09, 2024-09, 2025-09); "
+            "no county analysis between 2020-01 and 2022-02 in these sources. 2018-2020 from IPC global country file.")
     c = dict(source="IPC (Integrated Food Security Phase Classification) via HDX", source_url=url,
              native_resolution="county (IPC analysis area)", temporal="irregular (per IPC analysis)",
              group="Food security", higher_is="worse", notes=note)

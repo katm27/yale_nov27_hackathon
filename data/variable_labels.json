@@ -1490,7 +1490,7 @@
   "method": "GFZ GravIS COST-G combined GRACE/GRACE-FO Level-3 terrestrial water storage anomaly.",
   "direction": "wetter_drier",
   "topic": "Water & floods",
-  "caution": "About 300 km resolution: read regionally, not county by county. No data Jan-May 2018. Sudd highs mostly reflect flood water.",
+  "caution": "About 300 km resolution: read regionally, not county by county. No data Jan-May and Aug-Sep 2018. Sudd highs mostly reflect flood water.",
   "synonyms": [
    "water",
    "surface water",
@@ -3320,7 +3320,7 @@
   "method": "IPC (Integrated Food Security Phase Classification) via HDX; county = sum of analysis areas; placed at first month of each analysis.",
   "direction": "better_worse",
   "topic": "Food & prices",
-  "caution": "Only 11 analyses (none in 2021); values hold between analyses. Compare analyses, not months.",
+  "caution": "Only 10 analyses (none between January 2020 and February 2022); values hold between analyses. Compare analyses, not months.",
   "synonyms": [
    "hunger",
    "food insecurity",
@@ -3335,7 +3335,7 @@
   "method": "IPC (Integrated Food Security Phase Classification) via HDX; county = sum of analysis areas; placed at first month of each analysis.",
   "direction": "better_worse",
   "topic": "Food & prices",
-  "caution": "Only 11 analyses (none in 2021); values hold between analyses. Compare analyses, not months.",
+  "caution": "Only 10 analyses (none between January 2020 and February 2022); values hold between analyses. Compare analyses, not months.",
   "synonyms": [
    "hunger",
    "food insecurity",
@@ -3351,7 +3351,7 @@
   "method": "IPC (Integrated Food Security Phase Classification) via HDX; county = sum of analysis areas; placed at first month of each analysis. Phase 3+ population / population analysed.",
   "direction": "better_worse",
   "topic": "Food & prices",
-  "caution": "Only 11 analyses (none in 2021); values hold between analyses. Compare analyses, not months.",
+  "caution": "Only 10 analyses (none between January 2020 and February 2022); values hold between analyses. Compare analyses, not months.",
   "synonyms": [
    "hunger",
    "food insecurity",

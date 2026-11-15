@@ -3140,7 +3140,7 @@
    "method": "TerraClimate one-layer water-balance model, plant-extractable soil water.",
    "direction": "wetter_drier",
    "topic": "Drought & rainfall",
-   "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought. Use it for patterns, not totals.",
+   "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought.",
    "synonyms": [
     "drought",
     "dry",
@@ -4832,14 +4832,14 @@
    "trend_moran_I": 0.149,
    "trend_moran_p": 0.018,
    "regional": {
-    "national": {
+    "sudd": {
      "S": 2321.0,
      "p": 0.001,
      "n": 16,
      "median_pct": null,
      "median_slope": 2.0
     },
-    "sudd": {
+    "national": {
      "S": 2321.0,
      "p": 0.001,
      "n": 16,
@@ -4889,14 +4889,14 @@
    "trend_moran_I": 0.229,
    "trend_moran_p": 0.01,
    "regional": {
-    "national": {
+    "sudd": {
      "S": -230.0,
      "p": 0.151,
      "n": 16,
      "median_pct": null,
      "median_slope": -0.0788
     },
-    "sudd": {
+    "national": {
      "S": -230.0,
      "p": 0.151,
      "n": 16,
@@ -4948,14 +4948,14 @@
    "trend_moran_I": 0.0756,
    "trend_moran_p": 0.185,
    "regional": {
-    "sudd": {
+    "national": {
      "S": -14.0,
      "p": 0.964,
      "n": 16,
      "median_pct": null,
      "median_slope": 0.0152
     },
-    "national": {
+    "sudd": {
      "S": -14.0,
      "p": 0.964,
      "n": 16,
@@ -5184,14 +5184,14 @@
    "trend_moran_I": 0.085,
    "trend_moran_p": 0.199,
    "regional": {
-    "sudd": {
+    "national": {
      "S": 2229.0,
      "p": 0.003,
      "n": 16,
      "median_pct": null,
      "median_slope": 1.23
     },
-    "national": {
+    "sudd": {
      "S": 2229.0,
      "p": 0.003,
      "n": 16,
@@ -5245,14 +5245,14 @@
    "trend_moran_I": -0.0063,
    "trend_moran_p": 0.08,
    "regional": {
-    "sudd": {
+    "national": {
      "S": 2230.0,
      "p": 0.003,
      "n": 16,
      "median_pct": 72.9,
      "median_slope": 67.0
     },
-    "national": {
+    "sudd": {
      "S": 2230.0,
      "p": 0.003,
      "n": 16,
@@ -5527,7 +5527,7 @@
    "method": "TerraClimate actual evapotranspiration (water-balance model).",
    "direction": "more_less",
    "topic": "Drought & rainfall",
-   "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought. Use it for patterns, not totals.",
+   "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought.",
    "synonyms": [
     "evaporation",
     "evapotranspiration",
@@ -5610,6 +5610,53 @@
      "n": 79,
      "median_pct": null,
      "median_slope": 3.0
+    }
+   }
+  },
+  {
+   "id": "gracedm_gws_pctl",
+   "label": "Groundwater drought indicator (NASA GRACE data assimilation)",
+   "category": "environment",
+   "group": "Water storage & groundwater (GRACE)",
+   "units": "percentile (0-100)",
+   "source": "NASA GSFC / NDMC GRACE-based global drought indicators (GRACEDADM_CLSM025_GL_7D, gws_inst): Catchment land surface model with GRACE/GRACE-FO data assimilation",
+   "source_url": "https://nasagrace.unl.edu/GlobalData.aspx",
+   "native_resolution": "0.25\u00b0 (~28 km) model grid; GRACE information it assimilates is ~300 km",
+   "temporal": "monthly",
+   "aggregation": "per-pixel mean of the weekly percentiles dated in the month, then mean of ~1 km cells inside the county",
+   "higher_is": "better",
+   "index_ok": false,
+   "raster": "gracedm_gws",
+   "notes": "Groundwater only. Each week the model's groundwater storage is ranked against its own long-term record for the same time of year: 50 = normal, below 20 = unusually dry (drought), above 80 = unusually wet. It is a ranking, not an amount of water, so compare counties by how far they are from 50, not as cm. In South Sudan the values sit low for the whole period (national mean ~4 in 2018, ~20-36 in 2020-2025), i.e. the model places 2018-2025 groundwater below its long-term norm; read the change over time and differences between counties rather than the absolute level. Same NASA system as GLDAS-2.2 CLSM GRACE-DA; the GRACE signal it assimilates is ~300 km wide, so neighbouring counties move together. No data for 2025-10 (weekly updates paused Oct-Nov 2025). Less conclusive in and around the Sudd wetland, where flood water on the surface can be mistaken for groundwater.",
+   "meta_file": "gracedm.json",
+   "baseline_year": 2018,
+   "first_period": "2018-01",
+   "last_period": "2025-12",
+   "counties_with_data": 79,
+   "months_observed": 95,
+   "carry_forward_months": 0,
+   "p02": 0.19,
+   "p98": 92.33,
+   "min": 0.06,
+   "max": 100.0,
+   "direction": "wetter_drier",
+   "trend_basis": "vs_base_month",
+   "trend_moran_I": 0.706,
+   "trend_moran_p": 0.001,
+   "regional": {
+    "sudd": {
+     "S": 3322.0,
+     "p": 0.003,
+     "n": 16,
+     "median_pct": null,
+     "median_slope": 2.42
+    },
+    "national": {
+     "S": 12510.0,
+     "p": 0.007,
+     "n": 79,
+     "median_pct": null,
+     "median_slope": 2.38
     }
    }
   },
@@ -5699,7 +5746,7 @@
    "method": "GFZ GravIS COST-G combined GRACE/GRACE-FO Level-3 terrestrial water storage anomaly.",
    "direction": "wetter_drier",
    "topic": "Water & floods",
-   "caution": "About 300 km resolution: read regionally, not county by county. No data Jan-May 2018. Sudd highs mostly reflect flood water.",
+   "caution": "About 300 km resolution: read regionally, not county by county. No data Jan-May and Aug-Sep 2018. Sudd highs mostly reflect flood water.",
    "synonyms": [
     "water",
     "surface water",
@@ -11476,7 +11523,7 @@
    "method": "IPC (Integrated Food Security Phase Classification) via HDX; county = sum of analysis areas; placed at first month of each analysis.",
    "direction": "better_worse",
    "topic": "Food & prices",
-   "caution": "Only 11 analyses (none in 2021); values hold between analyses. Compare analyses, not months.",
+   "caution": "Only 10 analyses (none between January 2020 and February 2022); values hold between analyses. Compare analyses, not months.",
    "synonyms": [
     "hunger",
     "food insecurity",
@@ -11534,7 +11581,7 @@
    "method": "IPC (Integrated Food Security Phase Classification) via HDX; county = sum of analysis areas; placed at first month of each analysis.",
    "direction": "better_worse",
    "topic": "Food & prices",
-   "caution": "Only 11 analyses (none in 2021); values hold between analyses. Compare analyses, not months.",
+   "caution": "Only 10 analyses (none between January 2020 and February 2022); values hold between analyses. Compare analyses, not months.",
    "synonyms": [
     "hunger",
     "food insecurity",
@@ -11593,7 +11640,7 @@
    "method": "IPC (Integrated Food Security Phase Classification) via HDX; county = sum of analysis areas; placed at first month of each analysis. Phase 3+ population / population analysed.",
    "direction": "better_worse",
    "topic": "Food & prices",
-   "caution": "Only 11 analyses (none in 2021); values hold between analyses. Compare analyses, not months.",
+   "caution": "Only 10 analyses (none between January 2020 and February 2022); values hold between analyses. Compare analyses, not months.",
    "synonyms": [
     "hunger",
     "food insecurity",
