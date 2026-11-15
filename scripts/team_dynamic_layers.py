@@ -393,36 +393,16 @@ def pipelines():
 
 # ------------------------------------------------------------------------------------------------- ethnic
 def ethnic():
-    cur = read_fc("polygons_ethnic_groups.geojson")["features"]
-    links = {f["properties"]["group"]: f["properties"].get("linked_rebel_orgs")
-             for f in zjson("ethnic_groups_geoepr_2018_2021.geojson")["features"]}
-    out, seen = [], set()
-    for f in cur:
-        p = f["properties"]
-        if p["group"] in seen:
-            continue
-        seen.add(p["group"])
-        power = p.get("epr_power_status") or p["status"]
-        base = {k: v for k, v in p.items() if k not in ("status", "valid_from", "valid_to", "date_basis", "evidence",
-                                                         "epr_power_status", "linked_rebel_orgs")}
-        lab = power.lower()
-        for vf, vt, st, ev, basis in [
-            (None, "2021-12", lab, f"EPR 2021 codes the {p['group']} as {lab} for 2011-2021",
-             "GeoEPR / EPR period 2011-2021"),
-            ("2022-01", None, f"{lab} (carried forward, not coded after 2021)",
-             "EPR ends in 2021; settlement area and power status shown unchanged, not re-coded",
-             "carried forward: no EPR coding after 2021")]:
-            q = {"name": p["group"], "group": p["group"], "status": st, "valid_from": vf, "valid_to": vt,
-                 "evidence": ev, "date_basis": basis, "epr_power_status": power,
-                 "linked_rebel_orgs": links.get(p["group"])}
-            q.update({k: v for k, v in base.items() if k not in q})
-            out.append(feat(f["geometry"], q))
-    write_fc("polygons_ethnic_groups.geojson", out, precision=4)
-    return "polygons_ethnic_groups.geojson", "group"
+    """Rebuilt by scripts/ethnic_groups_temporal.py (EPR-2023 / GeoEPR-2023: status per year, coded to 2023,
+    2024-2025 carried forward and labelled; plain-language popup fields)."""
+    import ethnic_groups_temporal as egt
+    feats, last = egt.build()
+    egt.write_meta(feats, last)
+    return "polygons_ethnic_groups.geojson", "name"
 
 
-_POWER = ["senior partner", "junior partner", "powerless", "discriminated"]
-ETHNIC_ORDER = _POWER + [f"{x} (carried forward, not coded after 2021)" for x in _POWER]
+import ethnic_groups_temporal as _egt  # noqa: E402
+ETHNIC_ORDER = _egt.status_order(2023)
 
 
 # --------------------------------------------------------------------------------------------- new layers
@@ -627,9 +607,7 @@ PLAIN = {
     "pipelines": dict(label="Oil pipelines (flow status)", order=OIL_ORDER,
                       notes="Mapped oil pipelines coloured by the documented status of the oil block they serve; "
                             "proposed routes are shown but were never built."),
-    "ethnic_groups": dict(label="Ethnic group areas (GeoEPR)", order=None,
-                          notes="Settlement areas and political power status of ten major ethnic groups as coded up to "
-                                "2021; areas shown after 2021 are carried forward, not re-coded."),
+    "ethnic_groups": dict(label=_egt.LABEL, order=ETHNIC_ORDER, notes=_egt.NOTES.format(last=2023)),
     "gbv_one_stop_centres": dict(label="GBV one-stop centres", order=["operating (documented)", "presumed operating (last confirmed early 2023)"],
                                  notes="Centres offering medical, psychosocial, legal and police help to survivors of "
                                        "sexual and gender-based violence, shown from the first evidence they were "
@@ -681,15 +659,15 @@ NEW_META = {
     "surface_water_quality": dict(category="environment", temporal="monthly",
                                   source="NASA HLS v2 (2020-2025) and Sentinel-2 L2A (2018-2019) via Microsoft Planetary Computer; team analysis (Nov 2026)",
                                   source_url="https://www.earthdata.nasa.gov/data/projects/hls"),
-    "ethnic_groups": dict(category="human", temporal="periods", source="GeoEPR 2021 / EPR 2021 / ACD2EPR 2021 (ETH Zurich ICR)",
-                          source_url="https://icr.ethz.ch/data/epr/geoepr/"),
+    "ethnic_groups": dict(category="human", temporal="periods", source="EPR-2023 / GeoEPR-2023 (ETH Zurich ICR); ACD2EPR-2021",
+                          source_url=_egt.EPR_PAGE),
 }
 DETAILS = {
     "health": "Status periods from MoH Apr 2016 list, IOM DTM village assessment Aug 2019-Mar 2020 (7 counties), MoH 2023 master list and WHO MFL Mar 2024, matched by name and distance; 'new since 2016' facilities start at the first list that has them (opened between Apr 2016 and that list); facilities dropped by 2023 are 'unconfirmed' to Dec 2023; Ulang (closed 14 Apr 2025) and Old Fangak (bombed 3 May 2025) documented. 461 matched facilities lack coordinates and are not mapped. About 11.5% of 'new since 2016' sit within 300 m of a 2016 facility (likely renamed). Aggregate 2022 and 2025 aid-cut closures are timeline events. Superseded the WHO-MFL snapshot layer (all its points are included).",
     "schools": "SSSAMS 2015 list (coordinates) + SSSAMS 29 Oct 2019 enrolment export (joined on school code) + IOM DTM Aug 2019-Mar 2020 (392 DTM-only points, a few may duplicate SSSAMS); national COVID-19 closure 2020-03..2021-04; base status carried forward from 2021-05 (flagged 'presumed'). 2015 managed/enrolment-by-sex kept from the old layer. OpenStreetMap schools > 300 m from any SSSAMS/DTM school kept as undated. Heatwave closures (Mar 2024, Feb-Mar 2025) and flood closures are timeline events, not per-school periods.",
     "oil": "GEM GOGET field points (attributes kept; GEM status in gem_status) with production periods reconciled to the team block timeline; 102 OSM wells (HOT Raw Data API, Nov 2026) replace the 93 undated OSM wells and get their block's status periods: Blocks 3&7 operating -> halted 2024-02..2024-12 -> resumed 2025-01; Blocks 1,2&4 shut -> partial 2018-08 (Toma South) -> operating 2019-01 -> disrupted 2025-12 (Heglig seized 8 Dec 2025); Block 5A shut -> operating 2021-06 -> disrupted 2025-12. Block assignment by location (east of 31E = 3&7; Guit/Koch/Leer/Mayendit/Panyijiar = 5A). Block-level status, not well-by-well. Gas-flare satellite check (MODIS) was inconclusive and is not used.",
     "pipelines": "Overture/OSM pipeline lines and GEM GOIT routes; status periods follow the oil block of each line (location rule as for wells; Greater Nile follows Blocks 1,2&4). The team's 169 OSM field-line segments all lie on these lines.",
-    "ethnic_groups": "GeoEPR-2021 polygons clipped to South Sudan; EPR power status for 2011-2021; ACD2EPR links to rebel organisations. 2022-2025 features carry the same geometry/status, flagged as carried forward.",
+    "ethnic_groups": _egt.DETAILS,
     "gbv_one_stop_centres": "13 one-stop centres + Bentiu safe house; valid_from = first evidence of operation (year-only evidence -> end of that year); documented through Q1 2023 (UNFPA newsletter: 13 OSCs), presumed operating afterwards, a period that includes the 2025 funding cuts. No dated point data exist for women and girls' friendly spaces or protection desks.",
     "oil_pollution": "Spills on the Unity-Heglig export pipeline ~24 Aug 2019 (~2 million L) and ~28 Oct 2019 (~4 million L), GPS from Sign of Hope; after repair shown as spill site (removal not documented). Reports: flooded Block 2 wells (PAX 2023: 159 wells ~41% submerged; New Lines/Placemark 2026: 50+ of ~400 Unity wells underwater) placed at the Unity field; Kenyatta University river samples near Bentiu/Rotriak (lead up to 18 ug/L, hydrocarbons >5x limits; sampling dates unpublished) placed at Rotriak. Feb 2024 Petrodar spill is in Sudan -> timeline only.",
     "oil_wells_flooding": "Share of Sentinel-1 VV pixels below -15 dB in a 100-500 m ring around each of 102 OSM wells, monthly median; flagged when >= 25%. Undercounts flooded vegetation; near-zero 2021 likely an artefact (also Sentinel-1B loss Dec 2021). OSM maps ~100 of ~400 Unity wells.",

@@ -1,0 +1,272 @@
+name,type,valid_from,valid_to,county_id,people_affected,people_displaced,source_url
+Flood alert 2018-05 - Bor South,flood,2018-05,2018-05,SS0303,,,https://www.gdacs.org/report.aspx?eventid=1000195&episodeid=1&eventtype=FL
+Drought 2018 - Budi,drought (crop and pasture stress),2018-10,2018-12,SS0201,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Ibba,drought (crop and pasture stress),2018-10,2018-12,SS1002,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Ikotos,drought (crop and pasture stress),2018-10,2018-12,SS0202,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Juba,drought (crop and pasture stress),2018-10,2018-12,SS0101,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Kajo-keji,drought (crop and pasture stress),2018-10,2018-12,SS0102,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Kapoeta South,drought (crop and pasture stress),2018-10,2018-12,SS0205,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Lafon,drought (crop and pasture stress),2018-10,2018-12,SS0206,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Lainya,drought (crop and pasture stress),2018-10,2018-12,SS0103,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Magwi,drought (crop and pasture stress),2018-10,2018-12,SS0207,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Maridi,drought (crop and pasture stress),2018-10,2018-12,SS1003,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Morobo,drought (crop and pasture stress),2018-10,2018-12,SS0104,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Mundri East,drought (crop and pasture stress),2018-10,2018-12,SS1004,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Mundri West,drought (crop and pasture stress),2018-10,2018-12,SS1005,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Mvolo,drought (crop and pasture stress),2018-10,2018-12,SS1006,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Nzara,drought (crop and pasture stress),2018-10,2018-12,SS1008,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Torit,drought (crop and pasture stress),2018-10,2018-12,SS0208,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Yambio,drought (crop and pasture stress),2018-10,2018-12,SS1010,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Drought 2018 - Yei,drought (crop and pasture stress),2018-10,2018-12,SS0106,,,https://www.gdacs.org/report.aspx?eventid=1012703&episodeid=4&eventtype=DR
+Floods June 2019 - Northern Bahr el Ghazal,flood,2019-06,2019-06,,,46680.0,https://go.ifrc.org/emergencies/3611
+Floods 2019 - Abiemnhom,flood,2019-07,2019-12,SS0601,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Akobo,flood,2019-07,2019-12,SS0301,,40000.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Aweil Centre,flood,2019-07,2019-12,SS0501,,29000.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Aweil North,flood,2019-07,2019-12,SS0503,,27102.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Ayod,flood,2019-07,2019-12,SS0302,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Bor South,flood,2019-07,2019-12,SS0303,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Budi,flood,2019-07,2019-12,SS0201,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Duk,flood,2019-07,2019-12,SS0305,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Gogrial East,flood,2019-07,2019-12,SS0801,,30985.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Gogrial West,flood,2019-07,2019-12,SS0802,,97468.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Juba,flood,2019-07,2019-12,SS0101,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Kapoeta East,flood,2019-07,2019-12,SS0203,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Kapoeta North,flood,2019-07,2019-12,SS0204,,1080.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Kapoeta South,flood,2019-07,2019-12,SS0205,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Lafon,flood,2019-07,2019-12,SS0206,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Longochuk,flood,2019-07,2019-12,SS0703,,7000.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Luakpiny/Nasir,flood,2019-07,2019-12,SS0704,,12000.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Maban,flood,2019-07,2019-12,SS0705,200000.0,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Maiwut,flood,2019-07,2019-12,SS0706,,5600.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Mayendit,flood,2019-07,2019-12,SS0605,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Mayom,flood,2019-07,2019-12,SS0606,,31520.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Nyirol,flood,2019-07,2019-12,SS0307,,4064.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Pibor,flood,2019-07,2019-12,SS0308,,19080.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Pochalla,flood,2019-07,2019-12,SS0309,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Rumbek North,flood,2019-07,2019-12,SS0405,,45350.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Tonj East,flood,2019-07,2019-12,SS0803,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Tonj North,flood,2019-07,2019-12,SS0804,,99133.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Tonj South,flood,2019-07,2019-12,SS0805,,13000.0,https://reliefweb.int/disaster/fl-2019-000062-ssd
+Floods 2019 - Torit,flood,2019-07,2019-12,SS0208,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Twic,flood,2019-07,2019-12,SS0806,,98354.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Twic East,flood,2019-07,2019-12,SS0310,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Ulang,flood,2019-07,2019-12,SS0712,,25000.0,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2019 - Uror,flood,2019-07,2019-12,SS0311,,,https://reliefweb.int/report/south-sudan/south-sudan-seasonal-flooding-update-3-05-november-2019
+Floods 2020 - Aweil West,flood,2020-07,2021-01,SS0505,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Awerial,flood,2020-07,2021-01,SS0401,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Ayod,flood,2020-07,2021-01,SS0302,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Bor South,flood,2020-07,2021-01,SS0303,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Canal/Pigi,flood,2020-07,2021-01,SS0304,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Cueibet,flood,2020-07,2021-01,SS0402,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Duk,flood,2020-07,2021-01,SS0305,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Fangak,flood,2020-07,2021-01,SS0306,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Fashoda,flood,2020-07,2021-01,SS0702,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Gogrial East,flood,2020-07,2021-01,SS0801,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Ibba,flood,2020-07,2021-01,SS1002,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Juba,flood,2020-07,2021-01,SS0101,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Koch,flood,2020-07,2021-01,SS0603,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Leer,flood,2020-07,2021-01,SS0604,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Longochuk,flood,2020-07,2021-01,SS0703,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Luakpiny/Nasir,flood,2020-07,2021-01,SS0704,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Maiwut,flood,2020-07,2021-01,SS0706,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Maridi,flood,2020-07,2021-01,SS1003,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Mayendit,flood,2020-07,2021-01,SS0605,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Mayom,flood,2020-07,2021-01,SS0606,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Mundri East,flood,2020-07,2021-01,SS1004,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Mundri West,flood,2020-07,2021-01,SS1005,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Nyirol,flood,2020-07,2021-01,SS0307,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Panyijiar,flood,2020-07,2021-01,SS0607,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Panyikang,flood,2020-07,2021-01,SS0710,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Pariang,flood,2020-07,2021-01,SS0608,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Pibor,flood,2020-07,2021-01,SS0308,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Pochalla,flood,2020-07,2021-01,SS0309,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Renk,flood,2020-07,2021-01,SS0711,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Rumbek Centre,flood,2020-07,2021-01,SS0403,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Rumbek East,flood,2020-07,2021-01,SS0404,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Terekeka,flood,2020-07,2021-01,SS0105,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Tonj East,flood,2020-07,2021-01,SS0803,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Tonj South,flood,2020-07,2021-01,SS0805,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Twic East,flood,2020-07,2021-01,SS0310,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Uror,flood,2020-07,2021-01,SS0311,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Wulu,flood,2020-07,2021-01,SS0406,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Yirol East,flood,2020-07,2021-01,SS0407,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2020 - Yirol West,flood,2020-07,2021-01,SS0408,,,https://reliefweb.int/report/south-sudan/south-sudan-flooding-snapshot-21-october-2020
+Floods 2021 - Ayod,flood,2021-04,2021-12,SS0302,55000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Akobo,flood,2021-05,2021-12,SS0301,13986.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Cueibet,flood,2021-05,2021-12,SS0402,33000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Duk,flood,2021-05,2021-12,SS0305,35000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Fangak,flood,2021-05,2021-12,SS0306,73191.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Guit,flood,2021-05,2021-12,SS0602,8000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Juba,flood,2021-05,2021-12,SS0101,10000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Koch,flood,2021-05,2021-12,SS0603,2898.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Leer,flood,2021-05,2021-12,SS0604,41000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Mayom,flood,2021-05,2021-12,SS0606,60000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Panyijiar,flood,2021-05,2021-12,SS0607,44836.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Panyikang,flood,2021-05,2021-12,SS0710,31000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Rubkona,flood,2021-05,2021-12,SS0609,32648.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Rumbek East,flood,2021-05,2021-12,SS0404,15000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Twic East,flood,2021-05,2021-12,SS0310,58069.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Drought 2021 - Aweil Centre,drought (crop and pasture stress),2021-07,2021-11,SS0501,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Drought 2021 - Aweil South,drought (crop and pasture stress),2021-07,2021-11,SS0504,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Drought 2021 - Aweil West,drought (crop and pasture stress),2021-07,2021-11,SS0505,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Drought 2021 - Gogrial East,drought (crop and pasture stress),2021-07,2021-11,SS0801,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Drought 2021 - Gogrial West,drought (crop and pasture stress),2021-07,2021-11,SS0802,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Drought 2021 - Jur River,drought (crop and pasture stress),2021-07,2021-11,SS0901,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Drought 2021 - Tonj North,drought (crop and pasture stress),2021-07,2021-11,SS0804,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Drought 2021 - Wau,drought (crop and pasture stress),2021-07,2021-11,SS0903,,,https://www.gdacs.org/report.aspx?eventid=1015040&episodeid=4&eventtype=DR
+Floods 2021 - Aweil South,flood,2021-07,2021-12,SS0504,23000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Gogrial West,flood,2021-07,2021-12,SS0802,13000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Maiwut,flood,2021-07,2021-12,SS0706,18000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Malakal,flood,2021-07,2021-12,SS0707,5000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Mayendit,flood,2021-07,2021-12,SS0605,31000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Renk,flood,2021-07,2021-12,SS0711,8000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Tonj East,flood,2021-07,2021-12,SS0803,10000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Aweil Centre,flood,2021-08,2021-12,SS0501,1800.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Canal/Pigi,flood,2021-08,2021-12,SS0304,35462.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Luakpiny/Nasir,flood,2021-08,2021-12,SS0704,20000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Bor South,flood,2021-09,2021-12,SS0303,42051.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Fashoda,flood,2021-09,2021-12,SS0702,13476.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Jur River,flood,2021-09,2021-12,SS0901,10000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Longochuk,flood,2021-09,2021-12,SS0703,31000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Rumbek North,flood,2021-09,2021-12,SS0405,12000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Aweil East,flood,2021-10,2021-12,SS0502,40000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Melut,flood,2021-10,2021-12,SS0709,14872.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2021 - Yirol East,flood,2021-10,2021-12,SS0407,1398.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Akobo,flood,2022-07,2022-12,SS0301,18972.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Aweil Centre,flood,2022-07,2022-12,SS0501,45288.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Aweil East,flood,2022-07,2022-12,SS0502,135030.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Aweil North,flood,2022-07,2022-12,SS0503,14041.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Aweil South,flood,2022-07,2022-12,SS0504,45246.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Aweil West,flood,2022-07,2022-12,SS0505,12158.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Awerial,flood,2022-07,2022-12,SS0401,24205.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Baliet,flood,2022-07,2022-12,SS0701,13152.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Cueibet,flood,2022-07,2022-12,SS0402,68988.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Ezo,flood,2022-07,2022-12,SS1001,600.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Fangak,flood,2022-07,2022-12,SS0306,17669.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Fashoda,flood,2022-07,2022-12,SS0702,35568.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Gogrial East,flood,2022-07,2022-12,SS0801,46583.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Gogrial West,flood,2022-07,2022-12,SS0802,71821.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Ibba,flood,2022-07,2022-12,SS1002,7524.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Jur River,flood,2022-07,2022-12,SS0901,8767.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Lafon,flood,2022-07,2022-12,SS0206,2951.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Leer,flood,2022-07,2022-12,SS0604,48295.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Luakpiny/Nasir,flood,2022-07,2022-12,SS0704,17325.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Maban,flood,2022-07,2022-12,SS0705,31452.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Magwi,flood,2022-07,2022-12,SS0207,3437.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Manyo,flood,2022-07,2022-12,SS0708,24540.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Mayendit,flood,2022-07,2022-12,SS0605,17004.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Mayom,flood,2022-07,2022-12,SS0606,44162.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Mundri East,flood,2022-07,2022-12,SS1004,29946.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Mundri West,flood,2022-07,2022-12,SS1005,41374.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Mvolo,flood,2022-07,2022-12,SS1006,31959.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Nyirol,flood,2022-07,2022-12,SS0307,8832.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Panyijiar,flood,2022-07,2022-12,SS0607,6420.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Pochalla,flood,2022-07,2022-12,SS0309,31326.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Renk,flood,2022-07,2022-12,SS0711,18070.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Rubkona,flood,2022-07,2022-12,SS0609,52247.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Tonj East,flood,2022-07,2022-12,SS0803,31785.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Tonj North,flood,2022-07,2022-12,SS0804,12207.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Tonj South,flood,2022-07,2022-12,SS0805,16693.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Torit,flood,2022-07,2022-12,SS0208,2012.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Twic,flood,2022-07,2022-12,SS0806,29044.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Ulang,flood,2022-07,2022-12,SS0712,13329.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2022 - Uror,flood,2022-07,2022-12,SS0311,9582.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Heatwave March 2024 - nationwide school closure,heatwave,2024-03,2024-04,,,,https://radiotamazuj.org/en/news/article/south-sudan-suspends-schools-due-to-extreme-heatwave
+Floods 2024 - Abyei,flood,2024-07,2024-12,SS0001,24468.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Akobo,flood,2024-07,2024-12,SS0301,97730.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Aweil Centre,flood,2024-07,2024-12,SS0501,48864.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Aweil East,flood,2024-07,2024-12,SS0502,91128.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Aweil North,flood,2024-07,2024-12,SS0503,30846.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Aweil South,flood,2024-07,2024-12,SS0504,85302.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Aweil West,flood,2024-07,2024-12,SS0505,30168.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Ayod,flood,2024-07,2024-12,SS0302,26700.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Bor South,flood,2024-07,2024-12,SS0303,2946.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Canal/Pigi,flood,2024-07,2024-12,SS0304,39971.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Cueibet,flood,2024-07,2024-12,SS0402,52395.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Duk,flood,2024-07,2024-12,SS0305,16771.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Fangak,flood,2024-07,2024-12,SS0306,154005.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Fashoda,flood,2024-07,2024-12,SS0702,2620.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Gogrial East,flood,2024-07,2024-12,SS0801,25218.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Gogrial West,flood,2024-07,2024-12,SS0802,48828.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Guit,flood,2024-07,2024-12,SS0602,5010.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Juba,flood,2024-07,2024-12,SS0101,13320.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Jur River,flood,2024-07,2024-12,SS0901,26850.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Koch,flood,2024-07,2024-12,SS0603,36278.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Lafon,flood,2024-07,2024-12,SS0206,18178.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Leer,flood,2024-07,2024-12,SS0604,6611.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Luakpiny/Nasir,flood,2024-07,2024-12,SS0704,13800.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Maiwut,flood,2024-07,2024-12,SS0706,24213.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Manyo,flood,2024-07,2024-12,SS0708,19236.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Mayendit,flood,2024-07,2024-12,SS0605,23963.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Mayom,flood,2024-07,2024-12,SS0606,42844.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Mundri West,flood,2024-07,2024-12,SS1005,1530.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Nzara,flood,2024-07,2024-12,SS1008,1125.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Panyijiar,flood,2024-07,2024-12,SS0607,56318.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Panyikang,flood,2024-07,2024-12,SS0710,39680.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Pochalla,flood,2024-07,2024-12,SS0309,15335.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Rubkona,flood,2024-07,2024-12,SS0609,28000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Rumbek East,flood,2024-07,2024-12,SS0404,93459.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Terekeka,flood,2024-07,2024-12,SS0105,8503.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Tonj East,flood,2024-07,2024-12,SS0803,15000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Tonj North,flood,2024-07,2024-12,SS0804,30000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Tonj South,flood,2024-07,2024-12,SS0805,15600.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Twic,flood,2024-07,2024-12,SS0806,24000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Twic East,flood,2024-07,2024-12,SS0310,55349.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2024 - Uror,flood,2024-07,2024-12,SS0311,24516.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Drought 2024 - Abiemnhom,drought (crop and pasture stress),2024-08,2024-11,SS0601,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Akobo,drought (crop and pasture stress),2024-08,2024-11,SS0301,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Ayod,drought (crop and pasture stress),2024-08,2024-11,SS0302,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Fangak,drought (crop and pasture stress),2024-08,2024-11,SS0306,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Fashoda,drought (crop and pasture stress),2024-08,2024-11,SS0702,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Guit,drought (crop and pasture stress),2024-08,2024-11,SS0602,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Koch,drought (crop and pasture stress),2024-08,2024-11,SS0603,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Leer,drought (crop and pasture stress),2024-08,2024-11,SS0604,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Mayom,drought (crop and pasture stress),2024-08,2024-11,SS0606,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Pariang,drought (crop and pasture stress),2024-08,2024-11,SS0608,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Pibor,drought (crop and pasture stress),2024-08,2024-11,SS0308,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Rubkona,drought (crop and pasture stress),2024-08,2024-11,SS0609,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2024 - Uror,drought (crop and pasture stress),2024-08,2024-11,SS0311,,,https://www.gdacs.org/report.aspx?eventid=1017360&episodeid=2&eventtype=DR
+Drought 2025 - Akobo,drought (crop and pasture stress),2025-02,2025-04,SS0301,,,https://www.gdacs.org/report.aspx?eventid=1017730&episodeid=4&eventtype=DR
+Drought 2025 - Luakpiny/Nasir,drought (crop and pasture stress),2025-02,2025-04,SS0704,,,https://www.gdacs.org/report.aspx?eventid=1017730&episodeid=4&eventtype=DR
+Drought 2025 - Maiwut,drought (crop and pasture stress),2025-02,2025-04,SS0706,,,https://www.gdacs.org/report.aspx?eventid=1017730&episodeid=4&eventtype=DR
+Drought 2025 - Pibor,drought (crop and pasture stress),2025-02,2025-04,SS0308,,,https://www.gdacs.org/report.aspx?eventid=1017730&episodeid=4&eventtype=DR
+Drought 2025 - Pochalla,drought (crop and pasture stress),2025-02,2025-04,SS0309,,,https://www.gdacs.org/report.aspx?eventid=1017730&episodeid=4&eventtype=DR
+Heatwave February-March 2025 - nationwide school closure,heatwave,2025-02,2025-03,,,,https://www.radiotamazuj.org/en/news/article/south-sudan-closes-schools-as-heatwave-intensifies
+Floods 2025 - Akobo,flood,2025-07,2025-12,SS0301,17652.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Aweil North,flood,2025-07,2025-12,SS0503,16820.0,16820.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Awerial,flood,2025-07,2025-12,SS0401,8130.0,4065.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Ayod,flood,2025-07,2025-12,SS0302,57270.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Bor South,flood,2025-07,2025-12,SS0303,76000.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Canal/Pigi,flood,2025-07,2025-12,SS0304,25500.0,25500.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Cueibet,flood,2025-07,2025-12,SS0402,13655.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Duk,flood,2025-07,2025-12,SS0305,22548.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Fangak,flood,2025-07,2025-12,SS0306,145316.0,89106.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Fashoda,flood,2025-07,2025-12,SS0702,8690.0,1900.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Guit,flood,2025-07,2025-12,SS0602,3336.0,3336.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Juba,flood,2025-07,2025-12,SS0101,16000.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Koch,flood,2025-07,2025-12,SS0603,47984.0,14538.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Leer,flood,2025-07,2025-12,SS0604,62796.0,23000.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Longochuk,flood,2025-07,2025-12,SS0703,15000.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Maiwut,flood,2025-07,2025-12,SS0706,10416.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Malakal,flood,2025-07,2025-12,SS0707,5784.0,2100.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Manyo,flood,2025-07,2025-12,SS0708,18540.0,4200.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Mayendit,flood,2025-07,2025-12,SS0605,58438.0,6122.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Melut,flood,2025-07,2025-12,SS0709,21135.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Mvolo,flood,2025-07,2025-12,SS1006,15780.0,15780.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Nyirol,flood,2025-07,2025-12,SS0307,16500.0,,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Panyijiar,flood,2025-07,2025-12,SS0607,82548.0,50490.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Panyikang,flood,2025-07,2025-12,SS0710,15140.0,8456.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Pibor,flood,2025-07,2025-12,SS0308,146851.0,40511.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Pochalla,flood,2025-07,2025-12,SS0309,22477.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Renk,flood,2025-07,2025-12,SS0711,1500.0,1500.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Rubkona,flood,2025-07,2025-12,SS0609,1000.0,1000.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Rumbek Centre,flood,2025-07,2025-12,SS0403,88865.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Rumbek East,flood,2025-07,2025-12,SS0404,22655.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Rumbek North,flood,2025-07,2025-12,SS0405,45225.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Terekeka,flood,2025-07,2025-12,SS0105,8505.0,8505.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Tonj East,flood,2025-07,2025-12,SS0803,5634.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Twic,flood,2025-07,2025-12,SS0806,4944.0,1953.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Twic East,flood,2025-07,2025-12,SS0310,101675.0,56738.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Wulu,flood,2025-07,2025-12,SS0406,5570.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Yirol East,flood,2025-07,2025-12,SS0407,26155.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data
+Floods 2025 - Yirol West,flood,2025-07,2025-12,SS0408,87830.0,0.0,https://data.humdata.org/dataset/south-sudan-flood-data

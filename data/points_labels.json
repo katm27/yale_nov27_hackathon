@@ -60,8 +60,8 @@
   "topic": "Aid, services & peacekeeping"
  },
  "polygons_ethnic_groups": {
-  "label": "Ethnic group areas (GeoEPR)",
-  "plain": "Settlement areas and political power status of ten major ethnic groups as coded up to 2021; areas shown after 2021 are carried forward, not re-coded.",
+  "label": "Ethnic group areas and political power (EPR)",
+  "plain": "Where ten major ethnic groups live and how much national political power each held in each year, as coded by the Ethnic Power Relations dataset to 2023; the 2023 status is shown unchanged for later years.",
   "topic": "Population & society"
  },
  "points_gbv_one_stop_centres": {
@@ -82,6 +82,11 @@
  "points_surface_water_quality": {
   "label": "River and wetland water colour (satellite)",
   "plain": "Monthly satellite readings of muddiness at eight river and wetland sites compared with the usual level for that month; this tracks sediment and algae, not oil or chemical pollution.",
+  "topic": "Water & floods"
+ },
+ "points_disasters": {
+  "label": "Natural disasters (floods, droughts, storms)",
+  "plain": "Floods, drought alerts and heatwaves reported in 2018-2025, one dot per affected county (or one for the whole country) shown for as long as the event lasted; flood numbers are people affected as counted by the UN, and a dot sits at the county centre, not at the flooded place.",
   "topic": "Water & floods"
  }
 }

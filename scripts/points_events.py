@@ -1,6 +1,6 @@
 """Event layers keep their single `date`; this verifies it and adds valid_from = valid_to = YYYY-MM(date)
-plus date_basis, so the app can filter every layer the same way. Also stamps the GeoEPR ethnic-group polygons
-(year_from / year_to -> valid_from / valid_to). Re-runnable.
+plus date_basis, so the app can filter every layer the same way. The ethnic-group polygons are rebuilt by
+scripts/ethnic_groups_temporal.py (EPR-2023 status per year). Re-runnable.
 """
 import os
 import sys
@@ -24,22 +24,8 @@ def main():
         tag_meta(name.replace("points_", "").replace(".geojson", ""),
                  "Temporal: event layer - single `date`; valid_from = valid_to = its month (date verified 2018-01..2025-12).")
         print(name, "events", n, "unparseable", bad, "check (n, outside 2018-2025, year!=date, min, max):", check(name))
-    fc = read_fc("polygons_ethnic_groups.geojson")
-    for f in fc["features"]:
-        p = f["properties"]
-        vf, vt = f"{int(p['year_from'])}-01", f"{int(p['year_to'])}-12"
-        cw = clip_window(vf, vt) or (vf, vt)
-        end = cw[1]
-        note = f"GeoEPR period {p.get('period')} (annual)"
-        if p["year_to"] == max(int(g["properties"]["year_to"]) for g in fc["features"]):
-            end, note = None, note + "; dataset ends 2021, settlement areas carried to 2025"
-        set_validity(p, cw[0], end, note)
-    write_fc("polygons_ethnic_groups.geojson", fc["features"])
-    print("ethnic polygons", len(fc["features"]))
-    import team_dynamic_layers as tdl  # 2018-2021 EPR coding + flagged carry-forward 2022-2025
+    import team_dynamic_layers as tdl  # EPR-2023 status per year (scripts/ethnic_groups_temporal.py)
     tdl.ethnic()
-    tdl.write_points_meta({"ethnic_groups": tdl.status_values_of("polygons_ethnic_groups.geojson", tdl.ETHNIC_ORDER)})
-
 
 if __name__ == "__main__":
     main()

@@ -103,7 +103,9 @@ def build():
         "notes": ("Groundwater only. Each week the model's groundwater storage is ranked against its own long-term "
                   "record for the same time of year: 50 = normal, below 20 = unusually dry (drought), above 80 = "
                   "unusually wet. It is a ranking, not an amount of water, so compare counties by how far they are "
-                  "from 50, not as cm. Same NASA system as GLDAS-2.2 CLSM GRACE-DA; the GRACE signal it assimilates "
+                  "from 50, not as cm. In South Sudan the values sit low for the whole period (national mean ~4 in 2018, "
+                  "~20-36 in 2020-2025), i.e. the model places 2018-2025 groundwater below its long-term norm; read the "
+                  "change over time and differences between counties rather than the absolute level. Same NASA system as GLDAS-2.2 CLSM GRACE-DA; the GRACE signal it assimilates "
                   "is ~300 km wide, so neighbouring counties move together. "
                   + (f"No data for {', '.join(missing)} (weekly updates paused Oct-Nov 2025). " if missing else "")
                   + SUDD_NOTE),

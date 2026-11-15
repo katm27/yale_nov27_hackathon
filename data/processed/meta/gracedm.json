@@ -1,0 +1,18 @@
+[
+ {
+  "id": "gracedm_gws_pctl",
+  "label": "Groundwater drought indicator (NASA GRACE data assimilation)",
+  "category": "environment",
+  "group": "Water storage & groundwater (GRACE)",
+  "units": "percentile (0-100)",
+  "source": "NASA GSFC / NDMC GRACE-based global drought indicators (GRACEDADM_CLSM025_GL_7D, gws_inst): Catchment land surface model with GRACE/GRACE-FO data assimilation",
+  "source_url": "https://nasagrace.unl.edu/GlobalData.aspx",
+  "native_resolution": "0.25° (~28 km) model grid; GRACE information it assimilates is ~300 km",
+  "temporal": "monthly",
+  "aggregation": "per-pixel mean of the weekly percentiles dated in the month, then mean of ~1 km cells inside the county",
+  "higher_is": "better",
+  "index_ok": false,
+  "raster": "gracedm_gws",
+  "notes": "Groundwater only. Each week the model's groundwater storage is ranked against its own long-term record for the same time of year: 50 = normal, below 20 = unusually dry (drought), above 80 = unusually wet. It is a ranking, not an amount of water, so compare counties by how far they are from 50, not as cm. In South Sudan the values sit low for the whole period (national mean ~4 in 2018, ~20-36 in 2020-2025), i.e. the model places 2018-2025 groundwater below its long-term norm; read the change over time and differences between counties rather than the absolute level. Same NASA system as GLDAS-2.2 CLSM GRACE-DA; the GRACE signal it assimilates is ~300 km wide, so neighbouring counties move together. No data for 2025-10 (weekly updates paused Oct-Nov 2025). Less conclusive in and around the Sudd wetland, where flood water on the surface can be mistaken for groundwater."
+ }
+]

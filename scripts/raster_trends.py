@@ -46,6 +46,9 @@ SCRATCH = os.environ.get(
     "RT_SCRATCH", "/tmp/claude-0/-home-user-yale-nov27-hackathon/b7acc7ce-9c21-59ae-8208-6da6aae060da/scratchpad")
 APPEEARS = os.environ.get("APPEEARS_GRIDS", os.path.join(SCRATCH, "appeears", "work", "grids"))
 MODIS_PC = os.environ.get("MODIS_GRIDS", os.path.join(SCRATCH, "modis", "work", "grids"))
+GLDAS = os.environ.get("GLDAS_GRIDS", os.path.join(SCRATCH, "gldas", "work", "grids"))
+GRACEDM = os.environ.get("GRACEDM_GRIDS", os.path.join(SCRATCH, "gldas", "gracedm_work", "grids"))
+MAIAC = os.environ.get("MAIAC_GRIDS", os.path.join(SCRATCH, "maiac", "work", "grids"))
 TC_RAW = os.environ.get("TC_RAW", os.path.join(SCRATCH, "climate", "tc_raw"))
 
 YEARS = list(range(2018, 2026))
@@ -397,6 +400,13 @@ LAYERS = [
     dict(key="grace_tws", run=monthly(load_grace, ALL, min_frac=0.4), cmap="div_brbg",
          basis=ANNUAL_MEAN + " (storage anomaly; no dry-season zeros). GRACE-FO starts Jun 2018: 2018 = 5 months "
          "(Jun, Jul, Oct-Dec), accepted via the anomaly method (threshold lowered to 5 of 12 months)."),
+    dict(key="gldas_gws", run=monthly(npy_layer(os.path.join(GLDAS, "gldas_gws_anom_cm")), ALL), cmap="div_brbg",
+         basis=ANNUAL_MEAN + " (groundwater storage anomaly vs 2004-2020, GLDAS-2.2 CLSM GRACE-DA)"),
+    dict(key="gracedm_gws", run=monthly(npy_layer(os.path.join(GRACEDM, "gracedm_gws_pctl")), ALL), cmap="div_brbg",
+         unit_out="percentile points/yr",
+         basis=ANNUAL_MEAN + " (weekly groundwater percentiles averaged by month, then by year)"),
+    dict(key="maiac_aod", run=monthly(npy_layer(os.path.join(MAIAC, "maiac_aod_055")), ALL), cmap="div_puor",
+         basis=ANNUAL_MEAN + " (MODIS MAIAC 1 km AOD, best-quality cloud-free retrievals)"),
     dict(key="modis13a3_ndvi", run=monthly(npy_layer(os.path.join(APPEEARS, "modis13a3_ndvi")), ALL),
          cmap="div_brgn", basis=ANNUAL_MEAN),
     dict(key="modis_et_monthly", run=monthly(npy_layer(os.path.join(APPEEARS, "modis_et_monthly_mm")), WET),
