@@ -669,6 +669,9 @@
 
 
   // ---------- national timeline (bottom strip) ----------
+  // Counties overlapping the Sudd wetland (used for regional GRACE series; GRACE resolution is ~300 km)
+  const SUDD = ["Panyijiar", "Mayendit", "Leer", "Guit", "Fangak", "Ayod", "Canal/Pigi", "Duk", "Twic East", "Bor South",
+    "Yirol East", "Awerial", "Rubkona", "Koch", "Nyirol", "Uror"];
   const NATIONAL = [
     { label: "US government humanitarian funding (OCHA FTS)", ids: ["fts_us_gov_funding_month_usd"], how: "national", units: "USD / month", color: "#2a78d6" },
     { label: "USAID disbursements (ForeignAssistance.gov)", ids: ["usaid_disbursed_month_usd"], how: "national", units: "USD / month", color: "#2a78d6" },
@@ -684,6 +687,8 @@
     { label: "Surface water / flood extent, all seasons (MODIS)", ids: ["surface_water_km2"], how: "sum", units: "km²", color: "#1baf7a" },
     { label: "Flooded area, Sentinel-1 radar (reliable Jul–Nov; sees flooded vegetation)", ids: ["flood_s1_flood_km2"], how: "sum", units: "km²", color: "#1baf7a" },
     { label: "People in flooded areas (Sentinel-1 × WorldPop)", ids: ["flood_population_exposed"], how: "sum", units: "people", color: "#1baf7a" },
+    { label: "Water storage anomaly, Sudd counties (GRACE/GRACE-FO; vs 2002–2020)", ids: ["grace_tws_cm"], how: "subset", counties: SUDD, units: "cm water", color: "#01665e" },
+    { label: "Groundwater storage anomaly, Sudd counties (G3P from GRACE; to Sep 2023)", ids: ["g3p_gwsa_cm"], how: "subset", counties: SUDD, units: "cm water", color: "#01665e" },
     { label: "Drought index (national mean; ensemble if available)", ids: ["drought_ensemble_mean", "spei3"], how: "mean", units: "index", color: "#eb6834" },
     { label: "Rainfall (national mean, CHIRPS v3 — primary)", ids: ["chirps_precip_mm", "precip_mm"], how: "mean", units: "mm / month", color: "#2a78d6" },
     { label: "Vegetation greenness NDVI (national mean)", ids: ["modis_ndvi"], how: "mean", units: "NDVI", color: "#008300" },
@@ -699,6 +704,9 @@
     const ids = Object.keys(s), n = state.months.length, out = new Array(n).fill(null);
     let rows = ids;
     if (spec.how === "national") rows = [ids.find((c) => s[c].some((x) => x != null))].filter(Boolean);
+    if (spec.how === "subset") {
+      rows = []; countyLayer.eachLayer((l) => { const p = l.feature.properties; if (spec.counties.includes(p.name) && s[p.district_id]) rows.push(p.district_id); });
+    }
     if (spec.how === "state_sum") {  // state totals are repeated on each county: take one county per state
       const seen = new Set(); rows = [];
       countyLayer.eachLayer((l) => { const p = l.feature.properties; if (!seen.has(p.admin1) && s[p.district_id]) { seen.add(p.admin1); rows.push(p.district_id); } });
@@ -706,7 +714,7 @@
     for (let i = 0; i < n; i++) {
       let tot = 0, k = 0;
       for (const c of rows) { const x = s[c][i]; if (x != null && isFinite(x)) { tot += x; k++; } }
-      if (k) out[i] = (spec.how === "mean" ? tot / k : tot) * (spec.scale || 1);
+      if (k) out[i] = (spec.how === "mean" || spec.how === "subset" ? tot / k : tot) * (spec.scale || 1);
     }
     return out;
   }
