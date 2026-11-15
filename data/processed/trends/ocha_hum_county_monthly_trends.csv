@@ -1,5 +1,5 @@
 county_id,variable,test,n,S,Z,tau,p,q_fdr,significant,sen_slope_per_year,sen_slope_pct_per_year,baseline_year,baseline_mean,lag1,interpretation
-SS0001,hno_pin,,1,,,,,,False,,,2023,,,Too few observations for a trend test.
+SS0001,hno_pin,,3,,,,,,False,,,2023,,,Too few observations for a trend test.
 SS0101,hno_pin,Mann-Kendall,6,11,1.87867,0.733333,0.0602892,0.750118,False,28239,11.3184,2019,249497,0.182134,"No significant monotonic trend over 2018–2025 (Mann-Kendall, p = 0.06); Sen's slope +2.82e+04 persons/yr."
 SS0102,hno_pin,Mann-Kendall,6,3,0.375735,0.2,0.707114,0.950947,False,4208,6.38912,2019,65862,-0.241948,"No significant monotonic trend over 2018–2025 (Mann-Kendall, p = 0.71); Sen's slope +4.21e+03 persons/yr."
 SS0103,hno_pin,Mann-Kendall,6,-1,0,-0.0666667,1,1,False,-67.6,-0.13536,2019,49941,-0.504822,"No significant monotonic trend over 2018–2025 (Mann-Kendall, p = 1.00); Sen's slope -67.6 persons/yr."
