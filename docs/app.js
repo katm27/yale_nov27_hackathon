@@ -29,7 +29,7 @@
     months: [], vars: [], varById: {}, series: {}, checked: new Set(), colorBy: null,
     mode: "trend", agg: "month", t: 0, selected: null,
     rasters: [], rasterOn: new Set(), rasterLayers: {}, points: [], pointLayers: {},
-    timer: null, charts: [], natExtra: new Set(), selectedList: [], compareMode: false,
+    timer: null, charts: [], natExtra: new Set(), waterOn: true, selectedList: [], compareMode: false,
   };
 
   // ---------- helpers ----------
@@ -168,6 +168,8 @@
   L.control.layers(base, null, { position: "topleft" }).addTo(map);
   map.createPane("rasters").style.zIndex = 350;
   map.createPane("counties").style.zIndex = 400;
+  map.createPane("water").style.zIndex = 430;      // water base layer: above county colours, below arrows
+  map.getPane("water").style.pointerEvents = "none";
   map.createPane("flows").style.zIndex = 450;
   map.createPane("points").style.zIndex = 600;
   let countyLayer;
@@ -466,7 +468,7 @@
     const el = $("#raster-list");
     if (!state.rasters.length) { el.innerHTML = `<p class="empty">No raster overlays built yet.</p>`; return; }
     el.innerHTML = "";
-    for (const r of state.rasters.filter((x) => !x.trend_of && !/_trend$/.test(x.key))) {
+    for (const r of state.rasters.filter((x) => !x.trend_of && !/_trend$/.test(x.key) && !x.base_layer)) {
       const hasTrend = state.rasters.some((x) => x.key === `${r.key}_trend`);
       const row = document.createElement("div");
       row.className = "var-row";
@@ -493,7 +495,10 @@
   }
   function updateRasters() {
     const op = +$("#raster-opacity").value;
-    for (const key of state.rasterOn) {
+    const waterKeys = state.rasters.filter((x) => x.base_layer).map((x) => x.key);
+    for (const k of waterKeys) if (!state.waterOn && state.rasterLayers[k]) { map.removeLayer(state.rasterLayers[k]); delete state.rasterLayers[k]; }
+    for (const key of [...state.rasterOn, ...(state.waterOn ? waterKeys : [])]) {
+      const isWater = waterKeys.includes(key);
       let r = state.rasters.find((x) => x.key === key);
       // in trend mode, show the "trend 2018→slider year" companion layer when it exists
       const tr = state.mode === "trend" && state.rasters.find((x) => x.key === `${key}_trend`);
@@ -514,8 +519,9 @@
         if (!url) continue;
       }
       const b = r.bounds;
-      if (state.rasterLayers[key]) { state.rasterLayers[key].setUrl(url); state.rasterLayers[key].setBounds(L.latLngBounds(b)); state.rasterLayers[key].setOpacity(op); }
-      else state.rasterLayers[key] = L.imageOverlay(url, b, { pane: "rasters", opacity: op, interactive: false }).addTo(map);
+      const o = isWater ? 0.9 : op;
+      if (state.rasterLayers[key]) { state.rasterLayers[key].setUrl(url); state.rasterLayers[key].setBounds(L.latLngBounds(b)); state.rasterLayers[key].setOpacity(o); }
+      else state.rasterLayers[key] = L.imageOverlay(url, b, { pane: isWater ? "water" : "rasters", opacity: o, interactive: false }).addTo(map);
     }
   }
 
@@ -727,7 +733,7 @@
   function writeHash() {
     if (!state.months.length) return;
     const h = new URLSearchParams({ m: state.mode, a: state.agg, t: state.months[state.t], v: state.colorBy || "", c: [...state.checked].join(","),
-      s: state.selectedList.join(","), f: state.flowMode || "best", fo: state.flowOn ? "1" : "0", r: [...state.rasterOn].join(","), p: Object.keys(state.pointLayers).join(","), n: [...state.natExtra].join(",") });
+      s: state.selectedList.join(","), f: state.flowMode || "best", fo: state.flowOn ? "1" : "0", w: state.waterOn ? "1" : "0", r: [...state.rasterOn].join(","), p: Object.keys(state.pointLayers).join(","), n: [...state.natExtra].join(",") });
     try { history.replaceState(null, "", `#${h.toString()}`); } catch (e) { /* sandboxed */ }
   }
   function readHash() {
@@ -1041,6 +1047,10 @@
     $("#detail-close").onclick = () => { state.selected = null; state.selectedList = []; state.compareMode = false; refreshCounties(); renderDetail(); writeHash(); };
 
     renderRasterList(); renderPointList();
+    const wl = state.rasters.filter((x) => x.base_layer);
+    $("#water-legend").innerHTML = wl.length ? wl.flatMap((x) => x.legend || []).filter((x, i, a) => a.findIndex((y) => y[1] === x[1]) === i)
+      .map(([c, l]) => `<span class="wl"><i style="background:${c}"></i>${l}</span>`).join("") + `<div>Changes month by month with the time slider. Open water misses flooded swamp; cyan shows Sudd flooded vegetation.</div>` : "Water layer not built.";
+    $("#water-on").onchange = (e) => { state.waterOn = e.target.checked; updateRasters(); writeHash(); };
     // restore a shared view from the URL (#m=…&v=…&c=…&s=…&t=…), else defaults
     const H = readHash();
     let tStart = state.months.indexOf("2019-08") >= 0 ? state.months.indexOf("2019-08") : 0;
@@ -1054,6 +1064,7 @@
       state.selected = state.selectedList[0] || null;
       if (H.get("f")) state.flowMode = H.get("f");
       if (H.get("fo") === "1") state.flowOn = true;
+      if (H.get("w") === "0") { state.waterOn = false; $("#water-on").checked = false; }
       const ti = state.months.indexOf(H.get("t")); if (ti >= 0) tStart = ti;
       list("r").forEach((k) => { const cb = document.getElementById(`r-${k}`); if (cb) { cb.checked = true; state.rasterOn.add(k); } });
       for (const k of list("p")) { const p = state.points.find((x) => x.key === k); const cb = document.getElementById(`p-${k}`); if (p && cb) { cb.checked = true; loadPoints(p); } }

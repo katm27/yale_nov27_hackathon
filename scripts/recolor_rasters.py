@@ -76,7 +76,7 @@ def bin_edges(meta):
 def recolor_layer(key):
     mpath = os.path.join(RASTERS, key, "meta.json")
     meta = json.load(open(mpath))
-    if meta.get("recolored"):
+    if meta.get("recolored") or meta.get("no_recolor"):
         return None
     if "categorical" in str(meta.get("colormap", "")):
         # Sudd classes: dry / flooded vegetation / open water -> bins 1, 5, 7 (least to most water)

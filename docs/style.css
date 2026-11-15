@@ -178,3 +178,6 @@ a { color: var(--accent); }
 .bins7 { display: flex; gap: 2px; margin: 4px 0 2px; }
 .bins7 span { flex: 1; }
 .bins7 i { display: block; height: 10px; border-radius: 2px; }
+
+.wl { display: inline-flex; align-items: center; gap: 4px; margin-right: 10px; font-size: 11.5px; color: var(--ink-2); }
+.wl i { width: 12px; height: 10px; border-radius: 2px; display: inline-block; }
