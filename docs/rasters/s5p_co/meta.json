@@ -14,7 +14,7 @@
  ],
  "vmin": 25.0,
  "vmax": 55.0,
- "colormap": "YlOrBr",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
  "dates": [
   "2018-05",
@@ -112,5 +112,27 @@
  ],
  "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
  "crs": "EPSG:3857",
- "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval."
+ "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval.",
+ "original_colormap": "YlOrBr",
+ "original_colors": null,
+ "colors": [
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
+ ],
+ "bins": [
+  25.0,
+  29.29,
+  33.57,
+  37.86,
+  42.14,
+  46.43,
+  50.71,
+  55.0
+ ],
+ "recolored": true
 }

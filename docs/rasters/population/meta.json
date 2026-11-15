@@ -12,7 +12,7 @@
  ],
  "vmin": 1,
  "vmax": 2000,
- "colormap": "magma_r",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "scale": "log10",
  "label": "Population density 2020",
  "units": "people / km\u00b2",
@@ -20,5 +20,27 @@
  "dates": [
   "2020"
  ],
- "source": "WorldPop Global2 R2025A constrained 1 km"
+ "source": "WorldPop Global2 R2025A constrained 1 km",
+ "original_colormap": "magma_r",
+ "original_colors": null,
+ "colors": [
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
+ ],
+ "bins": [
+  1.0,
+  2.962,
+  8.773,
+  25.99,
+  76.97,
+  228.0,
+  675.2,
+  2000.0
+ ],
+ "recolored": true
 }

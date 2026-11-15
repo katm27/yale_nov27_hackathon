@@ -12,7 +12,7 @@
  ],
  "vmin": -34.65308586605337,
  "vmax": 34.65308586605337,
- "colormap": "brbg",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "scale": "linear",
  "label": "Water storage anomaly (GRACE/GRACE-FO)",
  "units": "cm water",
@@ -109,5 +109,27 @@
   "2025-11",
   "2025-12"
  ],
- "notes": "Anomaly vs the 2002\u20132020 mean. Brown = less water stored than usual, teal = more. ~300 km blur."
+ "notes": "Anomaly vs the 2002\u20132020 mean. Brown = less water stored than usual, teal = more. ~300 km blur.",
+ "original_colormap": "brbg",
+ "original_colors": null,
+ "colors": [
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
+ ],
+ "bins": [
+  -34.65,
+  -24.75,
+  -14.85,
+  -4.95,
+  4.95,
+  14.85,
+  24.75,
+  34.65
+ ],
+ "recolored": true
 }

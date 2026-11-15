@@ -336,7 +336,7 @@
    ],
    "vmin": 0.0,
    "vmax": 1.0,
-   "colormap": "YlOrRd",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "native_resolution": "500 m (MCD64A1), displayed at ~1.3 km",
    "dates": [
     "2018-01",
@@ -432,7 +432,29 @@
    ],
    "source": "MODIS MCD64A1 v061 via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "notes": "Transparent = not burned this month; grey = unmapped/no data. Value = share of 500 m pixels burned inside each display pixel."
+   "notes": "Transparent = not burned this month; grey = unmapped/no data. Value = share of 500 m pixels burned inside each display pixel.",
+   "original_colormap": "YlOrRd",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    0.0,
+    0.1429,
+    0.2857,
+    0.4286,
+    0.5714,
+    0.7143,
+    0.8571,
+    1.0
+   ],
+   "recolored": true
   },
   {
    "key": "burned_area_trend",
@@ -450,19 +472,15 @@
    ],
    "vmin": -50.0,
    "vmax": 50.0,
-   "colormap": "div_puor",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -485,7 +503,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in % of cell burned per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in % of cell burned per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_puor",
+   "original_colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "bins": [
+    -50.0,
+    -35.71,
+    -21.43,
+    -7.143,
+    7.143,
+    21.43,
+    35.71,
+    50.0
+   ],
+   "recolored": true
   },
   {
    "key": "cattle_density",
@@ -501,7 +544,7 @@
    ],
    "vmin": 1,
    "vmax": 200,
-   "colormap": "ylorbr",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "scale": "log10",
    "label": "Cattle density (GLW4, 2015)",
    "units": "head / km\u00b2",
@@ -509,7 +552,29 @@
    "dates": [
     "2015"
    ],
-   "source": "FAO Gridded Livestock of the World v4 (2015), dasymetric"
+   "source": "FAO Gridded Livestock of the World v4 (2015), dasymetric",
+   "original_colormap": "ylorbr",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    1.0,
+    2.132,
+    4.544,
+    9.686,
+    20.65,
+    44.01,
+    93.82,
+    200.0
+   ],
+   "recolored": true
   },
   {
    "key": "chirps",
@@ -527,13 +592,15 @@
    ],
    "vmin": 0.0,
    "vmax": 246.0,
-   "colormap": "blues",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#f7fbff",
-    "#c6dbef",
-    "#6baed6",
-    "#2171b5",
-    "#08306b"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "0.05\u00b0 (~5.5 km)",
@@ -636,7 +703,26 @@
     "2025-12"
    ],
    "source": "CHIRPS v3.0 monthly (Climate Hazards Center, UCSB)",
-   "notes": "Fixed colour scale 0 .. 98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale 0 .. 98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+   "original_colormap": "blues",
+   "original_colors": [
+    "#f7fbff",
+    "#c6dbef",
+    "#6baed6",
+    "#2171b5",
+    "#08306b"
+   ],
+   "bins": [
+    0.0,
+    35.14,
+    70.29,
+    105.4,
+    140.6,
+    175.7,
+    210.9,
+    246.0
+   ],
+   "recolored": true
   },
   {
    "key": "chirps_trend",
@@ -654,19 +740,15 @@
    ],
    "vmin": -27.0,
    "vmax": 27.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -689,7 +771,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -27.0,
+    -19.29,
+    -11.57,
+    -3.857,
+    3.857,
+    11.57,
+    19.29,
+    27.0
+   ],
+   "recolored": true
   },
   {
    "key": "flood_s1",
@@ -707,7 +814,7 @@
    ],
    "vmin": 0.0,
    "vmax": 1.0,
-   "colormap": "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "native_resolution": "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid",
    "dates": [
     "2018-01",
@@ -809,7 +916,29 @@
    ],
    "source": "Copernicus Sentinel-1 IW GRD RTC (sentinel-1-rtc) via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "notes": "Flooded = VV-VH ratio > 3.0 dB above the pixel's dry-season (March) reference, or open water (VV<-18.0, VH<-24.0 dB). Sees through cloud. Transparent = dry land; grey = no acquisition within 2 months."
+   "notes": "Flooded = VV-VH ratio > 3.0 dB above the pixel's dry-season (March) reference, or open water (VV<-18.0, VH<-24.0 dB). Sees through cloud. Transparent = dry land; grey = no acquisition within 2 months.",
+   "original_colormap": "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    0.0,
+    0.1429,
+    0.2857,
+    0.4286,
+    0.5714,
+    0.7143,
+    0.8571,
+    1.0
+   ],
+   "recolored": true
   },
   {
    "key": "flood_s1_trend",
@@ -827,19 +956,15 @@
    ],
    "vmin": -8.0,
    "vmax": 8.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -862,7 +987,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -8.0,
+    -5.714,
+    -3.429,
+    -1.143,
+    1.143,
+    3.429,
+    5.714,
+    8.0
+   ],
+   "recolored": true
   },
   {
    "key": "grace_tws",
@@ -878,7 +1028,7 @@
    ],
    "vmin": -34.65308586605337,
    "vmax": 34.65308586605337,
-   "colormap": "brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "scale": "linear",
    "label": "Water storage anomaly (GRACE/GRACE-FO)",
    "units": "cm water",
@@ -975,7 +1125,29 @@
     "2025-11",
     "2025-12"
    ],
-   "notes": "Anomaly vs the 2002\u20132020 mean. Brown = less water stored than usual, teal = more. ~300 km blur."
+   "notes": "Anomaly vs the 2002\u20132020 mean. Brown = less water stored than usual, teal = more. ~300 km blur.",
+   "original_colormap": "brbg",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    -34.65,
+    -24.75,
+    -14.85,
+    -4.95,
+    4.95,
+    14.85,
+    24.75,
+    34.65
+   ],
+   "recolored": true
   },
   {
    "key": "grace_tws_trend",
@@ -993,19 +1165,15 @@
    ],
    "vmin": -7.1,
    "vmax": 7.1,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -1028,7 +1196,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in cm water/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in cm water/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -7.1,
+    -5.071,
+    -3.043,
+    -1.014,
+    1.014,
+    3.043,
+    5.071,
+    7.1
+   ],
+   "recolored": true
   },
   {
    "key": "modis13a3_ndvi",
@@ -1046,20 +1239,15 @@
    ],
    "vmin": 0.1,
    "vmax": 0.9,
-   "colormap": "brown-yellow-green",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#7f4a10",
-    "#a6732d",
-    "#c8a159",
-    "#e2d08b",
-    "#dbe78b",
-    "#b7e077",
-    "#85c75b",
-    "#4aa143",
-    "#277730",
-    "#105021",
-    "#07361a",
-    "#06331a"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "nodata_color": "#bebebe (semi-transparent: no valid retrieval / fill e.g. open water)",
@@ -1165,7 +1353,33 @@
    "source": "MODIS MOD13A3 v061 via NASA AppEEARS",
    "crs": "EPSG:3857",
    "width": 900,
-   "height": 676
+   "height": 676,
+   "original_colormap": "brown-yellow-green",
+   "original_colors": [
+    "#7f4a10",
+    "#a6732d",
+    "#c8a159",
+    "#e2d08b",
+    "#dbe78b",
+    "#b7e077",
+    "#85c75b",
+    "#4aa143",
+    "#277730",
+    "#105021",
+    "#07361a",
+    "#06331a"
+   ],
+   "bins": [
+    0.1,
+    0.2143,
+    0.3286,
+    0.4429,
+    0.5571,
+    0.6714,
+    0.7857,
+    0.9
+   ],
+   "recolored": true
   },
   {
    "key": "modis13a3_ndvi_trend",
@@ -1183,19 +1397,15 @@
    ],
    "vmin": -0.05,
    "vmax": 0.05,
-   "colormap": "div_brgn",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f7f7f7",
-    "#d9f0d3",
-    "#a6dba0",
-    "#5aae61",
-    "#1b7837",
-    "#00441b"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -1218,7 +1428,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brgn",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f7f7f7",
+    "#d9f0d3",
+    "#a6dba0",
+    "#5aae61",
+    "#1b7837",
+    "#00441b"
+   ],
+   "bins": [
+    -0.05,
+    -0.03571,
+    -0.02143,
+    -0.007143,
+    0.007143,
+    0.02143,
+    0.03571,
+    0.05
+   ],
+   "recolored": true
   },
   {
    "key": "modis_et",
@@ -1236,20 +1471,15 @@
    ],
    "vmin": 100.0,
    "vmax": 1500.0,
-   "colormap": "blues",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#dfebf7",
-    "#cee0f1",
-    "#b9d5ea",
-    "#9dc9e0",
-    "#78b5d8",
-    "#58a1ce",
-    "#3d8dc3",
-    "#2575b7",
-    "#135fa7",
-    "#08488f",
-    "#08326e",
-    "#08306b"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "nodata_color": "#bebebe (semi-transparent: cloud-masked / water / no retrieval)",
    "native_resolution": "500 m MODIS, rendered from ~1 km (0.01\u00b0) grid",
@@ -1268,7 +1498,33 @@
    "width": 900,
    "height": 676,
    "temporal": "annual",
-   "notes": "Annual product: one image per year, file named YYYY-07.png."
+   "notes": "Annual product: one image per year, file named YYYY-07.png.",
+   "original_colormap": "blues",
+   "original_colors": [
+    "#dfebf7",
+    "#cee0f1",
+    "#b9d5ea",
+    "#9dc9e0",
+    "#78b5d8",
+    "#58a1ce",
+    "#3d8dc3",
+    "#2575b7",
+    "#135fa7",
+    "#08488f",
+    "#08326e",
+    "#08306b"
+   ],
+   "bins": [
+    100.0,
+    300.0,
+    500.0,
+    700.0,
+    900.0,
+    1100.0,
+    1300.0,
+    1500.0
+   ],
+   "recolored": true
   },
   {
    "key": "modis_et_monthly",
@@ -1286,20 +1542,15 @@
    ],
    "vmin": 0.0,
    "vmax": 150.0,
-   "colormap": "blues",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#f7fbff",
-    "#e3eef8",
-    "#d0e1f2",
-    "#b5d3ea",
-    "#90c0e0",
-    "#6dafd6",
-    "#4f97c9",
-    "#317ebc",
-    "#1c66a8",
-    "#124c8b",
-    "#09336e",
-    "#08306b"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "nodata_color": "#bebebe (semi-transparent: no valid retrieval / fill e.g. open water)",
@@ -1405,7 +1656,33 @@
    "source": "MODIS MOD16A2GF v061 via NASA AppEEARS",
    "crs": "EPSG:3857",
    "width": 900,
-   "height": 676
+   "height": 676,
+   "original_colormap": "blues",
+   "original_colors": [
+    "#f7fbff",
+    "#e3eef8",
+    "#d0e1f2",
+    "#b5d3ea",
+    "#90c0e0",
+    "#6dafd6",
+    "#4f97c9",
+    "#317ebc",
+    "#1c66a8",
+    "#124c8b",
+    "#09336e",
+    "#08306b"
+   ],
+   "bins": [
+    0.0,
+    21.43,
+    42.86,
+    64.29,
+    85.71,
+    107.1,
+    128.6,
+    150.0
+   ],
+   "recolored": true
   },
   {
    "key": "modis_et_monthly_trend",
@@ -1423,19 +1700,15 @@
    ],
    "vmin": -18.0,
    "vmax": 18.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -1458,7 +1731,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -18.0,
+    -12.86,
+    -7.714,
+    -2.571,
+    2.571,
+    7.714,
+    12.86,
+    18.0
+   ],
+   "recolored": true
   },
   {
    "key": "modis_et_trend",
@@ -1476,19 +1774,15 @@
    ],
    "vmin": -160.0,
    "vmax": 160.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -1511,7 +1805,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/year per year. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/year per year. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -160.0,
+    -114.3,
+    -68.57,
+    -22.86,
+    22.86,
+    68.57,
+    114.3,
+    160.0
+   ],
+   "recolored": true
   },
   {
    "key": "modis_lst_day",
@@ -1529,20 +1848,15 @@
    ],
    "vmin": 20.0,
    "vmax": 55.0,
-   "colormap": "inferno",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#000003",
-    "#160b39",
-    "#400966",
-    "#68166e",
-    "#912567",
-    "#b83556",
-    "#da4e3b",
-    "#f2741c",
-    "#fba007",
-    "#f7d13c",
-    "#f7fb99",
-    "#fcfea4"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "nodata_color": "#bebebe (semi-transparent: cloud-masked / water / no retrieval)",
    "native_resolution": "1 km MODIS (0.01\u00b0 grid)",
@@ -1642,7 +1956,33 @@
    "source": "MODIS MOD11A2 v061 (Terra) via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
    "width": 900,
-   "height": 676
+   "height": 676,
+   "original_colormap": "inferno",
+   "original_colors": [
+    "#000003",
+    "#160b39",
+    "#400966",
+    "#68166e",
+    "#912567",
+    "#b83556",
+    "#da4e3b",
+    "#f2741c",
+    "#fba007",
+    "#f7d13c",
+    "#f7fb99",
+    "#fcfea4"
+   ],
+   "bins": [
+    20.0,
+    25.0,
+    30.0,
+    35.0,
+    40.0,
+    45.0,
+    50.0,
+    55.0
+   ],
+   "recolored": true
   },
   {
    "key": "modis_lst_day_trend",
@@ -1660,19 +2000,15 @@
    ],
    "vmin": -1.9,
    "vmax": 1.9,
-   "colormap": "div_rdbu",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#053061",
-    "#2166ac",
-    "#4393c3",
-    "#92c5de",
-    "#d1e5f0",
-    "#f7f7f7",
-    "#fddbc7",
-    "#f4a582",
-    "#d6604d",
-    "#b2182b",
-    "#67001f"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -1695,7 +2031,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_rdbu",
+   "original_colors": [
+    "#053061",
+    "#2166ac",
+    "#4393c3",
+    "#92c5de",
+    "#d1e5f0",
+    "#f7f7f7",
+    "#fddbc7",
+    "#f4a582",
+    "#d6604d",
+    "#b2182b",
+    "#67001f"
+   ],
+   "bins": [
+    -1.9,
+    -1.357,
+    -0.8143,
+    -0.2714,
+    0.2714,
+    0.8143,
+    1.357,
+    1.9
+   ],
+   "recolored": true
   },
   {
    "key": "modis_ndvi",
@@ -1713,20 +2074,15 @@
    ],
    "vmin": 0.1,
    "vmax": 0.9,
-   "colormap": "brown-yellow-green",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#7f4a10",
-    "#a6732d",
-    "#c8a159",
-    "#e2d08b",
-    "#dbe78b",
-    "#b7e077",
-    "#85c75b",
-    "#4aa143",
-    "#277730",
-    "#105021",
-    "#07361a",
-    "#06331a"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "nodata_color": "#bebebe (semi-transparent: cloud-masked / water / no retrieval)",
    "native_resolution": "500 m MODIS, rendered from ~1 km (0.01\u00b0) grid",
@@ -1828,7 +2184,33 @@
    "source": "MODIS MOD13A1/MYD13A1 v061 via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
    "width": 900,
-   "height": 676
+   "height": 676,
+   "original_colormap": "brown-yellow-green",
+   "original_colors": [
+    "#7f4a10",
+    "#a6732d",
+    "#c8a159",
+    "#e2d08b",
+    "#dbe78b",
+    "#b7e077",
+    "#85c75b",
+    "#4aa143",
+    "#277730",
+    "#105021",
+    "#07361a",
+    "#06331a"
+   ],
+   "bins": [
+    0.1,
+    0.2143,
+    0.3286,
+    0.4429,
+    0.5571,
+    0.6714,
+    0.7857,
+    0.9
+   ],
+   "recolored": true
   },
   {
    "key": "modis_ndvi_trend",
@@ -1846,19 +2228,15 @@
    ],
    "vmin": -0.05,
    "vmax": 0.05,
-   "colormap": "div_brgn",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f7f7f7",
-    "#d9f0d3",
-    "#a6dba0",
-    "#5aae61",
-    "#1b7837",
-    "#00441b"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -1881,7 +2259,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brgn",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f7f7f7",
+    "#d9f0d3",
+    "#a6dba0",
+    "#5aae61",
+    "#1b7837",
+    "#00441b"
+   ],
+   "bins": [
+    -0.05,
+    -0.03571,
+    -0.02143,
+    -0.007143,
+    0.007143,
+    0.02143,
+    0.03571,
+    0.05
+   ],
+   "recolored": true
   },
   {
    "key": "population",
@@ -1897,7 +2300,7 @@
    ],
    "vmin": 1,
    "vmax": 2000,
-   "colormap": "magma_r",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "scale": "log10",
    "label": "Population density 2020",
    "units": "people / km\u00b2",
@@ -1905,7 +2308,29 @@
    "dates": [
     "2020"
    ],
-   "source": "WorldPop Global2 R2025A constrained 1 km"
+   "source": "WorldPop Global2 R2025A constrained 1 km",
+   "original_colormap": "magma_r",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    1.0,
+    2.962,
+    8.773,
+    25.99,
+    76.97,
+    228.0,
+    675.2,
+    2000.0
+   ],
+   "recolored": true
   },
   {
    "key": "s5p_aerosol_index",
@@ -1923,7 +2348,7 @@
    ],
    "vmin": -2.0,
    "vmax": 2.0,
-   "colormap": "RdYlBu_r",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
    "dates": [
     "2018-06",
@@ -2020,7 +2445,29 @@
    ],
    "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval."
+   "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval.",
+   "original_colormap": "RdYlBu_r",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    -2.0,
+    -1.429,
+    -0.8571,
+    -0.2857,
+    0.2857,
+    0.8571,
+    1.429,
+    2.0
+   ],
+   "recolored": true
   },
   {
    "key": "s5p_aerosol_index_trend",
@@ -2038,19 +2485,15 @@
    ],
    "vmin": -0.36000000000000004,
    "vmax": 0.36000000000000004,
-   "colormap": "div_puor",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -2073,7 +2516,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in unitless (UV aerosol index)/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in unitless (UV aerosol index)/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_puor",
+   "original_colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "bins": [
+    -0.36,
+    -0.2571,
+    -0.1543,
+    -0.05143,
+    0.05143,
+    0.1543,
+    0.2571,
+    0.36
+   ],
+   "recolored": true
   },
   {
    "key": "s5p_co",
@@ -2091,7 +2559,7 @@
    ],
    "vmin": 25.0,
    "vmax": 55.0,
-   "colormap": "YlOrBr",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
    "dates": [
     "2018-05",
@@ -2189,7 +2657,29 @@
    ],
    "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval."
+   "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval.",
+   "original_colormap": "YlOrBr",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    25.0,
+    29.29,
+    33.57,
+    37.86,
+    42.14,
+    46.43,
+    50.71,
+    55.0
+   ],
+   "recolored": true
   },
   {
    "key": "s5p_co_trend",
@@ -2207,19 +2697,15 @@
    ],
    "vmin": -2.4,
    "vmax": 2.4,
-   "colormap": "div_puor",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -2242,7 +2728,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mmol/m2 total CO/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mmol/m2 total CO/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_puor",
+   "original_colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "bins": [
+    -2.4,
+    -1.714,
+    -1.029,
+    -0.3429,
+    0.3429,
+    1.029,
+    1.714,
+    2.4
+   ],
+   "recolored": true
   },
   {
    "key": "s5p_no2",
@@ -2260,7 +2771,7 @@
    ],
    "vmin": 0.0,
    "vmax": 60.0,
-   "colormap": "magma_r",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "native_resolution": "~5.5x3.5 km (TROPOMI), gridded 0.05 deg",
    "dates": [
     "2018-05",
@@ -2358,7 +2869,29 @@
    ],
    "source": "Sentinel-5P TROPOMI L2 via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval."
+   "notes": "Mean of 4-6 sampled orbits per month; grey = no valid retrieval.",
+   "original_colormap": "magma_r",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    0.0,
+    8.571,
+    17.14,
+    25.71,
+    34.29,
+    42.86,
+    51.43,
+    60.0
+   ],
+   "recolored": true
   },
   {
    "key": "s5p_no2_trend",
@@ -2376,19 +2909,15 @@
    ],
    "vmin": -5.7,
    "vmax": 5.7,
-   "colormap": "div_puor",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -2411,7 +2940,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in umol/m2 tropospheric NO2/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in umol/m2 tropospheric NO2/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_puor",
+   "original_colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "bins": [
+    -5.7,
+    -4.071,
+    -2.443,
+    -0.8143,
+    0.8143,
+    2.443,
+    4.071,
+    5.7
+   ],
+   "recolored": true
   },
   {
    "key": "sudd_inundation",
@@ -2429,11 +2983,15 @@
    ],
    "vmin": 0,
    "vmax": 2,
-   "colormap": "categorical: dry / flooded vegetation / open water",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#e8dcc0",
-    "#41ab5d",
-    "#08519c"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "classes": [
     {
@@ -2548,7 +3106,20 @@
    ],
    "source": "MODIS MOD09A1 v061 (Terra) 8-day via Microsoft Planetary Computer; MCD43A4 NBAR for 12 missing Terra tile-composites (Sep-Oct 2022, Jan and Nov 2023)",
    "crs": "EPSG:3857",
-   "notes": "Sudd AOI only (16 counties); transparent outside. A pixel's class is the day-weighted majority over the month's 8-day composites after gap filling (cloudy pixels: last clear state <=24 days, else same-composite 2018-2025 climatology). 2025-07..2025-11 missing: no MODIS on Planetary Computer for 4 Jul-24 Nov 2025."
+   "notes": "Sudd AOI only (16 counties); transparent outside. A pixel's class is the day-weighted majority over the month's 8-day composites after gap filling (cloudy pixels: last clear state <=24 days, else same-composite 2018-2025 climatology). 2025-07..2025-11 missing: no MODIS on Planetary Computer for 4 Jul-24 Nov 2025.",
+   "original_colormap": "categorical: dry / flooded vegetation / open water",
+   "original_colors": [
+    "#e8dcc0",
+    "#41ab5d",
+    "#08519c"
+   ],
+   "bins": null,
+   "bin_labels": [
+    "dry",
+    "flooded vegetation",
+    "open water"
+   ],
+   "recolored": true
   },
   {
    "key": "sudd_inundation_trend",
@@ -2566,19 +3137,15 @@
    ],
    "vmin": -31.0,
    "vmax": 31.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -2599,7 +3166,32 @@
     "2023": 6,
     "2024": 7
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -31.0,
+    -22.14,
+    -13.29,
+    -4.429,
+    4.429,
+    13.29,
+    22.14,
+    31.0
+   ],
+   "recolored": true
   },
   {
    "key": "surface_water",
@@ -2617,7 +3209,7 @@
    ],
    "vmin": 0.0,
    "vmax": 1.0,
-   "colormap": "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "native_resolution": "500 m (MOD09A1/MYD09A1), displayed at ~1.3 km",
    "dates": [
     "2018-01",
@@ -2715,7 +3307,29 @@
    ],
    "source": "MODIS MOD09A1/MYD09A1 v061 via Microsoft Planetary Computer; MNDWI(B4,B7)>0.1 in >=50% of clear obs",
    "crs": "EPSG:3857",
-   "notes": "Transparent = dry land; grey = no clear observation within 2 months (cloud). Open water + shallow inundation; dense flooded vegetation (papyrus) is under-detected."
+   "notes": "Transparent = dry land; grey = no clear observation within 2 months (cloud). Open water + shallow inundation; dense flooded vegetation (papyrus) is under-detected.",
+   "original_colormap": "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    0.0,
+    0.1429,
+    0.2857,
+    0.4286,
+    0.5714,
+    0.7143,
+    0.8571,
+    1.0
+   ],
+   "recolored": true
   },
   {
    "key": "tc_aet",
@@ -2733,13 +3347,15 @@
    ],
    "vmin": 0.4,
    "vmax": 123.5,
-   "colormap": "greens",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#f7fcf5",
-    "#c7e9c0",
-    "#74c476",
-    "#238b45",
-    "#00441b"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "1/24\u00b0 (~4 km)",
@@ -2842,7 +3458,26 @@
     "2025-12"
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
-   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+   "original_colormap": "greens",
+   "original_colors": [
+    "#f7fcf5",
+    "#c7e9c0",
+    "#74c476",
+    "#238b45",
+    "#00441b"
+   ],
+   "bins": [
+    0.4,
+    17.99,
+    35.57,
+    53.16,
+    70.74,
+    88.33,
+    105.9,
+    123.5
+   ],
+   "recolored": true
   },
   {
    "key": "tc_aet_trend",
@@ -2860,19 +3495,15 @@
    ],
    "vmin": -16.0,
    "vmax": 16.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -2895,7 +3526,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -16.0,
+    -11.43,
+    -6.857,
+    -2.286,
+    2.286,
+    6.857,
+    11.43,
+    16.0
+   ],
+   "recolored": true
   },
   {
    "key": "tc_def",
@@ -2913,13 +3569,15 @@
    ],
    "vmin": 0.0,
    "vmax": 202.3,
-   "colormap": "oranges",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#fff5eb",
-    "#fdd0a2",
-    "#fd8d3c",
-    "#d94801",
-    "#7f2704"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "1/24\u00b0 (~4 km)",
@@ -3022,7 +3680,26 @@
     "2025-12"
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
-   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+   "original_colormap": "oranges",
+   "original_colors": [
+    "#fff5eb",
+    "#fdd0a2",
+    "#fd8d3c",
+    "#d94801",
+    "#7f2704"
+   ],
+   "bins": [
+    0.0,
+    28.9,
+    57.8,
+    86.7,
+    115.6,
+    144.5,
+    173.4,
+    202.3
+   ],
+   "recolored": true
   },
   {
    "key": "tc_def_trend",
@@ -3040,19 +3717,15 @@
    ],
    "vmin": -14.0,
    "vmax": 14.0,
-   "colormap": "div_brbg_r",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#003c30",
-    "#01665e",
-    "#35978f",
-    "#80cdc1",
-    "#c7eae5",
-    "#f5f5f5",
-    "#f6e8c3",
-    "#dfc27d",
-    "#bf812d",
-    "#8c510a",
-    "#543005"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -3075,7 +3748,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. teal = deficit shrinking (wetter), brown = deficit growing (drier); white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. teal = deficit shrinking (wetter), brown = deficit growing (drier); white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg_r",
+   "original_colors": [
+    "#003c30",
+    "#01665e",
+    "#35978f",
+    "#80cdc1",
+    "#c7eae5",
+    "#f5f5f5",
+    "#f6e8c3",
+    "#dfc27d",
+    "#bf812d",
+    "#8c510a",
+    "#543005"
+   ],
+   "bins": [
+    -14.0,
+    -10.0,
+    -6.0,
+    -2.0,
+    2.0,
+    6.0,
+    10.0,
+    14.0
+   ],
+   "recolored": true
   },
   {
    "key": "tc_pdsi",
@@ -3093,15 +3791,15 @@
    ],
    "vmin": -10.04,
    "vmax": 10.04,
-   "colormap": "brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#8c510a",
-    "#d8b365",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#5ab4ac",
-    "#01665e"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "1/24\u00b0 (~4 km)",
@@ -3204,7 +3902,28 @@
     "2025-12"
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
-   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months (symmetric about 0); bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months (symmetric about 0); bilinear reprojection to EPSG:3857.",
+   "original_colormap": "brbg",
+   "original_colors": [
+    "#8c510a",
+    "#d8b365",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#5ab4ac",
+    "#01665e"
+   ],
+   "bins": [
+    -10.04,
+    -7.171,
+    -4.303,
+    -1.434,
+    1.434,
+    4.303,
+    7.171,
+    10.04
+   ],
+   "recolored": true
   },
   {
    "key": "tc_pdsi_trend",
@@ -3222,19 +3941,15 @@
    ],
    "vmin": -1.8,
    "vmax": 1.8,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -3257,7 +3972,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in index (-4 dry .. +4 wet)/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in index (-4 dry .. +4 wet)/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -1.8,
+    -1.286,
+    -0.7714,
+    -0.2571,
+    0.2571,
+    0.7714,
+    1.286,
+    1.8
+   ],
+   "recolored": true
   },
   {
    "key": "tc_ppt",
@@ -3275,13 +4015,15 @@
    ],
    "vmin": 0.0,
    "vmax": 202.0,
-   "colormap": "blues",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#f7fbff",
-    "#c6dbef",
-    "#6baed6",
-    "#2171b5",
-    "#08306b"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "1/24\u00b0 (~4 km)",
@@ -3384,7 +4126,26 @@
     "2025-12"
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
-   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+   "original_colormap": "blues",
+   "original_colors": [
+    "#f7fbff",
+    "#c6dbef",
+    "#6baed6",
+    "#2171b5",
+    "#08306b"
+   ],
+   "bins": [
+    0.0,
+    28.86,
+    57.71,
+    86.57,
+    115.4,
+    144.3,
+    173.1,
+    202.0
+   ],
+   "recolored": true
   },
   {
    "key": "tc_ppt_trend",
@@ -3402,19 +4163,15 @@
    ],
    "vmin": -32.0,
    "vmax": 32.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -3437,7 +4194,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -32.0,
+    -22.86,
+    -13.71,
+    -4.571,
+    4.571,
+    13.71,
+    22.86,
+    32.0
+   ],
+   "recolored": true
   },
   {
    "key": "tc_soil",
@@ -3455,13 +4237,15 @@
    ],
    "vmin": 2.6,
    "vmax": 157.6,
-   "colormap": "ylgnbu",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#ffffd9",
-    "#c7e9b4",
-    "#41b6c4",
-    "#225ea8",
-    "#081d58"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "1/24\u00b0 (~4 km)",
@@ -3564,7 +4348,26 @@
     "2025-12"
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
-   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+   "original_colormap": "ylgnbu",
+   "original_colors": [
+    "#ffffd9",
+    "#c7e9b4",
+    "#41b6c4",
+    "#225ea8",
+    "#081d58"
+   ],
+   "bins": [
+    2.6,
+    24.74,
+    46.89,
+    69.03,
+    91.17,
+    113.3,
+    135.5,
+    157.6
+   ],
+   "recolored": true
   },
   {
    "key": "tc_soil_trend",
@@ -3582,19 +4385,15 @@
    ],
    "vmin": -37.0,
    "vmax": 37.0,
-   "colormap": "div_brbg",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -3617,7 +4416,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_brbg",
+   "original_colors": [
+    "#543005",
+    "#8c510a",
+    "#bf812d",
+    "#dfc27d",
+    "#f6e8c3",
+    "#f5f5f5",
+    "#c7eae5",
+    "#80cdc1",
+    "#35978f",
+    "#01665e",
+    "#003c30"
+   ],
+   "bins": [
+    -37.0,
+    -26.43,
+    -15.86,
+    -5.286,
+    5.286,
+    15.86,
+    26.43,
+    37.0
+   ],
+   "recolored": true
   },
   {
    "key": "tc_tmax",
@@ -3635,14 +4459,15 @@
    ],
    "vmin": 28.8,
    "vmax": 41.1,
-   "colormap": "inferno",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#000004",
-    "#420a68",
-    "#932667",
-    "#dd513a",
-    "#fca50a",
-    "#fcffa4"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "1/24\u00b0 (~4 km)",
@@ -3745,7 +4570,27 @@
     "2025-12"
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
-   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+   "original_colormap": "inferno",
+   "original_colors": [
+    "#000004",
+    "#420a68",
+    "#932667",
+    "#dd513a",
+    "#fca50a",
+    "#fcffa4"
+   ],
+   "bins": [
+    28.8,
+    30.56,
+    32.31,
+    34.07,
+    35.83,
+    37.59,
+    39.34,
+    41.1
+   ],
+   "recolored": true
   },
   {
    "key": "tc_tmax_trend",
@@ -3763,19 +4608,15 @@
    ],
    "vmin": -0.65,
    "vmax": 0.65,
-   "colormap": "div_rdbu",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#053061",
-    "#2166ac",
-    "#4393c3",
-    "#92c5de",
-    "#d1e5f0",
-    "#f7f7f7",
-    "#fddbc7",
-    "#f4a582",
-    "#d6604d",
-    "#b2182b",
-    "#67001f"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -3798,7 +4639,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_rdbu",
+   "original_colors": [
+    "#053061",
+    "#2166ac",
+    "#4393c3",
+    "#92c5de",
+    "#d1e5f0",
+    "#f7f7f7",
+    "#fddbc7",
+    "#f4a582",
+    "#d6604d",
+    "#b2182b",
+    "#67001f"
+   ],
+   "bins": [
+    -0.65,
+    -0.4643,
+    -0.2786,
+    -0.09286,
+    0.09286,
+    0.2786,
+    0.4643,
+    0.65
+   ],
+   "recolored": true
   },
   {
    "key": "tc_ws",
@@ -3816,13 +4682,15 @@
    ],
    "vmin": 1.3,
    "vmax": 2.8,
-   "colormap": "purples",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#fcfbfd",
-    "#dadaeb",
-    "#9e9ac8",
-    "#6a51a3",
-    "#3f007d"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear",
    "native_resolution": "1/24\u00b0 (~4 km)",
@@ -3925,7 +4793,26 @@
     "2025-12"
    ],
    "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
-   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+   "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+   "original_colormap": "purples",
+   "original_colors": [
+    "#fcfbfd",
+    "#dadaeb",
+    "#9e9ac8",
+    "#6a51a3",
+    "#3f007d"
+   ],
+   "bins": [
+    1.3,
+    1.514,
+    1.729,
+    1.943,
+    2.157,
+    2.371,
+    2.586,
+    2.8
+   ],
+   "recolored": true
   },
   {
    "key": "tc_ws_trend",
@@ -3943,19 +4830,15 @@
    ],
    "vmin": -0.16000000000000003,
    "vmax": 0.16000000000000003,
-   "colormap": "div_puor",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -3978,7 +4861,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in m/s/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in m/s/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_puor",
+   "original_colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "bins": [
+    -0.16,
+    -0.1143,
+    -0.06857,
+    -0.02286,
+    0.02286,
+    0.06857,
+    0.1143,
+    0.16
+   ],
+   "recolored": true
   },
   {
    "key": "viirs_fire",
@@ -3996,7 +4904,7 @@
    ],
    "vmin": 0.0,
    "vmax": 2.0,
-   "colormap": "YlOrRd",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "native_resolution": "375 m detections binned to 0.05\u00b0 (~5.5 km)",
    "dates": [
     "2018-01",
@@ -4099,7 +5007,29 @@
    "source": "NASA FIRMS VIIRS S-NPP 375 m standard processing (VNP14IMGTDL SP)",
    "crs": "EPSG:3857",
    "notes": "Colour = log10(number of nominal/high-confidence vegetation-fire detections in each 0.05\u00b0 cell that month): 0 = 1 detection, 1 = 10, 2 = 100+. Transparent = no detection.",
-   "scale": "log10"
+   "scale": "log10",
+   "original_colormap": "YlOrRd",
+   "original_colors": null,
+   "colors": [
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
+   ],
+   "bins": [
+    1.0,
+    1.931,
+    3.728,
+    7.197,
+    13.89,
+    26.83,
+    51.79,
+    100.0
+   ],
+   "recolored": true
   },
   {
    "key": "viirs_fire_trend",
@@ -4117,19 +5047,15 @@
    ],
    "vmin": -22.0,
    "vmax": 22.0,
-   "colormap": "div_puor",
+   "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
    "colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
+    "#d73027",
+    "#fc8d59",
+    "#fee08b",
+    "#ffffbf",
+    "#d9ef8b",
+    "#91cf60",
+    "#1a9850"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
    "dates": [
@@ -4152,7 +5078,32 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05\u00b0 cell per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05\u00b0 cell per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "original_colormap": "div_puor",
+   "original_colors": [
+    "#2d004b",
+    "#542788",
+    "#8073ac",
+    "#b2abd2",
+    "#d8daeb",
+    "#f7f7f7",
+    "#fee0b6",
+    "#fdb863",
+    "#e08214",
+    "#b35806",
+    "#7f3b08"
+   ],
+   "bins": [
+    -22.0,
+    -15.71,
+    -9.429,
+    -3.143,
+    3.143,
+    9.429,
+    15.71,
+    22.0
+   ],
+   "recolored": true
   }
  ]
 }

@@ -327,11 +327,20 @@
     }
     html += `<div class="note"><span class="nodata"></span> no data · Source: ${v.source || "–"}${v.native_resolution ? ` · ${v.native_resolution}` : ""}</div>`;
     const rs = [...state.rasterOn].map((k) => (state.mode === "trend" && state.rasters.find((r) => r.key === `${k}_trend`)) || state.rasters.find((r) => r.key === k)).filter(Boolean);
+    let rlegHtml = "";
     for (const r of rs) {
       const cm = r.colors || r.legend_colors || null;
-      html += `<div class="title" style="margin-top:8px">Raster: ${r.label}</div>`;
-      if (cm) html += `<div class="bar" style="background:linear-gradient(90deg,${cm.join(",")})"></div>`;
-      html += `<div class="ticks"><span>${fmt(r.vmin)}</span><span>${r.units || ""} · ${r.colormap || ""}</span><span>${fmt(r.vmax)}</span></div>`;
+      rlegHtml += `<div class="title" style="margin-top:8px">Raster: ${r.label}</div>`;
+      if (r.recolored && cm && cm.length === 7) {
+        // one shared 7-bin scale for every raster: red = lowest, green = highest
+        const lab = r.bin_labels || (r.bins ? r.bins.slice(0, 7).map((b, k) => `${fmt(b, 2)}–${fmt(r.bins[k + 1], 2)}`) : []);
+        rlegHtml += `<div class="bins7">${cm.map((c, k) => `<span title="${lab[k] || ""} ${r.units || ""}"><i style="background:${c}"></i></span>`).join("")}</div>
+          <div class="ticks"><span>${r.bin_labels ? r.bin_labels[0] : fmt(r.bins ? r.bins[0] : r.vmin, 2)}</span><span>${r.units || ""}</span><span>${r.bin_labels ? r.bin_labels[r.bin_labels.length - 1] : fmt(r.bins ? r.bins[7] : r.vmax, 2)}</span></div>
+          <div class="note">Red = lowest, green = highest (7 equal bins; same colours for every raster — not good/bad). Hover a swatch for its range.</div>`;
+      } else {
+        if (cm) rlegHtml += `<div class="bar" style="background:linear-gradient(90deg,${cm.join(",")})"></div>`;
+        rlegHtml += `<div class="ticks"><span>${fmt(r.vmin)}</span><span>${r.units || ""} · ${r.colormap || ""}</span><span>${fmt(r.vmax)}</span></div>`;
+      }
     }
     // keep title + colour bar visible; fold the explanatory notes
     // keep the significance-outline key visible (outside the collapsible notes)
@@ -339,8 +348,8 @@
     let sigHtml = "";
     if (sigM) { html = html.replace(sigM[0], ""); sigHtml = sigM[0]; }
     const cut = html.indexOf('<div class="note">');
-    if (cut > 0) html = html.slice(0, cut) + sigHtml + `<details${state.legendOpen ? " open" : ""}><summary>How to read this</summary>${html.slice(cut)}</details>`;
-    else html += sigHtml;
+    if (cut > 0) html = html.slice(0, cut) + sigHtml + rlegHtml + `<details${state.legendOpen ? " open" : ""}><summary>How to read this</summary>${html.slice(cut)}</details>`;
+    else html += sigHtml + rlegHtml;
     el.innerHTML = html;
     const det = el.querySelector("details"); if (det) det.ontoggle = () => (state.legendOpen = det.open);
     el.hidden = false;

@@ -1,6 +1,6 @@
 {
  "key": "burned_area_trend",
- "label": "Burned area (monthly) — trend 2018→year (Sen's slope)",
+ "label": "Burned area (monthly) \u2014 trend 2018\u2192year (Sen's slope)",
  "units": "% of cell burned per year, per yr",
  "bounds": [
   [
@@ -14,19 +14,15 @@
  ],
  "vmin": -50.0,
  "vmax": 50.0,
- "colormap": "div_puor",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "colors": [
-  "#2d004b",
-  "#542788",
-  "#8073ac",
-  "#b2abd2",
-  "#d8daeb",
-  "#f7f7f7",
-  "#fee0b6",
-  "#fdb863",
-  "#e08214",
-  "#b35806",
-  "#7f3b08"
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
  ],
  "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
  "dates": [
@@ -40,7 +36,7 @@
  "native_resolution": "500 m (MCD64A1), displayed at ~1.3 km",
  "source": "MODIS MCD64A1 v061 via Microsoft Planetary Computer",
  "trend_of": "burned_area",
- "basis": "annual total (Jan-Dec) of the monthly MODIS MCD64A1 burned share of each 0.01° cell, in % (a cell burned in two months counts twice); re-derived from Planetary Computer. Months absent on Planetary Computer (2023-09, 2024-07, 2025-05, 2025-08..10; all outside the Nov-Apr fire season) are filled with the pixel's 2018-2025 mean for that calendar month. Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
+ "basis": "annual total (Jan-Dec) of the monthly MODIS MCD64A1 burned share of each 0.01\u00b0 cell, in % (a cell burned in two months counts twice); re-derived from Planetary Computer. Months absent on Planetary Computer (2023-09, 2024-07, 2025-05, 2025-08..10; all outside the Nov-Apr fire season) are filled with the pixel's 2018-2025 mean for that calendar month. Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,
@@ -49,5 +45,30 @@
   "2024": 7,
   "2025": 8
  },
- "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in % of cell burned per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in % of cell burned per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+ "original_colormap": "div_puor",
+ "original_colors": [
+  "#2d004b",
+  "#542788",
+  "#8073ac",
+  "#b2abd2",
+  "#d8daeb",
+  "#f7f7f7",
+  "#fee0b6",
+  "#fdb863",
+  "#e08214",
+  "#b35806",
+  "#7f3b08"
+ ],
+ "bins": [
+  -50.0,
+  -35.71,
+  -21.43,
+  -7.143,
+  7.143,
+  21.43,
+  35.71,
+  50.0
+ ],
+ "recolored": true
 }

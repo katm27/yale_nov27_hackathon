@@ -1,50 +1,71 @@
 {
-  "key": "modis_et",
-  "label": "Annual evapotranspiration (MODIS)",
-  "units": "mm/year",
-  "bounds": [
-    [
-      3.43784,
-      24.10216
-    ],
-    [
-      12.28635,
-      36.00099
-    ]
+ "key": "modis_et",
+ "label": "Annual evapotranspiration (MODIS)",
+ "units": "mm/year",
+ "bounds": [
+  [
+   3.43784,
+   24.10216
   ],
-  "vmin": 100.0,
-  "vmax": 1500.0,
-  "colormap": "blues",
-  "colors": [
-    "#dfebf7",
-    "#cee0f1",
-    "#b9d5ea",
-    "#9dc9e0",
-    "#78b5d8",
-    "#58a1ce",
-    "#3d8dc3",
-    "#2575b7",
-    "#135fa7",
-    "#08488f",
-    "#08326e",
-    "#08306b"
-  ],
-  "nodata_color": "#bebebe (semi-transparent: cloud-masked / water / no retrieval)",
-  "native_resolution": "500 m MODIS, rendered from ~1 km (0.01°) grid",
-  "dates": [
-    "2018-07",
-    "2019-07",
-    "2020-07",
-    "2021-07",
-    "2022-07",
-    "2023-07",
-    "2024-07",
-    "2025-07"
-  ],
-  "source": "MODIS MOD16A3GF v061 (annual, gap-filled) via Microsoft Planetary Computer",
-  "crs": "EPSG:3857",
-  "width": 900,
-  "height": 676,
-  "temporal": "annual",
-  "notes": "Annual product: one image per year, file named YYYY-07.png."
+  [
+   12.28635,
+   36.00099
+  ]
+ ],
+ "vmin": 100.0,
+ "vmax": 1500.0,
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
+ "colors": [
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
+ ],
+ "nodata_color": "#bebebe (semi-transparent: cloud-masked / water / no retrieval)",
+ "native_resolution": "500 m MODIS, rendered from ~1 km (0.01\u00b0) grid",
+ "dates": [
+  "2018-07",
+  "2019-07",
+  "2020-07",
+  "2021-07",
+  "2022-07",
+  "2023-07",
+  "2024-07",
+  "2025-07"
+ ],
+ "source": "MODIS MOD16A3GF v061 (annual, gap-filled) via Microsoft Planetary Computer",
+ "crs": "EPSG:3857",
+ "width": 900,
+ "height": 676,
+ "temporal": "annual",
+ "notes": "Annual product: one image per year, file named YYYY-07.png.",
+ "original_colormap": "blues",
+ "original_colors": [
+  "#dfebf7",
+  "#cee0f1",
+  "#b9d5ea",
+  "#9dc9e0",
+  "#78b5d8",
+  "#58a1ce",
+  "#3d8dc3",
+  "#2575b7",
+  "#135fa7",
+  "#08488f",
+  "#08326e",
+  "#08306b"
+ ],
+ "bins": [
+  100.0,
+  300.0,
+  500.0,
+  700.0,
+  900.0,
+  1100.0,
+  1300.0,
+  1500.0
+ ],
+ "recolored": true
 }

@@ -14,7 +14,7 @@
  ],
  "vmin": 0.0,
  "vmax": 2.0,
- "colormap": "YlOrRd",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "native_resolution": "375 m detections binned to 0.05\u00b0 (~5.5 km)",
  "dates": [
   "2018-01",
@@ -117,5 +117,27 @@
  "source": "NASA FIRMS VIIRS S-NPP 375 m standard processing (VNP14IMGTDL SP)",
  "crs": "EPSG:3857",
  "notes": "Colour = log10(number of nominal/high-confidence vegetation-fire detections in each 0.05\u00b0 cell that month): 0 = 1 detection, 1 = 10, 2 = 100+. Transparent = no detection.",
- "scale": "log10"
+ "scale": "log10",
+ "original_colormap": "YlOrRd",
+ "original_colors": null,
+ "colors": [
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
+ ],
+ "bins": [
+  1.0,
+  1.931,
+  3.728,
+  7.197,
+  13.89,
+  26.83,
+  51.79,
+  100.0
+ ],
+ "recolored": true
 }

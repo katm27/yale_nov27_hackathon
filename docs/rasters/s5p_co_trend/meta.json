@@ -1,6 +1,6 @@
 {
  "key": "s5p_co_trend",
- "label": "Sentinel-5P co (monthly, sampled orbits) — trend 2018→year (Sen's slope)",
+ "label": "Sentinel-5P co (monthly, sampled orbits) \u2014 trend 2018\u2192year (Sen's slope)",
  "units": "mmol/m2 total CO/yr",
  "bounds": [
   [
@@ -14,19 +14,15 @@
  ],
  "vmin": -2.4,
  "vmax": 2.4,
- "colormap": "div_puor",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "colors": [
-  "#2d004b",
-  "#542788",
-  "#8073ac",
-  "#b2abd2",
-  "#d8daeb",
-  "#f7f7f7",
-  "#fee0b6",
-  "#fdb863",
-  "#e08214",
-  "#b35806",
-  "#7f3b08"
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
  ],
  "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
  "dates": [
@@ -49,5 +45,30 @@
   "2024": 7,
   "2025": 8
  },
- "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mmol/m2 total CO/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mmol/m2 total CO/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+ "original_colormap": "div_puor",
+ "original_colors": [
+  "#2d004b",
+  "#542788",
+  "#8073ac",
+  "#b2abd2",
+  "#d8daeb",
+  "#f7f7f7",
+  "#fee0b6",
+  "#fdb863",
+  "#e08214",
+  "#b35806",
+  "#7f3b08"
+ ],
+ "bins": [
+  -2.4,
+  -1.714,
+  -1.029,
+  -0.3429,
+  0.3429,
+  1.029,
+  1.714,
+  2.4
+ ],
+ "recolored": true
 }

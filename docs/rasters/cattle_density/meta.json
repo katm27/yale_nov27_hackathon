@@ -12,7 +12,7 @@
  ],
  "vmin": 1,
  "vmax": 200,
- "colormap": "ylorbr",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "scale": "log10",
  "label": "Cattle density (GLW4, 2015)",
  "units": "head / km\u00b2",
@@ -20,5 +20,27 @@
  "dates": [
   "2015"
  ],
- "source": "FAO Gridded Livestock of the World v4 (2015), dasymetric"
+ "source": "FAO Gridded Livestock of the World v4 (2015), dasymetric",
+ "original_colormap": "ylorbr",
+ "original_colors": null,
+ "colors": [
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
+ ],
+ "bins": [
+  1.0,
+  2.132,
+  4.544,
+  9.686,
+  20.65,
+  44.01,
+  93.82,
+  200.0
+ ],
+ "recolored": true
 }

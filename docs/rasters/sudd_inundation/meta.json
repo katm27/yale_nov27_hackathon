@@ -14,11 +14,15 @@
  ],
  "vmin": 0,
  "vmax": 2,
- "colormap": "categorical: dry / flooded vegetation / open water",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "colors": [
-  "#e8dcc0",
-  "#41ab5d",
-  "#08519c"
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
  ],
  "classes": [
   {
@@ -133,5 +137,18 @@
  ],
  "source": "MODIS MOD09A1 v061 (Terra) 8-day via Microsoft Planetary Computer; MCD43A4 NBAR for 12 missing Terra tile-composites (Sep-Oct 2022, Jan and Nov 2023)",
  "crs": "EPSG:3857",
- "notes": "Sudd AOI only (16 counties); transparent outside. A pixel's class is the day-weighted majority over the month's 8-day composites after gap filling (cloudy pixels: last clear state <=24 days, else same-composite 2018-2025 climatology). 2025-07..2025-11 missing: no MODIS on Planetary Computer for 4 Jul-24 Nov 2025."
+ "notes": "Sudd AOI only (16 counties); transparent outside. A pixel's class is the day-weighted majority over the month's 8-day composites after gap filling (cloudy pixels: last clear state <=24 days, else same-composite 2018-2025 climatology). 2025-07..2025-11 missing: no MODIS on Planetary Computer for 4 Jul-24 Nov 2025.",
+ "original_colormap": "categorical: dry / flooded vegetation / open water",
+ "original_colors": [
+  "#e8dcc0",
+  "#41ab5d",
+  "#08519c"
+ ],
+ "bins": null,
+ "bin_labels": [
+  "dry",
+  "flooded vegetation",
+  "open water"
+ ],
+ "recolored": true
 }

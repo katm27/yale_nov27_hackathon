@@ -14,16 +14,18 @@
  ],
  "vmin": 0.0,
  "vmax": 202.3,
- "colormap": "oranges",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "colors": [
-  "#fff5eb",
-  "#fdd0a2",
-  "#fd8d3c",
-  "#d94801",
-  "#7f2704"
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
  ],
  "scale": "linear",
- "native_resolution": "1/24° (~4 km)",
+ "native_resolution": "1/24\u00b0 (~4 km)",
  "dates": [
   "2018-01",
   "2018-02",
@@ -123,5 +125,24 @@
   "2025-12"
  ],
  "source": "TerraClimate v1.1 (Abatzoglou et al. 2018) via NKN THREDDS",
- "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+ "notes": "Fixed colour scale = 2nd-98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+ "original_colormap": "oranges",
+ "original_colors": [
+  "#fff5eb",
+  "#fdd0a2",
+  "#fd8d3c",
+  "#d94801",
+  "#7f2704"
+ ],
+ "bins": [
+  0.0,
+  28.9,
+  57.8,
+  86.7,
+  115.6,
+  144.5,
+  173.4,
+  202.3
+ ],
+ "recolored": true
 }

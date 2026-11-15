@@ -14,16 +14,18 @@
  ],
  "vmin": 0.0,
  "vmax": 246.0,
- "colormap": "blues",
+ "colormap": "RdYlGn 7 bins (red = lowest, green = highest)",
  "colors": [
-  "#f7fbff",
-  "#c6dbef",
-  "#6baed6",
-  "#2171b5",
-  "#08306b"
+  "#d73027",
+  "#fc8d59",
+  "#fee08b",
+  "#ffffbf",
+  "#d9ef8b",
+  "#91cf60",
+  "#1a9850"
  ],
  "scale": "linear",
- "native_resolution": "0.05° (~5.5 km)",
+ "native_resolution": "0.05\u00b0 (~5.5 km)",
  "dates": [
   "2018-01",
   "2018-02",
@@ -123,5 +125,24 @@
   "2025-12"
  ],
  "source": "CHIRPS v3.0 monthly (Climate Hazards Center, UCSB)",
- "notes": "Fixed colour scale 0 .. 98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857."
+ "notes": "Fixed colour scale 0 .. 98th percentile of all in-country pixels over all months; bilinear reprojection to EPSG:3857.",
+ "original_colormap": "blues",
+ "original_colors": [
+  "#f7fbff",
+  "#c6dbef",
+  "#6baed6",
+  "#2171b5",
+  "#08306b"
+ ],
+ "bins": [
+  0.0,
+  35.14,
+  70.29,
+  105.4,
+  140.6,
+  175.7,
+  210.9,
+  246.0
+ ],
+ "recolored": true
 }
