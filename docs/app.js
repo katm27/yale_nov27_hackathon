@@ -14,7 +14,7 @@
   const ORANGE = "#fc3c23";   // accent: slider cursor
   const MAIN = "#0B3D91";
   const SUDD_NAMES = ["Panyijiar", "Mayendit", "Leer", "Guit", "Fangak", "Ayod", "Canal/Pigi", "Duk", "Twic East", "Bor South", "Yirol East", "Awerial", "Rubkona", "Koch", "Nyirol", "Uror"];
-  const GROUNDWATER_IDS = ["gldas_gws_anom_cm", "grace_tws_cm", "g3p_gws_cm"];
+  const GROUNDWATER_IDS = ["gldas_gws_anom_cm", "grace_tws_cm", "g3p_gwsa_cm"];
 
   const state = {
     months: [], vars: [], varById: {}, allVars: {}, series: {}, colorBy: null,

@@ -30,6 +30,14 @@ open(os.path.join(out, "index.html"), "w").write(html)
 
 # ---- what to keep ----
 var_ids = {v["id"] for v in cur["variables"]} | set(cur["national_ids"]) | set(cur["spark_ids"])
+# series drawn in the "Background and context" charts and used by stories / the walkthrough
+_ctx = json.load(open(os.path.join(DOCS, "data", "context_timeline.json")))
+var_ids |= {c["id"] for p in _ctx.get("periods", []) for c in p.get("charts", [])}
+for _f, _k in (("stories.json", "stories"), ("walkthrough.json", None)):
+    _p = os.path.join(DOCS, "data", _f)
+    if os.path.exists(_p):
+        _d = json.load(open(_p)); _steps = [s for st in _d.get(_k, []) for s in st.get("steps", [])] if _k else _d.get("steps", [])
+        var_ids |= {(s.get("view") or s).get("var") for s in _steps} - {None}
 var_ids |= {b["county_var"] for b in cur["background"] if b.get("county_var")}
 raster_keys = set()
 for k in cur["rasters"].values():
@@ -38,7 +46,7 @@ for b in cur["background"]:
     raster_keys |= set(b.get("rasters", []))
 point_keys = set(cur["points"])
 
-copy = ["counties.geojson", "flows.json", "profiles.json", "context_events.json", "context_timeline.json", "basemap_context.json", "curated.json"]
+copy = ["counties.geojson", "flows.json", "profiles.json", "context_events.json", "context_timeline.json", "basemap_context.json", "curated.json", "stories.json", "walkthrough.json", "landing_text.json"]
 for f in copy:
     p = os.path.join(DOCS, "data", f)
     if os.path.exists(p):

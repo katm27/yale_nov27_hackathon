@@ -1469,13 +1469,13 @@
   ]
  },
  "g3p_gwsa_cm": {
-  "label": "Groundwater change (satellite gravity)",
-  "plain": "Whether underground water is above or below its 2002-2020 average, in centimetres of water.",
+  "label": "Groundwater",
+  "plain": "Whether groundwater is above or below its 2002-2020 average, in centimetres of water, from the GRACE and GRACE-FO gravity satellites with soil moisture, surface water and snow removed.",
   "method": "G3P v1.12: GRACE total water storage minus modelled soil moisture and surface water, vs 2002-2020 mean.",
   "how_to_read": "Above 0 = more groundwater than average; below 0 = less",
   "direction": "wetter_drier",
   "topic": "Water & floods",
-  "caution": "Ends Sep 2023. Very coarse (~300 km); in the Sudd, flood-water errors can leak in. Treat as indicative.",
+  "caution": "Ends September 2023. Less conclusive in and around the Sudd wetland, where flood water on the surface can be mistaken for groundwater (hatched counties). NASA's GLDAS groundwater product will replace this once Google Earth Engine access is set up.",
   "synonyms": [
    "groundwater",
    "aquifer",

@@ -46,8 +46,8 @@
     {
       "category": "climate",
       "group": "Water & drought",
-      "id": "grace_tws_cm",
-      "label": "Total water stored in the ground"
+      "id": "g3p_gwsa_cm",
+      "label": "Groundwater"
     },
     {
       "category": "climate",
@@ -172,7 +172,6 @@
     "modis_et_monthly_mm": "modis_et_monthly",
     "flood_s1_flood_pct": "flood_s1",
     "sudd_inundation_pct": "sudd_inundation",
-    "grace_tws_cm": "grace_tws",
     "modis_lst_day_c": "modis_lst_day",
     "modis_ndvi": "modis_ndvi"
   },

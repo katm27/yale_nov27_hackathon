@@ -5,10 +5,10 @@
   "steps": [
     {
       "heading": "Pick a measure and read its trend",
-      "text": "Choose 'Total water stored in the ground' with 'Show' set to the seasonally-adjusted trend. Water stored on and under the land rose in all 79 counties, typically by 3.7 cm a year. Counties with a thick dark outline (76 of 79) have a trend that is statistically significant, that is, unlikely to be chance. Rubkona's rise is +3.6 cm a year.",
+      "text": "Choose 'Groundwater' with 'Show' set to the seasonally-adjusted trend. Groundwater, measured from the gravity of the water by the GRACE satellites, rose in all 79 counties, typically by about 3 cm a year until the record ends in September 2023. Counties with a thick dark outline (54 of 79) have a trend that is statistically significant, that is, unlikely to be chance; Rubkona's rise (+1.9 cm a year) is one of them. Sudd counties are hatched because flood water on the surface can leak into the groundwater estimate there.",
       "view": {
-        "var": "grace_tws_cm",
-        "month": "2025-12",
+        "var": "g3p_gwsa_cm",
+        "month": "2023-09",
         "mode": "trend",
         "county": "SS0609",
         "flows": false,
@@ -83,10 +83,10 @@
     },
     {
       "heading": "Open the national trends: the water kept rising as aid fell",
-      "text": "Click 'See national trends in aid and socioeconomic outcomes' at the top of the left panel. In 2025, water storage averaged +16.2 cm above normal across the country, the highest yearly average since 2018, and IOM recorded about 242,000 flood displacements. In the same year the UN appeal received 46% of what it asked for (US$787 million of US$1.70 billion), and US humanitarian funding fell from US$708 million in 2024 to US$282 million. In Fangak, 80% of people were again in crisis-level hunger by September 2025.",
+      "text": "Click 'See national trends in aid and socioeconomic outcomes' at the top of the left panel. In 2025, GRACE satellites measured the most total water stored in the land of any year since 2018 (+16.2 cm above normal), and IOM recorded about 242,000 flood displacements. In the same year the UN appeal received 46% of what it asked for (US$787 million of US$1.70 billion), and US humanitarian funding fell from US$708 million in 2024 to US$282 million. In Fangak, 80% of people were again in crisis-level hunger by September 2025.",
       "view": {
-        "var": "grace_tws_cm",
-        "month": "2025-10",
+        "var": "ipc_phase3plus_pct",
+        "month": "2025-09",
         "mode": "raw",
         "county": "SS0306",
         "flows": false,
