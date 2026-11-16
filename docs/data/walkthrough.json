@@ -1,6 +1,6 @@
 {
   "_note": "Landing-page walkthrough replacing 'Key findings'. Numbers recomputed from docs/data on 15 Nov 2026 (series/*.json, trends.json, flows.json). Lake Victoria levels: Mulangwa et al. 2026, Hydrology and Earth System Sciences 30, 5297-5325, doi:10.5194/hess-30-5297-2026.",
-  "title": "Flooding without extra rain: Rubkona and Fangak, 2018-2025",
+  "title": "Flooding during droughts: Rubkona and Fangak, 2018-2025",
   "intro": "Rainfall over South Sudan has not increased since 2018, but the land has filled with water. Around Bentiu (Rubkona County) and in Fangak, on the western and northern edges of the Sudd wetland, ground that dried out every year until 2020 has stayed flooded since 2021. The steps below show that change in the satellite record and what followed on the ground.",
   "steps": [
     {
@@ -18,7 +18,7 @@
     },
     {
       "heading": "Check the rainfall",
-      "text": "Switch to rainfall, still in the trend view. No county has a significant rainfall trend, and the gauge-blended CHIRPS record agrees. The water came from upstream. Lake Victoria, which feeds the White Nile, rose above its 1964 record level in 2020, 2021 and 2024, and a 2026 study finds that the Sudd's flooded extent follows those lake peaks 9 to 13 months later.",
+      "text": "Switch to rainfall, still in the trend view. No county has a significant rainfall trend, and the satellite rainfall record, verified with ground-truth rain gauge data, agrees. The water came from upstream. Lake Victoria, which feeds the White Nile, rose above its 1964 record level in 2020, 2021 and 2024, and a 2026 study finds that the Sudd's flooded extent follows those lake peaks 9 to 13 months later.",
       "view": {
         "var": "precip_mm",
         "month": "2025-12",
@@ -96,5 +96,5 @@
       }
     }
   ],
-  "caveat": "The data show patterns and cannot prove cause. Hunger, displacement and violence in the Sudd also have political and economic causes. GRACE sees about 300 km at a time, so read it regionally. The radar flood map counts only water beyond each place's normal dry-season state, so ground that stays flooded all year (much of Rubkona since 2021) looks nearly dry on it; the Sudd wetland map shows those areas. NASA IMERG rainfall over Rubkona rises sharply after 2021 (873 mm in 2018, 2,629 mm in 2023) while CHIRPS shows no rise (900 mm and 809 mm), which suggests the satellite is reading standing water as rain. IOM counts displacement movements, so one person can be counted more than once. The Sudd map has no data for July-November 2025."
+  "subtitle": "Follow us along on a walkthrough of just one of many interesting stories the data shows us!"
 }

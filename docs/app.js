@@ -19,7 +19,7 @@
   const state = {
     months: [], vars: [], varById: {}, allVars: {}, series: {}, colorBy: null,
     mode: "trend", agg: "month", t: 0, selected: null, gridOn: true,
-    rasters: [], rasterByKey: {}, rasterLayers: {}, points: [], pointLayers: {}, bgOn: new Set(["water"]),
+    rasters: [], rasterByKey: {}, rasterLayers: {}, points: [], pointLayers: {}, bgOn: new Set(["water"]), chartVars: [],
     timer: null, charts: [], natCharts: [], view: "landing",
   };
 
@@ -175,7 +175,12 @@
     const holes = [];
     const g = ctx.ssd.geometry, polys = g.type === "Polygon" ? [g.coordinates] : g.coordinates;
     for (const p of polys) holes.push(p[0].map(([x, y]) => [y, x]));
-    L.polygon([outer, ...holes], { pane: "mask", stroke: false, fillColor: css("--maskfill") || "#efeee9", fillOpacity: 0.88, interactive: false }).addTo(map);
+    L.polygon([outer, ...holes], { pane: "mask", stroke: false, fillColor: "#cfd4dc", fillOpacity: 0.82, interactive: false }).addTo(map);
+    // rivers and lakes (Natural Earth): drawn over the neighbour tint so the Nile system reads across borders
+    if (ctx.lakes) L.geoJSON(ctx.lakes, { pane: "mask", interactive: false, style: { color: "#6f9bd1", weight: 0.8, fillColor: "#a9c8ec", fillOpacity: 1 } }).addTo(map);
+    if (ctx.rivers) L.geoJSON(ctx.rivers, { pane: "mask", interactive: false, style: { color: "#6f9bd1", weight: 1.3, opacity: 0.95 } }).addTo(map);
+    const WLAB = { "Lake Victoria": [-1.0, 33.0], "Lake Albert": [1.7, 30.95], "Lake Turkana": [3.6, 36.05], "Lake Tana": [12.0, 37.3], "White Nile": [13.2, 32.55], "Blue Nile": [12.2, 34.6] };
+    for (const [n, ll] of Object.entries(WLAB)) L.marker(ll, { pane: "labels", interactive: false, icon: L.divIcon({ className: "water-label", html: n, iconSize: null }) }).addTo(map);
     L.geoJSON(ctx.neighbors, { pane: "mask", interactive: false, style: { color: "#7d7b74", weight: 1.2, fill: false } }).addTo(map);
     L.geoJSON(ctx.ssd, { pane: "labels", interactive: false, style: { color: MAIN, weight: 1.6, opacity: 0.85, dashArray: "6 4", fill: false } }).addTo(map);
     const NLAB = { "Sudan": [11.4, 27.6], "Ethiopia": [7.9, 36.4], "Kenya": [3.6, 36.6], "Uganda": [2.6, 32.4], "DR Congo": [3.4, 27.4], "Central African Rep.": [7.3, 22.6] };
@@ -384,12 +389,49 @@
     el.querySelectorAll(".story-chip").forEach((b) => (b.onclick = () => { state.story = b.dataset.k || null; renderStories(); renderVarList(); }));
     el.querySelectorAll(".story-step").forEach((b) => (b.onclick = () => applyView(act.steps[+b.dataset.i])));
   }
+  // ---------- your own story: drag measures into the circle, write a note per step, click through ----------
+  const MS_KEY = "ssd-my-story-v1";
+  const loadMyStory = () => { try { return JSON.parse(localStorage.getItem(MS_KEY) || "[]"); } catch (e) { return []; } };
+  const saveMyStory = () => { try { localStorage.setItem(MS_KEY, JSON.stringify(state.myStory)); } catch (e) { /* storage blocked */ } };
+  function addStoryStep(id) {
+    if (!state.varById[id]) return;
+    state.myStory.push({ var: id, month: state.months[state.t], county: state.selected || null, mode: state.mode, agg: state.agg, text: "" });
+    saveMyStory(); renderMyStory();
+    const tas = document.querySelectorAll("#my-story textarea"); if (tas.length) tas[tas.length - 1].focus();
+  }
+  function renderMyStory() {
+    const el = $("#my-story"); if (!el) return;
+    const steps = state.myStory;
+    const where = (st) => (st.county ? countyProps(st.county).name : "all counties");
+    el.innerHTML = `<h3 class="ms-h">Create your own story</h3>
+      <p class="hint">If you found those stories interesting, then please create your own! If you drag and drop variables you found interesting, along with the time period and districts in which the trends occurred, you can construct a sequence of events that you can revisit and click through.</p>
+      <div class="ms-drop" tabindex="0" role="button" aria-label="Add the measure on the map as a story step"><span class="ms-plus">+</span><span>Drop a measure here<br><small>it keeps the slider's date and the county you clicked</small></span></div>
+      ${steps.length ? `<ol class="ms-steps">${steps.map((st, k) => `<li class="${state.myStep === k ? "on" : ""}">
+        <button class="ms-go" data-i="${k}"><b>${esc((state.varById[st.var] || {}).label || st.var)}</b> · ${esc(monthLabel(Math.max(0, state.months.indexOf(st.month))))} · ${esc(where(st))}</button>
+        <textarea data-i="${k}" rows="2" placeholder="What happens at this step?">${esc(st.text)}</textarea>
+        <div class="ms-act"><button class="linkbtn ms-upd" data-i="${k}">Use the current date and county</button><button class="linkbtn ms-del" data-i="${k}">Remove</button></div></li>`).join("")}</ol>
+        <div class="ms-nav"><button class="pill ms-prev">‹ Previous</button><button class="pill ms-next">Next ›</button><button class="linkbtn ms-clear">Clear story</button></div>` : ""}`;
+    const drop = el.querySelector(".ms-drop");
+    drop.ondragover = (e) => { e.preventDefault(); e.dataTransfer.dropEffect = "copy"; drop.classList.add("over"); };
+    drop.ondragleave = () => drop.classList.remove("over");
+    drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); document.body.classList.remove("dragging"); addStoryStep(e.dataTransfer.getData("text/plain")); };
+    const addCurrent = () => (state.colorBy ? addStoryStep(state.colorBy) : toast("Tick a measure first, or drag one here."));
+    drop.onclick = addCurrent; drop.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); addCurrent(); } };
+    const go = (k) => { if (k < 0 || k >= steps.length) return; state.myStep = k; const st = steps[k]; applyView({ var: st.var, month: st.month, mode: st.mode, agg: st.agg, county: st.county || undefined }); renderMyStory(); };
+    el.querySelectorAll(".ms-go").forEach((b) => (b.onclick = () => go(+b.dataset.i)));
+    el.querySelectorAll("textarea").forEach((t) => (t.oninput = () => { steps[+t.dataset.i].text = t.value; saveMyStory(); }));
+    el.querySelectorAll(".ms-upd").forEach((b) => (b.onclick = () => { const st = steps[+b.dataset.i]; st.month = state.months[state.t]; st.county = state.selected || null; st.mode = state.mode; st.agg = state.agg; saveMyStory(); renderMyStory(); }));
+    el.querySelectorAll(".ms-del").forEach((b) => (b.onclick = () => { steps.splice(+b.dataset.i, 1); state.myStep = null; saveMyStory(); renderMyStory(); }));
+    const pv = el.querySelector(".ms-prev"), nx = el.querySelector(".ms-next"), cl = el.querySelector(".ms-clear");
+    if (pv) pv.onclick = () => go(state.myStep == null ? 0 : state.myStep - 1);
+    if (nx) nx.onclick = () => go(state.myStep == null ? 0 : state.myStep + 1);
+    if (cl) cl.onclick = () => { if (confirm("Remove every step of your story?")) { state.myStory = []; state.myStep = null; saveMyStory(); renderMyStory(); } };
+  }
   /** Apply a saved view: {var, month, mode, county, flows, flowGroup, grid}. */
   async function applyView(w) {
     if (!w) return;
     if (w.mode && [...$("#mode").options].some((o) => o.value === w.mode)) { state.mode = w.mode; $("#mode").value = w.mode; renderModeHint(); }
     if (w.agg) { state.agg = w.agg; $("#agg").value = w.agg; }
-    if (w.grid != null) { state.gridOn = !!w.grid; $("#grid-on").checked = state.gridOn; }
     if (w.flows != null) { state.flowOn = !!w.flows; if (w.flowGroup) state.flowGroup = w.flowGroup; renderFlowControls(); }
     if (w.var !== undefined) await setColorBy(state.varById[w.var] ? w.var : null);
     if (w.county) { state.selected = w.county; state.compare = []; }
@@ -404,10 +446,7 @@
     const el = $("#var-list"); el.innerHTML = "";
     const act = (state.stories || []).find((x) => x.key === state.story);
     const only = act ? new Set(storyVars(act)) : null;
-    const none = document.createElement("label"); none.className = "var-row";
-    none.innerHTML = `<input type="radio" name="var" ${state.colorBy ? "" : "checked"}> <span>No measure (background and points only)</span>`;
-    none.querySelector("input").onchange = () => setColorBy(null);
-    if (!q && !only) el.appendChild(none);
+    if (!q && !only) el.insertAdjacentHTML("beforeend", `<p class="hint vl-hint">Tick measures to chart them together when you click a county. The map shows the one marked <span class="onmap">On map</span>.</p>`);
     let lastCat = null, lastGroup = null;
     for (const v of state.vars) {
       if (only && !only.has(v.id)) continue;
@@ -415,16 +454,27 @@
       if (q && !q.split(/\s+/).every((w) => hay.includes(w))) continue;
       if (v.category !== lastCat) { el.insertAdjacentHTML("beforeend", `<div class="cat-title">${v.category === "climate" ? "Climate and environment" : "People, conflict and aid"}</div>`); lastCat = v.category; lastGroup = null; }
       if (v.group !== lastGroup) { el.insertAdjacentHTML("beforeend", `<div class="group-title">${esc(v.group)}</div>`); lastGroup = v.group; }
-      const on = state.colorBy === v.id;
+      const onMap = state.colorBy === v.id, ticked = state.chartVars.includes(v.id);
       const cov = isStatic(v) ? "single snapshot" : `${v.first_period.slice(0, 4)}–${v.last_period.slice(0, 4)}${v.temporal && v.temporal !== "monthly" ? ", " + v.temporal.replace(/\s*\(.*\)/, "") : ""}`;
       const dots = (state.stories || []).filter((st) => storyVars(st).includes(v.id)).map((st) => `<i class="sdot" style="background:${esc(st.color)}" title="${esc(st.title)}"></i>`).join("");
-      const row = document.createElement("div"); row.className = `var-item${on ? " on" : ""}${v.sub ? " sub" : ""}`;
-      row.innerHTML = `<label class="var-row"><input type="radio" name="var" ${on ? "checked" : ""}> <span>${esc(v.label)} ${state.curated.rasters[v.id] ? '<span class="grid-ico" title="Finer-resolution grid available">▦</span>' : ""}${dots}<span class="meta"> · ${cov}</span></span></label>
-        ${on ? `<div class="var-plain">${esc(plainOf(v))}</div>` : ""}`;
-      row.querySelector("input").onchange = () => setColorBy(v.id);
+      const row = document.createElement("div"); row.className = `var-item${onMap ? " on" : ""}${ticked ? " ticked" : ""}${v.sub ? " sub" : ""}`;
+      row.draggable = true; row.title = "Drag into “Your story” to add it as a step";
+      row.innerHTML = `<div class="var-line"><label class="var-row"><input type="checkbox" ${ticked ? "checked" : ""}> <span>${esc(v.label)}${dots}<span class="meta"> · ${cov}</span></span></label>${onMap ? '<span class="onmap">On map</span>' : ticked ? '<button class="mapbtn">Show on map</button>' : ""}</div>
+        ${onMap ? `<div class="var-plain">${esc(plainOf(v))}</div>` : ""}`;
+      row.querySelector("input").onchange = (e) => toggleChartVar(v.id, e.target.checked);
+      const mb = row.querySelector(".mapbtn"); if (mb) mb.onclick = () => setColorBy(v.id);
+      row.ondragstart = (e) => { e.dataTransfer.setData("text/plain", v.id); e.dataTransfer.effectAllowed = "copy"; document.body.classList.add("dragging"); };
+      row.ondragend = () => document.body.classList.remove("dragging");
       el.appendChild(row);
     }
     if (q && !el.children.length) el.innerHTML = `<p class="empty">Nothing matches "${esc(q)}". Try flood, rain, heat, fire, fighting, hunger or aid.</p>`;
+  }
+  /** Tick = add to the county chart and colour the map with it; untick = remove (the map falls back to the last ticked). */
+  async function toggleChartVar(id, on) {
+    state.chartVars = state.chartVars.filter((x) => x !== id);
+    if (on) { state.chartVars.push(id); await setColorBy(id); return; }
+    if (state.colorBy === id) await setColorBy(state.chartVars[state.chartVars.length - 1] || null);
+    else { renderVarList(); if (state.selected) renderDetail(); writeHash(); }
   }
 
   async function ensureSeries(id) {
@@ -436,6 +486,7 @@
   }
   async function setColorBy(id) {
     state.colorBy = id;
+    if (id && !state.chartVars.includes(id)) state.chartVars.push(id);
     if (id) await ensureSeries(id);
     renderVarList(); refreshCounties(); updateRasters(); renderLegend(); if (state.selected) renderDetail(); writeHash();
   }
@@ -629,7 +680,7 @@
       }
     }
     const st = $("#flow-status");
-    if (st) st.innerHTML = !state.flowOn ? "" : !any ? `<span class="none">No IOM Event Tracking data for ${windowLabel(state.t)}. Records start in late 2019, and most months from 2020 on are covered.</span>` : `${[...agg.values()].reduce((a, b) => a + b, 0).toLocaleString("en-US")} people moving in ${windowLabel(state.t)}. All routes IOM recorded are drawn, or the 150 largest when there are more.`;
+    if (st) st.innerHTML = !state.flowOn ? "" : !any ? `<span class="none">No IOM Event Tracking data for ${windowLabel(state.t)}. Records start in late 2019, and most months from 2020 on are covered.</span>` : `${[...agg.values()].reduce((a, b) => a + b, 0).toLocaleString("en-US")} people moving in ${windowLabel(state.t)}.`;
     if (!state.flowOn) return;
     const list = [...agg.entries()].map(([k, n]) => { const [a, b, g] = k.split("|"); return { a: +a, b: +b, g, n }; }).sort((x, y) => y.n - x.n).slice(0, 150);
     const max = Math.max(1, ...list.map((f) => f.n));
@@ -695,11 +746,13 @@
     const charts = [];
     for (const p of hits) for (const c of p.charts || []) if (!charts.some((x) => x.id === c.id)) charts.push({ ...c, from: p.from, to: p.to });
     let html = "";
-    if (charts.length) html += `<h3 class="ctx-h">National Trends</h3>${charts.map((c, k) => `<div class="ctx-chart"><div class="cc-t">${esc(c.label)}${c.units ? ` <span class="muted">(${esc(c.units)})</span>` : ""}</div><div class="cc-box"><canvas id="ctxc-${k}"></canvas></div></div>`).join("")}`;
+    // order: what happened (text), then the national charts, then sources
     for (const p of hits) {
-      html += `<article class="ctx"><div class="ctx-range">${esc(range(p))}</div><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>${p.links ? `<p class="ctx-links">${esc(String(p.links).replace(/^\s*In the charts:\s*/i, ""))}</p>` : ""}
-        ${p.sources && p.sources.length ? `<p class="ctx-src">Sources: ${p.sources.map((s, i) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label || `[${i + 1}]`)}</a>`).join(" · ")}</p>` : ""}</article>`;
+      html += `<article class="ctx"><div class="ctx-range">${esc(range(p))}</div><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>${p.links ? `<p class="ctx-links">${esc(String(p.links).replace(/^\s*In the charts:\s*/i, ""))}</p>` : ""}</article>`;
     }
+    if (charts.length) html += `<h3 class="ctx-h">National Trends</h3>${charts.map((c, k) => `<div class="ctx-chart"><div class="cc-t">${esc(c.label)}${c.units ? ` <span class="muted">(${esc(c.units)})</span>` : ""}</div><div class="cc-box"><canvas id="ctxc-${k}"></canvas></div></div>`).join("")}`;
+    const srcs = hits.flatMap((p) => p.sources || []);
+    if (srcs.length) html += `<p class="ctx-src">Sources: ${srcs.map((s, i) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label || `[${i + 1}]`)}</a>`).join(" · ")}</p>`;
     if (evs.length) html += `<div class="ctx-evs"><h3>Also recorded this month</h3><ul>${evs.map((e) => `<li>${esc(e.title)}${e.source_url ? ` <a href="${esc(e.source_url)}" target="_blank" rel="noopener">source</a>` : ""}</li>`).join("")}</ul></div>`;
     el.innerHTML = html;
     if (!charts.length) return;
@@ -767,6 +820,8 @@
     const box = $("#detail-chart");
     if (!v) { box.innerHTML = `<p class="empty">Choose a measure in the left panel to see this county's history.</p>`; return; }
     await ensureSeries(v.id);
+    const ticked = state.chartVars.filter((id) => state.varById[id] && !isStatic(state.varById[id]) && !isCategorical(state.varById[id]));
+    if (ticked.length >= 2) { await renderMultiChart(box, cid, ticked); return; }
     const now = valueAt(v, cid, state.t, "raw");
     box.innerHTML = `<div class="chart-block"><h3>${esc(v.label)}</h3><div class="var-plain">${esc(plainOf(v))}</div>
       <p class="now">${windowLabel(state.t)}: <b>${isCategorical(v) ? soilName(now) : now == null ? "no data" : `${fmt(now)} ${esc(unitsShort(v))}`}</b></p>
@@ -785,6 +840,40 @@
         scales: { x: { ticks: { color: ink2, font: { size: 11 }, autoSkip: false, maxRotation: 0, callback: (_, i) => { const k = S.firstIdx[i]; return k % 12 === 0 || (state.agg === "year") ? state.months[k].slice(0, 4) : null; } }, grid: { color: (c) => (S.firstIdx[c.index] % 12 === 0 ? line : "transparent") } },
           y: { ticks: { color: ink2, maxTicksLimit: 5, font: { size: 11 } }, grid: { color: line }, title: { display: true, text: unitsShort(v), color: ink2, font: { size: 11 } } } },
         onClick: (_, els) => { if (els.length) setTime(S.firstIdx[els[0].index]); } },
+      plugins: [{ id: "cursor", afterDraw(c) { const { ctx, chartArea: a, scales } = c; const x = scales.x.getPixelForValue(cur); ctx.save(); ctx.strokeStyle = ORANGE; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x, a.top); ctx.lineTo(x, a.bottom); ctx.stroke(); ctx.restore(); } }],
+    }));
+  }
+
+  /** Several ticked measures on one chart: each as change from the same month (season, year) of 2018, in standard
+   *  deviations of that county's own record, so measures in different units share one axis. */
+  const MULTI_COLORS = ["#0B3D91", "#fc3c23", "#1baf7a", "#eda100", "#a05eb5", "#0aa5b8", "#e87ba4", "#4a4a4a"];
+  async function renderMultiChart(box, cid, ids) {
+    await Promise.all(ids.map((id) => ensureSeries(id)));
+    const rows = [], ds = [];
+    let S0 = null;
+    ids.forEach((id, k) => {
+      const v = state.varById[id], arr = (state.series[id] || {})[cid] || [];
+      const S = rawWindowSeries(v, cid); S0 = S0 || S;
+      const ok = arr.filter((x) => x != null && isFinite(x)), m = mean(ok);
+      const sd = ok.length > 2 ? Math.sqrt(ok.reduce((a, x) => a + (x - m) ** 2, 0) / (ok.length - 1)) : null;
+      const sc = isShareUnits(v) ? 100 : 1;
+      const z = S.firstIdx.map((i, w) => { const base = mean(baselineWindowIdx(i, v.baseline_year || 2018).map((q) => arr[q])); const x = S.vals[w];
+        return x == null || base == null || !sd ? null : (x - base * sc) / (sd * sc); });
+      const col = MULTI_COLORS[k % MULTI_COLORS.length];
+      ds.push({ label: v.label, data: z, raw: S.vals, units: unitsShort(v), borderColor: col, backgroundColor: col, borderWidth: id === state.colorBy ? 2.4 : 1.6, pointRadius: 0, pointHitRadius: 8, tension: 0.15, spanGaps: false });
+      const tr = trendOf(id, cid);
+      rows.push(`<li><i style="background:${col}"></i><b>${esc(v.label)}</b>${tr && tr[T_SEN] != null ? ` · ${signed(trendNative(v, cid, 2025), 2)} ${esc(slopeUnits(v))}${tr[T_SIG] ? ' <span class="sigtag">significant</span>' : ""}` : ""}</li>`);
+    });
+    box.innerHTML = `<div class="chart-block"><h3>Your ticked measures, change from 2018</h3><p class="hint">Each line is the change from the same ${state.agg === "month" ? "month" : state.agg === "season" ? "season" : "year"} of 2018, scaled to the measure's usual range so different units share one chart.</p>
+      <ul class="mc-list">${rows.join("")}</ul><div class="chart-box tall"><canvas></canvas></div></div>`;
+    const ink2 = css("--ink-2"), line = css("--line"), cur = S0.keys.indexOf(windowKey(state.t));
+    state.charts.push(new Chart(box.querySelector("canvas"), {
+      type: "line", data: { labels: S0.labels, datasets: ds },
+      options: { animation: false, responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => { const d = c.dataset, r = d.raw[c.dataIndex]; return `${d.label}: ${r == null ? "–" : `${fmt(r)} ${d.units}`}${c.raw == null ? "" : ` (${c.raw >= 0 ? "+" : ""}${c.raw.toFixed(1)} vs 2018)`}`; } } } },
+        scales: { x: { ticks: { color: ink2, font: { size: 11 }, autoSkip: false, maxRotation: 0, callback: (_, i) => { const k = S0.firstIdx[i]; return k % 12 === 0 || state.agg === "year" ? state.months[k].slice(0, 4) : null; } }, grid: { color: (c) => (S0.firstIdx[c.index] % 12 === 0 ? line : "transparent") } },
+          y: { ticks: { color: ink2, maxTicksLimit: 6, font: { size: 11 } }, grid: { color: (c) => (c.tick.value === 0 ? "#888" : line) }, title: { display: true, text: "change from 2018 (standard deviations)", color: ink2, font: { size: 11 } } } },
+        onClick: (_, els) => { if (els.length) setTime(S0.firstIdx[els[0].index]); } },
       plugins: [{ id: "cursor", afterDraw(c) { const { ctx, chartArea: a, scales } = c; const x = scales.x.getPixelForValue(cur); ctx.save(); ctx.strokeStyle = ORANGE; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x, a.top); ctx.lineTo(x, a.bottom); ctx.stroke(); ctx.restore(); } }],
     }));
   }
@@ -809,7 +898,7 @@
   function toast(msg) { let t = $("#toast"); if (!t) { t = document.createElement("div"); t.id = "toast"; document.body.appendChild(t); } t.textContent = msg; t.className = "show"; setTimeout(() => (t.className = ""), 2600); }
   function writeHash() {
     if (!state.months.length) return;
-    const h = new URLSearchParams({ view: state.view, m: state.mode, a: state.agg, t: state.months[state.t], v: state.colorBy || "", s: state.selected || "",
+    const h = new URLSearchParams({ view: state.view, m: state.mode, a: state.agg, t: state.months[state.t], v: state.colorBy || "", cv: state.chartVars.join(","), s: state.selected || "",
       fo: state.flowOn ? "1" : "0", fg: state.flowGroup, g: state.gridOn ? "1" : "0", bg: [...state.bgOn].join(","), p: Object.keys(state.pointLayers).join(","), n: state.natOpen ? "1" : "0" });
     try { history.replaceState(null, "", `#${h.toString()}`); } catch (e) { /* sandboxed */ }
   }
@@ -911,26 +1000,52 @@
   // ---------- "How to use" panel ----------
   const HOWTO_HTML = `<button class="howto-close" aria-label="Close">×</button>
   <h2>How to use</h2>
-  <h3>What this map shows</h3>
-  <p>This map lays South Sudan’s counties beneath two kinds of monthly data from 2018 to 2025. The first describes the climate conditions that farming, herding, and flood risk depend on: rainfall, vegetation greenness, land surface temperature, soil moisture, and surface water. The second records displacement, armed conflict, humanitarian funding, and UN presence. Checkboxes turn each layer on or off, the time slider moves through the record one month at a time, and clicking a county opens its values for the selected month. Users can place a climate layer beneath a human one to ask whether a county that flooded in September also took in displaced families by December.</p>
-  <h3>Reading the colours and outlines</h3>
-  <p><b>Trend view</b> (the default) colours each county by its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, so the normal swing of the seasons does not show up as a trend. Green means the measure went up, red means it went down, and white means little or no change. The colours show direction only. Green is not “good” and red is not “bad”.</p>
-  <p><b>Values in original units</b> colours counties against each other for the selected month or season, with no reference to 2018. A county can look quite different in the two views. Its value may be low next to other counties (red here) and still have risen since 2018 (green in the trend view).</p>
-  <p>Each of the seven colours covers roughly a seventh of all county values for the measure. On the finer grids, the colours split the grid’s range into seven equal steps.</p>
-  <p><b>Outlined counties</b> passed the Mann-Kendall significance test for 2018–2025. The test allows for slow-moving conditions, where one month tends to resemble the next, and for the fact that all 79 counties were tested at once. An outline means the change is found to be statistically significant. A county without one may still have changed, since eight years is a short record.</p>
-  <p><b>Black hatching</b> marks counties with no data for that period.</p>
-  <h3>Understanding the data: implications and utility</h3>
-  <p>In few countries do households depend on the seasons as closely as in South Sudan, where most families live off rain-fed farming, cattle, or fishing. A single rainy season, running roughly from April to October, sets when families plant, when herders drive cattle toward the rivers, and when roads wash out for months at a time. When the rains arrive late or the floodwater fails to recede, families move; that movement can bring herding and farming communities into competition over scarce land and water. The floods that covered large parts of Jonglei, Unity, and Upper Nile between 2019 and 2022 are the clearest recent example, since many of the families who fled the water had already fled the fighting years before.</p>
-  <p>Rainfall records how much rain fell in each county during the month, which means the most when set against what usually falls there. Vegetation greenness (NDVI) follows rainfall with a lag of several weeks. A county that stays brown into the rainy season points to failing pasture and crops, while one that greens unusually early or late points to a shifted season. Land surface temperature measures how hot the ground itself becomes (not the air temperature a weather station reports), so it serves as a marker of dry-season heat stress on crops, livestock, and people. Soil moisture shows how much water the ground already holds. Saturated soil cannot absorb the next storm, which is why heavy rain on already-wet ground in the Sudd produces floods that last for months rather than days. Surface water maps where standing water covers the land, capturing both the seasonal swell of the Sudd wetland and the floods that spread beyond it.</p>
-  <ul>
-    <li>Maximum temperatures (day temperatures) are particularly important for assessing heat stress, wildfire risk, and drought conditions. Heat stress is particularly relevant in urban areas where the heat island effect can intensify impacts.</li>
-    <li>Minimum temperatures (night temperatures) are critical for human health (e.g., sleep quality), animal health, agricultural productivity (e.g., frost risk), and ecosystem stability.</li>
-    <li>Precipitation patterns are broadly organized by climatic zones and rain fronts, but at finer scales, they are influenced by topography, distance from the coast, prevailing winds, and local convection processes.</li>
+  <details class="ht" open><summary>What this map shows</summary>
+  <p>This map lays South Sudan’s counties beneath two kinds of monthly data from 2018 to 2025.</p>
+  <ul class="ht-two">
+    <li><span class="ht-tag climate">Climate</span>The climate conditions that farming, herding, and flood risk depend on: rainfall, vegetation greenness, land surface temperature, soil moisture, and surface water.</li>
+    <li><span class="ht-tag human">People</span>Displacement, armed conflict, humanitarian funding, and UN presence.</li>
   </ul>
-  <p>The displacement layer counts internally displaced people and returnees in each county using figures from IOM’s Displacement Tracking Matrix. IOM collects these figures in survey rounds a few months apart, so the value for any given month reflects the most recent round rather than a fresh count. The conflict layer records reported incidents of political and communal violence, including the cattle raids and revenge attacks that tend to rise in the dry season. The funding layer reports what donors committed to the humanitarian response. The UN presence layer marks where UNMISS and UN agencies operated, which shows where international actors could see and respond to a crisis.</p>
-  <p>The map supports exploration rather than proof. Placing a flood beside a rise in displacement raises a question, but answering it takes field reporting, interviews, and local knowledge. A satellite can show that the water rose; it cannot say who left, or why. This tool provides a foundation for exploring these dynamics, helping users identify key climate patterns and potential vulnerabilities across different regions and seasons.</p>
-  <h3>Data caveats</h3>
-  <p>Displacement coverage is thin in the earliest months, since IOM’s tracking covered fewer than 50 counties in 2018 and reached nearly every county only in early 2019; a county shown with black hatching lacks data for that month, which is different from reporting zero displaced people. Conflict data come largely from media and partner reports, so remote counties are likely undercounted, while counties near UN bases may appear more violent simply because more observers were there to document what happened. County-level averages also flatten local variation; a single rainfall value can conceal a flooded river corridor beside dry uplands. Finally, South Sudan redrew its states in 2015 and again in 2017 before returning to ten states in 2020. The map uses one fixed set of county boundaries throughout, so figures that sources reported under the interim state names have been matched to those counties.</p>`;
+  <p>Checkboxes turn each layer on or off, the time slider moves through the record one month at a time, and clicking a county opens its values for the selected month. Users can place a climate layer beneath a human one to understand ecological drivers of socioeconomic pressures.</p>
+  </details>
+  <details class="ht"><summary>Reading the colours and outlines</summary>
+  <div class="ht-row"><span class="ht-ramp"><i style="background:#b2182b"></i><i style="background:#ef8a62"></i><i style="background:#fddbc7"></i><i style="background:#ffffff"></i><i style="background:#d9f0d3"></i><i style="background:#7fbf7b"></i><i style="background:#1b7837"></i></span>
+  <p><b>Trend view</b> (the default) colours each county by its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, so seasonality does not show up as a trend. Green means the measure went up, red means it went down, and white means little or no change.</p></div>
+  <div class="ht-row"><span class="ht-ico">123</span><p><b>Values in original units</b> compare counties against each other for the selected month or season, with no reference to 2018. A county can look quite different in the two views. Its value may be low next to other counties (red here) and still have risen since 2018 (green in the trend view).</p></div>
+  <div class="ht-row"><span class="ht-ico">7</span><p>Each of the seven colors covers an equal percentile of the values contained within the overall range of the variable. There may be a skew towards the top of the range, which will be reflected by many districts shaded in that color.</p></div>
+  <div class="ht-row"><span class="sig-swatch"></span><p><b>Outlined counties</b> passed the Mann-Kendall significance test for 2018–2025. An outline means the change is very unlikely to be due to pure random chance, indicating that there is an exogenous factor causing the trend.</p></div>
+  <div class="ht-row"><span class="lg-hatch"></span><p><b>Black hatching</b> marks counties with no data for that period.</p></div>
+  </details>
+  <details class="ht"><summary>Understanding the data: implications and utility</summary>
+  <p>In few countries do households depend on the seasons as closely as in South Sudan, where most families live off rain-fed farming, cattle, or fishing. A single rainy season, running roughly from April to October, sets when families plant, when herders drive cattle toward the rivers, and when roads wash out for months at a time.</p>
+  <p>When the rains arrive late or the floodwater fails to recede, families move; that movement can bring herding and farming communities into competition over scarce land and water. The floods that covered large parts of Jonglei, Unity, and Upper Nile between 2019 and 2022 are the clearest recent example, since many of the families who fled the water had already fled the fighting years before.</p>
+  <h4>Climate measures</h4>
+  <ul class="ht-list">
+    <li><b>Rainfall</b> records how much rain fell in each county during the month, which means the most when set against what usually falls there.</li>
+    <li><b>Vegetation greenness (NDVI)</b> follows rainfall with a lag of several weeks. A county that stays brown into the rainy season points to failing pasture and crops, while one that greens unusually early or late points to a shifted season.</li>
+    <li><b>Land surface temperature</b> measures how hot the ground itself becomes (not the air temperature a weather station reports), so it serves as a marker of dry-season heat stress on crops, livestock, and people.</li>
+    <li><b>Soil moisture</b> shows how much water the ground already holds. Saturated soil cannot absorb the next storm, which is why heavy rain on already-wet ground in the Sudd produces floods that last for months rather than days.</li>
+    <li><b>Surface water</b> maps where standing water covers the land, capturing both the seasonal swell of the Sudd wetland and the floods that spread beyond it.</li>
+    <li><b>Maximum temperatures</b> (day temperatures) are particularly important for assessing heat stress, wildfire risk, and drought conditions. Heat stress is particularly relevant in urban areas where the heat island effect can intensify impacts.</li>
+    <li><b>Minimum temperatures</b> (night temperatures) are critical for human health (e.g., sleep quality), animal health, agricultural productivity (e.g., frost risk), and ecosystem stability.</li>
+    <li><b>Precipitation patterns</b> are broadly organized by climatic zones and rain fronts, but at finer scales, they are influenced by topography, distance from the coast, prevailing winds, and local convection processes.</li>
+  </ul>
+  <h4>People measures</h4>
+  <ul class="ht-list">
+    <li><b>The displacement layer</b> counts internally displaced people and returnees in each county using figures from IOM’s Displacement Tracking Matrix. IOM collects these figures in survey rounds a few months apart, so the value for any given month reflects the most recent round rather than a fresh count.</li>
+    <li><b>The conflict layer</b> records reported incidents of political and communal violence, including the cattle raids and revenge attacks that tend to rise in the dry season.</li>
+    <li><b>The funding layer</b> reports what donors committed to the humanitarian response.</li>
+    <li><b>The UN presence layer</b> marks where UNMISS and UN agencies operated, which shows where international actors could see and respond to a crisis.</li>
+  </ul>
+  </details>
+  <details class="ht"><summary>Data caveats</summary>
+  <ul class="ht-list">
+    <li><b>Displacement</b> coverage is thin in the earliest months, since IOM’s tracking covered fewer than 50 counties in 2018 and reached nearly every county only in early 2019; a county shown with black hatching lacks data for that month, which is different from reporting zero displaced people.</li>
+    <li><b>Conflict</b> data come largely from media and partner reports, so remote counties are likely undercounted, while counties near UN bases may appear more violent simply because more observers were there to document what happened.</li>
+    <li><b>County-level averages</b> also flatten local variation; a single rainfall value can conceal a flooded river corridor beside dry uplands.</li>
+    <li><b>Boundaries.</b> Finally, South Sudan redrew its states in 2015 and again in 2017 before returning to ten states in 2020. The map uses one fixed set of county boundaries throughout, so figures that sources reported under the interim state names have been matched to those counties.</li>
+  </ul>
+  </details>`;
   function openHowto(open) {
     const el = $("#howto"); el.hidden = !open; $("#howto-toggle").setAttribute("aria-expanded", open);
     if (open && !el.innerHTML) { el.innerHTML = HOWTO_HTML; el.querySelector(".howto-close").onclick = () => openHowto(false); }
@@ -941,7 +1056,9 @@
   }
   function renderModeHint() {
     const el = $("#mode-hint"); if (!el) return;
-    el.textContent = state.mode === "trend" ? "Each county is compared with its own 2018 levels, month by month. Green means the measure rose after 2018, red means it fell." : "Colours compare counties with each other in the selected period, not with 2018.";
+    el.innerHTML = state.mode === "trend"
+      ? `Each county is compared with its own 2018 levels, month by month.<span class="mh-key"><span><i style="background:#1b7837"></i>rose after 2018</span><span><i style="background:#b2182b"></i>fell</span><span><i style="background:#fff"></i>little change</span></span>`
+      : `Colours compare counties with each other in the selected period, not with 2018.<span class="mh-key"><span><i style="background:#b2182b"></i>lower</span><span><i style="background:#1b7837"></i>higher</span></span>`;
   }
   // ---------- views ----------
   function openNat(open) {
@@ -961,7 +1078,7 @@
   }
   function renderWalkthrough(w) {
     const el = $("#walkthrough"); if (!el || !w || !w.steps) return;
-    el.innerHTML = `<h3>${esc(w.title)}</h3><p class="wt-intro">${w.intro}</p><ol class="wt-steps">${w.steps.map((st, k) => `<li><h4>${esc(st.heading)}</h4><p>${st.text}</p>${st.view ? `<button class="wt-go" data-i="${k}">Show me on the map →</button>` : ""}</li>`).join("")}</ol>${w.caveat ? `<p class="caveat">${w.caveat}</p>` : ""}`;
+    el.innerHTML = `<h3>${esc(w.title)}</h3>${w.subtitle ? `<p class="wt-sub">${esc(w.subtitle)}</p>` : ""}<p class="wt-intro">${w.intro}</p><ol class="wt-steps">${w.steps.map((st, k) => `<li><h4>${esc(st.heading)}</h4><p>${st.text}</p>${st.view ? `<button class="wt-go" data-i="${k}">Show me on the map →</button>` : ""}</li>`).join("")}</ol>${w.caveat ? `<p class="caveat">${w.caveat}</p>` : ""}`;
     el.querySelectorAll(".wt-go").forEach((b) => (b.onclick = async () => { setView("map"); await applyView(w.steps[+b.dataset.i].view); }));
   }
   const fitMap = () => countyLayer && map.fitBounds(countyLayer.getBounds(), { padding: [8, 8] });
@@ -1034,7 +1151,6 @@
     $("#time").oninput = (e) => setTime(+e.target.value);
     $("#play").onclick = togglePlay;
     $("#filter").oninput = renderVarList;
-    $("#grid-on").onchange = (e) => { state.gridOn = e.target.checked; refreshCounties(); updateRasters(); renderLegend(); writeHash(); };
     $("#detail-close").onclick = () => { state.selected = null; state.compare = []; state.comparing = false; refreshCounties(); renderDetail(); $("#tab-county").textContent = "Click on a county for more detailed info"; writeHash(); };
     $("#tab-context").onclick = () => showTab("context");
     $("#tab-county").onclick = () => state.selected && showTab("county");
@@ -1043,10 +1159,10 @@
     $("#back-home").onclick = () => setView("landing");
     document.querySelectorAll("[data-open-map]").forEach((b) => (b.onclick = () => setView("map")));
 
-    renderPointList(); renderBgList();
+    renderPointList(); renderBgList(); state.myStory = loadMyStory(); renderMyStory();
     const H = readHash();
     let tStart = state.months.indexOf("2022-09"); if (tStart < 0) tStart = state.months.length - 1;
-    let first = "flood_s1_flood_pct";
+    let first = null;   // open with nothing ticked: background, water and places only
     if (H) {
       const list = (k) => (H.get(k) || "").split(",").filter(Boolean);
       if (H.get("m") && [...$("#mode").options].some((o) => o.value === H.get("m"))) { state.mode = H.get("m"); $("#mode").value = state.mode; renderModeHint(); }
@@ -1054,12 +1170,12 @@
       if (H.get("s")) state.selected = H.get("s");
       if (H.get("fo") === "1") state.flowOn = true;
       if (H.get("fg")) state.flowGroup = H.get("fg");
-      if (H.get("g") === "0") { state.gridOn = false; $("#grid-on").checked = false; }
       if (H.has("bg")) { state.bgOn = new Set(list("bg")); renderBgList(); }
       state.natOpen = H.get("n") === "1";
       const ti = state.months.indexOf(H.get("t")); if (ti >= 0) tStart = ti;
       for (const k of list("p")) { const p = state.points.find((x) => x.key === k); if (p) { await loadPoints(p); const cb = document.getElementById(`p-${k}`); if (cb) cb.checked = true; } }
       if (H.has("v")) first = state.varById[H.get("v")] ? H.get("v") : null;
+      state.chartVars = list("cv").filter((id) => state.varById[id]);
     }
     state.t = tStart;
     await setColorBy(first);

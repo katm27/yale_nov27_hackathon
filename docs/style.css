@@ -145,7 +145,7 @@ select, input[type=search] { width: 100%; padding: 7px 8px; text-overflow: ellip
 .ctx h3 { font-size: 16px; margin: 2px 0 6px; line-height: 1.3; }
 .ctx p { margin: 0 0 8px; font-size: 14px; }
 .ctx .ctx-links { font-size: 13.5px; background: var(--page); border-radius: 6px; padding: 6px 8px; }
-.ctx .ctx-src { font-size: 12.5px; color: var(--ink-2); }
+.ctx-src { font-size: 12.5px; color: var(--ink-2); margin-top: 8px; }
 .ctx-evs { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 8px; }
 .ctx-evs h3 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-2); margin: 0 0 4px; }
 .ctx-evs ul { margin: 0; padding-left: 18px; font-size: 13.5px; }
@@ -246,7 +246,7 @@ input[type=radio], input[type=checkbox], input[type=range] { accent-color: var(-
 .var-item.sub { margin-left: 20px; border-left: 2px solid var(--line); padding-left: 8px; }
 
 /* ---- context charts ---- */
-.ctx-h { font-size: 15px; margin: 0 0 6px; border-left: 3px solid var(--hot); padding-left: 7px; }
+.ctx-h { font-size: 15px; margin: 12px 0 6px; border-left: 3px solid var(--hot); padding-left: 7px; }
 .ctx-chart { margin-bottom: 8px; }
 .cc-t { font-size: 13px; font-weight: 600; }
 .cc-box { position: relative; height: 110px; }
@@ -285,3 +285,64 @@ input[type=radio], input[type=checkbox], input[type=range] { accent-color: var(-
 .pt-pop td { padding: 2px 6px 2px 0; vertical-align: top; }
 .pt-pop td.muted { width: 38%; }
 .eth-key { max-height: 160px; overflow-y: auto; }
+.water-label { color: #2f5f9a; font-size: 11px; font-style: italic; white-space: nowrap; text-shadow: 0 0 3px #fff, 0 0 3px #fff; transform: translate(-50%, -50%); }
+body[data-view="landing"] .nt-v { display: none; }
+.mh-key { display: flex; flex-wrap: wrap; gap: 4px 14px; margin: 5px 0 0 12px; }
+.mh-key span { display: inline-flex; align-items: center; gap: 5px; font-size: 12.5px; color: var(--ink); }
+.mh-key i { width: 18px; height: 11px; border: 1px solid rgba(0,0,0,.3); border-radius: 2px; display: inline-block; }
+
+/* ---- measures: tick to chart, one on the map ---- */
+.vl-hint { margin: 2px 0 6px; }
+.var-line { display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; }
+.var-line .var-row { flex: 1; }
+.var-item { cursor: grab; border-radius: 6px; padding: 0 4px; }
+.var-item.ticked > .var-line .var-row { font-weight: 600; }
+.onmap { flex: none; font-size: 11px; font-weight: 700; color: #fff; background: var(--accent); border-radius: 999px; padding: 2px 8px; margin-top: 3px; white-space: nowrap; }
+.vl-hint .onmap { font-size: 10.5px; padding: 1px 6px; }
+.mapbtn { flex: none; font-size: 11px; border: 1px solid var(--accent); color: var(--ink); background: var(--surface); border-radius: 999px; padding: 1px 8px; margin-top: 3px; cursor: pointer; white-space: nowrap; }
+.mapbtn:hover { background: var(--accent); color: #fff; }
+.chart-box.tall { height: 260px; }
+.mc-list { list-style: none; padding: 0; margin: 6px 0; font-size: 12.5px; }
+.mc-list li { display: flex; align-items: baseline; gap: 6px; margin: 2px 0; }
+.mc-list i { width: 14px; height: 3px; border-radius: 2px; flex: none; transform: translateY(-3px); }
+.sigtag { font-size: 10.5px; border: 1.5px solid #111; border-radius: 3px; padding: 0 4px; }
+
+/* ---- stories panel and your own story ---- */
+#stories-panel { background: var(--page); }
+.ms-h { font-size: 14px; margin: 16px 0 4px; }
+.ms-drop { display: flex; align-items: center; gap: 12px; margin: 8px 0; cursor: pointer; font-size: 13px; color: var(--ink); }
+.ms-plus { width: 64px; height: 64px; flex: none; border-radius: 50%; border: 2.5px dashed var(--accent); display: grid; place-items: center; font-size: 30px; color: var(--accent); transition: all .15s; }
+.ms-drop small { color: var(--ink-2); }
+body.dragging .ms-plus { border-color: var(--hot); color: var(--hot); transform: scale(1.08); }
+.ms-drop.over .ms-plus { background: var(--hot); color: #fff; border-style: solid; }
+.ms-drop:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+.ms-steps { padding-left: 20px; margin: 6px 0; }
+.ms-steps li { margin: 0 0 10px; padding-left: 4px; }
+.ms-steps li.on { border-left: 3px solid var(--hot); padding-left: 6px; }
+.ms-go { border: none; background: none; padding: 0; text-align: left; cursor: pointer; font-size: 13px; color: var(--ink); }
+.ms-go:hover b { text-decoration: underline; text-decoration-color: var(--hot); }
+.ms-steps textarea { width: 100%; margin-top: 4px; font: inherit; font-size: 13px; padding: 5px 7px; border: 1px solid var(--line); border-radius: 6px; resize: vertical; background: var(--surface); color: var(--ink); }
+.ms-act { display: flex; gap: 12px; font-size: 12px; }
+.ms-act .linkbtn { font-size: 12px; }
+.ms-nav { display: flex; gap: 8px; align-items: center; }
+
+/* ---- how to use: scannable sections ---- */
+details.ht { border-top: 1px solid var(--line); padding: 8px 0; }
+details.ht > summary { cursor: pointer; font-weight: 700; font-size: 15px; list-style: none; display: flex; align-items: center; gap: 8px; }
+details.ht > summary::before { content: "›"; font-size: 18px; color: var(--hot); transition: transform .15s; width: 10px; }
+details.ht[open] > summary::before { transform: rotate(90deg); }
+details.ht h4 { font-size: 13px; text-transform: uppercase; letter-spacing: .05em; margin: 12px 0 4px; color: var(--ink-2); }
+.ht-two { list-style: none; padding: 0; margin: 6px 0; }
+.ht-two li { display: flex; gap: 8px; align-items: baseline; margin-bottom: 6px; }
+.ht-tag { flex: none; font-size: 11px; font-weight: 700; color: #fff; border-radius: 4px; padding: 1px 6px; }
+.ht-tag.climate { background: #1b7837; } .ht-tag.human { background: var(--accent); }
+.ht-row { display: flex; gap: 10px; align-items: flex-start; margin: 8px 0; }
+.ht-row p { margin: 0; }
+.ht-ramp { display: flex; flex: none; margin-top: 4px; border: 1px solid rgba(0,0,0,.25); }
+.ht-ramp i { width: 7px; height: 12px; display: block; }
+.ht-ico { flex: none; min-width: 49px; text-align: center; font-size: 11px; font-weight: 700; border: 1px solid var(--line); border-radius: 4px; padding: 0 3px; margin-top: 2px; }
+.ht-row .sig-swatch, .ht-row .lg-hatch { flex: none; margin: 4px 16px 0; }
+.lg-hatch { display: inline-block; width: 18px; height: 12px; background: repeating-linear-gradient(45deg, #111 0 3px, #8a8a8a 3px 5px); }
+.ht-list { padding-left: 18px; margin: 4px 0; }
+.ht-list li { margin-bottom: 7px; }
+.wt-sub { font-size: 16px; font-weight: 600; color: var(--ink); margin: -2px 0 8px; }

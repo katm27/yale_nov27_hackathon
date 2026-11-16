@@ -35,10 +35,9 @@
     <section class="summary" aria-labelledby="sum-h">
       <h2 id="sum-h">Executive summary</h2>
       <p>This dashboard brings together 17 climate and environment measures and 10 measures of conflict, food and aid for each of South Sudan's 79 counties, month by month from January 2018 to December 2025. For each county and measure, the map shows the <b>trend</b>: the typical change per year since 2018, estimated with Sen's slope and tested for significance using the Mann-Kendall test. For monthly data, each month is compared with the same month of 2018, controlling for seasonality. A county is outlined when its trend is found to be statistically significant.</p>
-      <p id="exec-last">Water tells an interesting - and unexpected - story in South Sudan. GRACE satellites show total water stored in the land rising in all 79 counties (significantly in 76, typically by 3.7 cm a year), and groundwater alone rose in every county too (significantly in 60). Yet the satellite rainfall records do not show a significant trend in any county. The rise fits with floodwater coming down the White Nile after Lake Victoria passed its 1964 record level in 2020, 2021 and 2024. In the 16 Sudd wetland counties, the average flooded area grew from about 2,800 km² in 2018 to 13,200 km² in 2022. Around Bentiu (Rubkona), land that was dry every March until 2020 has been about half under water each March since 2022. IOM recorded about 2.0 million flood displacements in 2020–2025, a third of them in the Sudd counties. In every hunger analysis since 2018, the Sudd counties had 12 to 21 percentage points more people in crisis than the rest of the country. In 2025, the year with the highest average water storage since 2018, the UN aid appeal was 46% funded and US government humanitarian funding fell to less than half of its 2024 level.</p>
+      <p id="exec-last">Water tells an interesting - and unexpected - story in South Sudan. GRACE satellites show total water stored in the land rising in all 79 counties (significantly in 76, typically by 3.7 cm a year), and groundwater alone rose in every county too (significantly in 60). Yet the satellite rainfall records do not show a significant trend in any county. The unexpected increases in groundwater and surface water match trends in increased flooding coming down the White Nile after Lake Victoria surpassed its record-setting maximum level of water in 1964 during the wet season in 2020, 2021 and 2024.<br><br>In the 16 Sudd wetland counties, the average flooded area grew from about 2,800 km² in 2018 to 13,200 km² in 2022. Around Bentiu (Rubkona), land that was dry every March until 2020 has been about half under water each March since 2022. IOM recorded about 2.0 million flood displacements in 2020–2025, a third of them in the Sudd counties. In every hunger analysis since 2018, the Sudd counties had 12 to 21 percentage points more people in crisis than the rest of the country. In 2025, the year with the highest average water storage since 2018, the UN aid appeal was 46% funded and US government humanitarian funding fell to less than half of its 2024 level.</p>
 
       <div id="walkthrough"></div>
-      <p class="caveat"><b>Caveats.</b> Eight years is a short record. The trends describe 2018–2025 and should not be projected forward. Some sources start after 2018 or have gaps. IOM Event Tracking starts in 2020, and some MODIS products are missing months in 2025 (greenness for August to October, the Sudd flooding measure for July to November). Event counts depend on what gets reported. The caveats for each measure appear when you select it on the map.</p>
     </section>
 
     <section id="national-home" aria-labelledby="nat-h">
@@ -88,21 +87,26 @@
 
     <section class="panel">
       <div class="panel-head"><h2>Measures</h2><input id="filter" type="search" placeholder="Search…" aria-label="Search measures"></div>
-      <div id="stories"></div>
-      <label class="var-row grid-toggle"><input type="checkbox" id="grid-on" checked> <span>Show climate measures at a more detailed and granular level (finer spatial resolution) than the district-level <span class="meta">(▦)</span></span></label>
       <div id="var-list"></div>
     </section>
 
 
     <section class="panel">
       <h2>Background layers</h2>
-      <p class="hint">These sit under the other datasets as an informative layer of characteristics of South Sudan’s landscape that influence agricultural productivity and grazing activity (which may make regions more vulnerable to raids). Choose “No measure” in the above list of climate and human variables to see them on their own.</p>
+      <p class="hint">These sit under the other datasets as an informative layer of characteristics of South Sudan’s landscape that influence agricultural productivity and grazing activity (which may make regions more vulnerable to raids). Untick all measures in the above list of climate and human variables to see them on their own.</p>
       <div id="bg-list"></div>
     </section>
 
     <section class="panel">
       <h2>Places and infrastructure</h2>
       <div id="point-list"></div>
+    </section>
+
+    <section class="panel" id="stories-panel">
+      <h2>Stories</h2>
+      <p class="hint">If you click on these stories, you can see a few of the stories that we found particularly interesting in this data. Click on each step to view the relevant data and walk through the ecological drivers of socioeconomic harm in South Sudan.</p>
+      <div id="stories"></div>
+      <div id="my-story"></div>
     </section>
 
     <section class="panel small">
