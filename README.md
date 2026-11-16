@@ -4,11 +4,10 @@ An interactive map of South Sudan's 79 counties. It puts climate and environment
 consequences of conflict, month by month from 2018 to 2025, and indexes every variable to its 2018 level (= 1.0).
 
 - App: `docs/` (a static Leaflet site). To run it locally: `cd docs && python3 -m http.server`, then open http://localhost:8000.
-  For a public URL, enable GitHub Pages (Settings → Pages → this branch, folder `/docs`).
-- Data contract: [`data/DATA_CONTRACT.md`](data/DATA_CONTRACT.md). Every pipeline writes long CSVs of county × month × variable.
+- Data: [`data/DATA_CONTRACT.md`](data/DATA_CONTRACT.md). Every pipeline writes long CSVs of county × month × variable.
 - Variable research and decision-maker priorities: [`docs/RESEARCH_variables_and_priorities.md`](docs/RESEARCH_variables_and_priorities.md)
 
-## What the app shows (curated view)
+## The app
 The app opens on a landing page with an executive summary, key findings and a national timeline, and a button leads
 into the map. [`docs/data/curated.json`](docs/data/curated.json) decides what the map shows: 18 climate and 10 human
 measures, the satellite grids behind the climate measures, background layers (water, soil moisture, soil type,
@@ -20,16 +19,11 @@ mode, white means little or no change, and black hatching means no data. The gri
 (`scripts/recolor_rasters_rwg.py`) because the raw grids are not stored. Hovering a county gives Sen's slope in native
 units per year (percentage points for percentages and shares).
 
-A few other pieces come from their own scripts. The "Background and context" text is
-`docs/data/context_timeline.json`, sourced half-year summaries built by `scripts/build_context_timeline.py`.
-Neighbouring countries and towns come from Natural Earth via `scripts/build_basemap_context.py`. Soil moisture uses
-TerraClimate, because NASA SMAP needs an Earthdata login and is not in the data yet.
-
 ## How it works
 1. `scripts/fetch_*.py`, `scripts/*_ssd.py` and `scripts/*_pipeline.py` download each source and aggregate it to counties →
    `data/processed/<source>_county_monthly.csv` + `data/processed/meta/<source>.json`. Fine-resolution raster overlays go to `docs/rasters/<key>/YYYY-MM.png`.
 2. `python scripts/build_web_data.py` merges everything into `docs/data/` (one JSON per variable, raw values).
-3. The browser computes the index in one of three ways: against the same month or season of the baseline year (the
+3. Computes the index in one of three ways: against the same month or season of the baseline year (the
    default, which removes seasonality), against the baseline-year average, or as raw values. Ratios are value ÷ baseline.
    Where a ratio makes no sense (temperatures in °C, SPEI/PDSI, anything that can be ≤ 0), the app shows the difference
    from baseline instead. If a source starts after 2018, its first year becomes the baseline, and the legend says so.
@@ -51,18 +45,15 @@ wherever a source covers it.
 
 Some indicators are not available at county level for 2018–2025, either because they are national-only or because
 they are missing: the Women, Peace & Security index (national, copied to every county), girls' and children's school
-enrolment (only the 2015 school census), vaccination (2018 only), infant and under-5 mortality (national only), ACLED
-*political violence targeting women* (needs an ACLED account), groundwater/GRACE and GLDAS/SMAP (need a NASA
-Earthdata login), and night-time lights (login or Earth Engine).
+enrolment (only the 2015 school census), vaccination (2018 only), infant and under-5 mortality (national only), ACLED.
 
 Several layers are static snapshots that give context rather than trends: health facilities (2025), schools (2015),
 oil fields and pipelines, ethnic groups (GeoEPR 2021), livestock (GLW 2015), soil, species richness and elevation.
 
-Known data caveats:
+Data caveats:
 - MODIS products are missing Jul–Oct 2025 on Planetary Computer, and MODIS ET is annual only.
 - MODIS surface water under-detects flooding (~0.5× UNOSAT, r = 0.76), so read it as a relative signal.
 - Sentinel-5P samples a few orbits per month and starts in mid-2018, so its baseline is partial.
-- TerraClimate rainfall is drier than IMERG in 2018–2025; use it for the spatial pattern only.
 - NASA POWER variables are sampled at county centroids.
 - WFP prices cover 12–28 market counties. Use the USD prices for trends, since SSP inflation swamps the SSP series.
 - IPC has no county analysis in 2021, and the phase class from 2022 on is derived with the IPC 20% rule.
