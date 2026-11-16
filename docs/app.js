@@ -574,7 +574,14 @@
         const status = pr.status ? `<div><b>Status:</b> ${esc(pr.status)}</div>` : "";
         const when = pr.date ? `<div><b>Date:</b> ${esc(String(pr.date).slice(0, 10))}</div>` : (pr.valid_from || pr.valid_to) ? `<div><b>Period:</b> ${pr.valid_from ? esc(String(pr.valid_from).slice(0, 7)) : "before 2018"} → ${pr.valid_to ? esc(String(pr.valid_to).slice(0, 7)) : "2025+"}</div>` : "";
         const ev = pr.evidence || pr.date_basis ? `<div class="hint">Evidence: ${esc(String(pr.evidence || pr.date_basis).slice(0, 220))}</div>` : "";
-        l.bindPopup(`<b>${esc(p.label)}</b>${head ? `<div>${esc(head)}</div>` : ""}${status}${when}${ev}<details${isPoly ? " open" : ""}><summary>Details</summary><table>${rows}</table></details>`);
+        const popOpts = { maxWidth: 300, autoPanPadding: [20, 20], className: "pt-pop" };
+        if (isPoly) {
+          const keep = ["Political power status", "What this means", "Share of national population", "Period"];
+          const trs = keep.filter((k) => pr[k]).map((k) => `<tr><td class="muted">${esc(k)}</td><td>${esc(String(pr[k]))}</td></tr>`).join("");
+          l.bindPopup(`<b>${esc(pr.Group || pr.name || "")}</b><table>${trs}</table>${pr.source_url ? `<div class="hint"><a href="${esc(pr.source_url)}" target="_blank" rel="noopener">Source: Ethnic Power Relations (ETH Zurich)</a></div>` : ""}`, popOpts);
+          return;
+        }
+        l.bindPopup(`<b>${esc(p.label)}</b>${head ? `<div>${esc(head)}</div>` : ""}${status}${when}${ev}<details><summary>Details</summary><table>${rows}</table></details>`, popOpts);
       },
     }).addTo(map);
   }
