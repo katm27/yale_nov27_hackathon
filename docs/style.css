@@ -394,3 +394,18 @@ details.ht h4 { text-transform: none; letter-spacing: 0; font-size: 15px; color:
 .leaflet-bar, .leaflet-bar a, .leaflet-popup-content-wrapper, .leaflet-tooltip, .leaflet-control-attribution { border-radius: 0 !important; }
 .leaflet-popup-content-wrapper, .leaflet-tooltip { box-shadow: none !important; border: 1px solid #b9b7af; }
 .leaflet-bar { box-shadow: none !important; border: 1px solid #b9b7af !important; }
+
+/* ---- drag grips to hide the side panels; "Measures" / "Additional context" bring them back ---- */
+#ctx-show { position: absolute; right: 12px; top: 12px; z-index: 700; border: none; padding: 8px 12px; font-weight: 700; cursor: pointer; background: var(--accent); color: #fff; }
+.grip { position: absolute; top: 50%; transform: translateY(-50%); z-index: 690; width: 14px; height: 72px; background: var(--surface); border: 1px solid #b9b7af; cursor: ew-resize; display: grid; place-items: center; touch-action: none; }
+.grip span { width: 4px; height: 34px; border-left: 1.5px solid #8a8880; border-right: 1.5px solid #8a8880; }
+.grip:hover, .grip.active, .grip:focus-visible { background: var(--accent); border-color: var(--accent); outline: none; }
+.grip:hover span, .grip.active span, .grip:focus-visible span { border-color: #fff; }
+.grip-left { left: 0; border-left: none; }
+.grip-right { right: 0; border-right: none; }
+#app.side-hidden .grip-left, #app.ctx-hidden .grip-right { display: none; }
+#side { transition: none; }
+#app.ctx-hidden #main { grid-template-columns: 1fr 0; }
+#app.ctx-hidden #side { display: none; }
+@media (max-width: 820px) { .grip { display: none; } #ctx-show { top: 8px; } }
+.lg-body > .lg-flows:first-child { border-top: none; margin-top: 0; padding-top: 0; }

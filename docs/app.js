@@ -1053,6 +1053,19 @@
     $("#app").classList.toggle("side-hidden", !open); $("#side-show").hidden = open;
     setTimeout(() => map.invalidateSize(), 260);
   }
+  function setContextPanel(open) {
+    $("#app").classList.toggle("ctx-hidden", !open); $("#ctx-show").hidden = open;
+    setTimeout(() => map.invalidateSize(), 260);
+  }
+  /** Drag a grip toward the edge (or click / press Enter on it) to hide that panel. */
+  function makeGrip(el, dir, hide) {
+    let x0 = null, moved = 0;
+    el.onpointerdown = (e) => { x0 = e.clientX; moved = 0; el.setPointerCapture(e.pointerId); el.classList.add("active"); };
+    el.onpointermove = (e) => { if (x0 == null) return; moved = e.clientX - x0; el.style.transform = `translateY(-50%) translateX(${dir < 0 ? Math.min(0, moved) : Math.max(0, moved)}px)`; };
+    el.onpointerup = () => { if (x0 == null) return; el.classList.remove("active"); el.style.transform = "";
+      if (moved * dir > 40 || Math.abs(moved) < 4) hide(); x0 = null; };
+    el.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); hide(); } };
+  }
   function renderModeHint() {
     const el = $("#mode-hint"); if (!el) return;
     el.innerHTML = state.mode === "trend"
@@ -1144,6 +1157,9 @@
     $("#howto-toggle").onclick = () => openHowto($("#howto").hidden);
     $("#side-hide").onclick = () => setSidebar(false);
     $("#side-show").onclick = () => setSidebar(true);
+    $("#ctx-show").onclick = () => setContextPanel(true);
+    makeGrip($("#grip-left"), -1, () => setSidebar(false));
+    makeGrip($("#grip-right"), 1, () => setContextPanel(false));
     renderModeHint();
     $("#mode").onchange = (e) => { state.mode = e.target.value; renderModeHint(); refreshCounties(); updateRasters(); renderLegend(); if (state.selected) renderDetail(); writeHash(); };
     $("#agg").onchange = (e) => { state.agg = e.target.value; setTime(state.t); renderLegend(); };
