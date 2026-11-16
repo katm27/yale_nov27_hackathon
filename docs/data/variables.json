@@ -6818,7 +6818,7 @@
    ],
    "trend_basis": "vs_base_month",
    "trend_moran_I": 0.154,
-   "trend_moran_p": 0.133,
+   "trend_moran_p": 0.114,
    "regional": {
     "sudd": {
      "S": 572.0,

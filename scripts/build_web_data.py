@@ -95,9 +95,18 @@ def load_values(county_ids: list[str]) -> pd.DataFrame:
 def build_trends(variables: list[dict], county_ids: list[str]) -> None:
     """Merge data/processed/trends/*_trends.csv (written by scripts/trend_stats.py) into docs/data/trends.json.
 
-    Per variable and county: [p, q_fdr, sen_slope_per_year, sen_slope_pct_per_year, tau, n, significant, test, sentence]
+    Per variable and county: [0 p, 1 q_fdr, 2 sen_slope_per_year, 3 sen_slope_pct_per_year, 4 tau, 5 n, 6 significant,
+    7 test, 8 sentence, 9 lisa, 10 p_naive, 11 [trend to date 2020..2025], 12 basis, 13 sen_lo, 14 sen_hi (90% range of
+    the headline slope), 15 pw_lost (1 = significance does not survive trend-free pre-whitening), 16 Pettitt break
+    "YYYY-MM" (p < 0.05, else null), 17 step_like (1 = change looks like a step at that break rather than a drift)]
     National series (county_id "SS") are applied to every county.
     """
+    def _flag(v):
+        try:
+            return None if v is None or not math.isfinite(float(v)) else int(bool(v))
+        except (TypeError, ValueError):
+            return None
+
     frames = [pd.read_csv(f, dtype={"county_id": str}) for f in sorted(glob.glob(os.path.join(ROOT, "data", "processed", "trends", "*_trends.csv")))]
     if not frames:
         return
@@ -116,7 +125,11 @@ def build_trends(variables: list[dict], county_ids: list[str]) -> None:
                                   getattr(r, "lisa", "ns") if isinstance(getattr(r, "lisa", None), str) else "ns",
                                   sig(getattr(r, "p_naive", float("nan")), 3),
                                   [sig(getattr(r, f"todate_{Y}", float("nan")), 3) for Y in range(2020, 2026)],
-                                  getattr(r, "basis", "") if isinstance(getattr(r, "basis", None), str) else ""]
+                                  getattr(r, "basis", "") if isinstance(getattr(r, "basis", None), str) else "",
+                                  sig(getattr(r, "sen_lo", float("nan"))), sig(getattr(r, "sen_hi", float("nan"))),
+                                  _flag(getattr(r, "pw_lost", float("nan"))),
+                                  r.cp_date if isinstance(getattr(r, "cp_date", None), str) and getattr(r, "cp_p", 1) < 0.05 else None,
+                                  _flag(getattr(r, "step_like", 0)) or 0]
                     for r in g.drop_duplicates("county_id", keep="last").itertuples()}
     # spatial + regional statistics into variable metadata
     byid = {v["id"]: v for v in variables}
