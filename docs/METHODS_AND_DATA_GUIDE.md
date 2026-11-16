@@ -623,7 +623,7 @@ Other cautions:
   usually 0. 22 counties have a significant `flood_s1_flood_km2` trend (q < 0.05) despite the 0 median slope.
   Compare annual peaks rather than reading a slope.
 
-Robustness checks (added 16 Nov 2026; details in [`STATISTICS_EXPLAINED.md`](STATISTICS_EXPLAINED.md) §9). They do
+Robustness checks (added 16 Nov 2026; details in [`STATISTICS_EXPLAINED.md`](STATISTICS_EXPLAINED.md) §9; the app shows only the 90% range of the slope). They do
 not change which counties are outlined.
 - 90% range of the headline slope (`sen_lo`, `sen_hi`). Monthly series: 12-month moving-block bootstrap of the
   detrended, deseasonalised residuals (500 draws), widened by Student's t with years − 1 df. Annual and survey series:

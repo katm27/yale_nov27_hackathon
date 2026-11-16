@@ -791,8 +791,7 @@
     const strength = sig ? "This trend is found to be statistically significant, even allowing for the fact that all 79 counties were tested." : tr[T_P] != null && tr[T_P] < 0.05 ? "This trend is suggestive, but it is not significant once all 79 counties are tested together." : "This change is not statistically significant and could be chance.";
     const k = isShareUnits(v) ? 100 : 1, lo = tr[13], hi = tr[14]; // 13/14: 90% range of the slope, 16/17: step change
     const range = lo != null && hi != null && x != null ? `; 90% range ${signed(lo * k, 2)} to ${signed(hi * k, 2)}` : "";
-    const step = tr[17] && tr[16] ? `, mostly a step change around ${String(tr[16]).slice(0, 4)}` : "";
-    return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen's slope${range})${step}. ${strength}`;
+    return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen's slope${range}). ${strength}`;
   }
   const COMPARE_COLORS = [MAIN, "#fc3c23", "#1baf7a", "#a05eb5"];
   const countyProps = (cid) => { const l = countyLayer.getLayers().find((x) => x.feature.properties.district_id === cid); return l ? l.feature.properties : { name: cid, admin1: "" }; };
@@ -1013,7 +1012,7 @@
   </details>
   <details class="ht"><summary>Reading the colours and outlines</summary>
   <div class="ht-row"><span class="ht-ramp"><i style="background:#b2182b"></i><i style="background:#ef8a62"></i><i style="background:#fddbc7"></i><i style="background:#ffffff"></i><i style="background:#d9f0d3"></i><i style="background:#7fbf7b"></i><i style="background:#1b7837"></i></span>
-  <p><b>Trend view</b> (the default) colours each county by its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, so seasonality does not show up as a trend. Green means the measure went up, red means it went down, and white means little or no change.</p></div>
+  <p><b>Trend view</b> (the default) colours each county by its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, controlling for seasonality. Green means the measure went up, red means it went down, and white means little or no change.</p></div>
   <div class="ht-row"><span class="ht-ico">123</span><p><b>Values in original units</b> compare counties against each other for the selected month or season, with no reference to 2018. A county can look quite different in the two views. Its value may be low next to other counties (red here) and still have risen since 2018 (green in the trend view).</p></div>
   <div class="ht-row"><span class="ht-ico">7</span><p>Each of the seven colors covers an equal percentile of the values contained within the overall range of the variable. There may be a skew towards the top of the range, which will be reflected by many districts shaded in that color.</p></div>
   <div class="ht-row"><span class="sig-swatch"></span><p><b>Outlined counties</b> passed the Mann-Kendall significance test for 2018–2025. An outline means the change is very unlikely to be due to pure random chance, indicating that there is an exogenous factor causing the trend.</p></div>

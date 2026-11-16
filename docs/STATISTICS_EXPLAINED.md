@@ -158,7 +158,8 @@ series (no months) keep the ordinary Sen's slope.
 
 ## 9. Robustness checks (added 16 Nov 2026)
 
-Three checks sit alongside the main test. None of them changes which counties are outlined.
+Three checks sit alongside the main test. None of them changes which counties are outlined. The app shows only the first
+(the range for the slope); the other two are stored in the trend files for reference.
 
 **A range for the slope.** Each headline slope now has a 90% range (`sen_lo`, `sen_hi`), shown in the county
 panel. For monthly series the headline compares each month with the same month of 2018, so 2018's own noise
@@ -184,8 +185,7 @@ stricter test.
 **Step or steady drift?** Many water series did not rise smoothly; they jumped with the 2020–21 floods. The Pettitt
 (1979) test finds the most likely break month in the deseasonalised series (`cp_date`, `cp_p`). A single step at that
 month is then compared with a straight line by BIC (the step must be better by at least 10). `step_like` = 1 when the
-trend has p < 0.05, the break has p < 0.05 and the step fits clearly better; the county panel then adds "mostly a step
-change around <year>". This holds for 23 of the 76 significant counties for GRACE total water storage, 21 of 54 for
+trend has p < 0.05, the break has p < 0.05 and the step fits clearly better. This holds for 23 of the 76 significant counties for GRACE total water storage, 21 of 54 for
 G3P groundwater, 7 of 12 for Sudd flooded area (Rubkona: 2021) and 1 of 60 for GLDAS groundwater. In those counties
 the per-year slope averages over a jump, so describe the change as before and after the break. A break on its own
 proves little: Pettitt's p assumes independent data, and any steady trend also produces a "break" near the middle.
