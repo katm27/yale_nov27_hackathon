@@ -847,13 +847,19 @@
     if (share && usy) specs.push({ title: "US share of all humanitarian funding (solid) and US amount per year (dashed)", sub: "OCHA Financial Tracking Service, by calendar year.", step: true,
       sets: [{ data: mul(share, 100), color: "#2a78d6", label: "US share of all humanitarian funding", fmt: (x) => `${fmt(x, 2)}%`, axis: "y" },
         { data: usy, color: "#6250d6", dash: [6, 4], label: "US funding that year", fmt: usd, axis: "y2" }], yMin: 0, y2: true });
-    const add = (id, title, sub, color, f, opts = {}) => { const a = A(id); if (a) specs.push({ title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f }], yMin: 0, ...opts }); };
-    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents (national)", "Insecurity Insight, monthly. Reporting is very incomplete, and a low count may hide many unreported incidents.", "#c2185b", (x) => `${fmt(x)} incidents`, { bar: true });
+    const add = (id, title, sub, color, f, opts = {}) => { let a = A(id); if (a && opts.prep) a = opts.prep(a); if (a) specs.push({ title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f, dash: opts.dash }], yMin: 0, ...opts }); };
+    // Survey-edition series (WPS Index): keep one value per edition year, drawn as a dot at mid-year.
+    const editions = (arr) => arr.map((x, i) => (x != null && state.months[i].endsWith("-07") ? x : null));
+    const editionTitle = (i) => `${yearOf(i)} edition`;
+    const yearTitle = (i) => String(yearOf(i));
+    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents per year (national)", "Insecurity Insight, yearly totals. Coverage starts in 2020, so 2018–2019 are blank, not zero. Reporting is very incomplete, and a low count may hide many unreported incidents.", "#c2185b", (x) => `${fmt(x)} incidents`, { bar: true, prep: (a) => yearly(a, "sum"), titleFn: yearTitle });
     add("unmiss_budget_fy_usd", "UN peacekeeping mission (UNMISS) budget", "Approved budget for each UN fiscal year (July–June).", "#6250d6", usd, { step: true, yMin: null });
     add("fmr_internal_forced_total", "Forced travel: people counted moving because of conflict, disaster or hunger (national)", "IOM Flow Monitoring. Counts only people passing its monitoring points, so it misses other routes. No county data for Nov 2023–Dec 2024.", "#d7301f", (x) => `${fmt(x)} people`, { bar: true });
-    add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", "Women, Peace and Security Index (Georgetown Institute), survey years only.", "#c2185b", (x) => `${fmt(x, 3)}%`, { step: true, yMax: 60 });
-    add("wps_community_safety_pct", "Women who feel safe walking alone at night in their community (national)", "Women, Peace and Security Index (Georgetown Institute), survey years only.", "#1baf7a", (x) => `${fmt(x, 3)}%`, { step: true, yMax: 100 });
-    add("wps_education_years", "Women's average years of schooling (national)", "Women, Peace and Security Index (Georgetown Institute), survey years only.", "#008300", (x) => `${fmt(x, 3)} years`, { step: true });
+    const wpsSub = "Women, Peace and Security Index (Georgetown Institute). One dot per index edition (2019, 2021, 2023, 2025); the dashed line only joins them. Methods differ between editions, so compare with care.";
+    const wpsOpts = { points: true, dash: [5, 4], prep: editions, titleFn: editionTitle };
+    add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", wpsSub, "#c2185b", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 60 });
+    add("wps_community_safety_pct", "Women who feel safe walking alone at night in their community (national)", wpsSub, "#1baf7a", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 100 });
+    add("wps_education_years", "Women's average years of schooling (national)", wpsSub, "#008300", (x) => `${fmt(x, 3)} years`, wpsOpts);
     return specs;
   }
   async function renderNational() {
@@ -869,8 +875,8 @@
         borderDash: s.dash || [], stepped: spec.step ? "middle" : false, pointRadius: spec.points ? 4 : 0, pointHitRadius: 8, spanGaps: !!spec.points, tension: 0, yAxisID: s.axis || "y", type: spec.bar && !s.dash ? "bar" : "line", barPercentage: 1, categoryPercentage: 1 }));
       const chart = new Chart(tile.querySelector("canvas"), {
         type: "line", data: { labels: state.months, datasets },
-        options: { animation: false, responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
-          plugins: { legend: { display: false }, tooltip: { callbacks: { title: (c) => monthLabel(c[0].dataIndex), label: (c) => `${c.dataset.label}: ${c.raw == null ? "–" : spec.sets[c.datasetIndex].fmt(c.raw)}`, afterBody: (c) => (spec.extra ? spec.extra(c[0].dataIndex) : "") } } },
+        options: { animation: false, responsive: true, maintainAspectRatio: false, interaction: spec.points ? { mode: "nearest", axis: "x", intersect: false } : { mode: "index", intersect: false },
+          plugins: { legend: { display: false }, tooltip: { callbacks: { title: (c) => (spec.titleFn ? spec.titleFn(c[0].dataIndex) : monthLabel(c[0].dataIndex)), label: (c) => `${c.dataset.label}: ${c.raw == null ? "–" : spec.sets[c.datasetIndex].fmt(c.raw)}`, afterBody: (c) => (spec.extra ? spec.extra(c[0].dataIndex) : "") } } },
           scales: {
             x: { ticks: { color: ink2, font: { size: 11 }, autoSkip: false, maxRotation: 0, callback: (_, i) => (i % 12 === 6 ? state.months[i].slice(0, 4) : null) }, grid: { color: (c) => (c.index % 12 === 0 ? line : "transparent"), drawTicks: false } },
             y: { min: spec.yMin == null ? undefined : spec.yMin, max: spec.yMax, ticks: { color: ink2, font: { size: 10 }, maxTicksLimit: 4, callback: (x) => (spec.sets[0].fmt === usd ? usdShort(x) : spec.sets[0].fmt(x).replace(" people", "").replace(" incidents", "").replace(" years", "")) }, grid: { color: line } },
@@ -890,11 +896,12 @@
   }
   function updateNational() {
     for (const c of state.natCharts) {
-      const sp = c._spec, i = state.view === "map" ? state.t : lastIdx(sp.sets[0].data);
+      const sp = c._spec, i0 = state.view === "map" ? state.t : lastIdx(sp.sets[0].data);
+      const i = sp.points && i0 != null ? lastIdx(sp.sets[0].data.slice(0, i0 + 1)) : i0;   // dot series: latest edition so far
       const val = (s) => (s.data[i] == null ? "no data" : s.fmt(s.data[i]));
       const parts = sp.sets.length === 1 ? [`<b>${val(sp.sets[0])}</b>`] : sp.sets.map((s) => `${s.label}: <b>${val(s)}</b>`);
       const ex = sp.extra ? sp.extra(i) : "";
-      c._tile.querySelector(".nt-v").innerHTML = `${i == null ? "" : monthLabel(i) + ": "}${parts.join(" · ")}${ex ? `<br><span class="muted">${esc(ex)}</span>` : ""}`;
+      c._tile.querySelector(".nt-v").innerHTML = `${i == null ? "" : (sp.titleFn ? sp.titleFn(i) : monthLabel(i)) + ": "}${parts.join(" · ")}${ex ? `<br><span class="muted">${esc(ex)}</span>` : ""}`;
       c.draw();
     }
   }
