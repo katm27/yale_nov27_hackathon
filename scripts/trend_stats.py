@@ -254,6 +254,170 @@ def _zcrit(alpha: float) -> float:
     return NormalDist().inv_cdf(1 - alpha / 2)
 
 
+# ----------------------------------------------------------------------------- robustness checks (added 16 Nov 2026)
+CI_LEVEL = 0.90          # two-sided confidence level of the slope range
+N_BOOT = 500             # block-bootstrap draws for the anchored (vs-2018) slope
+STEP_DBIC = 10.0          # BIC gain needed to call a change "mostly a step" (Kass & Raftery: > 10 = very strong)
+
+
+def sen_ci_gilbert(t: np.ndarray, x: np.ndarray, var_s: float, level: float = CI_LEVEL) -> tuple[float, float]:
+    """Rank-based confidence interval of Sen's slope (Sen 1968; Gilbert 1987 §16.5; Hollander & Wolfe).
+
+    C = z_{(1+level)/2} * sqrt(Var S);  M1 = (N - C)/2,  M2 = (N + C)/2  (N = number of pairwise slopes)
+    lower = M1-th, upper = (M2+1)-th smallest pairwise slope. Var S may be the persistence-corrected variance.
+    """
+    m = np.isfinite(x)
+    t, x = np.asarray(t, float)[m], np.asarray(x, float)[m]
+    if len(x) < 3 or not np.isfinite(var_s) or var_s <= 0:
+        return np.nan, np.nan
+    i, j = np.triu_indices(len(x), 1)
+    dt = t[j] - t[i]
+    ok = dt != 0
+    sl = np.sort((x[j] - x[i])[ok] / dt[ok])
+    N = len(sl)
+    C = _zcrit(1 - level) * math.sqrt(var_s)
+    lo, hi = int(round((N - C) / 2)) - 1, int(round((N + C) / 2))
+    if lo < 0 or hi > N - 1:
+        return np.nan, np.nan            # too few pairs for this confidence level: no finite range
+    return float(sl[lo]), float(sl[hi])
+
+
+def _anchored_matrix(Y: np.ndarray, pos: np.ndarray, bpos: np.ndarray, k: np.ndarray) -> np.ndarray:
+    """Vectorised anchored_month_slope for rows of Y (draws x months): median of (Y[pos]-Y[bpos])/k, both-zero skipped."""
+    a, b = Y[:, pos], Y[:, bpos]
+    s = (a - b) / k
+    s[(a == 0) & (b == 0)] = np.nan
+    with np.errstate(all="ignore"):
+        import warnings
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            return np.nanmedian(s, axis=1)
+
+
+def anchored_block_ci(d: pd.Series, x: np.ndarray, base_year: int, b_fit: float, theta: float,
+                      level: float = CI_LEVEL, n_boot: int = N_BOOT, seed: int = 20181, block: int = 12,
+                      inflate: bool = True, small_t: bool = True) -> tuple[float, float]:
+    """Moving-block bootstrap range for the anchored (vs same month of the baseline year) slope.
+
+    Model: x[y,m] = c_m + b_fit*(y - base) + e, with b_fit the seasonal Sen's slope and c_m robust month levels.
+    The residual series e is resampled in moving blocks of 12 consecutive months (Kuensch 1989), which keeps the
+    month-to-month persistence and the within-year correlation, the baseline year's noise included. The anchored slope
+    is recomputed on each synthetic series; the basic (pivot) interval is theta - (q_hi - b0), theta - (q_lo - b0),
+    where b0 is the anchored slope of the noise-free fit. Non-negative variables are floored at 0.
+    """
+    if not np.isfinite(b_fit) or not np.isfinite(theta):
+        return np.nan, np.nan
+    ym = (d.dt.year * 12 + d.dt.month - 1).to_numpy()
+    start = int(ym.min())
+    L = int(ym.max()) - start + 1
+    if L < 24:
+        return np.nan, np.nan
+    X = np.full(L, np.nan)
+    X[ym - start] = x
+    idx = start + np.arange(L)
+    mon, yr = idx % 12, idx // 12
+    k = (yr - base_year).astype(float)
+    c = np.full(12, np.nan)
+    for g in range(12):
+        v = X[mon == g] - b_fit * k[mon == g]
+        if np.isfinite(v).any():
+            c[g] = np.nanmedian(v)
+    fit = c[mon] + b_fit * k
+    res = X - fit
+    if inflate:                          # residuals from a fitted model are too small: scale by sqrt(n/(n - params))
+        n_ok = int(np.isfinite(res).sum())
+        n_par = int(np.isfinite(c).sum()) + 1
+        if n_ok > n_par + 5:
+            res = res * math.sqrt(n_ok / (n_ok - n_par))
+    # anchored pairs: every later month with the same calendar month of the baseline year
+    bmap = {g: p for p, (g, y) in enumerate(zip(mon, yr)) if y == base_year and np.isfinite(X[p])}
+    pos = np.array([p for p in range(L) if yr[p] > base_year and mon[p] in bmap and np.isfinite(X[p])], int)
+    if len(pos) < 6:
+        return np.nan, np.nan
+    bpos = np.array([bmap[mon[p]] for p in pos], int)
+    kk = k[pos]
+    floor0 = np.nanmin(x) >= 0
+    F = fit[None, :].copy()
+    if floor0:
+        F = np.maximum(F, 0)
+    b0 = _anchored_matrix(F, pos, bpos, kk)[0]
+    if not np.isfinite(b0):
+        b0 = b_fit
+    rng = np.random.default_rng(seed)
+    nb = int(math.ceil(L / block))
+    st = rng.integers(0, L - block + 1, size=(n_boot, nb))
+    I = (st[:, :, None] + np.arange(block)).reshape(n_boot, -1)[:, :L]
+    Y = fit[None, :] + res[I]
+    if floor0:
+        Y = np.maximum(Y, 0)
+    th = _anchored_matrix(Y, pos, bpos, kk)
+    th = th[np.isfinite(th)]
+    if len(th) < n_boot // 2:
+        return np.nan, np.nan
+    q_lo, q_hi = np.quantile(th, [(1 - level) / 2, (1 + level) / 2])
+    # small-sample widening: Student t with (years - 1) df instead of the normal quantile (8 years -> x1.15)
+    from scipy.stats import t as _t
+    ny = len(np.unique(yr[np.isfinite(X)]))
+    f = float(_t.ppf((1 + level) / 2, max(ny - 1, 2)) / _zcrit(1 - level)) if small_t else 1.0
+    return float(theta - f * (q_hi - b0)), float(theta + f * (b0 - q_lo))
+
+
+def _acf1(x: np.ndarray) -> float:
+    xm = x - x.mean()
+    den = np.sum(xm * xm)
+    return float(np.sum(xm[:-1] * xm[1:]) / den) if den > 0 else 0.0
+
+
+def tfpw_mk(x: np.ndarray) -> dict:
+    """Trend-free pre-whitening Mann-Kendall test (Yue, Pilon, Phinney & Cavadias 2002; as pymannkendall's
+    trend_free_pre_whitening_modification_test). x is equally spaced, NaNs dropped.
+
+    b = Sen's slope (per step); e = x - b*i; r1 = lag-1 autocorrelation of e; y_i = e_i - r1*e_{i-1} + b*i; MK on y.
+    """
+    x = np.asarray(x, float)
+    x = x[np.isfinite(x)]
+    n = len(x)
+    if n < 10:
+        return {"p": np.nan, "r1": np.nan}
+    i = np.arange(1, n + 1, dtype=float)
+    b = sens_slope(i, x)
+    e = x - b * i
+    r1 = _acf1(e)
+    y = e[1:] - r1 * e[:-1]
+    y = y + np.arange(1, n, dtype=float) * b
+    r = mann_kendall(y)
+    return {"p": r["p"], "r1": r1}
+
+
+def pettitt(x: np.ndarray) -> dict:
+    """Pettitt (1979) change-point test. U_t = 2*sum_{i<=t} r_i - t(n+1) (ranks r), K = max|U_t|,
+    p ~= 2*exp(-6K^2/(n^3+n^2)). Returns the index of the first value after the most likely break."""
+    x = np.asarray(x, float)
+    n = len(x)
+    if n < 10:
+        return {"p": np.nan, "cp": None, "K": np.nan}
+    r = pd.Series(x).rank().to_numpy()
+    U = 2 * np.cumsum(r)[:-1] - np.arange(1, n) * (n + 1)
+    t = int(np.argmax(np.abs(U)))
+    K = float(abs(U[t]))
+    return {"p": float(min(1.0, 2 * math.exp(-6 * K * K / (n ** 3 + n ** 2)))), "cp": t + 1, "K": K}
+
+
+def step_vs_line(a: np.ndarray, cp: int) -> float:
+    """BIC(straight line) - BIC(one step at cp) on the series a; > 0 favours the step. Step has 3 parameters
+    (two levels + break), line 2. Large positive values mean the change looks like a jump, not a steady drift."""
+    a = np.asarray(a, float)
+    n = len(a)
+    if cp is None or cp < 3 or n - cp < 3:
+        return np.nan
+    i = np.arange(n, dtype=float)
+    sse_line = float(np.sum((a - np.polyval(np.polyfit(i, a, 1), i)) ** 2))
+    sse_step = float(np.sum((a[:cp] - a[:cp].mean()) ** 2) + np.sum((a[cp:] - a[cp:].mean()) ** 2))
+    if sse_line <= 0 or sse_step <= 0:
+        return np.nan
+    return float(n * math.log(sse_line / n) + 2 * math.log(n) - (n * math.log(sse_step / n) + 3 * math.log(n)))
+
+
 def spatial_clusters(slopes: pd.Series, permutations: int = 999, seed: int = 12345) -> tuple[dict, pd.DataFrame]:
     """Global Moran's I and Local Moran's I (LISA) of county trend values (Queen contiguity).
 
@@ -492,6 +656,18 @@ def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "month
                    sen_slope_per_year=sens_slope(t, x))
         res["lag1"] = lag1_autocorr(x[np.argsort(t)])
     res.update({k: r[k] for k in ("n", "S", "Z", "p", "tau")})
+    # robustness checks on the time-ordered series (calendar-month means removed for monthly data)
+    order = np.argsort(t, kind="stable")
+    a = x - pd.Series(x).groupby(d.dt.month.to_numpy()).transform("mean").to_numpy() if temporal == "monthly" else x
+    a = a[order]
+    res["p_pw"] = tfpw_mk(a)["p"]
+    pt = pettitt(a)
+    res["cp_p"] = pt["p"]
+    if pt["cp"] is not None:
+        c_ = pt["cp"]
+        res["cp_date"] = d.iloc[order[c_]].strftime("%Y-%m")
+        res["cp_shift"] = float(a[c_:].mean() - a[:c_].mean())
+        res["cp_dbic"] = step_vs_line(a, c_)
     by = baseline_year or int(d.dt.year.min())
     base = x[(d.dt.year == by).to_numpy()]
     res["baseline_mean"] = float(np.mean(base)) if len(base) else np.nan
@@ -504,6 +680,7 @@ def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "month
         res["basis"] = "vs_base_month"
         sl, pc, npairs = anchored_month_slope(d, x, by)
         res["display_slope"], res["display_pct"] = sl, pc
+        res["sen_lo"], res["sen_hi"] = anchored_block_ci(d, x, by, seasonal_sens_slope(t, x, season_), sl)
         res["display_base"] = res["baseline_mean"]
         for Y in range(2020, 2026):
             s2, p2, n2 = anchored_month_slope(d, x, by, upto=Y)
@@ -513,6 +690,8 @@ def trend_for_series(dates: pd.Series, values: pd.Series, temporal: str = "month
     sl, b0, _ = display_slope(d, x, basis, t, season_)
     res["basis"] = basis
     res["display_slope"] = sl
+    if basis == "observed":
+        res["sen_lo"], res["sen_hi"] = sen_ci_gilbert(t, x, r["var_S"])
     res["display_base"] = b0 if np.isfinite(b0) else res["baseline_mean"]
     for Y in range(2020, 2026):
         m_ = (d.dt.year <= Y).to_numpy()
@@ -632,6 +811,15 @@ def compute_trends(df: pd.DataFrame, meta: dict | None = None, window: tuple[str
     out["q_fdr"] = out.groupby("variable")["p"].transform(lambda s: pd.Series(bh_fdr(s), index=s.index))
     # significance uses Benjamini-Hochberg FDR-adjusted q (controls false positives across the 79 counties)
     out["significant"] = out["q_fdr"] < ALPHA
+    # sensitivity checks: (1) does significance survive trend-free pre-whitening (also FDR-adjusted)?
+    # (2) is the change better described as one step (Pettitt break) than as a steady drift?
+    for c_ in ("p_pw", "cp_p", "cp_dbic", "cp_shift", "sen_lo", "sen_hi"):
+        if c_ not in out:
+            out[c_] = np.nan
+    out["q_pw"] = out.groupby("variable")["p_pw"].transform(lambda s: pd.Series(bh_fdr(s), index=s.index))
+    out["pw_lost"] = np.where(out["q_pw"].notna(), (out["significant"] & ~(out["q_pw"] < ALPHA)).astype(float), np.nan)
+    out["step_like"] = ((out["p"] < ALPHA) & (out["cp_p"] < ALPHA) & (out["cp_dbic"] >= STEP_DBIC)
+                        & (np.sign(out["cp_shift"]) == np.sign(out["S"]))).astype(int)
     # spatial structure of each variable's trend map (skip national series repeated on every county)
     out["lisa"], out["lisa_p"], out["moran_I"], out["moran_p"] = "ns", np.nan, np.nan, np.nan
     for var, g in out.groupby("variable"):
@@ -650,7 +838,8 @@ def compute_trends(df: pd.DataFrame, meta: dict | None = None, window: tuple[str
                              for r in out.to_dict("records")]
     cols = ["county_id", "variable", "test", "n", "S", "Z", "tau", "p", "p_naive", "q_fdr", "significant", "sen_slope_per_year",
             "sen_slope_pct_per_year", "sen_slope_seasonal", "basis", "pct_ok", "direction", "baseline_year", "baseline_mean", "lag1",
-            "lisa", "lisa_p", "moran_I", "moran_p"] + [f"todate_{Y}" for Y in range(2020, 2026)] + ["interpretation"]
+            "lisa", "lisa_p", "moran_I", "moran_p", "sen_lo", "sen_hi", "p_pw", "q_pw", "pw_lost", "cp_date", "cp_p",
+            "cp_shift", "cp_dbic", "step_like"] + [f"todate_{Y}" for Y in range(2020, 2026)] + ["interpretation"]
     return out.reindex(columns=cols)   # static-only sources have no basis/to-date columns
 
 
