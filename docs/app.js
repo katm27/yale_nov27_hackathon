@@ -12,7 +12,7 @@
   const CATEGORICAL = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300", "#6250d6", "#e34948", "#4a4a4a", "#0aa5b8"];
   const MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const ORANGE = "#fc3c23";   // accent: slider cursor
-  const MAIN = "#0B3D91";
+  const MAIN = "#0a3c91";
   const SUDD_NAMES = ["Panyijiar", "Mayendit", "Leer", "Guit", "Fangak", "Ayod", "Canal/Pigi", "Duk", "Twic East", "Bor South", "Yirol East", "Awerial", "Rubkona", "Koch", "Nyirol", "Uror"];
   const GROUNDWATER_IDS = ["gracedm_gws_pctl", "gldas_gws_anom_cm", "grace_tws_cm", "g3p_gwsa_cm"];
 
@@ -768,7 +768,7 @@
           plugins: { legend: { display: false }, tooltip: { callbacks: { title: (q) => monthLabel(q[0].dataIndex), label: (q) => `${q.raw == null ? "–" : fmt(q.raw)} ${c.units || ""}` } } },
           scales: { x: { ticks: { color: ink2, font: { size: 10 }, autoSkip: false, maxRotation: 0, callback: (_, i) => (i % 24 === 6 ? state.months[i].slice(0, 4) : null) }, grid: { color: (q) => (q.index % 12 === 0 ? line : "transparent"), drawTicks: false } },
             y: { beginAtZero: c.how !== "mean", ticks: { color: ink2, font: { size: 10 }, maxTicksLimit: 4, callback: (x) => fmt(x, 2) }, grid: { color: line } } } },
-        plugins: [{ id: "marks", beforeDraw(ch) { const { ctx, chartArea: ar, scales } = ch; if (a < 0 || b < 0) return; ctx.save(); ctx.fillStyle = "rgba(11,61,145,0.08)"; const x0 = scales.x.getPixelForValue(a), x1 = scales.x.getPixelForValue(b); ctx.fillRect(x0, ar.top, Math.max(2, x1 - x0), ar.bottom - ar.top); ctx.restore(); },
+        plugins: [{ id: "marks", beforeDraw(ch) { const { ctx, chartArea: ar, scales } = ch; if (a < 0 || b < 0) return; ctx.save(); ctx.fillStyle = "rgba(10,60,145,0.08)"; const x0 = scales.x.getPixelForValue(a), x1 = scales.x.getPixelForValue(b); ctx.fillRect(x0, ar.top, Math.max(2, x1 - x0), ar.bottom - ar.top); ctx.restore(); },
           afterDraw(ch) { const { ctx, chartArea: ar, scales } = ch; const x = scales.x.getPixelForValue(state.t); ctx.save(); ctx.strokeStyle = ORANGE; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x, ar.top); ctx.lineTo(x, ar.bottom); ctx.stroke(); ctx.restore(); } }] }));
     });
   }
@@ -848,7 +848,7 @@
 
   /** Several ticked measures on one chart: each as change from the same month (season, year) of 2018, in standard
    *  deviations of that county's own record, so measures in different units share one axis. */
-  const MULTI_COLORS = ["#0B3D91", "#fc3c23", "#1baf7a", "#eda100", "#a05eb5", "#0aa5b8", "#e87ba4", "#4a4a4a"];
+  const MULTI_COLORS = ["#0a3c91", "#fc3c23", "#1baf7a", "#eda100", "#a05eb5", "#0aa5b8", "#e87ba4", "#4a4a4a"];
   async function renderMultiChart(box, cid, ids) {
     await Promise.all(ids.map((id) => ensureSeries(id)));
     const rows = [], ds = [];
@@ -943,12 +943,12 @@
     const editions = (arr) => arr.map((x, i) => (x != null && state.months[i].endsWith("-07") ? x : null));
     const editionTitle = (i) => `${yearOf(i)} edition`;
     const yearTitle = (i) => String(yearOf(i));
-    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents per year (national)", "Insecurity Insight, yearly totals. Coverage starts in 2020, so 2018–2019 are blank, not zero. Reporting is very incomplete, and a low count may hide many unreported incidents.", "#c2185b", (x) => `${fmt(x)} incidents`, { bar: true, prep: (a) => yearly(a, "sum"), titleFn: yearTitle });
+    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents per year (national)", "Insecurity Insight, yearly totals. Coverage starts in 2020, so 2018–2019 are blank, not zero. Reporting is very incomplete, and a low count may hide many unreported incidents.", "#ba1e68", (x) => `${fmt(x)} incidents`, { bar: true, prep: (a) => yearly(a, "sum"), titleFn: yearTitle });
     add("unmiss_budget_fy_usd", "UN peacekeeping mission (UNMISS) budget", "Approved budget for each UN fiscal year (July–June).", "#6250d6", usd, { step: true, yMin: null });
     add("fmr_internal_forced_total", "Forced travel: people counted moving because of conflict, disaster or hunger (national)", "IOM Flow Monitoring. Counts only people passing its monitoring points, so it misses other routes. No county data for Nov 2023–Dec 2024.", "#d7301f", (x) => `${fmt(x)} people`, { bar: true });
     const wpsSub = "Women, Peace and Security Index (Georgetown Institute). One dot per index edition (2019, 2021, 2023, 2025); the dashed line only joins them. Methods differ between editions, so compare with care.";
     const wpsOpts = { points: true, dash: [5, 4], prep: editions, titleFn: editionTitle };
-    add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", wpsSub, "#c2185b", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 60 });
+    add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", wpsSub, "#ba1e68", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 60 });
     add("wps_community_safety_pct", "Women who feel safe walking alone at night in their community (national)", wpsSub, "#1baf7a", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 100 });
     add("wps_education_years", "Women's average years of schooling (national)", wpsSub, "#008300", (x) => `${fmt(x, 3)} years`, wpsOpts);
     return specs;
