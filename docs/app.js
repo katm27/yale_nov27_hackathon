@@ -789,7 +789,10 @@
     const tr = trendOf(v.id, cid); if (!tr || tr[T_SEN] == null) return "Too little data to estimate a trend for this county.";
     const x = trendNative(v, cid, 2025), sig = tr[T_SIG];
     const strength = sig ? "This trend is found to be statistically significant, even allowing for the fact that all 79 counties were tested." : tr[T_P] != null && tr[T_P] < 0.05 ? "This trend is suggestive, but it is not significant once all 79 counties are tested together." : "This change is not statistically significant and could be chance.";
-    return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen's slope). ${strength}`;
+    const k = isShareUnits(v) ? 100 : 1, lo = tr[13], hi = tr[14]; // 13/14: 90% range of the slope, 16/17: step change
+    const range = lo != null && hi != null && x != null ? `; 90% range ${signed(lo * k, 2)} to ${signed(hi * k, 2)}` : "";
+    const step = tr[17] && tr[16] ? `, mostly a step change around ${String(tr[16]).slice(0, 4)}` : "";
+    return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen's slope${range})${step}. ${strength}`;
   }
   const COMPARE_COLORS = [MAIN, "#fc3c23", "#1baf7a", "#a05eb5"];
   const countyProps = (cid) => { const l = countyLayer.getLayers().find((x) => x.feature.properties.district_id === cid); return l ? l.feature.properties : { name: cid, admin1: "" }; };
@@ -1058,13 +1061,32 @@
     $("#app").classList.toggle("ctx-hidden", !open); $("#ctx-show").hidden = open;
     setTimeout(() => map.invalidateSize(), 260);
   }
-  /** Drag a grip toward the edge (or click / press Enter on it) to hide that panel. */
+  /** Drag a grip toward the edge: the panel follows the pointer; let go past a quarter of its width (or click / press
+   *  Enter) to hide it, otherwise it snaps back. */
   function makeGrip(el, dir, hide) {
-    let x0 = null, moved = 0;
-    el.onpointerdown = (e) => { x0 = e.clientX; moved = 0; el.setPointerCapture(e.pointerId); el.classList.add("active"); };
-    el.onpointermove = (e) => { if (x0 == null) return; moved = e.clientX - x0; el.style.transform = `translateY(-50%) translateX(${dir < 0 ? Math.min(0, moved) : Math.max(0, moved)}px)`; };
-    el.onpointerup = () => { if (x0 == null) return; el.classList.remove("active"); el.style.transform = "";
-      if (moved * dir > 40 || Math.abs(moved) < 4) hide(); x0 = null; };
+    const panel = dir < 0 ? $("#sidebar") : $("#side"), main = $("#main");
+    let x0 = null, moved = 0, w = 0;
+    const apply = (px) => {   // px = how far the panel has been pushed out (0 .. w)
+      if (dir < 0) panel.style.marginLeft = `${-px}px`;
+      else main.style.gridTemplateColumns = `1fr ${Math.max(0, w - px)}px`;
+    };
+    const reset = () => { panel.style.marginLeft = ""; panel.style.transition = ""; main.style.gridTemplateColumns = ""; };
+    el.onpointerdown = (e) => { x0 = e.clientX; moved = 0; w = panel.getBoundingClientRect().width; el.setPointerCapture(e.pointerId); el.classList.add("active"); panel.style.transition = "none"; };
+    el.onpointermove = (e) => {
+      if (x0 == null) return;
+      moved = e.clientX - x0;
+      apply(Math.max(0, Math.min(w, moved * dir)));
+      if (!el._raf) el._raf = requestAnimationFrame(() => { el._raf = null; map.invalidateSize({ pan: false }); });
+    };
+    el.onpointerup = () => {
+      if (x0 == null) return;
+      el.classList.remove("active"); x0 = null;
+      const out = moved * dir;
+      panel.style.transition = "";
+      if (out > w * 0.25 || Math.abs(moved) < 4) { apply(w); hide(); setTimeout(() => { reset(); map.invalidateSize(); }, 280); }
+      else { reset(); map.invalidateSize(); }
+    };
+    el.onpointercancel = () => { x0 = null; el.classList.remove("active"); reset(); };
     el.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); hide(); } };
   }
   function renderModeHint() {
