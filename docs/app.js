@@ -235,10 +235,10 @@
 
   // ---------- hover tooltip: selected measure + stacked mini-charts on ONE shared year axis ----------
   const SPARKS = [
-    { id: "et_ind_total", label: "People displaced or returning (IOM)", color: "#d7301f", units: "people" },
-    { id: "fts_us_gov_funding_month_usd", label: "US humanitarian funding, national", color: "#2a78d6", units: "US$", money: true },
-    { id: "surface_water_pct", label: "Surface water (% of county)", color: "#0a8f86", units: "%" },
-    { id: "spei3", label: "Drought index (SPEI)", color: "#b4461b", units: "", zero: true },
+    { id: "et_ind_total", label: "People displaced or returning (IOM)", color: MAIN, units: "people" },
+    { id: "fts_us_gov_funding_month_usd", label: "US humanitarian funding, national", color: MAIN, units: "US$", money: true },
+    { id: "surface_water_pct", label: "Surface water (% of county)", color: MAIN, units: "%" },
+    { id: "spei3", label: "Drought index (SPEI)", color: MAIN, units: "", zero: true },
   ];
   function sparkPanel(cid) {
     const v = state.varById[state.colorBy];
@@ -456,10 +456,9 @@
       if (v.group !== lastGroup) { el.insertAdjacentHTML("beforeend", `<div class="group-title">${esc(v.group)}</div>`); lastGroup = v.group; }
       const onMap = state.colorBy === v.id, ticked = state.chartVars.includes(v.id);
       const cov = isStatic(v) ? "single snapshot" : `${v.first_period.slice(0, 4)}–${v.last_period.slice(0, 4)}${v.temporal && v.temporal !== "monthly" ? ", " + v.temporal.replace(/\s*\(.*\)/, "") : ""}`;
-      const dots = (state.stories || []).filter((st) => storyVars(st).includes(v.id)).map((st) => `<i class="sdot" style="background:${esc(st.color)}" title="${esc(st.title)}"></i>`).join("");
       const row = document.createElement("div"); row.className = `var-item${onMap ? " on" : ""}${ticked ? " ticked" : ""}${v.sub ? " sub" : ""}`;
       row.draggable = true; row.title = "Drag into “Your story” to add it as a step";
-      row.innerHTML = `<div class="var-line"><label class="var-row"><input type="checkbox" ${ticked ? "checked" : ""}> <span>${esc(v.label)}${dots}<span class="meta"> · ${cov}</span></span></label>${onMap ? '<span class="onmap">On map</span>' : ticked ? '<button class="mapbtn">Show on map</button>' : ""}</div>
+      row.innerHTML = `<div class="var-line"><label class="var-row"><input type="checkbox" ${ticked ? "checked" : ""}> <span>${esc(v.label)}<span class="meta"> · ${cov}</span></span></label>${onMap ? '<span class="onmap">On map</span>' : ticked ? '<button class="mapbtn">Show on map</button>' : ""}</div>
         ${onMap ? `<div class="var-plain">${esc(plainOf(v))}</div>` : ""}`;
       row.querySelector("input").onchange = (e) => toggleChartVar(v.id, e.target.checked);
       const mb = row.querySelector(".mapbtn"); if (mb) mb.onclick = () => setColorBy(v.id);
@@ -920,35 +919,35 @@
     const specs = [];
     const cov = A("hrp_coverage_year"), fund = A("hrp_funding_year_usd"), req = A("hrp_requirement_year_usd");
     if (cov) specs.push({ title: "UN aid appeal: share of the money requested that was received", sub: "South Sudan Humanitarian Response Plan, by calendar year (OCHA Financial Tracking Service).", step: true,
-      sets: [{ data: mul(cov, 100), color: "#2a78d6", label: "% of requested amount received", fmt: (x) => `${fmt(x, 2)}%` }], yMin: 0, yMax: 100,
+      sets: [{ data: mul(cov, 100), color: MAIN, label: "% of requested amount received", fmt: (x) => `${fmt(x, 2)}%` }], yMin: 0, yMax: 100,
       extra: (i) => (fund && req && fund[i] != null ? `${usd(fund[i])} received of ${usd(req[i])} requested` : "") });
     const disb = A("usaid_disbursed_month_usd"), obl = A("usaid_obligated_month_usd");
     if (disb && obl) {
       const yd = yearly(disb, "sum"), yo = yearly(obl, "sum"), pct = yd.map((x, i) => (x != null && yo[i] ? (100 * x) / yo[i] : null));
       specs.push({ title: "USAID aid paid out, as a % of aid committed that year", sub: "Calendar-year totals from ForeignAssistance.gov. The share can pass 100% when money committed in earlier years is paid out.", step: true,
-        sets: [{ data: pct, color: "#2a78d6", label: "Paid out as % of committed", fmt: (x) => `${fmt(x, 3)}%` }], yMin: 0, refLine: 100,
+        sets: [{ data: pct, color: MAIN, label: "Paid out as % of committed", fmt: (x) => `${fmt(x, 3)}%` }], yMin: 0, refLine: 100,
         extra: (i) => (yd[i] != null ? `${yearOf(i)}: ${usd(yd[i])} paid out · ${usd(yo[i])} committed` : "") });
     }
     const usm = A("fts_us_gov_funding_month_usd");
     if (usm) specs.push({ title: "US government humanitarian funding, by month", sub: "Funding decisions recorded by OCHA's Financial Tracking Service, in US$.", bar: true,
-      sets: [{ data: usm, color: "#2a78d6", label: "US$ per month", fmt: usd }], yMin: 0 });
+      sets: [{ data: usm, color: MAIN, label: "US$ per month", fmt: usd }], yMin: 0 });
     const share = A("fts_us_share_year"), usy = A("fts_us_gov_funding_year_usd");
     if (share && usy) specs.push({ title: "US share of all humanitarian funding (solid) and US amount per year (dashed)", sub: "OCHA Financial Tracking Service, by calendar year.", step: true,
-      sets: [{ data: mul(share, 100), color: "#2a78d6", label: "US share of all humanitarian funding", fmt: (x) => `${fmt(x, 2)}%`, axis: "y" },
-        { data: usy, color: "#6250d6", dash: [6, 4], label: "US funding that year", fmt: usd, axis: "y2" }], yMin: 0, y2: true });
+      sets: [{ data: mul(share, 100), color: MAIN, label: "US share of all humanitarian funding", fmt: (x) => `${fmt(x, 2)}%`, axis: "y" },
+        { data: usy, color: "#7a7872", dash: [6, 4], label: "US funding that year", fmt: usd, axis: "y2" }], yMin: 0, y2: true });
     const add = (id, title, sub, color, f, opts = {}) => { let a = A(id); if (a && opts.prep) a = opts.prep(a); if (a) specs.push({ title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f, dash: opts.dash }], yMin: 0, ...opts }); };
     // Survey-edition series (WPS Index): keep one value per edition year, drawn as a dot at mid-year.
     const editions = (arr) => arr.map((x, i) => (x != null && state.months[i].endsWith("-07") ? x : null));
     const editionTitle = (i) => `${yearOf(i)} edition`;
     const yearTitle = (i) => String(yearOf(i));
-    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents per year (national)", "Insecurity Insight, yearly totals. Coverage starts in 2020, so 2018–2019 are blank, not zero. Reporting is very incomplete, and a low count may hide many unreported incidents.", "#c2185b", (x) => `${fmt(x)} incidents`, { bar: true, prep: (a) => yearly(a, "sum"), titleFn: yearTitle });
-    add("unmiss_budget_fy_usd", "UN peacekeeping mission (UNMISS) budget", "Approved budget for each UN fiscal year (July–June).", "#6250d6", usd, { step: true, yMin: null });
-    add("fmr_internal_forced_total", "Forced travel: people counted moving because of conflict, disaster or hunger (national)", "IOM Flow Monitoring. Counts only people passing its monitoring points, so it misses other routes. No county data for Nov 2023–Dec 2024.", "#d7301f", (x) => `${fmt(x)} people`, { bar: true });
+    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents per year (national)", "Insecurity Insight, yearly totals. Coverage starts in 2020, so 2018–2019 are blank, not zero. Reporting is very incomplete, and a low count may hide many unreported incidents.", MAIN, (x) => `${fmt(x)} incidents`, { bar: true, prep: (a) => yearly(a, "sum"), titleFn: yearTitle });
+    add("unmiss_budget_fy_usd", "UN peacekeeping mission (UNMISS) budget", "Approved budget for each UN fiscal year (July–June).", "#7a7872", usd, { step: true, yMin: null });
+    add("fmr_internal_forced_total", "Forced travel: people counted moving because of conflict, disaster or hunger (national)", "IOM Flow Monitoring. Counts only people passing its monitoring points, so it misses other routes. No county data for Nov 2023–Dec 2024.", MAIN, (x) => `${fmt(x)} people`, { bar: true });
     const wpsSub = "Women, Peace and Security Index (Georgetown Institute). One dot per index edition (2019, 2021, 2023, 2025); the dashed line only joins them. Methods differ between editions, so compare with care.";
     const wpsOpts = { points: true, dash: [5, 4], prep: editions, titleFn: editionTitle };
-    add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", wpsSub, "#c2185b", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 60 });
-    add("wps_community_safety_pct", "Women who feel safe walking alone at night in their community (national)", wpsSub, "#1baf7a", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 100 });
-    add("wps_education_years", "Women's average years of schooling (national)", wpsSub, "#008300", (x) => `${fmt(x, 3)} years`, wpsOpts);
+    add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", wpsSub, MAIN, (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 60 });
+    add("wps_community_safety_pct", "Women who feel safe walking alone at night in their community (national)", wpsSub, MAIN, (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 100 });
+    add("wps_education_years", "Women's average years of schooling (national)", wpsSub, MAIN, (x) => `${fmt(x, 3)} years`, wpsOpts);
     return specs;
   }
   async function renderNational() {
@@ -969,7 +968,7 @@
           scales: {
             x: { ticks: { color: ink2, font: { size: 11 }, autoSkip: false, maxRotation: 0, callback: (_, i) => (i % 12 === 6 ? state.months[i].slice(0, 4) : null) }, grid: { color: (c) => (c.index % 12 === 0 ? line : "transparent"), drawTicks: false } },
             y: { min: spec.yMin == null ? undefined : spec.yMin, max: spec.yMax, ticks: { color: ink2, font: { size: 10 }, maxTicksLimit: 4, callback: (x) => (spec.sets[0].fmt === usd ? usdShort(x) : spec.sets[0].fmt(x).replace(" people", "").replace(" incidents", "").replace(" years", "")) }, grid: { color: line } },
-            ...(spec.y2 ? { y2: { position: "right", min: 0, ticks: { color: "#6250d6", font: { size: 10 }, maxTicksLimit: 4, callback: (x) => usdShort(x) }, grid: { display: false } } } : {}),
+            ...(spec.y2 ? { y2: { position: "right", min: 0, ticks: { color: "#7a7872", font: { size: 10 }, maxTicksLimit: 4, callback: (x) => usdShort(x) }, grid: { display: false } } } : {}),
           },
           onClick: (evt, els, ch) => { const i = Math.round(ch.scales.x.getValueForPixel(evt.x)); if (i >= 0 && i < state.months.length && state.view === "map") setTime(i); } },
         plugins: [{ id: "marks", afterDraw(c) {
