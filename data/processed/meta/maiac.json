@@ -1,0 +1,18 @@
+[
+ {
+  "id": "maiac_aod_055",
+  "label": "Aerosol optical depth 550 nm, 1 km (MODIS MAIAC)",
+  "category": "environment",
+  "group": "Air quality",
+  "units": "AOD (unitless)",
+  "source": "MODIS Terra+Aqua MAIAC MCD19A2 v061 via Google Earth Engine (MODIS/061/MCD19A2_GRANULES)",
+  "source_url": "https://doi.org/10.5067/MODIS/MCD19A2.061",
+  "native_resolution": "1 km",
+  "temporal": "monthly",
+  "aggregation": "per-pixel mean of best-quality, cloud-free daily retrievals in the month (0.01° grid), then mean of cells with a value inside the county",
+  "higher_is": "worse",
+  "index_ok": true,
+  "raster": "maiac_aod",
+  "notes": "Haze from dust and smoke, measured by the MODIS satellites at 1 km (about 50 times finer than the NASA POWER/MERRA-2 value). Only cloud-free, best-quality retrievals are used, so wet-season months (Jun-Sep) rest on few days and some cells have none; the county value is the mean of cells that have a value. Dry-season peaks (Dec-Mar) are mostly smoke from burning plus Saharan dust."
+ }
+]

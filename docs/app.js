@@ -331,7 +331,7 @@
         html += `<div class="lg-bins">${rows.map((x) => `<div><i style="background:${x.c}"></i>${esc(x.lab)}</div>`).join("")}<div><i class="nd"></i>No data</div></div>`;
         if (!isStatic(v) && state.trends && state.trends[v.id]) {
           const nSig = Object.values(state.trends[v.id]).filter((t) => t[T_SIG]).length;
-          html += `<div class="lg-note"><span class="sig-swatch"></span> <b>Outlined counties (${nSig})</b> have a statistically significant 2018–2025 trend, one that is very unlikely to be chance.</div>`;
+          html += `<div class="lg-note"><span class="sig-swatch"></span> <b>Outlined counties (${nSig})</b> have a 2018–2025 trend that is found to be statistically significant.</div>`;
         }
         if (GROUNDWATER_IDS.includes(v.id)) html += `<div class="lg-note"><span class="hatch-swatch"></span> <b>Hatched counties</b> are in the Sudd wetland, where readings are less reliable because surface flood water can be mistaken for groundwater.</div>`;
       }
@@ -735,7 +735,7 @@
     if (isStatic(v) || isCategorical(v)) return "This is a single snapshot, so there is no trend over time.";
     const tr = trendOf(v.id, cid); if (!tr || tr[T_SEN] == null) return "Too little data to estimate a trend for this county.";
     const x = trendNative(v, cid, 2025), sig = tr[T_SIG];
-    const strength = sig ? "This trend is statistically significant. It is unlikely to be chance, even allowing for the fact that all 79 counties were tested." : tr[T_P] != null && tr[T_P] < 0.05 ? "This trend is suggestive, but it is not significant once all 79 counties are tested together." : "This change is not statistically significant and could be chance.";
+    const strength = sig ? "This trend is found to be statistically significant, even allowing for the fact that all 79 counties were tested." : tr[T_P] != null && tr[T_P] < 0.05 ? "This trend is suggestive, but it is not significant once all 79 counties are tested together." : "This change is not statistically significant and could be chance.";
     return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen's slope). ${strength}`;
   }
   const COMPARE_COLORS = [MAIN, "#fc3c23", "#1baf7a", "#a05eb5"];
@@ -910,7 +910,7 @@
   <p><b>Trend view</b> (the default) colours each county by its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, so the normal swing of the seasons does not show up as a trend. Green means the measure went up, red means it went down, and white means little or no change. The colours show direction only. Green is not “good” and red is not “bad”.</p>
   <p><b>Values in original units</b> colours counties against each other for the selected month or season, with no reference to 2018. A county can look quite different in the two views. Its value may be low next to other counties (red here) and still have risen since 2018 (green in the trend view).</p>
   <p>Each of the seven colours covers roughly a seventh of all county values for the measure. On the finer grids, the colours split the grid’s range into seven equal steps.</p>
-  <p><b>Outlined counties</b> passed the Mann-Kendall significance test for 2018–2025. The test allows for slow-moving conditions, where one month tends to resemble the next, and for the fact that all 79 counties were tested at once. An outline means the change is very unlikely to be chance. A county without one may still have changed, since eight years is a short record.</p>
+  <p><b>Outlined counties</b> passed the Mann-Kendall significance test for 2018–2025. The test allows for slow-moving conditions, where one month tends to resemble the next, and for the fact that all 79 counties were tested at once. An outline means the change is found to be statistically significant. A county without one may still have changed, since eight years is a short record.</p>
   <p><b>Black hatching</b> marks counties with no data for that period.</p>
   <h3>Understanding the data: implications and utility</h3>
   <p>In few countries do households depend on the seasons as closely as in South Sudan, where most families live off rain-fed farming, cattle, or fishing. A single rainy season, running roughly from April to October, sets when families plant, when herders drive cattle toward the rivers, and when roads wash out for months at a time. When the rains arrive late or the floodwater fails to recede, families move; that movement can bring herding and farming communities into competition over scarce land and water. The floods that covered large parts of Jonglei, Unity, and Upper Nile between 2019 and 2022 are the clearest recent example, since many of the families who fled the water had already fled the fighting years before.</p>
@@ -1042,7 +1042,7 @@
     let first = "flood_s1_flood_pct";
     if (H) {
       const list = (k) => (H.get(k) || "").split(",").filter(Boolean);
-      if (H.get("m") && [...$("#mode").options].some((o) => o.value === H.get("m"))) { state.mode = H.get("m"); $("#mode").value = state.mode; }
+      if (H.get("m") && [...$("#mode").options].some((o) => o.value === H.get("m"))) { state.mode = H.get("m"); $("#mode").value = state.mode; renderModeHint(); }
       if (H.get("a")) { state.agg = H.get("a"); $("#agg").value = state.agg; }
       if (H.get("s")) state.selected = H.get("s");
       if (H.get("fo") === "1") state.flowOn = true;

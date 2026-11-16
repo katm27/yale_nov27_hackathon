@@ -1,0 +1,3 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+maiac_aod_055,national,556,0.799,79,-0.911458,-0.00177
+maiac_aod_055,sudd,-161,0.715,16,-0.679658,-0.00187238

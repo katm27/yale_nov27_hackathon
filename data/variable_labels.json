@@ -4762,5 +4762,24 @@
    "gldas",
    "water table"
   ]
+ },
+ "maiac_aod_055": {
+  "label": "Haze (aerosol optical depth)",
+  "plain": "How hazy the air is from dust, smoke and other particles. Dry-season peaks come from Saharan dust and grass burning.",
+  "caution": "Only cloud-free days count, so rainy-season months (June to September) rest on few satellite passes.",
+  "direction": "more_less",
+  "topic": "Air quality & fires",
+  "synonyms": [
+   "pollution",
+   "air quality",
+   "smoke",
+   "dust",
+   "haze",
+   "aerosol",
+   "maiac",
+   "aerosol",
+   "dust",
+   "smoke"
+  ]
  }
 }

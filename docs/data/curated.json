@@ -4,7 +4,7 @@
     {
       "category": "climate",
       "group": "Air & health",
-      "id": "power_aod_550",
+      "id": "maiac_aod_055",
       "label": "Haze (aerosol optical depth)"
     },
     {
@@ -181,7 +181,8 @@
     "modis_ndvi": "modis_ndvi",
     "gracedm_gws_pctl": "gracedm_gws",
     "gldas_gws_anom_cm": "gldas_gws",
-    "smap_sm_rootzone": "smap_sm_rootzone"
+    "smap_sm_rootzone": "smap_sm_rootzone",
+    "maiac_aod_055": "maiac_aod"
   },
   "background": [
     {
