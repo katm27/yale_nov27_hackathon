@@ -3,9 +3,9 @@
 `data/district_profiles.json` holds the county hover-card profiles (79 counties). It is built by
 `python scripts/build_district_profiles.py`, which merges:
 
-- **`data/district_profiles_narrative.json`**: hand-written `history` and `conflict_narrative` text with per-county `sources`. Edit text here.
-- **Livelihood zones**: an area overlay of `data/counties.geojson` on the FEWS NET 2018 zones (`data/raw/fews_lhz/SS_LHZ_2018.zip`, EPSG:6933 equal-area). The dominant zone is reported. A secondary zone is added when it covers more than 25% of the county. All shares of 5% or more are kept in `key_facts.lhz_shares`. Zone text is condensed from the FEWS NET zone descriptions and is in `ZONES` in the script.
-- **`key_facts`**: recomputed from the processed county-month tables every time the script runs. `conflict_impact` is a hand-written, number-free narrative (`conflict_impact` in `data/district_profiles_narrative.json`) that describes these values in words (e.g. "among the deadliest counties", "floods displaced tens of thousands") alongside the sourced events in `conflict_narrative`. All numbers stay in `key_facts`; a numeric sentence is generated only as a fallback for a county with no narrative.
+- `data/district_profiles_narrative.json`: hand-written `history` and `conflict_narrative` text with per-county `sources`. Edit text here.
+- Livelihood zones: an area overlay of `data/counties.geojson` on the FEWS NET 2018 zones (`data/raw/fews_lhz/SS_LHZ_2018.zip`, EPSG:6933 equal-area). The dominant zone is reported. A secondary zone is added when it covers more than 25% of the county. All shares of 5% or more are kept in `key_facts.lhz_shares`. Zone text is condensed from the FEWS NET zone descriptions and is in `ZONES` in the script.
+- `key_facts`: recomputed from the processed county-month tables every time the script runs. `conflict_impact` is a hand-written, number-free narrative (`conflict_impact` in `data/district_profiles_narrative.json`) that describes these values in words (e.g. "among the deadliest counties", "floods displaced tens of thousands") alongside the sourced events in `conflict_narrative`. All numbers stay in `key_facts`; a numeric sentence is generated only as a fallback for a county with no narrative.
 
 ## Livelihoods
 - FEWS NET South Sudan livelihood zones 2018 (shapefile): https://shapefiles.fews.net/LHZ/SS_LHZ_2018.zip

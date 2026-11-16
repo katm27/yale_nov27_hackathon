@@ -22,7 +22,7 @@
     {
       "category": "climate",
       "group": "Water & drought",
-      "id": "tc_soil",
+      "id": "smap_sm_rootzone",
       "label": "Soil moisture"
     },
     {
@@ -174,14 +174,14 @@
   ],
   "rasters": {
     "viirs_fire_count": "viirs_fire",
-    "tc_soil": "tc_soil",
     "modis_et_monthly_mm": "modis_et_monthly",
     "flood_s1_flood_pct": "flood_s1",
     "sudd_inundation_pct": "sudd_inundation",
     "modis_lst_day_c": "modis_lst_day",
     "modis_ndvi": "modis_ndvi",
     "gracedm_gws_pctl": "gracedm_gws",
-    "gldas_gws_anom_cm": "gldas_gws"
+    "gldas_gws_anom_cm": "gldas_gws",
+    "smap_sm_rootzone": "smap_sm_rootzone"
   },
   "background": [
     {

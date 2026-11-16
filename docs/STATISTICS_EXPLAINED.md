@@ -109,7 +109,7 @@ The two rainfall products disagree in sign, so a regional rainfall trend should 
 
 ## 5. How to read the map now
 
-A white outline means the county's own trend survives both the persistence correction and the 79-county
+A thick dark outline means the county's own trend survives both the persistence correction and the 79-county
 correction. With only 8 years of data, expect few outlines on climate variables.
 
 The legend has two extra lines. "Regional trend" is the pooled national and Sudd test; use it for statements like

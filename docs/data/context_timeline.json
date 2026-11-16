@@ -5,7 +5,7 @@
       "to": "2018-06",
       "title": "Hunger peaks as a ceasefire is agreed",
       "text": "On 26 February 2018, the Food and Agriculture Organization (FAO), UNICEF and the World Food Programme (WFP) warned that more than 7 million people, almost two-thirds of the population, could become severely food insecure during the May–July lean season. Between 16 April and 24 May, government and aligned forces attacked villages in Leer and Mayendit counties, Unity, and the UN documented at least 232 civilians killed. On 27 June, President Salva Kiir and opposition leader Riek Machar signed the Khartoum Declaration, which committed them to a permanent ceasefire within 72 hours.",
-      "links": "The civilians-killed chart shows 563 civilians killed in attacks in 2018 (ACLED), and the aid appeal chart shows the appeal 70% funded that year.",
+      "links": "ACLED counted 563 civilians killed in attacks in 2018, and the UN aid appeal was 70% funded that year.",
       "charts": [
         {
           "id": "acled_civ_fatalities",
@@ -40,7 +40,7 @@
       "to": "2018-12",
       "title": "Peace deal signed; Machar returns to Juba",
       "text": "At the peak of the July–August lean season, 6.1 million people, nearly 60% of the population, were in Crisis-level hunger or worse on the Integrated Food Security Phase Classification (IPC) scale. The revitalised peace agreement was signed in September. On 31 October 2018, Riek Machar returned to Juba for the first time since fleeing in July 2016, to attend a peace celebration.",
-      "links": "The radar flood chart shows 2018 as the low baseline year, with a mean monthly flooded area of about 3.2k km². The hunger chart shows the county average of people in IPC Crisis or worse rising from 44% in January 2018 to 58% in September 2018.",
+      "links": "2018 is the low baseline year for radar-mapped flooding, with a mean monthly flooded area of about 3.2k km². The county average of people in IPC Crisis or worse rose from 44% in January 2018 to 58% in September 2018.",
       "charts": [
         {
           "id": "flood_s1_flood_km2",
@@ -70,8 +70,8 @@
       "from": "2018-09",
       "to": "2018-09",
       "title": "Revitalised peace agreement (R-ARCSS) signed",
-      "text": "On 12 September 2018 in Addis Ababa, President Salva Kiir, Riek Machar and other parties signed the Revitalised Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS). It was signed at a summit of the regional bloc IGAD and revived the 2015 peace deal, which had collapsed. It set an eight-month pre-transitional period, followed by a 36-month transitional period under a unity government.",
-      "links": "The political violence chart shows ACLED-recorded events falling from 785 in 2018 to 530 in 2019, the first full year after the deal.",
+      "text": "On 12 September 2018 in Addis Ababa, President Salva Kiir, Riek Machar and other parties signed the Revitalised Agreement on the Resolution of the Conflict in the Republic of South Sudan (R-ARCSS). It was signed at a summit of the regional bloc IGAD and revived the collapsed 2015 peace deal. It set an eight-month pre-transitional period, followed by a 36-month transitional period under a unity government.",
+      "links": "Political violence events recorded by ACLED fell from 785 in 2018 to 530 in 2019, the first full year after the deal.",
       "charts": [
         {
           "id": "acled_pv_events",
@@ -96,7 +96,7 @@
       "to": "2019-06",
       "title": "Unity government delayed six months",
       "text": "On 22 February 2019, the World Food Programme said nearly 7 million people could face acute food insecurity at the height of the May–July lean season. On 3 May 2019, the parties met in Addis Ababa and agreed to delay forming the unity government by six months from 12 May. The opposition said security arrangements had to be resolved first.",
-      "links": "The food insecurity chart shows that in 2019, on average, 53% of each county's population was at IPC Crisis level or worse.",
+      "links": "In 2019, on average, 53% of each county's population was at IPC Crisis level or worse.",
       "charts": [
         {
           "id": "ipc_phase3plus_pct",
@@ -121,7 +121,7 @@
       "to": "2019-12",
       "title": "Severe floods; second delay to unity government",
       "text": "Severe flooding began in July 2019. By 25 October, the UN Office for the Coordination of Humanitarian Affairs (OCHA) estimated that 908,000 people were affected in 32 counties across seven states, including Jonglei, Upper Nile and Unity. On 7 November in Entebbe, Uganda, Kiir and Machar agreed to delay forming the unity government by a further 100 days from 12 November.",
-      "links": "The radar flood chart shows the mean monthly flooded area nearly doubling, from 3.2k km² in 2018 to 6.2k km² in 2019. The civilians-killed chart shows 983 civilians killed in attacks in 2019 (ACLED).",
+      "links": "The mean monthly flooded area on radar nearly doubled, from 3.2k km² in 2018 to 6.2k km² in 2019. ACLED counted 983 civilians killed in attacks in 2019.",
       "charts": [
         {
           "id": "flood_s1_flood_km2",
@@ -152,7 +152,7 @@
       "to": "2020-06",
       "title": "Unity government formed; violence in Jonglei",
       "text": "On 22 February 2020, Riek Machar was sworn in as First Vice President and the Revitalised Transitional Government of National Unity (R-TGoNU) was formed. South Sudan confirmed its first COVID-19 case on 5 April. In the first half of 2020, community-based militias attacked villages across Jonglei and the Greater Pibor Administrative Area (GPAA). A UN human rights report found that more than 738 people were killed and at least 686 women and children were abducted.",
-      "links": "The sexual violence chart lists 30 reported conflict-related incidents in 2020 (Insecurity Insight). Reporting is very incomplete.",
+      "links": "Insecurity Insight lists 30 reported incidents of conflict-related sexual violence in 2020. Reporting is very incomplete.",
       "charts": [
         {
           "id": "ii_sexual_violence_incidents",
@@ -187,7 +187,7 @@
       "to": "2020-12",
       "title": "Second year of major floods; famine likely in Pibor",
       "text": "From July 2020 to January 2021, the UN Office for the Coordination of Humanitarian Affairs (OCHA) estimated that flooding affected about 1,066,000 people. Jonglei and the Greater Pibor Administrative Area were the worst hit. In December 2020, the Famine Review Committee of the Integrated Food Security Phase Classification (IPC) classified parts of western Pibor County as 'Famine Likely'. The government did not endorse the finding.",
-      "links": "The flood charts show about 475k people displaced by flooding in 2020 (IOM) and a mean monthly flooded area of 9.7k km². The aid appeal chart shows the appeal 65% funded that year.",
+      "links": "IOM recorded about 475k people displaced by flooding in 2020, and the mean monthly flooded area was 9.7k km². The aid appeal was 65% funded that year.",
       "charts": [
         {
           "id": "et_ind_flooding",
@@ -228,7 +228,7 @@
       "to": "2021-06",
       "title": "Record hunger projected; parliament reconstituted",
       "text": "An Integrated Food Security Phase Classification (IPC) analysis released in December 2020 projected that 7.24 million people, 60% of the population, would face Crisis-level hunger or worse in April–July 2021. On 8 May 2021, President Kiir dissolved the national legislature. On 10 May, he reconstituted the Transitional National Legislative Assembly with 550 members, as the peace agreement required.",
-      "links": "The funding chart shows US humanitarian funding of $792M in 2021 (OCHA FTS), and the aid appeal chart shows the appeal 73% funded that year. No county IPC analysis is available between January 2020 and February 2022, so the hunger chart has no new values in 2021.",
+      "links": "US humanitarian funding was $792M in 2021 (OCHA FTS), and the aid appeal was 73% funded. There was no county IPC analysis between January 2020 and February 2022, so the hunger chart has no new values in 2021.",
       "charts": [
         {
           "id": "fts_us_gov_funding_year_usd",
@@ -265,7 +265,7 @@
       "to": "2021-12",
       "title": "Tambura violence, opposition split, worst recorded floods",
       "text": "From June to September 2021, fighting between armed groups in Tambura County, Western Equatoria, killed at least 440 civilians and displaced about 80,000 people, according to a UN human rights report. In early August, General Simon Gatwech Dual's faction announced in the Kitgwang Declaration that Riek Machar had been removed as head of the armed opposition, the Sudan People's Liberation Movement/Army-in-Opposition (SPLM/A-IO), and the two sides clashed. The UN Office for the Coordination of Humanitarian Affairs (OCHA) reported that flooding affected more than 835,000 people from May onward, the worst flooding on record.",
-      "links": "The flood charts show about 475k people displaced by flooding in 2021 (IOM) and a mean monthly flooded area of 10.0k km². The civilians-killed chart shows 1,783 civilians killed in attacks in 2021 (ACLED).",
+      "links": "IOM recorded about 475k people displaced by flooding in 2021, and the mean monthly flooded area was 10.0k km². ACLED counted 1,783 civilians killed in attacks in 2021.",
       "charts": [
         {
           "id": "et_ind_flooding",
@@ -306,7 +306,7 @@
       "to": "2022-06",
       "title": "Highest hunger levels; attacks in southern Unity",
       "text": "An Integrated Food Security Phase Classification (IPC) analysis released in April 2022 projected that 7.74 million people, 62.7% of the population, would face Crisis-level hunger or worse in April–July 2022. About 87,000 of them would be in Catastrophe (IPC Phase 5), in parts of Jonglei, the Greater Pibor Administrative Area, Lakes and Unity. From February to May 2022, attacks in Koch, Leer and Mayendit counties of Unity killed about 173 civilians and displaced about 44,000 people, according to the UN. The UN attributed most of these attacks to government forces and allied militias.",
-      "links": "The food insecurity chart shows that in 2022, on average, 54% of each county's population was at IPC Crisis level or worse. The civilians-killed chart shows 1,907 civilians killed in attacks in 2022 (ACLED), the highest in the series.",
+      "links": "In 2022, on average, 54% of each county's population was at IPC Crisis level or worse. ACLED counted 1,907 civilians killed in attacks in 2022, the most in the series.",
       "charts": [
         {
           "id": "ipc_phase3plus_pct",
@@ -340,8 +340,8 @@
       "from": "2022-07",
       "to": "2022-12",
       "title": "Transition extended; fighting in Upper Nile; fourth year of floods",
-      "text": "In August 2022, the transitional government adopted a roadmap that extended the transitional period by 24 months and moved elections from early 2023 to December 2024. From 14 to 15 August, armed factions fought in Tonga, Panyikang County, Upper Nile, and thousands of people fled toward Malakal. By October, according to the World Health Organization (WHO) and the UN Office for the Coordination of Humanitarian Affairs, severe flooding had affected more than 1 million people in 36 counties and the Abyei Administrative Area, the fourth year in a row of extreme floods.",
-      "links": "The flood charts show about 416k people displaced by flooding in 2022 (IOM) and a mean monthly flooded area of 10.1k km², peaking at 34.2k km² in September, the largest in the radar record. The Sudd wetland's mean monthly flooded area was about 13.2k km², nearly five times its 2018 level (2.8k km²). USAID paid out $1.10B in 2022, and the US provided 59% of all humanitarian funding.",
+      "text": "In August 2022, the transitional government adopted a roadmap that extended the transitional period by 24 months and moved elections from early 2023 to December 2024. From 14 to 15 August, armed factions fought in Tonga, Panyikang County, Upper Nile, and thousands of people fled toward Malakal. By October, according to the World Health Organization (WHO) and the UN Office for the Coordination of Humanitarian Affairs, severe flooding had affected more than 1 million people in 36 counties and the Abyei Administrative Area, the fourth year in a row of extreme flooding.",
+      "links": "IOM recorded about 416k people displaced by flooding in 2022. The mean monthly flooded area was 10.1k km², and September's 34.2k km² is the largest in the radar record. In the Sudd wetland the mean monthly flooded area was about 13.2k km², nearly five times the 2018 level (2.8k km²). USAID paid out $1.10B in 2022, and the US provided 59% of all humanitarian funding.",
       "charts": [
         {
           "id": "et_ind_flooding",
@@ -382,7 +382,7 @@
       "to": "2023-06",
       "title": "Lean-season hunger; deadly clashes in Malakal PoC site",
       "text": "An Integrated Food Security Phase Classification (IPC) analysis released in November 2022 projected that 7.76 million people, about two-thirds of the population, would face Crisis-level hunger or worse in April–July 2023. About 43,000 of them would be in Catastrophe (IPC Phase 5). After a killing on 7 June, clashes broke out between Shilluk and Nuer residents of the UN Protection of Civilians (PoC) site in Malakal. The UN Mission in South Sudan (UNMISS) verified at least 14 people killed and 28 injured; 6,000–7,000 Nuer residents then left the site.",
-      "links": "The aid appeal chart shows the 2023 appeal 56% funded, the lowest of any year from 2018 to 2023.",
+      "links": "The 2023 appeal was 56% funded, the lowest of any year from 2018 to 2023.",
       "charts": [
         {
           "id": "hrp_coverage_year",
@@ -407,7 +407,7 @@
       "to": "2023-04",
       "title": "War in Sudan begins",
       "text": "On 15 April 2023, war broke out in Sudan between the Sudanese Armed Forces and the paramilitary Rapid Support Forces (RSF). Within weeks, tens of thousands of people crossed into South Sudan at the Joda border point in Renk County, Upper Nile. Most were South Sudanese returning home, many of whom had been refugees in Sudan.",
-      "links": "The displacement chart shows about 396k arrivals fleeing the Sudan war in 2023 (IOM).",
+      "links": "IOM recorded about 396k arrivals fleeing the Sudan war in 2023.",
       "charts": [
         {
           "id": "et_ind_sudan_conflict",
@@ -432,7 +432,7 @@
       "to": "2023-12",
       "title": "Arrivals from Sudan overwhelm border transit sites",
       "text": "People fleeing Sudan kept arriving through Renk. In September 2023, UNHCR, the UN refugee agency, reported that the Renk transit centre, built for 3,000 people, held more than 8,000. An Integrated Food Security Phase Classification (IPC) analysis released on 7 November 2023 projected that 7.1 million people would face Crisis-level hunger or worse in April–July 2024. About 79,000 of them would be in Catastrophe, in Pibor, Aweil East and among returnees from Sudan.",
-      "links": "The displacement chart shows about 396k arrivals from the Sudan war in 2023 (IOM). Forced travellers counted by IOM flow monitoring rose from 25k in 2022 to 111k in January–October 2023 (no flow-monitoring data after October 2023 until 2025).",
+      "links": "IOM recorded about 396k arrivals from the Sudan war in 2023. Forced travellers counted at IOM flow-monitoring points rose from 25k in 2022 to 111k in January–October 2023 (there is no flow-monitoring data from November 2023 until 2025).",
       "charts": [
         {
           "id": "et_ind_sudan_conflict",
@@ -463,7 +463,7 @@
       "to": "2024-06",
       "title": "Oil export pipeline disrupted; Sudan arrivals continue",
       "text": "In early February 2024, the pipeline carrying South Sudan's oil exports through Sudan was damaged in White Nile State, an area held by the paramilitary Rapid Support Forces (RSF). Fighting prevented repairs, and the International Crisis Group said the pipeline carried two-thirds to three-quarters of oil revenue. In May 2024, Kenya launched the Tumaini Initiative, talks between the government and groups that had not signed the 2018 agreement. By June 2024, more than 680,000 people had arrived from Sudan since April 2023.",
-      "links": "The displacement chart shows about 195k arrivals from the Sudan war in 2024 (IOM).",
+      "links": "IOM recorded about 195k arrivals from the Sudan war in 2024.",
       "charts": [
         {
           "id": "et_ind_sudan_conflict",
@@ -492,7 +492,7 @@
       "to": "2024-12",
       "title": "Elections postponed; floods and cholera",
       "text": "On 13 September 2024, the presidency postponed elections planned for December 2024 to 22 December 2026 and extended the transitional period by two years, citing unfinished preparations such as the census and a permanent constitution. In early November, the UN Office for the Coordination of Humanitarian Affairs (OCHA) reported that about 1.4 million people were affected by flooding in 43 counties and Abyei, and more than 379,000 were displaced. A cholera outbreak began in Renk with a first suspected case on 28 September, and the Ministry of Health declared it in late October.",
-      "links": "The flood charts show about 360k people displaced by flooding in 2024 (IOM) and a mean monthly flooded area of 9.1k km². The funding chart shows the US providing 50% of all humanitarian funding in 2024.",
+      "links": "IOM recorded about 360k people displaced by flooding in 2024, and the mean monthly flooded area was 9.1k km². The US provided 50% of all humanitarian funding in 2024.",
       "charts": [
         {
           "id": "et_ind_flooding",
@@ -533,7 +533,7 @@
       "to": "2025-06",
       "title": "US aid cuts, airstrikes and famine risk",
       "text": "After the US cut foreign aid in early 2025, Save the Children reported that seven of the 27 health centres it supported in Jonglei closed, and that eight people, including five children, died in March while walking to seek cholera treatment after a US-funded transport service shut down. On 3 May, aircraft bombed a hospital run by Médecins Sans Frontières (MSF) in Old Fangak, Jonglei; Radio Tamazuj reported that the planes belonged to the South Sudan People's Defence Forces (SSPDF) and that four civilians were killed. On 12 June, an Integrated Food Security Phase Classification (IPC) update found 7.7 million people, 57% of the population, in Crisis-level hunger or worse, with Nasir and Ulang counties in Upper Nile at risk of famine.",
-      "links": "The funding charts show US humanitarian funding falling to $282M in 2025 (31% of the total), USAID payouts falling from $681M in 2024 to $287M, and new USAID commitments of $152M. IOM recorded about 337k people displaced by national-level conflict in 2025, compared with 7k in 2024.",
+      "links": "US humanitarian funding fell to $282M in 2025 (31% of the total). USAID payouts fell from $681M in 2024 to $287M, and new USAID commitments were $152M. IOM recorded about 337k people displaced by national-level conflict in 2025, compared with 7k in 2024.",
       "charts": [
         {
           "id": "fts_us_gov_funding_year_usd",
@@ -574,7 +574,7 @@
       "to": "2025-03",
       "title": "Nasir fighting, aerial bombing and Machar's detention",
       "text": "On 4 March 2025, armed Nuer youth known as the White Army attacked the army base in Nasir, Upper Nile. On 7 March, a UN helicopter evacuating soldiers from Nasir came under fire, and one UN crew member was killed. Between 16 and 21 March, Human Rights Watch documented government air attacks with improvised incendiary weapons in Nasir, Longechuk and Ulang counties that killed at least 58 people. On 26 March, security forces surrounded First Vice President Riek Machar's residence in Juba and placed him under house arrest.",
-      "links": "The displacement chart shows about 337k people displaced by national-level conflict in 2025 (IOM), compared with 7k in 2024.",
+      "links": "IOM recorded about 337k people displaced by national-level conflict in 2025, compared with 7k in 2024.",
       "charts": [
         {
           "id": "et_ind_national_conflict",
@@ -603,7 +603,7 @@
       "to": "2025-12",
       "title": "Machar charged and tried; floods return",
       "text": "On 11 September 2025, the justice minister announced charges including murder, treason and crimes against humanity against 21 people, among them Riek Machar. The charges relate to the March attack in Nasir, and the same day President Kiir suspended Machar as First Vice President. Machar's trial opened before a special court in Juba on 22 September, and his party, the Sudan People's Liberation Movement-in-Opposition (SPLM-IO), called the charges politically motivated. By 13 November, the UN Office for the Coordination of Humanitarian Affairs (OCHA) reported that flooding had affected about 1.35 million people in 39 counties and displaced about 375,600.",
-      "links": "The aid appeal chart shows the 2025 appeal 46% funded ($787M of $1.70B), the lowest in the series. IOM recorded about 242k people displaced by flooding in 2025, and the mean monthly flooded area was 9.3k km².",
+      "links": "The 2025 appeal was 46% funded ($787M of $1.70B), the lowest in the series. IOM recorded about 242k people displaced by flooding in 2025, and the mean monthly flooded area was 9.3k km².",
       "charts": [
         {
           "id": "hrp_coverage_year",

@@ -21,7 +21,7 @@ modis_lst_day_c,national,,,79,,-0.281533
 modis_lst_day_c,sudd,,,16,,-0.16005
 modis_lst_night_c,national,,,79,,-0.120933
 modis_lst_night_c,sudd,,,16,,-0.15705
-smap_sm_rootzone,national,,,79,1.57727,0.00385
-smap_sm_rootzone,sudd,,,16,3.1601,0.007925
-smap_sm_surface,national,,,79,4.26374,0.0091
-smap_sm_surface,sudd,,,16,4.60265,0.0091
+smap_sm_rootzone,national,2856,0.27,79,0.915898,0.00195952
+smap_sm_rootzone,sudd,1911,0.04,16,7.18623,0.0158092
+smap_sm_surface,national,3198,0.195,79,2.49271,0.00391429
+smap_sm_surface,sudd,1909,0.042,16,16.4391,0.0230583

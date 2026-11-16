@@ -116,14 +116,14 @@
     "category": "environment",
     "group": "Water",
     "units": "m³/m³",
-    "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km, NASA GEOS land model + SMAP brightness-temperature assimilation) via NASA AppEEARS",
+    "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km, NASA GEOS land model + SMAP brightness-temperature assimilation) via Google Earth Engine (NASA/SMAP/SPL4SMGP/008; years 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025)",
     "source_url": "https://doi.org/10.5067/LWJ6TF5SZRG3",
     "native_resolution": "9 km",
     "temporal": "monthly",
     "aggregation": "per-cell monthly mean of 3-hourly values, then mean of ~1 km cells (nearest 9 km cell) in county",
     "higher_is": "better",
     "index_ok": true,
-    "notes": "Model-assimilation product (gap-free), not a direct retrieval; L4 surface layer is 0-5 cm. AppEEARS area request clipped to the South Sudan outline, geographic projection.",
+    "notes": "Model-assimilation product (gap-free), not a direct retrieval; L4 surface layer is 0-5 cm. Monthly means of the 3-hourly fields computed in Earth Engine (scripts/gee_smap.py).",
     "raster": "smap_sm_surface"
   },
   {
@@ -132,14 +132,14 @@
     "category": "environment",
     "group": "Water",
     "units": "m³/m³",
-    "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via NASA AppEEARS",
+    "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine (NASA/SMAP/SPL4SMGP/008; years 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025)",
     "source_url": "https://doi.org/10.5067/LWJ6TF5SZRG3",
     "native_resolution": "9 km",
     "temporal": "monthly",
     "aggregation": "per-cell monthly mean of 3-hourly values, then county mean",
     "higher_is": "better",
     "index_ok": true,
-    "notes": "Model-assimilation estimate for 0-100 cm; smoother and lagged relative to surface soil moisture. AppEEARS area request clipped to the South Sudan outline, geographic projection.",
+    "notes": "Model-assimilation estimate for 0-100 cm; smoother and lagged relative to surface soil moisture. Monthly means of the 3-hourly fields computed in Earth Engine (scripts/gee_smap.py).",
     "raster": "smap_sm_rootzone"
   }
 ]

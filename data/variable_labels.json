@@ -5,7 +5,7 @@
   "method": "Aerosol optical depth at 550 nm, CERES SYN1deg via NASA POWER; value of the ~110 km grid cell at the county centre.",
   "direction": "more_less",
   "topic": "Air quality & fires",
-  "caution": "Very coarse grid (~110 km): neighbouring counties often share one value.",
+  "caution": "Very coarse grid (about 110 km), so neighbouring counties often share one value.",
   "synonyms": [
    "pollution",
    "air quality",
@@ -21,7 +21,7 @@
   "method": "Aerosol optical depth at 840 nm, CERES SYN1deg via NASA POWER; county-centre grid cell (~110 km).",
   "direction": "more_less",
   "topic": "Air quality & fires",
-  "caution": "Very coarse grid (~110 km): neighbouring counties often share one value.",
+  "caution": "Very coarse grid (about 110 km), so neighbouring counties often share one value.",
   "synonyms": [
    "pollution",
    "air quality",
@@ -339,11 +339,11 @@
  },
  "spei3": {
   "label": "3-month drought index (SPEI, satellite rain)",
-  "plain": "Compares the last three months of rain, accounting for evaporation and transpiration, with what is normal for that county and season, to show how much the present condition differs from normal.",
+  "plain": "Takes rainfall minus potential evaporation over the last three months and compares it with the same three-month window in every year of the county's 2000–2026 record. The difference is given in standard deviations: 0 is normal and negative values are drier than normal.",
   "method": "SPEI-3 from IMERG precipitation minus Thornthwaite PET (MERRA-2 temperature), county series 2000-2026.",
   "direction": "wetter_drier",
   "topic": "Drought & rainfall",
-  "caution": "Short baseline and a simple evaporation formula; best read alongside the combined drought index.",
+  "caution": "The baseline is short and the evaporation formula is simple. Check it against the combined drought index where you can.",
   "synonyms": [
    "drought",
    "dry",
@@ -515,7 +515,7 @@
  },
  "viirs_fire_count": {
   "label": "Active fires detected (VIIRS)",
-  "plain": "Number of fire detections in the month from the VIIRS satellite sensor. Fires peak in the dry season (Nov-Mar).",
+  "plain": "Number of fire detections in the month from the VIIRS satellite sensor. Fires peak in the dry season (November to March).",
   "method": "NASA FIRMS VIIRS S-NPP 375 m, one sensor for 2018-2025. Detects ~1.45x as many fires as MODIS (r = 0.98).",
   "direction": "more_less",
   "topic": "Air quality & fires",
@@ -581,7 +581,7 @@
   "method": "Esri / Impact Observatory 10 m annual land cover from Sentinel-2 (2017-2023); share of county pixels.",
   "direction": "more_less",
   "topic": "Land & vegetation",
-  "caution": "Annual, 2017-2023 only. Some year-to-year change comes from classifier differences, not real change.",
+  "caution": "Yearly, 2017-2023 only. Part of the change from year to year comes from differences in how the maps were classified.",
   "synonyms": [
    "land cover",
    "urban",
@@ -596,7 +596,7 @@
   "method": "Esri / Impact Observatory 10 m annual land cover from Sentinel-2 (2017-2023); share of county pixels.",
   "direction": "more_less",
   "topic": "Land & vegetation",
-  "caution": "Annual, 2017-2023 only. Some year-to-year change comes from classifier differences, not real change.",
+  "caution": "Yearly, 2017-2023 only. Part of the change from year to year comes from differences in how the maps were classified.",
   "synonyms": [
    "land cover",
    "crops",
@@ -611,7 +611,7 @@
   "method": "Esri / Impact Observatory 10 m annual land cover from Sentinel-2 (2017-2023); share of county pixels.",
   "direction": "wetter_drier",
   "topic": "Water & floods",
-  "caution": "Annual, 2017-2023 only. Some year-to-year change comes from classifier differences, not real change.",
+  "caution": "Yearly, 2017-2023 only. Part of the change from year to year comes from differences in how the maps were classified.",
   "synonyms": [
    "land cover",
    "swamp",
@@ -705,7 +705,7 @@
   "method": "GPM IMERG V07 Final via NASA POWER, mm/day converted to mm/month. Independent of CHIRPS; used in the SPEI.",
   "direction": "wetter_drier",
   "topic": "Drought & rainfall",
-  "caution": "Rain products disagree in South Sudan (very few rain gauges); never trust a rainfall trend seen in only one product.",
+  "caution": "Rain products disagree in South Sudan, which has very few rain gauges. Do not trust a rainfall trend that shows up in only one product.",
   "synonyms": [
    "rain",
    "rainfall",
@@ -774,7 +774,7 @@
  },
  "soil_clay_0_30cm": {
   "label": "Clay in topsoil",
-  "plain": "Percentage of clay in the top 30 cm of soil. High-clay 'black cotton' soils hold water and flood easily.",
+  "plain": "Percentage of clay in the top 30 cm of soil. Soils high in clay, such as 'black cotton' soils, hold water and flood easily.",
   "method": "ISRIC SoilGrids 2.0, clay mass fraction 0-30 cm.",
   "direction": "more_less",
   "topic": "Context (static)",
@@ -865,7 +865,7 @@
   "method": "TerraClimate one-layer water-balance model, plant-extractable soil water.",
   "direction": "wetter_drier",
   "topic": "Drought & rainfall",
-  "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it leans toward drought.",
+  "caution": "TerraClimate runs about 40% drier than other rain products in 2018-2025, so it tends to show drought.",
   "synonyms": [
    "drought",
    "dry",
@@ -991,7 +991,7 @@
  },
  "elevation_mean": {
   "label": "Average elevation",
-  "plain": "Average height of the land above sea level, in metres. Low flat areas (the Sudd) flood more easily than highlands.",
+  "plain": "Average height of the land above sea level, in metres. Low, flat areas such as the Sudd flood more easily than the highlands.",
   "method": "Copernicus DEM GLO-90, county mean.",
   "direction": "more_less",
   "topic": "Context (static)",
@@ -1057,7 +1057,7 @@
   "method": "MODIS MOD13A1 + MYD13A1 v061 NDVI, cloud-masked, monthly maximum at 500 m.",
   "direction": "greener_browner",
   "topic": "Land & vegetation",
-  "caution": "Flooding lowers greenness, so a drop in the Sudd can mean flood rather than drought. Aug-Oct 2025 missing.",
+  "caution": "Flooding lowers greenness, so a drop in the Sudd may come from flooding as well as drought. August-October 2025 is missing.",
   "synonyms": [
    "vegetation",
    "greenness",
@@ -1102,11 +1102,11 @@
  },
  "modis_et_monthly_mm": {
   "label": "Water evaporated by land and plants (monthly)",
-  "plain": "Water that evaporated from soil and plants in the month, in millimetres.",
+  "plain": "Water that evaporated from soil and plants during the month, in millimetres.",
   "method": "MODIS MOD16A2GF v061 8-day gap-filled ET (Penman-Monteith), summed to months via AppEEARS.",
   "direction": "more_less",
   "topic": "Land & vegetation",
-  "caution": "Open water, towns and bare land are excluded, so swamp counties such as the Sudd are under-represented.",
+  "caution": "Open water, towns and bare land are left out, so swamp counties such as those in the Sudd are under-represented.",
   "synonyms": [
    "evaporation",
    "evapotranspiration",
@@ -1155,11 +1155,11 @@
  },
  "flood_s1_flood_pct": {
   "label": "Flooded area (% of county, radar)",
-  "plain": "Share of the county newly under water compared with its normal dry-season state, mapped by radar satellite that sees through cloud and under grass.",
+  "plain": "Share of the county newly under water compared with its normal dry-season state. Mapped by a radar satellite that sees through cloud and under grass.",
   "method": "Sentinel-1 C-band radar change detection: monthly VV-VH more than 3 dB above the pixel's March reference (~440 m grid).",
   "direction": "wetter_drier",
   "topic": "Water & floods",
-  "caution": "Radar flood map is reliable Jul-Nov; it misses flooded vegetation and receding water in the dry season and disagrees with MODIS in Bor South. Use MODIS water / Sudd layer for all-season.",
+  "caution": "The radar flood map is reliable from July to November. In the dry season it misses flooded vegetation and receding water, and in Bor South it disagrees with MODIS. For all seasons, use the MODIS water or Sudd layer.",
   "synonyms": [
    "flood",
    "floods",
@@ -1295,11 +1295,11 @@
  },
  "sudd_inundation_pct": {
   "label": "Sudd flooded area incl. swamp (% of county)",
-  "plain": "Share of the county under water, including water hidden under swamp grass and papyrus. Covers the 16 Sudd wetland counties only.",
+  "plain": "Share of the county under water, including water hidden under swamp grass and papyrus. Covers only the 16 Sudd wetland counties.",
   "method": "MODIS MOD09A1 8-day 500 m: open water (MNDWI > 0) or flooded vegetation (EVI-LSWI <= 0.05); cloud gaps filled.",
   "direction": "wetter_drier",
   "topic": "Water & floods",
-  "caution": "Sudd counties only. Jul-Nov 2025 missing. Dense papyrus is missed in the dry season.",
+  "caution": "Sudd counties only. July-November 2025 is missing. Dense papyrus is missed in the dry season.",
   "synonyms": [
    "flood",
    "floods",
@@ -1817,7 +1817,7 @@
   "method": "ACLED public aggregate via HDX, admin-2 monthly. Abyei taken from the Sudan file. Fatalities from 'violence against civilians' events.",
   "direction": "better_worse",
   "topic": "Conflict & violence",
-  "caution": "Counts only events reported in media and local sources; zero = none recorded. Monthly counts are sparse, so look at 12-month totals.",
+  "caution": "Counts only events reported in the media or by local sources, so zero means none were recorded. Monthly counts are sparse, and 12-month totals are easier to read.",
   "synonyms": [
    "fighting",
    "conflict",
@@ -2168,11 +2168,11 @@
  },
  "acled_st_air_drone_strikes": {
   "label": "Air and drone strikes (state)",
-  "plain": "Number of recorded air or drone strikes in the whole state that month.",
+  "plain": "Number of air or drone strikes recorded in the whole state that month.",
   "method": "ACLED aggregated weekly admin-1 data (weeks assigned to the month they start), team export 15 Nov 2026.",
   "direction": "better_worse",
   "topic": "Conflict & violence",
-  "caution": "State total: every county in the state shows the same value. Abyei not included.",
+  "caution": "A state total, so every county in the state shows the same value. Abyei is not included.",
   "synonyms": [
    "fighting",
    "conflict",
@@ -2228,11 +2228,11 @@
  },
  "acled_st_armed_clash_events": {
   "label": "Armed clashes (state)",
-  "plain": "Number of recorded armed clashes between organised armed groups in the whole state that month.",
+  "plain": "Number of armed clashes between organised armed groups recorded in the whole state that month.",
   "method": "ACLED aggregated weekly admin-1 data (weeks assigned to the month they start), team export 15 Nov 2026.",
   "direction": "better_worse",
   "topic": "Conflict & violence",
-  "caution": "State total: every county in the state shows the same value. Abyei not included.",
+  "caution": "A state total, so every county in the state shows the same value. Abyei is not included.",
   "synonyms": [
    "fighting",
    "conflict",
@@ -2393,11 +2393,11 @@
  },
  "acled_st_territory_change_events": {
   "label": "Territory changing hands (state)",
-  "plain": "Number of recorded events where an armed group took control of territory in the whole state that month.",
+  "plain": "Number of events recorded in the whole state that month in which an armed group took control of territory.",
   "method": "ACLED aggregated weekly admin-1 data (weeks assigned to the month they start), team export 15 Nov 2026.",
   "direction": "better_worse",
   "topic": "Conflict & violence",
-  "caution": "State total: every county in the state shows the same value. Abyei not included.",
+  "caution": "A state total, so every county in the state shows the same value. Abyei is not included.",
   "synonyms": [
    "fighting",
    "conflict",
@@ -3351,7 +3351,7 @@
   "method": "IPC (Integrated Food Security Phase Classification) via HDX; county = sum of analysis areas; placed at first month of each analysis. Phase 3+ population / population analysed.",
   "direction": "better_worse",
   "topic": "Food & prices",
-  "caution": "Only 10 analyses (none between January 2020 and February 2022); values hold between analyses. Compare analyses, not months.",
+  "caution": "Based on only 10 analyses, with none between January 2020 and February 2022. Each value holds until the next analysis, so compare analyses with each other, not months.",
   "synonyms": [
    "hunger",
    "food insecurity",
@@ -3556,7 +3556,7 @@
   "method": "OCHA South Sudan 3W operational presence, monthly 2019-2025.",
   "direction": "better_worse",
   "topic": "Aid, services & peacekeeping",
-  "caution": "Reporting coverage grew over time, so part of any rise is better reporting. No 2018; Dec 2020 missing.",
+  "caution": "Reporting coverage grew over time, so part of any rise reflects better reporting. 2018 and December 2020 are missing.",
   "synonyms": [
    "aid",
    "funding",
@@ -3982,11 +3982,11 @@
  },
  "wage_casual_labour_usd": {
   "label": "Daily wage for casual labour (US$)",
-  "plain": "What an unskilled casual (non-farm) labourer earns per day, in US dollars. Compared with food prices, it shows how much food a day's work buys.",
+  "plain": "What an unskilled casual (non-farm) labourer earns in a day, in US dollars. Set against food prices, it shows how much food a day's work buys.",
   "method": "WFP market monitoring (VAM) via HDX; median over the county's monitored markets. WFP US-dollar value.",
   "direction": "better_worse",
   "topic": "Food & prices",
-  "caution": "Only counties with WFP-monitored markets have values.",
+  "caution": "Only counties with markets monitored by WFP have values.",
   "synonyms": [
    "wages",
    "income",
@@ -4253,11 +4253,11 @@
  },
  "price_sorghum_local_usd": {
   "label": "Local sorghum price (US$)",
-  "plain": "Market price of local sorghum per kg, converted to US dollars by WFP. Sorghum contributes to 76 percent of the national staple food supply in South Sudan (FAO Hand-in-Hand, 2023).",
+  "plain": "Market price of a kilogram of local sorghum, converted to US dollars by WFP. Sorghum contributes to 76 percent of the national staple food supply in South Sudan (FAO Hand-in-Hand, 2023).",
   "method": "WFP market monitoring (VAM) via HDX; median over the county's monitored markets. WFP US-dollar price.",
   "direction": "better_worse",
   "topic": "Food & prices",
-  "caution": "Only counties with WFP-monitored markets have values.",
+  "caution": "Only counties with markets monitored by WFP have values.",
   "synonyms": [
    "prices",
    "food prices",
@@ -4671,7 +4671,7 @@
   "method": "OCHA South Sudan 3W operational presence, Protection sector, monthly 2019-2025 (team compilation).",
   "direction": "better_worse",
   "topic": "Gender & protection",
-  "caution": "Counts organisations, not service points. No 2018; Dec 2020 missing. Reporting changes between years, so compare months within a year.",
+  "caution": "Counts organisations, not service points. 2018 and December 2020 are missing. Reporting changed between years, so compare months within the same year.",
   "synonyms": [
    "GBV",
    "gender-based violence",
@@ -4689,7 +4689,7 @@
   "method": "OCHA South Sudan 3W operational presence, Nutrition sector, monthly 2019-2025 (team compilation).",
   "direction": "better_worse",
   "topic": "Aid, services & peacekeeping",
-  "caution": "Counts organisations, not feeding sites. No 2018; Dec 2020 missing. Reporting changes between years, so compare months within a year.",
+  "caution": "Counts organisations, not feeding sites. 2018 and December 2020 are missing. Reporting changed between years, so compare months within the same year.",
   "synonyms": [
    "nutrition",
    "malnutrition",
@@ -4702,11 +4702,11 @@
  },
  "smap_sm_rootzone": {
   "label": "Soil moisture, top 1 m (NASA SMAP)",
-  "plain": "How wet the soil is in the top metre, where crops and pasture roots draw water: the share of the soil volume that is water (0.30 = 30%).",
+  "plain": "How wet the top metre of soil is, which is where crop and pasture roots draw water. Given as the share of the soil volume that is water (0.30 = 30%).",
   "method": "NASA SMAP Level-4 (SPL4SMGP v008): SMAP satellite microwave readings combined with NASA's GEOS land model every 3 hours on a 9 km grid; averaged to months, then to counties.",
   "direction": "wetter_drier",
   "topic": "Drought & rainfall",
-  "caution": "A model estimate guided by satellite readings, not a direct measurement of the top metre. 9 km cells, so small wetlands blur together.",
+  "caution": "A model estimate guided by satellite readings; the top metre is not measured directly. Cells are 9 km across, so small wetlands blur together.",
   "synonyms": [
    "drought",
    "dry",
@@ -4719,11 +4719,11 @@
  },
  "smap_sm_surface": {
   "label": "Surface soil moisture, top 5 cm (NASA SMAP)",
-  "plain": "How wet the top 5 cm of soil is: the share of the soil volume that is water. Reacts within days to rain.",
+  "plain": "How wet the top 5 cm of soil is, as the share of the soil volume that is water. It reacts to rain within days.",
   "method": "NASA SMAP Level-4 (SPL4SMGP v008), 3-hourly, 9 km; averaged to months, then to counties.",
   "direction": "wetter_drier",
   "topic": "Drought & rainfall",
-  "caution": "Swings quickly with each rain; the 1 m layer is the better guide to drought.",
+  "caution": "Changes quickly after each rain. The 1 m layer is a better guide to drought.",
   "synonyms": [
    "drought",
    "dry",
@@ -4736,8 +4736,8 @@
  },
  "gracedm_gws_pctl": {
   "label": "Groundwater",
-  "plain": "How groundwater compares with its long-term normal for the time of year, as a percentile: 50 is normal, below 20 is unusually dry, above 80 is unusually wet. From NASA's land model with GRACE and GRACE-FO satellite gravity data assimilated.",
-  "caution": "A ranking, not an amount of water: South Sudan sits below its long-term normal for the whole period, so look at the change over time. Less conclusive in and around the Sudd wetland, where flood water on the surface can be mistaken for groundwater (hatched counties). No data for October 2025.",
+  "plain": "Groundwater compared with its long-term normal for the time of year, as a percentile. 50 is normal, below 20 is unusually dry and above 80 is unusually wet. The values come from NASA's land model, which assimilates GRACE and GRACE-FO satellite gravity data.",
+  "caution": "This is a ranking, not an amount of water. South Sudan is below its long-term normal for the whole period, so look at the change over time. Readings in and around the Sudd wetland (hatched counties) are less certain, because surface flood water can be mistaken for groundwater. October 2025 is missing.",
   "direction": "wetter_drier",
   "topic": "Drought & rainfall",
   "synonyms": [
