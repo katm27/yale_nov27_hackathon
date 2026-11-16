@@ -47,6 +47,15 @@ Regional trend test (Douglas, Vogel & Kroll 2000 "regional Kendall" with spatial
 
 Lag-1 autocorrelation of the (deseasonalised) series is also reported.
 
+Robustness checks (16 Nov 2026; they never change `significant`):
+  * sen_lo/sen_hi: 90% range of the headline slope. Monthly (2018-anchored) slope: 12-month moving-block bootstrap of
+    detrended, deseasonalised residuals, basic interval widened by t_{years-1}/z. Annual/rounds: Gilbert (1987)
+    rank-based interval of Sen's slope using the (Hamed-Rao corrected) Var(S).
+  * p_pw/q_pw/pw_lost: trend-free pre-whitening MK (Yue et al. 2002) on the deseasonalised series, BH-FDR across
+    counties; pw_lost = significant in the main test but q_pw >= 0.05.
+  * cp_date/cp_p/cp_shift/cp_dbic/step_like: Pettitt (1979) break on the deseasonalised series; BIC of one step vs a
+    straight line; step_like = trend p < 0.05 and Pettitt p < 0.05 and BIC gain >= 10 and step in the trend's direction.
+
 Usage from a pipeline (after it has written its contract CSV):
     from trend_stats import write_trends
     write_trends("acled")            # reads data/processed/acled_county_monthly.csv + meta, writes trends

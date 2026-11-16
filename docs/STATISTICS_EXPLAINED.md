@@ -1,7 +1,7 @@
 # How the trend statistics work (and why they changed)
 
 All formulas live in one place, `scripts/trend_stats.py`. Every data pipeline calls `write_trends("<source>")`
-at the end, and `python scripts/trend_stats.py` recomputes everything (about 90 seconds).
+at the end, and `python scripts/trend_stats.py` recomputes everything (about 3 minutes).
 We checked the results against the Python package `pymannkendall`. The Hamed–Rao p-values are identical. For
 Hirsch–Slack, S is identical and p agrees to within 0.01 (Juba maximum temperature, for example, gives 0.119 vs 0.115).
 The small gap comes from how each implementation estimates the between-month covariance terms; ours follows the
@@ -155,3 +155,43 @@ ever compared with January. Pairs where both months are 0 (dry-season rain, mont
 and are skipped. The "trend to date" for slider year Y uses only months up to Y. Significance still comes from the
 seasonal Mann-Kendall test (Hirsch–Slack corrected), which likewise compares like months only. Annual or survey-round
 series (no months) keep the ordinary Sen's slope.
+
+## 9. Robustness checks (added 16 Nov 2026)
+
+Three checks sit alongside the main test. None of them changes which counties are outlined.
+
+**A range for the slope.** Each headline slope now has a 90% range (`sen_lo`, `sen_hi`), shown in the county
+panel. For monthly series the headline compares each month with the same month of 2018, so 2018's own noise
+matters. The range comes from a block bootstrap: remove the fitted trend and seasonal cycle, resample what is left in
+12-month blocks (this keeps month-to-month persistence), add it back and recompute the slope 500 times. With only 8
+years a plain bootstrap is too narrow, so the leftovers are scaled up for the fitted parameters and the range is
+widened by Student's t with (years − 1) degrees of freedom (×1.15 for 8 years). In simulations with a known trend the
+90% range contained the true slope 92% of the time with no or moderate persistence (lag-1 r = 0 or 0.5) and 87% with
+strong persistence (r = 0.8). Annual and survey series use the standard rank-based range for Sen's slope (Gilbert
+1987), with the Hamed–Rao variance where n ≥ 10.
+
+A county can be significant while its range includes 0. The test asks whether later values are consistently higher or
+lower; the range asks how precisely the 2018-anchored rate is known. When they disagree, trust the direction and treat
+the size as rough. This applies to 237 of the 938 significant county-variables in the app, including daytime land
+surface temperature in 37 of its 63 significant counties.
+
+**Pre-whitening.** Trend-free pre-whitening (Yue et al. 2002) removes lag-1 persistence from the deseasonalised
+monthly series before a Mann-Kendall test, with the same FDR step across counties (`p_pw`, `q_pw`). `pw_lost` = 1 marks
+a county that is significant in the main test but not after pre-whitening. Only 25 of 938 are flagged, all in DTM
+displacement, IPC phase 4+ population and WFP prices or wages. For most variables Hirsch–Slack is already the
+stricter test.
+
+**Step or steady drift?** Many water series did not rise smoothly; they jumped with the 2020–21 floods. The Pettitt
+(1979) test finds the most likely break month in the deseasonalised series (`cp_date`, `cp_p`). A single step at that
+month is then compared with a straight line by BIC (the step must be better by at least 10). `step_like` = 1 when the
+trend has p < 0.05, the break has p < 0.05 and the step fits clearly better; the county panel then adds "mostly a step
+change around <year>". This holds for 23 of the 76 significant counties for GRACE total water storage, 21 of 54 for
+G3P groundwater, 7 of 12 for Sudd flooded area (Rubkona: 2021) and 1 of 60 for GLDAS groundwater. In those counties
+the per-year slope averages over a jump, so describe the change as before and after the break. A break on its own
+proves little: Pettitt's p assumes independent data, and any steady trend also produces a "break" near the middle.
+Only the combined flag is used.
+
+**Checked against reference code.** Pre-whitened p-values match pymannkendall's
+`trend_free_pre_whitening_modification_test` to within 1e-15 on 52 county series. The rank-based range matches
+`scipy.stats.theilslopes` in 500 of 500 random series. The Pettitt statistic and break month match a direct double-sum
+implementation in all 42 county series tested.

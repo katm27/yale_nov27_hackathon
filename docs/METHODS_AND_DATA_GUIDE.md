@@ -599,13 +599,13 @@ Lag-1 autocorrelation caveat:
 - It is reported and flagged, but not corrected for. When lag-1 r > 0.5, the hover sentence adds "Strong
   month-to-month persistence (lag-1 r > 0.5) may still overstate significance."
 - Positive autocorrelation shrinks the true variance of S, so p-values are too optimistic.
-- Seasonal Kendall also treats the 12 monthly sub-tests as independent. The Hirsch & Slack (1984) covariance
-  correction is not applied.
+- Monthly series now use the Hirsch & Slack (1984) covariance correction between the 12 monthly sub-tests (see the
+  15 Nov update above).
 - Median lag-1 values: population 0.96, WFP prices 0.78, drought ensemble 0.66, MERRA-2 temperature 0.57, MODIS
   NDVI 0.58, MODIS surface water 0.56, and most conflict counts ≈ 0–0.3.
 - Treat significance for highly autocorrelated series as indicative. Examples: temperature (77 of 79 counties
   "significant"), drought ensemble (72 of 79), prices, population.
-- The obvious upgrade is a Hamed–Rao variance correction or Yue–Pilon pre-whitening.
+- Trend-free pre-whitening is now run as a sensitivity check (see "Robustness checks" below).
 
 Other cautions:
 - Annual series have n ≤ 8. The smallest achievable two-sided p for n = 8 is ≈ 0.0008, but most annual tests
@@ -623,9 +623,22 @@ Other cautions:
   usually 0. 22 counties have a significant `flood_s1_flood_km2` trend (q < 0.05) despite the 0 median slope.
   Compare annual peaks rather than reading a slope.
 
+Robustness checks (added 16 Nov 2026; details in [`STATISTICS_EXPLAINED.md`](STATISTICS_EXPLAINED.md) §9). They do
+not change which counties are outlined.
+- 90% range of the headline slope (`sen_lo`, `sen_hi`). Monthly series: 12-month moving-block bootstrap of the
+  detrended, deseasonalised residuals (500 draws), widened by Student's t with years − 1 df. Annual and survey series:
+  rank-based Sen's-slope interval (Gilbert 1987) using the persistence-corrected Var(S). 237 of 938 significant
+  county-variables have a range that includes 0: the direction is consistent but the size is imprecise.
+- Trend-free pre-whitening (Yue et al. 2002) on the deseasonalised series, FDR-adjusted (`p_pw`, `q_pw`). `pw_lost`
+  flags 25 of 938 significant results that do not survive it (DTM, IPC phase 4+ population, WFP prices and wages).
+- Step or drift: Pettitt change-point test (`cp_date`, `cp_p`, `cp_shift`) and a BIC comparison of one step vs a straight
+  line (`cp_dbic`). `step_like` = 1 when trend p < 0.05, Pettitt p < 0.05 and the step is better by BIC ≥ 10. Common
+  for GRACE water storage (23 of 76 significant counties) and G3P groundwater (21 of 54), with breaks in 2020.
+
 Outputs:
 - `data/processed/trends/<source>_trends.csv`, with columns: county_id, variable, test, n, S, Z, τ, p, q_fdr,
-  significant, sen_slope_per_year, sen_slope_pct_per_year, baseline_year, baseline_mean, lag1, interpretation.
+  significant, sen_slope_per_year, sen_slope_pct_per_year, baseline_year, baseline_mean, lag1, interpretation, and the
+  robustness columns above.
 - Merged into `docs/data/trends.json` by `build_web_data.py`.
 
 Trend-mode colour scale: the colour span is the 90th percentile of |trend value| across counties, in %/yr for
