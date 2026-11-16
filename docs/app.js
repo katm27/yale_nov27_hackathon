@@ -273,7 +273,7 @@
     let line = "";
     if (v) {
       const x = valueAt(v, p.district_id, state.t);
-      const lab = state.mode === "trend" && usesTrend(v) ? `Trend 2018→${trendYear()} (Sen’s slope)` : windowLabel(state.t);
+      const lab = state.mode === "trend" && usesTrend(v) ? `Trend 2018→${trendYear()} (Sen's slope)` : windowLabel(state.t);
       line = `<div class="tt-var"><span class="muted">${esc(v.label)}</span><br>${lab}: <b>${describe(v, x, p.district_id)}</b></div>`;
     }
     return `<div class="tt"><div class="tt-h"><b>${esc(p.name)}</b> <span class="muted">· ${esc(p.admin1)}</span></div>${line}${sparkPanel(p.district_id)}</div>`;
@@ -331,9 +331,9 @@
         html += `<div class="lg-bins">${rows.map((x) => `<div><i style="background:${x.c}"></i>${esc(x.lab)}</div>`).join("")}<div><i class="nd"></i>No data</div></div>`;
         if (!isStatic(v) && state.trends && state.trends[v.id]) {
           const nSig = Object.values(state.trends[v.id]).filter((t) => t[T_SIG]).length;
-          html += `<div class="lg-note"><span class="sig-swatch"></span> <b>Outlined counties (${nSig}):</b> the 2018–2025 trend is statistically significant, meaning it is very unlikely to be chance.</div>`;
+          html += `<div class="lg-note"><span class="sig-swatch"></span> <b>Outlined counties (${nSig})</b> have a statistically significant 2018–2025 trend, one that is very unlikely to be chance.</div>`;
         }
-        if (GROUNDWATER_IDS.includes(v.id)) html += `<div class="lg-note"><span class="hatch-swatch"></span> <b>Hatched counties (Sudd wetland):</b> less reliable here, because flood water on the surface can be mistaken for groundwater.</div>`;
+        if (GROUNDWATER_IDS.includes(v.id)) html += `<div class="lg-note"><span class="hatch-swatch"></span> <b>Hatched counties</b> are in the Sudd wetland, where readings are less reliable because surface flood water can be mistaken for groundwater.</div>`;
       }
       html += caveatHtml(v);
     }
@@ -424,7 +424,7 @@
       row.querySelector("input").onchange = () => setColorBy(v.id);
       el.appendChild(row);
     }
-    if (q && !el.children.length) el.innerHTML = `<p class="empty">Nothing matches “${esc(q)}”. Try: flood, rain, heat, fire, fighting, hunger, aid.</p>`;
+    if (q && !el.children.length) el.innerHTML = `<p class="empty">Nothing matches "${esc(q)}". Try flood, rain, heat, fire, fighting, hunger or aid.</p>`;
   }
 
   async function ensureSeries(id) {
@@ -622,7 +622,7 @@
       }
     }
     const st = $("#flow-status");
-    if (st) st.innerHTML = !state.flowOn ? "" : !any ? `<span class="none">No IOM Event Tracking data for ${windowLabel(state.t)}. Records start in late 2019; most months from 2020 on are covered.</span>` : `${[...agg.values()].reduce((a, b) => a + b, 0).toLocaleString("en-US")} people moving in ${windowLabel(state.t)}. Every route IOM recorded is drawn, up to the 150 largest when there are more.`;
+    if (st) st.innerHTML = !state.flowOn ? "" : !any ? `<span class="none">No IOM Event Tracking data for ${windowLabel(state.t)}. Records start in late 2019, and most months from 2020 on are covered.</span>` : `${[...agg.values()].reduce((a, b) => a + b, 0).toLocaleString("en-US")} people moving in ${windowLabel(state.t)}. All routes IOM recorded are drawn, or the 150 largest when there are more.`;
     if (!state.flowOn) return;
     const list = [...agg.entries()].map(([k, n]) => { const [a, b, g] = k.split("|"); return { a: +a, b: +b, g, n }; }).sort((x, y) => y.n - x.n).slice(0, 150);
     const max = Math.max(1, ...list.map((f) => f.n));
@@ -652,7 +652,7 @@
     const G = state.curated.flow_groups;
     const opt = (val, lab, col) => `<label class="var-row"><input type="radio" name="flow-g" value="${val}" ${state.flowGroup === val ? "checked" : ""}>${col ? `<span class="swatch" style="background:${col}"></span>` : ""}<span>${esc(lab)}</span></label>`;
     el.innerHTML = `<label class="var-row"><input type="checkbox" id="flow-on" ${state.flowOn ? "checked" : ""}> <span><b>Show where people moved</b></span></label>
-      <p class="hint">IOM Event Tracking: people newly displaced or returning, drawn from the county they left to the county where they arrived. Cross-border arrivals start at the border crossing (white circle).</p>
+      <p class="hint">From IOM Event Tracking. Each arrow runs from the county people left to the county they reached, for people newly displaced or returning. Arrivals from abroad start at a border crossing (white circle).</p>
       <div class="flow-opts">${opt("all", "All reasons")}${opt("climate", G.climate.label, G.climate.color)}${opt("conflict", G.conflict.label, G.conflict.color)}</div>
       <p class="hint" id="flow-status"></p>`;
     $("#flow-on").onchange = (e) => { state.flowOn = e.target.checked; drawFlows(); refreshCounties(); renderLegend(); writeHash(); };
@@ -688,7 +688,7 @@
     const charts = [];
     for (const p of hits) for (const c of p.charts || []) if (!charts.some((x) => x.id === c.id)) charts.push({ ...c, from: p.from, to: p.to });
     let html = "";
-    if (charts.length) html += `<h3 class="ctx-h">National Trends</h3>${charts.map((c, k) => `<div class="ctx-chart"><div class="cc-t">${esc(c.label)}${c.units ? ` <span class="muted">(${esc(c.units)})</span>` : ""}</div><div class="cc-box"><canvas id="ctxc-${k}"></canvas></div></div>`).join("")}`;
+    if (charts.length) html += `<h3 class="ctx-h">National trends</h3>${charts.map((c, k) => `<div class="ctx-chart"><div class="cc-t">${esc(c.label)}${c.units ? ` <span class="muted">(${esc(c.units)})</span>` : ""}</div><div class="cc-box"><canvas id="ctxc-${k}"></canvas></div></div>`).join("")}`;
     for (const p of hits) {
       html += `<article class="ctx"><div class="ctx-range">${esc(range(p))}</div><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>${p.links ? `<p class="ctx-links">${esc(String(p.links).replace(/^\s*In the charts:\s*/i, ""))}</p>` : ""}
         ${p.sources && p.sources.length ? `<p class="ctx-src">Sources: ${p.sources.map((s, i) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label || `[${i + 1}]`)}</a>`).join(" · ")}</p>` : ""}</article>`;
@@ -725,18 +725,18 @@
     return { keys, labels, vals, firstIdx };
   }
   function trendSentence(v, cid) {
-    if (isStatic(v) || isCategorical(v)) return "A single snapshot, so there is no trend over time.";
+    if (isStatic(v) || isCategorical(v)) return "This is a single snapshot, so there is no trend over time.";
     const tr = trendOf(v.id, cid); if (!tr || tr[T_SEN] == null) return "Too little data to estimate a trend for this county.";
     const x = trendNative(v, cid, 2025), sig = tr[T_SIG];
-    const strength = sig ? "This trend is statistically significant (unlikely to be chance, after allowing for testing all 79 counties)." : tr[T_P] != null && tr[T_P] < 0.05 ? "This trend is suggestive but not significant once all 79 counties are tested together." : "This change is not statistically significant: it could be chance.";
-    return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen’s slope). ${strength}`;
+    const strength = sig ? "This trend is statistically significant. It is unlikely to be chance, even allowing for the fact that all 79 counties were tested." : tr[T_P] != null && tr[T_P] < 0.05 ? "This trend is suggestive, but it is not significant once all 79 counties are tested together." : "This change is not statistically significant and could be chance.";
+    return `Trend 2018–2025: <b>${signed(x, 2)} ${slopeUnits(v)}</b> (Sen's slope). ${strength}`;
   }
   const COMPARE_COLORS = [MAIN, "#fc3c23", "#1baf7a", "#a05eb5"];
   const countyProps = (cid) => { const l = countyLayer.getLayers().find((x) => x.feature.properties.district_id === cid); return l ? l.feature.properties : { name: cid, admin1: "" }; };
   async function renderDetail() {
     const cid = state.selected;
     $("#tab-county").disabled = !cid;
-    if (!cid) { $("#tab-county").textContent = "Click on a county for more detailed info"; showTab("context"); return; }
+    if (!cid) { $("#tab-county").textContent = "Click a county for details"; showTab("context"); return; }
     const P = countyProps(cid), v = state.varById[state.colorBy];
     $("#tab-county").textContent = `${P.name} County`;
     state.compare = (state.compare || []).filter((c) => c !== cid);
@@ -758,7 +758,7 @@
     $("#detail-body").querySelectorAll(".cmp-chip button").forEach((b) => (b.onclick = () => { state.compare = state.compare.filter((c) => c !== b.dataset.c); renderDetail(); }));
     state.charts.forEach((c) => c.destroy()); state.charts = [];
     const box = $("#detail-chart");
-    if (!v) { box.innerHTML = `<p class="empty">Choose a measure in the left panel to see this county’s history.</p>`; return; }
+    if (!v) { box.innerHTML = `<p class="empty">Choose a measure in the left panel to see this county's history.</p>`; return; }
     await ensureSeries(v.id);
     const now = valueAt(v, cid, state.t, "raw");
     box.innerHTML = `<div class="chart-block"><h3>${esc(v.label)}</h3><div class="var-plain">${esc(plainOf(v))}</div>
@@ -793,7 +793,7 @@
   function downloadCSV() {
     const csv = buildCSV();
     try { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" })); a.download = `south_sudan_${state.colorBy}_${state.selected || "all_counties"}.csv`; document.body.appendChild(a); a.click(); a.remove(); }
-    catch (e) { copyText(csv, "Download blocked here; the CSV was copied to your clipboard instead."); }
+    catch (e) { copyText(csv, "The download was blocked, so the CSV was copied to your clipboard instead."); }
   }
   function copyText(txt, msg) {
     const done = () => toast(msg), fail = () => { const ta = document.createElement("textarea"); ta.value = txt; document.body.appendChild(ta); ta.select(); try { document.execCommand("copy"); done(); } catch (e) { toast("Copying is not allowed here."); } ta.remove(); };
@@ -829,24 +829,24 @@
     const disb = A("usaid_disbursed_month_usd"), obl = A("usaid_obligated_month_usd");
     if (disb && obl) {
       const yd = yearly(disb, "sum"), yo = yearly(obl, "sum"), pct = yd.map((x, i) => (x != null && yo[i] ? (100 * x) / yo[i] : null));
-      specs.push({ title: "USAID aid paid out, as a % of aid committed that year", sub: "Calendar-year totals (ForeignAssistance.gov). Can pass 100% when money committed in earlier years is paid out.", step: true,
+      specs.push({ title: "USAID aid paid out, as a % of aid committed that year", sub: "Calendar-year totals from ForeignAssistance.gov. The share can pass 100% when money committed in earlier years is paid out.", step: true,
         sets: [{ data: pct, color: "#2a78d6", label: "Paid out as % of committed", fmt: (x) => `${fmt(x, 3)}%` }], yMin: 0, refLine: 100,
         extra: (i) => (yd[i] != null ? `${yearOf(i)}: ${usd(yd[i])} paid out · ${usd(yo[i])} committed` : "") });
     }
     const usm = A("fts_us_gov_funding_month_usd");
-    if (usm) specs.push({ title: "US government humanitarian funding, by month", sub: "Funding decisions recorded by OCHA’s Financial Tracking Service (US$).", bar: true,
+    if (usm) specs.push({ title: "US government humanitarian funding, by month", sub: "Funding decisions recorded by OCHA's Financial Tracking Service, in US$.", bar: true,
       sets: [{ data: usm, color: "#2a78d6", label: "US$ per month", fmt: usd }], yMin: 0 });
     const share = A("fts_us_share_year"), usy = A("fts_us_gov_funding_year_usd");
     if (share && usy) specs.push({ title: "US share of all humanitarian funding (solid) and US amount per year (dashed)", sub: "OCHA Financial Tracking Service, by calendar year.", step: true,
       sets: [{ data: mul(share, 100), color: "#2a78d6", label: "US share of all humanitarian funding", fmt: (x) => `${fmt(x, 2)}%`, axis: "y" },
         { data: usy, color: "#6250d6", dash: [6, 4], label: "US funding that year", fmt: usd, axis: "y2" }], yMin: 0, y2: true });
     const add = (id, title, sub, color, f, opts = {}) => { const a = A(id); if (a) specs.push({ title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f }], yMin: 0, ...opts }); };
-    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents (national)", "Insecurity Insight, monthly. Reporting is very incomplete, so low numbers do not mean few incidents.", "#c2185b", (x) => `${fmt(x)} incidents`, { bar: true });
+    add("ii_sexual_violence_incidents", "Conflict-related sexual violence: reported incidents (national)", "Insecurity Insight, monthly. Reporting is very incomplete, and a low count may hide many unreported incidents.", "#c2185b", (x) => `${fmt(x)} incidents`, { bar: true });
     add("unmiss_budget_fy_usd", "UN peacekeeping mission (UNMISS) budget", "Approved budget for each UN fiscal year (July–June).", "#6250d6", usd, { step: true, yMin: null });
-    add("fmr_internal_forced_total", "Forced travel: people counted moving because of conflict, disaster or hunger (national)", "IOM Flow Monitoring at its monitoring points. Covers routes past those points, not all movement; no county data for Nov 2023–Dec 2024.", "#d7301f", (x) => `${fmt(x)} people`, { bar: true });
+    add("fmr_internal_forced_total", "Forced travel: people counted moving because of conflict, disaster or hunger (national)", "IOM Flow Monitoring. Counts only people passing its monitoring points, so it misses other routes. No county data for Nov 2023–Dec 2024.", "#d7301f", (x) => `${fmt(x)} people`, { bar: true });
     add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", "Women, Peace and Security Index (Georgetown Institute), survey years only.", "#c2185b", (x) => `${fmt(x, 3)}%`, { step: true, yMax: 60 });
     add("wps_community_safety_pct", "Women who feel safe walking alone at night in their community (national)", "Women, Peace and Security Index (Georgetown Institute), survey years only.", "#1baf7a", (x) => `${fmt(x, 3)}%`, { step: true, yMax: 100 });
-    add("wps_education_years", "Women’s average years of schooling (national)", "Women, Peace and Security Index (Georgetown Institute), survey years only.", "#008300", (x) => `${fmt(x, 3)} years`, { step: true });
+    add("wps_education_years", "Women's average years of schooling (national)", "Women, Peace and Security Index (Georgetown Institute), survey years only.", "#008300", (x) => `${fmt(x, 3)} years`, { step: true });
     return specs;
   }
   async function renderNational() {
@@ -900,11 +900,11 @@
   <h3>What this map shows</h3>
   <p>This map lays South Sudan’s counties beneath two kinds of monthly data from 2018 to 2025. The first describes the climate conditions that farming, herding, and flood risk depend on: rainfall, vegetation greenness, land surface temperature, soil moisture, and surface water. The second records displacement, armed conflict, humanitarian funding, and UN presence. Checkboxes turn each layer on or off, the time slider moves through the record one month at a time, and clicking a county opens its values for the selected month. Users can place a climate layer beneath a human one to ask whether a county that flooded in September also took in displaced families by December.</p>
   <h3>Reading the colours and outlines</h3>
-  <p><b>Trend view</b> (the default): each county’s colour is its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, so the seasons do not count as a trend. Every county is compared with its own 2018 baseline: green means the measure rose, red means it fell, and white means little or no change. Colours show direction, not good or bad.</p>
-  <p><b>Values in original units</b>: colours compare counties with each other in the selected month or season, not with 2018. The same county can therefore look very different in the two views: a county can have a low value (red in this view) that is still rising since 2018 (green in the trend view).</p>
-  <p>Each of the seven colours holds about one-seventh of the county values for the measure. On finer-resolution grids, the colours are seven equal steps of the grid’s range.</p>
-  <p><b>Outlined counties</b>: the 2018–2025 trend passed the Mann-Kendall significance test after allowing for slow-moving conditions (one month resembling the next) and for testing all 79 counties at once. An outline means the change is very unlikely to be chance; no outline does not prove there was no change, because eight years is a short record.</p>
-  <p><b>Black hatching</b> means no data for that county and period.</p>
+  <p><b>Trend view</b> (the default) colours each county by its typical change per year since 2018, estimated with Sen’s slope. Each month is compared with the same month of 2018, so the normal swing of the seasons does not show up as a trend. Green means the measure went up, red means it went down, and white means little or no change. The colours show direction only. Green is not “good” and red is not “bad”.</p>
+  <p><b>Values in original units</b> colours counties against each other for the selected month or season, with no reference to 2018. A county can look quite different in the two views. Its value may be low next to other counties (red here) and still have risen since 2018 (green in the trend view).</p>
+  <p>Each of the seven colours covers roughly a seventh of all county values for the measure. On the finer grids, the colours split the grid’s range into seven equal steps.</p>
+  <p><b>Outlined counties</b> passed the Mann-Kendall significance test for 2018–2025. The test allows for slow-moving conditions, where one month tends to resemble the next, and for the fact that all 79 counties were tested at once. An outline means the change is very unlikely to be chance. A county without one may still have changed, since eight years is a short record.</p>
+  <p><b>Black hatching</b> marks counties with no data for that period.</p>
   <h3>Understanding the data: implications and utility</h3>
   <p>In few countries do households depend on the seasons as closely as in South Sudan, where most families live off rain-fed farming, cattle, or fishing. A single rainy season, running roughly from April to October, sets when families plant, when herders drive cattle toward the rivers, and when roads wash out for months at a time. When the rains arrive late or the floodwater fails to recede, families move; that movement can bring herding and farming communities into competition over scarce land and water. The floods that covered large parts of Jonglei, Unity, and Upper Nile between 2019 and 2022 are the clearest recent example, since many of the families who fled the water had already fled the fighting years before.</p>
   <p>Rainfall records how much rain fell in each county during the month, which means the most when set against what usually falls there. Vegetation greenness (NDVI) follows rainfall with a lag of several weeks. A county that stays brown into the rainy season points to failing pasture and crops, while one that greens unusually early or late points to a shifted season. Land surface temperature measures how hot the ground itself becomes (not the air temperature a weather station reports), so it serves as a marker of dry-season heat stress on crops, livestock, and people. Soil moisture shows how much water the ground already holds. Saturated soil cannot absorb the next storm, which is why heavy rain on already-wet ground in the Sudd produces floods that last for months rather than days. Surface water maps where standing water covers the land, capturing both the seasonal swell of the Sudd wetland and the floods that spread beyond it.</p>
@@ -927,7 +927,7 @@
   }
   function renderModeHint() {
     const el = $("#mode-hint"); if (!el) return;
-    el.textContent = state.mode === "trend" ? "Each county is compared with its own 2018 levels, month by month: green = rose since 2018, red = fell." : "Colours compare counties with each other in the selected period, not with 2018.";
+    el.textContent = state.mode === "trend" ? "Each county is compared with its own 2018 levels, month by month. Green means the measure rose after 2018, red means it fell." : "Colours compare counties with each other in the selected period, not with 2018.";
   }
   // ---------- views ----------
   function openNat(open) {
@@ -1021,7 +1021,7 @@
     $("#play").onclick = togglePlay;
     $("#filter").oninput = renderVarList;
     $("#grid-on").onchange = (e) => { state.gridOn = e.target.checked; refreshCounties(); updateRasters(); renderLegend(); writeHash(); };
-    $("#detail-close").onclick = () => { state.selected = null; state.compare = []; state.comparing = false; refreshCounties(); renderDetail(); $("#tab-county").textContent = "Click on a county for more detailed info"; writeHash(); };
+    $("#detail-close").onclick = () => { state.selected = null; state.compare = []; state.comparing = false; refreshCounties(); renderDetail(); $("#tab-county").textContent = "Click a county for details"; writeHash(); };
     $("#tab-context").onclick = () => showTab("context");
     $("#tab-county").onclick = () => state.selected && showTab("county");
     $("#nat-toggle").onclick = () => openNat(!state.natOpen);

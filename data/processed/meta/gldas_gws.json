@@ -1,0 +1,18 @@
+[
+ {
+  "id": "gldas_gws_anom_cm",
+  "label": "Groundwater storage anomaly (NASA GLDAS-2.2 + GRACE)",
+  "category": "environment",
+  "group": "Water storage & groundwater (GRACE)",
+  "units": "cm water",
+  "source": "NASA GLDAS-2.2 Catchment Land Surface Model with GRACE/GRACE-FO data assimilation (GLDAS_CLSM025_DA1_D v2.2, band GWS_tavg) via Google Earth Engine (NASA/GLDAS/V022/CLSM/G025/DA1D)",
+  "source_url": "https://doi.org/10.5067/TXBMLX370XX8",
+  "native_resolution": "0.25° (~28 km) model grid; GRACE information it assimilates is ~300 km",
+  "temporal": "monthly",
+  "aggregation": "per-pixel monthly mean of daily groundwater storage minus the pixel's 2004-2020 mean, in cm; then mean of ~1 km cells inside the county",
+  "higher_is": "better",
+  "index_ok": false,
+  "raster": "gldas_gws",
+  "notes": "Groundwater only: the Catchment model splits the GRACE total-storage signal into soil moisture, snow and groundwater, and this is the groundwater part, as a difference (cm of water) from its own 2004-2020 average. Negative = less groundwater than usual. The model is nudged toward GRACE, so the detail finer than ~300 km comes from the model and its rainfall forcing, not from the satellite. Less conclusive in and around the Sudd wetland, where flood water on the surface can be mistaken for groundwater."
+ }
+]

@@ -1,0 +1,76 @@
+{
+ "key": "gldas_gws_trend",
+ "label": "Groundwater storage anomaly (GLDAS-2.2 CLSM + GRACE DA) \u2014 trend 2018\u2192year (Sen's slope)",
+ "units": "cm water/yr",
+ "bounds": [
+  [
+   3.4021089038843564,
+   23.399999999999995
+  ],
+  [
+   12.299999999999999,
+   36.004112600715054
+  ]
+ ],
+ "vmin": -6.8,
+ "vmax": 6.8,
+ "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "colors": [
+  "#b2182b",
+  "#ef8a62",
+  "#fddbc7",
+  "#ffffff",
+  "#d9f0d3",
+  "#7fbf7b",
+  "#1b7837"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "0.25\u00b0 (~28 km) GLDAS grid, nearest-neighbour",
+ "source": "NASA GLDAS-2.2 CLSM GRACE-DA (GWS_tavg) via Google Earth Engine",
+ "trend_of": "gldas_gws",
+ "basis": "annual mean (Jan-Dec) of the monthly values (groundwater storage anomaly vs 2004-2020, GLDAS-2.2 CLSM GRACE-DA). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in cm water/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+ "original_colormap": "div_brbg",
+ "original_colors": [
+  "#543005",
+  "#8c510a",
+  "#bf812d",
+  "#dfc27d",
+  "#f6e8c3",
+  "#f5f5f5",
+  "#c7eae5",
+  "#80cdc1",
+  "#35978f",
+  "#01665e",
+  "#003c30"
+ ],
+ "bins": [
+  -6.8,
+  -4.857,
+  -2.914,
+  -0.9714,
+  0.9714,
+  2.914,
+  4.857,
+  6.8
+ ],
+ "recolored": true,
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "palette": "rwg7"
+}

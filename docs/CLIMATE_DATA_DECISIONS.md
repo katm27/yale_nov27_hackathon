@@ -4,13 +4,13 @@ South Sudan county map, 79 counties, monthly 2018–2025, indexed to 2018. This 
 variable in the app, explains the flood-product choice and the drought ensemble, and states which contamination and
 gender/water indicators can be measured. Reviewed 15 Nov 2026.
 
-**Classes used below**
+Each variable gets a class, which says where its numbers come from:
 - **Obs**: a direct observation or a physical retrieval from one instrument (reflectance, backscatter, brightness temperature, gauge).
 - **Merged**: a satellite retrieval blended with gauges or with other satellites (IMERG, CHIRPS).
 - **Model**: reanalysis or a land-surface or water-balance model forced by other data (MERRA-2, TerraClimate, GLW4).
 - **Derived**: an index computed from one of the classes above (SPEI, PDSI, MNDWI water, flood exposure).
 
-**Recommendation codes**
+It also gets a recommendation:
 - **Primary**: the default layer for its topic.
 - **Secondary**: keep it for cross-checking.
 - **Context**: static or annual background.
@@ -51,13 +51,13 @@ gender/water indicators can be measured. Reviewed 15 Nov 2026.
 | `soil_*`, `elevation_*`, `richness_*` | Static | SoilGrids 2.0, Copernicus DEM, BiodiversityMapping | — | Static, so not a trend. | Context |
 | `cattle_*` | Model | FAO GLW4 (2015, random-forest disaggregation of old census) | ~10 km, static | No transhumance, and the census inputs are 2008-era. | Context |
 
-**Rainfall bottom line.** No product is "truth" because South Sudan has almost no reporting gauges. Show CHIRPS by
-default and show the IMERG/CHIRPS disagreement. Never report a rainfall trend that appears in only one product: CHIRPS
-falls, IMERG rises, and TerraClimate falls.
+For rainfall, no product can be taken as the truth, because South Sudan has almost no reporting gauges. Show CHIRPS
+by default and show where IMERG and CHIRPS disagree. Do not report a rainfall trend that appears in only one
+product: over 2018–2025 CHIRPS falls, IMERG rises and TerraClimate falls.
 
 ## 2. Flood product decision
 
-**Requirement:** county-month flood extent for 2018-01 to 2025-12 that works through wet-season cloud and in the Sudd,
+What we needed: county-month flood extent for 2018-01 to 2025-12 that works through wet-season cloud and in the Sudd,
 where most flood water stands under grass, papyrus or Typha.
 
 | Option | Coverage | Access from this environment | Sees through cloud | Water under vegetation | Verdict |
@@ -70,8 +70,10 @@ where most flood water stands under grass, papyrus or Typha.
 | JRC Global Surface Water monthly history | 1984–**2021** (v1.4) | open tiles | no (Landsat) | no | Context only (ends 2021, cloud-limited) |
 | **Sentinel-1 RTC via Planetary Computer, this repo** | 2018–2025 (S1A+B to Dec 2021, then S1A only; S1C from 2025) | **open, done** | **yes** | **yes**, with a VV−VH ratio change rule | **Chosen** (wet-season primary) |
 
-**Implementation** (`scripts/flood_s1_pipeline.py`, `data/processed/flood_s1_county_monthly.csv`, `meta/flood_s1.json`,
-overlay `docs/rasters/flood_s1/`, 96 months, 79 counties):
+### How the Sentinel-1 layer is built
+
+Code and outputs: `scripts/flood_s1_pipeline.py`, `data/processed/flood_s1_county_monthly.csv`, `meta/flood_s1.json`,
+overlay `docs/rasters/flood_s1/` (96 months, 79 counties).
 - **Inputs.** Every Sentinel-1 IW GRD RTC scene (gamma0, VV and VH) over the country is used, 70–183 per month. Each
   is read at its 1/16 COG overview (160 m). That overview is a block average of the 10 m linear power, so speckle is
   suppressed.
@@ -93,12 +95,10 @@ overlay `docs/rasters/flood_s1/`, 96 months, 79 counties):
     0.95).
 - **Gap filling.** Pixels with no acquisition inherit the previous month (max 2 months). County-months with less than
   50 % of the area known are dropped.
-- **Variables:**
-  - `flood_s1_flood_km2`, `flood_s1_flood_pct` (index_ok false)
-  - `flood_s1_openwater_km2`
-  - `flood_s1_obs_pct` (quality flag)
+- Variables: `flood_s1_flood_km2` and `flood_s1_flood_pct` (index_ok false), `flood_s1_openwater_km2`, and
+  `flood_s1_obs_pct` (a quality flag).
 
-**National flood peaks (Sep–Oct):**
+National flood peaks (Sep–Oct):
 
 | Year | Peak flood area |
 |---|---|
@@ -111,9 +111,11 @@ overlay `docs/rasters/flood_s1/`, 96 months, 79 counties):
 | 2024 | 24 000 km² |
 | 2025 | 26 000 km² |
 
-The 2020–2022 Sudd mega-flood and the 2024 flood are reproduced. The dry-season minimum is 200–1 500 km².
+The layer picks up the 2020–2022 Sudd mega-flood and the 2024 flood. The dry-season minimum is 200–1 500 km².
 
-**Validation against UNOSAT** (`scripts/flood_s1_validate.py`, `data/processed/validation/flood_s1_vs_unosat_*.csv`):
+### Validation against UNOSAT
+
+Code and outputs: `scripts/flood_s1_validate.py`, `data/processed/validation/flood_s1_vs_unosat_*.csv`.
 
 *Pixel level.* New flood (UNOSAT water on the date minus the UNOSAT 10–14 Mar 2022 water) vs the S1 flood class, with
 cloud-obstructed areas excluded. 19 independent dates, Sep 2021–Sep 2022:
@@ -134,15 +136,15 @@ while the S1 flood class does not.
 | S1 flood | **0.88** | 0.41 | 0.62 | 0.38 |
 | MODIS MNDWI | 0.82 | **0.82** | 0.76 | 0.48 |
 
-**Recommendation**
-- Use **`flood_s1_flood_km2` as the primary flood layer for the flood season (Jul–Nov)** and for annual flood peaks. It
-  is cloud-proof and sees water under vegetation.
+### Recommendation
+- Use `flood_s1_flood_km2` as the primary flood layer for the flood season (Jul–Nov) and for annual flood peaks.
+  Cloud does not block it, and it sees water under vegetation.
 - Keep MODIS `surface_water_km2` as the secondary, all-season layer, which is better for receding and dry-season water.
 - Use UNOSAT for validation only.
 - Copernicus GFM would be the natural upgrade if an account becomes available. Note that GFM also excludes flooded
   vegetation, so in the Sudd it would behave more like our open-water class.
 
-**Caveats**
+### Caveats
 - Wind-roughened open lakes are missed.
 - Woody wetland, rice and built-up double bounce can raise VV−VH.
 - Sentinel-1 revisit fell from 6–12 days to 12–24 days after the Sentinel-1B failure (23 Dec 2021). Some areas in
@@ -163,14 +165,14 @@ while the S1 flood class does not.
 | `dr_spei3_tc` | TerraClimate ppt − Penman-Monteith PET (1991–2025) | log-logistic SPEI-3 (PWM fit) | 1991–2020 |
 | `dr_pdsi_tc_z` | TerraClimate PDSI (1991–2025) | z-score per county and calendar month | 1991–2020 |
 
-**Outputs**
+The script writes four outputs:
 - `drought_ensemble_mean`: the mean of the members (at least 3 required).
 - `drought_ensemble_spread`: the standard deviation across members. This is the "drought uncertainty" in the hover card.
 - `drought_ensemble_range`: maximum minus minimum across members.
 - `drought_ensemble_agree`: the share of members with the same sign as the mean.
 
-**Results, 2018–2025**
-- Members agree only weakly. Pooled county-month correlations are r = 0.27–0.45:
+### Results, 2018–2025
+- The members agree only weakly. Pooled county-month correlations are r = 0.27–0.45:
   - CHIRPS-SPI vs IMERG-SPEI: 0.39
   - IMERG-SPEI vs TC-SPEI: 0.31
   - TC-SPEI vs TC-PDSI: 0.45
@@ -178,8 +180,8 @@ while the S1 flood class does not.
 - TerraClimate members are systematically dry: their 2018–25 means are −0.9 to −2.0 SD, against about 0 for CHIRPS
   and IMERG. As a result, the ensemble mean leans dry, about −0.5 to −0.9.
 
-**Reading the ensemble**
-- A drought claim is robust only when `drought_ensemble_mean < −1`, `drought_ensemble_agree = 1` and the spread is
+### Reading the ensemble
+- Treat a drought claim as solid only when `drought_ensemble_mean < −1`, `drought_ensemble_agree = 1` and the spread is
   below about 0.7.
 - Otherwise the hover card should say "inputs disagree".
 - PDSI and TC-SPEI share TerraClimate precipitation, so the four members are effectively three independent rainfall
@@ -198,7 +200,7 @@ while the S1 flood class does not.
 
 ## 5. Gender, water access and groundwater
 
-**ISNA = South Sudan's MSNA**
+### ISNA (South Sudan's MSNA)
 - The ISNA is run by REACH/IMPACT for OCHA and the ICCG. County tables are on HDX for **2022, 2023 and 2024**.
 - No county MSNA tables exist on HDX for 2018–2021. REACH's earlier "Area of Knowledge" data are settlement-level and
   shared on request.
@@ -214,39 +216,34 @@ while the S1 flood class does not.
 | `isna_wg_avoid_latrines_pct` | Women and girls avoid latrines and bathing areas because they feel unsafe | 3 → 9 % |
 | `isna_wg_avoid_any_pct` | Women and girls avoid at least one area because they feel unsafe | 33 → 30 % |
 
-**Caveats on the ISNA indicators**
+### Caveats on the ISNA indicators
 - These measure GBV **risk perception and exposure**, not incidence. GBVIMS incident data are confidential.
 - Question wording changed between rounds (e.g. the 2022 water-source categories). The 2024 multi-select rows are
   missing for some counties.
 - With only 3 rounds, Mann-Kendall trends cannot be significant.
 - Who collects water (sex and age of the collector) is not in the published county tables for these rounds.
 
-**Other water and GBV sources**
+### Other water and GBV sources
 - Insecurity Insight CRSV (`ii_sexual_violence_incidents`) is owned by another agent.
 - IOM DTM mobility-tracking rounds hold WASH fields at site/settlement level only.
 - WPdx water points stop around 2019 and are static.
 
-**Groundwater**
-- **GRACE/GRACE-FO** terrestrial water storage needs an Earthdata login (urs.earthdata.nasa.gov not reachable). At about
+### Groundwater
+- GRACE/GRACE-FO terrestrial water storage needs an Earthdata login (urs.earthdata.nasa.gov not reachable). At about
   300 km resolution it would be basin-scale only.
 - Open alternatives are **static**:
   - BGS **Africa Groundwater Atlas** / MacDonald et al. (2012) aquifer productivity and depth-to-groundwater maps (5 km)
   - UNICEF/UNOPS groundwater potential mapping for South Sudan (PDF maps)
 - Use them as context layers only. There is no groundwater time series.
 
-**Local (within-county) conflict**
+### Local (within-county) conflict
 - `scripts/intracounty_conflict.py` → `intracounty_county_monthly.csv`, built from UCDP GED v26.1 non-state and
   one-sided events whose actors are communal groups or South Sudanese local militias. Government and foreign actors
   are excluded.
 - Over 2018–2025 there are 198 county-precision events: 171 communal and 27 militia.
-- **Variables:**
-  - `intracounty_conflict_events`
-  - `intracounty_conflict_deaths`
-  - `intracounty_communal_events`
-  - `intracounty_communal_deaths`
-- **Caveats:**
-  - UCDP's 25-deaths/year dyad threshold means cattle raiding is under-counted.
-  - The actors' home county is unknown.
+- Variables: `intracounty_conflict_events`, `intracounty_conflict_deaths`, `intracounty_communal_events` and
+  `intracounty_communal_deaths`.
+- UCDP's 25-deaths/year dyad threshold means cattle raiding is under-counted, and the actors' home county is unknown.
 
 
 ## Addendum (15 Nov 2026): Sudd MODIS water / inundation index
@@ -256,8 +253,8 @@ Terra MOD09A1 8-day 500 m; open water = MNDWI > 0; inundation incl. flooded vege
 (Xiao et al. 2006 / Sakamoto et al. 2007); cloudy pixels carried from the last clear view ≤ 24 days, else climatology
 (83 % observed, 16 % carried, 1 % climatology; Jul–Aug only ~61–66 % observed).
 Annual peak (Sep–Dec) ≈ 6.9k km² (2018) → 21–26k km² (2019–2022, 2024), 16k (2023); dry-season low rose from ~0.8k (2018–20)
-to 6–8k km² (2022–25): water no longer drains. Validation: UNOSAT median ratio 0.99 (r 0.61; county r 0.81); Sentinel-1 r 0.82;
+to 6–8k km² (2022–25); the water no longer drains. Validation: UNOSAT median ratio 0.99 (r 0.61; county r 0.81); Sentinel-1 r 0.82;
 national MODIS layer r 0.84; ~0.65–0.85 of published 30–40k km² peaks (smaller AOI; dense papyrus missed).
-**Recommendation:** primary Sudd-wide flood-extent series for 2018–2025 (consistent all-season record); Sentinel-1 for
+Recommendation: use it as the primary Sudd-wide flood-extent series for 2018–2025 (consistent all-season record); Sentinel-1 for
 Jul–Nov detail; UNOSAT for validation. Planetary Computer lacks MODIS for 4 Jul–24 Nov 2025 → 2025 peak is Dec-only.
 Details: `docs/VALIDATION_sudd_water.md`.

@@ -46,8 +46,14 @@
     {
       "category": "climate",
       "group": "Water & drought",
-      "id": "gracedm_gws_pctl",
+      "id": "gldas_gws_anom_cm",
       "label": "Groundwater"
+    },
+    {
+      "category": "climate",
+      "group": "Water & drought",
+      "id": "gracedm_gws_pctl",
+      "label": "Groundwater compared with normal (percentile)"
     },
     {
       "category": "climate",
@@ -174,7 +180,8 @@
     "sudd_inundation_pct": "sudd_inundation",
     "modis_lst_day_c": "modis_lst_day",
     "modis_ndvi": "modis_ndvi",
-    "gracedm_gws_pctl": "gracedm_gws"
+    "gracedm_gws_pctl": "gracedm_gws",
+    "gldas_gws_anom_cm": "gldas_gws"
   },
   "background": [
     {
@@ -209,7 +216,8 @@
     "points_schools",
     "polygons_ethnic_groups",
     "points_unmiss",
-    "points_water_points"
+    "points_water_points",
+    "points_subsidence_insar"
   ],
   "flow_groups": {
     "climate": {

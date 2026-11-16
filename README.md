@@ -1,58 +1,72 @@
-# South Sudan Trend Explorer — NASA Space Apps 2026 (Earth System Trend Detective)
+# South Sudan Trend Explorer (NASA Space Apps 2026, Earth System Trend Detective)
 
-Interactive county map of **South Sudan (79 counties)** overlaying climate/environment trends with drivers and
-consequences of conflict, **monthly 2018–2025**, with every variable indexed to its **2018 level = 1.0**.
+An interactive map of South Sudan's 79 counties. It puts climate and environment trends next to the drivers and
+consequences of conflict, month by month from 2018 to 2025, and indexes every variable to its 2018 level (= 1.0).
 
-- **App:** `docs/` (static Leaflet site). Run locally: `cd docs && python3 -m http.server` → http://localhost:8000.
-  For a public URL enable GitHub Pages (Settings → Pages → this branch, folder `/docs`).
-- **Data contract:** [`data/DATA_CONTRACT.md`](data/DATA_CONTRACT.md) — every pipeline writes county × month × variable long CSVs.
-- **Variable research & decision-maker priorities:** [`docs/RESEARCH_variables_and_priorities.md`](docs/RESEARCH_variables_and_priorities.md)
+- App: `docs/` (a static Leaflet site). To run it locally: `cd docs && python3 -m http.server`, then open http://localhost:8000.
+  For a public URL, enable GitHub Pages (Settings → Pages → this branch, folder `/docs`).
+- Data contract: [`data/DATA_CONTRACT.md`](data/DATA_CONTRACT.md). Every pipeline writes long CSVs of county × month × variable.
+- Variable research and decision-maker priorities: [`docs/RESEARCH_variables_and_priorities.md`](docs/RESEARCH_variables_and_priorities.md)
 
 ## What the app shows (curated view)
-The app opens on a landing page (executive summary, key findings, national timeline) with a button into the map.
-What the map shows is set in [`docs/data/curated.json`](docs/data/curated.json): 18 climate and 10 human measures, the
-satellite grids used for climate measures, background layers (water, soil moisture, soil type, cattle), 10 point layers and the
-grouping of IOM Event Tracking migration arrows (climate vs conflict). All other data stays in `docs/data/` but is not shown.
-- Colours: one 7-bin red → white → green scale; county bins are percentiles of each measure (white = little or no change in
-  trend mode); no data = black hatching. Grids keep their 7 equal-width bins (`scripts/recolor_rasters_rwg.py`), because the raw grids are not stored.
-- Hover reports Sen's slope in native units per year (percentage points for % and shares).
-- "Background and context" text: `docs/data/context_timeline.json` (sourced half-year summaries, built by `scripts/build_context_timeline.py`).
-- Neighbouring countries and towns: `scripts/build_basemap_context.py` (Natural Earth).
-- Soil moisture uses TerraClimate: NASA SMAP needs an Earthdata login and is not in the data yet.
+The app opens on a landing page with an executive summary, key findings and a national timeline, and a button leads
+into the map. [`docs/data/curated.json`](docs/data/curated.json) decides what the map shows: 18 climate and 10 human
+measures, the satellite grids behind the climate measures, background layers (water, soil moisture, soil type,
+cattle), 10 point layers, and how the IOM Event Tracking migration arrows are grouped (climate vs conflict). The rest
+of the data stays in `docs/data/` but is not shown.
+
+Counties are coloured on a single 7-bin red → white → green scale. The bins are percentiles of each measure; in trend
+mode, white means little or no change, and black hatching means no data. The grids keep their own 7 equal-width bins
+(`scripts/recolor_rasters_rwg.py`) because the raw grids are not stored. Hovering a county gives Sen's slope in native
+units per year (percentage points for percentages and shares).
+
+A few other pieces come from their own scripts. The "Background and context" text is
+`docs/data/context_timeline.json`, sourced half-year summaries built by `scripts/build_context_timeline.py`.
+Neighbouring countries and towns come from Natural Earth via `scripts/build_basemap_context.py`. Soil moisture uses
+TerraClimate, because NASA SMAP needs an Earthdata login and is not in the data yet.
 
 ## How it works
-1. `scripts/fetch_*.py`, `scripts/*_ssd.py`, `scripts/*_pipeline.py` download and aggregate each source to counties →
-   `data/processed/<source>_county_monthly.csv` + `data/processed/meta/<source>.json`; fine-resolution raster overlays → `docs/rasters/<key>/YYYY-MM.png`.
+1. `scripts/fetch_*.py`, `scripts/*_ssd.py` and `scripts/*_pipeline.py` download each source and aggregate it to counties →
+   `data/processed/<source>_county_monthly.csv` + `data/processed/meta/<source>.json`. Fine-resolution raster overlays go to `docs/rasters/<key>/YYYY-MM.png`.
 2. `python scripts/build_web_data.py` merges everything into `docs/data/` (one JSON per variable, raw values).
-3. The browser computes the index: **vs the same month/season of the baseline year** (default; removes seasonality),
-   **vs the baseline-year average**, or **raw values**. Ratios use value ÷ baseline; variables where a ratio is meaningless
-   (°C temperatures, SPEI/PDSI, anything that can be ≤ 0) show the **difference** from baseline instead. If a source starts after
-   2018, its first year is the baseline (shown in the legend).
-4. `python scripts/pack_for_artifact.py OUT` packs the site into few files for hosts with file-count limits.
+3. The browser computes the index in one of three ways: against the same month or season of the baseline year (the
+   default, which removes seasonality), against the baseline-year average, or as raw values. Ratios are value ÷ baseline.
+   Where a ratio makes no sense (temperatures in °C, SPEI/PDSI, anything that can be ≤ 0), the app shows the difference
+   from baseline instead. If a source starts after 2018, its first year becomes the baseline, and the legend says so.
+4. `python scripts/pack_for_artifact.py OUT` packs the site into a few files for hosts that limit the file count.
 
 ## Repository layout
 | Path | Contents |
 |---|---|
-| `data/drive_mirror/` | Full mirror of the team Google Drive (`scripts/mirror_drive.sh`, manifest in `scripts/drive_manifest.tsv`). Note: most of `01_analysis_ready` and `Jacksonians_SpaceApps_Data/raw_sources` is from the earlier **Sahel (Mali/Burkina/Niger)** work; South Sudan files are `ssd_*`, `IOM_DTM_SSD_*`, UNMISS PDFs, `boundaries_south_sudan_counties_79.geojson`. |
-| `data/raw/ssd_unified/` | **Team unified county-month dataset** (Dec 2019–Sep 2026): IOM Event Tracking (`et_*`), Flow Monitoring (`fmr_*`), UNMISS sites, Logistics Cluster hubs, OCHA population, national FTS/HRP, US aid and UNMISS budget/troops. Converted by `scripts/convert_unified_dataset.py` (national series appear on every county, labelled "— national"; county-to-county FMR flows in `data/processed/flows/`). Its `et_*` series supersede the earlier `dtm_et_*` (hidden in app). |
+| `data/drive_mirror/` | Full mirror of the team Google Drive (`scripts/mirror_drive.sh`, manifest in `scripts/drive_manifest.tsv`). Most of `01_analysis_ready` and `Jacksonians_SpaceApps_Data/raw_sources` comes from the team's earlier Sahel (Mali/Burkina/Niger) work. The South Sudan files are `ssd_*`, `IOM_DTM_SSD_*`, the UNMISS PDFs and `boundaries_south_sudan_counties_79.geojson`. |
+| `data/raw/ssd_unified/` | The team's unified county-month dataset (Dec 2019–Sep 2026): IOM Event Tracking (`et_*`), Flow Monitoring (`fmr_*`), UNMISS sites, Logistics Cluster hubs, OCHA population, national FTS/HRP, US aid and UNMISS budget/troops. Converted by `scripts/convert_unified_dataset.py`. National series appear on every county with the label suffix "— national"; county-to-county FMR flows are in `data/processed/flows/`. Its `et_*` series replace the earlier `dtm_et_*` series, which are hidden in the app. |
 | `data/counties.geojson` | 79 county boundaries (OCHA P-codes, `district_id`) |
 | `data/processed/` | County time series (long CSV) + metadata |
 | `data/raw/<source>/` | Raw downloads (≤ 50 MB) with `SOURCE.md` (URLs for anything larger) |
 | `docs/` | Web app, built data, raster overlays, points layers |
 
-## Important flags
-- **Geography:** the project is **South Sudan**; "district" = county (admin-2). Abyei is included where sources cover it.
-- **Not available at county level for 2018–2025** (national-only or missing): Women, Peace & Security index (national, broadcast to all counties),
-  girls'/children's school enrolment (only 2015 school census), vaccination (2018 only), infant/under-5 mortality (national only),
-  ACLED *political violence targeting women* (needs an ACLED account), groundwater/GRACE and GLDAS/SMAP (need NASA Earthdata login),
-  night-time lights (login / Earth Engine).
-- **Static snapshots (context, not trends):** health facilities (2025), schools (2015), oil fields/pipelines, ethnic groups (GeoEPR 2021),
-  livestock (GLW 2015), soil, species richness, elevation.
-- **Known data caveats:** MODIS products lack Jul–Oct 2025 on Planetary Computer; MODIS ET is annual only; MODIS surface water under-detects
-  flooding (~0.5× UNOSAT, r = 0.76) — read it as a relative signal; Sentinel-5P is orbit-sampled and starts mid-2018 (partial baseline);
-  TerraClimate rainfall is drier than IMERG in 2018–2025 (use for spatial pattern); NASA POWER variables are sampled at county centroids;
-  WFP prices cover 12–28 market counties — use USD prices for trends (SSP inflation dominates); IPC has no county analysis in 2021
-  and phase class from 2022 is derived with the IPC 20% rule; IOM DTM Event Tracking starts 2020 (baseline 2020).
+## Things to know before using the data
+Geography: the project covers South Sudan, and "district" means county (admin-2) throughout. Abyei is included
+wherever a source covers it.
+
+Some indicators are not available at county level for 2018–2025, either because they are national-only or because
+they are missing: the Women, Peace & Security index (national, copied to every county), girls' and children's school
+enrolment (only the 2015 school census), vaccination (2018 only), infant and under-5 mortality (national only), ACLED
+*political violence targeting women* (needs an ACLED account), groundwater/GRACE and GLDAS/SMAP (need a NASA
+Earthdata login), and night-time lights (login or Earth Engine).
+
+Several layers are static snapshots that give context rather than trends: health facilities (2025), schools (2015),
+oil fields and pipelines, ethnic groups (GeoEPR 2021), livestock (GLW 2015), soil, species richness and elevation.
+
+Known data caveats:
+- MODIS products are missing Jul–Oct 2025 on Planetary Computer, and MODIS ET is annual only.
+- MODIS surface water under-detects flooding (~0.5× UNOSAT, r = 0.76), so read it as a relative signal.
+- Sentinel-5P samples a few orbits per month and starts in mid-2018, so its baseline is partial.
+- TerraClimate rainfall is drier than IMERG in 2018–2025; use it for the spatial pattern only.
+- NASA POWER variables are sampled at county centroids.
+- WFP prices cover 12–28 market counties. Use the USD prices for trends, since SSP inflation swamps the SSP series.
+- IPC has no county analysis in 2021, and the phase class from 2022 on is derived with the IPC 20% rule.
+- IOM DTM Event Tracking starts in 2020, so its baseline year is 2020.
 
 ## Variables (generated from `docs/data/variables.json`)
 | Category | Group | id | Label | Units | Time step | Coverage | Counties | Baseline | Source |

@@ -4,28 +4,22 @@ NASA Space Apps 2026 (Earth System Trend Detective). Interactive county map of S
 monthly 2018-01 to 2025-12, overlaying climate and environment data with conflict, displacement and
 humanitarian data.
 
-**Who this is for**
-- **The team**: one place that explains every number the app shows and how to rebuild it.
-- **Judges**: what was calculated, how, and how far each layer can be trusted.
-- **Decision-makers (UN agencies, NGOs, donors)**: which layers can support a county-level decision and which are
-  context only.
+This guide is written for three groups. The team needs one place that explains every number the app shows and how
+to rebuild it. Judges will want to know what was calculated, how, and how far each layer can be trusted.
+Decision-makers at UN agencies, NGOs and donors need to know which layers can support a county-level decision and
+which are only context.
 
-**How to use this guide**
-- Read §1 to learn the map.
-- Read §5 (confidence) before quoting any number from the app.
-- §2–§3 hold the formulas. §4 is the source catalogue. §6 lists gaps and what would close them. §7 explains how to
-  rebuild everything.
+Section 1 explains the map. Read §5 on confidence before quoting any number from the app. The formulas are in §2–§3,
+§4 is the source catalogue, §6 lists the gaps and what would close them, and §7 explains how to rebuild everything.
 
-Status: written 15 Nov 2026 and updated the same day (second pass) after these changes:
-- the county crosswalk audit;
-- the Sentinel-1 flood layer, its validation and the flood-exposure indicators;
-- FDR-based trend significance;
-- carry-forward of survey rounds and calendar-year filling of annual values;
-- the point-layer temporal QA.
+Status: written 15 Nov 2026 and revised the same day after the county crosswalk audit, the Sentinel-1 flood layer
+(with its validation and the flood-exposure indicators), the switch to FDR-based trend significance, the
+carry-forward of survey rounds and calendar-year filling of annual values, and the temporal QA of the point layers.
 
-All pipelines have finished. Two NASA items remain open: SMAP soil moisture (queued at NASA, slow) and night-time lights (not available via AppEEARS) — see §6.
+All pipelines have finished. Two NASA items are still open (§6): SMAP soil moisture, which is queued at NASA and
+slow, and night-time lights, which AppEEARS does not offer.
 
-Companion documents (more detail on specific topics):
+Related documents:
 [`data/DATA_CONTRACT.md`](../data/DATA_CONTRACT.md) ·
 [`docs/CLIMATE_DATA_DECISIONS.md`](CLIMATE_DATA_DECISIONS.md) ·
 [`docs/VALIDATION_rainfall.md`](VALIDATION_rainfall.md) ·
@@ -43,12 +37,12 @@ every `data/raw/<source>/SOURCE.md`.
 6. [Known gaps and what would fix them](#6-known-gaps-and-what-would-fix-them)
 7. [Reproducibility](#7-reproducibility)
 
-**Six things to know before quoting the map**
-1. **No rainfall product is "truth" in South Sudan.** CHIRPS and IMERG agree on levels (median county r = 0.92) but
+### Six things to check before quoting the map
+1. **No rainfall product can be treated as the truth in South Sudan.** CHIRPS and IMERG agree on levels (median county r = 0.92) but
    disagree on the 2018–2025 trend: CHIRPS −25 mm/yr per year, IMERG +5. Quote a rainfall trend only when all
    sources agree.
-2. **Conflict and displacement counts are sparse.** In most counties most 2018 months are zero. The app therefore
-   shows the *change from the 2018 monthly average* (a difference), not a ratio.
+2. **Conflict and displacement counts are sparse.** In most counties most 2018 months are zero, so the app shows the
+   *change from the 2018 monthly average* (a difference) instead of a ratio.
 3. **Some layers are national or state values copied onto every county:** funding, WPS index, Insecurity Insight,
    ACLED sub-event types. They show *when* something happened, not *where*. The label says "— national" or
    "state".
@@ -58,22 +52,19 @@ every `data/raw/<source>/SOURCE.md`.
 5. **A white county outline means a statistically significant monotonic trend** after correcting for testing 79
    counties (Benjamini–Hochberg FDR q < 0.05). It does not prove cause. Strongly persistent series (temperature,
    prices, drought index) can still be over-called; the hover sentence warns when lag-1 r > 0.5. See §3.7.
-6. **Use two flood layers, each for its season.**
-   - **Sentinel-1 radar flood** (`flood_s1_flood_km2`) sees through cloud and under vegetation. It is reliable in
-     **Jul–Nov**: wet-season pixel F1 0.51, state r 0.88 vs UNOSAT. It misses receding dry-season water (F1 0.04).
-   - **MODIS surface water** is all-season but under-counts (≈0.5× UNOSAT).
-   - Both are relative signals, not absolute flooded area.
+6. **Use two flood layers, each for its season.** The Sentinel-1 radar flood layer (`flood_s1_flood_km2`) sees
+   through cloud and under vegetation and is reliable in Jul–Nov (wet-season pixel F1 0.51, state r 0.88 vs UNOSAT),
+   but it misses receding dry-season water (F1 0.04). MODIS surface water covers all seasons but under-counts
+   (≈0.5× UNOSAT). Read both as relative signals rather than absolute flooded area.
 
 ---
 
 ## 1. Overview and how to read the map
 
 ### 1.1 What the app is
-- A static web page: `docs/index.html` + `docs/app.js`, using Leaflet and Chart.js.
-- It loads a pre-built data bundle from `docs/data/`.
-- All indexing and aggregation happen in the browser, from **raw values**, so a user can switch between modes
-  without rebuilding anything.
-- The build is `scripts/build_web_data.py` (§7).
+The app is a static web page (`docs/index.html` + `docs/app.js`) built on Leaflet and Chart.js. It loads a pre-built
+data bundle from `docs/data/`, produced by `scripts/build_web_data.py` (§7). All indexing and aggregation happen in the
+browser from raw values, so a user can switch modes without rebuilding anything.
 
 Current bundle: **259 variables** (`docs/data/variables.json`), **13 point/line/polygon layers**, **21 raster
 overlay folders**, **5 flow-arrow sources** (102 nodes, incl. 23 border crossings), and county profiles for all 79
@@ -103,12 +94,9 @@ counties. The map opens coloured by **CHIRPS rainfall** (`chirps_precip_mm`), th
   - `worse`: the reverse.
   - `neutral`: purple = higher, orange = lower.
   - Changes within ±5 % of the saturation span are drawn in the neutral mid-grey.
-- **The legend** always shows the variable title and colour bar. The **"How to read this"** fold adds:
-  - the comparison used;
-  - the baseline year, with a ⚠ when it is not 2018;
-  - the source time step and carry-forward length;
-  - the number of counties with a significant trend;
-  - the source and native resolution.
+- The legend always shows the variable title and colour bar. Its "How to read this" fold adds the comparison used,
+  the baseline year (with a ⚠ when it is not 2018), the source time step and carry-forward length, the number of
+  counties with a significant trend, and the source and native resolution.
 
 ### 1.4 County outlines and hatching
 | What you see | Meaning |
@@ -120,12 +108,9 @@ counties. The map opens coloured by **CHIRPS rainfall** (`chirps_precip_mm`), th
 ### 1.5 Hover card
 Hovering a county shows, from top to bottom:
 1. **County, state, window.**
-2. **District profile** (`data/district_profiles.json`, all 79 counties):
-   - dominant FEWS NET 2018 livelihood zone;
-   - livelihoods;
-   - history;
-   - conflict impact, with a numeric sentence computed from the processed data.
-   Sources: [`district_profiles_sources.md`](district_profiles_sources.md).
+2. **District profile** (`data/district_profiles.json`, all 79 counties): the dominant FEWS NET 2018 livelihood zone,
+   livelihoods, history, and conflict impact with a numeric sentence computed from the processed data. Sources are
+   in [`district_profiles_sources.md`](district_profiles_sources.md).
 3. **Value** of the colouring variable in the current mode, for example:
    - "1.32× 2018 level"
    - "+4.1 events/month vs 2018"
@@ -136,40 +121,29 @@ Hovering a county shows, from top to bottom:
    - It says "nominal p < 0.05, but not significant after correcting for testing 79 counties" when p < 0.05 but
      q ≥ 0.05.
    - It adds a persistence warning when lag-1 r > 0.5.
-5. **Four sparklines** (full 2018–2025, orange line = selected month):
-   - forced migration (`et_ind_total`);
-   - US humanitarian funding (`fts_us_gov_funding_month_usd`, national);
-   - surface water / flood extent, all seasons: MODIS `surface_water_pct`. The Sentinel-1 series is in the national
-     timeline and as a map variable;
-   - drought: `drought_ensemble_mean`, with a shaded band of ± ½ × `drought_ensemble_spread`; falls back to `spei3`.
+5. **Four sparklines** (full 2018–2025, orange line = selected month): forced migration (`et_ind_total`); US
+   humanitarian funding (`fts_us_gov_funding_month_usd`, national); all-season surface water / flood extent from MODIS
+   `surface_water_pct` (the Sentinel-1 series is in the national timeline and available as a map variable); and drought,
+   shown as `drought_ensemble_mean` with a shaded band of ± ½ × `drought_ensemble_spread`, falling back to `spei3`.
 
 ### 1.6 Arrows (migration flows)
-- Arrows run from the county people left to the county where they were recorded.
-- **Colour = reason:**
-  - red: conflict
-  - blue: flood/disaster
-  - amber: food/hardship
-  - purple: Sudan war (cross-border)
-  - green: return/relocation
-  - grey: other
-- **Width ∝ √people.**
-- **Line style = source:**
-  - solid: Event Tracking
-  - dashed: Flow Monitoring
-  - dotted: Mobility Tracking stock
-  - dash-dot: Renk intentions
-- **Default "best available":** for each month the app draws *one* source only. It takes Event Tracking; if Event
-  Tracking has no rows that month, Flow Monitoring; if neither has rows, the latest Mobility Tracking IDP stock.
-- The status line under the controls names the source in use, and for a stock source it names the survey round.
-- **White circles on the border** are the verified crossing points where cross-border arrivals enter (§2.2, §3.8).
-- The 200 largest arrows are drawn in each window.
-- Details are in §3.8.
+Arrows run from the county people left to the county where they were recorded, with width proportional to
+√people. Colour shows the reason: red for conflict, blue for flood or disaster, amber for food or hardship, purple for
+the Sudan war (cross-border), green for return or relocation, and grey for other. Line style shows the source: solid
+for Event Tracking, dashed for Flow Monitoring, dotted for the Mobility Tracking stock, and dash-dot for the Renk
+intentions survey.
+
+By default ("best available") the app draws only *one* source per month: Event Tracking; if Event Tracking has no
+rows that month, Flow Monitoring; if neither has rows, the latest Mobility Tracking IDP stock. The status line under
+the controls names the source in use and, for a stock source, the survey round. White circles on the border mark the
+verified crossing points where cross-border arrivals enter (§2.2, §3.8). The 200 largest arrows are drawn in each
+window. Details are in §3.8.
 
 ### 1.7 Point layers (time-filtered)
-- A feature is shown when its validity period overlaps the selected window. The rule is
-  `valid_from ≤ window end` and `valid_to ≥ window start`, where null means open-ended.
-- Event layers (UCDP events, Insecurity Insight incidents) are shown when their `date` falls in the window.
-- Snapshot layers (health facilities, schools, water points, pipelines) carry `snapshot=true` and a `date_basis`.
+A feature is shown when its validity period overlaps the selected window, i.e. `valid_from ≤ window end` and
+`valid_to ≥ window start`, where null means open-ended. Event layers (UCDP events, Insecurity Insight incidents)
+are shown when their `date` falls in the window. Snapshot layers (health facilities, schools, water points,
+pipelines) carry `snapshot=true` and a `date_basis`.
 
 | Layer | Temporal basis |
 |---|---|
@@ -203,18 +177,15 @@ Hovering a county shows, from top to bottom:
 
 - Null `valid_from` means the feature existed before 2018; null `valid_to` means it still existed at the end of 2025.
 - WPDx water points: nearly all are null/null, with statuses that predate 2018 (`status_stale`).
-- Remaining approximations are flagged in `date_basis`:
-  - Juba and Bentiu PoC redesignation months;
-  - the Wau hub end date (2025-10);
-  - closures of the UNMISS Yei, Torit, Aweil and Tambura bases between Jan 2025 and Jan 2026;
-  - the Logistics Cluster map gap from Oct 2023 to Jan 2026.
+- The remaining approximations are flagged in `date_basis`: the Juba and Bentiu PoC redesignation months, the Wau
+  hub end date (2025-10), the closures of the UNMISS Yei, Torit, Aweil and Tambura bases between Jan 2025 and
+  Jan 2026, and the Logistics Cluster map gap from Oct 2023 to Jan 2026.
 - The FMR point "Renk River Port" is now assigned to Renk (§2.2).
 
 ### 1.8 County detail panel (click a county)
-- One chart per ticked variable, one point per window (month, season or year), in the current mode.
-- In Trend mode the charts show the same-month index instead.
-- Ratio charts use a log axis clamped to 1/8×–8×. A dashed line marks 1.0 (ratio) or 0 (difference).
-- Clicking a point moves the time slider to that window.
+Each ticked variable gets a chart with one point per window (month, season or year) in the current mode; in Trend
+mode the charts show the same-month index instead. Ratio charts use a log axis clamped to 1/8×–8×, and a dashed line
+marks 1.0 (ratio) or 0 (difference). Clicking a point moves the time slider to that window.
 
 ### 1.9 National trends in aid and socioeconomic outcomes (bottom drawer)
 Up to 15 country-wide series with the selected month marked. Each series is built in one of four ways:
@@ -233,40 +204,35 @@ The `mean` series are **not area- or population-weighted**: a small county count
 ## 2. Geography and time
 
 ### 2.1 Gold-standard county boundaries
-- **Source:** `data/counties.geojson` holds **79 counties (admin-2) from OCHA COD-AB v03** for South Sudan. It
-  includes the **Abyei Administrative Area as `SS0001`**.
-- **Origin:** team Drive file `boundaries_south_sudan_counties_79.geojson`.
-- **Properties:** `district_id` (OCHA P-code, e.g. `SS0101` = Juba), `name`, `admin1` (state or administrative
-  area), `lat`, `lon` (centroid).
-- **The file is never modified.** Every pipeline joins to `district_id`. `build_web_data.py` drops any row whose
-  `county_id` is not one of the 79 and prints the dropped ids.
+`data/counties.geojson` holds the 79 counties (admin-2) of South Sudan from OCHA COD-AB v03, including the Abyei
+Administrative Area as `SS0001`. It comes from the team Drive file `boundaries_south_sudan_counties_79.geojson`. Its
+properties are `district_id` (OCHA P-code, e.g. `SS0101` = Juba), `name`, `admin1` (state or administrative area),
+`lat` and `lon` (centroid).
+
+The file is never modified. Every pipeline joins to `district_id`, and `build_web_data.py` drops any row whose
+`county_id` is not one of the 79 and prints the dropped ids.
+
 - **Web map geometry:** `docs/data/counties.geojson` is simplified with a 0.004° tolerance (topology preserved,
   4-decimal coordinates). All statistics use the full-resolution file.
 - **"District" means county** throughout the project. The 2015–2020 period of 28 and then 32 states is *not* used
   as a geography. Sources from that period are crosswalked to the 79 COD-AB counties (§2.2).
-- **Abyei:**
-  - It is included wherever a source covers it.
-  - ACLED, UCDP and WorldPop code Abyei under Sudan. It is taken from the Sudan files: ACLED Admin1 'Abyei' →
-    `SS0001`; UCDP events by point-in-polygon; WorldPop from the SDN grid.
-  - DTM baseline data and the ACLED state export do **not** cover Abyei. ACLED-state variables therefore have 78
-    counties.
+- **Abyei** is included wherever a source covers it. ACLED, UCDP and WorldPop code it under Sudan, so it is taken
+  from the Sudan files: ACLED Admin1 'Abyei' → `SS0001`, UCDP events by point-in-polygon, and WorldPop from the SDN
+  grid. The DTM baseline data and the ACLED state export do not cover Abyei, which is why the ACLED-state variables
+  have 78 counties.
 
 ### 2.2 Crosswalking source codes and names to OCHA P-codes
-**Master table:** `data/crosswalks/county_crosswalk_master.csv`, one row per county (79). Its columns:
-- OCHA P-code and state;
-- 2020 administrative-area membership;
-- IOM P-code, other P-codes, and the pre-2015 OCHA numeric code;
-- the names used by IOM DTM, OCHA HNO/3W/HAPI, ACLED, IPC, WFP (admin-2 and market names), WHO, SSSAMS 2015 and
-  UNHCR locations;
-- GADM 4.1 level-2 overlap shares (`gadm41_overlap.csv`);
-- curated aliases.
+The master table is `data/crosswalks/county_crosswalk_master.csv`, with one row per county (79). For each county it
+holds the OCHA P-code and state; 2020 administrative-area membership; the IOM P-code, other P-codes and the pre-2015
+OCHA numeric code; the names used by IOM DTM, OCHA HNO/3W/HAPI, ACLED, IPC, WFP (admin-2 and market names), WHO,
+SSSAMS 2015 and UNHCR locations; GADM 4.1 level-2 overlap shares (`gadm41_overlap.csv`); and curated aliases.
 
 It is rebuilt from raw files by `scripts/build_county_crosswalk.py`, which needs no downloads. Each harvested
 (code, name) pair is resolved in two steps:
 1. **By code**, if the OCHA name for that code agrees with the source name after normalisation and aliases.
 2. **Otherwise by name.**
 
-**Lookup helper:** `scripts/county_crosswalk.py` provides `to_ocha()` and `to_ocha_multi()`. Lookup order: gold
+The lookup helper `scripts/county_crosswalk.py` provides `to_ocha()` and `to_ocha_multi()`. Lookup order: gold
 P-code → source-specific alternative codes → normalised names and aliases.
 
 | Case | Resolution |
@@ -283,6 +249,7 @@ P-code → source-specific alternative codes → normalised names and aliases.
 
 - **IOM DTM numbering:** IOM uses the OCHA admin-2 numbering for all 78 non-Abyei counties. `build_county_crosswalk.py`
   reports no code/name disagreements for SS codes.
+
 **Audit results** ([`AUDIT_county_crosswalk.md`](AUDIT_county_crosswalk.md), 15 Nov 2026):
 - **Boundaries:** the Drive boundary file matches `counties.geojson` exactly (IoU = 1.000 for all 79). No pipeline
   uses other county geometry. GADM 4.1 level 2 (45 pre-2011 provinces) is reference only.
@@ -327,37 +294,26 @@ Kenya 1, plus fall-backs) is built by `scripts/build_border_crossings.py`.
     line.
 - Several IOM coordinates lie 4–18 km beyond the drawn border, where the COD-AB line differs from the ground
   border: Wunthou 14.6 km, Kiir Adem 17.6 km, Majok Yinthiou 8.5 km (the 14-mile area), Kerwa 4.8 km.
-- **Approximate crossings:**
-  - Yabus–Maban and Kafia Kingi–Raja are route markers, not named border posts.
-  - Diffra marks the north edge of the Abyei Area.
-- **Dropped after checks:**
-  - Abaya: 30 km inside Uganda.
-  - Ngomoromo: the OSM node is 30 km from the border.
-  - Sopo: 85 km inside.
-  - Panakuach: no verifiable coordinate; Unity arrivals use Jau.
-- **Cross-border ET arrivals 2020–2026** by origin country:
-  - Sudan: 667 k (main crossing Joda/Wunthou → Renk)
-  - Ethiopia: 156 k (Akobo 119 k)
-  - Uganda: 69 k
-  - DR Congo: 11.5 k
-  - Kenya: 5.1 k
-  - CAR: 2.3 k
+- **Approximate crossings:** Yabus–Maban and Kafia Kingi–Raja are route markers rather than named border posts, and
+  Diffra marks the north edge of the Abyei Area.
+- **Dropped after checks:** Abaya (30 km inside Uganda), Ngomoromo (the OSM node is 30 km from the border), Sopo
+  (85 km inside) and Panakuach (no verifiable coordinate; Unity arrivals use Jau).
+- **Cross-border ET arrivals 2020–2026** by origin country: Sudan 667 k (main crossing Joda/Wunthou → Renk),
+  Ethiopia 156 k (Akobo 119 k), Uganda 69 k, DR Congo 11.5 k, Kenya 5.1 k, CAR 2.3 k.
 - The data do not say which crossing people used. Each arrow starts at that country's crossing nearest to the
   destination county (§3.8), so the drawn route is an assumption.
 - **Fall-back:** if the CSV is missing, `build_web_data.py` uses one approximate crossing per country.
 
 ### 2.4 Time grid
-- **Grid:** monthly, **2018-01 … 2025-12 (96 months)**. Each value is dated to the first day of its month.
-- **Mapping to the grid:**
-  - Several rows in the same county-month are averaged.
-  - 2026 rows (e.g. the team unified dataset to Sep 2026) are kept in the raw files but not shown.
+- **Grid:** monthly, 2018-01 … 2025-12 (96 months). Each value is dated to the first day of its month. Several rows
+  in the same county-month are averaged. Rows from 2026 (e.g. the team unified dataset runs to Sep 2026) are kept in
+  the raw files but not shown.
 - **Annual data** (WorldPop, HNO, UNHCR end-year stocks, ISNA, land cover, UNMISS presence, WPS, MODIS annual ET)
   is dated **YYYY-07-01** in the processed CSVs, by contract.
 - In the web build each annual value **fills every month of its calendar year** (Jan–Dec), and uses the annual
   baseline (§3.4).
-- **Survey and analysis rounds** (IPC, DTM Mobility Tracking) are dated at the round's reference month:
-  - IPC: the first month of the current analysis period.
-  - DTM: the last month of data collection.
+- **Survey and analysis rounds** (IPC, DTM Mobility Tracking) are dated at the round's reference month: for IPC the
+  first month of the current analysis period, for DTM the last month of data collection.
 - **Static layers** (soil, elevation, biodiversity, GLW 2015 livestock, 2015 schools, 2025 health facilities, oil,
   ethnic groups) have one value per county, shown in every month.
 
@@ -366,17 +322,9 @@ The **baseline year** is the year every index compares against. It is set by
 `build_web_data.py` (shown in the legend) and, separately for trends, by `trend_stats.py`:
 
 1. **2018 by default.**
-2. **If the variable has no data anywhere in 2018:** the first year with data. Examples:
-   - IOM Event Tracking and FMR: 2020
-   - FMR all-movements: 2022
-   - OCHA 3W and HNO PiN: 2019
-   - HNO severity: 2022
-   - ISNA: 2022
-   - WPS: 2019
-   - Insecurity Insight CRSV: 2020
-   - UNMISS deployment sites: 2023
-   - VIIRS NOAA-20: 2020
-   - IPC AMN and GAM: 2025 (a single snapshot)
+2. **If the variable has no data anywhere in 2018:** the first year with data. Examples: IOM Event Tracking and FMR
+   2020; FMR all-movements 2022; OCHA 3W and HNO PiN 2019; HNO severity 2022; ISNA 2022; WPS 2019; Insecurity
+   Insight CRSV 2020; UNMISS deployment sites 2023; VIIRS NOAA-20 2020; IPC AMN and GAM 2025 (a single snapshot).
 3. **`baseline_year_override`** in a variable's metadata, if set, wins. It is used for the `et_*` series: 2020,
    because Dec 2019 is a single partial month.
 4. **Static variables** keep 2018 nominally; they are never indexed.
@@ -388,9 +336,8 @@ baseline.
 high in the first half of the year. A decline in conflict after 2018 is partly a return from an unusual baseline,
 not necessarily an improvement.
 
-**Partial 2018 baselines:**
-- Sentinel-5P starts May–July 2018.
-- Annual series now cover all of 2018, because each annual value fills its calendar year (§3.4).
+Sentinel-5P has a partial 2018 baseline, since it starts in May–July 2018. Annual series now cover all of 2018,
+because each annual value fills its calendar year (§3.4).
 
 ---
 
@@ -401,11 +348,9 @@ All statistics are computed **per county from the gold boundaries** and stored a
 A 0 is written only when the true value is zero: conflict events, fires, and ET individuals in a covered month.
 
 ### 3.1 Map index modes (browser, `docs/app.js` → `valueAt()`)
-Notation:
-- *c* = county, *v* = variable.
-- *W* = the months in the selected window (one month, a season, or a calendar year).
-- *x̄_W* = mean of the available raw values in *W*; missing months are ignored.
-- *B* = baseline year.
+Notation: *c* is the county and *v* the variable; *W* is the set of months in the selected window (one month, a
+season, or a calendar year); *x̄_W* is the mean of the available raw values in *W*, ignoring missing months; *B* is
+the baseline year.
 
 **Raw:**
   `value = x̄_W` (original units).
@@ -432,18 +377,15 @@ Notation:
   2. **By `build_web_data.py`**, if any value of the variable is < 0. A ratio is meaningless when values cross zero.
   3. **By the sparse-count rule** (§3.3).
 - If the baseline is 0 (|base| < 10⁻⁹) for a ratio variable, the cell is left blank instead of showing ∞.
-- **Static layers** always show raw values.
-- **`baseline_mode = "annual"` variables** always compare with the **baseline-year average**, even in
-  `index_month` mode. These are:
-  - sparse counts (§3.3), where a same-month baseline would be zero almost everywhere;
-  - every annual variable, which has one value per year anyway.
+- Static layers always show raw values.
+- Variables with `baseline_mode = "annual"` always compare with the baseline-year average, even in `index_month`
+  mode. These are the sparse counts (§3.3), where a same-month baseline would be zero almost everywhere, and every
+  annual variable, which has only one value per year anyway.
 
-**Implied change 2018→2025 (Trend mode, ratio variables)**
-- `× change = 1 + 7 · (slope % per year) / 100`, floored at 0. The 7 is the number of years from 2018 to 2025
-  (`TREND_YEARS = 7`).
-- This is a **linear** extrapolation of the median slope, not compounding. For example, +10 %/yr → 1.7×, and
-  −10 %/yr → 0.3×.
-- It describes the size of the trend line, not the observed 2025/2018 ratio.
+**Implied change 2018→2025 (Trend mode, ratio variables).** The app computes
+`× change = 1 + 7 · (slope % per year) / 100`, floored at 0, where 7 is the number of years from 2018 to 2025
+(`TREND_YEARS = 7`). It extrapolates the median slope linearly, without compounding: +10 %/yr gives 1.7× and
+−10 %/yr gives 0.3×. The number describes the size of the trend line; it is not the observed 2025/2018 ratio.
 
 **Worked example (Juba, `SS0101`)**
 | Quantity | Value | Calculation |
@@ -462,11 +404,8 @@ Notation:
 
 ### 3.2 Time aggregation windows
 - **Monthly:** one month.
-- **Seasonal:** South Sudan's agricultural calendar:
-  - dry season **Dec–Mar**, with December assigned to the *following* year's dry season;
-  - early rains **Apr–Jun**;
-  - main rains **Jul–Sep**;
-  - late season **Oct–Nov**.
+- **Seasonal:** South Sudan's agricultural calendar: dry season Dec–Mar (December counts toward the *following*
+  year's dry season), early rains Apr–Jun, main rains Jul–Sep, and late season Oct–Nov.
 - **Annual:** calendar year.
 
 The window value is the **unweighted mean of the available monthly values**. Every variable is averaged this way,
@@ -474,26 +413,19 @@ including counts. A seasonal or annual value of a count variable is therefore th
 not the total. Missing months are skipped, so a window with only one observed month shows that month's value.
 
 ### 3.3 Sparse counts
-Rule in `build_web_data.py`. A variable is flagged `sparse_count = true` if it meets all three conditions:
-1. it is monthly;
-2. all its values are ≥ 0;
-3. **more than 40 % of its baseline-year county-months are exactly zero** (unless the metadata sets `force_ratio`).
+`build_web_data.py` flags a variable `sparse_count = true` when it is monthly, all its values are ≥ 0, and more
+than 40 % of its baseline-year county-months are exactly zero (unless the metadata sets `force_ratio`). A flagged
+variable gets `index_ok = false` and `baseline_mode = "annual"`.
 
-A flagged variable then gets `index_ok = false` and `baseline_mode = "annual"`.
+73 variables are flagged: the ACLED, ACLED-state, UCDP, local-conflict, IOM ET and FMR county series; Insecurity
+Insight health and education attacks; Logistics Cluster hubs and UNMISS sites; the TerraClimate extreme flags; and
+the seven Sentinel-1 flood and flood-exposure series, which are zero in most dry-season county-months.
 
-- **73 variables** are flagged:
-  - ACLED, ACLED-state, UCDP, local-conflict, IOM ET and FMR county series;
-  - Insecurity Insight health and education attacks;
-  - Logistics Cluster hubs and UNMISS sites;
-  - the TerraClimate extreme flags;
-  - the seven Sentinel-1 flood and flood-exposure series, which are zero in most dry-season county-months.
-- **On the map**, they show the **difference from the baseline-year monthly average**, in events, people or deaths
-  per month.
-- **In Trend mode**, they show the Sen's slope in units per year. A % of baseline is undefined for them.
-- **Many county Sen's slopes for sparse counts are exactly 0** (the median of many zero pairwise differences), even
-  where the trend is FDR-significant. `interpret()` then writes "Significant monotonic trend … but the median slope
-  is ~0".
-- **Recommendation:** for county comparisons, use seasonal or annual windows (§3.2), which average the noise.
+On the map these variables show the difference from the baseline-year monthly average, in events, people or deaths
+per month. In Trend mode they show the Sen's slope in units per year, since a % of baseline is undefined for them.
+Many county Sen's slopes for sparse counts are exactly 0 (the median of many zero pairwise differences), even where
+the trend is FDR-significant; `interpret()` then writes "Significant monotonic trend … but the median slope is ~0".
+For county comparisons, seasonal or annual windows (§3.2) average out much of the noise.
 
 ### 3.4 Carry-forward of survey rounds, annual and static values
 `build_web_data.py` fills each county series on the monthly grid according to its `temporal` type:
@@ -507,14 +439,12 @@ A flagged variable then gets `index_ok = false` and `baseline_mode = "annual"`.
 
 - `variables.json` records `carry_forward_months` for each variable, and the legend says "latest value carried
   forward up to N months".
-- **Carried values look like observations.** Charts and the map do not distinguish them; `months_observed` in
-  `variables.json` gives the true count.
-- **Reading a carried value:** an IPC or DTM value in a non-round month is "the latest assessment, up to 8 months
-  old", not a new measurement.
+- Carried values look like observations: charts and the map do not mark them. `months_observed` in
+  `variables.json` gives the true count. An IPC or DTM value in a non-round month should be read as "the latest
+  assessment, up to 8 months old", not as a new measurement.
 
-**Flows are carried separately:**
-- Mobility Tracking O-D stocks are carried until the next round, for up to 24 months (§3.8).
-- Trend statistics (§3.7) are always computed on the **observed** values only, never on carried values.
+Flows are carried separately: Mobility Tracking O-D stocks are carried until the next round, for up to 24 months
+(§3.8). Trend statistics (§3.7) are computed on observed values only, never on carried ones.
 
 ### 3.5 Aggregation from native data to counties
 | Method | Formula and rules | Used by |
@@ -546,18 +476,13 @@ A flagged variable then gets `index_ok = false` and `baseline_mode = "annual"`.
   - Unobserved pixels inherit the previous month's state, for at most 2 months.
   - County-months with < 20 % known area are dropped.
 - **TerraClimate extreme flags:** the county-mean value is compared with that county's 1991–2020 empirical
-  percentiles for the same calendar month:
-  - wet: > P90
-  - dry: < P10, only where P10 > 0
-  - heat: Tmax > P90
+  percentiles for the same calendar month. Wet is > P90, dry is < P10 (only where P10 > 0), and heat is Tmax > P90.
 - **Drought ensemble** (`drought_ensemble.py`):
   - Members: IMERG SPEI-3 (upstream, county 2000–2026 baseline); CHIRPS SPI-3 (gamma fit with zero-rain
     probability, 1991–2020, bounded ±3.09); TerraClimate SPEI-3 (log-logistic, probability-weighted moments,
     1991–2020); TerraClimate PDSI z-scored per county and calendar month against 1991–2020.
-  - `mean` = mean of members, with ≥ 3 members required.
-  - `spread` = sample SD across members.
-  - `range` = max − min.
-  - `agree` = share of members with the sign of the mean.
+  - Outputs: `mean` (mean of members, ≥ 3 members required), `spread` (sample SD across members), `range`
+    (max − min) and `agree` (share of members with the sign of the mean).
 - **IPC phase:**
   - 2018–2020 analyses: the published area phase.
   - 2022–2025: the area phase is not given in the HDX file. It is **derived with the IPC 20 % rule**: the most
@@ -566,9 +491,7 @@ A flagged variable then gets `index_ok = false` and `baseline_mode = "annual"`.
     phase **exactly in 92 %**, and within one phase in 100 %.
   - Phase 3+ / 4+ populations are summed over sub-county areas. `ipc_phase3plus_pct` = Phase 3+ population ÷
     population analysed.
-- **Rates per 100 000:**
-  - `schools_per100k` uses WorldPop 2018.
-  - `health_facilities_per100k` uses WorldPop 2025.
+- **Rates per 100 000:** `schools_per100k` uses WorldPop 2018 and `health_facilities_per100k` uses WorldPop 2025.
 - **Sentinel-1 flood** (`flood_s1_pipeline.py`):
   - **Input:** every S1 IW GRD RTC scene (VV and VH gamma0, 70–183 scenes per month), read at its 1/16 overview
     (160 m block average of 10 m linear power), converted to dB, and averaged onto a 0.004° (~440 m) grid as a
@@ -599,31 +522,28 @@ A flagged variable then gets `index_ok = false` and `baseline_mode = "annual"`.
 - `build_web_data.py` **copies every national row to all 79 counties**. `build_trends()` does the same for their
   trend rows, so every county shows the same trend and outline.
 - Their labels end in "— national", or the metadata says "NATIONAL ONLY".
-- **Affected variables:**
-  - OCHA FTS funding (monthly and annual), HRP requirement, funding and coverage
-  - ForeignAssistance.gov US/USAID/State Dept obligations and disbursements
-  - UNMISS budget, expenditure and uniformed personnel
-  - FMR national totals and shares, and active monitoring points
-  - Georgetown WPS index and its components
-  - UN IGME infant and under-5 mortality
-  - Insecurity Insight aid-worker, health, education and CRSV incidents
-- **Do not compare counties on these layers.** Every county is identical. They are best read in the **national
-  timeline** (§1.9) or as context in the hover sparkline.
-- The team's unified-dataset README deliberately kept these rows national. The broadcast is a display convenience
-  only.
+- The affected variables are OCHA FTS funding (monthly and annual) and the HRP requirement, funding and coverage;
+  ForeignAssistance.gov US/USAID/State Dept obligations and disbursements; UNMISS budget, expenditure and uniformed
+  personnel; FMR national totals, shares and active monitoring points; the Georgetown WPS index and its components;
+  UN IGME infant and under-5 mortality; and Insecurity Insight aid-worker, health, education and CRSV incidents.
+- **Do not compare counties on these layers**, since every county has the same value. Read them in the national
+  timeline (§1.9) or as context in the hover sparkline.
+- The team's unified-dataset README kept these rows national on purpose. Copying them to counties is only a display
+  convenience.
 - **State-level values are a different case** (ACLED aggregated sub-event types). They are repeated on the counties
   of one state, so they vary between states but not within a state.
 
 ### 3.7 Trend statistics (`scripts/trend_stats.py`)
 
-> **Updated 15 Nov 2026:** trend significance now corrects for month-to-month persistence (Hirsch–Slack correlated
+> Updated 15 Nov 2026: trend significance now corrects for month-to-month persistence (Hirsch–Slack correlated
 > seasonal Kendall for monthly series; Hamed–Rao for annual/survey series with n ≥ 10), then applies the
 > false-discovery-rate correction across counties. The spatial structure of each trend map is described with global
 > and local Moran's I, and regional claims use a regional Kendall test with a year-block bootstrap (national and
 > Sudd). Plain-language explanation, formulas and results: [`STATISTICS_EXPLAINED.md`](STATISTICS_EXPLAINED.md).
+
 Trends are computed for every county × variable on the **observed values in 2018-01…2025-12**: no carry-forward,
 and only the months present in the processed CSV. The tests are non-parametric. They suit skewed, zero-heavy and
-non-normal series and make no assumption that the trend is linear.
+non-normal series and do not assume the trend is linear.
 
 **Mann-Kendall (MK)**, for a time-ordered series *x₁…xₙ*:
 ```
@@ -666,49 +586,34 @@ The processed trend tables hold 12 814 county-variable tests: 11 145 seasonal Ke
 - `q₍ₖ₎ = min_{j ≥ k} [ p₍ⱼ₎ · m / j ]`, capped at 1.
 - **Significance = q < 0.05.** The white outline, the "◆ Significant trend" badge, the `significant` column and
   the legend count all use the FDR q-value. p and q are both shown in the hover sentence and the detail panel.
-- **Counts in the app bundle** (`docs/data/trends.json`, with national series copied to all 79 counties):
-  - 15 383 county-variable entries;
-  - 5 447 with p < 0.05;
-  - **4 510 significant** at q < 0.05.
-- **Counts in the processed tables** (each national series counted once):
-  - 12 814 tests;
-  - 4 090 with p < 0.05;
-  - 3 112 significant.
+- The app bundle (`docs/data/trends.json`, with national series copied to all 79 counties) has 15 383
+  county-variable entries, 5 447 with p < 0.05 and 4 510 significant at q < 0.05. The processed tables, which count
+  each national series once, have 12 814 tests, 4 090 with p < 0.05 and 3 112 significant.
 - **National series:** the 79 copies of a national test are identical, so FDR leaves q = p and the outline is all or
   nothing.
-- **Examples of how much FDR removes:**
-  - CHIRPS rainfall: 18 counties p < 0.05 → **3** with q < 0.05
-  - IOM ET people: 13 → **2**
-  - local conflict events: 8 → **0**
+- FDR removes a lot. CHIRPS rainfall goes from 18 counties with p < 0.05 to 3 with q < 0.05; IOM ET people from
+  13 to 2; local conflict events from 8 to 0.
 
 **Lag-1 autocorrelation caveat:**
 - `lag1` is the lag-1 autocorrelation of the series, after removing each calendar month's mean for monthly series.
-- **It is reported, and flagged, but not corrected for.** When lag-1 r > 0.5, the hover sentence adds "Strong
+- It is reported and flagged, but not corrected for. When lag-1 r > 0.5, the hover sentence adds "Strong
   month-to-month persistence (lag-1 r > 0.5) may still overstate significance."
 - Positive autocorrelation shrinks the true variance of S, so p-values are **too optimistic**.
 - Seasonal Kendall also treats the 12 monthly sub-tests as independent. The Hirsch & Slack (1984) covariance
   correction is not applied.
-- Median lag-1 values:
-  - population 0.96
-  - WFP prices 0.78
-  - drought ensemble 0.66
-  - MERRA-2 temperature 0.57
-  - MODIS NDVI 0.58
-  - MODIS surface water 0.56
-  - most conflict counts ≈ 0–0.3
+- Median lag-1 values: population 0.96, WFP prices 0.78, drought ensemble 0.66, MERRA-2 temperature 0.57, MODIS
+  NDVI 0.58, MODIS surface water 0.56, and most conflict counts ≈ 0–0.3.
 - Treat significance for **highly autocorrelated** series as indicative. Examples: temperature (77 of 79 counties
   "significant"), drought ensemble (72 of 79), prices, population.
-- **Recommended upgrade:** a Hamed–Rao variance correction or Yue–Pilon pre-whitening.
+- The obvious upgrade is a Hamed–Rao variance correction or Yue–Pilon pre-whitening.
 
 **Other cautions:**
 - **Annual series have n ≤ 8.** The smallest achievable two-sided p for n = 8 is ≈ 0.0008, but most annual tests
   have little power.
 - **IPC has n ≤ 11**, unevenly spaced, with a 2021 gap.
-- **Methodology breaks look like trends:**
-  - HNO PiN methods changed in 2019 and 2023.
-  - WPS editions are re-based.
-  - TerraClimate inherits a CRU/ERA5 discontinuity: 70 of 79 counties show a "significant" `tc_ppt` decline that
-    IMERG does not show.
+- **Methodology breaks look like trends.** HNO PiN methods changed in 2019 and 2023, WPS editions are re-based, and
+  TerraClimate inherits a CRU/ERA5 discontinuity: 70 of 79 counties show a "significant" `tc_ppt` decline that IMERG
+  does not show.
 - **Drought ensemble:** the 72 of 79 "significant drying" results come mostly from the two TerraClimate members'
   dry drift (§5). Do not report them as observed drying.
 - **Temperature text bug (still open):** `interpret()` writes a "% of 2018 level" phrase for every variable. For
@@ -723,10 +628,8 @@ The processed trend tables hold 12 814 county-variable tests: 11 145 seasonal Ke
   significant, sen_slope_per_year, sen_slope_pct_per_year, baseline_year, baseline_mean, lag1, interpretation.
 - Merged into `docs/data/trends.json` by `build_web_data.py`.
 
-**Trend-mode colour scale:**
-- The colour span is the 90th percentile of |trend value| across counties: %/yr for ratio variables, with a
-  minimum of 1 %/yr; units/yr for difference variables.
-- Colour direction follows `higher_is`.
+**Trend-mode colour scale:** the colour span is the 90th percentile of |trend value| across counties, in %/yr for
+ratio variables (minimum 1 %/yr) and units/yr for difference variables. Colour direction follows `higher_is`.
 
 ### 3.8 Migration flows (arrows)
 Built by `build_flows()` in `build_web_data.py` → `docs/data/flows.json` (102 nodes).
@@ -744,11 +647,8 @@ Built by `build_flows()` in `build_web_data.py` → `docs/data/flows.json` (102 
 **Processing steps:**
 1. **Foreign origins** (SDN, ETH, UGA, KEN, CAF, COD) are replaced by **that country's verified crossing nearest
    to the destination county** (squared-degree distance), so arrows start on the drawn border.
-2. **Rows are dropped** when:
-   - origin = destination (within-county movement), or
-   - an endpoint is unknown, or
-   - the count is ≤ 0, or
-   - the month is outside 2018-01…2025-12.
+2. **Rows are dropped** when origin = destination (within-county movement), an endpoint is unknown, the count is
+   ≤ 0, or the month is outside 2018-01…2025-12.
 3. **Reasons are harmonised** to: conflict, disaster, food, sudan_conflict, return_relocation, other.
 4. **Stock carry-forward:** each Mobility Tracking round is copied to the following months until the next round,
    for at most 24 months. The arrow tooltip says "stock at the latest survey round, not monthly movement", and the
@@ -771,21 +671,17 @@ Built by `build_flows()` in `build_web_data.py` → `docs/data/flows.json` (102 
   - Widths are comparable only within one source.
 - **Count:** only the 200 largest arrows are drawn. Arrows are bent to the right of travel so A→B and B→A do not
   overlap.
-- **Node anchors:**
-  - Counties: the centroid, or, if the centroid falls outside the polygon, a guaranteed interior point.
-  - Crossings: the snapped border point (§2.3).
+- **Node anchors:** a county's arrows start at its centroid, or at a guaranteed interior point if the centroid
+  falls outside the polygon. Crossings use the snapped border point (§2.3).
 
-**Stock vs flow:**
-- **ET and FMR arrows are flows:** movement *in that month*.
-- **Mobility Tracking arrows are stocks:** everyone displaced from A who lives in B at the round date, accumulated
-  over years. The two are not comparable in magnitude.
-- **Majority attribution** assigns each arrival cohort entirely to its majority origin county.
-- **R13 (Aug 2022) is anomalous:**
-  - 99 % of origins equal the current county, so cross-county IDP stock falls to 73 k, against 500–725 k in other
-    rounds.
-  - It also drops 1.42 M IDP and 1.18 M returnee person-entries that have unknown origin, mostly in R13–R16.
-  - With the Mobility Tracking source selected, arrows for Aug 2022–Mar 2023 (the months that carry R13)
-    under-represent displacement.
+**Stock vs flow.** ET and FMR arrows are flows: movement *in that month*. Mobility Tracking arrows are stocks:
+everyone displaced from A who lives in B at the round date, accumulated over years. The two cannot be compared in
+magnitude. Majority attribution assigns each arrival cohort entirely to its majority origin county.
+
+Round R13 (Aug 2022) is anomalous. In it, 99 % of origins equal the current county, so the cross-county IDP stock
+falls to 73 k, against 500–725 k in other rounds. The O-D processing also drops 1.42 M IDP and 1.18 M returnee
+person-entries with unknown origin, mostly in R13–R16. With the Mobility Tracking source selected, arrows for
+Aug 2022–Mar 2023 (the months that carry R13) under-represent displacement.
 
 ---
 
@@ -895,14 +791,13 @@ Every dataset is rated **High / Medium / Low** on four criteria. Each rating is 
 | **(c) Temporal completeness 2018–2025** | Complete or nearly complete: ≤ 2 of 96 months missing, or every year for annual data | Gaps (e.g. the 2025 MODIS catalogue hole), late start, or a coarse time step | A few snapshots or rounds only |
 | **(d) Processing risk** | Simple, checked processing | Non-trivial choices (thresholds, gap-filling, attribution) or a known build issue | Unvalidated new method or a known artefact |
 
-The ratings are deliberately conservative. A Medium is not a failing grade: most humanitarian data in South Sudan is
-Medium at best.
+We rated cautiously. Medium is not a failing grade; most humanitarian data for South Sudan is Medium at best.
 
-### 5.2 Key validation evidence
+### 5.2 Validation evidence
 | Check | Result | Implication |
 |---|---|---|
-| VIIRS (S-NPP 375 m) vs MODIS active fire, same county-months (`validation/viirs_vs_modis_fire.csv`) | Pooled Pearson **r = 0.982**, Spearman 0.969; national monthly r = 0.988; median county r = 0.975. VIIRS sees **1.45×** more fires. NOAA-20 vs S-NPP r = 0.998. | Fire seasonality and spatial pattern are robust; prefer VIIRS for counts. |
-| CHIRPS v3 vs IMERG vs TerraClimate rainfall (`VALIDATION_rainfall.md`, 7 584 county-months) | Raw monthly r: CHIRPS–IMERG 0.89 (median county **r = 0.92**, bias −4.5 %). **Anomaly r only 0.33.** TerraClimate is ~40 % drier (CHIRPS +58.5 %, IMERG +64.6 % vs TC). **Trends disagree:** CHIRPS −25.5, IMERG +5.4, TerraClimate −20.0 mm/yr per year. Worst counties: Rubkona (r 0.70, CHIRPS −48 %), Guit (−43 %), Mayendit (−30 %). | Rainfall *levels and seasonality* are reliable. Rainfall *anomalies and trends* are **not** robust: no single-product rainfall trend should be reported. |
+| VIIRS (S-NPP 375 m) vs MODIS active fire, same county-months (`validation/viirs_vs_modis_fire.csv`) | Pooled Pearson **r = 0.982**, Spearman 0.969; national monthly r = 0.988; median county r = 0.975. VIIRS sees **1.45×** more fires. NOAA-20 vs S-NPP r = 0.998. | Fire seasonality and spatial pattern hold up across sensors; prefer VIIRS for counts. |
+| CHIRPS v3 vs IMERG vs TerraClimate rainfall (`VALIDATION_rainfall.md`, 7 584 county-months) | Raw monthly r: CHIRPS–IMERG 0.89 (median county **r = 0.92**, bias −4.5 %). **Anomaly r only 0.33.** TerraClimate is ~40 % drier (CHIRPS +58.5 %, IMERG +64.6 % vs TC). **Trends disagree:** CHIRPS −25.5, IMERG +5.4, TerraClimate −20.0 mm/yr per year. Worst counties: Rubkona (r 0.70, CHIRPS −48 %), Guit (−43 %), Mayendit (−30 %). | Rainfall *levels and seasonality* are reliable. Rainfall *anomalies and trends* are not reliable, so no single-product rainfall trend should be reported. |
 | MODIS MNDWI surface water vs UNOSAT VIIRS water tables (`raw/unosat_floods/validation_state.csv`, 260 state × date pairs, 19 months 2022–2025) | State-level **r = 0.76**. MODIS total **≈ 0.50×** UNOSAT: **0.99×** in Jun–Sep, **0.38×** in the dry season, when UNOSAT counts vegetated swamp. | Relative signal only. MODIS under-detects flooded vegetation (the Sudd). |
 | IPC 20 % rule vs published area phase (2018–2022, recomputed for this guide) | Exact match in **92 %** of 772 area-analyses; within one phase in 100 %. | Derived 2022–2025 phases are reliable to ±1 phase. Borderline counties may be off by one. |
 | Drought-index members (`drought_ensemble.json`) | Pooled correlations **r = 0.27–0.45** (CHIRPS-SPI vs IMERG-SPEI 0.39; IMERG vs TC-SPEI 0.31). Mean spread **1.2 SD**. TerraClimate members average −0.9 to −2.0 SD in 2018–25. | Drought severity in a given month depends on which rainfall product is trusted. Use the spread. |
@@ -923,14 +818,14 @@ Medium at best.
 | E5 TerraClimate precipitation and water balance (`tc_ppt`, `aet`, `def`, `soil`, `q`, `pdsi`) | **L**: ~40 % drier than CHIRPS/IMERG; 2018–25 far below its own 1991–2020 normals (PDSI national mean −6.6), an inherited CRU/ERA5 discontinuity | **M**: 4 km grid, but anomalies come from coarse inputs | **H** | **H** | Spatial pattern only; **its trends (70/79 "significant" declines) are not credible** |
 | E5 TerraClimate temperature, VPD, srad, wind | **M** | **M** | **H** | **H** | Secondary to MERRA-2 |
 | E5 TerraClimate extreme flags | **L**: dry and heat flags fire in ~30 % of months because of the bias above | **M** | **H** | **M**: percentile on county means | Use with great care |
-| E6 Drought ensemble (mean/spread/agree) | **M**: members correlate only r = 0.27–0.45; effectively 3 independent rainfall sources | **M**: county series from 4–10 km grids | **H**: 96/96 | **M**: new code, mixed baselines (1991–2020 vs 2000–2026); TerraClimate members pull the mean dry (−0.5 to −0.9) | **Use the spread.** A drought claim is robust only if mean < −1, agree = 1 and spread < ~0.7. The 72/79 "significant drying" trends are an artefact of the TerraClimate drift. |
+| E6 Drought ensemble (mean/spread/agree) | **M**: members correlate only r = 0.27–0.45; effectively 3 independent rainfall sources | **M**: county series from 4–10 km grids | **H**: 96/96 | **M**: new code, mixed baselines (1991–2020 vs 2000–2026); TerraClimate members pull the mean dry (−0.5 to −0.9) | **Use the spread.** Treat a drought claim as solid only if mean < −1, agree = 1 and spread < ~0.7. The 72/79 "significant drying" trends are an artefact of the TerraClimate drift. |
 | E7 MODIS NDVI/EVI | **H**: standard v061 product, QA-masked | **H**: 500 m → 1 km | **M/H**: 93/96 for the Terra+Aqua series; Aug–Oct 2025 covered by the companion MOD13A3 series `modis13a3_ndvi` | **H** | Primary vegetation layer. Flooding lowers NDVI in the Sudd: a "greenness drop" there can be a flood, not a drought. |
 | E8 MODIS LST day/night | **H** | **H** | **M**: 91/96 (2022-10, Jul–Oct 2025 missing); clear-sky only, so the wet season is biased to dry days | **H** | Surface-heat context |
 | E9 MODIS reflectance bands | **H** | **H** | **M**: 92/96 | **H** | No direct meaning for users; hide by default |
 | E10 MODIS ET annual | **M**: MOD16 is fill over open water, urban and barren pixels; misses Sudd wetland ET | **M**: wetland counties under-represented | **M**: annual, 8 values | **H** | Context |
 | E11 MODIS ET monthly (AppEEARS) | **M**: model-based ET (as E10) | **M** | **H**: 96/96 | **H**: annual check r = 1.0 | Use for seasonal water-use patterns; open water/urban pixels have no ET |
 | E13 MODIS active fire | **H** | **H**: 1 km native-grid count | **M**: 91/96 (Jul–Nov 2025 missing); some months scaled for missing sensor-days | **M**: the scaling assumes uniform fire activity across days | Superseded by VIIRS for counts (r = 0.98) |
-| E14 VIIRS active fire (FIRMS S-NPP) | **H** | **H**: 375 m points, gas flares removed (type 0) | **H**: 96/96, one sensor throughout | **H** | **Most reliable dynamic environmental layer.** Note: detections, not burned area. |
+| E14 VIIRS active fire (FIRMS S-NPP) | **H** | **H**: 375 m points, gas flares removed (type 0) | **H**: 96/96, one sensor throughout | **H** | **The most reliable time-varying environmental layer.** It counts detections, not burned area. |
 | E15 MODIS burned area | **H** | **H** | **M**: 90/96 (6 months missing) | **H** | Primary burned-area layer; gaps break the seasonal sums |
 | E16 MODIS surface water | **M**: MNDWI > 0.1 threshold chosen by visual checks | **L**: misses water under vegetation; ≈0.5× UNOSAT (0.38× dry season); state r = 0.76 | **M**: 92/96; Jun–Oct cloud gaps filled ≤ 2 months; Jul–Oct 2025 missing | **M**: gap fill and the 20 % known-area rule | **Relative signal only** |
 | E17 Sentinel-1 flood | **H**: SAR sees through cloud and flooded vegetation (VV/VH double bounce); validated against UNOSAT | **M–H**: ~440 m grid; woody wetland, rice and built-up double bounce can raise VV−VH; wind-roughened lakes missed | **M**: 96/96, but revisit halves after the Sentinel-1B failure (Dec 2021; 61 % bounding-box coverage in Feb 2022); ≤ 2-month gap fill; monthly mean smooths floods shorter than ~10 days | **M**: change-detection threshold tuned on one date, then validated independently (wet F1 0.51, state r 0.88); **dry-season F1 0.04**; `flood_s1_openwater_km2` jumps ~10× in 2025 (Sentinel-1C / processing), so it is **not trend-safe** | **Primary flood layer for Jul–Nov and annual peaks.** Not for dry-season water. The flood class is relative to each pixel's March state, so permanent swamp is excluded. |
@@ -957,7 +852,7 @@ Medium at best.
 | D5 Renk intention survey | **M**: sample survey | **L**: one origin (Renk) | **L**: one month | **H**: unscaled, clearly labelled | Illustrative only |
 | D6 UNHCR refugees hosted | **H**: official registration | **M**: only 18 camp-hosting counties; dispersed and state-level refugees unallocated | **M**: annual end-year | **M**: hand camp → county mapping | Reliable for camp counties |
 | D7 WorldPop population | **M**: modelled projection; does not capture displacement | **H**: 1 km | **H**: annual 2018–25 | **H** | Denominator. Its 79/79 "significant" growth trends are the model's assumption, not evidence. |
-| F1 IPC acute food insecurity | **H**: multi-agency consensus analysis | **H**: county; payams summed | **L–M**: 11 analyses, **none in 2021**; carried forward ≤ 8 months in the app (§3.4) | **M**: 2022+ phase derived with the 20 % rule (92 % exact) | Key outcome layer; compare analyses, not months |
+| F1 IPC acute food insecurity | **H**: multi-agency consensus analysis | **H**: county; payams summed | **L–M**: 11 analyses, **none in 2021**; carried forward ≤ 8 months in the app (§3.4) | **M**: 2022+ phase derived with the 20 % rule (92 % exact) | Main outcome layer; compare analyses, not months |
 | F2 IPC AMN / GAM | **H** | **H** | **L**: one snapshot (2025) | **H** | Context |
 | F3 WFP market prices | **H**: systematic market monitoring | **L–M**: 26–32 of 79 counties; a market stands in for its county | **M**: 39–92 months by commodity | **M**: unit conversion; SSP inflation (≈250 → > 4 000 SSP/USD) dominates SSP series, so **use USD** | Good for price shocks in market towns |
 | F4 OCHA HNO PiN and severity | **M**: modelled planning figures; method changed 2019 and 2023 | **H**: county | **L**: PiN 6 years (none 2018/2020); severity 3 years | **M**: mixed HDX workbooks + HAPI; pre-2015 codes in 2019 | Compare within a year, not across years. The Abyei 2024–25 PiN, previously dropped, is restored; the 2024 national sum now matches HAPI admin-0. |
