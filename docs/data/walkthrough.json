@@ -5,10 +5,10 @@
   "steps": [
     {
       "heading": "Pick a measure and read its trend",
-      "text": "Choose 'Groundwater' with 'Show' set to the seasonally-adjusted trend. Groundwater, measured from the gravity of the water by the GRACE satellites, rose in all 79 counties, typically by about 3 cm a year until the record ends in September 2023. Counties with a thick dark outline (54 of 79) have a trend that is statistically significant, that is, unlikely to be chance; Rubkona's rise (+1.9 cm a year) is one of them. Sudd counties are hatched because flood water on the surface can leak into the groundwater estimate there.",
+      "text": "Choose 'Groundwater' with 'Show' set to the seasonally-adjusted trend. NASA's groundwater indicator, which feeds GRACE satellite gravity data into a land model, rose in all 79 counties, from far below its long-term normal in 2018 (national average: 4th percentile) to the 36th percentile in 2025. Counties with a thick dark outline (45 of 79) have a rise that is statistically significant. The Sudd counties are hatched because flood water on the surface can be mistaken for groundwater there.",
       "view": {
-        "var": "g3p_gwsa_cm",
-        "month": "2023-09",
+        "var": "gracedm_gws_pctl",
+        "month": "2025-12",
         "mode": "trend",
         "county": "SS0609",
         "flows": false,

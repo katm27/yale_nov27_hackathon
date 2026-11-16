@@ -4253,7 +4253,7 @@
  },
  "price_sorghum_local_usd": {
   "label": "Local sorghum price (US$)",
-  "plain": "Market price of local sorghum per kg, converted to US dollars by WFP. Sorghum made up about 72 percent of South Sudan's cereal harvest in 2021 (FAO crop assessment).",
+  "plain": "Market price of local sorghum per kg, converted to US dollars by WFP. Sorghum contributes to 76 percent of the national staple food supply in South Sudan (FAO Hand-in-Hand, 2023).",
   "method": "WFP market monitoring (VAM) via HDX; median over the county's monitored markets. WFP US-dollar price.",
   "direction": "better_worse",
   "topic": "Food & prices",
@@ -4732,6 +4732,20 @@
    "soil",
    "wetness",
    "smap"
+  ]
+ },
+ "gracedm_gws_pctl": {
+  "label": "Groundwater",
+  "plain": "How groundwater compares with its long-term normal for the time of year, as a percentile: 50 is normal, below 20 is unusually dry, above 80 is unusually wet. From NASA's land model with GRACE and GRACE-FO satellite gravity data assimilated.",
+  "caution": "A ranking, not an amount of water: South Sudan sits below its long-term normal for the whole period, so look at the change over time. Less conclusive in and around the Sudd wetland, where flood water on the surface can be mistaken for groundwater (hatched counties). No data for October 2025.",
+  "direction": "wetter_drier",
+  "topic": "Drought & rainfall",
+  "synonyms": [
+   "groundwater",
+   "aquifer",
+   "wells",
+   "grace",
+   "water table"
   ]
  }
 }

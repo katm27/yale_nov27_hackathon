@@ -46,7 +46,7 @@
     {
       "category": "climate",
       "group": "Water & drought",
-      "id": "g3p_gwsa_cm",
+      "id": "gracedm_gws_pctl",
       "label": "Groundwater"
     },
     {
@@ -173,7 +173,8 @@
     "flood_s1_flood_pct": "flood_s1",
     "sudd_inundation_pct": "sudd_inundation",
     "modis_lst_day_c": "modis_lst_day",
-    "modis_ndvi": "modis_ndvi"
+    "modis_ndvi": "modis_ndvi",
+    "gracedm_gws_pctl": "gracedm_gws"
   },
   "background": [
     {

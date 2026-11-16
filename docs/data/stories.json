@@ -8,10 +8,10 @@
       "summary": "Water stored in the land rose in all 79 counties (significant in 76, typically +3.7 cm a year), yet rainfall over South Sudan shows no significant trend in any county in either the IMERG or CHIRPS record. The extra water is consistent with floods arriving down the White Nile: Lake Victoria passed its 1964 record level in 2020, 2021 and 2024. Worth exploring: a flood that starts in another country's rainy season.",
       "steps": [
         {
-          "var": "g3p_gwsa_cm",
+          "var": "gracedm_gws_pctl",
           "month": "2025-12",
           "mode": "trend",
-          "say": "Groundwater has risen in every county; outlined counties (54 of 79) have a statistically significant rise, typically about +3 cm of water a year (record ends September 2023)."
+          "say": "Groundwater rose in every county, from far below its long-term normal in 2018 toward it by 2025. The rise is statistically significant in the 45 outlined counties."
         },
         {
           "var": "precip_mm",
@@ -20,11 +20,11 @@
           "say": "Now rainfall: no county has a significant trend, so local rain does not explain the extra water."
         },
         {
-          "var": "g3p_gwsa_cm",
-          "month": "2022-10",
+          "var": "gracedm_gws_pctl",
+          "month": "2025-04",
           "mode": "raw",
           "county": "SS0609",
-          "say": "October 2022, the national peak of the groundwater record: the country averaged +17 cm above its 2002-2020 normal, and the wettest counties sit along the Nile and the Sudd."
+          "say": "April 2025 is the national high point of the groundwater record: the country averaged the 65th percentile, against the 4th percentile in 2018 on average."
         },
         {
           "var": "sudd_inundation_pct",
