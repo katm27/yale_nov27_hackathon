@@ -37,7 +37,7 @@ button { font: inherit; }
 
 /* ================= LANDING ================= */
 .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-.hero { background: #0a3c91; color: #fff; padding: 64px 0 52px; border-bottom: 5px solid var(--hot); }
+.hero { background: radial-gradient(circle at 85% 20%, rgba(252,60,35,.28), transparent 42%), linear-gradient(160deg, #061f4d, #0a3c91 60%, #1650b8); color: #fff; padding: 64px 0 52px; border-bottom: 5px solid var(--hot); }
 .hero h1 { font-size: clamp(30px, 5vw, 46px); line-height: 1.1; margin: 4px 0 14px; letter-spacing: -.01em; }
 .hero .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 13px; opacity: .85; margin: 0; }
 .hero .lede { font-size: 18px; max-width: 760px; margin: 0 0 22px; opacity: .95; }
