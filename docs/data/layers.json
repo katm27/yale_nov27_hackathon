@@ -253,6 +253,14 @@
    "file": "data/points_schools.geojson"
   },
   {
+   "label": "Ground sinking at oil fields (radar study, 2015\u20132019)",
+   "plain": "Ground at three oil fields sank by 6 to 25 mm a year between 2015 and 2019, measured from Sentinel-1 radar by Gido et al. (2020), a likely sign of oil and water being pumped out of the ground; no open radar measurements of this kind exist for 2018\u20132025 or for Juba.",
+   "topic": "Context (static)",
+   "key": "points_subsidence_insar",
+   "file": "data/points_subsidence_insar.geojson",
+   "category": "human"
+  },
+  {
    "key": "points_surface_water_quality",
    "category": "environment",
    "temporal": "monthly",
