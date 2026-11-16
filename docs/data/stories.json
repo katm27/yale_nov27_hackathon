@@ -8,10 +8,10 @@
       "summary": "Water stored in the land rose in all 79 counties (significant in 76, typically +3.7 cm a year), but rainfall shows no significant trend in any county in either the IMERG or the CHIRPS record. The extra water fits with floods coming down the White Nile. Lake Victoria passed its 1964 record level in 2020, 2021 and 2024. This points to floods that begin with another country's rainy season.",
       "steps": [
         {
-          "var": "gracedm_gws_pctl",
+          "var": "gldas_gws_anom_cm",
           "month": "2025-12",
           "mode": "trend",
-          "say": "Groundwater rose in every county, from far below its long-term normal in 2018 to closer to it by 2025. In the 45 outlined counties the rise is statistically significant."
+          "say": "Groundwater rose in every county, typically by 2.2 cm of water a year. In the 60 outlined counties the rise is statistically significant."
         },
         {
           "var": "precip_mm",
@@ -20,11 +20,11 @@
           "say": "Rainfall, by contrast, has no significant trend in any county, so local rain does not explain the extra water."
         },
         {
-          "var": "gracedm_gws_pctl",
-          "month": "2025-04",
+          "var": "gldas_gws_anom_cm",
+          "month": "2025-10",
           "mode": "raw",
           "county": "SS0609",
-          "say": "April 2025 is the national high point of the groundwater record. The country averaged the 65th percentile that month, compared with an average of the 4th percentile in 2018."
+          "say": "October 2025 is the national high point of the groundwater record, 12.7 cm above the 2004–2020 average. In 2018 the yearly average was 7.5 cm below it."
         },
         {
           "var": "sudd_inundation_pct",

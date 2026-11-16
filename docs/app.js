@@ -527,7 +527,7 @@
       [...new Set(gj.features.map((f) => f.properties.group || f.properties.name))].sort().forEach((g, i) => (ETHNIC_COLORS[g] = CATEGORICAL[i % CATEGORICAL.length]));
       $(`#pl-${p.key}`).innerHTML = `<div class="eth-key">${Object.entries(ETHNIC_COLORS).map(([g, c]) => `<span><i style="background:${c}"></i>${esc(g)}</span>`).join("")}</div><p class="hint">Settlement areas from GeoEPR 2023 (ETH Zurich); areas overlap where groups live together. Click an area for its political-power status.</p>`;
     } else {
-      $(`#pl-${p.key}`).innerHTML = p.plain && typeof p.plain === "string" ? `<p class="hint">${esc(p.plain.split(/(?<=\.)\s/)[0])} Hollow markers mean the center is closed, damaged or not working.</p>` : "";
+      $(`#pl-${p.key}`).innerHTML = p.plain && typeof p.plain === "string" ? `<p class="hint">${esc(p.plain.split(/(?<=\.)\s/)[0])}${p.key === "points_gbv_one_stop_centres" ? " Hollow markers mean no source has confirmed the centre since it was last mentioned." : p.key === "points_disasters" || p.key === "points_subsidence_insar" ? "" : " Hollow markers mean the center is closed, damaged or not working."}</p>` : "";
     }
     const entry = { p, gj, timed, layer: null };
     state.pointLayers[p.key] = entry;
@@ -688,7 +688,7 @@
     const charts = [];
     for (const p of hits) for (const c of p.charts || []) if (!charts.some((x) => x.id === c.id)) charts.push({ ...c, from: p.from, to: p.to });
     let html = "";
-    if (charts.length) html += `<h3 class="ctx-h">National trends</h3>${charts.map((c, k) => `<div class="ctx-chart"><div class="cc-t">${esc(c.label)}${c.units ? ` <span class="muted">(${esc(c.units)})</span>` : ""}</div><div class="cc-box"><canvas id="ctxc-${k}"></canvas></div></div>`).join("")}`;
+    if (charts.length) html += `<h3 class="ctx-h">National Trends</h3>${charts.map((c, k) => `<div class="ctx-chart"><div class="cc-t">${esc(c.label)}${c.units ? ` <span class="muted">(${esc(c.units)})</span>` : ""}</div><div class="cc-box"><canvas id="ctxc-${k}"></canvas></div></div>`).join("")}`;
     for (const p of hits) {
       html += `<article class="ctx"><div class="ctx-range">${esc(range(p))}</div><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p>${p.links ? `<p class="ctx-links">${esc(String(p.links).replace(/^\s*In the charts:\s*/i, ""))}</p>` : ""}
         ${p.sources && p.sources.length ? `<p class="ctx-src">Sources: ${p.sources.map((s, i) => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.label || `[${i + 1}]`)}</a>`).join(" · ")}</p>` : ""}</article>`;
@@ -736,7 +736,7 @@
   async function renderDetail() {
     const cid = state.selected;
     $("#tab-county").disabled = !cid;
-    if (!cid) { $("#tab-county").textContent = "Click a county for details"; showTab("context"); return; }
+    if (!cid) { $("#tab-county").textContent = "Click on a county for more detailed info"; showTab("context"); return; }
     const P = countyProps(cid), v = state.varById[state.colorBy];
     $("#tab-county").textContent = `${P.name} County`;
     state.compare = (state.compare || []).filter((c) => c !== cid);
@@ -1021,7 +1021,7 @@
     $("#play").onclick = togglePlay;
     $("#filter").oninput = renderVarList;
     $("#grid-on").onchange = (e) => { state.gridOn = e.target.checked; refreshCounties(); updateRasters(); renderLegend(); writeHash(); };
-    $("#detail-close").onclick = () => { state.selected = null; state.compare = []; state.comparing = false; refreshCounties(); renderDetail(); $("#tab-county").textContent = "Click a county for details"; writeHash(); };
+    $("#detail-close").onclick = () => { state.selected = null; state.compare = []; state.comparing = false; refreshCounties(); renderDetail(); $("#tab-county").textContent = "Click on a county for more detailed info"; writeHash(); };
     $("#tab-context").onclick = () => showTab("context");
     $("#tab-county").onclick = () => state.selected && showTab("county");
     $("#nat-toggle").onclick = () => openNat(!state.natOpen);

@@ -88,5 +88,10 @@
   "label": "Natural disasters (floods, droughts, heatwaves)",
   "plain": "Floods, drought alerts and heatwaves reported in 2018-2025, one dot per affected county (or one for the whole country) for as long as the event lasted. Flood figures are people affected, as counted by the UN. Each dot sits at the county centre, not at the flooded place.",
   "topic": "Water & floods"
+ },
+ "points_subsidence_insar": {
+  "label": "Ground sinking at oil fields (radar study, 2015–2019)",
+  "plain": "Ground at three oil fields sank by 6 to 25 mm a year between 2015 and 2019, measured from Sentinel-1 radar by Gido et al. (2020), a likely sign of oil and water being pumped out of the ground; no open radar measurements of this kind exist for 2018–2025 or for Juba.",
+  "topic": "Context (static)"
  }
 }

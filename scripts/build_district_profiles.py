@@ -33,49 +33,47 @@ SECONDARY_MIN = 0.25
 # Republic of South Sudan (updated)", Aug 2018 (LHZ_DOC). Names follow the 2018 shapefile.
 ZONES = {
     "SS01": ("Equatorial maize and cassava",
-             "Rain-fed farming in the bimodal-rainfall Greenbelt, normally a surplus area: maize, "
-             "sorghum, groundnuts, cassava, beans; supplemented by small livestock, fishing, hunting "
-             "and wild/bush products, with cross-border trade."),
+             "Rain-fed farming in the Greenbelt, which has two rainy seasons and normally produces a "
+             "surplus of maize, sorghum, groundnuts, cassava and beans. Small livestock, fishing, hunting, "
+             "wild foods and cross-border trade add to this."),
     "SS02": ("Ironstone Plateau agro-pastoral",
-             "Agro-pastoral: sorghum, groundnuts and other crops combined with cattle, goats and "
-             "sheep; moderately productive, with acute dry-season water shortages and seasonal "
-             "cattle raiding."),
+             "An agro-pastoral zone where households grow sorghum, groundnuts and other crops and keep "
+             "cattle, goats and sheep. Output is moderate, water runs very short in the dry season, and "
+             "cattle raids come with the seasons."),
     "SS03": ("Highland forest and sorghum",
-             "Mainly crop farming (sorghum) with minor livestock; a cereal-deficit zone with one "
-             "rainy season, using forest and wild foods and bush products for food and income."),
+             "Mostly crop farming, mainly sorghum, with a few livestock. There is one rainy season and "
+             "not enough cereal, so people turn to forest and wild foods and sell bush products."),
     "SS04": ("Western plains groundnuts sesame and sorghum",
-             "Subsistence rain-fed farming of groundnuts, sesame and sorghum, supplemented by forest "
-             "products, seasonal river fishing and sales of poultry, goats and sheep; a former "
-             "surplus area."),
+             "Subsistence rain-fed farming of groundnuts, sesame and sorghum. Forest products, seasonal "
+             "river fishing and sales of poultry, goats and sheep add to it. The area used to produce a "
+             "surplus."),
     "SS05": ("South-Eastern semi-arid pastoral",
-             "Pastoralism (cattle, goats, sheep) with very limited cropping in a semi-arid zone; "
-             "wild foods and market purchase, including grain from Kenya and Ethiopia, fill the "
-             "food gap."),
+             "Herding of cattle, goats and sheep with very little cropping in a semi-arid zone. Wild foods "
+             "and market purchases, including grain from Kenya and Ethiopia, fill the food gap."),
     "SS06": ("Eastern plains sorghum and cattle",
-             "Agro-pastoral: rain-fed sorghum plus cattle herding on floodplains, supplemented by "
-             "fishing, hunting and wild foods; a cereal-deficit area rich in fish and livestock "
-             "products."),
+             "Rain-fed sorghum and cattle herding on the floodplains, with fishing, hunting and wild "
+             "foods. The area grows too little cereal but has plenty of fish and livestock products."),
     "SS07": ("Greater Bahr el Ghazal sorghum and cattle",
-             "Agro-pastoral: sorghum (staple), maize and groundnuts with cattle, goats and sheep "
-             "(most households own cattle), plus fishing and wild foods; cereal deficit, "
-             "trading livestock for grain."),
+             "Farming of sorghum (the staple), maize and groundnuts alongside cattle, goats and sheep, "
+             "plus fishing and wild foods. Most households own cattle, and since the zone grows too little "
+             "cereal, people trade livestock for grain."),
     "SS08": ("Nile basin fishing and agro-pastoral",
-             "Riverine livelihoods along the Nile/Sudd: fishing combined with sorghum and maize "
-             "cropping and cattle, goats and sheep, plus water lilies and other wild foods; floods "
-             "recur every few years."),
+             "Riverine livelihoods along the Nile and the Sudd. People fish, grow sorghum and maize, keep "
+             "cattle, goats and sheep, and gather water lilies and other wild foods. Floods return every "
+             "few years."),
     "SS09": ("North-Western Nile basin cattle and maize",
-             "Agro-pastoral with stronger focus on cattle than crops; maize is the main staple, "
-             "with fishing and wild foods; cereal deficit relying on imports from Sudan."),
+             "Agro-pastoral, with more weight on cattle than on crops. Maize is the main staple, fishing "
+             "and wild foods add to it, and the zone relies on grain imported from Sudan."),
     "SS10": ("North-Eastern maize cattle and fishing",
-             "Sobat River floodplain livelihoods: maize cropping, cattle and fishing are equally "
-             "important; a net cereal importer, relatively isolated near the Ethiopian border."),
+             "Livelihoods on the Sobat River floodplain, where maize growing, cattle and fishing are "
+             "equally important. The zone imports cereal and is fairly isolated near the Ethiopian border."),
     "SS11": ("Northern sorghum and livestock",
-             "Semi-arid agro-pastoralism: sorghum and livestock, supplemented by Nile fishing, "
-             "labour migration and petty trade; mechanised farming near the Nile, otherwise "
-             "subsistence with a cereal deficit."),
+             "Semi-arid agro-pastoralism based on sorghum and livestock, with Nile fishing, labour "
+             "migration and petty trade. Near the Nile there is mechanised farming. Elsewhere farming is "
+             "for subsistence, and the zone grows too little cereal."),
     "SS12": ("Maize Sorghum Fishing and Natural Resources",
-             "Farming (maize, sorghum) with two harvests, supplemented by livestock, fishing and "
-             "natural resources such as honey and shea from the Boma/Badingilo area."),
+             "Farming of maize and sorghum with two harvests a year, plus livestock, fishing and natural "
+             "resources such as honey and shea from the Boma/Badingilo area."),
 }
 
 
@@ -211,7 +209,7 @@ def livelihood_text(zones: list[tuple[str, float]]) -> str:
         names = [ZONES[c][0] for c, _ in sec]  # no area percentages in prose; shares stay in key_facts
         add = " Also partly in the " + " and ".join(names) + (" zones." if len(names) > 1 else " zone.")
         if len(text) + len(add) > MAX_CHARS:
-            text = text.split(";")[0].rstrip(".") + "."
+            text = text.split(". ")[0].rstrip(".") + "."  # keep the first sentence
         text += add
     return text
 

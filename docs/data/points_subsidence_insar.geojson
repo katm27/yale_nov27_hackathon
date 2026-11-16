@@ -1,0 +1,65 @@
+{
+ "type": "FeatureCollection",
+ "features": [
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     29.3856,
+     10.0256
+    ]
+   },
+   "properties": {
+    "name": "Heglig oil field",
+    "Ground sinking (mm per year)": "-24.5 ± 0.85",
+    "Measured": "November 2015 to April 2019",
+    "Method": "Sentinel-1 radar interferometry (persistent scatterers)",
+    "Where": "Sudan (West Kordofan, on the border)",
+    "Location": "approximate field centre (Heglig town, OpenStreetMap)",
+    "Source": "Gido et al. 2020, Remote Sensing 12(11):1792",
+    "source_url": "https://doi.org/10.3390/rs12111792"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     28.4003,
+     10.039
+    ]
+   },
+   "properties": {
+    "name": "Diffra oil field",
+    "Ground sinking (mm per year)": "-14.2 ± 0.85",
+    "Measured": "November 2015 to April 2019",
+    "Method": "Sentinel-1 radar interferometry (persistent scatterers)",
+    "Where": "Abyei Area (disputed between Sudan and South Sudan)",
+    "Location": "approximate field centre (Diffra, OpenStreetMap)",
+    "Source": "Gido et al. 2020, Remote Sensing 12(11):1792",
+    "source_url": "https://doi.org/10.3390/rs12111792"
+   }
+  },
+  {
+   "type": "Feature",
+   "geometry": {
+    "type": "Point",
+    "coordinates": [
+     29.6764,
+     9.4699
+    ]
+   },
+   "properties": {
+    "name": "Unity oil field area",
+    "Ground sinking (mm per year)": "-6.0 ± 0.88",
+    "Measured": "November 2015 to April 2019",
+    "Method": "Sentinel-1 radar interferometry (persistent scatterers)",
+    "Where": "South Sudan (Unity State)",
+    "Location": "approximate field centre (Unity Oil Field, points_oil layer)",
+    "Source": "Gido et al. 2020, Remote Sensing 12(11):1792",
+    "source_url": "https://doi.org/10.3390/rs12111792"
+   }
+  }
+ ]
+}

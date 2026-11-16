@@ -4747,5 +4747,20 @@
    "grace",
    "water table"
   ]
+ },
+ "gldas_gws_anom_cm": {
+  "label": "Groundwater",
+  "plain": "Groundwater compared with its 2004–2020 average, in centimetres of water, from NASA's GLDAS-2.2 land model, which takes in GRACE and GRACE-FO satellite gravity data.",
+  "caution": "The GRACE signal the model takes in is about 300 km wide, so neighbouring counties move together. Less conclusive in and around the Sudd wetland, where flood water on the surface can be mistaken for groundwater (hatched counties).",
+  "direction": "wetter_drier",
+  "topic": "Drought & rainfall",
+  "synonyms": [
+   "groundwater",
+   "aquifer",
+   "wells",
+   "grace",
+   "gldas",
+   "water table"
+  ]
  }
 }

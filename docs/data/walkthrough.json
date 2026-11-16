@@ -5,9 +5,9 @@
   "steps": [
     {
       "heading": "Start with the groundwater trend",
-      "text": "Choose 'Groundwater' and set 'Show' to the trend view. NASA's groundwater indicator, which feeds GRACE satellite gravity data into a land model, rose in all 79 counties. The national average went from the 4th percentile in 2018, far below the long-term normal, to the 36th percentile in 2025. The 45 counties with a thick dark outline have a statistically significant rise. The Sudd counties are hatched because surface flood water there can be mistaken for groundwater.",
+      "text": "Choose 'Groundwater' and set 'Show' to the trend view. NASA's GLDAS model, which takes in GRACE satellite gravity data, shows groundwater rising in all 79 counties, typically by 2.2 cm of water a year. Averaged over the country it went from 7.5 cm below its 2004–2020 average in 2018 to 3.9 cm above it in 2025. The 60 counties with a thick dark outline have a statistically significant rise. The Sudd counties are hatched because surface flood water there can be mistaken for groundwater.",
       "view": {
-        "var": "gracedm_gws_pctl",
+        "var": "gldas_gws_anom_cm",
         "month": "2025-12",
         "mode": "trend",
         "county": "SS0609",

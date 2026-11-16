@@ -34,7 +34,7 @@
   <main class="wrap">
     <section class="summary" aria-labelledby="sum-h">
       <h2 id="sum-h">Executive summary</h2>
-      <p>This dashboard brings together 17 climate and environment measures and 10 measures of conflict, food and aid for each of South Sudan's 79 counties, month by month from January 2018 to December 2025. For each county and measure, the map shows the <b>trend</b>: the typical change per year since 2018, estimated with Sen's slope and tested with the Mann-Kendall test. For monthly data, each month is compared with the same month of 2018, so ordinary seasonal swings are not counted as change. A county is outlined when its trend is unlikely to be chance.</p>
+      <p>This dashboard brings together 17 climate and environment measures and 10 measures of conflict, food and aid for each of South Sudan's 79 counties, month by month from January 2018 to December 2025. For each county and measure, the map shows the <b>trend</b>: the typical change per year since 2018, estimated with Sen's slope and tested for significance using the Mann-Kendall test. For monthly data, each month is compared with the same month of 2018, controlling for seasonality. A county is outlined when its trend is unlikely to be chance.</p>
       <p id="exec-last">Water is the clearest signal, and the extra water did not come from rain. Water stored in the land rose in all 79 counties (significantly in 76, typically by 3.7 cm a year), yet neither of the two satellite rainfall records shows a significant trend in any county. The rise fits with floodwater coming down the White Nile after Lake Victoria passed its 1964 record level in 2020, 2021 and 2024. In the 16 Sudd wetland counties, the average flooded area grew from about 2,800 km² in 2018 to 13,200 km² in 2022. Around Bentiu (Rubkona), land that was dry every March until 2020 has been about half under water each March since 2022. IOM recorded about 2.0 million flood displacements in 2020–2025, a third of them in the Sudd counties. In every hunger analysis since 2018, the Sudd counties had 12 to 21 percentage points more people in crisis than the rest of the country. In 2025, the year with the highest average water storage since 2018, the UN aid appeal was 46% funded and US government humanitarian funding fell to less than half of its 2024 level.</p>
 
       <div id="walkthrough"></div>
@@ -69,7 +69,7 @@
     <section class="panel">
       <label class="field-label" for="mode">Show</label>
       <select id="mode">
-        <option value="trend">Trend since 2018, adjusted for season (Sen's slope)</option>
+        <option value="trend">Seasonally-adjusted trend relative to 2018 baseline (Sen’s slope)</option>
         <option value="raw">Values in original units</option>
       </select>
       <p class="hint" id="mode-hint"></p>
@@ -89,14 +89,14 @@
     <section class="panel">
       <div class="panel-head"><h2>Measures</h2><input id="filter" type="search" placeholder="Search…" aria-label="Search measures"></div>
       <div id="stories"></div>
-      <label class="var-row grid-toggle"><input type="checkbox" id="grid-on" checked> <span>Show climate measures on a finer grid than the county <span class="meta">(▦)</span></span></label>
+      <label class="var-row grid-toggle"><input type="checkbox" id="grid-on" checked> <span>Show climate measures at a more detailed and granular level (finer spatial resolution) than the district-level <span class="meta">(▦)</span></span></label>
       <div id="var-list"></div>
     </section>
 
 
     <section class="panel">
       <h2>Background layers</h2>
-      <p class="hint">These layers sit under the other data. They show features of the land that affect farming and grazing, and grazing areas can be more exposed to cattle raids. To see them on their own, choose "No measure" in the list above.</p>
+      <p class="hint">These sit under the other datasets as an informative layer of characteristics of South Sudan’s landscape that influence agricultural productivity and grazing activity (which may make regions more vulnerable to raids). Choose “No measure” in the above list of climate and human variables to see them on their own.</p>
       <div id="bg-list"></div>
     </section>
 
@@ -129,7 +129,7 @@
     <aside id="side" aria-label="Context and county details">
       <div class="tabs" role="tablist">
         <button role="tab" id="tab-context" aria-selected="true">Background and context</button>
-        <button role="tab" id="tab-county" aria-selected="false" disabled>Click a county for details</button>
+        <button role="tab" id="tab-county" aria-selected="false" disabled>Click on a county for more detailed info</button>
       </div>
       <section id="context" role="tabpanel"></section>
       <section id="detail" role="tabpanel" hidden>
