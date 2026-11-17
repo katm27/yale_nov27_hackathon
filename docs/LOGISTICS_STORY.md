@@ -2,7 +2,7 @@
 
 All numbers below were recomputed from the repo data with the scripts in this scratchpad (`allvars.py`, `access.py`, `sudd.py`, `story.py`, `corro.py`, `hubs.py`, `demand.py`, `demand2.py`, `idp.py`, `fuel*.py`, `premium.py`). The trend functions come from `scripts/trend_stats.py`. The repo was only read, never written.
 
-## 1. Survey of all 279 variables (full table in section 4)
+## 1. Survey of all 279 variables (full table in section 5)
 - Coverage: 279 variables in total. 195 have county trends in trends.json, and 938 of the 13,441 county-variable trends are FDR-significant. Only 36 variables have any FDR-significant county.
 - National series: counts are summed over a balanced panel of counties (those with data in at least 80% of months). Shares and indices use the mean of the counties reporting, and WFP prices use the median across markets. Monthly series are tested with the Hirsch-Slack seasonal MK, with the Sen slope anchored on the same month of 2018. Annual, irregular and survey series are reduced to yearly means and tested with plain MK.
   - 57 of 234 testable national series have p < 0.05.
@@ -74,7 +74,7 @@ All numbers below were recomputed from the repo data with the scripts in this sc
 6. `smap_sm_surface`, 2025-03, raw, SS0602 (Guit), with `points_health` on. "Dry-season soil moisture in Guit went from 0.03 (March 2019) to 0.24 m³/m³. Ground that used to dry out by March no longer does. In these counties a median 22% of 2016-registered health facilities had dropped out of the registry by 2023, against 11% elsewhere."
 
 ## 3. Runner-up stories
-1. **Buy fuel in Jan-Mar.** US$ parallel-market diesel is a median 10.6% dearer in May-Aug than in Jan-Mar of the same year.
+1. **Buy fuel in Jan-Mar.** US$ parallel-market diesel is a median 10.6% dearer in May-Aug than in Jan-Mar of the same year. Correction, 17 Nov 2026: this used WFP's official-rate dollar prices. At the parallel rate the dollar premium disappears after April 2023; see section 4.1.
    - Evidence: 71 market-years (Wilcoxon p=5e-6); 20 of 21 markets have a median ratio above 1 (sign test p=2e-5); 5 of 6 years have a yearly median above 1 (2023: 0.97; 2024: 1.79 during the currency crisis).
    - Petrol (parallel) shows +14.8% (p=3e-6), and official diesel in US$ shows +8.7% (p=7.5e-5).
    - Caveats: market coverage is patchy (14-21 markets); this is ecological; part of the effect is SSP devaluation, since fx is also 21% higher in May-Aug.
@@ -91,7 +91,140 @@ All numbers below were recomputed from the repo data with the scripts in this sc
 - The S1 radar dry-season trend: none, by construction.
 - Sudan arrivals: event-tracking counts, dominated by Renk, Juba and Rubkona in 2023 (409,645), then 195,010 in 2024 and 46,873 in 2025. They are too irregular for a corridor test.
 
-## 4. All-variable table (279 variables)
+## 4. Findings that have nothing to do with flooding
+
+Added 17 Nov 2026. Each number below was recomputed by the scratchpad scripts `road.py`, `prices_panel.py`, `did.py`, `did2.py`, `seas.py`, `seas2.py` and `f345.py`. Outside data were downloaded on 17 Nov 2026 (sources listed at the end of this section). Four findings were tested; two hold up and two do not.
+
+### 4.1 Since the Sudan war, fuel is no cheaper in US dollars early in the year. In pounds it is much cheaper.
+
+Section 3 suggested buying fuel in Jan-Mar. That result used WFP's `usdprice`, which converts at the official exchange rate. In 2018, for example, Konyokonyo diesel was 200 SSP = US$1.55, an implied rate of 129, while the unofficial rate that month was 211.
+
+I rebuilt the market panel from the raw WFP file (`data/raw/wfp_prices/wfp_food_prices_ssd.csv`):
+- Retail prices were converted at each market's own unofficial exchange rate for that month, or the national median unofficial rate where the market had none.
+- The seasonal gap was estimated as the May-Aug vs Jan-Mar difference in log price, within market-year (market x year fixed effects).
+- 95% intervals come from a market-cluster bootstrap with 300 draws.
+
+| Series (30-35 markets) | Before Apr 2023 | Apr 2023 onward |
+|---|---|---|
+| Parallel diesel, US$ at parallel rate | +32.7% [+25.7, +41.4] | +5.5% [-1.5, +12.8] |
+| Parallel petrol, US$ at parallel rate | +33.4% [+26.1, +41.2] | +0.8% [-4.9, +7.3] |
+| Official-market diesel, US$ at parallel rate | +29.4% [+23.1, +36.2] | +1.3% [-3.5, +6.6] |
+| Official-market petrol, US$ at parallel rate | +24.2% [+17.1, +31.1] | +4.3% [+0.7, +8.4] |
+| Parallel diesel, SSP | +26.2% [+18.6, +33.7] | +70.0% [+56.7, +85.2] |
+| Parallel petrol, SSP | +23.9% [+17.7, +30.0] | +54.1% [+39.1, +68.9] |
+| Unofficial exchange rate, SSP per US$ | -5.3% [-7.9, -1.9] | +53.1% [+45.1, +60.9] |
+
+Year by year, the median market ratio of May-Aug to Jan-Mar for parallel diesel at the parallel rate was:
+- 2021: 1.58
+- 2022: 1.18
+- 2023: 0.99
+- 2024: 1.03
+- 2025: 1.03
+
+The pre-war premium therefore rests mostly on 2021-22.
+
+World oil prices do not explain either period. Brent crude's May-Aug / Jan-Mar ratio (FRED) was:
+- 2021: 1.18
+- 2022: 1.12
+- 2023: 0.98
+- 2024: 0.99
+- 2025: 0.91
+
+Brent was flat or falling in exactly the months when pound fuel prices rose 54-70%. Since 2023 the seasonal swing in pound prices is a currency effect: the pound lost a median 53% of its value between Jan-Mar and May-Aug. The largest jump came in 2024, the year the export pipeline through Sudan was cut (exchange-rate ratio 2.46). Al Jazeera, 26 Mar 2024, cited in the app's context timeline, describes the rupture in Feb 2024.
+
+What to do with this:
+- Fuel bought or contracted in pounds should be bought, or fixed in price, in Jan-Mar.
+- Fuel bought in dollars at the parallel rate costs about the same all year since 2023.
+- The usual advice to buy fuel before the rains is now advice about currency exposure, not about the fuel market.
+
+Caveats:
+- Only 30-35 markets, with gaps.
+- The post-war window has three years, and 2024 dominates it.
+- Seven related tests, so treat p-values near 0.05 with care. The SSP and exchange-rate results are far below any correction threshold. The post-war US$ results are nulls.
+
+### 4.2 Road travel is where aid workers get kidnapped, and 2025 was the worst year in both incident databases
+
+There are two independent incident datasets for 2018-2025:
+- Insecurity Insight's aid-worker KIKA file (in the repo).
+- The Aid Worker Security Database (AWSD), downloaded from HDX.
+
+They agree on the main points.
+
+| | AWSD | Insecurity Insight |
+|---|---|---|
+| Incidents 2018-2025 | 498 | 464 |
+| Incidents on roads (II: road or checkpoint) | 202 (41%) | 180 (39%) |
+| Kidnapped aid workers taken on roads | 114 of 184 (62%) | 91 of 141 (65%) |
+| Aid workers killed on roads | 58 of 162 (36%) | 57 of 176 (32%) |
+| Road incidents in 2025 vs 2018-24 mean | 41 vs 23.0 (previous high 31); Poisson P(X≥41) = 0.0005 | 37 vs 20.4 (previous high 29); P = 0.0006 |
+| All incidents in 2025 vs 2018-24 mean | 99 vs 57.0; P = 3e-7 | 99 vs 52.1; P = 5e-9 |
+| States with most road incidents | Jonglei 52, Central Equatoria 49, Eastern Equatoria 28, Unity 20 | Central Equatoria 50, Jonglei 33, Eastern Equatoria 26 |
+
+AWSD codes 196 of its 498 South Sudan incidents as ambushes. South Sudan had the second-highest incident count in AWSD worldwide for 2018-2025 (498), after the occupied Palestinian territories (590).
+
+There is no safe season:
+- Road incidents fall in Dec-May about as often as in Jun-Nov: 54% in AWSD (binomial p = 0.23), 51% in Insecurity Insight (p = 0.82).
+- The monthly distribution is not significantly uneven (II chi-square p = 0.076).
+- December is the quietest month in both sources, with 9 and 7 incidents.
+
+For a logistics officer:
+- Road convoys carry most of the kidnapping risk.
+- 2025 was a step up in both datasets, after the funding cuts.
+- The concentration in Central Equatoria and Jonglei puts the Juba hub's southern corridors and the Bor routes most at risk.
+
+Caveats:
+- These are counts of reported incidents, so changes in reporting effort are possible. Both sources rely partly on the same media and agency reports, so they are not fully independent.
+- Neither source gives road segments: AWSD publishes coordinates for some incidents, and II's are censored. So no corridor-level test was possible.
+- Traffic volume is unknown. A rise in incidents could partly reflect more movement, although funding fell in 2025 (see 4.3).
+
+### 4.3 The 2025 funding cut did not shrink the partner map; national NGOs filled more of it
+
+OCHA FTS (outside, via the public API) puts funding to the South Sudan response plan at US$1,289.3 million in 2024 (plan 1157) and US$787.2 million in 2025 (plan 1223), a fall of 39%. The repo's FTS series match, and add that the US share of humanitarian funding fell from 50% to 31%.
+
+The OCHA 3W counts did not move with the money:
+- Organisations reported per county averaged 8.00 in 2024 and 7.97 in 2025. The sum of county means went from 632 to 630. 34 counties rose and 45 fell; Wilcoxon p = 0.57.
+- South Sudanese NGOs per county rose from 2.50 to 3.14 (sum 198 to 248). They rose in 54 counties and fell in 21; Wilcoxon p = 4e-6.
+
+For logistics, the partners that common storage, the MSU network and last-mile delivery now depend on are more often national NGOs, at a time when total money is down by more than a third.
+
+Caveat: the 3W counts record presence as reported, not activity or capacity. A partner can stay on the 3W with a much smaller budget.
+
+### 4.4 What did not hold up
+
+Sudan-war supply-corridor effect on northern market prices. I ran a difference-in-differences on the WFP market panel:
+- Design: market and month fixed effects; markets north of 9°N vs the rest; May 2021-Apr 2025, with Apr 2023 excluded; market-cluster bootstrap.
+- The headline estimates are positive for all six commodities: parallel diesel +11.7% [+0.6, +24.5], sorghum +13.7% [+0.5, +29.0], wheat flour +13.7% [+1.8, +27.6]. Defining "north" by state (Upper Nile, Unity, Northern Bahr el Ghazal, Abyei) gives similar results.
+- They do not survive the checks:
+  - An event study against Jan-Mar 2023 shows the north-south fuel gap moving by -17% to +4% in the pre-war half-years, which is as much as after the war.
+  - A placebo break in May 2022, using pre-war data only, gives -19.0% for parallel petrol (p ≈ 0.05).
+  - None of the six estimates passes a Bonferroni threshold (0.05/6).
+- My conclusion is that the market data cannot separate a war-corridor effect from the normal instability of these northern markets.
+- The arrivals themselves are large: UNHCR's Sudan situation portal lists 1,394,320 refugees and returnees from Sudan in South Sudan (figure dated 9 Nov 2026). But that is a caseload fact, not a price effect.
+- I could not test the supply side. WFP's Sudan price file on HDX has no fuel series.
+
+Health-registry drop-out. I tested this as a possible non-flood finding (runner-up 2 in section 3):
+- Method: across 75 counties with at least 3 facilities registered in 2016, a rank regression of the drop-out share on four predictors (HC3 errors):
+  - change in dry-season water;
+  - ACLED political-violence events per 100k, 2018-23;
+  - distance from Juba;
+  - distance to the nearest Logistics Cluster hub.
+- Result: no predictor is significant. Water is the closest (p = 0.085), conflict p = 0.89, distance from Juba p = 0.25, distance to hub p = 0.49.
+- A quasi-binomial model on facility counts makes everything significant. It treats facilities as independent and its estimated dispersion was implausibly low (0.14), so I do not rely on it.
+- I would drop this finding.
+
+Heat, fire smoke and air operations. I did not test this. The repo has no flight, visibility or airstrip-closure records to link to MODIS land temperature or fire counts, so any claim would be a guess.
+
+### Sources used in this section (all accessed 17 Nov 2026)
+- WFP VAM market prices, South Sudan (in repo): https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan
+- WFP VAM market prices, Sudan (checked; no fuel series): https://data.humdata.org/dataset/wfp-food-prices-for-sudan
+- Aid Worker Security Database, global incidents via HDX: https://data.humdata.org/dataset/aid-worker-security-data-global (file `global-security-incidents`, South Sudan rows, 2018-2025)
+- Insecurity Insight, South Sudan aid-worker KIKA incidents (in repo, `data/raw/insecurity_insight/ii_aid_worker_incidents.xlsx`): https://data.humdata.org/dataset/south-sudan-attacks-on-civilians-and-vital-civilian-facilities
+- Brent crude, monthly mean of daily prices, FRED series DCOILBRENTEU: https://fred.stlouisfed.org/series/DCOILBRENTEU
+- OCHA FTS public API, incoming funding to plans 1157 (2024) and 1223 (2025): https://api.hpc.tools/v1/public/fts/flow?planid=1157 and https://api.hpc.tools/v1/public/fts/flow?planid=1223
+- UNHCR operational data portal, Sudan situation: https://data.unhcr.org/en/situations/sudansituation
+- Pipeline rupture, Feb 2024 (cited in the app's context timeline): https://www.aljazeera.com/features/2024/3/26/south-sudan-on-the-brink-after-oil-exports-derailed-by-sudans-civil-war
+
+## 5. All-variable table (279 variables)
 National aggregation: sum for count variables (aggregate=sum), mean for shares and indices, median for WFP prices. A * after p means the national test has p<0.05. The q column is BH-FDR across the 234 national tests. 'Notable counties' lists the top 2 FDR-significant counties up and down. Peak and trough are months of the national monthly climatology.
 
 | id | label | temporal | nat. agg | counties | months (span) | nat. dir | nat. slope/yr | nat. p | nat. q (BH, 234 tests) | counties rising/falling (of trended) | counties FDR-sig up/down | peak/trough month | notable counties (FDR-sig) |
