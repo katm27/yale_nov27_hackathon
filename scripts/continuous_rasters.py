@@ -101,6 +101,9 @@ LAYERS = {
     "smap_sm_rootzone": dict(src=npy_src(os.path.join(rt.APPEEARS, "smap_sm_rootzone")), native=(0.08, (23.4, 12.3)),
                              meta=dict(source="SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine "
                                               "(NASA/SMAP/SPL4SMGP/008)")),
+    "smap_sm_surface": dict(src=npy_src(os.path.join(rt.APPEEARS, "smap_sm_surface")), native=(0.08, (23.4, 12.3)),
+                             meta=dict(source="SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine "
+                                              "(NASA/SMAP/SPL4SMGP/008)")),
     "gldas_gws": dict(src=npy_src(os.path.join(rt.GLDAS, "gldas_gws_anom_cm")), native=G25,
                       meta=dict(native_resolution="0.25° (~28 km) GLDAS grid, bilinear smoothing between cell centres")),
     "gracedm_gws": dict(src=npy_src(os.path.join(rt.GRACEDM, "gracedm_gws_pctl")), native=G25,

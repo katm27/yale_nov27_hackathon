@@ -1934,7 +1934,7 @@
  },
  "acled_pv_events": {
   "label": "Political violence (events)",
-  "plain": "Number of recorded violent events in the county that month: battles, attacks on civilians, bombings and similar. The main conflict layer.",
+  "plain": "Number of recorded violent events in the county that month: battles, attacks on civilians, bombings and similar.",
   "method": "ACLED public aggregate via HDX, admin-2 monthly. Abyei taken from the Sudan file. ACLED political-violence category (mainly battles, violence against civilians, explosions/remote violence).",
   "direction": "better_worse",
   "topic": "Conflict & violence",
@@ -4021,7 +4021,7 @@
   "method": "WFP market monitoring (VAM) via HDX; median over the county's monitored markets. WFP US-dollar price.",
   "direction": "better_worse",
   "topic": "Food & prices",
-  "caution": "Only counties with WFP-monitored markets have values.",
+  "caution": "WFP converts pound prices to dollars at its own reference rate, not the market's black-market rate, so seasonal swings in the pound can be hidden in this series. Compare with the price in pounds.",
   "synonyms": [
    "fuel",
    "prices",
@@ -4066,7 +4066,7 @@
  },
  "fx_ssp_per_usd": {
   "label": "Black-market exchange rate (pounds per US$)",
-  "plain": "How many South Sudanese pounds one US dollar buys on the unofficial market. Higher = weaker pound and rising import prices.",
+  "plain": "How many South Sudanese pounds one US dollar buys on the unofficial market. When it rises, the pound has weakened and imported goods such as fuel cost more.",
   "method": "WFP 'Exchange rate (unofficial)' recorded at each market; median over county markets.",
   "direction": "better_worse",
   "topic": "Food & prices",

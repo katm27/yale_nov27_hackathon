@@ -145,5 +145,26 @@
   "significant": false,
   "slope": -23825000.0,
   "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "awsd_road_incidents_year": {
+  "how": "national",
+  "p": 0.618,
+  "significant": false,
+  "slope": 0.85,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "awsd_other_incidents_year": {
+  "how": "national",
+  "p": 0.3186,
+  "significant": false,
+  "slope": 2.166666666666667,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "awsd_kidnapped_year": {
+  "how": "national",
+  "p": 0.618,
+  "significant": false,
+  "slope": 1.3333333333333335,
+  "test": "Mann-Kendall (short series, uncorrected)"
  }
 }

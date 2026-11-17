@@ -1,0 +1,47 @@
+[
+ {
+  "id": "awsd_road_incidents_year",
+  "label": "Attacks on aid workers on roads (per year)",
+  "units": "incidents per year",
+  "category": "human",
+  "group": "Aid worker security (national)",
+  "source": "Aid Worker Security Database (Humanitarian Outcomes) via HDX",
+  "source_url": "https://data.humdata.org/dataset/aid-worker-security-data-global",
+  "native_resolution": "national",
+  "temporal": "monthly",
+  "aggregation": "count of incidents per calendar year",
+  "higher_is": "worse",
+  "index_ok": false,
+  "notes": "Reported major attacks on aid workers (killings, kidnappings, serious injuries). National yearly count repeated each month; it does not vary by county."
+ },
+ {
+  "id": "awsd_other_incidents_year",
+  "label": "Attacks on aid workers elsewhere (per year)",
+  "units": "incidents per year",
+  "category": "human",
+  "group": "Aid worker security (national)",
+  "source": "Aid Worker Security Database (Humanitarian Outcomes) via HDX",
+  "source_url": "https://data.humdata.org/dataset/aid-worker-security-data-global",
+  "native_resolution": "national",
+  "temporal": "monthly",
+  "aggregation": "count of incidents per calendar year",
+  "higher_is": "worse",
+  "index_ok": false,
+  "notes": "Reported major attacks on aid workers (killings, kidnappings, serious injuries). National yearly count repeated each month; it does not vary by county."
+ },
+ {
+  "id": "awsd_kidnapped_year",
+  "label": "Aid workers kidnapped (per year)",
+  "units": "people per year",
+  "category": "human",
+  "group": "Aid worker security (national)",
+  "source": "Aid Worker Security Database (Humanitarian Outcomes) via HDX",
+  "source_url": "https://data.humdata.org/dataset/aid-worker-security-data-global",
+  "native_resolution": "national",
+  "temporal": "monthly",
+  "aggregation": "count of incidents per calendar year",
+  "higher_is": "worse",
+  "index_ok": false,
+  "notes": "Reported major attacks on aid workers (killings, kidnappings, serious injuries). National yearly count repeated each month; it does not vary by county."
+ }
+]

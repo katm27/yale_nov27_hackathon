@@ -958,6 +958,10 @@
     const obl = perYear("usaid_obligated_month_usd", "sum"), dis = perYear("usaid_disbursed_month_usd", "sum");
     if (obl && dis) specs.push({ id: "usaid_obligated_month_usd", annual: true, title: "USAID: new commitments and money paid out", sub: "ForeignAssistance.gov, calendar-year totals. Payouts lag commitments, so in 2025 money promised in earlier years was still being paid while new commitments collapsed.",
       sets: [{ data: obl, color: "#6250d6", label: "New commitments", fmt: usd, type: "bar" }, { data: dis, color: "#2a78d6", label: "Paid out", fmt: usd, type: "bar" }], yMin: 0 });
+    const road = perYear("awsd_road_incidents_year"), oth2 = perYear("awsd_other_incidents_year"), kid = perYear("awsd_kidnapped_year");
+    if (road && oth2) specs.push({ id: "awsd_road_incidents_year", annual: true, stacked: true, count: true, title: "Attacks on aid workers: on roads and elsewhere", sub: "Aid Worker Security Database (Humanitarian Outcomes), major incidents per calendar year. 2025 had the most incidents, on roads and elsewhere, of any year since the South Sudan record begins in 2011.",
+      sets: [{ data: road, color: "#d7301f", label: "On roads", fmt: (x) => `${fmt(x)} incidents`, type: "bar", stack: "a" }, { data: oth2, color: "#9a988f", label: "Elsewhere", fmt: (x) => `${fmt(x)} incidents`, type: "bar", stack: "a" }], yMin: 0,
+      extra: (k) => (kid && kid[k] != null ? `${fmt(kid[k])} aid workers kidnapped that year` : "") });
     const add = (id, title, sub, color, f, opts = {}) => { let a = A(id); if (a && opts.prep) a = opts.prep(a); if (a) specs.push({ id, title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f, dash: opts.dash }], yMin: 0, ...opts }); };
     // Survey-edition series (WPS Index): keep one value per edition year, drawn as a dot at mid-year.
     const editions = (arr) => arr.map((x, i) => (x != null && state.months[i].endsWith("-07") ? x : null));
@@ -1028,9 +1032,9 @@
     const chart = new Chart(tile.querySelector("canvas"), {
       type: "bar", data: { labels: YEARS.map(String), datasets },
       options: { animation: false, responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.raw == null ? "–" : usd(c.raw)}`, afterBody: (c) => (spec.extra ? spec.extra(c[0].dataIndex) : "") } } },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.raw == null ? "–" : spec.sets[c.datasetIndex].fmt(c.raw)}`, afterBody: (c) => (spec.extra ? spec.extra(c[0].dataIndex) : "") } } },
         scales: { x: { stacked: !!spec.stacked, ticks: { color: ink2, font: { size: 11 } }, grid: { display: false } },
-          y: { stacked: !!spec.stacked, min: 0, ticks: { color: ink2, font: { size: 10 }, maxTicksLimit: 4, callback: (x) => usdShort(x) }, grid: { color: line } } },
+          y: { stacked: !!spec.stacked, min: 0, ticks: { color: ink2, font: { size: 10 }, maxTicksLimit: 4, callback: (x) => (spec.count ? fmt(x) : usdShort(x)) }, grid: { color: line } } },
         onClick: (evt, els, ch) => { const k = Math.round(ch.scales.x.getValueForPixel(evt.x)); const i = state.months.indexOf(`${YEARS[k]}-01`); if (i >= 0 && state.view === "map") setTime(i); } },
       plugins: [{ id: "marks", afterDraw(c) { if (state.view !== "map") return; const { ctx, chartArea: a, scales } = c; const k = YEARS.indexOf(yearOf(state.t)); if (k < 0) return;
         const x = scales.x.getPixelForValue(k); ctx.save(); ctx.strokeStyle = ORANGE; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x, a.top); ctx.lineTo(x, a.bottom); ctx.stroke(); ctx.restore(); } }],
@@ -1042,7 +1046,7 @@
     for (const c of state.natCharts) {
       if (c._spec.annual) {
         const sp = c._spec, Y = state.view === "map" ? yearOf(state.t) : c._years[c._years.length - 1], k = c._years.indexOf(Y);
-        const parts = sp.sets.map((s) => `${s.label}: <b>${s.data[k] == null ? "no data" : usd(s.data[k])}</b>`); const ex = sp.extra ? sp.extra(k) : "";
+        const parts = sp.sets.map((s) => `${s.label}: <b>${s.data[k] == null ? "no data" : s.fmt(s.data[k])}</b>`); const ex = sp.extra ? sp.extra(k) : "";
         c._tile.querySelector(".nt-v").innerHTML = `${Y}: ${parts.join(" · ")}${ex ? `<br><span class="muted">${esc(ex)}</span>` : ""}`; c.draw(); continue;
       }
       const sp = c._spec, i0 = state.view === "map" ? state.t : lastIdx(sp.sets[0].data);
