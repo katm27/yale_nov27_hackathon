@@ -24,7 +24,15 @@ Missing months are handled with a climatology-anomaly mean so a gap does not bia
 with clim_m = the pixel's 2018-2025 mean for calendar month m. A year needs >= half of its season's months
 (composites for Sudd) to be observed, otherwise it is left out (e.g. Sudd 2025, MODIS reflectance gap Jul-Nov 2025).
 
-Usage: python scripts/raster_trends.py [key ...]        (default: all layers; re-runnable, overwrites outputs)
+Usage: python scripts/raster_trends.py [--continuous] [key ...]   (default: all layers; re-runnable, overwrites outputs)
+
+--continuous: render each slope map as a smooth continuous diverging ramp red #b2182b (decrease) -> white #ffffff (0)
+-> green #1b7837 (increase), symmetric about 0 with the layer's fixed +-limit (kept from an existing meta.json when
+there is one), instead of the original ColorBrewer ramp that scripts/recolor_rasters*.py later binned into 7 colours.
+Coarse products (GLDAS / GRACE-DA 0.25 deg, SMAP 9 km, IMERG 0.1 deg) are first averaged back onto their native cells
+and then bilinearly interpolated to the output pixels, so cells blend instead of looking blocky. Pixels with data but
+too few years for a slope are hatched black. meta.json gets "continuous": true, "palette": "rwg-continuous",
+"colors": [3 anchors], "vmin"/"vmax", "bins": null. Do NOT run recolor_rasters*.py on these layers afterwards.
 """
 import glob
 import json
@@ -50,6 +58,9 @@ GLDAS = os.environ.get("GLDAS_GRIDS", os.path.join(SCRATCH, "gldas", "work", "gr
 GRACEDM = os.environ.get("GRACEDM_GRIDS", os.path.join(SCRATCH, "gldas", "gracedm_work", "grids"))
 MAIAC = os.environ.get("MAIAC_GRIDS", os.path.join(SCRATCH, "maiac", "work", "grids"))
 TC_RAW = os.environ.get("TC_RAW", os.path.join(SCRATCH, "climate", "tc_raw"))
+GEE_CLIMATE = os.environ.get("GEE_CLIMATE_GRIDS", os.path.join(SCRATCH, "gee_climate", "work", "grids"))
+LULC = os.environ.get("LULC_GRIDS", os.path.join(SCRATCH, "lulc", "work", "grids"))
+CONTINUOUS = False  # set by --continuous
 
 YEARS = list(range(2018, 2026))
 END_YEARS = list(range(2020, 2026))
@@ -360,6 +371,19 @@ def yearly_flood_s1():
     return yearly_from_months(lambda y, m: months.get((y, m)), WET), tf, crs
 
 
+def yearly_lulc(var):
+    """Impact Observatory annual land-cover share grids (scripts/landcover_grids.py), one value per year (2017-2023;
+    2024-2025 not published) -> used directly as the yearly values."""
+    def run():
+        out = []
+        for y in YEARS:
+            p = os.path.join(LULC, var, f"{y}.npy")
+            out.append(np.load(p).astype("float32") if os.path.exists(p) else None)
+        shape = next(a.shape for a in out if a is not None)
+        return np.stack([a if a is not None else np.full(shape, np.nan, "float32") for a in out]), GRID001, "EPSG:4326"
+    return run
+
+
 def monthly(loader, season, agg="mean", min_frac=0.5):
     def run():
         get, tf = loader()
@@ -401,8 +425,10 @@ LAYERS = [
          basis=ANNUAL_MEAN + " (storage anomaly; no dry-season zeros). GRACE-FO starts Jun 2018: 2018 = 5 months "
          "(Jun, Jul, Oct-Dec), accepted via the anomaly method (threshold lowered to 5 of 12 months)."),
     dict(key="gldas_gws", run=monthly(npy_layer(os.path.join(GLDAS, "gldas_gws_anom_cm")), ALL), cmap="div_brbg",
+         native=(0.25, (-180.0, 90.0)),
          basis=ANNUAL_MEAN + " (groundwater storage anomaly vs 2004-2020, GLDAS-2.2 CLSM GRACE-DA)"),
     dict(key="gracedm_gws", run=monthly(npy_layer(os.path.join(GRACEDM, "gracedm_gws_pctl")), ALL), cmap="div_brbg",
+         native=(0.25, (-180.0, 90.0)),
          unit_out="percentile points/yr",
          basis=ANNUAL_MEAN + " (weekly groundwater percentiles averaged by month, then by year)"),
     dict(key="maiac_aod", run=monthly(npy_layer(os.path.join(MAIAC, "maiac_aod_055")), ALL), cmap="div_puor",
@@ -413,9 +439,21 @@ LAYERS = [
          cmap="div_brbg", basis=WET_MEAN),
     dict(key="tc_tmax", run=monthly(TC("tmax"), ALL), cmap="div_rdbu", basis=ANNUAL_MEAN),
     dict(key="smap_sm_rootzone", run=monthly(npy_layer(os.path.join(APPEEARS, "smap_sm_rootzone")), WET),
-         cmap="div_brbg", basis=WET_MEAN, unit_out="m³/m³ per yr"),
+         cmap="div_brbg", basis=WET_MEAN, unit_out="m³/m³ per yr", native=(0.08, (23.4, 12.3))),
     dict(key="smap_sm_surface", run=monthly(npy_layer(os.path.join(APPEEARS, "smap_sm_surface")), WET),
-         cmap="div_brbg", basis=WET_MEAN, unit_out="m³/m³ per yr"),
+         cmap="div_brbg", basis=WET_MEAN, unit_out="m³/m³ per yr", native=(0.08, (23.4, 12.3))),
+    dict(key="imerg_precip", run=monthly(npy_layer(os.path.join(GEE_CLIMATE, "precip_mm")), WET), cmap="div_brbg",
+         basis=WET_MEAN + " (GPM IMERG V07 monthly, 0.1°)", native=(0.1, (-180.0, 90.0))),
+    dict(key="gldas_tair", run=monthly(npy_layer(os.path.join(GEE_CLIMATE, "tair_c")), ALL), cmap="div_rdbu",
+         basis=ANNUAL_MEAN + " (GLDAS-2.1 Noah 2 m air temperature, 0.25°)", native=(0.25, (-180.0, 90.0)),
+         unit_out="°C/yr"),
+    dict(key="lulc_built", run=yearly_lulc("lulc_built_pct"), cmap="div_puor", unit_out="percentage points/yr",
+         basis="the annual Impact Observatory land-cover map itself (2018-2023; one map per year, no seasons)"),
+    dict(key="lulc_crop", run=yearly_lulc("lulc_crop_pct"), cmap="div_puor", unit_out="percentage points/yr",
+         basis="the annual Impact Observatory land-cover map itself (2018-2023; one map per year, no seasons)"),
+    dict(key="lulc_flooded_veg", run=yearly_lulc("lulc_flooded_veg_pct"), cmap="div_brbg",
+         unit_out="percentage points/yr",
+         basis="the annual Impact Observatory land-cover map itself (2018-2023; one map per year, no seasons)"),
     dict(key="tc_soil", run=monthly(TC("soil"), WET), cmap="div_brbg", basis=WET_MEAN, unit_out="mm/yr"),
     dict(key="sudd_inundation", run=yearly_sudd, cmap="div_brbg",
          units="% of clear Sep-Dec composites inundated", unit_out="percentage points/yr",
@@ -491,12 +529,31 @@ def process(L):
     vals = np.concatenate([np.abs(s[np.isfinite(s)]) for s in slopes.values()])
     lim = nice(float(np.percentile(vals, 98)))
     od = key + "_trend"
+    old_meta_p = os.path.join(RASTERS, od, "meta.json")
+    if CONTINUOUS and os.path.exists(old_meta_p):
+        old = json.load(open(old_meta_p))
+        if old.get("vmax") and float(old["vmax"]) > 0:
+            if abs(float(old["vmax"]) - lim) > 1e-12:
+                print(f"  {key}: keeping existing limit ±{old['vmax']} (recomputed would be ±{lim:g})", flush=True)
+            lim = float(old["vmax"])
     units = L.get("unit_out") or (L.get("units") or base_meta.get("units", "")) + "/yr"
     for p in glob.glob(os.path.join(RASTERS, od, "*.png")):
         os.remove(p)
     meta = None
+    domain = np.isfinite(Y).any(0)
+    rtf = tf
+    if CONTINUOUS and L.get("native"):
+        res, origin = L["native"]
+        dn, rtf = ou.to_native(np.where(domain, 1.0, np.nan).astype("float32"), res, origin, tf)
+        domain = np.isfinite(dn)
     for e, s in slopes.items():
-        meta = ou.write_overlay(s, tf, crs, od, str(e), -lim, lim, L["cmap"], {}, max_px=1000, min_px=700)
+        if CONTINUOUS:
+            if L.get("native"):
+                s, _ = ou.to_native(s, res, origin, tf)
+            meta = ou.write_overlay_continuous(s, rtf, crs, od, str(e), -lim, lim, ou.RWG, domain=domain,
+                                               max_px=1000, min_px=700)
+        else:
+            meta = ou.write_overlay(s, tf, crs, od, str(e), -lim, lim, L["cmap"], {}, max_px=1000, min_px=700)
     yr_count = {str(e): int(sum(np.isfinite(Y[i]).any() for i in range(len(YEARS)) if YEARS[i] <= e))
                 for e in slopes}
     out = {
@@ -515,9 +572,19 @@ def process(L):
         "basis": L["basis"].rstrip(".") + "." + (ANOM if "mean" in L["basis"] and "S-NPP" not in L["basis"] else ""),
         "years_with_data": yr_count,
         "notes": (f"Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year "
-                  f"(>= 3 years), in {units}. {CMAP_NOTE[L['cmap']]}; white = no change. No significance test is "
-                  "applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend."),
+                  f"(>= 3 years), in {units}. "
+                  + ("Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between "
+                     "cells; black hatching = data but too few years for a slope). " if CONTINUOUS else
+                     f"{CMAP_NOTE[L['cmap']]}; white = no change. ")
+                  + "No significance test is applied per pixel: with 3-8 yearly points a slope is a description of "
+                  "change, not proof of a trend."),
     }
+    if CONTINUOUS:
+        ou.continuous_meta(out, -lim, lim, ou.RWG, "symmetric about 0, fixed across years")
+        out["scale"] = "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)"
+        if L.get("native"):
+            out["smoothing"] = (f"slopes averaged onto the native {L['native'][0]}° cells, then bilinear interpolation "
+                                "to the display pixels")
     with open(os.path.join(RASTERS, od, "meta.json"), "w") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
     sz = sum(os.path.getsize(p) for p in glob.glob(os.path.join(RASTERS, od, "*.png")))
@@ -529,7 +596,12 @@ def process(L):
 
 
 def main():
-    want = set(sys.argv[1:])
+    global CONTINUOUS
+    args = sys.argv[1:]
+    if "--continuous" in args:
+        CONTINUOUS = True
+        args = [a for a in args if a != "--continuous"]
+    want = set(args)
     for L in LAYERS:
         if want and L["key"] not in want:
             continue
