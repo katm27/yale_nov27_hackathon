@@ -3,23 +3,24 @@
   "category": "environment",
   "temporal": "monthly",
   "aggregation": "county mean as computed in Drive pipeline (POWER grid cells averaged over county)",
-  "id": "precip_mm",
-  "label": "Precipitation (IMERG)",
+  "id": "precip_mm_power",
+  "label": "Precipitation (IMERG via NASA POWER)",
   "group": "Precipitation",
   "units": "mm/month",
   "source": "GPM IMERG V07 Final via NASA POWER (IMERG_PRECTOT)",
   "source_url": "https://gpm.nasa.gov/data/imerg",
-  "native_resolution": "0.1° (~10 km)",
+  "native_resolution": "0.5° x 0.625° (POWER regridding of 0.1° IMERG)",
   "higher_is": "better",
   "index_ok": true,
-  "notes": "mm/day from POWER converted to mm/month."
+  "notes": "mm/day from POWER converted to mm/month. Superseded by precip_mm (native 0.1° IMERG via GEE).",
+  "hidden": true
  },
  {
   "category": "environment",
   "temporal": "monthly",
   "aggregation": "county mean as computed in Drive pipeline (POWER grid cells averaged over county)",
-  "id": "tair_c",
-  "label": "Mean air temperature (2 m)",
+  "id": "tair_c_power",
+  "label": "Mean air temperature (2 m, MERRA-2 via POWER)",
   "group": "Temperature",
   "units": "°C",
   "source": "MERRA-2 reanalysis via NASA POWER (T2M)",
@@ -27,7 +28,8 @@
   "native_resolution": "0.5° x 0.625° (~50 km)",
   "higher_is": "worse",
   "index_ok": false,
-  "notes": ""
+  "notes": "Superseded by tair_c (GLDAS-2.1 0.25° via GEE).",
+  "hidden": true
  },
  {
   "category": "environment",
