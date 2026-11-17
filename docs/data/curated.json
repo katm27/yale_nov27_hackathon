@@ -28,12 +28,6 @@
     {
       "category": "climate",
       "group": "Water & drought",
-      "id": "smap_sm_surface",
-      "label": "Soil moisture, top 5 cm"
-    },
-    {
-      "category": "climate",
-      "group": "Water & drought",
       "id": "modis_et_monthly_mm",
       "label": "Evapotranspiration"
     },
@@ -52,20 +46,8 @@
     {
       "category": "climate",
       "group": "Water & drought",
-      "id": "surface_water_pct",
-      "label": "Open water"
-    },
-    {
-      "category": "climate",
-      "group": "Water & drought",
       "id": "gldas_gws_anom_cm",
       "label": "Groundwater"
-    },
-    {
-      "category": "climate",
-      "group": "Water & drought",
-      "id": "gracedm_gws_pctl",
-      "label": "Groundwater compared with normal (percentile)"
     },
     {
       "category": "climate",
@@ -123,37 +105,31 @@
     },
     {
       "category": "human",
-      "group": "Armed conflict (ACLED and UCDP)",
+      "group": "Armed conflict (ACLED)",
       "id": "acled_st_armed_clash_events",
       "label": "Armed clashes"
     },
     {
       "category": "human",
-      "group": "Armed conflict (ACLED and UCDP)",
+      "group": "Armed conflict (ACLED)",
       "id": "acled_st_air_drone_strikes",
       "label": "Air and drone strikes"
     },
     {
       "category": "human",
-      "group": "Armed conflict (ACLED and UCDP)",
+      "group": "Armed conflict (ACLED)",
       "id": "acled_civ_fatalities",
       "label": "Civilians killed in attacks"
     },
     {
       "category": "human",
-      "group": "Armed conflict (ACLED and UCDP)",
+      "group": "Armed conflict (ACLED)",
       "id": "acled_pv_events",
       "label": "Political violence events"
     },
     {
       "category": "human",
-      "group": "Armed conflict (ACLED and UCDP)",
-      "id": "ucdp_events",
-      "label": "Deadly conflict events (UCDP)"
-    },
-    {
-      "category": "human",
-      "group": "Armed conflict (ACLED and UCDP)",
+      "group": "Armed conflict (ACLED)",
       "id": "acled_st_territory_change_events",
       "label": "Territory changing hands"
     },
@@ -162,24 +138,6 @@
       "group": "Displacement (IOM)",
       "id": "dtm_idps",
       "label": "Displaced people living in the county"
-    },
-    {
-      "category": "human",
-      "group": "Displacement (IOM)",
-      "id": "et_ind_flooding",
-      "label": "Newly displaced by floods"
-    },
-    {
-      "category": "human",
-      "group": "Displacement (IOM)",
-      "id": "et_ind_local_communal_conflict",
-      "label": "Newly displaced by local conflict"
-    },
-    {
-      "category": "human",
-      "group": "Displacement (IOM)",
-      "id": "et_ind_sudan_conflict",
-      "label": "Arrivals fleeing the war in Sudan"
     },
     {
       "category": "human",
@@ -258,7 +216,6 @@
     "sudd_inundation_pct": "sudd_inundation",
     "modis_lst_day_c": "modis_lst_day",
     "modis_ndvi": "modis_ndvi",
-    "gracedm_gws_pctl": "gracedm_gws",
     "gldas_gws_anom_cm": "gldas_gws",
     "smap_sm_rootzone": "smap_sm_rootzone",
     "maiac_aod_055": "maiac_aod",
@@ -268,8 +225,7 @@
     "lulc_crop_pct": "lulc_crop",
     "lulc_flooded_veg_pct": "lulc_flooded_veg",
     "soil_clay_0_30cm": "soil_clay",
-    "elevation_mean": "elevation",
-    "smap_sm_surface": "smap_sm_surface"
+    "elevation_mean": "elevation"
   },
   "background": [
     {
@@ -305,7 +261,8 @@
     "polygons_ethnic_groups",
     "points_unmiss",
     "points_water_points",
-    "points_subsidence_insar"
+    "points_subsidence_insar",
+    "points_insecurity_insight"
   ],
   "flow_groups": {
     "climate": {
