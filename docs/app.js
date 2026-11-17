@@ -933,24 +933,22 @@
   function nationalSpecs() {
     const A = natArr, mul = (arr, k) => arr && arr.map((x) => (x == null ? null : x * k));
     const specs = [];
-    const cov = A("hrp_coverage_year"), fund = A("hrp_funding_year_usd"), req = A("hrp_requirement_year_usd");
-    if (cov) specs.push({ title: "UN aid appeal: share of the money requested that was received", sub: "South Sudan Humanitarian Response Plan, by calendar year (OCHA Financial Tracking Service).", step: true,
-      sets: [{ data: mul(cov, 100), color: "#2a78d6", label: "% of requested amount received", fmt: (x) => `${fmt(x, 2)}%` }], yMin: 0, yMax: 100,
-      extra: (i) => (fund && req && fund[i] != null ? `${usd(fund[i])} received of ${usd(req[i])} requested` : "") });
-    const disb = A("usaid_disbursed_month_usd"), obl = A("usaid_obligated_month_usd");
-    if (disb && obl) {
-      const yd = yearly(disb, "sum"), yo = yearly(obl, "sum"), pct = yd.map((x, i) => (x != null && yo[i] ? (100 * x) / yo[i] : null));
-      specs.push({ title: "USAID aid paid out, as a % of aid committed that year", sub: "Calendar-year totals from ForeignAssistance.gov. The share can pass 100% when money committed in earlier years is paid out.", step: true,
-        sets: [{ data: pct, color: "#2a78d6", label: "Paid out as % of committed", fmt: (x) => `${fmt(x, 3)}%` }], yMin: 0, refLine: 100,
-        extra: (i) => (yd[i] != null ? `${yearOf(i)}: ${usd(yd[i])} paid out · ${usd(yo[i])} committed` : "") });
-    }
-    const usm = A("fts_us_gov_funding_month_usd");
-    if (usm) specs.push({ title: "US government humanitarian funding, by month", sub: "Funding decisions recorded by OCHA's Financial Tracking Service, in US$.", bar: true,
-      sets: [{ data: usm, color: "#2a78d6", label: "US$ per month", fmt: usd }], yMin: 0 });
-    const share = A("fts_us_share_year"), usy = A("fts_us_gov_funding_year_usd");
-    if (share && usy) specs.push({ title: "US share of all humanitarian funding (solid) and US amount per year (dashed)", sub: "OCHA Financial Tracking Service, by calendar year.", step: true,
-      sets: [{ data: mul(share, 100), color: "#2a78d6", label: "US share of all humanitarian funding", fmt: (x) => `${fmt(x, 2)}%`, axis: "y" },
-        { data: usy, color: "#6250d6", dash: [6, 4], label: "US funding that year", fmt: usd, axis: "y2" }], yMin: 0, y2: true });
+    // ---- funding, told in three yearly steps: needs vs money, who paid, and USAID's pipeline ----
+    const YEARS = [...new Set(state.months.map((m) => +m.slice(0, 4)))];
+    const perYear = (id, how) => { const a = A(id); if (!a) return null; const by = {}; a.forEach((x, i) => { if (x != null && isFinite(x)) (by[yearOf(i)] = by[yearOf(i)] || []).push(x); });
+      return YEARS.map((y) => (by[y] ? (how === "sum" ? by[y].reduce((p, q) => p + q, 0) : by[y][by[y].length - 1]) : null)); };
+    const req = perYear("hrp_requirement_year_usd"), rec = perYear("hrp_funding_year_usd"), cov = perYear("hrp_coverage_year");
+    if (req && rec) specs.push({ id: "hrp_funding_year_usd", annual: true, title: "UN aid appeal: money requested and money received", sub: "South Sudan Humanitarian Response Plan, by calendar year (OCHA Financial Tracking Service). Needs stayed level; the money received fell in 2025.",
+      sets: [{ data: rec, color: "#2a78d6", label: "Received", fmt: usd, type: "bar" }, { data: req, color: "#4a4a4a", label: "Requested", fmt: usd, type: "line", dash: [5, 4] }], yMin: 0,
+      extra: (k) => (cov && cov[k] != null ? `${fmt(100 * cov[k], 2)}% of the request was funded` : "") });
+    const tot = perYear("fts_hum_funding_year_usd"), usy = perYear("fts_us_gov_funding_year_usd");
+    if (tot && usy) { const oth = tot.map((x, k) => (x != null && usy[k] != null ? x - usy[k] : null));
+      specs.push({ id: "fts_hum_funding_year_usd", annual: true, stacked: true, title: "Who paid: US government and all other donors", sub: "All humanitarian funding to South Sudan by calendar year (OCHA Financial Tracking Service). Other donors held steady; the US cut its funding by more than half in 2025 and no one filled the gap.",
+        sets: [{ data: usy, color: "#2a78d6", label: "US government", fmt: usd, type: "bar", stack: "f" }, { data: oth, color: "#9a988f", label: "All other donors", fmt: usd, type: "bar", stack: "f" }], yMin: 0,
+        extra: (k) => (tot[k] != null ? `Total ${usd(tot[k])} · US share ${fmt((100 * usy[k]) / tot[k], 2)}%` : "") }); }
+    const obl = perYear("usaid_obligated_month_usd", "sum"), dis = perYear("usaid_disbursed_month_usd", "sum");
+    if (obl && dis) specs.push({ id: "usaid_obligated_month_usd", annual: true, title: "USAID: new commitments and money paid out", sub: "ForeignAssistance.gov, calendar-year totals. Payouts lag commitments, so in 2025 money promised in earlier years was still being paid while new commitments collapsed.",
+      sets: [{ data: obl, color: "#6250d6", label: "New commitments", fmt: usd, type: "bar" }, { data: dis, color: "#2a78d6", label: "Paid out", fmt: usd, type: "bar" }], yMin: 0 });
     const add = (id, title, sub, color, f, opts = {}) => { let a = A(id); if (a && opts.prep) a = opts.prep(a); if (a) specs.push({ id, title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f, dash: opts.dash }], yMin: 0, ...opts }); };
     // Survey-edition series (WPS Index): keep one value per edition year, drawn as a dot at mid-year.
     const editions = (arr) => arr.map((x, i) => (x != null && state.months[i].endsWith("-07") ? x : null));
@@ -988,6 +986,7 @@
       if (nt && nt.significant) { tile.classList.add("sig"); tile.title = "The 2018–2025 trend is statistically significant"; }
       tile.innerHTML = `<h3>${esc(spec.title)}</h3><p class="nt-sub">${esc(spec.sub)}</p><div class="nt-v"></div><div class="nt-canvas"><canvas></canvas></div>`;
       box.appendChild(tile);
+      if (spec.annual) { renderAnnualChart(tile, spec, ink2, line); continue; }
       const datasets = spec.sets.map((s) => ({ label: s.label, data: s.data, borderColor: s.color, backgroundColor: spec.bar ? s.color + "cc" : s.color, borderWidth: spec.bar ? 0 : 2,
         borderDash: s.dash || [], stepped: spec.step ? "middle" : false, pointRadius: spec.points ? 4 : 0, pointHitRadius: 8, spanGaps: !!spec.points, tension: 0, yAxisID: s.axis || "y", type: spec.bar && !s.dash ? "bar" : "line", barPercentage: 1, categoryPercentage: 1 }));
       const chart = new Chart(tile.querySelector("canvas"), {
@@ -1011,8 +1010,32 @@
     }
     updateNational();
   }
+  /** Yearly charts (funding): years on the x axis, bars (optionally stacked) and a dashed line, cursor on the slider's year. */
+  function renderAnnualChart(tile, spec, ink2, line) {
+    const YEARS = [...new Set(state.months.map((m) => +m.slice(0, 4)))];
+    tile.insertAdjacentHTML("beforeend", `<div class="nt-legend">${spec.sets.map((s) => `<span><i style="background:${s.dash ? "none" : s.color};${s.dash ? `border-top:2px dashed ${s.color};height:0;` : ""}"></i>${esc(s.label)}</span>`).join("")}</div>`);
+    const datasets = spec.sets.map((s) => ({ label: s.label, data: s.data, type: s.type || "bar", stack: s.stack, borderColor: s.color, backgroundColor: s.type === "line" ? "transparent" : s.color + "dd",
+      borderWidth: s.type === "line" ? 2 : 0, borderDash: s.dash || [], pointRadius: s.type === "line" ? 3 : 0, pointBackgroundColor: s.color, tension: 0, order: s.type === "line" ? 0 : 1 }));
+    const chart = new Chart(tile.querySelector("canvas"), {
+      type: "bar", data: { labels: YEARS.map(String), datasets },
+      options: { animation: false, responsive: true, maintainAspectRatio: false, interaction: { mode: "index", intersect: false },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${c.raw == null ? "–" : usd(c.raw)}`, afterBody: (c) => (spec.extra ? spec.extra(c[0].dataIndex) : "") } } },
+        scales: { x: { stacked: !!spec.stacked, ticks: { color: ink2, font: { size: 11 } }, grid: { display: false } },
+          y: { stacked: !!spec.stacked, min: 0, ticks: { color: ink2, font: { size: 10 }, maxTicksLimit: 4, callback: (x) => usdShort(x) }, grid: { color: line } } },
+        onClick: (evt, els, ch) => { const k = Math.round(ch.scales.x.getValueForPixel(evt.x)); const i = state.months.indexOf(`${YEARS[k]}-01`); if (i >= 0 && state.view === "map") setTime(i); } },
+      plugins: [{ id: "marks", afterDraw(c) { if (state.view !== "map") return; const { ctx, chartArea: a, scales } = c; const k = YEARS.indexOf(yearOf(state.t)); if (k < 0) return;
+        const x = scales.x.getPixelForValue(k); ctx.save(); ctx.strokeStyle = ORANGE; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(x, a.top); ctx.lineTo(x, a.bottom); ctx.stroke(); ctx.restore(); } }],
+    });
+    chart._spec = spec; chart._tile = tile; chart._years = YEARS;
+    state.natCharts.push(chart);
+  }
   function updateNational() {
     for (const c of state.natCharts) {
+      if (c._spec.annual) {
+        const sp = c._spec, Y = state.view === "map" ? yearOf(state.t) : c._years[c._years.length - 1], k = c._years.indexOf(Y);
+        const parts = sp.sets.map((s) => `${s.label}: <b>${s.data[k] == null ? "no data" : usd(s.data[k])}</b>`); const ex = sp.extra ? sp.extra(k) : "";
+        c._tile.querySelector(".nt-v").innerHTML = `${Y}: ${parts.join(" · ")}${ex ? `<br><span class="muted">${esc(ex)}</span>` : ""}`; c.draw(); continue;
+      }
       const sp = c._spec, i0 = state.view === "map" ? state.t : lastIdx(sp.sets[0].data);
       const i = sp.points && i0 != null ? lastIdx(sp.sets[0].data.slice(0, i0 + 1)) : i0;   // dot series: latest edition so far
       const val = (s) => (s.data[i] == null ? "no data" : s.fmt(s.data[i]));
