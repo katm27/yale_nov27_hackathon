@@ -122,8 +122,8 @@
  ],
  "source": "NASA GRACE-DA global drought indicator (gws_inst) via nasagrace.unl.edu",
  "crs": "EPSG:3857",
- "width": 500,
- "height": 363,
+ "width": 400,
+ "height": 290,
  "original_colormap": "brown-teal (0 = driest, 50 = normal, 100 = wettest)",
  "original_colors": [
   "#8c510a",

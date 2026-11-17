@@ -1,31 +1,27 @@
 {
  "key": "modis_lst_day",
  "label": "Daytime land surface temperature (MODIS)",
- "units": "\u00b0C",
+ "units": "°C",
  "bounds": [
   [
-   3.43784,
-   24.10216
+   3.4021089038843564,
+   23.399999999999995
   ],
   [
-   12.28635,
-   36.00099
+   12.299999999999999,
+   36.00411260071506
   ]
  ],
- "vmin": 20.0,
- "vmax": 55.0,
- "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "vmin": 25.4,
+ "vmax": 44.9,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
  "colors": [
   "#b2182b",
-  "#ef8a62",
-  "#fddbc7",
   "#ffffff",
-  "#d9f0d3",
-  "#7fbf7b",
   "#1b7837"
  ],
  "nodata_color": "black diagonal hatching (no valid data)",
- "native_resolution": "1 km MODIS (0.01\u00b0 grid)",
+ "native_resolution": "1 km MODIS (0.01° grid)",
  "dates": [
   "2018-01",
   "2018-02",
@@ -121,8 +117,8 @@
  ],
  "source": "MODIS MOD11A2 v061 (Terra) via Microsoft Planetary Computer",
  "crs": "EPSG:3857",
- "width": 900,
- "height": 676,
+ "width": 450,
+ "height": 321,
  "original_colormap": "inferno",
  "original_colors": [
   "#000003",
@@ -138,16 +134,9 @@
   "#f7fb99",
   "#fcfea4"
  ],
- "bins": [
-  20.0,
-  25.0,
-  30.0,
-  35.0,
-  40.0,
-  45.0,
-  50.0,
-  55.0
- ],
- "recolored": true,
- "palette": "rwg7"
+ "bins": null,
+ "palette": "rwg-continuous",
+ "continuous": true,
+ "scale": "linear",
+ "smoothing": "average of the grid cells in each display pixel"
 }

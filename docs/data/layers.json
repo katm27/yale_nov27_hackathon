@@ -890,7 +890,7 @@
    "crs": "EPSG:3857",
    "bounds": [
     [
-     3.3620383300163064,
+     3.3620383300163055,
      23.40000000000001
     ],
     [
@@ -898,8 +898,8 @@
      36.0442530867046
     ]
    ],
-   "width": 500,
-   "height": 357,
+   "width": 400,
+   "height": 286,
    "dates": [
     "2018-01",
     "2018-02",
@@ -1182,8 +1182,8 @@
    "nodata_color": "black diagonal hatching (no valid data)",
    "palette": "rwg-continuous",
    "continuous": true,
-   "width": 900,
-   "height": 684,
+   "width": 700,
+   "height": 532,
    "scale": "linear",
    "smoothing": "average of the grid cells in each display pixel",
    "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
@@ -1363,8 +1363,8 @@
    ],
    "source": "NASA GLDAS-2.2 CLSM GRACE-DA (GWS_tavg) via Google Earth Engine",
    "crs": "EPSG:3857",
-   "width": 500,
-   "height": 363,
+   "width": 400,
+   "height": 290,
    "original_colormap": "brown-teal (diverging, 0 = 2004-2020 mean)",
    "original_colors": [
     "#8c510a",
@@ -1416,7 +1416,7 @@
     "2024",
     "2025"
    ],
-   "native_resolution": "0.25\u00b0 (~28 km) GLDAS grid, nearest-neighbour",
+   "native_resolution": "0.25\u00b0 (~28 km) GLDAS grid, bilinear smoothing between cell centres",
    "source": "NASA GLDAS-2.2 CLSM GRACE-DA (GWS_tavg) via Google Earth Engine",
    "trend_of": "gldas_gws",
    "basis": "annual mean (Jan-Dec) of the monthly values (groundwater storage anomaly vs 2004-2020, GLDAS-2.2 CLSM GRACE-DA). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
@@ -1773,8 +1773,8 @@
    ],
    "source": "NASA GRACE-DA global drought indicator (gws_inst) via nasagrace.unl.edu",
    "crs": "EPSG:3857",
-   "width": 500,
-   "height": 363,
+   "width": 400,
+   "height": 290,
    "original_colormap": "brown-teal (0 = driest, 50 = normal, 100 = wettest)",
    "original_colors": [
     "#8c510a",
@@ -1826,7 +1826,7 @@
     "2024",
     "2025"
    ],
-   "native_resolution": "0.25\u00b0 (~28 km) model grid, nearest-neighbour",
+   "native_resolution": "0.25\u00b0 (~28 km) model grid, bilinear smoothing between cell centres",
    "source": "NASA GRACE-DA global drought indicator (gws_inst) via nasagrace.unl.edu",
    "trend_of": "gracedm_gws",
    "basis": "annual mean (Jan-Dec) of the monthly values (weekly groundwater percentiles averaged by month, then by year). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
@@ -1868,7 +1868,7 @@
    "crs": "EPSG:3857",
    "bounds": [
     [
-     3.3620383300163064,
+     3.3620383300163055,
      23.40000000000001
     ],
     [
@@ -1876,8 +1876,8 @@
      36.0442530867046
     ]
    ],
-   "width": 500,
-   "height": 357,
+   "width": 400,
+   "height": 286,
    "dates": [
     "2018-01",
     "2018-02",
@@ -2312,24 +2312,20 @@
    "units": "AOD",
    "bounds": [
     [
-     3.43784,
-     24.10216
+     3.4021089038843564,
+     23.399999999999995
     ],
     [
-     12.28635,
-     36.00099
+     12.299999999999999,
+     36.00411260071506
     ]
    ],
-   "vmin": 0.0,
-   "vmax": 1.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": 0.08,
+   "vmax": 0.507,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear",
@@ -2435,8 +2431,8 @@
    ],
    "source": "MODIS MCD19A2 v061 via Google Earth Engine",
    "crs": "EPSG:3857",
-   "width": 900,
-   "height": 676,
+   "width": 450,
+   "height": 321,
    "original_colormap": "ylorbr",
    "original_colors": [
     "#ffffe5",
@@ -2452,18 +2448,10 @@
     "#902f03",
     "#8c2d04"
    ],
-   "bins": [
-    0.0,
-    0.1429,
-    0.2857,
-    0.4286,
-    0.5714,
-    0.7143,
-    0.8571,
-    1.0
-   ],
-   "recolored": true,
-   "palette": "rwg7"
+   "bins": null,
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "smoothing": "average of the grid cells in each display pixel"
   },
   {
    "key": "maiac_aod_trend",
@@ -2476,7 +2464,7 @@
     ],
     [
      12.299999999999999,
-     36.004112600715054
+     36.00411260071506
     ]
    ],
    "vmin": -0.033,
@@ -2824,24 +2812,20 @@
    "units": "mm/month",
    "bounds": [
     [
-     3.43784,
-     24.10216
+     3.4021089038843564,
+     23.399999999999995
     ],
     [
-     12.28635,
-     36.00099
+     12.299999999999999,
+     36.00411260071506
     ]
    ],
-   "vmin": 0.0,
-   "vmax": 150.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": 0.141,
+   "vmax": 152.0,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear",
@@ -2947,8 +2931,8 @@
    ],
    "source": "MODIS MOD16A2GF v061 via NASA AppEEARS",
    "crs": "EPSG:3857",
-   "width": 900,
-   "height": 676,
+   "width": 450,
+   "height": 321,
    "original_colormap": "blues",
    "original_colors": [
     "#f7fbff",
@@ -2964,18 +2948,10 @@
     "#09336e",
     "#08306b"
    ],
-   "bins": [
-    0.0,
-    21.43,
-    42.86,
-    64.29,
-    85.71,
-    107.1,
-    128.6,
-    150.0
-   ],
-   "recolored": true,
-   "palette": "rwg7"
+   "bins": null,
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "smoothing": "average of the grid cells in each display pixel"
   },
   {
    "key": "modis_et_monthly_trend",
@@ -2988,7 +2964,7 @@
     ],
     [
      12.299999999999999,
-     36.004112600715054
+     36.00411260071506
     ]
    ],
    "vmin": -18.0,
@@ -3107,24 +3083,20 @@
    "units": "\u00b0C",
    "bounds": [
     [
-     3.43784,
-     24.10216
+     3.4021089038843564,
+     23.399999999999995
     ],
     [
-     12.28635,
-     36.00099
+     12.299999999999999,
+     36.00411260071506
     ]
    ],
-   "vmin": 20.0,
-   "vmax": 55.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": 25.4,
+   "vmax": 44.9,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "nodata_color": "black diagonal hatching (no valid data)",
@@ -3224,8 +3196,8 @@
    ],
    "source": "MODIS MOD11A2 v061 (Terra) via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "width": 900,
-   "height": 676,
+   "width": 450,
+   "height": 321,
    "original_colormap": "inferno",
    "original_colors": [
     "#000003",
@@ -3241,18 +3213,11 @@
     "#f7fb99",
     "#fcfea4"
    ],
-   "bins": [
-    20.0,
-    25.0,
-    30.0,
-    35.0,
-    40.0,
-    45.0,
-    50.0,
-    55.0
-   ],
-   "recolored": true,
-   "palette": "rwg7"
+   "bins": null,
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel"
   },
   {
    "key": "modis_lst_day_trend",
@@ -3265,7 +3230,7 @@
     ],
     [
      12.299999999999999,
-     36.004112600715054
+     36.00411260071506
     ]
    ],
    "vmin": -1.9,
@@ -3310,24 +3275,20 @@
    "units": "NDVI",
    "bounds": [
     [
-     3.43784,
-     24.10216
+     3.4021089038843564,
+     23.399999999999995
     ],
     [
-     12.28635,
-     36.00099
+     12.299999999999999,
+     36.00411260071506
     ]
    ],
-   "vmin": 0.1,
-   "vmax": 0.9,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": 0.233,
+   "vmax": 0.861,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "nodata_color": "black diagonal hatching (no valid data)",
@@ -3429,8 +3390,8 @@
    ],
    "source": "MODIS MOD13A1/MYD13A1 v061 via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "width": 900,
-   "height": 676,
+   "width": 450,
+   "height": 321,
    "original_colormap": "brown-yellow-green",
    "original_colors": [
     "#7f4a10",
@@ -3446,18 +3407,11 @@
     "#07361a",
     "#06331a"
    ],
-   "bins": [
-    0.1,
-    0.2143,
-    0.3286,
-    0.4429,
-    0.5571,
-    0.6714,
-    0.7857,
-    0.9
-   ],
-   "recolored": true,
-   "palette": "rwg7"
+   "bins": null,
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel"
   },
   {
    "key": "modis_ndvi_trend",
@@ -3470,7 +3424,7 @@
     ],
     [
      12.299999999999999,
-     36.004112600715054
+     36.00411260071506
     ]
    ],
    "vmin": -0.05,
@@ -4315,8 +4269,8 @@
    ],
    "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine (NASA/SMAP/SPL4SMGP/008)",
    "crs": "EPSG:3857",
-   "width": 500,
-   "height": 360,
+   "width": 400,
+   "height": 288,
    "original_colormap": "brown-teal",
    "original_colors": [
     "#8c510a",
@@ -4369,7 +4323,7 @@
     "2025"
    ],
    "native_resolution": "9 km (SMAP L4 EASE-Grid 2.0)",
-   "source": "SMAP SPL4SMGP v008 via NASA AppEEARS",
+   "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine (NASA/SMAP/SPL4SMGP/008)",
    "trend_of": "smap_sm_rootzone",
    "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope. Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
    "years_with_data": {

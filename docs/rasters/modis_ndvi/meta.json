@@ -4,28 +4,24 @@
  "units": "NDVI",
  "bounds": [
   [
-   3.43784,
-   24.10216
+   3.4021089038843564,
+   23.399999999999995
   ],
   [
-   12.28635,
-   36.00099
+   12.299999999999999,
+   36.00411260071506
   ]
  ],
- "vmin": 0.1,
- "vmax": 0.9,
- "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "vmin": 0.233,
+ "vmax": 0.861,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
  "colors": [
   "#b2182b",
-  "#ef8a62",
-  "#fddbc7",
   "#ffffff",
-  "#d9f0d3",
-  "#7fbf7b",
   "#1b7837"
  ],
  "nodata_color": "black diagonal hatching (no valid data)",
- "native_resolution": "500 m MODIS, rendered from ~1 km (0.01\u00b0) grid",
+ "native_resolution": "500 m MODIS, rendered from ~1 km (0.01°) grid",
  "dates": [
   "2018-01",
   "2018-02",
@@ -123,8 +119,8 @@
  ],
  "source": "MODIS MOD13A1/MYD13A1 v061 via Microsoft Planetary Computer",
  "crs": "EPSG:3857",
- "width": 900,
- "height": 676,
+ "width": 450,
+ "height": 321,
  "original_colormap": "brown-yellow-green",
  "original_colors": [
   "#7f4a10",
@@ -140,16 +136,9 @@
   "#07361a",
   "#06331a"
  ],
- "bins": [
-  0.1,
-  0.2143,
-  0.3286,
-  0.4429,
-  0.5571,
-  0.6714,
-  0.7857,
-  0.9
- ],
- "recolored": true,
- "palette": "rwg7"
+ "bins": null,
+ "palette": "rwg-continuous",
+ "continuous": true,
+ "scale": "linear",
+ "smoothing": "average of the grid cells in each display pixel"
 }

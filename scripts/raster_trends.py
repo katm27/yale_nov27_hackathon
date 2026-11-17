@@ -24,7 +24,7 @@ Missing months are handled with a climatology-anomaly mean so a gap does not bia
 with clim_m = the pixel's 2018-2025 mean for calendar month m. A year needs >= half of its season's months
 (composites for Sudd) to be observed, otherwise it is left out (e.g. Sudd 2025, MODIS reflectance gap Jul-Nov 2025).
 
-Usage: python scripts/raster_trends.py [--continuous] [key ...]   (default: all layers; re-runnable, overwrites outputs)
+Usage: python scripts/raster_trends.py [--continuous [--levels N] [--max-px N]] [key ...]   (default: all layers; re-runnable, overwrites outputs)
 
 --continuous: render each slope map as a smooth continuous diverging ramp red #b2182b (decrease) -> white #ffffff (0)
 -> green #1b7837 (increase), symmetric about 0 with the layer's fixed +-limit (kept from an existing meta.json when
@@ -62,6 +62,7 @@ GEE_CLIMATE = os.environ.get("GEE_CLIMATE_GRIDS", os.path.join(SCRATCH, "gee_cli
 LULC = os.environ.get("LULC_GRIDS", os.path.join(SCRATCH, "lulc", "work", "grids"))
 CONTINUOUS = False  # set by --continuous
 LEVELS = 61  # colour shades in --continuous mode (--levels N)
+MAX_PX = 1000  # long side of the PNG (--max-px N)
 
 YEARS = list(range(2018, 2026))
 END_YEARS = list(range(2020, 2026))
@@ -554,7 +555,7 @@ def process(L):
             if L.get("native"):
                 s, _ = ou.to_native(s, res, origin, tf)
             meta = ou.write_overlay_continuous(s, rtf, crs, od, str(e), -lim, lim, ou.RWG, domain=domain,
-                                               max_px=1000, min_px=700, levels=L.get("levels", LEVELS))
+                                               max_px=MAX_PX, min_px=min(700, MAX_PX), levels=L.get("levels", LEVELS))
         else:
             meta = ou.write_overlay(s, tf, crs, od, str(e), -lim, lim, L["cmap"], {}, max_px=1000, min_px=700)
     yr_count = {str(e): int(sum(np.isfinite(Y[i]).any() for i in range(len(YEARS)) if YEARS[i] <= e))
@@ -599,15 +600,19 @@ def process(L):
 
 
 def main():
-    global CONTINUOUS, LEVELS
+    global CONTINUOUS, LEVELS, MAX_PX
     args = sys.argv[1:]
     if "--continuous" in args:
         CONTINUOUS = True
         args = [a for a in args if a != "--continuous"]
-    if "--levels" in args:
-        i = args.index("--levels")
-        LEVELS = int(args[i + 1])
-        args = args[:i] + args[i + 2:]
+    for opt in ("--levels", "--max-px"):
+        if opt in args:
+            i = args.index(opt)
+            if opt == "--levels":
+                LEVELS = int(args[i + 1])
+            else:
+                MAX_PX = int(args[i + 1])
+            args = args[:i] + args[i + 2:]
     want = set(args)
     for L in LAYERS:
         if want and L["key"] not in want:

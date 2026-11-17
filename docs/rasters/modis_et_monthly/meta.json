@@ -4,29 +4,25 @@
  "units": "mm/month",
  "bounds": [
   [
-   3.43784,
-   24.10216
+   3.4021089038843564,
+   23.399999999999995
   ],
   [
-   12.28635,
-   36.00099
+   12.299999999999999,
+   36.00411260071506
   ]
  ],
- "vmin": 0.0,
- "vmax": 150.0,
- "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "vmin": 0.141,
+ "vmax": 152.0,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
  "colors": [
   "#b2182b",
-  "#ef8a62",
-  "#fddbc7",
   "#ffffff",
-  "#d9f0d3",
-  "#7fbf7b",
   "#1b7837"
  ],
  "scale": "linear",
  "nodata_color": "black diagonal hatching (no valid data)",
- "native_resolution": "500 m MODIS (8-day, gap-filled), rendered from ~1 km (0.01\u00b0) grid",
+ "native_resolution": "500 m MODIS (8-day, gap-filled), rendered from ~1 km (0.01°) grid",
  "dates": [
   "2018-01",
   "2018-02",
@@ -127,8 +123,8 @@
  ],
  "source": "MODIS MOD16A2GF v061 via NASA AppEEARS",
  "crs": "EPSG:3857",
- "width": 900,
- "height": 676,
+ "width": 450,
+ "height": 321,
  "original_colormap": "blues",
  "original_colors": [
   "#f7fbff",
@@ -144,16 +140,8 @@
   "#09336e",
   "#08306b"
  ],
- "bins": [
-  0.0,
-  21.43,
-  42.86,
-  64.29,
-  85.71,
-  107.1,
-  128.6,
-  150.0
- ],
- "recolored": true,
- "palette": "rwg7"
+ "bins": null,
+ "palette": "rwg-continuous",
+ "continuous": true,
+ "smoothing": "average of the grid cells in each display pixel"
 }

@@ -123,8 +123,8 @@
  ],
  "source": "NASA GLDAS-2.2 CLSM GRACE-DA (GWS_tavg) via Google Earth Engine",
  "crs": "EPSG:3857",
- "width": 500,
- "height": 363,
+ "width": 400,
+ "height": 290,
  "original_colormap": "brown-teal (diverging, 0 = 2004-2020 mean)",
  "original_colors": [
   "#8c510a",

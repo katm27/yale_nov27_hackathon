@@ -208,7 +208,7 @@ def write_overlay_continuous(arr, transform, crs, key, date, vmin, vmax, colors=
     if domain is not None:
         dom = np.zeros((dh, dw), "uint8")
         reproject(domain.astype("uint8"), dom, src_transform=transform, src_crs=crs, dst_transform=dst_t,
-                  dst_crs="EPSG:3857", resampling=Resampling.nearest, src_nodata=None, dst_nodata=0)
+                  dst_crs="EPSG:3857", resampling=Resampling.nearest)  # no nodata: 0 must stay a value
         dom = dom.astype(bool) & inside
     else:
         dom = inside

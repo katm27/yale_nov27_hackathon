@@ -27,7 +27,7 @@ GREY = np.array([189, 189, 189], float)
 def run(key):
     mp = os.path.join(RASTERS, key, "meta.json")
     meta = json.load(open(mp))
-    if meta.get("palette") == "rwg7":
+    if meta.get("palette") == "rwg7" or meta.get("continuous"):  # continuous layers: scripts/continuous_rasters.py
         return 0
     n = 0
     for f in sorted(glob.glob(os.path.join(RASTERS, key, "*.png"))):

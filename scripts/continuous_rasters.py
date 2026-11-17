@@ -44,7 +44,7 @@ G25 = (0.25, (-180.0, 90.0))
 
 def npy_dates(d):
     return [(int(os.path.basename(p)[:4]), int(os.path.basename(p)[5:7]))
-            for p in sorted(glob.glob(os.path.join(d, "????-??.npy")))]
+            for p in sorted(glob.glob(os.path.join(d, "????-??.npy"))) if "2018-01" <= os.path.basename(p)[:7] <= "2025-12"]
 
 
 def npy_src(d):

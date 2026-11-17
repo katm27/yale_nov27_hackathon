@@ -344,9 +344,17 @@
       if (isCategorical(v)) {
         html += `<div class="lg-bins">${Object.keys(SOIL).map((k, i) => `<div><i style="background:${CATEGORICAL[i]}"></i>${SOIL[k]}</div>`).join("")}</div>`;
       } else {
-        const labs = r ? rasterBinLabels(r) : binLabels(v);
-        const rows = PAL7.map((c, k) => ({ c, lab: labs[k] })).reverse().filter((x) => x.lab);
-        html += `<div class="lg-bins">${rows.map((x) => `<div><i style="background:${x.c}"></i>${esc(x.lab)}</div>`).join("")}<div><i class="nd"></i>No data</div></div>`;
+        if (r && r.continuous) {
+          // smooth colour bar for continuous grids; the counties keep their own 7-step colours in the hover and panel
+          const cols = r.colors || ["#b2182b", "#ffffff", "#1b7837"], lo = +r.vmin, hi = +r.vmax, ctr = /_trend$/.test(r.key);
+          const lab = (x) => (ctr ? signed(x, 2) : fmt(x, 2));
+          html += `<div class="lg-ramp" style="background:linear-gradient(90deg, ${cols.join(", ")})"></div><div class="lg-ticks"><span>${esc(lab(lo))}</span>${ctr ? "<span>0</span>" : `<span>${esc(lab((lo + hi) / 2))}</span>`}<span>${esc(lab(hi))}</span></div>`
+            + `<div class="lg-bins"><div><i class="nd"></i>No data</div></div>`;
+        } else {
+          const labs = r ? rasterBinLabels(r) : binLabels(v);
+          const rows = PAL7.map((c, k) => ({ c, lab: labs[k] })).reverse().filter((x) => x.lab);
+          html += `<div class="lg-bins">${rows.map((x) => `<div><i style="background:${x.c}"></i>${esc(x.lab)}</div>`).join("")}<div><i class="nd"></i>No data</div></div>`;
+        }
         if (!isStatic(v) && state.trends && state.trends[v.id]) {
           const nSig = Object.values(state.trends[v.id]).filter((t) => t[T_SIG]).length;
           html += `<div class="lg-note"><span class="sig-swatch"></span> <b>Outlined counties (${nSig})</b> have a 2018–2025 trend that is found to be statistically significant.</div>`;

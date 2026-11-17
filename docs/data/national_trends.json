@@ -113,9 +113,9 @@
  },
  "precip_mm": {
   "how": "mean",
-  "p": 0.2343,
+  "p": 0.5004,
   "significant": false,
-  "slope": 0.9036028481012757,
+  "slope": 0.7130958408679966,
   "test": "seasonal Mann-Kendall (Hirsch-Slack)"
  },
  "et_ind_flooding": {
@@ -138,5 +138,12 @@
   "significant": false,
   "slope": 0.31331501831501846,
   "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "fts_hum_funding_year_usd": {
+  "how": "national",
+  "p": 0.0635,
+  "significant": false,
+  "slope": -23825000.0,
+  "test": "Mann-Kendall (short series, uncorrected)"
  }
 }

@@ -123,8 +123,8 @@
  ],
  "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine (NASA/SMAP/SPL4SMGP/008)",
  "crs": "EPSG:3857",
- "width": 500,
- "height": 360,
+ "width": 400,
+ "height": 288,
  "original_colormap": "brown-teal",
  "original_colors": [
   "#8c510a",

@@ -128,8 +128,8 @@
  "nodata_color": "black diagonal hatching (no valid data)",
  "palette": "rwg-continuous",
  "continuous": true,
- "width": 900,
- "height": 684,
+ "width": 700,
+ "height": 532,
  "scale": "linear",
  "smoothing": "average of the grid cells in each display pixel",
  "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"

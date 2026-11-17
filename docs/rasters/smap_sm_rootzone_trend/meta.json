@@ -30,7 +30,7 @@
   "2025"
  ],
  "native_resolution": "9 km (SMAP L4 EASE-Grid 2.0)",
- "source": "SMAP SPL4SMGP v008 via NASA AppEEARS",
+ "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine (NASA/SMAP/SPL4SMGP/008)",
  "trend_of": "smap_sm_rootzone",
  "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope. Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
  "years_with_data": {
