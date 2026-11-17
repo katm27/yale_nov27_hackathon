@@ -1,0 +1,333 @@
+{
+ "price_sorghum_local_usd": {
+  "filled_id": "price_sorghum_local_usd_filled",
+  "counts": {
+   "nearby_market": 3895,
+   "observed_wfp_variant": 802,
+   "observed": 532,
+   "observed_fewsnet": 200,
+   "interp_time": 115
+  },
+  "coverage_pct": {
+   "observed_wfp": 7.0,
+   "observed_all_sources": 20.2,
+   "plus_interp": 21.7,
+   "filled_total": 73.1
+  },
+  "counties_with_value": {
+   "observed_wfp": 31,
+   "filled": 77
+  },
+  "spatial_validation": {
+   "150": {
+    "n": 1192,
+    "mdape": 0.23977186311787066,
+    "p90_ape": 0.7074390506516818,
+    "median_nearest_km": 89.48226838004982
+   },
+   "120": {
+    "n": 840,
+    "mdape": 0.20683293698699617,
+    "p90_ape": 0.6664744472970462,
+    "median_nearest_km": 70.69053154667567
+   },
+   "100": {
+    "n": 632,
+    "mdape": 0.17478908188585607,
+    "p90_ape": 0.5599251028657385,
+    "median_nearest_km": 64.98988462085637
+   },
+   "75": {
+    "n": 482,
+    "mdape": 0.18162383880681232,
+    "p90_ape": 0.6498388494195116,
+    "median_nearest_km": 57.345884134135595
+   },
+   "50": {
+    "n": 157,
+    "mdape": 0.12813370473537597,
+    "p90_ape": 0.40846250523669875,
+    "median_nearest_km": 38.2666273083881
+   }
+  },
+  "spatial_radius_km": 150,
+  "temporal_validation": {
+   "n": 1322,
+   "mdape": 0.07911949868554308
+  }
+ },
+ "price_maize_usd": {
+  "filled_id": "price_maize_usd_filled",
+  "counts": {
+   "observed": 841,
+   "observed_fewsnet": 127,
+   "interp_time": 89
+  },
+  "coverage_pct": {
+   "observed_wfp": 11.1,
+   "observed_all_sources": 12.8,
+   "plus_interp": 13.9,
+   "filled_total": 13.9
+  },
+  "counties_with_value": {
+   "observed_wfp": 28,
+   "filled": 32
+  },
+  "spatial_validation": {
+   "150": {
+    "n": 500,
+    "mdape": 0.3334721643759544,
+    "p90_ape": 0.8771388186281813,
+    "median_nearest_km": 117.96382935902675
+   },
+   "120": {
+    "n": 322,
+    "mdape": 0.35777496839443734,
+    "p90_ape": 0.9406010069225935,
+    "median_nearest_km": 100.86007300905639
+   },
+   "100": {
+    "n": 145,
+    "mdape": 0.3493975903614459,
+    "p90_ape": 1.1262510974539066,
+    "median_nearest_km": 77.0980686306909
+   },
+   "75": {
+    "n": 72,
+    "mdape": 0.39438972326718935,
+    "p90_ape": 1.3122272568839317,
+    "median_nearest_km": 60.34393998034927
+   },
+   "50": {
+    "n": 28,
+    "mdape": 0.475303652814261,
+    "p90_ape": 1.3941353383458652,
+    "median_nearest_km": 38.282077735607835
+   }
+  },
+  "spatial_radius_km": null,
+  "temporal_validation": {
+   "n": 786,
+   "mdape": 0.08450250840292753
+  }
+ },
+ "price_diesel_parallel_usd": {
+  "filled_id": "price_diesel_parallel_usd_filled",
+  "counts": {
+   "nearby_market": 3642,
+   "observed": 1178,
+   "interp_time": 124
+  },
+  "coverage_pct": {
+   "observed_wfp": 15.5,
+   "observed_all_sources": 15.5,
+   "plus_interp": 17.2,
+   "filled_total": 65.2
+  },
+  "counties_with_value": {
+   "observed_wfp": 29,
+   "filled": 76
+  },
+  "spatial_validation": {
+   "150": {
+    "n": 761,
+    "mdape": 0.15418502202643175,
+    "p90_ape": 0.4748603351955308,
+    "median_nearest_km": 79.32501385896823
+   },
+   "120": {
+    "n": 581,
+    "mdape": 0.14285714285714288,
+    "p90_ape": 0.4589285714285714,
+    "median_nearest_km": 77.0980686306909
+   },
+   "100": {
+    "n": 470,
+    "mdape": 0.14285714285714293,
+    "p90_ape": 0.47680075702251584,
+    "median_nearest_km": 68.63185152851
+   },
+   "75": {
+    "n": 285,
+    "mdape": 0.14068441064638787,
+    "p90_ape": 0.42543996578637866,
+    "median_nearest_km": 57.31025470988239
+   },
+   "50": {
+    "n": 81,
+    "mdape": 0.11574074074074084,
+    "p90_ape": 0.23720930232558152,
+    "median_nearest_km": 36.71218112243694
+   }
+  },
+  "spatial_radius_km": 150,
+  "temporal_validation": {
+   "n": 984,
+   "mdape": 0.06517122553048563
+  }
+ },
+ "price_diesel_parallel_ssp": {
+  "filled_id": "price_diesel_parallel_ssp_filled",
+  "counts": {
+   "nearby_market": 3642,
+   "observed": 1178,
+   "interp_time": 124
+  },
+  "coverage_pct": {
+   "observed_wfp": 15.5,
+   "observed_all_sources": 15.5,
+   "plus_interp": 17.2,
+   "filled_total": 65.2
+  },
+  "counties_with_value": {
+   "observed_wfp": 29,
+   "filled": 76
+  },
+  "spatial_validation": {
+   "150": {
+    "n": 761,
+    "mdape": 0.15421004885180484,
+    "p90_ape": 0.4747623299543043,
+    "median_nearest_km": 79.32501385896823
+   },
+   "120": {
+    "n": 581,
+    "mdape": 0.14285714285714285,
+    "p90_ape": 0.46,
+    "median_nearest_km": 77.0980686306909
+   },
+   "100": {
+    "n": 470,
+    "mdape": 0.14285714285714285,
+    "p90_ape": 0.4791501123965061,
+    "median_nearest_km": 68.63185152851
+   },
+   "75": {
+    "n": 285,
+    "mdape": 0.14068701297708164,
+    "p90_ape": 0.42526269281178336,
+    "median_nearest_km": 57.31025470988239
+   },
+   "50": {
+    "n": 81,
+    "mdape": 0.11475700079671866,
+    "p90_ape": 0.23318248104480901,
+    "median_nearest_km": 36.71218112243694
+   }
+  },
+  "spatial_radius_km": 150,
+  "temporal_validation": {
+   "n": 984,
+   "mdape": 0.06275033548535225
+  }
+ },
+ "fx_ssp_per_usd": {
+  "filled_id": "fx_ssp_per_usd_filled",
+  "counts": {
+   "nearby_market": 3324,
+   "observed": 1236,
+   "interp_time": 56
+  },
+  "coverage_pct": {
+   "observed_wfp": 16.3,
+   "observed_all_sources": 16.3,
+   "plus_interp": 17.0,
+   "filled_total": 60.9
+  },
+  "counties_with_value": {
+   "observed_wfp": 32,
+   "filled": 77
+  },
+  "spatial_validation": {
+   "150": {
+    "n": 932,
+    "mdape": 0.01807600505802128,
+    "p90_ape": 0.08144539659936065,
+    "median_nearest_km": 89.48226838004982
+   },
+   "120": {
+    "n": 687,
+    "mdape": 0.01805898686022867,
+    "p90_ape": 0.08241165199616793,
+    "median_nearest_km": 74.06620762801731
+   },
+   "100": {
+    "n": 525,
+    "mdape": 0.01694915254237288,
+    "p90_ape": 0.08246403711059515,
+    "median_nearest_km": 68.63185152851
+   },
+   "75": {
+    "n": 344,
+    "mdape": 0.016666666666666666,
+    "p90_ape": 0.08336049044331442,
+    "median_nearest_km": 57.31025470988239
+   },
+   "50": {
+    "n": 123,
+    "mdape": 0.01545253863134658,
+    "p90_ape": 0.07908198818905052,
+    "median_nearest_km": 38.2666273083881
+   }
+  },
+  "spatial_radius_km": 150,
+  "temporal_validation": {
+   "n": 1117,
+   "mdape": 0.020981377412770567
+  }
+ },
+ "wage_casual_labour_usd": {
+  "filled_id": "wage_casual_labour_usd_filled",
+  "counts": {
+   "observed": 1442,
+   "interp_time": 138
+  },
+  "coverage_pct": {
+   "observed_wfp": 19.0,
+   "observed_all_sources": 19.0,
+   "plus_interp": 20.8,
+   "filled_total": 20.8
+  },
+  "counties_with_value": {
+   "observed_wfp": 32,
+   "filled": 32
+  },
+  "spatial_validation": {
+   "150": {
+    "n": 1039,
+    "mdape": 0.40030911901081917,
+    "p90_ape": 1.526518844420002,
+    "median_nearest_km": 89.26101014666959
+   },
+   "120": {
+    "n": 757,
+    "mdape": 0.4005602240896358,
+    "p90_ape": 1.4393467643467623,
+    "median_nearest_km": 77.0980686306909
+   },
+   "100": {
+    "n": 575,
+    "mdape": 0.44444444444444436,
+    "p90_ape": 1.7154533606404774,
+    "median_nearest_km": 68.63185152851
+   },
+   "75": {
+    "n": 369,
+    "mdape": 0.40030911901081917,
+    "p90_ape": 1.5019642437073626,
+    "median_nearest_km": 57.31025470988239
+   },
+   "50": {
+    "n": 133,
+    "mdape": 0.3990306946688207,
+    "p90_ape": 0.6944153001132003,
+    "median_nearest_km": 38.2666273083881
+   }
+  },
+  "spatial_radius_km": null,
+  "temporal_validation": {
+   "n": 1245,
+   "mdape": 0.064381159863175
+  }
+ }
+}

@@ -1,0 +1,13 @@
+variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
+fx_ssp_per_usd_filled,national,8984,0.012,77,31.5815,166.667
+fx_ssp_per_usd_filled,sudd,1573,0.008,16,32.8627,176.788
+price_diesel_parallel_ssp_filled,national,11701,0.001,76,65.9091,259.894
+price_diesel_parallel_ssp_filled,sudd,2478,0.001,15,68.22,264.735
+price_diesel_parallel_usd_filled,national,-244,0.909,76,-1.89712,-0.051875
+price_diesel_parallel_usd_filled,sudd,233,0.588,15,-1.01744,-0.035
+price_maize_usd_filled,national,-82,0.802,32,-0.379186,-0.0183307
+price_maize_usd_filled,sudd,37,0.04,7,4.34703,0.0297957
+price_sorghum_local_usd_filled,national,-1501,0.413,77,3.32391,0.0191837
+price_sorghum_local_usd_filled,sudd,-71,0.842,16,6.76617,0.0621432
+wage_casual_labour_usd_filled,national,-1174,0.096,32,-3.82575,-0.27875
+wage_casual_labour_usd_filled,sudd,-147,0.259,6,8.53405,0.210042
