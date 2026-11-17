@@ -1,0 +1,34 @@
+[
+ {
+  "id": "precip_mm",
+  "label": "Precipitation (IMERG)",
+  "category": "environment",
+  "group": "Precipitation",
+  "units": "mm/month",
+  "temporal": "monthly",
+  "source": "NASA GPM IMERG V07 Final, monthly (GPM_3IMERGM) via Google Earth Engine (NASA/GPM_L3/IMERG_MONTHLY_V07)",
+  "source_url": "https://doi.org/10.5067/GPM/IMERG/3B-MONTH/07",
+  "native_resolution": "0.1° (~11 km)",
+  "aggregation": "monthly mean rate (mm/hr) x 24 x days in month per 0.1° cell; then mean of the ~1 km cells inside the county (nearest-neighbour from the 0.1° grid = area-weighted mean of the 0.1° cells)",
+  "higher_is": "better",
+  "index_ok": true,
+  "raster": "imerg_precip",
+  "notes": "Satellite rainfall estimate (microwave + infrared, gauge-calibrated in the Final run). Oct-Dec 2025 are not yet in the monthly product on Earth Engine and are the mean of the half-hourly IMERG V07 rates (NASA/GPM_L3/IMERG_V07, status 'provisional' = Late run, not gauge-calibrated). Until Nov 2026 this series came from NASA POWER's 0.5° x 0.625° regridding of IMERG; it now comes from the native 0.1° grid shown on the map (the POWER version is kept as precip_mm_power, hidden)."
+ },
+ {
+  "id": "tair_c",
+  "label": "Mean air temperature (2 m)",
+  "category": "environment",
+  "group": "Temperature",
+  "units": "°C",
+  "temporal": "monthly",
+  "source": "NASA GLDAS-2.1 Noah land surface model, 3-hourly 0.25° (GLDAS_NOAH025_3H v2.1, Tair_f_inst) via Google Earth Engine (NASA/GLDAS/V021/NOAH/G025/T3H)",
+  "source_url": "https://doi.org/10.5067/E7TYRXPJKWOQ",
+  "native_resolution": "0.25° (~28 km)",
+  "aggregation": "per-pixel mean of all 3-hourly near-surface air temperatures in the month (K - 273.15); then mean of the ~1 km cells inside the county (nearest-neighbour from the 0.25° grid)",
+  "higher_is": "worse",
+  "index_ok": false,
+  "raster": "gldas_tair",
+  "notes": "Model forcing temperature (GDAS analysis, bias-corrected). Until Nov 2026 this series came from MERRA-2 via NASA POWER (0.5° x 0.625°); it now comes from the 0.25° GLDAS grid shown on the map (the MERRA-2 version is kept as tair_c_power, hidden)."
+ }
+]
