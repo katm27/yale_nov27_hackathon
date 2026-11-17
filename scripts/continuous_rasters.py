@@ -105,7 +105,8 @@ LAYERS = {
                       meta=dict(native_resolution="0.25° (~28 km) GLDAS grid, bilinear smoothing between cell centres")),
     "gracedm_gws": dict(src=npy_src(os.path.join(rt.GRACEDM, "gracedm_gws_pctl")), native=G25,
                         meta=dict(native_resolution="0.25° (~28 km) model grid, bilinear smoothing between cell centres")),
-    "viirs_fire": dict(src=viirs_src, log=True, zero_transparent=0.5, fixed_vmin=1.0, hatch=False),
+    # fire detections are point counts binned per 0.05 deg cell: no interpolation (it would invent low-count rings)
+    "viirs_fire": dict(src=viirs_src, log=True, zero_transparent=0.5, fixed_vmin=1.0, hatch=False, upsample="nearest"),
     "flood_s1": dict(src=flood_src, zero_transparent=1e-6,
                      meta=dict(units="% of known area flooded", label="Flooded area (monthly, Sentinel-1 SAR)",
                                notes=("Share of each ~1.3 km cell classified as flooded (vegetation/land under water; "
@@ -125,13 +126,13 @@ LAYERS = {
                "Google Earth Engine (NASA/FLDAS/NOAH01/C/GL/M/V001)",
         notes="Monthly mean near-surface air temperature. The county series tair_c is the mean of these same 0.1° cells "
               "inside each county." + CLIM_NOTE)),
-    "lulc_built": dict(src=lulc_src("lulc_built_pct"), new=dict(
+    "lulc_built": dict(src=lulc_src("lulc_built_pct"), zero_transparent=0.0, fixed_vmin=0.0, new=dict(
         label="Built-up land (share of each ~1 km cell, Impact Observatory 10 m land cover)", units="% of cell",
         temporal="annual")),
-    "lulc_crop": dict(src=lulc_src("lulc_crop_pct"), new=dict(
+    "lulc_crop": dict(src=lulc_src("lulc_crop_pct"), zero_transparent=0.0, fixed_vmin=0.0, new=dict(
         label="Cropland (share of each ~1 km cell, Impact Observatory 10 m land cover)", units="% of cell",
         temporal="annual")),
-    "lulc_flooded_veg": dict(src=lulc_src("lulc_flooded_veg_pct"), new=dict(
+    "lulc_flooded_veg": dict(src=lulc_src("lulc_flooded_veg_pct"), zero_transparent=0.0, fixed_vmin=0.0, new=dict(
         label="Flooded vegetation (share of each ~1 km cell, Impact Observatory 10 m land cover)", units="% of cell",
         temporal="annual")),
     "soil_clay": dict(src=tif_src("data/raw/ss_clay_soilgrids_0_30.tif"), new=dict(
@@ -204,16 +205,18 @@ def render(key, L, width, levels):
     for d, a in arrs:
         info = ou.write_overlay_continuous(a, rtf, crs, key, d, vmin, vmax, ou.RWG, log=bool(L.get("log")),
                                            max_px=width, min_px=min(width, 700), levels=levels,
-                                           hatch=L.get("hatch", True), transparent_below=L.get("zero_transparent"))
+                                           hatch=L.get("hatch", True), transparent_below=L.get("zero_transparent"),
+                                           upsample=L.get("upsample", "bilinear"))
         dates.append(d)
     ou.continuous_meta(meta, vmin, vmax, ou.RWG, "2nd-98th percentile of all dates" +
                        (", log10 scale (1 detection = red end)" if L.get("log") else ""))
     meta.update(bounds=info["bounds"], width=info["width"], height=info["height"], dates=dates,
                 scale="log10" if L.get("log") else "linear",
                 smoothing=("averaged onto the native cells, then bilinear interpolation to display pixels"
-                           if L.get("native") or key == "viirs_fire" else "average of the grid cells in each display pixel"))
+                           if L.get("native") else "none (each 0.05° cell drawn as a block)" if key == "viirs_fire"
+                           else "average of the grid cells in each display pixel"))
     if L.get("zero_transparent") is not None:
-        meta["transparent"] = "zero / none"
+        meta["transparent"] = "zero / none (and the colour scale starts at the lowest non-zero values)"
     with open(mp, "w") as f:
         json.dump(meta, f, indent=1, ensure_ascii=False)
     sz = sum(os.path.getsize(p) for p in glob.glob(os.path.join(od, "*.png")))

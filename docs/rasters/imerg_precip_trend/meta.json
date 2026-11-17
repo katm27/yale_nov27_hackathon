@@ -1,0 +1,51 @@
+{
+ "key": "imerg_precip_trend",
+ "label": "Rainfall (NASA GPM IMERG V07, monthly) — trend 2018→year (Sen's slope)",
+ "units": "mm/month/yr",
+ "bounds": [
+  [
+   3.3620383300163064,
+   23.40000000000001
+  ],
+  [
+   12.299999999999997,
+   36.0442530867046
+  ]
+ ],
+ "vmin": -30.0,
+ "vmax": 30.0,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+ "colors": [
+  "#b2182b",
+  "#ffffff",
+  "#1b7837"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "0.1° (~11 km), bilinear smoothing between cell centres",
+ "source": "NASA GPM IMERG V07 Final monthly (GPM_3IMERGM) via Google Earth Engine (NASA/GPM_L3/IMERG_MONTHLY_V07)",
+ "trend_of": "imerg_precip",
+ "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope (GPM IMERG V07 monthly, 0.1°). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+ "continuous": true,
+ "palette": "rwg-continuous",
+ "bins": null,
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "crs": "EPSG:3857",
+ "smoothing": "slopes averaged onto the native 0.1° cells, then bilinear interpolation to the display pixels"
+}

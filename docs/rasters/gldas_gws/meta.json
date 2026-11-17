@@ -4,29 +4,25 @@
  "units": "cm water",
  "bounds": [
   [
-   3.43784,
-   24.10216
+   3.3143826125742737,
+   23.25
   ],
   [
-   12.28635,
-   36.00099
+   12.5,
+   36.04703462636308
   ]
  ],
- "vmin": -19.0,
- "vmax": 19.0,
- "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "vmin": -21.8,
+ "vmax": 18.3,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
  "colors": [
   "#b2182b",
-  "#ef8a62",
-  "#fddbc7",
   "#ffffff",
-  "#d9f0d3",
-  "#7fbf7b",
   "#1b7837"
  ],
  "scale": "linear",
  "nodata_color": "black diagonal hatching (no valid data)",
- "native_resolution": "0.25\u00b0 (~28 km) GLDAS grid, nearest-neighbour",
+ "native_resolution": "0.25° (~28 km) GLDAS grid, bilinear smoothing between cell centres",
  "dates": [
   "2018-01",
   "2018-02",
@@ -127,8 +123,8 @@
  ],
  "source": "NASA GLDAS-2.2 CLSM GRACE-DA (GWS_tavg) via Google Earth Engine",
  "crs": "EPSG:3857",
- "width": 900,
- "height": 676,
+ "width": 500,
+ "height": 363,
  "original_colormap": "brown-teal (diverging, 0 = 2004-2020 mean)",
  "original_colors": [
   "#8c510a",
@@ -144,16 +140,8 @@
   "#076b63",
   "#01665e"
  ],
- "bins": [
-  -19.0,
-  -13.57,
-  -8.143,
-  -2.714,
-  2.714,
-  8.143,
-  13.57,
-  19.0
- ],
- "recolored": true,
- "palette": "rwg7"
+ "bins": null,
+ "palette": "rwg-continuous",
+ "continuous": true,
+ "smoothing": "averaged onto the native cells, then bilinear interpolation to display pixels"
 }

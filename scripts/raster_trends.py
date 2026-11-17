@@ -61,6 +61,7 @@ TC_RAW = os.environ.get("TC_RAW", os.path.join(SCRATCH, "climate", "tc_raw"))
 GEE_CLIMATE = os.environ.get("GEE_CLIMATE_GRIDS", os.path.join(SCRATCH, "gee_climate", "work", "grids"))
 LULC = os.environ.get("LULC_GRIDS", os.path.join(SCRATCH, "lulc", "work", "grids"))
 CONTINUOUS = False  # set by --continuous
+LEVELS = 61  # colour shades in --continuous mode (--levels N)
 
 YEARS = list(range(2018, 2026))
 END_YEARS = list(range(2020, 2026))
@@ -352,7 +353,8 @@ def yearly_sudd():
 
 
 def yearly_flood_s1():
-    """Sentinel-1 water/flooded fraction (%), aggregated to 0.02 deg, wet-season Jun-Sep mean."""
+    """Sentinel-1 flooded fraction (%) of the known area (class 1 = flooded; permanent open water excluded, the same
+    definition as the county series flood_s1_flood_pct), aggregated to 0.02 deg, wet-season Jun-Sep mean."""
     import flood_s1_pipeline as fs
     tr, (h, w), crs = fs.grid()
     f = 5
@@ -364,7 +366,7 @@ def yearly_flood_s1():
             continue
         c = cls[:H * f, :W * f].reshape(H, f, W, f)
         known = (c >= 0).mean(axis=(1, 3))
-        water = (c >= 1).mean(axis=(1, 3))
+        water = (c == 1).mean(axis=(1, 3))  # flooded (class 1), not permanent open water: as flood_s1_flood_pct
         with np.errstate(invalid="ignore", divide="ignore"):
             months[(y, mm)] = np.where(known >= 0.5, 100 * water / known, np.nan).astype("float32")
     tf = from_origin(tr.c, tr.f, tr.a * f, -tr.e * f)
@@ -483,8 +485,9 @@ LAYERS = [
                 "the pixel's 2018-2025 mean for that calendar month")),
     dict(key="flood_s1", run=yearly_flood_s1, cmap="div_brbg", units="% of pixel classified water",
          unit_out="percentage points/yr",
-         basis=("wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02° cell from the monthly Sentinel-1 "
-                "classification (gap-filled as in flood_s1_pipeline)")),
+         basis=("wet-season (Jun-Sep) mean flooded fraction (%) of the known area of each 0.02° cell from the monthly "
+                "Sentinel-1 classification (gap-filled as in flood_s1_pipeline; class 'flooded' only, permanent open "
+                "water excluded, as in the county series flood_s1_flood_pct)")),
     dict(key="s5p_aerosol_index", run=monthly(lambda: load_s5p("aer-ai"), ALL), cmap="div_puor",
          basis=ANNUAL_MEAN + " (sampled orbits; S5P starts mid-2018)"),
     dict(key="s5p_no2", run=monthly(lambda: load_s5p("no2"), ALL), cmap="div_puor",
@@ -551,7 +554,7 @@ def process(L):
             if L.get("native"):
                 s, _ = ou.to_native(s, res, origin, tf)
             meta = ou.write_overlay_continuous(s, rtf, crs, od, str(e), -lim, lim, ou.RWG, domain=domain,
-                                               max_px=1000, min_px=700)
+                                               max_px=1000, min_px=700, levels=L.get("levels", LEVELS))
         else:
             meta = ou.write_overlay(s, tf, crs, od, str(e), -lim, lim, L["cmap"], {}, max_px=1000, min_px=700)
     yr_count = {str(e): int(sum(np.isfinite(Y[i]).any() for i in range(len(YEARS)) if YEARS[i] <= e))
@@ -596,11 +599,15 @@ def process(L):
 
 
 def main():
-    global CONTINUOUS
+    global CONTINUOUS, LEVELS
     args = sys.argv[1:]
     if "--continuous" in args:
         CONTINUOUS = True
         args = [a for a in args if a != "--continuous"]
+    if "--levels" in args:
+        i = args.index("--levels")
+        LEVELS = int(args[i + 1])
+        args = args[:i] + args[i + 2:]
     want = set(args)
     for L in LAYERS:
         if want and L["key"] not in want:

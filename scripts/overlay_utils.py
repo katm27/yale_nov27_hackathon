@@ -192,17 +192,18 @@ def _dst_grid(shape, transform, crs, max_px, min_px):
 
 def write_overlay_continuous(arr, transform, crs, key, date, vmin, vmax, colors=RWG, domain=None, log=False,
                              max_px=1000, min_px=700, levels=61, alpha=220, hatch=True,
-                             transparent_below=None):
+                             transparent_below=None, upsample="bilinear"):
     """Continuous-colour overlay: reproject to EPSG:3857 (average when shrinking, BILINEAR when enlarging, so coarse
     cells blend smoothly instead of showing blocks), map vmin..vmax linearly (or log10) onto the colour ramp `colors`
     (61 evenly spaced shades = visually continuous), clip to the country. Pixels inside the country and inside
     `domain` (bool array on the source grid; default = whole country) with no value are drawn as black diagonal hatching.
+    `upsample`: resampling when enlarging ("bilinear"; "nearest" for binned point counts such as fire detections).
     `transparent_below`: values <= this are left transparent (e.g. no fire / no flooding), not hatched.
     Saved as a palette PNG (<= 64 colours). Returns dict(bounds, width, height)."""
     dst_t, dw, dh, scale, inside, bounds = _dst_grid(arr.shape, transform, crs, max_px, min_px)
     dst = np.full((dh, dw), np.nan, dtype="float32")
     reproject(arr.astype("float32"), dst, src_transform=transform, src_crs=crs, dst_transform=dst_t,
-              dst_crs="EPSG:3857", resampling=Resampling.average if scale > 1 else Resampling.bilinear,
+              dst_crs="EPSG:3857", resampling=Resampling.average if scale > 1 else getattr(Resampling, upsample),
               src_nodata=np.nan, dst_nodata=np.nan)
     if domain is not None:
         dom = np.zeros((dh, dw), "uint8")

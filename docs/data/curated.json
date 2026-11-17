@@ -182,7 +182,14 @@
     "gracedm_gws_pctl": "gracedm_gws",
     "gldas_gws_anom_cm": "gldas_gws",
     "smap_sm_rootzone": "smap_sm_rootzone",
-    "maiac_aod_055": "maiac_aod"
+    "maiac_aod_055": "maiac_aod",
+    "precip_mm": "imerg_precip",
+    "tair_c": "fldas_tair",
+    "lulc_built_pct": "lulc_built",
+    "lulc_crop_pct": "lulc_crop",
+    "lulc_flooded_veg_pct": "lulc_flooded_veg",
+    "soil_clay_0_30cm": "soil_clay",
+    "elevation_mean": "elevation"
   },
   "background": [
     {

@@ -1,21 +1,21 @@
 {
  "key": "viirs_fire",
- "label": "VIIRS active fires (S-NPP, per 0.05\u00b0 cell)",
- "units": "detections per 0.05\u00b0 cell per month (log10)",
+ "label": "VIIRS active fires (S-NPP, per 0.05° cell)",
+ "units": "detections per 0.05° cell per month (log10)",
  "bounds": [
   [
-   3.467840075000122,
-   24.13215550500011
+   3.412126287818573,
+   23.399999999999995
   ],
   [
-   12.256351879000096,
-   35.970991546000185
+   12.299999999999999,
+   35.994077479217665
   ]
  ],
- "vmin": 0.0,
- "vmax": 2.0,
- "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
- "native_resolution": "375 m detections binned to 0.05\u00b0 (~5.5 km)",
+ "vmin": 1.0,
+ "vmax": 46.0,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates, log10 scale (1 detection = red end)",
+ "native_resolution": "375 m detections binned to 0.05° (~5.5 km)",
  "dates": [
   "2018-01",
   "2018-02",
@@ -116,30 +116,21 @@
  ],
  "source": "NASA FIRMS VIIRS S-NPP 375 m standard processing (VNP14IMGTDL SP)",
  "crs": "EPSG:3857",
- "notes": "Colour = log10(number of nominal/high-confidence vegetation-fire detections in each 0.05\u00b0 cell that month): 0 = 1 detection, 1 = 10, 2 = 100+. Transparent = no detection.",
+ "notes": "Colour = log10(number of nominal/high-confidence vegetation-fire detections in each 0.05° cell that month): 0 = 1 detection, 1 = 10, 2 = 100+. Transparent = no detection.",
  "scale": "log10",
  "original_colormap": "YlOrRd",
  "original_colors": null,
  "colors": [
   "#b2182b",
-  "#ef8a62",
-  "#fddbc7",
   "#ffffff",
-  "#d9f0d3",
-  "#7fbf7b",
   "#1b7837"
  ],
- "bins": [
-  1.0,
-  1.931,
-  3.728,
-  7.197,
-  13.89,
-  26.83,
-  51.79,
-  100.0
- ],
- "recolored": true,
+ "bins": null,
  "nodata_color": "black diagonal hatching (no valid data)",
- "palette": "rwg7"
+ "palette": "rwg-continuous",
+ "continuous": true,
+ "width": 700,
+ "height": 499,
+ "smoothing": "none (each 0.05° cell drawn as a block)",
+ "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
 }

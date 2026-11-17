@@ -2763,30 +2763,31 @@
    }
   },
   {
-   "category": "environment",
-   "temporal": "monthly",
-   "aggregation": "county mean as computed in Drive pipeline (POWER grid cells averaged over county)",
    "id": "precip_mm",
    "label": "Rainfall (NASA IMERG satellite)",
+   "category": "environment",
    "group": "Precipitation",
    "units": "mm/month",
-   "source": "GPM IMERG V07 Final via NASA POWER (IMERG_PRECTOT)",
-   "source_url": "https://gpm.nasa.gov/data/imerg",
-   "native_resolution": "0.1\u00b0 (~10 km)",
+   "temporal": "monthly",
+   "source": "NASA GPM IMERG V07 Final, monthly (GPM_3IMERGM) via Google Earth Engine (NASA/GPM_L3/IMERG_MONTHLY_V07)",
+   "source_url": "https://doi.org/10.5067/GPM/IMERG/3B-MONTH/07",
+   "native_resolution": "0.1\u00b0 (~11 km)",
+   "aggregation": "monthly mean rate (mm/hr) x 24 x days in month per 0.1\u00b0 cell; then mean of the ~1 km cells inside the county (nearest-neighbour from the 0.1\u00b0 grid = area-weighted mean of the 0.1\u00b0 cells)",
    "higher_is": "better",
    "index_ok": true,
-   "notes": "mm/day from POWER converted to mm/month.",
-   "meta_file": "drive_climate.json",
+   "raster": "imerg_precip",
+   "notes": "Satellite rainfall estimate (microwave + infrared, gauge-calibrated in the Final run). Oct-Dec 2025 are not yet in the monthly product on Earth Engine and are the mean of the half-hourly IMERG V07 rates (NASA/GPM_L3/IMERG_V07, status 'provisional' = Late run, not gauge-calibrated). Until Nov 2026 this series came from NASA POWER's 0.5\u00b0 x 0.625\u00b0 regridding of IMERG; it now comes from the native 0.1\u00b0 grid shown on the map (the POWER version is kept as precip_mm_power, hidden).",
+   "meta_file": "gee_climate.json",
    "baseline_year": 2018,
    "first_period": "2018-01",
    "last_period": "2025-12",
    "counties_with_data": 79,
    "months_observed": 96,
    "carry_forward_months": 0,
-   "p02": 0.04466,
-   "p98": 230.4,
+   "p02": 0.079,
+   "p98": 229.7,
    "min": 0,
-   "max": 461.3,
+   "max": 461.0,
    "label_original": "Precipitation (IMERG)",
    "plain": "Total rain in the month, in millimetres.",
    "method": "GPM IMERG V07 Final via NASA POWER, mm/day converted to mm/month. Independent of CHIRPS; used in the SPEI.",
@@ -2801,22 +2802,22 @@
     "weather"
    ],
    "trend_basis": "vs_base_month",
-   "trend_moran_I": 0.435,
+   "trend_moran_I": 0.362,
    "trend_moran_p": 0.001,
    "regional": {
     "sudd": {
-     "S": 1146.0,
-     "p": 0.04,
+     "S": 1060.0,
+     "p": 0.042,
      "n": 16,
-     "median_pct": 6.84,
-     "median_slope": 1.5
+     "median_pct": 5.41,
+     "median_slope": 1.27
     },
     "national": {
-     "S": 1201.0,
-     "p": 0.106,
+     "S": 915.0,
+     "p": 0.253,
      "n": 79,
-     "median_pct": 0.287,
-     "median_slope": 0.0483
+     "median_pct": -0.47,
+     "median_slope": -0.0673
     }
    }
   },
@@ -3232,30 +3233,31 @@
    }
   },
   {
-   "category": "environment",
-   "temporal": "monthly",
-   "aggregation": "county mean as computed in Drive pipeline (POWER grid cells averaged over county)",
    "id": "tair_c",
    "label": "Average air temperature",
+   "category": "environment",
    "group": "Temperature",
    "units": "\u00b0C",
-   "source": "MERRA-2 reanalysis via NASA POWER (T2M)",
-   "source_url": "https://power.larc.nasa.gov/",
-   "native_resolution": "0.5\u00b0 x 0.625\u00b0 (~50 km)",
+   "temporal": "monthly",
+   "source": "NASA FLDAS Noah land surface model, monthly 0.1\u00b0 (FLDAS_NOAH01_C_GL_M v001, Tair_f_tavg) via Google Earth Engine (NASA/FLDAS/NOAH01/C/GL/M/V001)",
+   "source_url": "https://doi.org/10.5067/5NHC22T9375G",
+   "native_resolution": "0.1\u00b0 (~11 km)",
+   "aggregation": "monthly mean near-surface air temperature per 0.1\u00b0 cell (K - 273.15); then mean of the ~1 km cells inside the county (nearest-neighbour from the 0.1\u00b0 grid = area-weighted mean of the 0.1\u00b0 cells)",
    "higher_is": "worse",
    "index_ok": false,
-   "notes": "",
-   "meta_file": "drive_climate.json",
+   "raster": "fldas_tair",
+   "notes": "Model forcing temperature: MERRA-2 2 m air temperature downscaled to 0.1\u00b0 (FLDAS). Until Nov 2026 this series came from MERRA-2 via NASA POWER (0.5\u00b0 x 0.625\u00b0); it now comes from the 0.1\u00b0 FLDAS grid shown on the map (the POWER version is kept as tair_c_power, hidden).",
+   "meta_file": "gee_climate.json",
    "baseline_year": 2018,
    "first_period": "2018-01",
    "last_period": "2025-12",
    "counties_with_data": 79,
    "months_observed": 96,
    "carry_forward_months": 0,
-   "p02": 23.39,
-   "p98": 33.58,
-   "min": 21.47,
-   "max": 35.36,
+   "p02": 23.2,
+   "p98": 32.91,
+   "min": 20.89,
+   "max": 34.52,
    "label_original": "Mean air temperature (2 m)",
    "plain": "Average air temperature over day and night for the month, in degrees Celsius.",
    "method": "MERRA-2 reanalysis 2 m T2M via NASA POWER (~50 km).",
@@ -3268,22 +3270,22 @@
     "warm"
    ],
    "trend_basis": "vs_base_month",
-   "trend_moran_I": 0.819,
+   "trend_moran_I": 0.817,
    "trend_moran_p": 0.001,
    "regional": {
     "sudd": {
-     "S": 1428.0,
-     "p": 0.065,
+     "S": 1355.0,
+     "p": 0.077,
      "n": 16,
      "median_pct": null,
-     "median_slope": -0.0217
+     "median_slope": -0.00339
     },
     "national": {
-     "S": 7413.0,
-     "p": 0.04,
+     "S": 7079.0,
+     "p": 0.051,
      "n": 79,
      "median_pct": null,
-     "median_slope": 0.0208
+     "median_slope": 0.0281
     }
    }
   },
@@ -4803,14 +4805,14 @@
    "trend_moran_I": -0.0136,
    "trend_moran_p": 0.072,
    "regional": {
-    "sudd": {
+    "national": {
      "S": 2352.0,
      "p": 0.002,
      "n": 16,
      "median_pct": 74.1,
      "median_slope": 69.4
     },
-    "national": {
+    "sudd": {
      "S": 2352.0,
      "p": 0.002,
      "n": 16,

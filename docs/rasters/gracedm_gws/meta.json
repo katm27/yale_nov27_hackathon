@@ -4,29 +4,25 @@
  "units": "percentile",
  "bounds": [
   [
-   3.43784,
-   24.10216
+   3.3143826125742737,
+   23.25
   ],
   [
-   12.28635,
-   36.00099
+   12.5,
+   36.04703462636308
   ]
  ],
- "vmin": 0.0,
- "vmax": 100.0,
- "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "vmin": 0.149,
+ "vmax": 97.6,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
  "colors": [
   "#b2182b",
-  "#ef8a62",
-  "#fddbc7",
   "#ffffff",
-  "#d9f0d3",
-  "#7fbf7b",
   "#1b7837"
  ],
  "scale": "linear",
  "nodata_color": "black diagonal hatching (no valid data)",
- "native_resolution": "0.25\u00b0 (~28 km) model grid, nearest-neighbour",
+ "native_resolution": "0.25° (~28 km) model grid, bilinear smoothing between cell centres",
  "dates": [
   "2018-01",
   "2018-02",
@@ -126,8 +122,8 @@
  ],
  "source": "NASA GRACE-DA global drought indicator (gws_inst) via nasagrace.unl.edu",
  "crs": "EPSG:3857",
- "width": 900,
- "height": 676,
+ "width": 500,
+ "height": 363,
  "original_colormap": "brown-teal (0 = driest, 50 = normal, 100 = wettest)",
  "original_colors": [
   "#8c510a",
@@ -143,16 +139,8 @@
   "#076b63",
   "#01665e"
  ],
- "bins": [
-  0.0,
-  14.29,
-  28.57,
-  42.86,
-  57.14,
-  71.43,
-  85.71,
-  100.0
- ],
- "recolored": true,
- "palette": "rwg7"
+ "bins": null,
+ "palette": "rwg-continuous",
+ "continuous": true,
+ "smoothing": "averaged onto the native cells, then bilinear interpolation to display pixels"
 }

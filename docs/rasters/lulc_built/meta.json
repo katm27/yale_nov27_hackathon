@@ -1,0 +1,46 @@
+{
+ "key": "lulc_built",
+ "label": "Built-up land (share of each ~1 km cell, Impact Observatory 10 m land cover)",
+ "units": "% of cell",
+ "temporal": "annual",
+ "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+ "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01° (~1 km) cell",
+ "notes": "Share (%) of the 10 m Impact Observatory land-cover map's built area class in each 0.01° (~1 km) cell, from the same 1-in-64 nearest-neighbour sample (~80 m) as the county series lulc_built_pct (the county value is the sample-weighted mean of these cells; r > 0.9998). One map per year 2017-2023 (the latest published); later months show 2023. Map: continuous colour from the 2nd (red) to the 98th (green) percentile of all years; white = middle.",
+ "continuous": true,
+ "colors": [
+  "#b2182b",
+  "#ffffff",
+  "#1b7837"
+ ],
+ "vmin": 0.0,
+ "vmax": 100.0,
+ "palette": "rwg-continuous",
+ "bins": null,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "crs": "EPSG:3857",
+ "bounds": [
+  [
+   3.4021089038843564,
+   23.399999999999995
+  ],
+  [
+   12.299999999999999,
+   36.00411260071506
+  ]
+ ],
+ "width": 900,
+ "height": 642,
+ "dates": [
+  "2017-07",
+  "2018-07",
+  "2019-07",
+  "2020-07",
+  "2021-07",
+  "2022-07",
+  "2023-07"
+ ],
+ "scale": "linear",
+ "smoothing": "average of the grid cells in each display pixel",
+ "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
+}

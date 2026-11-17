@@ -1,7 +1,7 @@
 {
  "key": "viirs_fire_trend",
- "label": "VIIRS active fires (S-NPP, per 0.05\u00b0 cell) \u2014 trend 2018\u2192year (Sen's slope)",
- "units": "detections per 0.05\u00b0 cell per year, per yr",
+ "label": "VIIRS active fires (S-NPP, per 0.05° cell) — trend 2018→year (Sen's slope)",
+ "units": "detections per 0.05° cell per year, per yr",
  "bounds": [
   [
    3.412126287818573,
@@ -14,14 +14,10 @@
  ],
  "vmin": -22.0,
  "vmax": 22.0,
- "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
  "colors": [
   "#b2182b",
-  "#ef8a62",
-  "#fddbc7",
   "#ffffff",
-  "#d9f0d3",
-  "#7fbf7b",
   "#1b7837"
  ],
  "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -33,10 +29,10 @@
   "2024",
   "2025"
  ],
- "native_resolution": "375 m detections binned to 0.05\u00b0 (~5.5 km)",
+ "native_resolution": "375 m detections binned to 0.05° (~5.5 km)",
  "source": "NASA FIRMS VIIRS S-NPP 375 m standard processing (VNP14IMGTDL SP)",
  "trend_of": "viirs_fire",
- "basis": "annual total (Jan-Dec) of nominal/high-confidence VIIRS S-NPP vegetation-fire detections per 0.05\u00b0 cell.",
+ "basis": "annual total (Jan-Dec) of nominal/high-confidence VIIRS S-NPP vegetation-fire detections per 0.05° cell.",
  "years_with_data": {
   "2020": 3,
   "2021": 4,
@@ -45,32 +41,10 @@
   "2024": 7,
   "2025": 8
  },
- "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05\u00b0 cell per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
- "original_colormap": "div_puor",
- "original_colors": [
-  "#2d004b",
-  "#542788",
-  "#8073ac",
-  "#b2abd2",
-  "#d8daeb",
-  "#f7f7f7",
-  "#fee0b6",
-  "#fdb863",
-  "#e08214",
-  "#b35806",
-  "#7f3b08"
- ],
- "bins": [
-  -22.0,
-  -15.71,
-  -9.429,
-  -3.143,
-  3.143,
-  9.429,
-  15.71,
-  22.0
- ],
- "recolored": true,
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05° cell per year, per yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+ "continuous": true,
+ "palette": "rwg-continuous",
+ "bins": null,
  "nodata_color": "black diagonal hatching (no valid data)",
- "palette": "rwg7"
+ "crs": "EPSG:3857"
 }

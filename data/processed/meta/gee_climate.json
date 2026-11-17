@@ -22,13 +22,13 @@
   "group": "Temperature",
   "units": "°C",
   "temporal": "monthly",
-  "source": "NASA GLDAS-2.1 Noah land surface model, 3-hourly 0.25° (GLDAS_NOAH025_3H v2.1, Tair_f_inst) via Google Earth Engine (NASA/GLDAS/V021/NOAH/G025/T3H)",
-  "source_url": "https://doi.org/10.5067/E7TYRXPJKWOQ",
-  "native_resolution": "0.25° (~28 km)",
-  "aggregation": "per-pixel mean of all 3-hourly near-surface air temperatures in the month (K - 273.15); then mean of the ~1 km cells inside the county (nearest-neighbour from the 0.25° grid)",
+  "source": "NASA FLDAS Noah land surface model, monthly 0.1° (FLDAS_NOAH01_C_GL_M v001, Tair_f_tavg) via Google Earth Engine (NASA/FLDAS/NOAH01/C/GL/M/V001)",
+  "source_url": "https://doi.org/10.5067/5NHC22T9375G",
+  "native_resolution": "0.1° (~11 km)",
+  "aggregation": "monthly mean near-surface air temperature per 0.1° cell (K - 273.15); then mean of the ~1 km cells inside the county (nearest-neighbour from the 0.1° grid = area-weighted mean of the 0.1° cells)",
   "higher_is": "worse",
   "index_ok": false,
-  "raster": "gldas_tair",
-  "notes": "Model forcing temperature (GDAS analysis, bias-corrected). Until Nov 2026 this series came from MERRA-2 via NASA POWER (0.5° x 0.625°); it now comes from the 0.25° GLDAS grid shown on the map (the MERRA-2 version is kept as tair_c_power, hidden)."
+  "raster": "fldas_tair",
+  "notes": "Model forcing temperature: MERRA-2 2 m air temperature downscaled to 0.1° (FLDAS). Until Nov 2026 this series came from MERRA-2 via NASA POWER (0.5° x 0.625°); it now comes from the 0.1° FLDAS grid shown on the map (the POWER version is kept as tair_c_power, hidden)."
  }
 ]

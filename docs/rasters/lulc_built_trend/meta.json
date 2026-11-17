@@ -1,0 +1,46 @@
+{
+ "key": "lulc_built_trend",
+ "label": "Built-up land (share of each ~1 km cell, Impact Observatory 10 m land cover) — trend 2018→year (Sen's slope)",
+ "units": "percentage points/yr",
+ "bounds": [
+  [
+   3.4021089038843564,
+   23.399999999999995
+  ],
+  [
+   12.299999999999999,
+   36.004112600715054
+  ]
+ ],
+ "vmin": -1.0,
+ "vmax": 1.0,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+ "colors": [
+  "#b2182b",
+  "#ffffff",
+  "#1b7837"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023"
+ ],
+ "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01° (~1 km) cell",
+ "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+ "trend_of": "lulc_built",
+ "basis": "the annual Impact Observatory land-cover map itself (2018-2023; one map per year, no seasons).",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+ "continuous": true,
+ "palette": "rwg-continuous",
+ "bins": null,
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "crs": "EPSG:3857"
+}

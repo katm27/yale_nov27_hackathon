@@ -1,0 +1,51 @@
+{
+ "key": "fldas_tair_trend",
+ "label": "Air temperature at 2 m (NASA FLDAS Noah, monthly mean) — trend 2018→year (Sen's slope)",
+ "units": "°C/yr",
+ "bounds": [
+  [
+   3.3620383300163064,
+   23.40000000000001
+  ],
+  [
+   12.299999999999997,
+   36.0442530867046
+  ]
+ ],
+ "vmin": -0.54,
+ "vmax": 0.54,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+ "colors": [
+  "#b2182b",
+  "#ffffff",
+  "#1b7837"
+ ],
+ "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+ "dates": [
+  "2020",
+  "2021",
+  "2022",
+  "2023",
+  "2024",
+  "2025"
+ ],
+ "native_resolution": "0.1° (~11 km), bilinear smoothing between cell centres",
+ "source": "NASA FLDAS Noah monthly 0.1° (FLDAS_NOAH01_C_GL_M, Tair_f_tavg; MERRA-2 temperature downscaled) via Google Earth Engine (NASA/FLDAS/NOAH01/C/GL/M/V001)",
+ "trend_of": "fldas_tair",
+ "basis": "annual mean (Jan-Dec) of the monthly values (NASA FLDAS Noah 2 m air temperature, 0.1°). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
+ "years_with_data": {
+  "2020": 3,
+  "2021": 4,
+  "2022": 5,
+  "2023": 6,
+  "2024": 7,
+  "2025": 8
+ },
+ "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in °C/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+ "continuous": true,
+ "palette": "rwg-continuous",
+ "bins": null,
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "crs": "EPSG:3857",
+ "smoothing": "slopes averaged onto the native 0.1° cells, then bilinear interpolation to the display pixels"
+}

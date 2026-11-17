@@ -830,22 +830,245 @@
    "recolored": true
   },
   {
-   "key": "flood_s1",
-   "label": "Flood / surface water (monthly, Sentinel-1 SAR)",
-   "units": "fraction of pixel classified water",
+   "key": "elevation",
+   "label": "Elevation (1 km)",
+   "units": "m",
+   "temporal": "static",
+   "native_resolution": "~1 km (0.009\u00b0) DEM (data/raw/ss_nasadem_elev_1km_fast.tif)",
+   "source": "NASADEM / Copernicus DEM elevation at ~1 km (data/raw/ss_nasadem_elev_1km_fast.tif)",
+   "notes": "The county series elevation_mean (Copernicus GLO-90 read at ~370 m) is reproduced by averaging this 1 km grid over each county (r = 0.99999, mean difference 0.06 m). Map: continuous colour from the 2nd (red) to the 98th (green) percentile; white = middle.",
+   "continuous": true,
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "vmin": 389.0,
+   "vmax": 954.0,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
    "bounds": [
     [
-     3.467840075000122,
-     24.13215550500011
+     2.969211265342277,
+     23.49992783256668
     ],
     [
-     12.256351879000096,
-     35.970991546000185
+     12.836925410067964,
+     36.46942348123609
     ]
    ],
-   "vmin": 0.0,
-   "vmax": 1.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "width": 900,
+   "height": 692,
+   "dates": [
+    "static"
+   ],
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel"
+  },
+  {
+   "key": "fldas_tair",
+   "label": "Air temperature at 2 m (NASA FLDAS Noah, monthly mean)",
+   "units": "\u00b0C",
+   "native_resolution": "0.1\u00b0 (~11 km), bilinear smoothing between cell centres",
+   "source": "NASA FLDAS Noah monthly 0.1\u00b0 (FLDAS_NOAH01_C_GL_M, Tair_f_tavg; MERRA-2 temperature downscaled) via Google Earth Engine (NASA/FLDAS/NOAH01/C/GL/M/V001)",
+   "notes": "Monthly mean near-surface air temperature. The county series tair_c is the mean of these same 0.1\u00b0 cells inside each county. Map: continuous colour from the 2nd (red) to the 98th (green) percentile of all months; white = middle.",
+   "continuous": true,
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "vmin": 23.1,
+   "vmax": 32.8,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "bounds": [
+    [
+     3.3620383300163064,
+     23.40000000000001
+    ],
+    [
+     12.299999999999997,
+     36.0442530867046
+    ]
+   ],
+   "width": 500,
+   "height": 357,
+   "dates": [
+    "2018-01",
+    "2018-02",
+    "2018-03",
+    "2018-04",
+    "2018-05",
+    "2018-06",
+    "2018-07",
+    "2018-08",
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12",
+    "2019-01",
+    "2019-02",
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07",
+    "2019-08",
+    "2019-09",
+    "2019-10",
+    "2019-11",
+    "2019-12",
+    "2020-01",
+    "2020-02",
+    "2020-03",
+    "2020-04",
+    "2020-05",
+    "2020-06",
+    "2020-07",
+    "2020-08",
+    "2020-09",
+    "2020-10",
+    "2020-11",
+    "2020-12",
+    "2021-01",
+    "2021-02",
+    "2021-03",
+    "2021-04",
+    "2021-05",
+    "2021-06",
+    "2021-07",
+    "2021-08",
+    "2021-09",
+    "2021-10",
+    "2021-11",
+    "2021-12",
+    "2022-01",
+    "2022-02",
+    "2022-03",
+    "2022-04",
+    "2022-05",
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12",
+    "2023-01",
+    "2023-02",
+    "2023-03",
+    "2023-04",
+    "2023-05",
+    "2023-06",
+    "2023-07",
+    "2023-08",
+    "2023-09",
+    "2023-10",
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+   ],
+   "scale": "linear",
+   "smoothing": "averaged onto the native cells, then bilinear interpolation to display pixels"
+  },
+  {
+   "key": "fldas_tair_trend",
+   "label": "Air temperature at 2 m (NASA FLDAS Noah, monthly mean) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "\u00b0C/yr",
+   "bounds": [
+    [
+     3.3620383300163064,
+     23.40000000000001
+    ],
+    [
+     12.299999999999997,
+     36.0442530867046
+    ]
+   ],
+   "vmin": -0.54,
+   "vmax": 0.54,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "0.1\u00b0 (~11 km), bilinear smoothing between cell centres",
+   "source": "NASA FLDAS Noah monthly 0.1\u00b0 (FLDAS_NOAH01_C_GL_M, Tair_f_tavg; MERRA-2 temperature downscaled) via Google Earth Engine (NASA/FLDAS/NOAH01/C/GL/M/V001)",
+   "trend_of": "fldas_tair",
+   "basis": "annual mean (Jan-Dec) of the monthly values (NASA FLDAS Noah 2 m air temperature, 0.1\u00b0). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "smoothing": "slopes averaged onto the native 0.1\u00b0 cells, then bilinear interpolation to the display pixels"
+  },
+  {
+   "key": "flood_s1",
+   "label": "Flooded area (monthly, Sentinel-1 SAR)",
+   "units": "% of known area flooded",
+   "bounds": [
+    [
+     3.3050481946453587,
+     24.0
+    ],
+    [
+     12.4,
+     36.09414055218485
+    ]
+   ],
+   "vmin": 11.1,
+   "vmax": 100.0,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "native_resolution": "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid",
    "dates": [
     "2018-01",
@@ -947,35 +1170,27 @@
    ],
    "source": "Copernicus Sentinel-1 IW GRD RTC (sentinel-1-rtc) via Microsoft Planetary Computer",
    "crs": "EPSG:3857",
-   "notes": "Flooded = VV-VH ratio > 3.0 dB above the pixel's dry-season (March) reference, or open water (VV<-18.0, VH<-24.0 dB). Sees through cloud. Transparent = dry land; grey = no acquisition within 2 months.",
+   "notes": "Share of each ~1.3 km cell classified as flooded (vegetation/land under water; permanent open water excluded), as % of the observed (or gap-filled) area: the same definition as the county series flood_s1_flood_pct. Transparent = no flooding; black hatching = no Sentinel-1 acquisition within 2 months.",
    "original_colormap": "light blue -> dark blue (#9ecae1,#2171b5,#08306b)",
    "original_colors": null,
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
-   "bins": [
-    0.0,
-    0.1429,
-    0.2857,
-    0.4286,
-    0.5714,
-    0.7143,
-    0.8571,
-    1.0
-   ],
-   "recolored": true,
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "width": 900,
+   "height": 684,
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel",
+   "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
   },
   {
    "key": "flood_s1_trend",
-   "label": "Flood / surface water (monthly, Sentinel-1 SAR) \u2014 trend 2018\u2192year (Sen's slope)",
+   "label": "Flooded area (monthly, Sentinel-1 SAR) \u2014 trend 2018\u2192year (Sen's slope)",
    "units": "percentage points/yr",
    "bounds": [
     [
@@ -989,14 +1204,10 @@
    ],
    "vmin": -8.0,
    "vmax": 8.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -1011,7 +1222,7 @@
    "native_resolution": "10 m Sentinel-1 RTC read at 160 m, classified on a 0.004 deg (~440 m) grid",
    "source": "Copernicus Sentinel-1 IW GRD RTC (sentinel-1-rtc) via Microsoft Planetary Computer",
    "trend_of": "flood_s1",
-   "basis": "wet-season (Jun-Sep) mean water/flooded fraction (%) of each 0.02\u00b0 cell from the monthly Sentinel-1 classification (gap-filled as in flood_s1_pipeline). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
+   "basis": "wet-season (Jun-Sep) mean flooded fraction (%) of the known area of each 0.02\u00b0 cell from the monthly Sentinel-1 classification (gap-filled as in flood_s1_pipeline; class 'flooded' only, permanent open water excluded, as in the county series flood_s1_flood_pct). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
    "years_with_data": {
     "2020": 3,
     "2021": 4,
@@ -1020,34 +1231,12 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_brbg",
-   "original_colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
-   ],
-   "bins": [
-    -8.0,
-    -5.714,
-    -3.429,
-    -1.143,
-    1.143,
-    3.429,
-    5.714,
-    8.0
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857"
   },
   {
    "key": "gldas_gws",
@@ -1055,29 +1244,25 @@
    "units": "cm water",
    "bounds": [
     [
-     3.43784,
-     24.10216
+     3.3143826125742737,
+     23.25
     ],
     [
-     12.28635,
-     36.00099
+     12.5,
+     36.04703462636308
     ]
    ],
-   "vmin": -19.0,
-   "vmax": 19.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": -21.8,
+   "vmax": 18.3,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear",
    "nodata_color": "black diagonal hatching (no valid data)",
-   "native_resolution": "0.25\u00b0 (~28 km) GLDAS grid, nearest-neighbour",
+   "native_resolution": "0.25\u00b0 (~28 km) GLDAS grid, bilinear smoothing between cell centres",
    "dates": [
     "2018-01",
     "2018-02",
@@ -1178,8 +1363,8 @@
    ],
    "source": "NASA GLDAS-2.2 CLSM GRACE-DA (GWS_tavg) via Google Earth Engine",
    "crs": "EPSG:3857",
-   "width": 900,
-   "height": 676,
+   "width": 500,
+   "height": 363,
    "original_colormap": "brown-teal (diverging, 0 = 2004-2020 mean)",
    "original_colors": [
     "#8c510a",
@@ -1195,18 +1380,10 @@
     "#076b63",
     "#01665e"
    ],
-   "bins": [
-    -19.0,
-    -13.57,
-    -8.143,
-    -2.714,
-    2.714,
-    8.143,
-    13.57,
-    19.0
-   ],
-   "recolored": true,
-   "palette": "rwg7"
+   "bins": null,
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "smoothing": "averaged onto the native cells, then bilinear interpolation to display pixels"
   },
   {
    "key": "gldas_gws_trend",
@@ -1214,24 +1391,20 @@
    "units": "cm water/yr",
    "bounds": [
     [
-     3.4021089038843564,
-     23.399999999999995
+     3.3143826125742746,
+     23.25
     ],
     [
-     12.299999999999999,
-     36.004112600715054
+     12.5,
+     36.04703462636308
     ]
    ],
    "vmin": -6.8,
    "vmax": 6.8,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -1255,34 +1428,13 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in cm water/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_brbg",
-   "original_colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
-   ],
-   "bins": [
-    -6.8,
-    -4.857,
-    -2.914,
-    -0.9714,
-    0.9714,
-    2.914,
-    4.857,
-    6.8
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in cm water/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857",
+   "smoothing": "slopes averaged onto the native 0.25\u00b0 cells, then bilinear interpolation to the display pixels"
   },
   {
    "key": "grace_tws",
@@ -1503,29 +1655,25 @@
    "units": "percentile",
    "bounds": [
     [
-     3.43784,
-     24.10216
+     3.3143826125742737,
+     23.25
     ],
     [
-     12.28635,
-     36.00099
+     12.5,
+     36.04703462636308
     ]
    ],
-   "vmin": 0.0,
-   "vmax": 100.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": 0.149,
+   "vmax": 97.6,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear",
    "nodata_color": "black diagonal hatching (no valid data)",
-   "native_resolution": "0.25\u00b0 (~28 km) model grid, nearest-neighbour",
+   "native_resolution": "0.25\u00b0 (~28 km) model grid, bilinear smoothing between cell centres",
    "dates": [
     "2018-01",
     "2018-02",
@@ -1625,8 +1773,8 @@
    ],
    "source": "NASA GRACE-DA global drought indicator (gws_inst) via nasagrace.unl.edu",
    "crs": "EPSG:3857",
-   "width": 900,
-   "height": 676,
+   "width": 500,
+   "height": 363,
    "original_colormap": "brown-teal (0 = driest, 50 = normal, 100 = wettest)",
    "original_colors": [
     "#8c510a",
@@ -1642,18 +1790,10 @@
     "#076b63",
     "#01665e"
    ],
-   "bins": [
-    0.0,
-    14.29,
-    28.57,
-    42.86,
-    57.14,
-    71.43,
-    85.71,
-    100.0
-   ],
-   "recolored": true,
-   "palette": "rwg7"
+   "bins": null,
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "smoothing": "averaged onto the native cells, then bilinear interpolation to display pixels"
   },
   {
    "key": "gracedm_gws_trend",
@@ -1661,24 +1801,20 @@
    "units": "percentile points/yr",
    "bounds": [
     [
-     3.4021089038843564,
-     23.399999999999995
+     3.3143826125742746,
+     23.25
     ],
     [
-     12.299999999999999,
-     36.004112600715054
+     12.5,
+     36.04703462636308
     ]
    ],
    "vmin": -22.0,
    "vmax": 22.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -1702,34 +1838,473 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentile points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_brbg",
-   "original_colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
-   ],
-   "bins": [
-    -22.0,
-    -15.71,
-    -9.429,
-    -3.143,
-    3.143,
-    9.429,
-    15.71,
-    22.0
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentile points/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857",
+   "smoothing": "slopes averaged onto the native 0.25\u00b0 cells, then bilinear interpolation to the display pixels"
+  },
+  {
+   "key": "imerg_precip",
+   "label": "Rainfall (NASA GPM IMERG V07, monthly)",
+   "units": "mm/month",
+   "native_resolution": "0.1\u00b0 (~11 km), bilinear smoothing between cell centres",
+   "source": "NASA GPM IMERG V07 Final monthly (GPM_3IMERGM) via Google Earth Engine (NASA/GPM_L3/IMERG_MONTHLY_V07)",
+   "notes": "Monthly rainfall total = IMERG mean rate (mm/hr) x 24 x days. The county series precip_mm is the mean of these same 0.1\u00b0 cells inside each county. Map: continuous colour from the 2nd (red) to the 98th (green) percentile of all months; white = middle.",
+   "continuous": true,
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "vmin": 0.0,
+   "vmax": 244.0,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "bounds": [
+    [
+     3.3620383300163064,
+     23.40000000000001
+    ],
+    [
+     12.299999999999997,
+     36.0442530867046
+    ]
+   ],
+   "width": 500,
+   "height": 357,
+   "dates": [
+    "2018-01",
+    "2018-02",
+    "2018-03",
+    "2018-04",
+    "2018-05",
+    "2018-06",
+    "2018-07",
+    "2018-08",
+    "2018-09",
+    "2018-10",
+    "2018-11",
+    "2018-12",
+    "2019-01",
+    "2019-02",
+    "2019-03",
+    "2019-04",
+    "2019-05",
+    "2019-06",
+    "2019-07",
+    "2019-08",
+    "2019-09",
+    "2019-10",
+    "2019-11",
+    "2019-12",
+    "2020-01",
+    "2020-02",
+    "2020-03",
+    "2020-04",
+    "2020-05",
+    "2020-06",
+    "2020-07",
+    "2020-08",
+    "2020-09",
+    "2020-10",
+    "2020-11",
+    "2020-12",
+    "2021-01",
+    "2021-02",
+    "2021-03",
+    "2021-04",
+    "2021-05",
+    "2021-06",
+    "2021-07",
+    "2021-08",
+    "2021-09",
+    "2021-10",
+    "2021-11",
+    "2021-12",
+    "2022-01",
+    "2022-02",
+    "2022-03",
+    "2022-04",
+    "2022-05",
+    "2022-06",
+    "2022-07",
+    "2022-08",
+    "2022-09",
+    "2022-10",
+    "2022-11",
+    "2022-12",
+    "2023-01",
+    "2023-02",
+    "2023-03",
+    "2023-04",
+    "2023-05",
+    "2023-06",
+    "2023-07",
+    "2023-08",
+    "2023-09",
+    "2023-10",
+    "2023-11",
+    "2023-12",
+    "2024-01",
+    "2024-02",
+    "2024-03",
+    "2024-04",
+    "2024-05",
+    "2024-06",
+    "2024-07",
+    "2024-08",
+    "2024-09",
+    "2024-10",
+    "2024-11",
+    "2024-12",
+    "2025-01",
+    "2025-02",
+    "2025-03",
+    "2025-04",
+    "2025-05",
+    "2025-06",
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+   ],
+   "scale": "linear",
+   "smoothing": "averaged onto the native cells, then bilinear interpolation to display pixels"
+  },
+  {
+   "key": "imerg_precip_trend",
+   "label": "Rainfall (NASA GPM IMERG V07, monthly) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "mm/month/yr",
+   "bounds": [
+    [
+     3.3620383300163064,
+     23.40000000000001
+    ],
+    [
+     12.299999999999997,
+     36.0442530867046
+    ]
+   ],
+   "vmin": -30.0,
+   "vmax": 30.0,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024",
+    "2025"
+   ],
+   "native_resolution": "0.1\u00b0 (~11 km), bilinear smoothing between cell centres",
+   "source": "NASA GPM IMERG V07 Final monthly (GPM_3IMERGM) via Google Earth Engine (NASA/GPM_L3/IMERG_MONTHLY_V07)",
+   "trend_of": "imerg_precip",
+   "basis": "wet-season mean (Jun-Sep) of the monthly values, so dry-season zeros do not flatten the slope (GPM IMERG V07 monthly, 0.1\u00b0). Missing months are filled by the climatology-anomaly method (yearly = mean monthly climatology + mean anomaly of the observed months); a year needs >= half of the season observed unless stated otherwise.",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6,
+    "2024": 7,
+    "2025": 8
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "smoothing": "slopes averaged onto the native 0.1\u00b0 cells, then bilinear interpolation to the display pixels"
+  },
+  {
+   "key": "lulc_built",
+   "label": "Built-up land (share of each ~1 km cell, Impact Observatory 10 m land cover)",
+   "units": "% of cell",
+   "temporal": "annual",
+   "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+   "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01\u00b0 (~1 km) cell",
+   "notes": "Share (%) of the 10 m Impact Observatory land-cover map's built area class in each 0.01\u00b0 (~1 km) cell, from the same 1-in-64 nearest-neighbour sample (~80 m) as the county series lulc_built_pct (the county value is the sample-weighted mean of these cells; r > 0.9998). One map per year 2017-2023 (the latest published); later months show 2023. Map: continuous colour from the 2nd (red) to the 98th (green) percentile of all years; white = middle.",
+   "continuous": true,
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "vmin": 0.0,
+   "vmax": 100.0,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.00411260071506
+    ]
+   ],
+   "width": 900,
+   "height": 642,
+   "dates": [
+    "2017-07",
+    "2018-07",
+    "2019-07",
+    "2020-07",
+    "2021-07",
+    "2022-07",
+    "2023-07"
+   ],
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel",
+   "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
+  },
+  {
+   "key": "lulc_built_trend",
+   "label": "Built-up land (share of each ~1 km cell, Impact Observatory 10 m land cover) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "percentage points/yr",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -1.0,
+   "vmax": 1.0,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01\u00b0 (~1 km) cell",
+   "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+   "trend_of": "lulc_built",
+   "basis": "the annual Impact Observatory land-cover map itself (2018-2023; one map per year, no seasons).",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857"
+  },
+  {
+   "key": "lulc_crop",
+   "label": "Cropland (share of each ~1 km cell, Impact Observatory 10 m land cover)",
+   "units": "% of cell",
+   "temporal": "annual",
+   "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+   "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01\u00b0 (~1 km) cell",
+   "notes": "Share (%) of the 10 m Impact Observatory land-cover map's crops class in each 0.01\u00b0 (~1 km) cell, from the same 1-in-64 nearest-neighbour sample (~80 m) as the county series lulc_crop_pct (the county value is the sample-weighted mean of these cells; r > 0.9998). One map per year 2017-2023 (the latest published); later months show 2023. Map: continuous colour from the 2nd (red) to the 98th (green) percentile of all years; white = middle.",
+   "continuous": true,
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "vmin": 0.0,
+   "vmax": 90.8,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.00411260071506
+    ]
+   ],
+   "width": 900,
+   "height": 642,
+   "dates": [
+    "2017-07",
+    "2018-07",
+    "2019-07",
+    "2020-07",
+    "2021-07",
+    "2022-07",
+    "2023-07"
+   ],
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel",
+   "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
+  },
+  {
+   "key": "lulc_crop_trend",
+   "label": "Cropland (share of each ~1 km cell, Impact Observatory 10 m land cover) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "percentage points/yr",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -0.19,
+   "vmax": 0.19,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01\u00b0 (~1 km) cell",
+   "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+   "trend_of": "lulc_crop",
+   "basis": "the annual Impact Observatory land-cover map itself (2018-2023; one map per year, no seasons).",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857"
+  },
+  {
+   "key": "lulc_flooded_veg",
+   "label": "Flooded vegetation (share of each ~1 km cell, Impact Observatory 10 m land cover)",
+   "units": "% of cell",
+   "temporal": "annual",
+   "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+   "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01\u00b0 (~1 km) cell",
+   "notes": "Share (%) of the 10 m Impact Observatory land-cover map's flooded vegetation class in each 0.01\u00b0 (~1 km) cell, from the same 1-in-64 nearest-neighbour sample (~80 m) as the county series lulc_flooded_veg_pct (the county value is the sample-weighted mean of these cells; r > 0.9998). One map per year 2017-2023 (the latest published); later months show 2023. Map: continuous colour from the 2nd (red) to the 98th (green) percentile of all years; white = middle.",
+   "continuous": true,
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "vmin": 0.0,
+   "vmax": 100.0,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.00411260071506
+    ]
+   ],
+   "width": 900,
+   "height": 642,
+   "dates": [
+    "2017-07",
+    "2018-07",
+    "2019-07",
+    "2020-07",
+    "2021-07",
+    "2022-07",
+    "2023-07"
+   ],
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel",
+   "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
+  },
+  {
+   "key": "lulc_flooded_veg_trend",
+   "label": "Flooded vegetation (share of each ~1 km cell, Impact Observatory 10 m land cover) \u2014 trend 2018\u2192year (Sen's slope)",
+   "units": "percentage points/yr",
+   "bounds": [
+    [
+     3.4021089038843564,
+     23.399999999999995
+    ],
+    [
+     12.299999999999999,
+     36.004112600715054
+    ]
+   ],
+   "vmin": -9.5,
+   "vmax": 9.5,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
+   "dates": [
+    "2020",
+    "2021",
+    "2022",
+    "2023"
+   ],
+   "native_resolution": "10 m map, sampled at ~80 m, shown as class share per 0.01\u00b0 (~1 km) cell",
+   "source": "Esri / Impact Observatory 10 m Annual Land Use Land Cover (io-lulc-annual-v02) via Microsoft Planetary Computer",
+   "trend_of": "lulc_flooded_veg",
+   "basis": "the annual Impact Observatory land-cover map itself (2018-2023; one map per year, no seasons).",
+   "years_with_data": {
+    "2020": 3,
+    "2021": 4,
+    "2022": 5,
+    "2023": 6
+   },
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857"
   },
   {
    "key": "maiac_aod",
@@ -1906,14 +2481,10 @@
    ],
    "vmin": -0.033,
    "vmax": 0.033,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -1937,34 +2508,12 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in AOD/yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_puor",
-   "original_colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
-   ],
-   "bins": [
-    -0.033,
-    -0.02357,
-    -0.01414,
-    -0.004714,
-    0.004714,
-    0.01414,
-    0.02357,
-    0.033
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in AOD/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857"
   },
   {
    "key": "modis13a3_ndvi",
@@ -2444,14 +2993,10 @@
    ],
    "vmin": -18.0,
    "vmax": 18.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -2475,34 +3020,12 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_brbg",
-   "original_colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
-   ],
-   "bins": [
-    -18.0,
-    -12.86,
-    -7.714,
-    -2.571,
-    2.571,
-    7.714,
-    12.86,
-    18.0
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in mm/month/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857"
   },
   {
    "key": "modis_et_trend",
@@ -2747,14 +3270,10 @@
    ],
    "vmin": -1.9,
    "vmax": 1.9,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -2778,34 +3297,12 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. blue = cooling, red = warming; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_rdbu",
-   "original_colors": [
-    "#053061",
-    "#2166ac",
-    "#4393c3",
-    "#92c5de",
-    "#d1e5f0",
-    "#f7f7f7",
-    "#fddbc7",
-    "#f4a582",
-    "#d6604d",
-    "#b2182b",
-    "#67001f"
-   ],
-   "bins": [
-    -1.9,
-    -1.357,
-    -0.8143,
-    -0.2714,
-    0.2714,
-    0.8143,
-    1.357,
-    1.9
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in \u00b0C/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857"
   },
   {
    "key": "modis_ndvi",
@@ -2978,14 +3475,10 @@
    ],
    "vmin": -0.05,
    "vmax": 0.05,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -3009,34 +3502,12 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. brown = browning, green = greening; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_brgn",
-   "original_colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f7f7f7",
-    "#d9f0d3",
-    "#a6dba0",
-    "#5aae61",
-    "#1b7837",
-    "#00441b"
-   ],
-   "bins": [
-    -0.05,
-    -0.03571,
-    -0.02143,
-    -0.007143,
-    0.007143,
-    0.02143,
-    0.03571,
-    0.05
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in NDVI/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857"
   },
   {
    "key": "population",
@@ -3725,24 +4196,20 @@
    "units": "m\u00b3/m\u00b3",
    "bounds": [
     [
-     3.43784,
-     24.10216
+     3.3219948227256872,
+     23.399999999999995
     ],
     [
-     12.28635,
-     36.00099
+     12.299999999999999,
+     36.004072640369756
     ]
    ],
-   "vmin": 0.0,
-   "vmax": 0.45,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": 0.0799,
+   "vmax": 0.466,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear",
@@ -3846,10 +4313,10 @@
     "2025-11",
     "2025-12"
    ],
-   "source": "SMAP SPL4SMGP v008 via NASA AppEEARS",
+   "source": "SMAP L4 SPL4SMGP v008 (3-hourly, 9 km) via Google Earth Engine (NASA/SMAP/SPL4SMGP/008)",
    "crs": "EPSG:3857",
-   "width": 900,
-   "height": 676,
+   "width": 500,
+   "height": 360,
    "original_colormap": "brown-teal",
    "original_colors": [
     "#8c510a",
@@ -3865,18 +4332,10 @@
     "#003e33",
     "#003c30"
    ],
-   "bins": [
-    0.0,
-    0.06429,
-    0.1286,
-    0.1929,
-    0.2571,
-    0.3214,
-    0.3857,
-    0.45
-   ],
-   "recolored": true,
-   "palette": "rwg7"
+   "bins": null,
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "smoothing": "averaged onto the native cells, then bilinear interpolation to display pixels"
   },
   {
    "key": "smap_sm_rootzone_trend",
@@ -3884,24 +4343,20 @@
    "units": "m\u00b3/m\u00b3 per yr",
    "bounds": [
     [
-     3.4021089038843564,
+     3.321994822725686,
      23.399999999999995
     ],
     [
      12.299999999999999,
-     36.004112600715054
+     36.004072640369756
     ]
    ],
    "vmin": -0.046,
    "vmax": 0.046,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -3925,34 +4380,13 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in m\u00b3/m\u00b3 per yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_brbg",
-   "original_colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
-   ],
-   "bins": [
-    -0.046,
-    -0.03286,
-    -0.01971,
-    -0.006571,
-    0.006571,
-    0.01971,
-    0.03286,
-    0.046
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in m\u00b3/m\u00b3 per yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857",
+   "smoothing": "slopes averaged onto the native 0.08\u00b0 cells, then bilinear interpolation to the display pixels"
   },
   {
    "key": "smap_sm_surface",
@@ -4190,6 +4624,45 @@
    "palette": "rwg7"
   },
   {
+   "key": "soil_clay",
+   "label": "Clay in topsoil, 0-30 cm (ISRIC SoilGrids 2.0)",
+   "units": "% (mass)",
+   "temporal": "static",
+   "native_resolution": "250 m SoilGrids, stored at ~1 km (0.009\u00b0) in data/raw/ss_clay_soilgrids_0_30.tif",
+   "source": "ISRIC SoilGrids 2.0, 0-30 cm depth-weighted clay (data/raw/ss_clay_soilgrids_0_30.tif)",
+   "notes": "The county series soil_clay_0_30cm is the county mean of the same SoilGrids 0-30 cm clay at ~1 km (re-averaging this file reproduces it: r = 0.9998). Map: continuous colour from the 2nd (red) to the 98th (green) percentile; white = middle.",
+   "continuous": true,
+   "colors": [
+    "#b2182b",
+    "#ffffff",
+    "#1b7837"
+   ],
+   "vmin": 18.5,
+   "vmax": 48.9,
+   "palette": "rwg-continuous",
+   "bins": null,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+   "nodata_color": "black diagonal hatching (no valid data)",
+   "crs": "EPSG:3857",
+   "bounds": [
+    [
+     2.969211265342277,
+     23.49992783256668
+    ],
+    [
+     12.836925410067964,
+     36.46942348123609
+    ]
+   ],
+   "width": 900,
+   "height": 692,
+   "dates": [
+    "static"
+   ],
+   "scale": "linear",
+   "smoothing": "average of the grid cells in each display pixel"
+  },
+  {
    "key": "sudd_inundation",
    "label": "Sudd inundation (MODIS, monthly)",
    "units": "class",
@@ -4361,14 +4834,10 @@
    ],
    "vmin": -31.0,
    "vmax": 31.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -4390,34 +4859,12 @@
     "2023": 6,
     "2024": 7
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. brown = drier / less water, teal = wetter / more water; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_brbg",
-   "original_colors": [
-    "#543005",
-    "#8c510a",
-    "#bf812d",
-    "#dfc27d",
-    "#f6e8c3",
-    "#f5f5f5",
-    "#c7eae5",
-    "#80cdc1",
-    "#35978f",
-    "#01665e",
-    "#003c30"
-   ],
-   "bins": [
-    -31.0,
-    -22.14,
-    -13.29,
-    -4.429,
-    4.429,
-    13.29,
-    22.14,
-    31.0
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in percentage points/yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857"
   },
   {
    "key": "surface_water",
@@ -6124,17 +6571,17 @@
    "units": "detections per 0.05\u00b0 cell per month (log10)",
    "bounds": [
     [
-     3.467840075000122,
-     24.13215550500011
+     3.412126287818573,
+     23.399999999999995
     ],
     [
-     12.256351879000096,
-     35.970991546000185
+     12.299999999999999,
+     35.994077479217665
     ]
    ],
-   "vmin": 0.0,
-   "vmax": 2.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "vmin": 1.0,
+   "vmax": 46.0,
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates, log10 scale (1 detection = red end)",
    "native_resolution": "375 m detections binned to 0.05\u00b0 (~5.5 km)",
    "dates": [
     "2018-01",
@@ -6242,26 +6689,17 @@
    "original_colors": null,
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
-   "bins": [
-    1.0,
-    1.931,
-    3.728,
-    7.197,
-    13.89,
-    26.83,
-    51.79,
-    100.0
-   ],
-   "recolored": true,
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "palette": "rwg-continuous",
+   "continuous": true,
+   "width": 700,
+   "height": 499,
+   "smoothing": "none (each 0.05\u00b0 cell drawn as a block)",
+   "transparent": "zero / none (and the colour scale starts at the lowest non-zero values)"
   },
   {
    "key": "viirs_fire_trend",
@@ -6279,14 +6717,10 @@
    ],
    "vmin": -22.0,
    "vmax": 22.0,
-   "colormap": "Red-white-green 7 bins (red = lowest / decrease, white = middle / no change, green = highest / increase)",
+   "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); symmetric about 0, fixed across years",
    "colors": [
     "#b2182b",
-    "#ef8a62",
-    "#fddbc7",
     "#ffffff",
-    "#d9f0d3",
-    "#7fbf7b",
     "#1b7837"
    ],
    "scale": "linear, symmetric about 0 (fixed across years: 98th percentile of |slope|)",
@@ -6310,34 +6744,12 @@
     "2024": 7,
     "2025": 8
    },
-   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05\u00b0 cell per year, per yr. purple = decreasing, orange = increasing; white = no change. No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
-   "original_colormap": "div_puor",
-   "original_colors": [
-    "#2d004b",
-    "#542788",
-    "#8073ac",
-    "#b2abd2",
-    "#d8daeb",
-    "#f7f7f7",
-    "#fee0b6",
-    "#fdb863",
-    "#e08214",
-    "#b35806",
-    "#7f3b08"
-   ],
-   "bins": [
-    -22.0,
-    -15.71,
-    -9.429,
-    -3.143,
-    3.143,
-    9.429,
-    15.71,
-    22.0
-   ],
-   "recolored": true,
+   "notes": "Each image = per-pixel Theil-Sen (Sen's) slope of the yearly values from 2018 through the image year (>= 3 years), in detections per 0.05\u00b0 cell per year, per yr. Continuous colour: red = decrease, white = no change, green = increase (bilinear smoothing between cells; black hatching = data but too few years for a slope). No significance test is applied per pixel: with 3-8 yearly points a slope is a description of change, not proof of a trend.",
+   "continuous": true,
+   "palette": "rwg-continuous",
+   "bins": null,
    "nodata_color": "black diagonal hatching (no valid data)",
-   "palette": "rwg7"
+   "crs": "EPSG:3857"
   },
   {
    "key": "water_base_floodveg",

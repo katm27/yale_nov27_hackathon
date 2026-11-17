@@ -1,5 +1,5 @@
 variable,region,S,p_boot,n_counties,median_sen_pct_per_year,median_sen_per_year
 precip_mm,national,915,0.253,79,-0.470479,-0.0672714
 precip_mm,sudd,1060,0.042,16,5.4081,1.26551
-tair_c,national,-2395,0.563,79,,-0.504726
-tair_c,sudd,-625,0.508,16,,-0.569125
+tair_c,national,7079,0.051,79,,0.0281429
+tair_c,sudd,1355,0.077,16,,-0.00339286

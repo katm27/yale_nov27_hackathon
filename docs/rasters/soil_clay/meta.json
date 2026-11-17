@@ -1,0 +1,39 @@
+{
+ "key": "soil_clay",
+ "label": "Clay in topsoil, 0-30 cm (ISRIC SoilGrids 2.0)",
+ "units": "% (mass)",
+ "temporal": "static",
+ "native_resolution": "250 m SoilGrids, stored at ~1 km (0.009°) in data/raw/ss_clay_soilgrids_0_30.tif",
+ "source": "ISRIC SoilGrids 2.0, 0-30 cm depth-weighted clay (data/raw/ss_clay_soilgrids_0_30.tif)",
+ "notes": "The county series soil_clay_0_30cm is the county mean of the same SoilGrids 0-30 cm clay at ~1 km (re-averaging this file reproduces it: r = 0.9998). Map: continuous colour from the 2nd (red) to the 98th (green) percentile; white = middle.",
+ "continuous": true,
+ "colors": [
+  "#b2182b",
+  "#ffffff",
+  "#1b7837"
+ ],
+ "vmin": 18.5,
+ "vmax": 48.9,
+ "palette": "rwg-continuous",
+ "bins": null,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "crs": "EPSG:3857",
+ "bounds": [
+  [
+   2.969211265342277,
+   23.49992783256668
+  ],
+  [
+   12.836925410067964,
+   36.46942348123609
+  ]
+ ],
+ "width": 900,
+ "height": 692,
+ "dates": [
+  "static"
+ ],
+ "scale": "linear",
+ "smoothing": "average of the grid cells in each display pixel"
+}

@@ -1,0 +1,39 @@
+{
+ "key": "elevation",
+ "label": "Elevation (1 km)",
+ "units": "m",
+ "temporal": "static",
+ "native_resolution": "~1 km (0.009°) DEM (data/raw/ss_nasadem_elev_1km_fast.tif)",
+ "source": "NASADEM / Copernicus DEM elevation at ~1 km (data/raw/ss_nasadem_elev_1km_fast.tif)",
+ "notes": "The county series elevation_mean (Copernicus GLO-90 read at ~370 m) is reproduced by averaging this 1 km grid over each county (r = 0.99999, mean difference 0.06 m). Map: continuous colour from the 2nd (red) to the 98th (green) percentile; white = middle.",
+ "continuous": true,
+ "colors": [
+  "#b2182b",
+  "#ffffff",
+  "#1b7837"
+ ],
+ "vmin": 389.0,
+ "vmax": 954.0,
+ "palette": "rwg-continuous",
+ "bins": null,
+ "colormap": "continuous red -> white -> green (red = low / decrease, white = middle / no change, green = high / increase); 2nd-98th percentile of all dates",
+ "nodata_color": "black diagonal hatching (no valid data)",
+ "crs": "EPSG:3857",
+ "bounds": [
+  [
+   2.969211265342277,
+   23.49992783256668
+  ],
+  [
+   12.836925410067964,
+   36.46942348123609
+  ]
+ ],
+ "width": 900,
+ "height": 692,
+ "dates": [
+  "static"
+ ],
+ "scale": "linear",
+ "smoothing": "average of the grid cells in each display pixel"
+}
