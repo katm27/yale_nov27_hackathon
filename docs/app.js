@@ -943,7 +943,7 @@
       extra: (k) => (cov && cov[k] != null ? `${fmt(100 * cov[k], 2)}% of the request was funded` : "") });
     const tot = perYear("fts_hum_funding_year_usd"), usy = perYear("fts_us_gov_funding_year_usd");
     if (tot && usy) { const oth = tot.map((x, k) => (x != null && usy[k] != null ? x - usy[k] : null));
-      specs.push({ id: "fts_hum_funding_year_usd", annual: true, stacked: true, title: "Who paid: US government and all other donors", sub: "All humanitarian funding to South Sudan by calendar year (OCHA Financial Tracking Service). Other donors held steady; the US cut its funding by more than half in 2025 and no one filled the gap.",
+      specs.push({ id: "fts_hum_funding_year_usd", annual: true, stacked: true, title: "Providers of aid", sub: "All humanitarian funding to South Sudan by calendar year (OCHA Financial Tracking Service). Other donors held steady; the US cut its funding by more than half in 2025 and no one filled the gap.",
         sets: [{ data: usy, color: "#2a78d6", label: "US government", fmt: usd, type: "bar", stack: "f" }, { data: oth, color: "#9a988f", label: "All other donors", fmt: usd, type: "bar", stack: "f" }], yMin: 0,
         extra: (k) => (tot[k] != null ? `Total ${usd(tot[k])} · US share ${fmt((100 * usy[k]) / tot[k], 2)}%` : "") }); }
     const obl = perYear("usaid_obligated_month_usd", "sum"), dis = perYear("usaid_disbursed_month_usd", "sum");
