@@ -261,7 +261,13 @@
     "fmr_internal_forced_total",
     "wps_ipv_pct",
     "wps_community_safety_pct",
-    "wps_education_years"
+    "wps_education_years",
+    "gldas_gws_anom_cm",
+    "sudd_inundation_km2",
+    "precip_mm",
+    "et_ind_flooding",
+    "acled_civ_fatalities",
+    "ipc_phase3plus_pct"
   ],
   "spark_ids": [
     "et_ind_total",

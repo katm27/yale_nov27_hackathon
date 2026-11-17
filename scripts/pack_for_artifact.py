@@ -46,7 +46,7 @@ for b in cur["background"]:
     raster_keys |= set(b.get("rasters", []))
 point_keys = set(cur["points"])
 
-copy = ["counties.geojson", "flows.json", "profiles.json", "context_events.json", "context_timeline.json", "basemap_context.json", "curated.json", "stories.json", "walkthrough.json", "landing_text.json"]
+copy = ["counties.geojson", "flows.json", "profiles.json", "context_events.json", "context_timeline.json", "basemap_context.json", "curated.json", "stories.json", "walkthrough.json", "landing_text.json", "national_trends.json"]
 for f in copy:
     p = os.path.join(DOCS, "data", f)
     if os.path.exists(p):

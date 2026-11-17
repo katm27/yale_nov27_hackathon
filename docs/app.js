@@ -208,8 +208,21 @@
     if (col == null) return { ...st, fillColor: NODATA, fillOpacity: 0.78 };
     return { ...st, fillColor: col, fillOpacity: flows };
   }
+  /** White tag on the clicked county with its current value, readable over any colour. */
+  let selLabel = null;
+  function updateSelectedLabel() {
+    if (selLabel) { map.removeLayer(selLabel); selLabel = null; }
+    if (!state.selected || !countyLayer) return;
+    const l = countyLayer.getLayers().find((x) => x.feature.properties.district_id === state.selected); if (!l) return;
+    const v = state.varById[state.colorBy], name = l.feature.properties.name;
+    let txt = esc(name);
+    if (v) { const x = valueAt(v, state.selected, state.t); txt += `: <b>${esc(describe(v, x, state.selected))}</b>`; }
+    let ll = l.getCenter(); try { if (!l.getBounds().contains(ll) || !l.contains?.(ll)) ll = l.getBounds().getCenter(); } catch (e) { /* keep */ }
+    selLabel = L.marker(ll, { pane: "labels", interactive: false, icon: L.divIcon({ className: "sel-label", html: `<span>${txt}</span>`, iconSize: null }) }).addTo(map);
+  }
   function refreshCounties() {
     if (!countyLayer) return;
+    updateSelectedLabel();
     countyLayer.setStyle(styleCounty);
     countyLayer.eachLayer((l) => {
       const tr = trendOf(state.colorBy, l.feature.properties.district_id);
@@ -938,7 +951,7 @@
     if (share && usy) specs.push({ title: "US share of all humanitarian funding (solid) and US amount per year (dashed)", sub: "OCHA Financial Tracking Service, by calendar year.", step: true,
       sets: [{ data: mul(share, 100), color: "#2a78d6", label: "US share of all humanitarian funding", fmt: (x) => `${fmt(x, 2)}%`, axis: "y" },
         { data: usy, color: "#6250d6", dash: [6, 4], label: "US funding that year", fmt: usd, axis: "y2" }], yMin: 0, y2: true });
-    const add = (id, title, sub, color, f, opts = {}) => { let a = A(id); if (a && opts.prep) a = opts.prep(a); if (a) specs.push({ title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f, dash: opts.dash }], yMin: 0, ...opts }); };
+    const add = (id, title, sub, color, f, opts = {}) => { let a = A(id); if (a && opts.prep) a = opts.prep(a); if (a) specs.push({ id, title, sub, sets: [{ data: opts.mul ? mul(a, opts.mul) : a, color, label: title, fmt: f, dash: opts.dash }], yMin: 0, ...opts }); };
     // Survey-edition series (WPS Index): keep one value per edition year, drawn as a dot at mid-year.
     const editions = (arr) => arr.map((x, i) => (x != null && state.months[i].endsWith("-07") ? x : null));
     const editionTitle = (i) => `${yearOf(i)} edition`;
@@ -951,15 +964,28 @@
     add("wps_ipv_pct", "Women who faced violence from a partner in the last year (national)", wpsSub, "#ba1e68", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 60 });
     add("wps_community_safety_pct", "Women who feel safe walking alone at night in their community (national)", wpsSub, "#1baf7a", (x) => `${fmt(x, 3)}%`, { ...wpsOpts, yMax: 100 });
     add("wps_education_years", "Women's average years of schooling (national)", wpsSub, "#008300", (x) => `${fmt(x, 3)} years`, wpsOpts);
+    // climate and impact series, aggregated over the 79 counties
+    const agg = (id, how, title, sub, color, f, opts = {}) => { const a = nationalLine(id, how); if (a && a.some((x) => x != null)) specs.push({ id, title, sub, sets: [{ data: a, color, label: title, fmt: f }], yMin: opts.yMin === undefined ? 0 : opts.yMin, ...opts }); };
+    agg("gldas_gws_anom_cm", "mean", "Groundwater, national average", "NASA GLDAS-2.2 with GRACE satellite data: cm of water above or below the 2004–2020 average, mean of the 79 counties.", "#0a3c91", (x) => `${fmt(x, 3)} cm`, { yMin: null, refLine: 0 });
+    agg("sudd_inundation_km2", "sum", "Sudd wetland flooded area", "NASA MODIS, total km² flooded across the 16 Sudd counties.", "#0aa5b8", (x) => `${fmt(x)} km²`);
+    agg("precip_mm", "mean", "Rainfall, national average", "NASA IMERG, mm per month, mean of the 79 counties.", "#2a78d6", (x) => `${fmt(x, 3)} mm`);
+    agg("et_ind_flooding", "sum", "People displaced by flooding", "IOM Event Tracking, people per month, all counties.", "#1f78d1", (x) => `${fmt(x)} people`, { bar: true });
+    agg("acled_civ_fatalities", "sum", "Civilians killed in attacks", "ACLED, deaths per month, all counties.", "#d7301f", (x) => `${fmt(x)} deaths`, { bar: true });
+    agg("ipc_phase3plus_pct", "mean", "People facing crisis-level hunger or worse (IPC 3+)", "IPC analyses, county average share of the population.", "#ba1e68", (x) => `${fmt(x, 3)}%`, { step: true });
     return specs;
   }
   async function renderNational() {
     const box = $("#nat-charts"); if (!box) return;
     await Promise.all(state.curated.national_ids.map((id) => ensureSeries(id).catch(() => null)));
+    await Promise.all(["gldas_gws_anom_cm", "sudd_inundation_km2", "precip_mm", "et_ind_flooding", "acled_civ_fatalities", "ipc_phase3plus_pct"].map((id) => ensureSeries(id).catch(() => null)));
+    if (!state.natTrends) state.natTrends = await fetchJSON("data/national_trends.json").catch(() => ({}));
     state.natCharts.forEach((c) => c.destroy()); state.natCharts = []; box.innerHTML = "";
+    box.insertAdjacentHTML("beforeend", `<p class="nat-sig-note"><span class="nat-sig-key"></span>A yellow outline means the 2018–2025 trend is statistically significant (Mann-Kendall test).</p>`);
     const ink2 = css("--ink-2"), line = css("--line");
     for (const spec of nationalSpecs()) {
       const tile = document.createElement("div"); tile.className = "nat-tile";
+      const nt = (state.natTrends || {})[spec.id || ""];
+      if (nt && nt.significant) { tile.classList.add("sig"); tile.title = "The 2018–2025 trend is statistically significant"; }
       tile.innerHTML = `<h3>${esc(spec.title)}</h3><p class="nt-sub">${esc(spec.sub)}</p><div class="nt-v"></div><div class="nt-canvas"><canvas></canvas></div>`;
       box.appendChild(tile);
       const datasets = spec.sets.map((s) => ({ label: s.label, data: s.data, borderColor: s.color, backgroundColor: spec.bar ? s.color + "cc" : s.color, borderWidth: spec.bar ? 0 : 2,
@@ -1098,6 +1124,8 @@
   function openNat(open) {
     state.natOpen = open;
     const d = $("#nat-drawer"); d.hidden = !open; $("#nat-toggle").setAttribute("aria-expanded", open);
+    $("#nat-tab").hidden = open;
+    if (!open) { d.style.height = ""; d.style.maxHeight = ""; $("#app").classList.remove("nat-full"); }
     $("#nat-toggle").textContent = open ? "Hide national trends" : "See national trends in aid and socioeconomic outcomes";
     if (open && $("#national").parentElement !== $("#nat-slot")) { $("#nat-slot").appendChild($("#national")); renderNational(); }
     setTimeout(() => map.invalidateSize(), 60);
@@ -1180,6 +1208,30 @@
     $("#side-hide").onclick = () => setSidebar(false);
     $("#side-show").onclick = () => setSidebar(true);
     $("#ctx-show").onclick = () => setContextPanel(true);
+    // national trends: drag the handle (or the tab when closed) up to enlarge until it replaces the map, down to close
+    const natDrag = (el) => {
+      let y0 = null, h0 = 0, moved = 0;
+      const D = $("#nat-drawer"), M = $("#main");
+      el.onpointerdown = (e) => { y0 = e.clientY; moved = 0; h0 = D.hidden ? 0 : D.getBoundingClientRect().height; $("#app").classList.remove("nat-full"); el.setPointerCapture(e.pointerId); };
+      el.onpointermove = (e) => {
+        if (y0 == null) return; moved = y0 - e.clientY;
+        const h = Math.max(0, Math.min(M.clientHeight, h0 + moved));
+        if (D.hidden && h > 0) { openNat(true); }
+        D.style.maxHeight = "none"; D.style.height = `${h}px`;
+        if (!el._raf) el._raf = requestAnimationFrame(() => { el._raf = null; map.invalidateSize({ pan: false }); });
+      };
+      el.onpointerup = () => {
+        if (y0 == null) return; y0 = null;
+        const h = D.hidden ? 0 : D.getBoundingClientRect().height, full = M.clientHeight;
+        if (Math.abs(moved) < 4) { openNat(D.hidden); }
+        else if (h < 90) openNat(false);
+        else if (h > full * 0.8) { D.style.height = `${full}px`; $("#app").classList.add("nat-full"); }
+        else $("#app").classList.remove("nat-full");
+        setTimeout(() => map.invalidateSize(), 60);
+      };
+      el.onkeydown = (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openNat(!state.natOpen); } };
+    };
+    natDrag($("#nat-handle")); natDrag($("#nat-tab"));
     makeGrip($("#grip-left"), -1, () => setSidebar(false));
     makeGrip($("#grip-right"), 1, () => setContextPanel(false));
     renderModeHint();

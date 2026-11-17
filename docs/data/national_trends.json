@@ -1,0 +1,142 @@
+{
+ "hrp_coverage_year": {
+  "how": "national",
+  "p": 0.3865,
+  "significant": false,
+  "slope": -0.021999999999999992,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "hrp_funding_year_usd": {
+  "how": "national",
+  "p": 0.9015,
+  "significant": false,
+  "slope": 3375000.0,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "hrp_requirement_year_usd": {
+  "how": "national",
+  "p": 0.7105,
+  "significant": false,
+  "slope": 16916666.666666668,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "usaid_disbursed_month_usd": {
+  "how": "national",
+  "p": 0.3933,
+  "significant": false,
+  "slope": 535714.2857142857,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "usaid_obligated_month_usd": {
+  "how": "national",
+  "p": 0.1559,
+  "significant": false,
+  "slope": -396950.0,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "fts_us_gov_funding_month_usd": {
+  "how": "national",
+  "p": 0.0763,
+  "significant": false,
+  "slope": -4618000.0,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "fts_us_gov_funding_year_usd": {
+  "how": "national",
+  "p": 0.7105,
+  "significant": false,
+  "slope": -8047500.0,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "fts_us_share_year": {
+  "how": "national",
+  "p": 0.5362,
+  "significant": false,
+  "slope": -0.006200000000000006,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "ii_sexual_violence_incidents": {
+  "how": "national",
+  "p": 0.0842,
+  "significant": false,
+  "slope": -0.5,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "unmiss_budget_fy_usd": {
+  "how": "national",
+  "p": 0.3865,
+  "significant": false,
+  "slope": 5500000.0,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "fmr_internal_forced_total": {
+  "how": "national",
+  "p": 0.0392,
+  "significant": true,
+  "slope": 516.5,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "wps_ipv_pct": {
+  "how": "national",
+  "p": 0.1486,
+  "significant": false,
+  "slope": -1.7666666666666668,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "wps_community_safety_pct": {
+  "how": "national",
+  "p": 0.4701,
+  "significant": false,
+  "slope": 0.08333333333333304,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "wps_education_years": {
+  "how": "national",
+  "p": 0.7341,
+  "significant": false,
+  "slope": 0.15858333333333324,
+  "test": "Mann-Kendall (short series, uncorrected)"
+ },
+ "gldas_gws_anom_cm": {
+  "how": "mean",
+  "p": 0.0085,
+  "significant": true,
+  "slope": 2.0389989451476795,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "sudd_inundation_km2": {
+  "how": "sum",
+  "p": 0.0031,
+  "significant": true,
+  "slope": 1790.046166666667,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "precip_mm": {
+  "how": "mean",
+  "p": 0.2343,
+  "significant": false,
+  "slope": 0.9036028481012757,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "et_ind_flooding": {
+  "how": "sum",
+  "p": 0.1634,
+  "significant": false,
+  "slope": 557.125,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "acled_civ_fatalities": {
+  "how": "sum",
+  "p": 0.1332,
+  "significant": false,
+  "slope": 10.0,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ },
+ "ipc_phase3plus_pct": {
+  "how": "mean",
+  "p": 0.246,
+  "significant": false,
+  "slope": 0.31331501831501846,
+  "test": "seasonal Mann-Kendall (Hirsch-Slack)"
+ }
+}

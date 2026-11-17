@@ -416,3 +416,19 @@ details.ht h4 { text-transform: none; letter-spacing: 0; font-size: 15px; color:
 .sdot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-left: 5px; vertical-align: 1px; }
 .hero .lede-src { font-size: 16px; }
 .vl-hint { margin-top: 10px; }
+
+/* ---- clicked county: value tag ---- */
+.sel-label { transform: translate(-50%, -50%); white-space: nowrap; pointer-events: none; }
+.sel-label span { display: inline-block; background: #fff; color: #0e0e0e; border: 1.5px solid #0e0e0e; padding: 3px 7px; font-size: 13px; line-height: 1.25; box-shadow: none; }
+
+/* ---- national trends: drag handle, closed tab, significance outline ---- */
+#nat-drawer { position: relative; padding-top: 14px; }
+.nat-handle { position: absolute; top: 0; left: 0; right: 0; height: 14px; cursor: ns-resize; display: grid; place-items: center; touch-action: none; background: var(--surface); }
+.nat-handle span { width: 46px; height: 5px; border-top: 1.5px solid #8a8880; border-bottom: 1.5px solid #8a8880; }
+.nat-handle:hover span, .nat-handle:focus-visible span { border-color: var(--accent); }
+#nat-tab { position: absolute; right: 12px; bottom: 76px; z-index: 700; border: none; padding: 8px 12px; font-weight: 700; cursor: ns-resize; background: var(--accent); color: #fff; touch-action: none; }
+#app.nat-full #mapwrap { display: none; }
+#app.nat-full #nat-drawer { grid-row: 1 / span 2; }
+.nat-tile.sig { outline: 3px solid #f2c200; outline-offset: 6px; }
+.nat-sig-note { grid-column: 1 / -1; font-size: 13px; color: var(--ink-2); margin: 0 0 4px; display: flex; align-items: center; gap: 8px; }
+.nat-sig-key { width: 22px; height: 12px; border: 3px solid #f2c200; display: inline-block; }
