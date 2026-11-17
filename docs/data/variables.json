@@ -4929,14 +4929,14 @@
    "trend_moran_I": 0.149,
    "trend_moran_p": 0.018,
    "regional": {
-    "national": {
+    "sudd": {
      "S": 2321.0,
      "p": 0.001,
      "n": 16,
      "median_pct": null,
      "median_slope": 2.0
     },
-    "sudd": {
+    "national": {
      "S": 2321.0,
      "p": 0.001,
      "n": 16,
@@ -5281,14 +5281,14 @@
    "trend_moran_I": 0.085,
    "trend_moran_p": 0.199,
    "regional": {
-    "national": {
+    "sudd": {
      "S": 2229.0,
      "p": 0.003,
      "n": 16,
      "median_pct": null,
      "median_slope": 1.23
     },
-    "sudd": {
+    "national": {
      "S": 2229.0,
      "p": 0.003,
      "n": 16,
@@ -5342,14 +5342,14 @@
    "trend_moran_I": -0.0063,
    "trend_moran_p": 0.08,
    "regional": {
-    "national": {
+    "sudd": {
      "S": 2230.0,
      "p": 0.003,
      "n": 16,
      "median_pct": 72.9,
      "median_slope": 67.0
     },
-    "sudd": {
+    "national": {
      "S": 2230.0,
      "p": 0.003,
      "n": 16,
@@ -13680,6 +13680,68 @@
    "category": "human",
    "temporal": "monthly",
    "index_ok": true,
+   "id": "fx_ssp_per_usd_filled",
+   "label": "Black-market exchange rate, gap-filled (pounds per US$)",
+   "units": "SSP per USD",
+   "aggregation": "median over county markets, monthly; gaps filled (see notes)",
+   "notes": "ESTIMATES in filled cells - gap-filled version of 'fx_ssp_per_usd' (which stays observed-only). Each value is flagged in data/processed/wfp_filled_flags.csv (observed / observed_wfp_variant / observed_fewsnet / interp_time / nearby_market). Observed priority: WFP value; (i) interp_time: interior gaps of <= 2 months in a county's own series, linear in log price (hold-out error 2%); (ii) nearby_market: county-months still empty take the inverse-distance weighted median of the up to 3 nearest markets (in other counties) with an observed price in the SAME month, all within 150 km of the county centroid; flag distance_km = nearest donor. Leave-one-county-out validation at 150 km: median abs error 2% (n=932). Nothing is extrapolated beyond observed months.",
+   "source": "WFP VAM market monitoring via HDX",
+   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
+   "native_resolution": "market",
+   "group": "Prices",
+   "higher_is": "worse",
+   "meta_file": "wfp_filled.json",
+   "baseline_year": 2018,
+   "first_period": "2018-01",
+   "last_period": "2025-12",
+   "counties_with_data": 77,
+   "months_observed": 86,
+   "carry_forward_months": 0,
+   "p02": 275.9,
+   "p98": 6040.0,
+   "min": 157.7,
+   "max": 8107.0,
+   "label_original": "Black-market exchange rate, gap-filled (pounds per US$)",
+   "plain": "How many South Sudanese pounds one US dollar buys on the unofficial market. When it rises, the pound has weakened and imported goods such as fuel cost more. This version fills some missing county-months with estimates; the original version shows only measured values.",
+   "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 150 km that reported that month (typical error about 2% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+   "direction": "better_worse",
+   "topic": "Food & prices",
+   "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed. Mostly a national signal; county differences are small.",
+   "synonyms": [
+    "exchange rate",
+    "currency",
+    "dollar",
+    "inflation",
+    "devaluation",
+    "SSP",
+    "gap-filled",
+    "estimated",
+    "filled"
+   ],
+   "trend_basis": "vs_base_month",
+   "trend_moran_I": 0.489,
+   "trend_moran_p": 0.001,
+   "regional": {
+    "sudd": {
+     "S": 1573.0,
+     "p": 0.008,
+     "n": 16,
+     "median_pct": 32.9,
+     "median_slope": 177.0
+    },
+    "national": {
+     "S": 8984.0,
+     "p": 0.012,
+     "n": 77,
+     "median_pct": 31.6,
+     "median_slope": 167.0
+    }
+   }
+  },
+  {
+   "category": "human",
+   "temporal": "monthly",
+   "index_ok": true,
    "id": "price_cooking_oil_ssp",
    "label": "Cooking oil price (South Sudanese pounds)",
    "units": "SSP per L",
@@ -13912,6 +13974,68 @@
     "national": {
      "S": -1107.0,
      "p": 0.068,
+     "n": 32,
+     "median_pct": -3.83,
+     "median_slope": -0.279
+    }
+   }
+  },
+  {
+   "category": "human",
+   "temporal": "monthly",
+   "index_ok": true,
+   "id": "wage_casual_labour_usd_filled",
+   "label": "Daily wage for casual labour, gap-filled (US$)",
+   "units": "USD per day",
+   "aggregation": "median over county markets, monthly; gaps filled (see notes)",
+   "notes": "ESTIMATES in filled cells - gap-filled version of 'wage_casual_labour_usd' (which stays observed-only). Each value is flagged in data/processed/wfp_filled_flags.csv (observed / observed_wfp_variant / observed_fewsnet / interp_time / nearby_market). Observed priority: WFP value; (i) interp_time: interior gaps of <= 2 months in a county's own series, linear in log price (hold-out error 6%); (ii) No spatial (nearby-market) fill: leave-one-county-out median abs error exceeded 20% (in fact 40% or more) at every radius tested (150-50 km), so neighbouring markets are not a credible proxy for this measure. Nothing is extrapolated beyond observed months.",
+   "source": "WFP VAM market monitoring via HDX",
+   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
+   "native_resolution": "market",
+   "group": "Prices",
+   "higher_is": "better",
+   "meta_file": "wfp_filled.json",
+   "baseline_year": 2018,
+   "first_period": "2018-03",
+   "last_period": "2025-12",
+   "counties_with_data": 32,
+   "months_observed": 94,
+   "carry_forward_months": 0,
+   "p02": 1.046,
+   "p98": 17.11,
+   "min": 0.37,
+   "max": 95.64,
+   "label_original": "Daily wage for casual labour, gap-filled (US$)",
+   "plain": "What an unskilled casual (non-farm) labourer earns in a day, in US dollars. Set against food prices, it shows how much food a day's work buys. This version fills some missing county-months with estimates; the original version shows only measured values.",
+   "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. No values are borrowed from neighbouring counties: tests showed nearby markets are a poor guide for this measure. Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+   "direction": "better_worse",
+   "topic": "Food & prices",
+   "caution": "Filled cells are estimates, not measurements.",
+   "synonyms": [
+    "wages",
+    "income",
+    "labour",
+    "jobs",
+    "pay",
+    "terms of trade",
+    "gap-filled",
+    "estimated",
+    "filled"
+   ],
+   "trend_basis": "vs_base_month",
+   "trend_moran_I": 0.803,
+   "trend_moran_p": 0.01,
+   "regional": {
+    "sudd": {
+     "S": -147.0,
+     "p": 0.259,
+     "n": 6,
+     "median_pct": 8.53,
+     "median_slope": 0.21
+    },
+    "national": {
+     "S": -1174.0,
+     "p": 0.096,
      "n": 32,
      "median_pct": -3.83,
      "median_slope": -0.279
@@ -14155,6 +14279,134 @@
      "n": 28,
      "median_pct": 1.1,
      "median_slope": 0.031
+    }
+   }
+  },
+  {
+   "category": "human",
+   "temporal": "monthly",
+   "index_ok": true,
+   "id": "price_diesel_parallel_usd_filled",
+   "label": "Diesel price, black market, gap-filled (US$)",
+   "units": "USD per L",
+   "aggregation": "median over county markets, monthly; gaps filled (see notes)",
+   "notes": "ESTIMATES in filled cells - gap-filled version of 'price_diesel_parallel_usd' (which stays observed-only). Each value is flagged in data/processed/wfp_filled_flags.csv (observed / observed_wfp_variant / observed_fewsnet / interp_time / nearby_market). Observed priority: WFP value; (i) interp_time: interior gaps of <= 2 months in a county's own series, linear in log price (hold-out error 7%); (ii) nearby_market: county-months still empty take the inverse-distance weighted median of the up to 3 nearest markets (in other counties) with an observed price in the SAME month, all within 150 km of the county centroid; flag distance_km = nearest donor. Leave-one-county-out validation at 150 km: median abs error 15% (n=761). Nothing is extrapolated beyond observed months.",
+   "source": "WFP VAM market monitoring via HDX",
+   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
+   "native_resolution": "market",
+   "group": "Prices",
+   "higher_is": "worse",
+   "meta_file": "wfp_filled.json",
+   "baseline_year": 2018,
+   "first_period": "2018-03",
+   "last_period": "2025-12",
+   "counties_with_data": 76,
+   "months_observed": 94,
+   "carry_forward_months": 0,
+   "p02": 1.24,
+   "p98": 6.49,
+   "min": 0.67,
+   "max": 11.12,
+   "label_original": "Diesel price, black market, gap-filled (US$ per litre)",
+   "plain": "Market price of diesel (black-market) per litre, converted to US dollars by WFP. This version fills some missing county-months with estimates; the original version shows only measured values.",
+   "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 150 km that reported that month (typical error about 15% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+   "direction": "better_worse",
+   "topic": "Food & prices",
+   "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed. WFP converts pound prices to dollars at its own reference rate, not the market's black-market rate, so seasonal swings in the pound can be hidden in this series. Compare with the price in pounds.",
+   "synonyms": [
+    "fuel",
+    "prices",
+    "transport",
+    "cost",
+    "diesel",
+    "black market",
+    "parallel market",
+    "gap-filled",
+    "estimated",
+    "filled"
+   ],
+   "trend_basis": "vs_base_month",
+   "trend_moran_I": 0.0286,
+   "trend_moran_p": 0.265,
+   "regional": {
+    "sudd": {
+     "S": 233.0,
+     "p": 0.588,
+     "n": 15,
+     "median_pct": -1.02,
+     "median_slope": -0.035
+    },
+    "national": {
+     "S": -244.0,
+     "p": 0.909,
+     "n": 76,
+     "median_pct": -1.9,
+     "median_slope": -0.0519
+    }
+   }
+  },
+  {
+   "category": "human",
+   "temporal": "monthly",
+   "index_ok": true,
+   "id": "price_diesel_parallel_ssp_filled",
+   "label": "Diesel price, black market, gap-filled (pounds)",
+   "units": "SSP per L",
+   "aggregation": "median over county markets, monthly; gaps filled (see notes)",
+   "notes": "ESTIMATES in filled cells - gap-filled version of 'price_diesel_parallel_ssp' (which stays observed-only). Each value is flagged in data/processed/wfp_filled_flags.csv (observed / observed_wfp_variant / observed_fewsnet / interp_time / nearby_market). Observed priority: WFP value; (i) interp_time: interior gaps of <= 2 months in a county's own series, linear in log price (hold-out error 6%); (ii) nearby_market: county-months still empty take the inverse-distance weighted median of the up to 3 nearest markets (in other counties) with an observed price in the SAME month, all within 150 km of the county centroid; flag distance_km = nearest donor. Leave-one-county-out validation at 150 km: median abs error 15% (n=761). Nothing is extrapolated beyond observed months.",
+   "source": "WFP VAM market monitoring via HDX",
+   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
+   "native_resolution": "market",
+   "group": "Prices",
+   "higher_is": "worse",
+   "meta_file": "wfp_filled.json",
+   "baseline_year": 2018,
+   "first_period": "2018-03",
+   "last_period": "2025-12",
+   "counties_with_data": 76,
+   "months_observed": 94,
+   "carry_forward_months": 0,
+   "p02": 260.0,
+   "p98": 20140.0,
+   "min": 170.0,
+   "max": 41250.0,
+   "label_original": "Diesel price, black market, gap-filled (pounds per litre)",
+   "plain": "Market price of diesel (black-market) per litre in South Sudanese pounds. This version fills some missing county-months with estimates; the original version shows only measured values.",
+   "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 150 km that reported that month (typical error about 15% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+   "direction": "better_worse",
+   "topic": "Food & prices",
+   "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed. In local currency, which lost most of its value (about 250 to over 4,000 SSP per dollar, 2018-2025). Use the US-dollar version to compare over time.",
+   "synonyms": [
+    "fuel",
+    "prices",
+    "transport",
+    "cost",
+    "diesel",
+    "black market",
+    "parallel market",
+    "SSP",
+    "pounds",
+    "gap-filled",
+    "estimated",
+    "filled"
+   ],
+   "trend_basis": "vs_base_month",
+   "trend_moran_I": 0.294,
+   "trend_moran_p": 0.002,
+   "regional": {
+    "sudd": {
+     "S": 2478.0,
+     "p": 0.001,
+     "n": 15,
+     "median_pct": 68.2,
+     "median_slope": 265.0
+    },
+    "national": {
+     "S": 11700.0,
+     "p": 0.001,
+     "n": 76,
+     "median_pct": 65.9,
+     "median_slope": 260.0
     }
    }
   },
@@ -14538,6 +14790,71 @@
    "category": "human",
    "temporal": "monthly",
    "index_ok": true,
+   "id": "price_sorghum_local_usd_filled",
+   "label": "Local sorghum price, gap-filled (US$)",
+   "units": "USD per kg",
+   "aggregation": "median over county markets, monthly; gaps filled (see notes)",
+   "notes": "ESTIMATES in filled cells - gap-filled version of 'price_sorghum_local_usd' (which stays observed-only). Each value is flagged in data/processed/wfp_filled_flags.csv (observed / observed_wfp_variant / observed_fewsnet / interp_time / nearby_market). Observed priority: WFP value; WFP renamed local-sorghum varieties ('Sorghum (red, local)', 'Sorghum (brown)') where WFP 'Sorghum (local)' is missing (it was not reported 2021-2023); FEWS NET retail price for counties/months without WFP data (SSP converted to USD at WFP's monthly reference rate = median price/usdprice, the same official-rate basis as WFP usdprice); (i) interp_time: interior gaps of <= 2 months in a county's own series, linear in log price (hold-out error 8%); (ii) nearby_market: county-months still empty take the inverse-distance weighted median of the up to 3 nearest markets (in other counties) with an observed price in the SAME month, all within 100 km of the county centroid; flag distance_km = nearest donor. Leave-one-county-out validation at 100 km: median abs error 17% (n=632). Nothing is extrapolated beyond observed months.",
+   "source": "WFP VAM market monitoring via HDX + FEWS NET staple food prices (FDW/HDX)",
+   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
+   "native_resolution": "market",
+   "group": "Prices",
+   "higher_is": "worse",
+   "meta_file": "wfp_filled.json",
+   "baseline_year": 2018,
+   "first_period": "2018-04",
+   "last_period": "2025-12",
+   "counties_with_data": 70,
+   "months_observed": 93,
+   "carry_forward_months": 0,
+   "p02": 0.3657,
+   "p98": 2.457,
+   "min": 0.1304,
+   "max": 27.71,
+   "label_original": "Local sorghum price, gap-filled (US$ per kg)",
+   "plain": "Market price of a kilogram of local sorghum, converted to US dollars by WFP. Sorghum contributes to 76 percent of the national staple food supply in South Sudan (FAO Hand-in-Hand, 2023). This version fills some missing county-months with estimates; the original version shows only measured values.",
+   "method": "Measured values first (WFP, then WFP's renamed local-sorghum varieties and FEWS NET market prices). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 100 km that reported that month (typical error about 17% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+   "direction": "better_worse",
+   "topic": "Food & prices",
+   "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed.",
+   "synonyms": [
+    "prices",
+    "food prices",
+    "market",
+    "cost",
+    "inflation",
+    "sorghum",
+    "grain",
+    "staple",
+    "food",
+    "gap-filled",
+    "estimated",
+    "filled"
+   ],
+   "trend_basis": "vs_base_month",
+   "trend_moran_I": 0.363,
+   "trend_moran_p": 0.001,
+   "regional": {
+    "sudd": {
+     "S": -56.0,
+     "p": 0.713,
+     "n": 16,
+     "median_pct": 56.5,
+     "median_slope": 0.163
+    },
+    "national": {
+     "S": -1244.0,
+     "p": 0.333,
+     "n": 70,
+     "median_pct": -4.22,
+     "median_slope": -0.0424
+    }
+   }
+  },
+  {
+   "category": "human",
+   "temporal": "monthly",
+   "index_ok": true,
    "id": "price_maize_ssp",
    "label": "Maize price (South Sudanese pounds)",
    "units": "SSP per kg",
@@ -14657,6 +14974,71 @@
      "n": 28,
      "median_pct": 3.24,
      "median_slope": 0.00763
+    }
+   }
+  },
+  {
+   "category": "human",
+   "temporal": "monthly",
+   "index_ok": true,
+   "id": "price_maize_usd_filled",
+   "label": "Maize price, gap-filled (US$)",
+   "units": "USD per kg",
+   "aggregation": "median over county markets, monthly; gaps filled (see notes)",
+   "notes": "ESTIMATES in filled cells - gap-filled version of 'price_maize_usd' (which stays observed-only). Each value is flagged in data/processed/wfp_filled_flags.csv (observed / observed_wfp_variant / observed_fewsnet / interp_time / nearby_market). Observed priority: WFP value; FEWS NET retail price for counties/months without WFP data (SSP converted to USD at WFP's monthly reference rate = median price/usdprice, the same official-rate basis as WFP usdprice); (i) interp_time: interior gaps of <= 2 months in a county's own series, linear in log price (hold-out error 8%); (ii) No spatial (nearby-market) fill: leave-one-county-out median abs error exceeded 20% (in fact 33% or more) at every radius tested (150-50 km), so neighbouring markets are not a credible proxy for this measure. Nothing is extrapolated beyond observed months.",
+   "source": "WFP VAM market monitoring via HDX + FEWS NET staple food prices (FDW/HDX)",
+   "source_url": "https://data.humdata.org/dataset/wfp-food-prices-for-south-sudan",
+   "native_resolution": "market",
+   "group": "Prices",
+   "higher_is": "worse",
+   "meta_file": "wfp_filled.json",
+   "baseline_year": 2018,
+   "first_period": "2018-01",
+   "last_period": "2025-12",
+   "counties_with_data": 32,
+   "months_observed": 93,
+   "carry_forward_months": 0,
+   "p02": 0.3323,
+   "p98": 2.446,
+   "min": 0.2029,
+   "max": 24.44,
+   "label_original": "Maize price, gap-filled (US$ per kg)",
+   "plain": "Market price of maize per kg, converted to US dollars by WFP. This version fills some missing county-months with estimates; the original version shows only measured values.",
+   "method": "Measured values first (WFP, then FEWS NET market prices). Gaps of up to 2 months in a county's own series are interpolated. No values are borrowed from neighbouring counties: tests showed nearby markets are a poor guide for this measure. Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+   "direction": "better_worse",
+   "topic": "Food & prices",
+   "caution": "Filled cells are estimates, not measurements.",
+   "synonyms": [
+    "prices",
+    "food prices",
+    "market",
+    "cost",
+    "inflation",
+    "maize",
+    "corn",
+    "grain",
+    "food",
+    "gap-filled",
+    "estimated",
+    "filled"
+   ],
+   "trend_basis": "vs_base_month",
+   "trend_moran_I": 0.466,
+   "trend_moran_p": 0.035,
+   "regional": {
+    "sudd": {
+     "S": 37.0,
+     "p": 0.04,
+     "n": 7,
+     "median_pct": 4.35,
+     "median_slope": 0.0298
+    },
+    "national": {
+     "S": -82.0,
+     "p": 0.802,
+     "n": 32,
+     "median_pct": -0.379,
+     "median_slope": -0.0183
     }
    }
   },

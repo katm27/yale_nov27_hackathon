@@ -4781,5 +4781,129 @@
    "dust",
    "smoke"
   ]
+ },
+ "price_sorghum_local_usd_filled": {
+  "label": "Local sorghum price, gap-filled (US$)",
+  "plain": "Market price of a kilogram of local sorghum, converted to US dollars by WFP. Sorghum contributes to 76 percent of the national staple food supply in South Sudan (FAO Hand-in-Hand, 2023). This version fills some missing county-months with estimates; the original version shows only measured values.",
+  "method": "Measured values first (WFP, then WFP's renamed local-sorghum varieties and FEWS NET market prices). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 100 km that reported that month (typical error about 17% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+  "direction": "better_worse",
+  "topic": "Food & prices",
+  "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed.",
+  "synonyms": [
+   "prices",
+   "food prices",
+   "market",
+   "cost",
+   "inflation",
+   "sorghum",
+   "grain",
+   "staple",
+   "food",
+   "gap-filled",
+   "estimated",
+   "filled"
+  ]
+ },
+ "price_maize_usd_filled": {
+  "label": "Maize price, gap-filled (US$)",
+  "plain": "Market price of maize per kg, converted to US dollars by WFP. This version fills some missing county-months with estimates; the original version shows only measured values.",
+  "method": "Measured values first (WFP, then FEWS NET market prices). Gaps of up to 2 months in a county's own series are interpolated. No values are borrowed from neighbouring counties: tests showed nearby markets are a poor guide for this measure. Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+  "direction": "better_worse",
+  "topic": "Food & prices",
+  "caution": "Filled cells are estimates, not measurements.",
+  "synonyms": [
+   "prices",
+   "food prices",
+   "market",
+   "cost",
+   "inflation",
+   "maize",
+   "corn",
+   "grain",
+   "food",
+   "gap-filled",
+   "estimated",
+   "filled"
+  ]
+ },
+ "price_diesel_parallel_usd_filled": {
+  "label": "Diesel price, black market, gap-filled (US$)",
+  "plain": "Market price of diesel (black-market) per litre, converted to US dollars by WFP. This version fills some missing county-months with estimates; the original version shows only measured values.",
+  "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 150 km that reported that month (typical error about 15% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+  "direction": "better_worse",
+  "topic": "Food & prices",
+  "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed. WFP converts pound prices to dollars at its own reference rate, not the market's black-market rate, so seasonal swings in the pound can be hidden in this series. Compare with the price in pounds.",
+  "synonyms": [
+   "fuel",
+   "prices",
+   "transport",
+   "cost",
+   "diesel",
+   "black market",
+   "parallel market",
+   "gap-filled",
+   "estimated",
+   "filled"
+  ]
+ },
+ "price_diesel_parallel_ssp_filled": {
+  "label": "Diesel price, black market, gap-filled (pounds)",
+  "plain": "Market price of diesel (black-market) per litre in South Sudanese pounds. This version fills some missing county-months with estimates; the original version shows only measured values.",
+  "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 150 km that reported that month (typical error about 15% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+  "direction": "better_worse",
+  "topic": "Food & prices",
+  "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed. In local currency, which lost most of its value (about 250 to over 4,000 SSP per dollar, 2018-2025). Use the US-dollar version to compare over time.",
+  "synonyms": [
+   "fuel",
+   "prices",
+   "transport",
+   "cost",
+   "diesel",
+   "black market",
+   "parallel market",
+   "SSP",
+   "pounds",
+   "gap-filled",
+   "estimated",
+   "filled"
+  ]
+ },
+ "fx_ssp_per_usd_filled": {
+  "label": "Black-market exchange rate, gap-filled (pounds per US$)",
+  "plain": "How many South Sudanese pounds one US dollar buys on the unofficial market. When it rises, the pound has weakened and imported goods such as fuel cost more. This version fills some missing county-months with estimates; the original version shows only measured values.",
+  "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. Counties still empty take the distance-weighted median of up to 3 markets within 150 km that reported that month (typical error about 2% when tested on known values). Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+  "direction": "better_worse",
+  "topic": "Food & prices",
+  "caution": "Filled cells are estimates, not measurements. Borrowed values copy a nearby market's price, so local price spikes in unmonitored counties are missed. Mostly a national signal; county differences are small.",
+  "synonyms": [
+   "exchange rate",
+   "currency",
+   "dollar",
+   "inflation",
+   "devaluation",
+   "SSP",
+   "gap-filled",
+   "estimated",
+   "filled"
+  ]
+ },
+ "wage_casual_labour_usd_filled": {
+  "label": "Daily wage for casual labour, gap-filled (US$)",
+  "plain": "What an unskilled casual (non-farm) labourer earns in a day, in US dollars. Set against food prices, it shows how much food a day's work buys. This version fills some missing county-months with estimates; the original version shows only measured values.",
+  "method": "Measured values first (WFP). Gaps of up to 2 months in a county's own series are interpolated. No values are borrowed from neighbouring counties: tests showed nearby markets are a poor guide for this measure. Nothing is extended before the first or after the last measured month. Each value's origin is in data/processed/wfp_filled_flags.csv.",
+  "direction": "better_worse",
+  "topic": "Food & prices",
+  "caution": "Filled cells are estimates, not measurements.",
+  "synonyms": [
+   "wages",
+   "income",
+   "labour",
+   "jobs",
+   "pay",
+   "terms of trade",
+   "gap-filled",
+   "estimated",
+   "filled"
+  ]
  }
 }

@@ -16,7 +16,7 @@ The original ids (price_sorghum_local_usd, ...; scripts/wfp_prices_ssd.py) stay 
 
 No value is extrapolated: interpolation is only between two observed months and spatial donors are observed in the same
 month. The spatial radius per measure is chosen by leave-one-county-out validation (largest radius in 150/120/100/75/50 km
-with median absolute % error <= 25%); a measure with no radius passing gets no spatial fill.
+with median absolute % error <= 20%, a margin under the ~25% ceiling); a measure with no radius passing gets no spatial fill.
 
 REACH/IMPACT JMMI was not used: the dataset files on repository.impact-initiatives.org returned HTTP 403 to this
 environment (2026-11-17) - the 'observed_jmmi' method is therefore absent.
@@ -40,7 +40,7 @@ FEWS_API = ("https://fdw.fews.net/api/marketpricefacts/?dataset=FEWS_NET_Staple_
 FEWS_CSV = RAW / "fewsnet_prices" / "fewsnet_staple_food_prices_ssd.csv"
 UNIT_DIV = {"KG": 1.0, "3.5 KG": 3.5, "50 KG": 50.0, "L": 1.0}  # same as scripts/wfp_prices_ssd.py
 RADII = [150, 120, 100, 75, 50]
-MAX_APE = 0.25
+MAX_APE = 0.20  # requested ceiling ~25%; 20% keeps a margin (local sorghum is 24% at 150 km, 17.5% at 100 km)
 MIN_VAL_PAIRS = 30
 MAX_GAP = 2
 
@@ -303,8 +303,9 @@ def main():
                    f"{radius} km of the county centroid; flag distance_km = nearest donor. Leave-one-county-out "
                    f"validation at {radius} km: median abs error {100 * val[radius]['mdape']:.0f}% "
                    f"(n={val[radius]['n']})." if radius else
-                   "(ii) No spatial (nearby-market) fill: leave-one-county-out validation error exceeded 25% at "
-                   "every radius tested (150-50 km).")
+                   "(ii) No spatial (nearby-market) fill: leave-one-county-out median abs error exceeded 20% (in fact "
+                   f"{100 * min(x['mdape'] for x in val.values() if x['mdape'] is not None):.0f}% or more) at every radius "
+                   "tested (150-50 km), so neighbouring markets are not a credible proxy for this measure.")
         src_txt = "WFP VAM market monitoring via HDX" + (" + FEWS NET staple food prices (FDW/HDX)" if spec["fews"] else "")
         meta.append(base_meta(
             id=fid, label=spec["label"], units=spec["units"],

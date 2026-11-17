@@ -2,7 +2,7 @@
  "price_sorghum_local_usd": {
   "filled_id": "price_sorghum_local_usd_filled",
   "counts": {
-   "nearby_market": 3895,
+   "nearby_market": 2407,
    "observed_wfp_variant": 802,
    "observed": 532,
    "observed_fewsnet": 200,
@@ -12,11 +12,11 @@
    "observed_wfp": 7.0,
    "observed_all_sources": 20.2,
    "plus_interp": 21.7,
-   "filled_total": 73.1
+   "filled_total": 53.5
   },
   "counties_with_value": {
    "observed_wfp": 31,
-   "filled": 77
+   "filled": 70
   },
   "spatial_validation": {
    "150": {
@@ -50,7 +50,7 @@
     "median_nearest_km": 38.2666273083881
    }
   },
-  "spatial_radius_km": 150,
+  "spatial_radius_km": 100,
   "temporal_validation": {
    "n": 1322,
    "mdape": 0.07911949868554308

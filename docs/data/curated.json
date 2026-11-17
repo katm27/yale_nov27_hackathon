@@ -148,37 +148,37 @@
     {
       "category": "human",
       "group": "Food, fuel and markets",
-      "id": "wage_casual_labour_usd",
+      "id": "wage_casual_labour_usd_filled",
       "label": "Daily wage for casual labour"
     },
     {
       "category": "human",
       "group": "Food, fuel and markets",
-      "id": "price_sorghum_local_usd",
+      "id": "price_sorghum_local_usd_filled",
       "label": "Local sorghum price"
     },
     {
       "category": "human",
       "group": "Food, fuel and markets",
-      "id": "price_maize_usd",
+      "id": "price_maize_usd_filled",
       "label": "Maize price"
     },
     {
       "category": "human",
       "group": "Food, fuel and markets",
-      "id": "price_diesel_parallel_usd",
+      "id": "price_diesel_parallel_usd_filled",
       "label": "Diesel price, black market (US$)"
     },
     {
       "category": "human",
       "group": "Food, fuel and markets",
-      "id": "price_diesel_parallel_ssp",
+      "id": "price_diesel_parallel_ssp_filled",
       "label": "Diesel price, black market (pounds)"
     },
     {
       "category": "human",
       "group": "Food, fuel and markets",
-      "id": "fx_ssp_per_usd",
+      "id": "fx_ssp_per_usd_filled",
       "label": "Black-market exchange rate"
     },
     {
