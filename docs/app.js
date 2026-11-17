@@ -167,6 +167,7 @@
   map.createPane("points").style.zIndex = 600;
   map.createPane("flows").style.zIndex = 620;
   map.createPane("labels").style.zIndex = 640; map.getPane("labels").style.pointerEvents = "none";
+  map.createPane("selLabel").style.zIndex = 660; map.getPane("selLabel").style.pointerEvents = "none";   // clicked-county value tag sits above town names
   let countyLayer;
 
   function drawBasemapContext(ctx) {
@@ -218,7 +219,7 @@
     let txt = esc(name);
     if (v) { const x = valueAt(v, state.selected, state.t); txt += `: <b>${esc(describe(v, x, state.selected))}</b>`; }
     let ll = l.getCenter(); try { if (!l.getBounds().contains(ll) || !l.contains?.(ll)) ll = l.getBounds().getCenter(); } catch (e) { /* keep */ }
-    selLabel = L.marker(ll, { pane: "labels", interactive: false, icon: L.divIcon({ className: "sel-label", html: `<span>${txt}</span>`, iconSize: null }) }).addTo(map);
+    selLabel = L.marker(ll, { pane: "selLabel", interactive: false, zIndexOffset: 1000, icon: L.divIcon({ className: "sel-label", html: `<span>${txt}</span>`, iconSize: null }) }).addTo(map);
   }
   function refreshCounties() {
     if (!countyLayer) return;
